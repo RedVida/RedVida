@@ -52,11 +52,16 @@
       </div>
     </div>
   </div>
+
+ 
+
+ <?php if(!Yii::app()->user->isGuest){ ?>
   <div class="ui sub menu">
-    <a class="active item">Search</a>
-    <a class="item">Add</a>
-    <a class="item">Remove</a>
+    <a class="active item" href="<?php echo Yii::app()->user->ui->userManagementAdminUrl; ?>">Administrar Usuarios</a>
+    <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes">Gestión de Donantes</a>
+    <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionsangre">Donación Sangre</a>
   </div>
+  <?php }  ?>
 </div>
 
   <?php echo $content; ?>
