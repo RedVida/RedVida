@@ -13,25 +13,53 @@
 
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/semantic.css">
-
+  <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/menu.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/semantic.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/views/layouts/main.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/carousel.css">
+
 
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
-  <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/semantic.js"></script>
-  <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/semantic.min.js"></script>
-  
-  <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/menu.js"></script>
-  
+  <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/semantic.min.js"></script>  
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/views/layouts/main.js"></script>
+  <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/carousel.js"></script>
+  <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/jquery.js"></script>
+  <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/menu.js"></script>
+  <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/history.js"></script>
+
+
+
+
+
 
 </head>
 <body id="home">
 
+
+
+
+<div class="ui menu">
+  <a class="active item">
+    <i class="home icon"></i> Home
+  </a>
+  <a class="item">
+    <i class="mail icon"></i> Messages
+  </a>
+  <div class="right menu">
+    <div class="item">
+      <div class="ui icon input">
+        <input type="text" placeholder="Search...">
+        <i class="search link icon"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 <div class="ui tiered inverted menu">
   <div class="menu">
-    <a class="active item" href="<?php echo Yii::app()->request->baseUrl; ?>/index.php">
+    <a class="active item" href="<?php echo Yii::app()->request->baseUrl; ?>">
       <i class="home icon"></i>
       Inicio
     </a>
