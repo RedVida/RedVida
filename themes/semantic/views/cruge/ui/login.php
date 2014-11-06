@@ -13,36 +13,39 @@
 		'validateOnSubmit'=>true,
 	),
 )); ?>
-
-<div class="ui form segment">
-  <div class="field">
-    <label>Usuario</label>
+<div class="ui two column relaxed grid">
+  <div class="column">
+    <div class="ui fluid form segment">
+      <div class="field">
+    <h4>Usuario</h4>
     <div class="ui left labeled icon input">
       <?php echo $form->textField($model,'username'); ?>
-		<?php echo $form->error($model,'username'); ?>
+      <p>
+	  <?php echo $form->error($model,'username',array('class' => 'ui small red label')); ?> 
       <i class="user icon"></i>
       <div class="ui corner label">
         <i class="icon asterisk"></i>
       </div>
     </div>
   </div>
-  <div class="field">
-    <label>Contraseña</label>
+       <div class="field">
+    <h4>Contraseña</h4>
     <div class="ui left labeled icon input">
       <?php echo $form->passwordField($model,'password'); ?>
-		<?php echo $form->error($model,'password'); ?>
+      <p>
+		<?php echo $form->error($model,'password',array('class' => 'ui small red label')); ?>
       <i class="lock icon"></i>
       <div class="ui corner label">
         <i class="icon asterisk"></i>
       </div>
     </div>
   </div>
-  <div class="row rememberMe">
+       <div class="row rememberMe">
 		<?php echo $form->checkBox($model,'rememberMe'); ?>
 		<?php echo $form->label($model,'rememberMe'); ?>
 		<?php echo $form->error($model,'rememberMe'); ?>
-	</div>
-   <p>
+	   </div>
+       <p>
 	<div class="row buttons">
 		<?php echo CHtml::submitButton(CrugeTranslator::t('login', "Login"),array("class"=>"ui blue submit button")); ?>
 		<p></p>
@@ -53,8 +56,8 @@
 				echo Yii::app()->user->ui->registrationLink;
 		?>
 	</br>
-	</div>
-</div>
+    </div>
+  </div>
 	<?php
 		//	si el componente CrugeConnector existe lo usa:
 		//
