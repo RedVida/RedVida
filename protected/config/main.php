@@ -13,7 +13,7 @@ return array(
 	'name'=>'REDVIDA',
 	'defaultController' => 'site/Index',
 	//'theme'=>"classic",
-	//'theme'=>'semantic',
+	'theme'=>'semantic',
 	// preloading 'log' component
 	'preload'=>array('log'),
 
