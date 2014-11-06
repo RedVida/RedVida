@@ -7,17 +7,23 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="language" content="es" />
 
-  <!-- Site Properities  -->
+  <!-- Site Properities -->
   <title><?php echo CHtml::encode($this->pageTitle); ?></title>
   <link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/ubb.ico">
 
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/semantic.css">
+
+  <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/semantic.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/views/layouts/main.css">
 
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/semantic.js"></script>
+  <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/semantic.min.js"></script>
+  
+  <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/menu.js"></script>
+  
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/views/layouts/main.js"></script>
 
 </head>
@@ -29,34 +35,50 @@
       <i class="home icon"></i>
       Inicio
     </a>
-    <a class="item" href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/cruge/ui/login">
-      <i class="grid layout icon"></i> Login
+    
+    <?php if(Yii::app()->user->isGuest){ ?>
+
+    <a class="item" href="<?php echo Yii::app()->user->ui->loginUrl; ?>" >
+      <i class="grid layout icon"></i> Iniciar Sesión
     </a>
-    <a class="item">
-      <i class="mail icon"></i> Messages
-    </a>
+    
+    <?php } ?>
+
+
+
+
     <div class="right menu">
       <div class="item">
         <div class="ui icon input">
-          <input type="text" placeholder="Search...">
-          <i class="search icon"></i>
-        </div>
-      </div>
-      <div class="ui dropdown item">
-        More <i class="icon dropdown"></i>
-        <div class="menu">
-          <a class="item"><i class="edit icon"></i> Edit Profile</a>
-          <a class="item"><i class="globe icon"></i> Choose Language</a>
-          <a class="item"><i class="settings icon"></i> Account Settings</a>
+          
+
+    <?php if(!Yii::app()->user->isGuest){ ?>
+
+    <a class="item" href="<?php echo Yii::app()->user->ui->logoutUrl; ?>" >
+      <i class="mail icon" ></i> Cerrar Sesión
+    </a>
+    <?php } ?>
+
+
+
         </div>
       </div>
     </div>
   </div>
+
+
+
+
+
+
+
+ <?php if(!Yii::app()->user->isGuest){ ?>
   <div class="ui sub menu">
-    <a class="active item">Search</a>
-    <a class="item">Add</a>
-    <a class="item">Remove</a>
+    <a class="active item" href="<?php echo Yii::app()->user->ui->userManagementAdminUrl; ?>">Administrar Usuarios</a>
+    <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes">Gestión de Donantes</a>
+    <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionsangre">Donación Sangre</a>
   </div>
+  <?php }  ?>
 </div>
 
   <?php echo $content; ?>
