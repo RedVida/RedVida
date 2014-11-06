@@ -1,4 +1,5 @@
-<h1><?php echo CrugeTranslator::t('logon',"Login"); ?></h1>
+<h1>&nbsp&nbsp<?php echo CrugeTranslator::t('logon',"Login"); ?></h1>
+
 <?php if(Yii::app()->user->hasFlash('loginflash')): ?>
 <div class="flash-error">
 	<?php echo Yii::app()->user->getFlash('loginflash'); ?>
@@ -13,33 +14,47 @@
 	),
 )); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username'); ?>
+<div class="ui form segment">
+  <div class="field">
+    <label>Usuario</label>
+    <div class="ui left labeled icon input">
+      <?php echo $form->textField($model,'username'); ?>
 		<?php echo $form->error($model,'username'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password'); ?>
+      <i class="user icon"></i>
+      <div class="ui corner label">
+        <i class="icon asterisk"></i>
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <label>Contraseña</label>
+    <div class="ui left labeled icon input">
+      <?php echo $form->passwordField($model,'password'); ?>
 		<?php echo $form->error($model,'password'); ?>
-	</div>
-
-	<div class="row rememberMe">
+      <i class="lock icon"></i>
+      <div class="ui corner label">
+        <i class="icon asterisk"></i>
+      </div>
+    </div>
+  </div>
+  <div class="row rememberMe">
 		<?php echo $form->checkBox($model,'rememberMe'); ?>
 		<?php echo $form->label($model,'rememberMe'); ?>
 		<?php echo $form->error($model,'rememberMe'); ?>
 	</div>
-
+   <p>
 	<div class="row buttons">
-		<?php Yii::app()->user->ui->tbutton(CrugeTranslator::t('logon', "Login")); ?>
+		<?php echo CHtml::submitButton(CrugeTranslator::t('login', "Login"),array("class"=>"ui blue submit button")); ?>
+		<p></p>
 		<?php echo Yii::app()->user->ui->passwordRecoveryLink; ?>
-		<?php
+		<br>
+		<?php 
 			if(Yii::app()->user->um->getDefaultSystem()->getn('registrationonlogin')===1)
 				echo Yii::app()->user->ui->registrationLink;
 		?>
+	</br>
 	</div>
-
+</div>
 	<?php
 		//	si el componente CrugeConnector existe lo usa:
 		//
