@@ -12188,3 +12188,6 @@ $.fn.video.settings = {
 
 
 })( jQuery, window , document );
+
+
+
