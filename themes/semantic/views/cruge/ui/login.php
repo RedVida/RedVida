@@ -13,6 +13,13 @@
 		'validateOnSubmit'=>true,
 	),
 )); ?>
+
+<?php Yii::app()->clientScript->registerScript(
+    'myHideEffect',
+    '$(".errors").animate({opacity: 1.0}, 5000).fadeOut("slow");',
+    CClientScript::POS_READY
+); ?>
+
 <div class="ui two column relaxed grid">
   <div class="column">
     <div class="ui fluid form segment">
@@ -22,8 +29,9 @@
       <?php echo $form->textField($model,'username'); ?>
       <i class="user icon"></i>
       <p>
+      <div class="errors">	
 	  <?php echo $form->error($model,'username',array('class' => 'ui small red label')); ?> 
-      
+      </div>
       <div class="ui corner label">
         <i class="icon asterisk"></i>
       </div>
@@ -35,8 +43,9 @@
       <?php echo $form->passwordField($model,'password'); ?>
       <i class="lock icon"></i>
       <p>
-		<?php echo $form->error($model,'password',array('class' => 'ui small red label')); ?>
-      
+     <div class="errors">	 	
+     <?php echo $form->error($model,'password',array('class' => 'ui small red label')); ?> 
+      </div>
       <div class="ui corner label">
         <i class="icon asterisk"></i>
       </div>
