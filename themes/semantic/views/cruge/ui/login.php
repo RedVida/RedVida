@@ -20,9 +20,10 @@
     <h4>Usuario</h4>
     <div class="ui left labeled icon input">
       <?php echo $form->textField($model,'username'); ?>
+      <i class="user icon"></i>
       <p>
 	  <?php echo $form->error($model,'username',array('class' => 'ui small red label')); ?> 
-      <i class="user icon"></i>
+      
       <div class="ui corner label">
         <i class="icon asterisk"></i>
       </div>
@@ -32,9 +33,10 @@
     <h4>Contraseña</h4>
     <div class="ui left labeled icon input">
       <?php echo $form->passwordField($model,'password'); ?>
+      <i class="lock icon"></i>
       <p>
 		<?php echo $form->error($model,'password',array('class' => 'ui small red label')); ?>
-      <i class="lock icon"></i>
+      
       <div class="ui corner label">
         <i class="icon asterisk"></i>
       </div>
