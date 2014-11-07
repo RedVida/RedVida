@@ -1,7 +1,6 @@
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/carousel.css">
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/carousel.js"></script>
 
-
  
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
@@ -34,27 +33,26 @@
       <div class="ui three column center aligned stackable divided grid">
         <div class="column">
           <div class="ui icon header">
-            <i class="circular book link icon"></i>
-            Courses 
+            <i class="circular doctor link icon"></i> 
           </div>
-          <p>Take your kitty to a cat-ducation course and learn how to treat her well.</p>
-          <p><a class="ui teal right labeled icon button" href="http://semantic-ui.com/build/examples/homepage.html#">Learn <i class="right long arrow icon"></i></a></p>
+          <p>Registro de donaciones y trasplantes a nivel nacional</p>
+          
         </div>
         <div class="column">
           <div class="ui icon header">
-            <i class="circular code link icon"></i>
-            Library
+            <i class="circular heart link icon"></i>
+            
           </div>
-          <p>Dig through our cat library to found out amazing things you can do with your kitty.</p>
-          <p><a class="ui teal right labeled icon button" href="http://semantic-ui.com/build/examples/homepage.html#">Research <i class="right long arrow icon"></i></a></p>
+          <p>Control de urgencias medicas y donaciones hechas en tiempo real</p>
+          
         </div>
         <div class="column">
           <div class="ui icon header">
             <i class="circular user link icon"></i>
-            Community
+            
           </div>
-          <p>Get feedback on your cat from a community of loving pet owners on our online bulletin board system.</p>
-          <p><a class="ui teal right labeled icon button" href="http://semantic-ui.com/build/examples/homepage.html#">Share <i class="right long arrow icon"></i></a></p>
+          <p>Gestion de pacientes y urgencias nacionales</p>
+         
         </div>
       </div>
     </div>
@@ -65,7 +63,7 @@
     <div class="row">
       <div class="column">
         <h1 class="center aligned ui header">
-          Many Companies Rely on Our Cat Knowledge
+          Comparta en sus redes sociales
         </h1>
         <div class="ui horizontal divider"><i class="heart icon"></i></div>
       </div>
@@ -74,23 +72,23 @@
       <div class="column">
         <div class="ui text shape">
           <div class="sides">
-            <div class="side">
-              <i class="huge circular github icon"></i>
-            </div>
             <div class="side active">
               <i class="huge circular facebook icon"></i>
             </div>
             <div class="side">
-              <i class="huge circular maxcdn icon"></i>
+              <i class="huge circular tumblr icon"></i>
             </div>
             <div class="side">
-              <i class="huge circular pinterest icon"></i>
+              <i class="huge circular twitter icon"></i>
             </div>
             <div class="side">
-              <i class="huge circular weibo icon"></i>
+              <i class="huge circular instagram icon"></i>
             </div>
             <div class="side">
               <i class="huge circular flickr icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular google plus icon"></i>
             </div>
           </div>
         </div>
@@ -99,22 +97,22 @@
         <div class="ui text shape">
           <div class="sides">
             <div class="side">
-              <i class="huge circular github icon"></i>
+              <i class="huge circular twitter icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular tumblr icon"></i>
             </div>
             <div class="side">
               <i class="huge circular facebook icon"></i>
             </div>
             <div class="side">
-              <i class="huge circular maxcdn icon"></i>
-            </div>
-            <div class="side active">
-              <i class="huge circular pinterest icon"></i>
-            </div>
-            <div class="side">
-              <i class="huge circular weibo icon"></i>
+              <i class="huge circular instagram icon"></i>
             </div>
             <div class="side">
               <i class="huge circular flickr icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular google plus icon"></i>
             </div>
           </div>
         </div>
@@ -123,22 +121,22 @@
         <div class="ui text shape">
           <div class="sides">
             <div class="side">
-              <i class="huge circular github icon"></i>
+              <i class="huge circular tumblr icon"></i>
             </div>
             <div class="side">
               <i class="huge circular facebook icon"></i>
             </div>
             <div class="side">
-              <i class="huge circular maxcdn icon"></i>
+              <i class="huge circular twitter icon"></i>
             </div>
             <div class="side">
-              <i class="huge circular pinterest icon"></i>
+              <i class="huge circular instagram icon"></i>
             </div>
             <div class="side">
-              <i class="huge circular weibo icon"></i>
-            </div>
-            <div class="side active">
               <i class="huge circular flickr icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular google plus icon"></i>
             </div>
           </div>
         </div>
@@ -147,22 +145,22 @@
         <div class="ui text shape">
           <div class="sides">
             <div class="side active">
-              <i class="huge circular github icon"></i>
+              <i class="huge circular google plus icon"></i>
             </div>
             <div class="side">
-              <i class="huge circular facebook icon"></i>
+              <i class="huge circular tumblr icon"></i>
             </div>
             <div class="side">
-              <i class="huge circular maxcdn icon"></i>
+              <i class="huge circular twitter icon"></i>
             </div>
             <div class="side">
-              <i class="huge circular pinterest icon"></i>
-            </div>
-            <div class="side">
-              <i class="huge circular weibo icon"></i>
+              <i class="huge circular instagram icon"></i>
             </div>
             <div class="side">
               <i class="huge circular flickr icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular facebook icon"></i>
             </div>
           </div>
         </div>
