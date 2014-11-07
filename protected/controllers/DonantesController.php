@@ -161,6 +161,7 @@ class DonantesController extends Controller
 	{
 	
 		$model=new Donantes('search');
+		$k=new Donantes();
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Donantes']))
 			$model->attributes=$_GET['Donantes'];
