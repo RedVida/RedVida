@@ -71,6 +71,18 @@
                     )
          );
         ?>
+<<<<<<< HEAD
+</div>
+</div>
+       </div> 
+       <br>
+        <?php echo $form->labelEx($model,'Centro Medico'); ?>
+        <?php echo $form->dropDownList($model,'id_centro_medico', 
+		CHtml::listData(CentroMedico::model()->findAll(), 'id', 'nombre')); ?>
+	<br><br>
+	<div class="row buttons">
+	    <?php echo CHtml::submitButton(CrugeTranslator::t('login', "Login"),array("class"=>"ui blue submit button")); ?>
+=======
     </div>
         
     <div class="row">
@@ -82,8 +94,9 @@
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+>>>>>>> origin/master
 	</div>
-
+     <br>
 
 
 <?php $this->endWidget(); ?>
