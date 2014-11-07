@@ -25811,3 +25811,677 @@ Stack trace:
 REQUEST_URI=/RedVida/index.php?r=/organo
 HTTP_REFERER=http://localhost:8080/RedVida/index.php
 ---
+2014/11/07 04:17:43 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** 
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 04:17:43 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** 
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 04:17:43 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Nombre de usuario o Email: no puede ser nulo.</li>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 04:18:05 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** 
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 04:18:05 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** 
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 04:18:05 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Nombre de usuario o Email: no puede ser nulo.</li>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 04:18:19 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** 
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 04:18:19 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** 
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 04:18:19 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Nombre de usuario o Email: no puede ser nulo.</li>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 04:18:43 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** 
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 04:18:43 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** 
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 04:18:43 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Nombre de usuario o Email: no puede ser nulo.</li>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 05:08:11 [error] [php] Array to string conversion (C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\_form.php:92)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(869): DonantesController->renderFile()
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\create.php(18): DonantesController->renderPartial()
+#2 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): DonantesController->renderInternal()
+#4 C:\xampp\htdocs\xampp\yii\web\CController.php(869): DonantesController->renderFile()
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(782): DonantesController->renderPartial()
+#6 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(80): DonantesController->render()
+#7 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionCreate()
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#10 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#12 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#13 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#15 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#16 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#17 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\RedVida\index.php(13): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/create
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\_form.php (92)
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\create.php (18)
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (80)
+2014/11/07 05:10:09 [error] [php] Array to string conversion (C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\_form.php:96)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(869): DonantesController->renderFile()
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\create.php(18): DonantesController->renderPartial()
+#2 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): DonantesController->renderInternal()
+#4 C:\xampp\htdocs\xampp\yii\web\CController.php(869): DonantesController->renderFile()
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(782): DonantesController->renderPartial()
+#6 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(80): DonantesController->render()
+#7 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionCreate()
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#10 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#12 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#13 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#15 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#16 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#17 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\RedVida\index.php(13): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/create
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\_form.php (96)
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\create.php (18)
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (80)
+2014/11/07 05:50:00 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 05:50:00 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 05:50:00 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 05:53:46 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 05:53:46 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 05:53:46 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 05:53:54 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 05:53:54 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 05:53:54 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 05:53:56 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 05:53:56 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 05:53:56 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 05:54:05 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 05:54:05 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 05:54:05 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 05:54:14 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 05:54:14 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 05:54:14 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 05:54:28 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 05:54:28 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 05:54:28 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 05:54:47 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 05:54:47 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 05:54:47 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 05:55:11 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 05:55:11 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 05:55:11 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 05:55:49 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 05:55:49 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 05:55:49 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 05:56:18 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 05:56:18 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 05:56:18 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 05:56:29 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 05:56:29 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 05:56:29 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 05:56:53 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 05:56:53 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 05:56:53 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 05:57:03 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 05:57:03 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 05:57:03 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 05:57:19 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 05:57:19 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 05:57:19 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 05:57:30 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 05:57:30 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 05:57:30 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 05:57:39 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 05:57:39 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 05:57:39 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 05:58:03 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 05:58:03 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 05:58:03 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 05:59:18 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 05:59:18 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 05:59:18 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 05:59:59 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 05:59:59 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 05:59:59 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 06:00:27 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 06:00:27 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 06:00:27 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 06:00:30 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 06:00:30 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 06:00:30 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 06:01:54 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 06:01:54 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 06:01:54 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 06:03:21 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 06:03:22 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 06:03:22 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 06:04:17 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 06:04:17 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 06:04:17 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 06:06:31 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 06:06:31 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 06:06:31 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 06:06:42 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/07 06:06:42 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** adminas
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/07 06:06:42 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)

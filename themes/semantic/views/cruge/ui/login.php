@@ -1,4 +1,4 @@
-<h1>&nbsp&nbsp<?php echo CrugeTranslator::t('logon',"Login"); ?></h1>
+<center><h1>&nbsp&nbsp<?php echo CrugeTranslator::t('logon',"Login"); ?></h1></center>
 
 <?php if(Yii::app()->user->hasFlash('loginflash')): ?>
 <div class="flash-error">
@@ -20,10 +20,10 @@
     CClientScript::POS_READY
 ); ?>
 
-<div class="ui two column relaxed grid">
-  <div class="column">
+<div class="ui grid ui center aligned segment">
+  <div class="seven wide column">
     <div class="ui fluid form segment">
-      <div class="field">
+      <div class="ui left aligned segment">
     <h4>Usuario</h4>
     <div class="ui left labeled icon input">
       <?php echo $form->textField($model,'username'); ?>
@@ -37,7 +37,7 @@
       </div>
     </div>
   </div>
-       <div class="field">
+       <div class="ui left aligned segment">
     <h4>Contraseña</h4>
     <div class="ui left labeled icon input">
       <?php echo $form->passwordField($model,'password'); ?>
