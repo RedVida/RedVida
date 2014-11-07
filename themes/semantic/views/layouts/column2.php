@@ -1,11 +1,18 @@
 <?php /* @var $this Controller */ ?>
 <?php $this->beginContent('//layouts/main'); ?>
-<div class="span-19">
+
+
+
+<div class="ui grid">
+
+<div class="thirteen  wide column">
 	<div id="content">
 		<?php echo $content; ?>
 	</div><!-- content -->
 </div>
-<div class="span-5 last">
+
+
+<div class="three wide column" border="2px" border-radius="25px">
 	<div id="sidebar">
 	<?php
 		$this->beginWidget('zii.widgets.CPortlet', array(
@@ -13,10 +20,12 @@
 		));
 		$this->widget('zii.widgets.CMenu', array(
 			'items'=>$this->menu,
-			'htmlOptions'=>array('class'=>'operations'),
+			'htmlOptions'=>array('class'=>'ui link list'),
 		));
 		$this->endWidget();
 	?>
 	</div><!-- sidebar -->
 </div>
-<?php $this->endContent(); ?>
+
+</div>
+<?php $this->endContent(); 

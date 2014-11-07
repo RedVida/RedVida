@@ -36,7 +36,29 @@
 </div>
 
 
-<div class="ui blue inverted menu">
+
+<script type="text/javascript">
+// THIS SCRIPT DETECTS THE ACTIVE ELEMENT AND ADDS ACTIVE CLASS
+// VER CAMBIA PERO NO SE MANTIENE AL REDIRECCIONAR
+(function($){ 
+  $(document).ready(function(){
+    var pathname = window.location.pathname,
+      page = pathname.split(/[/ ]+/).pop(),
+      menuItems = $('#main_menu');
+    menuItems.each(function(){
+      var mi = $(this),
+        miHrefs = mi.attr("href"),
+        miParents = mi.parents('i');
+      if(page == miHrefs) {
+        miParents.addClass("active").siblings().removeClass('active');
+      }
+    });
+  });
+})(jQuery);
+</script>
+
+
+<div id="main_menu" class="ui blue inverted menu">
   <div class="menu">
 
     <a class="active red item" href="<?php echo Yii::app()->request->baseUrl; ?>">

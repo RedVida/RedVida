@@ -10,7 +10,7 @@ body {
 
 body {
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  background: #CED8F6;
+  background-image: url(../../../images/bg.jpg);
   margin-left: 100px;
   margin-right: 100px;
   margin-top: 100px;
@@ -82,7 +82,6 @@ p a {
 }
 
 .masthead.segment {
-  background-image: url(../../../images/bg.jpg);
   background-size: cover;
   margin: 0em;
   padding-top: 4rem;
@@ -193,7 +192,9 @@ p a {
 div.contenido{
 
 background: #FFFFFF;
+
 }
+
 
 @media only screen and (max-width : 1000px) {
 
