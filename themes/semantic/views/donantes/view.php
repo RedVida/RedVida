@@ -15,7 +15,6 @@ $this->menu=array(
 	array('label'=>'Manage Donantes', 'url'=>array('admin')),
 );
 ?>
-
 <h1> Donante: <?php echo $model->nombres.' '.$model->apellidos ; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
