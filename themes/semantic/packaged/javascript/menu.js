@@ -1,7 +1,7 @@
-menu = {};
 
-// ready event
-menu.ready = function() {
+
+$(document)
+  .ready(function() {
 
   // selector cache
   var
@@ -23,8 +23,8 @@ menu.ready = function() {
     .on('click', handler.activate)
   ;
 
-};
+
+  })
+;
 
 
-// attach ready event
-$(document).ready(menu.ready);

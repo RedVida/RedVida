@@ -50,8 +50,10 @@ $(document)
     $('.masthead .information')
       .transition('scale in')
     ;
-
+ 
     setInterval(changeSides, 3000);
 
   })
 ;
+
+
