@@ -101,19 +101,15 @@
 </div>
 </div>
        </div> 
+       <br>
         <?php echo $form->labelEx($model,'Centro Medico'); ?>
-       <div class="ui compact menu">
-         <div class="ui simple dropdown item">
-		<?php 
-       
-		echo $form->dropDownList($model,'id_centro_medico', 
+        <?php echo $form->dropDownList($model,'id_centro_medico', 
 		CHtml::listData(CentroMedico::model()->findAll(), 'id', 'nombre')); ?>
-	</div>
-</div>
+	<br><br>
 	<div class="row buttons">
-				<?php echo CHtml::submitButton(CrugeTranslator::t('login', "Login"),array("class"=>"ui blue submit button")); ?>
+	    <?php echo CHtml::submitButton(CrugeTranslator::t('login', "Login"),array("class"=>"ui blue submit button")); ?>
 	</div>
-
+     <br>
 
 
 <?php $this->endWidget(); ?>
