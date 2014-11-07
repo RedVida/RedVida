@@ -91,21 +91,26 @@
       <i class="circle icon"></i> Gestión de Donaciones <i class="dropdown icon"></i>
       <div class="menu">
         
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionsangre">
-          <i class="doble angle right icon"></i> Donaciones de Sangre
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionsangre/admin">
+          <i class="doble angle right icon"></i> Adm. Donaciones de Sangre
         </a>
         
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionmedula">
-          <i class="doble angle right icon"></i> Donaciones de Medula
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionmedula/admin">
+          <i class="doble angle right icon"></i> Adm. Donaciones de Medula
         </a>
 
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionorgano">
-          <i class="doble angle right icon"></i> Donaciones de Organo
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionorgano/admin">
+          <i class="doble angle right icon"></i> Adm. Donaciones de Organo
         </a>    
 
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/bancosangre">
-          <i class="doble angle right icon"></i> Banco de Sangre
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/bancosangre/admin">
+          <i class="doble angle right icon"></i> Administrar Banco de Sangre
         </a>
+
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/organo/admin">
+          <i class="doble angle right icon"></i> Administrar de Organos
+        </a>
+
         
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/donar">
           <i class="doble angle right icon"></i> Registrar Donación 
@@ -116,26 +121,77 @@
     </div>
         
 
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes">
-          <i class="circle icon"></i> Gestión de Donantes
-        </a>
+      
         
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centromedico">
-          <i class="circle icon"></i> Gestión de Centro Medicos
+
+    <div class="ui pointing dropdown link item">
+
+      <i class="circle icon"></i> Gestión de Donantes <i class="dropdown icon"></i>
+      <div class="menu">
+         
+
+
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/create">
+          <i class="doble angle right icon"></i> Registrar Donante
         </a>
 
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/organo">
-          <i class="circle icon"></i> Gestión de Organos
+
+         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/admin">
+          <i class="doble angle right icon"></i> Administrar de Donantes
         </a>
 
+
+        
+    
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/registraenfermedad">
-          <i class="circle icon"></i> Asignar Enfermedad
+          <i class="doble angle right icon"></i> Asignar Enfermedad 
         </a>
 
 
+       </div>
+       
+    </div>
+
+
+
+
+
+
+
+    <div class="ui pointing dropdown link item">
+
+      <i class="circle icon"></i> Gestión de Pacientes <i class="dropdown icon"></i>
+      <div class="menu">
+         
+
+
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/create">
+          <i class="doble angle right icon"></i> Registrar Paciente
+        </a>
+
+
+         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/admin">
+          <i class="doble angle right icon"></i> Administrar de Pacientes
+        </a>
+
+
+       </div>
+       
+    </div>
+
+
+
+
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centromedico">
+          <i class="circle icon"></i>Gestión Centros
+        </a>
 
 
   </div>
+
+
+
+
 </div>
 
  <?php }  ?>

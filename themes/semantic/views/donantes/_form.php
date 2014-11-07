@@ -93,21 +93,15 @@
 	</div>
 
         <div class="four wide field">
-        
 	       <?php echo $form->labelEx($model,'Tipo De Sangre'); ?>
-	       <?php echo $form->dropDownList($model,'tipo_sangre',CHtml::listData(BancoSangre::model()->findAll(),'tipo', 'tipo'),array('empty' => 'Selecciona Tipo Sangre', 'class'=>'ui selection dropdown')); ?>
-		
+	       <?php echo $form->dropDownList($model,'tipo_sangre',CHtml::listData(BancoSangre::model()->findAll(),'tipo', 'tipo'), array('empty' => 'Selecciona Tipo Sangre', 'class'=>'ui selection dropdown')); ?>
 		</div>
 
 
 
    <div class="four wirde field">
-      
         <?php echo $form->labelEx($model,'Centro Medico'); ?>
 		<?php echo $form->dropDownList($model,'id_centro_medico', CHtml::listData(CentroMedico::model()->findAll(),'id', 'nombre'), array('empty' => 'Selecciona Centro Medico', 'class'=>'ui selection dropdown')); ?>
-	
-
-
 	</div>
 	
    </div>   
@@ -115,7 +109,7 @@
 
 	<br><br>
 	<div class="row buttons">
-	    <?php echo CHtml::submitButton(CrugeTranslator::t('login', "Login"),array("class"=>"ui blue submit button")); ?>
+	    <?php echo CHtml::submitButton(CrugeTranslator::t('Registrar'),array("class"=>"ui blue submit button")); ?>
 	</div>
 
 
