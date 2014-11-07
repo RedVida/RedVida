@@ -27233,3 +27233,55 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/proyectotisw/index.php?r=/pacientes
 ---
+2014/11/07 10:40:51 [error] [exception.CrugeException.401] action_donantes_registraenfermedad<br/>401
+REQUEST_URI=/proyectotisw/index.php?r=/donantes/registraenfermedad
+HTTP_REFERER=http://localhost/proyectotisw/index.php?r=organo/create
+---
+2014/11/07 10:41:10 [error] [exception.CrugeException.401] action_ui_usermanagementadmin<br/>401
+REQUEST_URI=/proyectotisw/index.php?r=cruge/ui/usermanagementadmin
+HTTP_REFERER=http://localhost/proyectotisw/index.php
+---
+2014/11/07 10:41:12 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/proyectotisw/index.php?r=/donantes
+HTTP_REFERER=http://localhost/proyectotisw/index.php?r=cruge/ui/usermanagementadmin
+---
+2014/11/07 10:41:54 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/proyectotisw/index.php?r=/donantes
+HTTP_REFERER=http://localhost/proyectotisw/index.php?r=/donantes
+---
+2014/11/07 10:42:00 [error] [exception.CrugeException.401] action_donantes_registraenfermedad<br/>401
+REQUEST_URI=/proyectotisw/index.php?r=/donantes/registraenfermedad
+HTTP_REFERER=http://localhost/proyectotisw/index.php?r=/organo
+---
+2014/11/07 10:42:06 [error] [exception.CrugeException.401] action_ui_usermanagementadmin<br/>401
+REQUEST_URI=/proyectotisw/index.php?r=cruge/ui/usermanagementadmin
+HTTP_REFERER=http://localhost/proyectotisw/index.php?r=/centromedico
+---
+2014/11/07 10:42:19 [error] [exception.CrugeException.401] action_donantes_registraenfermedad<br/>401
+REQUEST_URI=/proyectotisw/index.php?r=/donantes/registraenfermedad
+HTTP_REFERER=http://localhost/proyectotisw/index.php?r=organo/create
+---
+2014/11/07 10:42:22 [error] [exception.CrugeException.401] action_donacionmedula_index<br/>401
+REQUEST_URI=/proyectotisw/index.php?r=/donacionmedula
+HTTP_REFERER=http://localhost/proyectotisw/index.php?r=/centromedico
+---
+2014/11/07 10:42:24 [error] [exception.CrugeException.401] action_donantes_donar<br/>401
+REQUEST_URI=/proyectotisw/index.php?r=/donantes/donar
+HTTP_REFERER=http://localhost/proyectotisw/index.php?r=/donacionmedula
+---
+2014/11/07 10:42:26 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/proyectotisw/index.php?r=/donantes
+HTTP_REFERER=http://localhost/proyectotisw/index.php?r=/donantes/donar
+---
+2014/11/07 10:42:42 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/proyectotisw/index.php?r=/donantes
+HTTP_REFERER=http://localhost/proyectotisw/index.php?r=/donantes
+---
+2014/11/07 10:42:47 [error] [exception.CrugeException.401] action_donantes_donar<br/>401
+REQUEST_URI=/proyectotisw/index.php?r=/donantes/donar
+HTTP_REFERER=http://localhost/proyectotisw/index.php?r=/bancosangre
+---
+2014/11/07 10:42:50 [error] [exception.CrugeException.401] action_donantes_registraenfermedad<br/>401
+REQUEST_URI=/proyectotisw/index.php?r=/donantes/registraenfermedad
+HTTP_REFERER=http://localhost/proyectotisw/index.php?r=/organo
+---
