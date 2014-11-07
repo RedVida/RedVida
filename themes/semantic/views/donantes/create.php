@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Donantes'=>array('index'),
-	'Create',
+	'Crear',
 );
 
 $this->menu=array(
@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Donantes</h1>
+<h1 class="ui huge header"> &nbsp; &nbsp; &nbsp; Registrar Donante</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
