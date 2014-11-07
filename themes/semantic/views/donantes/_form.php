@@ -17,9 +17,7 @@
 	</div>
 
 	<div class="twelve wide column">
-		
-
-
+	
 
 <div class="form">
 
@@ -36,7 +34,8 @@
     CClientScript::POS_READY
 ); ?>
         
-	<?php echo $form->errorSummary($model); ?>
+	<?php echo $form->errorSummary($model, NULL, NULL, array("class" => "ui warning message"));?>
+
 <div class="ui form">
    <div class="fields">
 	 	<div class="four wide field">
@@ -95,29 +94,17 @@
 
         <div class="four wide field">
         
-       <?php echo $form->labelEx($model,'Tipo De Sangre'); ?>
-       <br>
-       <?php echo $form->radioButtonList($model,'tipo_sangre', 
-                array('A' => 'A',
-                      'B' => 'B',
-                      'AB' => 'AB',
-                      'O' => 'O'),
-                array(
-                    'labelOptions'=> array('style' => 'display:inline'),
-                      'separator' => '',
-                      'template' => ' {label}:  {input} ',
-                      'class' => 'ui radio checkbox'
-                    )
-         );
-        ?>
+	       <?php echo $form->labelEx($model,'Tipo De Sangre'); ?>
+	       <?php echo $form->dropDownList($model,'tipo_sangre',CHtml::listData(BancoSangre::model()->findAll(),'tipo', 'tipo'),array('empty' => 'Selecciona Tipo Sangre')); ?>
+		
 		</div>
 
 
-   <div>
-       <br>
+
+   <div class="four wirde field">
+      
         <?php echo $form->labelEx($model,'Centro Medico'); ?>
-        <?php echo $form->dropDownList($model,'id_centro_medico', 
-		CHtml::listData(CentroMedico::model()->findAll(), 'id', 'nombre')); ?>
+		<?php echo $form->dropDownList($model,'id_centro_medico',CHtml::listData(CentroMedico::model()->findAll(),'id', 'nombre'),array('empty' => 'Selecciona Centro Medico')); ?>
 	</div>
 	
    </div>   

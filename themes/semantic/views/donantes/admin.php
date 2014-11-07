@@ -46,7 +46,6 @@ or <b>=</b>) en el comienzo de cada busqueda.
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
 		'nombres',
 		'apellidos',
 		'rut',
@@ -54,9 +53,8 @@ or <b>=</b>) en el comienzo de cada busqueda.
 		'email',
 		'direccion',
 		'num_contacto',
-		'id_centro_medico',
 		array(
 			'class'=>'CButtonColumn',
 		),
-	),
+	)
 )); ?>

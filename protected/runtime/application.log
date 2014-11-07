@@ -26064,6 +26064,7 @@ CrugeUser->validate es false
 </ul></div>
 in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
 in C:\xampp\htdocs\RedVida\index.php (13)
+<<<<<<< HEAD
 2014/11/07 08:24:09 [error] [application] UiController
 CrugeUser->validate es false
 <div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
@@ -26237,3 +26238,1112 @@ CrugeUser->validate es false
 </ul></div>
 in C:\wamp\www\proyectotisw\protected\modules\cruge\controllers\UiController.php (158)
 in C:\wamp\www\proyectotisw\index.php (13)
+=======
+2014/11/07 07:52:37 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 07:52:50 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 07:54:05 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 07:54:16 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 07:54:44 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 07:59:15 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 07:59:32 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 07:59:44 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:00:59 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:01:15 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:02:52 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:03:03 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:03:12 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:05:34 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:05:46 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:06:23 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:06:32 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:06:55 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:07:10 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:07:32 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:10:11 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:10:24 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:11:06 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:11:26 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:11:37 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:11:45 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:12:01 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:12:25 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:12:49 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:13:26 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:13:44 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:14:01 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:14:15 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:15:07 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:15:22 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:15:35 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:15:49 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:16:06 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:16:19 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:16:39 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:16:48 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:17:28 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:17:46 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:18:11 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:18:21 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:18:35 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:18:43 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:18:52 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:19:08 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:19:23 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:20:57 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:21:06 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:22:03 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:22:24 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:22:38 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:22:50 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:23:03 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:23:12 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:23:20 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:23:57 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:24:06 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:24:17 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:24:55 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:25:09 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:25:24 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:25:36 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:26:05 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:26:59 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:27:08 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:28:03 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:28:13 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:28:46 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:29:07 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:30:11 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:30:36 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:31:00 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:31:33 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:31:41 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:31:59 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:32:39 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:32:57 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:33:23 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:33:32 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:33:44 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:34:22 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:34:33 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:34:58 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:36:27 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:36:41 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:37:32 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:37:41 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:38:04 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:38:52 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:39:05 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:39:19 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:39:42 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:40:04 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:40:14 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:40:23 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:40:48 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:41:00 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:41:08 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:41:15 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:41:34 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:42:22 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (158)
+in C:\xampp\htdocs\RedVida\index.php (13)
+2014/11/07 08:51:22 [error] [php] include(ui table segment.php): failed to open stream: No such file or directory (C:\xampp\htdocs\yii-1.1.15\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\YiiBase.php(196): import()
+#1 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(388): createComponent()
+#2 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(359): CGridView->initColumns()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(147): CGridView->init()
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(172): DonantesController->createWidget()
+#5 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\admin.php(63): DonantesController->widget()
+#6 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require()
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): DonantesController->renderInternal()
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): DonantesController->renderFile()
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): DonantesController->renderPartial()
+#10 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(187): DonantesController->render()
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): DonantesController->actionAdmin()
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#14 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): DonantesController->runActionWithFilters()
+#19 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): DonantesController->run()
+#20 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#21 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\RedVida\index.php(13): CWebApplication->run()
+REQUEST_URI=/redvida/index.php?r=donantes/admin
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\admin.php (63)
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (187)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+2014/11/07 09:17:30 [error] [exception.CException] exception 'CException' with message 'La propiedad "CGridView"."0" no se encuentra definida.' in C:\xampp\htdocs\xampp\yii\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWidgetFactory.php(161): CComponent->__set('0', Array)
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(DonantesController), 'zii.widgets.gri...', Array)
+#2 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\admin.php(60): CBaseController->widget('zii.widgets.gri...', Array)
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(187): CController->render('admin', Array)
+#9 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionAdmin()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('admin')
+#18 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/admin')
+#19 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/admin
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes
+---
+2014/11/07 09:30:42 [error] [php] Array to string conversion (C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php:2019)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): DonantesController->renderInternal()
+#2 C:\xampp\htdocs\xampp\yii\web\CController.php(869): DonantesController->renderFile()
+#3 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\create.php(18): DonantesController->renderPartial()
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require()
+#5 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): DonantesController->renderInternal()
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(869): DonantesController->renderFile()
+#7 C:\xampp\htdocs\xampp\yii\web\CController.php(782): DonantesController->renderPartial()
+#8 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(80): DonantesController->render()
+#9 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionCreate()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams()
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#14 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#18 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#19 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(13): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/create
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\_form.php (37)
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\create.php (18)
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (80)
+2014/11/07 09:31:05 [error] [php] Array to string conversion (C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\_form.php:37)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(869): DonantesController->renderFile()
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\create.php(18): DonantesController->renderPartial()
+#2 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): DonantesController->renderInternal()
+#4 C:\xampp\htdocs\xampp\yii\web\CController.php(869): DonantesController->renderFile()
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(782): DonantesController->renderPartial()
+#6 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(80): DonantesController->render()
+#7 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionCreate()
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#10 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#12 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#13 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#15 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#16 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#17 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\RedVida\index.php(13): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/create
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\_form.php (37)
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\create.php (18)
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (80)
+2014/11/07 09:31:44 [error] [php] Array to string conversion (C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php:2019)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): DonantesController->renderInternal()
+#2 C:\xampp\htdocs\xampp\yii\web\CController.php(869): DonantesController->renderFile()
+#3 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\create.php(18): DonantesController->renderPartial()
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require()
+#5 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): DonantesController->renderInternal()
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(869): DonantesController->renderFile()
+#7 C:\xampp\htdocs\xampp\yii\web\CController.php(782): DonantesController->renderPartial()
+#8 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(80): DonantesController->render()
+#9 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionCreate()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams()
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#14 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#18 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#19 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(13): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/create
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\_form.php (37)
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\create.php (18)
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (80)
+2014/11/07 09:33:11 [error] [php] Array to string conversion (C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php:2019)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): DonantesController->renderInternal()
+#2 C:\xampp\htdocs\xampp\yii\web\CController.php(869): DonantesController->renderFile()
+#3 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\create.php(18): DonantesController->renderPartial()
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require()
+#5 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): DonantesController->renderInternal()
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(869): DonantesController->renderFile()
+#7 C:\xampp\htdocs\xampp\yii\web\CController.php(782): DonantesController->renderPartial()
+#8 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(80): DonantesController->render()
+#9 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionCreate()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams()
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#14 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#18 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#19 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(13): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/create
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\_form.php (37)
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\create.php (18)
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (80)
+>>>>>>> c0582d356ecfc48fb8376290b901292c6c3ff020
