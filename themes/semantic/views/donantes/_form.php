@@ -11,6 +11,13 @@
     
 </script>
 
+<div class="ui grid">
+	<div class="one wide column">
+		
+	</div>
+
+	<div class="twelve wide column">
+		
 
 
 
@@ -120,6 +127,12 @@
 	<div class="row buttons">
 	    <?php echo CHtml::submitButton(CrugeTranslator::t('login', "Login"),array("class"=>"ui blue submit button")); ?>
 	</div>
+
+
+	</div>
+
+</div>
+
 
 
 
