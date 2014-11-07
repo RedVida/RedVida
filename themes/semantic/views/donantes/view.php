@@ -8,15 +8,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Donantes', 'url'=>array('index')),
-	array('label'=>'Create Donantes', 'url'=>array('create')),
-	array('label'=>'Update Donantes', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Donantes', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Donantes', 'url'=>array('admin')),
+	array('label'=>'Lista Donantes', 'url'=>array('index')),
+	array('label'=>'Registrar Donantes', 'url'=>array('create')),
+	array('label'=>'Actualizar Donantes', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Borrar Donantes', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar Donantes', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Donantes #<?php echo $model->id; ?></h1>
+<h1>Donantes #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
