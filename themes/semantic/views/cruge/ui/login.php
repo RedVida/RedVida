@@ -1,4 +1,3 @@
-<center><h1>&nbsp&nbsp<?php echo CrugeTranslator::t('logon',"Login"); ?></h1></center>
 
 <?php if(Yii::app()->user->hasFlash('loginflash')): ?>
 <div class="flash-error">
@@ -14,13 +13,27 @@
 	),
 )); ?>
 
+<style>
+#posicionlogin {
+    margin: 41%;
+    display:inline;
+}
+#posicionlabel{
+    margin: 53.5%;
+    display:inline;
+}
+</style>
+
 <?php Yii::app()->clientScript->registerScript(
     'myHideEffect',
     '$(".errors").animate({opacity: 1.0}, 5000).fadeOut("slow");',
     CClientScript::POS_READY
 ); ?>
-
-<div class="ui grid ui center aligned segment">
+<diV class="ui huge header"id="posicionlabel">
+	Iniciar Sesión
+</div>
+<p>
+<div class="ui grid ui center aligned segment" id="posicionlogin">
   <div class="seven wide column">
     <div class="ui fluid form segment">
       <div class="ui left aligned segment">
