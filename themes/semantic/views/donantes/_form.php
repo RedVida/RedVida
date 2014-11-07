@@ -86,7 +86,7 @@
         <div class="four wide field">
 			<?php echo $form->labelEx($model,'direccion'); ?>
 			<?php echo $form->textField($model,'direccion',array('size'=>30,'maxlength'=>128)); ?>
-			<div class="errors">
+			<div class="errors right">
 			<?php echo $form->error($model,'direccion',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>
 		</div>
@@ -110,9 +110,9 @@
    </div>   
 
 
-	<br><br>
+	<br>
 	<div class="row buttons">
-	    <?php echo CHtml::submitButton(CrugeTranslator::t('login', "Login"),array("class"=>"ui blue submit button")); ?>
+	    <?php echo CHtml::submitButton(CrugeTranslator::t('login', "Registrar"),array("class"=>"ui blue submit button")); ?>
 	</div>
 
 

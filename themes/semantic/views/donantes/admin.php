@@ -35,9 +35,9 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 </p>
 
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
+<div class="search-form " style="display:none">
 <?php $this->renderPartial('_search',array(
-	'model'=>$model,
+	'model'=>$model
 )); ?>
 </div><!-- search-form -->
 
