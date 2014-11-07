@@ -9,13 +9,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Donantes', 'url'=>array('index')),
-	array('label'=>'Create Donantes', 'url'=>array('create')),
-	array('label'=>'View Donantes', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Donantes', 'url'=>array('admin')),
+	array('label'=>'Listar Donantes', 'url'=>array('index')),
+	array('label'=>'Registrar Donantes', 'url'=>array('create')),
+	array('label'=>'Ver Donantes', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar Donantes', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Donantes <?php echo $model->id; ?></h1>
+<h1>Actualizar Donantes <?php echo $model->id; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

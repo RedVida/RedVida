@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Donante', 'url'=>array('index')),
-	array('label'=>'Create Donante', 'url'=>array('create')),
+	array('label'=>'Listar Donante', 'url'=>array('index')),
+	array('label'=>'Registrar Donante', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "

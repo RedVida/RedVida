@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Donantes', 'url'=>array('create')),
-	array('label'=>'Manage Donantes', 'url'=>array('admin')),
+	array('label'=>'Registrar Donantes', 'url'=>array('create')),
+	array('label'=>'Administrar Donantes', 'url'=>array('admin')),
 );
 ?>
 
