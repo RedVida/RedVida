@@ -23,14 +23,7 @@
 
 
 </head>
-
-
-
-
 <body id="home">
-
-
-
 <div class="ui center aligned segment">
 <img  src="<?php echo Yii::app()->request->baseUrl; ?>/images/clinica3.jpg"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/text.png">
 </div>
@@ -136,12 +129,6 @@
 
 </div>
 
-
-
-
-  <div class="ui inverted blue page grid segment">
-
-  </div>
 
 </body>
 
