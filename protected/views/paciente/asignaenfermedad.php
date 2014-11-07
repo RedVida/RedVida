@@ -6,7 +6,7 @@
 
 <div class="form">
 
-<h2>Asigne enfermedad</h2>
+<h2>Asignar enfermedad</h2>
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'tiene-enfermedad-asignaenfermedad-form',

@@ -87,6 +87,8 @@ if(!Yii::app()->user->isGuest){ ?>
                         array('label'=>'Gestión de Organos', 'url'=>array('/organo')),
                         array('label'=>'Donar', 'url'=>array('/donantes/donar')),
                         array('label'=>'Centro Medico', 'url'=>array('/centromedico')),
+                        array('label'=>'Enfermedad', 'url'=>array('/enfermedades')),
+                        array('label'=>'Paciente', 'url'=>array('/paciente')),
     			),
 				'htmlOptions' => array('class'=>'nav nav-tabs')
 		)); ?>

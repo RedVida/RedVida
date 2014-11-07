@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Donantes', 'url'=>array('index')),
-	array('label'=>'Create Donantes', 'url'=>array('create')),
+	array('label'=>'Lista Donantes', 'url'=>array('index')),
+	array('label'=>'Registrar Donantes', 'url'=>array('create')),
 	array('label'=>'Asignar Enfermedad', 'url'=>array('registraenfermedad')),
 );
 
@@ -27,11 +27,11 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Donantes</h1>
+<h1>Administrar Donante</h1>
 
 <p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
+Quizás quieras ingresar un operador (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
+or <b>=</b>) en el comienzo de cada busqueda.
 </p>
 
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
