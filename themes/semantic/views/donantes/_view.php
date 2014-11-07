@@ -5,7 +5,11 @@
 
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('nombres')); ?>:</b>
+<div class="ui celled list">
+  <div class="item">
+    <img class="ui avatar image" src="images/ubb.ico">
+    <div class="content">
+      <b><?php echo CHtml::encode($data->getAttributeLabel('nombres')); ?>:</b>
 	<?php echo CHtml::encode($data->nombres); ?>
 	<br />
 
@@ -40,8 +44,9 @@
     $enfermedad=TieneEnfermedad::model()->find('id='.$data->id);
 
     ?>
-
-
+    </div>
+  </div>
+</div>
 	<br />
 
 	<?php /*
