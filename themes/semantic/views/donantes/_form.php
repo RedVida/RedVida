@@ -10,13 +10,18 @@
     })
     
 </script>
+
+
+
+
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'donantes-form',
-
 	'enableAjaxValidation'=>false,
 )); ?>
+
+
 
 <?php Yii::app()->clientScript->registerScript(
     'myHideEffect',
@@ -27,7 +32,7 @@
 	<?php echo $form->errorSummary($model); ?>
 <div class="ui form">
    <div class="fields">
-	 	<div class="fields four wide field">
+	 	<div class="four wide field">
 			<?php echo $form->labelEx($model,'nombres'); ?>
 			<?php echo $form->textField($model,'nombres',array('size'=>30,'maxlength'=>128)); ?>
 			<div class="errors">
@@ -80,7 +85,7 @@
 			</div>
 		</div>
 	</div>
-</div>   
+
         <div class="four wide field">
         
        <?php echo $form->labelEx($model,'Tipo De Sangre'); ?>
@@ -98,13 +103,19 @@
                     )
          );
         ?>
-</div>
-</div>
-       </div> 
+		</div>
+
+
+   <div>
        <br>
         <?php echo $form->labelEx($model,'Centro Medico'); ?>
         <?php echo $form->dropDownList($model,'id_centro_medico', 
 		CHtml::listData(CentroMedico::model()->findAll(), 'id', 'nombre')); ?>
+	</div>
+	
+   </div>   
+
+
 	<br><br>
 	<div class="row buttons">
 	    <?php echo CHtml::submitButton(CrugeTranslator::t('login', "Login"),array("class"=>"ui blue submit button")); ?>

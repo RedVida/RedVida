@@ -7,7 +7,7 @@
 
 <div class="ui celled list">
   <div class="item">
-    <img class="ui avatar image" src="images/ubb.ico">
+    <i class="user large icon"></i> 
     <div class="content">
       <b><?php echo CHtml::encode($data->getAttributeLabel('nombres')); ?>:</b>
 	<?php echo CHtml::encode($data->nombres); ?>
