@@ -104,5 +104,6 @@ $('.search-form form').submit(function(){
 
 		*/
 	),
+	'htmlOptions'=>array('class'=>'ui table segment'),
 
 )); ?>
