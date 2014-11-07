@@ -25631,3 +25631,143 @@ REQUEST_URI=/redvida/index.php?r=/donantes/donar
 in C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\donar.php (79)
 in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (171)
 in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+2014/11/07 02:53:08 [error] [exception.CException] exception 'CException' with message 'La columna debe especificarse en el formato "Nombre:Tipo:Etiqueta", donde "Tipo" y "Etiqueta" son opcionales.' in C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php:412
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(383): CGridView->createDataColumn('ui table segmen...')
+#1 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(359): CGridView->initColumns()
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(147): CGridView->init()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\donar.php(71): CBaseController->widget('zii.widgets.gri...', Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('donar', Array, true)
+#9 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(171): CController->render('donar', Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): DonantesController->actionDonar()
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('donar')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('/donantes/donar')
+#20 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\RedVida\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/redvida/index.php?r=/donantes/donar
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=donacionSangre/create&id=4
+---
+2014/11/07 02:53:09 [error] [exception.CException] exception 'CException' with message 'La columna debe especificarse en el formato "Nombre:Tipo:Etiqueta", donde "Tipo" y "Etiqueta" son opcionales.' in C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php:412
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(383): CGridView->createDataColumn('ui table segmen...')
+#1 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(359): CGridView->initColumns()
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(147): CGridView->init()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\donar.php(71): CBaseController->widget('zii.widgets.gri...', Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('donar', Array, true)
+#9 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(171): CController->render('donar', Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): DonantesController->actionDonar()
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('donar')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('/donantes/donar')
+#20 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\RedVida\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/redvida/index.php?r=/donantes/donar
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=donacionSangre/create&id=4
+---
+2014/11/07 02:53:27 [error] [exception.CException] exception 'CException' with message 'La columna debe especificarse en el formato "Nombre:Tipo:Etiqueta", donde "Tipo" y "Etiqueta" son opcionales.' in C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php:412
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(383): CGridView->createDataColumn('ui table segmen...')
+#1 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(359): CGridView->initColumns()
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(147): CGridView->init()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\donar.php(71): CBaseController->widget('zii.widgets.gri...', Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('donar', Array, true)
+#9 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(171): CController->render('donar', Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): DonantesController->actionDonar()
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('donar')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('/donantes/donar')
+#20 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\RedVida\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/redvida/index.php?r=/donantes/donar
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=donacionSangre/create&id=4
+---
+2014/11/07 02:53:28 [error] [exception.CException] exception 'CException' with message 'La columna debe especificarse en el formato "Nombre:Tipo:Etiqueta", donde "Tipo" y "Etiqueta" son opcionales.' in C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php:412
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(383): CGridView->createDataColumn('ui table segmen...')
+#1 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(359): CGridView->initColumns()
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(147): CGridView->init()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\donar.php(71): CBaseController->widget('zii.widgets.gri...', Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('donar', Array, true)
+#9 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(171): CController->render('donar', Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): DonantesController->actionDonar()
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('donar')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('/donantes/donar')
+#20 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\RedVida\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/redvida/index.php?r=/donantes/donar
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=donacionSangre/create&id=4
+---
+2014/11/07 02:53:29 [error] [exception.CException] exception 'CException' with message 'La columna debe especificarse en el formato "Nombre:Tipo:Etiqueta", donde "Tipo" y "Etiqueta" son opcionales.' in C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php:412
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(383): CGridView->createDataColumn('ui table segmen...')
+#1 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(359): CGridView->initColumns()
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(147): CGridView->init()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\donar.php(71): CBaseController->widget('zii.widgets.gri...', Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('donar', Array, true)
+#9 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(171): CController->render('donar', Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): DonantesController->actionDonar()
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('donar')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('/donantes/donar')
+#20 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\RedVida\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/redvida/index.php?r=/donantes/donar
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=donacionSangre/create&id=4
+---

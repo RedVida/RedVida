@@ -66,45 +66,11 @@ $('.search-form form').submit(function(){
 	
 
 	),
+  'htmlOptions' => array(
+                    'class' => 'ui table segment'
+  ),
 
 )); 
 
 
 ?>
-
-
-
-
-
-<table class="ui table segment">
-  <thead>
-    <tr><th>ALO</th>
-    <th>Status</th>
-    <th>Notes</th>
-  </tr></thead>
-  <tbody>
-    <tr>
-      <td>John</td>
-      <td>Approved</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>Jamie</td>
-      <td>Approved</td>
-      <td>Requires call</td>
-    </tr>
-    <tr>
-      <td>Jill</td>
-      <td>Denied</td>
-      <td>None</td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr><th colspan="3">
-      <div class="ui blue labeled icon button"><i class="user icon"></i> Add User</div>
-      <div class="ui blue labeled icon button"><i class="user icon"></i> Add User</div>
-      <div class="ui blue labeled icon button"><i class="user icon"></i> Add User</div>
-    </th>
-  </tr></tfoot>
-</table>
-
