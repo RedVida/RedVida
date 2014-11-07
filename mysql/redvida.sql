@@ -404,11 +404,46 @@ CREATE TABLE IF NOT EXISTS `donacion`
 
 
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `paciente`
+--
+
+CREATE TABLE IF NOT EXISTS `paciente` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombrePaciente` varchar(20) NOT NULL,
+  `apellidoPaciente` varchar(20) NOT NULL,
+  `rutPaciente` varchar(12) NOT NULL,
+  `afiliacionPaciente` varchar(20) DEFAULT NULL,
+  `enfermedadPaciente` varchar(255) DEFAULT NULL,
+  `gradoUrgenciaPaciente` varchar(20) DEFAULT NULL,
+  `necesidadTrasplantePaciente` varchar(20) DEFAULT NULL,
+  `centroMedicoPaciente` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`),
+  KEY `id_2` (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 
 
+CREATE TABLE IF NOT EXISTS `enfermedad_paciente` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fecha` date DEFAULT NULL,
+  `id_paciente` int(11) DEFAULT NULL,
+  `id_enfermedad` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_paciente` (`id_paciente`),
+  KEY `id_enfermedad` (`id_enfermedad`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 
+
+CREATE TABLE IF NOT EXISTS `organo` (
+  `idOrgano` int(11) NOT NULL AUTO_INCREMENT,
+  `nombreOrgano` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`idOrgano`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 
 --
@@ -448,3 +483,15 @@ ALTER TABLE `tiene_enfermedad`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+INSERT INTO `organo` (`idOrgano`, `nombreOrgano`) VALUES
+(1, 'Corazon'),
+(2, 'Pulmon'),
+(3, 'Higado'),
+(4, 'Riñon'),
+(5, 'Pancreas'),
+(6, 'Corneas'),
+(7, 'Valvulas Cardiacas'),
+(8, 'Hueso'),
+(9, 'Piel');
