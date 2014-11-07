@@ -77,7 +77,7 @@
 		<?php 
         echo $form->labelEx($model,'Centro Medico');
 		echo $form->dropDownList($model,'id_centro_medico', 
-		CHtml::listData(CentroMedico::model()->findAll(), 'id', 'nombre')); ?>
+		CHtml::listData(CentroMedico::model()->findAll(), 'id', 'id')); ?>
 	</div>
 
 	<div class="row buttons">

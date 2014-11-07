@@ -33,10 +33,8 @@
 	<?php echo CHtml::encode($data->direccion); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('centro_medico')); ?>:</b>
-	<?php 
-    $centro_medico=CentroMedico::model()->find('id='.$data->id_centro_medico);
-	echo $centro_medico->nombre; ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('id_centro_medico')); ?>:</b>
+	<?php echo CHtml::encode($data->id_centro_medico); ?>
 	<br />
 
 	<b><?php echo 'Enfermedades'; ?>:</b>

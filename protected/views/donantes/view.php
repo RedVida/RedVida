@@ -29,6 +29,6 @@ $this->menu=array(
 		'email',
 		'direccion',
 		'num_contacto',
-		'centro_medico',
+		'id_centro_medico',
 	),
 )); ?>
