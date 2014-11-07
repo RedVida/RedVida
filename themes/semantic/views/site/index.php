@@ -72,23 +72,23 @@
       <div class="column">
         <div class="ui text shape">
           <div class="sides">
+            <div class="side">
+              <i class="huge circular github icon"></i>
+            </div>
             <div class="side active">
               <i class="huge circular facebook icon"></i>
             </div>
             <div class="side">
-              <i class="huge circular tumblr icon"></i>
+              <i class="huge circular maxcdn icon"></i>
             </div>
             <div class="side">
-              <i class="huge circular twitter icon"></i>
+              <i class="huge circular pinterest icon"></i>
             </div>
             <div class="side">
-              <i class="huge circular instagram icon"></i>
+              <i class="huge circular weibo icon"></i>
             </div>
             <div class="side">
               <i class="huge circular flickr icon"></i>
-            </div>
-            <div class="side">
-              <i class="huge circular google plus icon"></i>
             </div>
           </div>
         </div>
@@ -97,22 +97,22 @@
         <div class="ui text shape">
           <div class="sides">
             <div class="side">
-              <i class="huge circular twitter icon"></i>
-            </div>
-            <div class="side">
-              <i class="huge circular tumblr icon"></i>
+              <i class="huge circular github icon"></i>
             </div>
             <div class="side">
               <i class="huge circular facebook icon"></i>
             </div>
             <div class="side">
-              <i class="huge circular instagram icon"></i>
+              <i class="huge circular maxcdn icon"></i>
+            </div>
+            <div class="side active">
+              <i class="huge circular pinterest icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular weibo icon"></i>
             </div>
             <div class="side">
               <i class="huge circular flickr icon"></i>
-            </div>
-            <div class="side">
-              <i class="huge circular google plus icon"></i>
             </div>
           </div>
         </div>
@@ -121,22 +121,22 @@
         <div class="ui text shape">
           <div class="sides">
             <div class="side">
-              <i class="huge circular tumblr icon"></i>
+              <i class="huge circular github icon"></i>
             </div>
             <div class="side">
               <i class="huge circular facebook icon"></i>
             </div>
             <div class="side">
-              <i class="huge circular twitter icon"></i>
+              <i class="huge circular maxcdn icon"></i>
             </div>
             <div class="side">
-              <i class="huge circular instagram icon"></i>
+              <i class="huge circular pinterest icon"></i>
             </div>
             <div class="side">
+              <i class="huge circular weibo icon"></i>
+            </div>
+            <div class="side active">
               <i class="huge circular flickr icon"></i>
-            </div>
-            <div class="side">
-              <i class="huge circular google plus icon"></i>
             </div>
           </div>
         </div>
@@ -145,22 +145,22 @@
         <div class="ui text shape">
           <div class="sides">
             <div class="side active">
-              <i class="huge circular google plus icon"></i>
-            </div>
-            <div class="side">
-              <i class="huge circular tumblr icon"></i>
-            </div>
-            <div class="side">
-              <i class="huge circular twitter icon"></i>
-            </div>
-            <div class="side">
-              <i class="huge circular instagram icon"></i>
-            </div>
-            <div class="side">
-              <i class="huge circular flickr icon"></i>
+              <i class="huge circular github icon"></i>
             </div>
             <div class="side">
               <i class="huge circular facebook icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular maxcdn icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular pinterest icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular weibo icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular flickr icon"></i>
             </div>
           </div>
         </div>
