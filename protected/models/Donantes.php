@@ -96,7 +96,7 @@ class Donantes extends CActiveRecord
                              'max' => 50,
                              'tooLong' => 'maximo 50 caracteres'),
                     array('tipo_sangre','required','message' => 'El Tipo de Sangre debe ser requerida'),
-                    array('id_centro_medico','required','message' => 'El Nombre es requerido'),
+                    array('id_centro_medico','required','message' => 'Se requiere ingresar un Centro Medico'),
           );
 	}
 

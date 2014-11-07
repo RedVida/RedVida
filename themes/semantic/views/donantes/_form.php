@@ -17,9 +17,7 @@
 	</div>
 
 	<div class="twelve wide column">
-		
-
-
+	
 
 <div class="form">
 
@@ -36,7 +34,8 @@
     CClientScript::POS_READY
 ); ?>
         
-	<?php echo $form->errorSummary($model); ?>
+	<?php echo $form->errorSummary($model, NULL, NULL, array("class" => "ui warning message"));?>
+
 <div class="ui form">
    <div class="fields">
 	 	<div class="four wide field">

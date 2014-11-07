@@ -46,7 +46,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
 		'nombres',
 		'apellidos',
 		'rut',
@@ -54,10 +53,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'email',
 		'direccion',
 		'num_contacto',
-		'id_centro_medico',
 		array(
 			'class'=>'CButtonColumn',
 		),
-	),
-	'htmlOptions'=>array('class'=>'ui table segment'),	
+	)
 )); ?>
