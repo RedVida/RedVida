@@ -28,9 +28,8 @@
     <div class="ui left labeled icon input">
       <?php echo $form->textField($model,'username'); ?>
       <i class="user icon"></i>
-      <p>
       <div class="errors">	
-	  <?php echo $form->error($model,'username',array('class' => 'ui small red label')); ?> 
+	  <?php echo $form->error($model,'username',array('class' => 'ui small red pointing above ui label')); ?> 
       </div>
       <div class="ui corner label">
         <i class="icon asterisk"></i>
@@ -42,9 +41,8 @@
     <div class="ui left labeled icon input">
       <?php echo $form->passwordField($model,'password'); ?>
       <i class="lock icon"></i>
-      <p>
      <div class="errors">	 	
-     <?php echo $form->error($model,'password',array('class' => 'ui small red label')); ?> 
+     <?php echo $form->error($model,'password',array('class' => 'ui small red pointing above ui label')); ?> 
       </div>
       <div class="ui corner label">
         <i class="icon asterisk"></i>
