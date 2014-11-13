@@ -1,7 +1,3 @@
-<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/carousel.css">
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/carousel.js"></script>
-
- 
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
   <!-- Wrapper for slides -->

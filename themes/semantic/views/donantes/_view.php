@@ -39,21 +39,24 @@
 	echo $centro_medico->nombre; ?>
 	<br />
 
-	<b><?php echo 'Enfermedades'; ?>:</b>
+	<b><?php echo 'Enfermedad(es)'; ?>:</b>
+    </br>
+ 
 	<?php 
-    $enfermedad=TieneEnfermedad::model()->find('id='.$data->id);
-
+    $Criteria = new CDbCriteria();
+    $Criteria->condition = "id_donante = $data->id"; 
+    $enfermedad= TieneEnfermedad::model()->findAll($Criteria);
+    foreach ($enfermedad as $valor) 
+    	{
+		    $enfer=Enfermedades::model()->find('id='.$valor->id_enfermedad);
+		    ?><i class="angle right icon"></i><?php
+		    echo " ".CHtml::link($enfer->nombre,'index.php?r=enfermedades/view&id='.$enfer->id);
+		    ?></br><?php
+    	}     
     ?>
     </div>
-  </div>
-</div>
+  	</div>
+	</div>
 	<br />
-
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('num_contacto')); ?>:</b>
-	<?php echo CHtml::encode($data->num_contacto); ?>
-	<br />
-
-	*/ ?>
 
 </div>

@@ -11,12 +11,14 @@
 
   <!-- Site Properities -->
   <title><?php echo CHtml::encode($this->pageTitle); ?></title>
+  <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/carousel.css">
   <link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/ubb.ico">
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/semantic.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/views/layouts/main.css">   
-
+  
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+  <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/carousel.js"></script>
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/semantic.min.js"></script>  
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/views/layouts/main.js"></script>
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/menu.js"></script>
@@ -33,7 +35,6 @@
 <script type="text/javascript">
 // THIS SCRIPT DETECTS THE ACTIVE ELEMENT AND ADDS ACTIVE CLASS
 // VER CAMBIA PERO NO SE MANTIENE AL REDIRECCIONAR
-(function($){ 
   $(document).ready(function(){
     var pathname = window.location.pathname,
       page = pathname.split(/[/ ]+/).pop(),
@@ -47,11 +48,11 @@
       }
     });
   });
-})(jQuery);
+
 </script>
 
 
-<div id="main_menu" class="ui blue inverted menu">
+<div id="main_menu" class="ui blue inverted menu ">
   <div class="menu">
 
     <a class="active red item" href="<?php echo Yii::app()->request->baseUrl; ?>">

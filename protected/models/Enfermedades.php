@@ -98,4 +98,5 @@ class Enfermedades extends CActiveRecord
 	public static function getEnfermedades(){
  		return CHtml::listData(Enfermedades::model()->findAll(),'id','nombre');
  	}
+
 }

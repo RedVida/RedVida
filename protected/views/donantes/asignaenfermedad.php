@@ -1,8 +1,4 @@
-<?php
-/* @var $this TieneEnfermedadController */
-/* @var $model TieneEnfermedad */
-/* @var $form CActiveForm */
-?>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/typeahead.js" type="text/javascript"></script> 
 
 <div class="form">
 
@@ -25,6 +21,8 @@
 		<?php echo $form->dropDownList($model,'id', $model->getEnfermedades()); ?>
 		<?php echo $form->error($model,'id'); ?>
 	</div>
+
+
 
 
 	<div class="row buttons">
