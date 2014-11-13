@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Lista Pacientes', 'url'=>array('index')),
-	array('label'=>'Registrar Pacientes', 'url'=>array('create')),
+	array('label'=>'Lista Paciente', 'url'=>array('index')),
+	array('label'=>'Registrar Paciente', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Administrar paciente</h1>
+<h1>Administrar Paciente</h1>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -45,17 +45,15 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		//'id',
-		'nombrePaciente',
-		'apellidoPaciente',
-		'rutPaciente',
-		'afiliacionPaciente',
-		'enfermedadPaciente',
-		'tipo_sangre',
+		'nombre',
+		'apellido',
+		'rut',
+		'afiliacion',
+		'grado_urgencia',
 		/*
-		'gradoUrgenciaPaciente',
-		'necesidadTrasplantePaciente',
-		'centroMedicoPaciente',
+		'necesidad_transplante',
+		'tipo_sangre',
+		'id_centro_medico',
 		*/
 		array(
 			'class'=>'CButtonColumn',
@@ -67,6 +65,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 			'Registrar' => array( //botón para la acción nueva
 		    'label'=>'Registrar Enfermedad', // titulo del enlace del botón nuevo
 		    'url'=>'Yii::app()->createUrl("/paciente/registrarenfermedad&id=$data->id")', //url de la acción nueva
-		),
+		))),
 	),
-)))); ?>
+)); ?>

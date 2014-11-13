@@ -410,20 +410,7 @@ CREATE TABLE IF NOT EXISTS `donacion`
 -- Estructura de tabla para la tabla `paciente`
 --
 
-CREATE TABLE IF NOT EXISTS `paciente` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombrePaciente` varchar(20) NOT NULL,
-  `apellidoPaciente` varchar(20) NOT NULL,
-  `rutPaciente` varchar(12) NOT NULL,
-  `afiliacionPaciente` varchar(20) DEFAULT NULL,
-  `enfermedadPaciente` varchar(255) DEFAULT NULL,
-  `gradoUrgenciaPaciente` varchar(20) DEFAULT NULL,
-  `necesidadTrasplantePaciente` varchar(20) DEFAULT NULL,
-  `centroMedicoPaciente` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id` (`id`),
-  KEY `id_2` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
 
 
 
@@ -472,6 +459,8 @@ ALTER TABLE `cruge_fieldvalue`
 --
 ALTER TABLE `donantes`
   ADD CONSTRAINT `fk_centro_medico_1` FOREIGN KEY (`id_centro_medico`) REFERENCES `centro_medico` (`id`);
+
+
 
 --
 -- Filtros para la tabla `tiene_enfermedad`

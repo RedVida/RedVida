@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Lista Pacientes', 'url'=>array('index')),
-	array('label'=>'Administrar Paciente', 'url'=>array('admin')),
+	array('label'=>'List Paciente', 'url'=>array('index')),
+	array('label'=>'Manage Paciente', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Registrar Paciente</h1>
+<h1>Create Paciente</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

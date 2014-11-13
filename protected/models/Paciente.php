@@ -5,19 +5,17 @@
  *
  * The followings are the available columns in table 'paciente':
  * @property integer $id
- * @property string $nombrePaciente
- * @property string $apellidoPaciente
- * @property string $rutPaciente
+ * @property string $nombre
+ * @property string $apellido
+ * @property string $rut
+ * @property string $afiliacion
+ * @property string $grado_urgencia
+ * @property string $necesidad_transplante
  * @property string $tipo_sangre
  * @property integer $id_centro_medico
- * @property string $afiliacionPaciente
- * @property string $enfermedadPaciente
- * @property string $gradoUrgenciaPaciente
- * @property string $necesidadTrasplantePaciente
- * @property string $centroMedicoPaciente
  *
  * The followings are the available model relations:
- * @property EnfermedadPaciente[] $enfermedadPacientes
+ * @property CentroMedico $idCentroMedico
  */
 class Paciente extends CActiveRecord
 {
@@ -37,15 +35,13 @@ class Paciente extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombrePaciente, apellidoPaciente, rutPaciente, tipo_sangre, id_centro_medico', 'required'),
 			array('id_centro_medico', 'numerical', 'integerOnly'=>true),
-			array('nombrePaciente, apellidoPaciente, afiliacionPaciente, gradoUrgenciaPaciente, necesidadTrasplantePaciente', 'length', 'max'=>20),
-			array('rutPaciente', 'length', 'max'=>12),
-			array('tipo_sangre', 'length', 'max'=>4),
-			array('enfermedadPaciente, centroMedicoPaciente', 'length', 'max'=>255),
+			array('nombre, apellido, afiliacion, grado_urgencia, necesidad_transplante', 'length', 'max'=>20),
+			array('rut', 'length', 'max'=>12),
+			array('tipo_sangre', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombrePaciente, apellidoPaciente, rutPaciente, tipo_sangre, id_centro_medico, afiliacionPaciente, enfermedadPaciente, gradoUrgenciaPaciente, necesidadTrasplantePaciente, centroMedicoPaciente', 'safe', 'on'=>'search'),
+			array('id, nombre, apellido, rut, afiliacion, grado_urgencia, necesidad_transplante, tipo_sangre, id_centro_medico', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -57,7 +53,7 @@ class Paciente extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'enfermedadPacientes' => array(self::HAS_MANY, 'EnfermedadPaciente', 'id_paciente'),
+			'idCentroMedico' => array(self::BELONGS_TO, 'CentroMedico', 'id_centro_medico'),
 		);
 	}
 
@@ -68,16 +64,14 @@ class Paciente extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'nombrePaciente' => 'Nombre Paciente',
-			'apellidoPaciente' => 'Apellido Paciente',
-			'rutPaciente' => 'Rut Paciente',
+			'nombre' => 'Nombre',
+			'apellido' => 'Apellido',
+			'rut' => 'Rut',
+			'afiliacion' => 'Afiliacion',
+			'grado_urgencia' => 'Grado Urgencia',
+			'necesidad_transplante' => 'Necesidad Transplante',
 			'tipo_sangre' => 'Tipo Sangre',
 			'id_centro_medico' => 'Id Centro Medico',
-			'afiliacionPaciente' => 'Afiliacion Paciente',
-			'enfermedadPaciente' => 'Enfermedad Paciente',
-			'gradoUrgenciaPaciente' => 'Grado Urgencia Paciente',
-			'necesidadTrasplantePaciente' => 'Necesidad Trasplante Paciente',
-			'centroMedicoPaciente' => 'Centro Medico Paciente',
 		);
 	}
 
@@ -100,16 +94,14 @@ class Paciente extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('nombrePaciente',$this->nombrePaciente,true);
-		$criteria->compare('apellidoPaciente',$this->apellidoPaciente,true);
-		$criteria->compare('rutPaciente',$this->rutPaciente,true);
+		$criteria->compare('nombre',$this->nombre,true);
+		$criteria->compare('apellido',$this->apellido,true);
+		$criteria->compare('rut',$this->rut,true);
+		$criteria->compare('afiliacion',$this->afiliacion,true);
+		$criteria->compare('grado_urgencia',$this->grado_urgencia,true);
+		$criteria->compare('necesidad_transplante',$this->necesidad_transplante,true);
 		$criteria->compare('tipo_sangre',$this->tipo_sangre,true);
 		$criteria->compare('id_centro_medico',$this->id_centro_medico);
-		$criteria->compare('afiliacionPaciente',$this->afiliacionPaciente,true);
-		$criteria->compare('enfermedadPaciente',$this->enfermedadPaciente,true);
-		$criteria->compare('gradoUrgenciaPaciente',$this->gradoUrgenciaPaciente,true);
-		$criteria->compare('necesidadTrasplantePaciente',$this->necesidadTrasplantePaciente,true);
-		$criteria->compare('centroMedicoPaciente',$this->centroMedicoPaciente,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
