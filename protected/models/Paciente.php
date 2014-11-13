@@ -8,11 +8,16 @@
  * @property string $nombrePaciente
  * @property string $apellidoPaciente
  * @property string $rutPaciente
+ * @property string $tipo_sangre
+ * @property integer $id_centro_medico
  * @property string $afiliacionPaciente
  * @property string $enfermedadPaciente
  * @property string $gradoUrgenciaPaciente
  * @property string $necesidadTrasplantePaciente
  * @property string $centroMedicoPaciente
+ *
+ * The followings are the available model relations:
+ * @property EnfermedadPaciente[] $enfermedadPacientes
  */
 class Paciente extends CActiveRecord
 {
@@ -32,13 +37,15 @@ class Paciente extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombrePaciente, apellidoPaciente, rutPaciente', 'required'),
+			array('nombrePaciente, apellidoPaciente, rutPaciente, tipo_sangre, id_centro_medico', 'required'),
+			array('id_centro_medico', 'numerical', 'integerOnly'=>true),
 			array('nombrePaciente, apellidoPaciente, afiliacionPaciente, gradoUrgenciaPaciente, necesidadTrasplantePaciente', 'length', 'max'=>20),
 			array('rutPaciente', 'length', 'max'=>12),
+			array('tipo_sangre', 'length', 'max'=>4),
 			array('enfermedadPaciente, centroMedicoPaciente', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombrePaciente, apellidoPaciente, rutPaciente, afiliacionPaciente, enfermedadPaciente, gradoUrgenciaPaciente, necesidadTrasplantePaciente, centroMedicoPaciente', 'safe', 'on'=>'search'),
+			array('id, nombrePaciente, apellidoPaciente, rutPaciente, tipo_sangre, id_centro_medico, afiliacionPaciente, enfermedadPaciente, gradoUrgenciaPaciente, necesidadTrasplantePaciente, centroMedicoPaciente', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -50,6 +57,7 @@ class Paciente extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'enfermedadPacientes' => array(self::HAS_MANY, 'EnfermedadPaciente', 'id_paciente'),
 		);
 	}
 
@@ -63,6 +71,8 @@ class Paciente extends CActiveRecord
 			'nombrePaciente' => 'Nombre Paciente',
 			'apellidoPaciente' => 'Apellido Paciente',
 			'rutPaciente' => 'Rut Paciente',
+			'tipo_sangre' => 'Tipo Sangre',
+			'id_centro_medico' => 'Id Centro Medico',
 			'afiliacionPaciente' => 'Afiliacion Paciente',
 			'enfermedadPaciente' => 'Enfermedad Paciente',
 			'gradoUrgenciaPaciente' => 'Grado Urgencia Paciente',
@@ -93,6 +103,8 @@ class Paciente extends CActiveRecord
 		$criteria->compare('nombrePaciente',$this->nombrePaciente,true);
 		$criteria->compare('apellidoPaciente',$this->apellidoPaciente,true);
 		$criteria->compare('rutPaciente',$this->rutPaciente,true);
+		$criteria->compare('tipo_sangre',$this->tipo_sangre,true);
+		$criteria->compare('id_centro_medico',$this->id_centro_medico);
 		$criteria->compare('afiliacionPaciente',$this->afiliacionPaciente,true);
 		$criteria->compare('enfermedadPaciente',$this->enfermedadPaciente,true);
 		$criteria->compare('gradoUrgenciaPaciente',$this->gradoUrgenciaPaciente,true);
