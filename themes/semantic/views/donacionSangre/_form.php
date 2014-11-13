@@ -65,7 +65,7 @@
 		<?php echo $form->textField($model,'rut_donante', array('value'=>$rut, 'readonly'=>$val, 'id'=>'rut', 'maxLength'=>12)); ?>
 		<div class="errors">
 			<?php echo $form->error($model,'rut_donante',array('class' => 'ui small red pointing above ui label')); ?>
-		|</div>
+		</div>
 		</div>
 	</div>
 
@@ -75,7 +75,7 @@
         <?php echo $form->dropDownList($model,'tipo_sangre',CHtml::listData(BancoSangre::model()->findAll(),'tipo', 'tipo'), array('empty' => 'Selecciona Tipo Sangre', 'class'=>'ui selection dropdown')); ?>
 		<div class="errors">
 			<?php echo $form->error($model,'tipo_sangre',array('class' => 'ui small red pointing above ui label')); ?>
-		|</div>
+		</div>
 		</div>
 	</div>
 
@@ -85,7 +85,7 @@
 		<?php echo $form->numberField($model,'cantidad', array('integerOnly'=>true,'min'=>1,'max'=>100, 'value'=>0, 'allowNegative'=>false, 'allowBlank'=>false)); ?>
 		<div class="errors">
 			<?php echo $form->error($model,'cantidad',array('class' => 'ui small red pointing above ui label')); ?>
-		|</div>
+		</div>
 		</div>
 	</div>
 </div>

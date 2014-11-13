@@ -10,6 +10,21 @@
     })
     
 </script>
+
+
+
+
+<div class="ui grid">
+	<div class="one wide column">
+		
+	</div>
+
+	<div class="twelve wide column">
+
+
+
+
+
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -20,6 +35,15 @@
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
 )); ?>
+
+<?php Yii::app()->clientScript->registerScript(
+    'myHideEffect',
+    '$(".errors").animate({opacity: 1.0}, 5000).fadeOut("slow");',
+    CClientScript::POS_READY
+); ?>
+        
+	<?php echo $form->errorSummary($model, NULL, NULL, array("class" => "ui warning message"));?>
+
 
 
 
@@ -38,22 +62,33 @@
 
 	?>
 
-	<?php echo $form->errorSummary($model); ?>
+	
 
-	<div class="row">
+
+<div class="ui form">
+    <div class="fields">
+	 	<div class="four wide field">
 		<?php echo $form->labelEx($model,'rut_donante'); ?>
 		<?php echo $form->textField($model,'rut_donante', array('value'=>$rut, 'readonly'=>$val, 'id'=>'rut', 'maxLength'=>12)); ?>
-		<?php echo $form->error($model,'rut_donante'); ?>
+		<div class="errors">
+			<?php echo $form->error($model,'rut_donante',array('class' => 'ui small red pointing above ui label')); ?>
+		</div>
+		</div>
 	</div>
 
-	<div class="row">
+ 	<div class="fields">
+	 	<div class="four wide field">
 		<?php echo $form->labelEx($model,'nombre'); ?>
-		<?php echo $form->dropDownList($model,'nombre',CHtml::listData(Organo::model()->findAll(),'nombreOrgano', 'nombreOrgano'),array('empty' => 'Selecciona Organo')); ?>
-		<?php echo $form->error($model,'nombre'); ?>
+        <?php echo $form->dropDownList($model,'nombre',CHtml::listData(Organo::model()->findAll(),'nombreOrgano', 'nombreOrgano'), array('empty' => 'Selecciona Tipo Organo', 'class'=>'ui selection dropdown')); ?>
+		<div class="errors">
+			<?php echo $form->error($model,'nombre',array('class' => 'ui small red pointing above ui label')); ?>
+		</div>
+		</div>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'estado'); ?>
+	 <div class="fields">
+	 	<div class="four wide field">
+			<?php echo $form->labelEx($model,'estado'); ?>
 		<?php echo $form->radioButtonList($model,'estado',
                 array('1' => 'Bueno',
                 	'0' => 'Malo'),
@@ -63,13 +98,20 @@
                       'template' => ' {label}:  {input} ',
                     )
          );	?>
-		<?php echo $form->error($model,'estado'); ?>
+         <div class="errors">
+			<?php echo $form->error($model,'estado',array('class' => 'ui small red pointing above ui label')); ?>
+		</div>
+		</div>
 	</div>
+</div>
 
+
+	<br><br>
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+	    <?php echo CHtml::submitButton(CrugeTranslator::t("Registrar"),array("class"=>"ui blue submit button")); ?>
 	</div>
 
+</div>
 <?php $this->endWidget(); ?>
-
+</div><!-- grid -->
 </div><!-- form -->

@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create DonacionSangre</h1>
+<h1 class="ui huge header"> &nbsp; &nbsp; &nbsp; Registrar Donación de Sangre</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
