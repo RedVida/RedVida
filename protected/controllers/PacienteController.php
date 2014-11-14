@@ -97,6 +97,14 @@ class PacienteController extends Controller
 		$this->render('asignaenfermedad',array('model'=>$model));
 	}
 
+	public function actionUrgenciasnacionales(){
+		$organo = Organo::model()->findAll(array('select'=>'nombreOrgano'));
+		$dataProvider=new CActiveDataProvider('Paciente');
+		$this->render('urgenciasnacionales',array(
+			'dataProvider'=>$dataProvider,'organo'=>$organo)
+		);
+	}
+
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.

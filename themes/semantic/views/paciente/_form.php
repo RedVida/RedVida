@@ -69,7 +69,7 @@
 
 	<div class="four wide field">
 	       <?php echo $form->labelEx($model,'Afiliacion Paciente'); ?>
-	       <?php echo $form->dropDownList($model,'afiliacion', array('Fonasa'=>'Fonasa','Fsapre'=>'Isapre'),array('empty' => 'Selecciona Afiliacion', 'class'=>'ui selection dropdown')); ?>
+	       <?php echo $form->dropDownList($model,'afiliacion', array('Fonasa'=>'Fonasa','Isapre'=>'Isapre'),array('empty' => 'Selecciona Afiliacion', 'class'=>'ui selection dropdown')); ?>
 	</div>
 
 	<div class="four wide field">

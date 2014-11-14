@@ -18,6 +18,7 @@ $this->menu=array(
 <h1>Paciente: <?php echo $model->nombre." ".$model->apellido; ?></h1>
 <?php 
     $centro_medico=CentroMedico::model()->find('id='.$model->id_centro_medico);
+    $organo=Organo::model()->find('idOrgano='.$model->necesidad_transplante);
 ?>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -25,12 +26,15 @@ $this->menu=array(
 		'rut',
 		'afiliacion',
 		'grado_urgencia',
-		'necesidad_transplante',
+		array(
+			'label'=>'Necesidad Transplante',
+			'type'=>'raw',
+			'value'=>$organo->nombreOrgano,
+		),
 		'tipo_sangre',
 		array(
 			'label'=>'Centro Medico',
 			'type'=>'raw',
-			//'value'=>$centro_medico->nombre,
 			'value'=>CHtml::link(CHtml::encode($centro_medico->nombre),
                                  array('centromedico/view','id'=>$centro_medico->id)),
 		),

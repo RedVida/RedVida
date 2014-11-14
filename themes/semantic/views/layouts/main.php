@@ -178,6 +178,10 @@
           <i class="doble angle right icon"></i> Administrar de Pacientes
         </a>
 
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/urgenciasnacionales">
+          <i class="doble angle right icon"></i> Urgencias Nacionales
+        </a>
+
 
        </div>
        
