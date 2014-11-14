@@ -53,10 +53,33 @@ class AlergiasController extends Controller
 		));
 	}
 
-	/**
-	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'view' page.
-	 */
+	public function actionAlergiaList()
+    {
+        $criterio = new CDbCriteria;
+        $cdtns = array();
+        $resultado = array();
+        
+        if(empty($_GET['term'])) return $resultado;
+        
+        $cdtns[] = "LOWER(nombre) like LOWER(:busq)";
+
+        
+        $criterio->condition = implode(' OR ', $cdtns);
+        $criterio->params = array(':busq' => '%' . $_GET['term'] . '%');
+        $criterio->limit = 10;
+        
+        $data = Alergias::model()->findAll($criterio);
+        
+        foreach($data as $item) {  
+            $resultado[] = array (
+                'nombre'    => $item->nombre,
+
+            );
+        }
+        
+        echo CJSON::encode($resultado);
+    }
+
 	public function actionCreate()
 	{
 		$model=new Alergias;

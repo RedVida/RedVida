@@ -1,20 +1,26 @@
 <?php
 
 /**
- * This is the model class for table "alergias".
+ * This is the model class for table "tiene_enfermedad".
  *
- * The followings are the available columns in table 'alergias':
+ * The followings are the available columns in table 'tiene_enfermedad':
  * @property integer $id
- * @property string $nombres
+ * @property string $fecha
+ * @property integer $id_donante
+ * @property integer $id_enfermedad
+ *
+ * The followings are the available model relations:
+ * @property Enfermedades $idEnfermedad
+ * @property Donantes $idDonante
  */
-class Alergias extends CActiveRecord
+class TieneAlergia extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'alergias';
+		return 'tiene_alergia';
 	}
 
 	/**
@@ -25,10 +31,11 @@ class Alergias extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombre', 'length', 'max'=>128),
+			array('id_donante, id_alergia', 'numerical', 'integerOnly'=>true),
+			array('fecha', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre', 'safe', 'on'=>'search'),
+			array('id, fecha, id_donante, id_alergia', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -40,7 +47,8 @@ class Alergias extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'tieneAlergia' => array(self::HAS_MANY, 'TieneAlergia', 'id_alergia'),
+			'idAlergia' => array(self::BELONGS_TO, 'Alergias', 'id_alergia'),
+			'idDonante' => array(self::BELONGS_TO, 'Donantes', 'id_donante'),
 		);
 	}
 
@@ -51,7 +59,9 @@ class Alergias extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'nombres' => 'Nombres',
+			'fecha' => 'Fecha',
+			'id_donante' => 'Id Donante',
+			'id_alergia' => 'Id Alergia',
 		);
 	}
 
@@ -74,7 +84,9 @@ class Alergias extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('nombre',$this->nombres,true);
+		$criteria->compare('fecha',$this->fecha,true);
+		$criteria->compare('id_donante',$this->id_donante);
+		$criteria->compare('id_alergia',$this->id_alergia);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -85,10 +97,23 @@ class Alergias extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Alergias the static model class
+	 * @return TieneEnfermedad the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
+
+
+
+/*
+	public function validateEnfermedad_Unique($attribute, $params) {
+			$Criteria = new CDbCriteria();
+    		$Criteria->condition = "id_donante = $this->id_donante"; 
+    		$alergias= TieneAlergia::model()->findAll($Criteria);
+            if(!$alergias){
+			$this->addError('id_donante', 'Enfermedad ya registrada.');
+        }
+    }
+    */
 }

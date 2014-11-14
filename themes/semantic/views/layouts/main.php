@@ -150,6 +150,10 @@
           <i class="doble angle right icon"></i> Asignar Enfermedad 
         </a>
 
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/registra_alergia">
+          <i class="doble angle right icon"></i> Asignar Alergia 
+        </a>
+
 
        </div>
        

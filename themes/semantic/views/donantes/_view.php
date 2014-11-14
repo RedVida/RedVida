@@ -12,7 +12,7 @@
       <b><?php echo CHtml::encode($data->getAttributeLabel('nombres')); ?>:</b>
 	<?php echo CHtml::encode($data->nombres); ?>
 	<br />
-
+  
 	<b><?php echo CHtml::encode($data->getAttributeLabel('apellidos')); ?>:</b>
 	<?php echo CHtml::encode($data->apellidos); ?>
 	<br />
@@ -39,13 +39,17 @@
 	echo $centro_medico->nombre; ?>
 	<br />
 
-	<b><?php echo 'Enfermedad(es)'; ?>:</b>
-    </br>
- 
-	<?php 
+    <!-- Enfermedades-->
+
+	<b><?php 
     $Criteria = new CDbCriteria();
     $Criteria->condition = "id_donante = $data->id"; 
     $enfermedad= TieneEnfermedad::model()->findAll($Criteria);
+    if($enfermedad){ echo 'Enfermedad(es):';}
+    else{ echo 'Enfermedad(es): No presenta';} ?></b>
+    </br>
+ 
+	<?php 
     foreach ($enfermedad as $valor) 
     	{
 		    $enfer=Enfermedades::model()->find('id='.$valor->id_enfermedad);
@@ -54,9 +58,33 @@
 		    ?></br><?php
     	}     
     ?>
+    <!-- Alergias-->
+    <?php if(isset($_GET['pdf'])){?>
+    <br> <?php } ?>
+    <b><?php 
+    $Criteria = new CDbCriteria();
+    $Criteria->condition = "id_donante = $data->id"; 
+    $alergias= TieneAlergia::model()->findAll($Criteria);
+    if($alergias){ echo 'Alergia(s):';}
+    else{ echo 'Alergia(s): No presenta';} ?></b>
+    </br>
+ 
+	<?php 
+    foreach ($alergias as $valor) 
+    	{
+		    $alergia=Alergias::model()->find('id='.$valor->id_alergia);
+		    ?><i class="angle right icon"></i><?php
+		    echo " ".CHtml::link($alergia->nombre,'index.php?r=alergias/view&id='.$alergia->id);
+		    ?></br><?php
+    	}     
+    ?>
+
+    <?php if(isset($_GET['pdf'])){?>
+    <hr> <?php } ?>
+    
     </div>
   	</div>
 	</div>
-	<br />
+	<br>
 
 </div>
