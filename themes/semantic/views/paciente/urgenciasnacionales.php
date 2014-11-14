@@ -1,4 +1,7 @@
-<h1>Urgencias Nacionales</h1>
+
+<body>
+<h1 class="ui huge header add icon"> &nbsp; &nbsp; &nbsp; Urgencias Nacionales</h1>
+<hr class="style-two ">
 
 <div>
 <table class="ui table segment">
@@ -29,3 +32,5 @@ foreach($dataProvider->getData() as $datos) {
 </table>
 
 </div>
+
+</body>

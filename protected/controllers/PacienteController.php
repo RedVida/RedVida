@@ -148,6 +148,7 @@ class PacienteController extends Controller
 	 */
 	public function actionIndex()
 	{
+		$organo = Organo::model()->findAll(array('select'=>'nombreOrgano'));
 		$dataProvider=new CActiveDataProvider('Paciente');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,

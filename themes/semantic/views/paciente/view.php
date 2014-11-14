@@ -15,7 +15,8 @@ $this->menu=array(
 );
 ?>
 
-<h1>Paciente: <?php echo $model->nombre." ".$model->apellido; ?></h1>
+<h1 class="ui huge header add icon"> &nbsp; &nbsp; &nbsp; Paciente: <?php echo $model->nombre." ".$model->apellido; ?></h1>
+<hr class="style-two ">
 <?php 
     $centro_medico=CentroMedico::model()->find('id='.$model->id_centro_medico);
     $organo=Organo::model()->find('idOrgano='.$model->necesidad_transplante);
