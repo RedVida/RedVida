@@ -78,7 +78,7 @@ $('.search-form form').submit(function(){
 					'class'=>'CButtonColumn',
 				),
 			),
-			//'htmlOptions' => array('class' => 'ui table responsive'),
+			'htmlOptions' => array('class' => 'ui table responsive'),
 		)); ?>
 </div>
 </div>

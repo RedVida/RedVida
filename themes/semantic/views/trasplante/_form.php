@@ -24,6 +24,8 @@
 	<?php echo $form->errorSummary($model, NULL, NULL, array("class" => "ui warning message"));?>
 
 	<?php
+	$id='';
+	$rut='';
 	$val=false;
 	if(isset($_GET['id']))
 	{
@@ -31,12 +33,42 @@
 	$model_donante = Paciente::model()->find("id=$id");
 	$rut= $model_donante['rut'];
 	$val=true;
+
+
+	?>
+
+	<h2 class="ui header"> Paciente: <?php echo $model_donante['nombre'].' '.$model_donante['apellido']; ?></h2>
+	<hr class="style-two ">
+
+
+
+
+
+	<?php
+
+
+
 	}
 
 	?>
 
 
 <div class="ui form">
+
+
+
+
+
+
+<div class="fields">
+	 	<div class="four wide field">
+			<?php echo $form->labelEx($model,'Rut Paciente'); ?>
+			<?php echo $form->textField($model,'id_paciente', array('value'=>$rut, 'disabled'=>true, 'id'=>'rut', 'maxLength'=>12)); ?>
+			<div class="errors">
+			<?php echo $form->error($model,'id_paciente',array('class' => 'ui small red pointing above ui label')); ?>
+			</div>
+		</div>
+	</div>
 
 
  <div class="fields">
@@ -60,17 +92,7 @@
 		</div>
 	</div>
 
- <div class="fields">
-	 	<div class="four wide field">
-			<?php echo $form->labelEx($model,'Rut Paciente'); ?>
-			<?php echo $form->textField($model,'id_paciente', array('value'=>$rut, 'disabled'=>true, 'id'=>'rut', 'maxLength'=>12)); ?>
-			<div class="errors">
-			<?php echo $form->error($model,'id_paciente',array('class' => 'ui small red pointing above ui label')); ?>
-			</div>
-		</div>
-	</div>
-
-
+    
 
   
 
@@ -84,13 +106,27 @@
 		</div>
 	</div>
 
+<script type="text/javascript">
+function validate()
+{
+ var ddl = document.getElementById("tipo_donacion");
+ var selectedValue = ddl.options[ddl.selectedIndex].value;
+    if (selectedValue == "selectcard")
+   {
+    alert("Please select a card type");
+   }
+}
+</script>
 
+<?php
 
+?>
 
+<!--DONACION 1-->
    <div class="fields">
 	 	<div class="four wide field">
 			<?php echo $form->labelEx($model,'id_donacion'); ?>
-			<?php echo $form->textField($model,'id_donacion',array('size'=>60,'maxlength'=>255)); ?>
+        	<?php echo $form->dropDownList($model,'id_donacion',CHtml::listData(BancoSangre::model()->findAll(),'tipo', 'tipo'), array('empty' => 'Selecciona Tipo Sangre', 'class'=>'ui selection dropdown')); ?>
 			<div class="errors">
 			<?php echo $form->error($model,'id_donacion',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>
@@ -98,10 +134,36 @@
 	</div>
 
 
+<!--DONACION 2-->
+	 <div class="fields">
+	 	<div class="four wide field">
+			<?php echo $form->labelEx($model,'id_donacion'); ?>
+			<?php echo $form->dropDownList($model,'id_donacion',array('Osea'=>'Osea'),array('empty'=>'Seleccione Tipo de Medula','class'=>'ui selection dropdown')); ?>
+			<div class="errors">
+			<?php echo $form->error($model,'id_donacion',array('class' => 'ui small red pointing above ui label')); ?>
+			</div>
+		</div>
+	</div>
+
+
+<!--DONACION 3-->
+
+	 <div class="fields">
+	 	<div class="four wide field">
+			<?php echo $form->labelEx($model,'id_donacion'); ?>
+        	<?php echo $form->dropDownList($model,'id_donacion',CHtml::listData(Organo::model()->findAll(),'nombreOrgano', 'nombreOrgano'), array('empty' => 'Selecciona Tipo Organo', 'class'=>'ui selection dropdown')); ?>
+			<div class="errors">
+			<?php echo $form->error($model,'id_donacion',array('class' => 'ui small red pointing above ui label')); ?>
+			</div>
+		</div>
+	</div>
+
+
+
     <div class="fields">
 	 	<div class="four wide field">
 			<?php echo $form->labelEx($model,'compatibilidad'); ?>
-			<?php echo $form->textField($model,'compatibilidad',array('size'=>60,'maxlength'=>255)); ?>
+			<?php echo $form->dropDownList($model,'compatibilidad',array('Compatible'=>'Compatible','No Compatible'=>'No Compatible'), array('empty'=>'Seleccione Compatibilidad','class'=>'ui selection dropdown')); ?>
 			<div class="errors">
 			<?php echo $form->error($model,'compatibilidad',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>
@@ -111,17 +173,18 @@
    <div class="fields">
 	 	<div class="four wide field">
 			<?php echo $form->labelEx($model,'detalle'); ?>
-			<?php echo $form->textField($model,'detalle',array('rows'=>6,'cols'=>50)); ?>
+			<?php echo $form->textArea($model,'detalle',array('rows'=>60,'cols'=>70,'style'=>'resize:none')); ?>
 			<div class="errors">
 			<?php echo $form->error($model,'detalle',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>
 		</div>
 	</div>
 
-	<div class="fields">
+
+    <div class="fields">
 	 	<div class="four wide field">
 			<?php echo $form->labelEx($model,'grado_urgencia'); ?>
-			<?php echo $form->textField($model,'grado_urgencia',array('size'=>60,'maxlength'=>255)); ?>
+			<?php echo $form->dropDownList($model,'grado_urgencia',array('Bajo'=>'Bajo','Medio'=>'Medio','ALto'=>'Alto'), array('empty'=>'Seleccione Grado de Urgencia','class'=>'ui selection dropdown')); ?>
 			<div class="errors">
 			<?php echo $form->error($model,'grado_urgencia',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>
@@ -131,7 +194,7 @@
    <div class="fields">
 	 	<div class="four wide field">
 			<?php echo $form->labelEx($model,'centro_medico'); ?>
-			<?php echo $form->textField($model,'centro_medico',array('size'=>60,'maxlength'=>255)); ?>
+			<?php echo $form->dropDownList($model,'centro_medico', CHtml::listData(CentroMedico::model()->findAll(),'nombre', 'nombre'), array('empty' => 'Selecciona Centro Medico', 'class'=>'ui selection dropdown')); ?>
 			<div class="errors">
 			<?php echo $form->error($model,'centro_medico',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>

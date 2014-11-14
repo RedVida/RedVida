@@ -38,7 +38,7 @@ $this->menu=array(
 				'created',
 				'modified',
 			),
-			'htmlOptions'=>array('class'=>'ui celled blue table segment'),
+			'htmlOptions'=>array('class'=>'ui celled table segment'),
 
 
 		)); ?>
