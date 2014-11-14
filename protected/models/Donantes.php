@@ -109,7 +109,8 @@ class Donantes extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'idCentroMedico' => array(self::BELONGS_TO, 'CentroMedico', 'id_centro_medico'),
-			'tieneEnfermedads' => array(self::HAS_MANY, 'TieneEnfermedad', 'id_donante'),
+			'tieneEnfermedad' => array(self::HAS_MANY, 'TieneEnfermedad', 'id_donante'),
+			'tieneAlergia' => array(self::HAS_MANY, 'TieneAlergia', 'id_donante'),
 		);
 	}
 

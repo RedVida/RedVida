@@ -7,10 +7,10 @@
 <script type="text/javascript">
 
 	$(function(){
-        $('#busquedaEnfermedad').autocomplete({
+        $('#busquedaAlergia').autocomplete({
        		 source : function( request, response ) {
        		 $.ajax({
-                    url: '<?php echo $this->createUrl('Enfermedades/EnfermedadList'); ?>',
+                    url: '<?php echo $this->createUrl('Alergias/AlergiaList'); ?>',
                     dataType: "json",
                     data: { term: request.term },
                     success: function(data) {
@@ -28,11 +28,11 @@
 </script>
  <?php $donante=Donantes::model()->find('id='.$_GET["id"]);?>
 
-<h2 class="ui header">Registrar enfermedad - <?php echo $donante->nombres." ".$donante->apellidos?> </h2>
+<h2 class="ui header">Registrar Alergias - <?php echo $donante->nombres." ".$donante->apellidos?> </h2>
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'tiene-enfermedad-asignaenfermedad-form',
+	'id'=>'tiene-Alergia-asigna_alergia-form',
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// See class documentation of CActiveForm for details on this,
@@ -46,7 +46,7 @@
  	<div class="fields">
 	 	<div class="four wide field">
 			<?php echo $form->labelEx($model,'nombre:'); ?>
-			<?php echo $form->textField($model,'nombre',array('id'=>'busquedaEnfermedad','placeholder'=>'Ingrese la enfermedad a buscar...')); ?>
+			<?php echo $form->textField($model,'nombre',array('id'=>'busquedaAlergia','placeholder'=>'Ingrese la enfermedad a buscar...')); ?>
 			<?php echo $form->hiddenField($model,'id'); ?>
 			<div class="errors">
 			<?php echo $form->error($model,'nombre',array('class' => 'ui small red pointing above ui label')); ?>
