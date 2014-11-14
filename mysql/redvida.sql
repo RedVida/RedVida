@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.12
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-10-2014 a las 03:41:12
--- Versión del servidor: 5.6.16
--- Versión de PHP: 5.5.11
+-- Tiempo de generación: 14-11-2014 a las 01:58:48
+-- Versión del servidor: 5.6.17
+-- Versión de PHP: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -35,6 +35,33 @@ CREATE TABLE IF NOT EXISTS `alergias` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `banco_sangre`
+--
+
+CREATE TABLE IF NOT EXISTS `banco_sangre` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tipo` varchar(3) DEFAULT NULL,
+  `cantidad` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Volcado de datos para la tabla `banco_sangre`
+--
+
+INSERT INTO `banco_sangre` (`id`, `tipo`, `cantidad`) VALUES
+(1, 'O-', 0),
+(2, 'O+', 0),
+(3, 'A-', 0),
+(4, 'A+', 0),
+(5, 'B-', 0),
+(6, 'B+', 0),
+(7, 'AB-', 0),
+(8, 'AB+', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `centro_medico`
 --
 
@@ -47,7 +74,14 @@ CREATE TABLE IF NOT EXISTS `centro_medico` (
   `especialidad` varchar(128) COLLATE utf8_bin DEFAULT NULL,
   `gubernamental` varchar(128) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `centro_medico`
+--
+
+INSERT INTO `centro_medico` (`id`, `nombre`, `direccion`, `contacto`, `director`, `especialidad`, `gubernamental`) VALUES
+(2, 'Hospital de hospitales', 'su direccion', 65985421, 'El loco de siempre', 'la misma de siempre', 'si');
 
 -- --------------------------------------------------------
 
@@ -92,11 +126,52 @@ CREATE TABLE IF NOT EXISTS `cruge_authitem` (
 --
 
 INSERT INTO `cruge_authitem` (`name`, `type`, `description`, `bizrule`, `data`) VALUES
+('action_alergias_admin', 0, '', NULL, 'N;'),
+('action_alergias_create', 0, '', NULL, 'N;'),
+('action_alergias_delete', 0, '', NULL, 'N;'),
+('action_alergias_index', 0, '', NULL, 'N;'),
+('action_alergias_update', 0, '', NULL, 'N;'),
+('action_alergias_view', 0, '', NULL, 'N;'),
+('action_bancosangre_admin', 0, '', NULL, 'N;'),
+('action_bancosangre_create', 0, '', NULL, 'N;'),
+('action_bancosangre_delete', 0, '', NULL, 'N;'),
+('action_bancosangre_index', 0, '', NULL, 'N;'),
+('action_bancosangre_update', 0, '', NULL, 'N;'),
+('action_bancosangre_view', 0, '', NULL, 'N;'),
+('action_centromedico_admin', 0, '', NULL, 'N;'),
+('action_centromedico_create', 0, '', NULL, 'N;'),
+('action_centromedico_delete', 0, '', NULL, 'N;'),
+('action_centromedico_index', 0, '', NULL, 'N;'),
+('action_centromedico_update', 0, '', NULL, 'N;'),
+('action_centromedico_view', 0, '', NULL, 'N;'),
 ('action_donaciones_index', 0, '', NULL, 'N;'),
+('action_donacionmedula_admin', 0, '', NULL, 'N;'),
+('action_donacionmedula_create', 0, '', NULL, 'N;'),
+('action_donacionmedula_delete', 0, '', NULL, 'N;'),
+('action_donacionmedula_index', 0, '', NULL, 'N;'),
+('action_donacionmedula_update', 0, '', NULL, 'N;'),
+('action_donacionmedula_view', 0, '', NULL, 'N;'),
+('action_donacionorgano_admin', 0, '', NULL, 'N;'),
+('action_donacionOrgano_create', 0, '', NULL, 'N;'),
+('action_donacionorgano_delete', 0, '', NULL, 'N;'),
+('action_donacionorgano_index', 0, '', NULL, 'N;'),
+('action_donacionorgano_update', 0, '', NULL, 'N;'),
+('action_donacionorgano_view', 0, '', NULL, 'N;'),
+('action_donacionsangre_admin', 0, '', NULL, 'N;'),
+('action_donacionsangre_create', 0, '', NULL, 'N;'),
+('action_donacionsangre_delete', 0, '', NULL, 'N;'),
+('action_donacionsangre_index', 0, '', NULL, 'N;'),
+('action_donacionsangre_mostrar', 0, '', NULL, 'N;'),
+('action_donacionsangre_update', 0, '', NULL, 'N;'),
+('action_donacionsangre_view', 0, '', NULL, 'N;'),
 ('action_donantes_admin', 0, '', NULL, 'N;'),
 ('action_donantes_create', 0, '', NULL, 'N;'),
 ('action_donantes_delete', 0, '', NULL, 'N;'),
+('action_donantes_donar', 0, '', NULL, 'N;'),
 ('action_donantes_index', 0, '', NULL, 'N;'),
+('action_donantes_registraenfermedad', 0, '', NULL, 'N;'),
+('action_donantes_registrarenfermedad', 0, '', NULL, 'N;'),
+('action_donantes_update', 0, '', NULL, 'N;'),
 ('action_donantes_view', 0, '', NULL, 'N;'),
 ('action_donante_admin', 0, '', NULL, 'N;'),
 ('action_donante_create', 0, '', NULL, 'N;'),
@@ -104,17 +179,38 @@ INSERT INTO `cruge_authitem` (`name`, `type`, `description`, `bizrule`, `data`) 
 ('action_donante_index', 0, '', NULL, 'N;'),
 ('action_donante_update', 0, '', NULL, 'N;'),
 ('action_donante_view', 0, '', NULL, 'N;'),
+('action_enfermedades_admin', 0, '', NULL, 'N;'),
+('action_enfermedades_create', 0, '', NULL, 'N;'),
+('action_enfermedades_delete', 0, '', NULL, 'N;'),
+('action_enfermedades_EnfermedadList', 0, '', NULL, 'N;'),
+('action_enfermedades_index', 0, '', NULL, 'N;'),
+('action_enfermedades_update', 0, '', NULL, 'N;'),
+('action_enfermedades_view', 0, '', NULL, 'N;'),
+('action_organo_admin', 0, '', NULL, 'N;'),
+('action_organo_create', 0, '', NULL, 'N;'),
+('action_organo_delete', 0, '', NULL, 'N;'),
+('action_organo_index', 0, '', NULL, 'N;'),
+('action_organo_update', 0, '', NULL, 'N;'),
+('action_organo_view', 0, '', NULL, 'N;'),
 ('action_paciente_admin', 0, '', NULL, 'N;'),
 ('action_paciente_create', 0, '', NULL, 'N;'),
 ('action_paciente_delete', 0, '', NULL, 'N;'),
 ('action_paciente_index', 0, '', NULL, 'N;'),
+('action_paciente_registrarenfermedad', 0, '', NULL, 'N;'),
 ('action_paciente_update', 0, '', NULL, 'N;'),
+('action_paciente_urgenciasnacionales', 0, '', NULL, 'N;'),
 ('action_paciente_view', 0, '', NULL, 'N;'),
 ('action_site_contact', 0, '', NULL, 'N;'),
 ('action_site_error', 0, '', NULL, 'N;'),
 ('action_site_index', 0, '', NULL, 'N;'),
 ('action_site_login', 0, '', NULL, 'N;'),
 ('action_site_logout', 0, '', NULL, 'N;'),
+('action_trasplantes_admin', 0, '', NULL, 'N;'),
+('action_trasplantes_create', 0, '', NULL, 'N;'),
+('action_trasplantes_delete', 0, '', NULL, 'N;'),
+('action_trasplantes_index', 0, '', NULL, 'N;'),
+('action_trasplantes_update', 0, '', NULL, 'N;'),
+('action_trasplantes_view', 0, '', NULL, 'N;'),
 ('action_ui_editprofile', 0, '', NULL, 'N;'),
 ('action_ui_fieldsadmincreate', 0, '', NULL, 'N;'),
 ('action_ui_fieldsadmindelete', 0, '', NULL, 'N;'),
@@ -135,9 +231,19 @@ INSERT INTO `cruge_authitem` (`name`, `type`, `description`, `bizrule`, `data`) 
 ('action_ui_usermanagementdelete', 0, '', NULL, 'N;'),
 ('action_ui_usermanagementupdate', 0, '', NULL, 'N;'),
 ('admin', 0, '', NULL, 'N;'),
+('controller_alergias', 0, '', NULL, 'N;'),
+('controller_bancosangre', 0, '', NULL, 'N;'),
+('controller_centromedico', 0, '', NULL, 'N;'),
+('controller_donacionmedula', 0, '', NULL, 'N;'),
+('controller_donacionorgano', 0, '', NULL, 'N;'),
+('controller_donacionsangre', 0, '', NULL, 'N;'),
 ('controller_donante', 0, '', NULL, 'N;'),
+('controller_donantes', 0, '', NULL, 'N;'),
+('controller_enfermedades', 0, '', NULL, 'N;'),
+('controller_organo', 0, '', NULL, 'N;'),
 ('controller_paciente', 0, '', NULL, 'N;'),
 ('controller_site', 0, '', NULL, 'N;'),
+('controller_trasplantes', 0, '', NULL, 'N;'),
 ('edit-advanced-profile-features', 0, 'C:\\wamp\\www\\imagecloud\\protected\\modules\\cruge\\views\\ui\\usermanagementupdate.php linea 114', NULL, 'N;'),
 ('invitados', 2, 'son los invitados', '', 'N;');
 
@@ -221,7 +327,7 @@ CREATE TABLE IF NOT EXISTS `cruge_session` (
   `ipaddressout` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idsession`),
   KEY `crugesession_iduser` (`iduser`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=37 ;
 
 --
 -- Volcado de datos para la tabla `cruge_session`
@@ -254,7 +360,16 @@ INSERT INTO `cruge_session` (`idsession`, `iduser`, `created`, `expire`, `status
 (24, 1, 1413512456, 1413514256, 0, '::1', 1, 1413512456, NULL, NULL),
 (25, 1, 1413514304, 1413516104, 0, '::1', 1, 1413514304, 1413515702, '::1'),
 (26, 1, 1413515707, 1413517507, 1, '::1', 1, 1413515707, NULL, NULL),
-(27, 1, 1413939380, 1413941180, 1, '::1', 1, 1413939380, NULL, NULL);
+(27, 1, 1413939380, 1413941180, 1, '::1', 1, 1413939380, NULL, NULL),
+(28, 1, 1415881447, 1415883247, 0, '127.0.0.1', 1, 1415881447, NULL, NULL),
+(29, 1, 1415884064, 1415885864, 0, '127.0.0.1', 1, 1415884064, NULL, NULL),
+(30, 1, 1415885875, 1415887675, 0, '127.0.0.1', 1, 1415885875, 1415887187, '127.0.0.1'),
+(31, 1, 1415891018, 1415892818, 0, '127.0.0.1', 1, 1415891018, 1415892035, '127.0.0.1'),
+(32, 1, 1415892088, 1415893888, 0, '127.0.0.1', 1, 1415892088, 1415892115, '127.0.0.1'),
+(33, 1, 1415919698, 1415921498, 0, '127.0.0.1', 1, 1415919698, NULL, NULL),
+(34, 1, 1415921530, 1415923330, 0, '127.0.0.1', 1, 1415921530, NULL, NULL),
+(35, 1, 1415923585, 1415925385, 0, '127.0.0.1', 1, 1415923585, NULL, NULL),
+(36, 1, 1415926346, 1415928146, 1, '127.0.0.1', 1, 1415926346, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -316,8 +431,72 @@ CREATE TABLE IF NOT EXISTS `cruge_user` (
 --
 
 INSERT INTO `cruge_user` (`iduser`, `regdate`, `actdate`, `logondate`, `username`, `email`, `password`, `authkey`, `state`, `totalsessioncounter`, `currentsessioncounter`) VALUES
-(1, NULL, NULL, 1413939380, 'admin', 'admin@tucorreo.com', 'admin', NULL, 1, 0, 0),
+(1, NULL, NULL, 1415926346, 'admin', 'admin@tucorreo.com', 'admin', NULL, 1, 0, 0),
 (4, 1411595192, NULL, 1411595306, 'invitado', 'invitado@invitado.cl', 'invitado', 'a2302625999b85435b84ef447e4a05b7', 1, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `donacion`
+--
+
+CREATE TABLE IF NOT EXISTS `donacion` (
+  `id_donacion` int(11) NOT NULL AUTO_INCREMENT,
+  `rut_donante` varchar(12) COLLATE utf8_bin DEFAULT NULL,
+  `tipo` varchar(20) COLLATE utf8_bin DEFAULT NULL,
+  `centro_recepcion` varchar(20) COLLATE utf8_bin DEFAULT NULL,
+  `detalle` text COLLATE utf8_bin,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id_donacion`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `donacion_medula`
+--
+
+CREATE TABLE IF NOT EXISTS `donacion_medula` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `rut_donante` varchar(12) DEFAULT NULL,
+  `tipo_medula` varchar(128) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `donacion_organo`
+--
+
+CREATE TABLE IF NOT EXISTS `donacion_organo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `rut_donante` varchar(12) DEFAULT NULL,
+  `nombre` varchar(128) DEFAULT NULL,
+  `estado` tinyint(1) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `donacion_sangre`
+--
+
+CREATE TABLE IF NOT EXISTS `donacion_sangre` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `rut_donante` varchar(12) DEFAULT NULL,
+  `tipo_sangre` varchar(3) DEFAULT NULL,
+  `cantidad` int(11) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -337,7 +516,14 @@ CREATE TABLE IF NOT EXISTS `donantes` (
   `id_centro_medico` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_centro_medico_1` (`id_centro_medico`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `donantes`
+--
+
+INSERT INTO `donantes` (`id`, `nombres`, `apellidos`, `rut`, `tipo_sangre`, `email`, `direccion`, `num_contacto`, `id_centro_medico`) VALUES
+(2, 'Pantruca', 'Morandes', '9.774.886-1', 'O+', 'asd@asd.cl', 'su casa', 98765432, 2);
 
 -- --------------------------------------------------------
 
@@ -350,7 +536,95 @@ CREATE TABLE IF NOT EXISTS `enfermedades` (
   `nombre` varchar(128) COLLATE utf8_bin DEFAULT NULL,
   `descripcion` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=5 ;
+
+--
+-- Volcado de datos para la tabla `enfermedades`
+--
+
+INSERT INTO `enfermedades` (`id`, `nombre`, `descripcion`) VALUES
+(2, 'Ebola', NULL),
+(3, 'Hepatitis', NULL),
+(4, 'Poco vivo', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `enfermedad_paciente`
+--
+
+CREATE TABLE IF NOT EXISTS `enfermedad_paciente` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fecha` date DEFAULT NULL,
+  `id_paciente` int(11) DEFAULT NULL,
+  `id_enfermedad` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_paciente` (`id_paciente`),
+  KEY `id_enfermedad` (`id_enfermedad`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Volcado de datos para la tabla `enfermedad_paciente`
+--
+
+INSERT INTO `enfermedad_paciente` (`id`, `fecha`, `id_paciente`, `id_enfermedad`) VALUES
+(4, NULL, 1, 4),
+(5, NULL, 2, 2),
+(6, NULL, 2, 4);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `organo`
+--
+
+CREATE TABLE IF NOT EXISTS `organo` (
+  `idOrgano` int(11) NOT NULL AUTO_INCREMENT,
+  `nombreOrgano` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`idOrgano`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+
+--
+-- Volcado de datos para la tabla `organo`
+--
+
+INSERT INTO `organo` (`idOrgano`, `nombreOrgano`) VALUES
+(1, 'Corazon'),
+(2, 'Pulmon'),
+(3, 'Higado'),
+(4, 'Riñon'),
+(5, 'Pancreas'),
+(6, 'Corneas'),
+(7, 'Valvulas Cardiacas'),
+(8, 'Hueso'),
+(9, 'Piel');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `paciente`
+--
+
+CREATE TABLE IF NOT EXISTS `paciente` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(20) DEFAULT NULL,
+  `apellido` varchar(20) DEFAULT NULL,
+  `rut` varchar(12) DEFAULT NULL,
+  `afiliacion` varchar(20) DEFAULT NULL,
+  `grado_urgencia` varchar(20) DEFAULT NULL,
+  `necesidad_transplante` varchar(20) DEFAULT NULL,
+  `tipo_sangre` varchar(10) DEFAULT NULL,
+  `id_centro_medico` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_centro_medico` (`id_centro_medico`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Volcado de datos para la tabla `paciente`
+--
+
+INSERT INTO `paciente` (`id`, `nombre`, `apellido`, `rut`, `afiliacion`, `grado_urgencia`, `necesidad_transplante`, `tipo_sangre`, `id_centro_medico`) VALUES
+(3, 'Evaristo', 'Moya', '11.111.111-2', 'Fsapre', 'Urgente', '8', 'AB-', 2);
 
 -- --------------------------------------------------------
 
@@ -368,83 +642,26 @@ CREATE TABLE IF NOT EXISTS `tiene_enfermedad` (
   KEY `fk_reference_2` (`id_enfermedad`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
 
---
--- Restricciones para tablas volcadas
---
-
-
-
-
-CREATE TABLE IF NOT EXISTS `trasplante` 
-(
-   id_transplante       int not null auto_increment,
-   rut_paciente         varchar(12),
-   urgencia_medica      varchar(20),
-   enfermedad           varchar(20),
-   detalle              text,
-   created              datetime,
-   modified             datetime,
-   primary key (id_transplante)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
-
-
-
-CREATE TABLE IF NOT EXISTS `donacion` 
-(
-   id_donacion          int not null auto_increment,
-   rut_donante          varchar(12),
-   tipo                 varchar(20),
-   centro_recepcion     varchar(20),
-   detalle              text,
-   created              datetime,
-   modified             datetime,
-   primary key (id_donacion)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
-
-
-
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `paciente`
+-- Estructura de tabla para la tabla `trasplante`
 --
 
-CREATE TABLE IF NOT EXISTS `paciente` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombrePaciente` varchar(20) NOT NULL,
-  `apellidoPaciente` varchar(20) NOT NULL,
-  `rutPaciente` varchar(12) NOT NULL,
-  `afiliacionPaciente` varchar(20) DEFAULT NULL,
-  `enfermedadPaciente` varchar(255) DEFAULT NULL,
-  `gradoUrgenciaPaciente` varchar(20) DEFAULT NULL,
-  `necesidadTrasplantePaciente` varchar(20) DEFAULT NULL,
-  `centroMedicoPaciente` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id` (`id`),
-  KEY `id_2` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+CREATE TABLE IF NOT EXISTS `trasplante` (
+  `id_transplante` int(11) NOT NULL AUTO_INCREMENT,
+  `rut_paciente` varchar(12) COLLATE utf8_bin DEFAULT NULL,
+  `urgencia_medica` varchar(20) COLLATE utf8_bin DEFAULT NULL,
+  `enfermedad` varchar(20) COLLATE utf8_bin DEFAULT NULL,
+  `detalle` text COLLATE utf8_bin,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id_transplante`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
 
-
-
-CREATE TABLE IF NOT EXISTS `enfermedad_paciente` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `fecha` date DEFAULT NULL,
-  `id_paciente` int(11) DEFAULT NULL,
-  `id_enfermedad` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `id_paciente` (`id_paciente`),
-  KEY `id_enfermedad` (`id_enfermedad`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
-
-
-
-CREATE TABLE IF NOT EXISTS `organo` (
-  `idOrgano` int(11) NOT NULL AUTO_INCREMENT,
-  `nombreOrgano` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`idOrgano`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
-
+--
+-- Restricciones para tablas volcadas
+--
 
 --
 -- Filtros para la tabla `cruge_authassignment`
@@ -474,6 +691,12 @@ ALTER TABLE `donantes`
   ADD CONSTRAINT `fk_centro_medico_1` FOREIGN KEY (`id_centro_medico`) REFERENCES `centro_medico` (`id`);
 
 --
+-- Filtros para la tabla `paciente`
+--
+ALTER TABLE `paciente`
+  ADD CONSTRAINT `paciente_ibfk_1` FOREIGN KEY (`id_centro_medico`) REFERENCES `centro_medico` (`id`);
+
+--
 -- Filtros para la tabla `tiene_enfermedad`
 --
 ALTER TABLE `tiene_enfermedad`
@@ -483,15 +706,3 @@ ALTER TABLE `tiene_enfermedad`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
-INSERT INTO `organo` (`idOrgano`, `nombreOrgano`) VALUES
-(1, 'Corazon'),
-(2, 'Pulmon'),
-(3, 'Higado'),
-(4, 'Riñon'),
-(5, 'Pancreas'),
-(6, 'Corneas'),
-(7, 'Valvulas Cardiacas'),
-(8, 'Hueso'),
-(9, 'Piel');

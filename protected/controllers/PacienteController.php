@@ -48,8 +48,9 @@ class PacienteController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$enfermedad = new Enfermedades;
-		$this->render('view',array('model'=>$this->loadModel($id),));
+		$this->render('view',array(
+			'model'=>$this->loadModel($id),
+		));
 	}
 
 	/**
@@ -75,6 +76,35 @@ class PacienteController extends Controller
 		));
 	}
 
+	public function actionRegistrarEnfermedad($id)
+	{
+		//asignamos de alguna manera la enfermedad al donante con id = $id (parametro)
+		$model_tiene_enfermedad = new EnfermedadPaciente;
+		$model = new Enfermedades;
+
+		if (isset($_POST['Enfermedades'])) {
+			$model_tiene_enfermedad->id_paciente = $id;
+			$model_tiene_enfermedad->id_enfermedad = $_POST['Enfermedades']['id'];
+			if ($model_tiene_enfermedad->save()) {
+				$this->redirect(array('admin'));
+			}else
+			{
+				echo 'No se pudo insertar! id:'.$id.' y id_enfermedad:'.$model_tiene_enfermedad->id_enfermedad;
+				Yii::app()->end();
+			}
+		}
+
+		$this->render('asignaenfermedad',array('model'=>$model));
+	}
+
+	public function actionUrgenciasnacionales(){
+		$organo = Organo::model()->findAll(array('select'=>'nombreOrgano'));
+		$dataProvider=new CActiveDataProvider('Paciente');
+		$this->render('urgenciasnacionales',array(
+			'dataProvider'=>$dataProvider,'organo'=>$organo)
+		);
+	}
+
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
@@ -97,27 +127,6 @@ class PacienteController extends Controller
 		$this->render('update',array(
 			'model'=>$model,
 		));
-	}
-
-	public function actionRegistrarEnfermedad($id)
-	{
-		//asignamos de alguna manera la enfermedad al donante con id = $id (parametro)
-		$model_tiene_enfermedad = new EnfermedadPaciente;
-		$model = new Enfermedades;
-
-		if (isset($_POST['Enfermedades'])) {
-			$model_tiene_enfermedad->id_paciente = $id;
-			$model_tiene_enfermedad->id_enfermedad = $_POST['Enfermedades']['id'];
-			if ($model_tiene_enfermedad->save()) {
-				$this->redirect(array('admin'));
-			}else
-			{
-				echo 'No se pudo insertar id:'.$id.' y id_enfermedad:'.$model_tiene_enfermedad->id_enfermedad;
-				Yii::app()->end();
-			}
-		}
-
-		$this->render('asignaenfermedad',array('model'=>$model));
 	}
 
 	/**

@@ -164,6 +164,9 @@
       <i class="circle icon"></i> Gestión de Pacientes <i class="dropdown icon"></i>
       <div class="menu">
          
+         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/index">
+          <i class="doble angle right icon"></i> Lista Pacientes
+        </a>
 
 
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/create">
@@ -173,6 +176,10 @@
 
          <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/admin">
           <i class="doble angle right icon"></i> Administrar de Pacientes
+        </a>
+
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/urgenciasnacionales">
+          <i class="doble angle right icon"></i> Urgencias Nacionales
         </a>
 
 
