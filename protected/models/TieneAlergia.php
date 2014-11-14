@@ -103,4 +103,17 @@ class TieneAlergia extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+
+
+/*
+	public function validateEnfermedad_Unique($attribute, $params) {
+			$Criteria = new CDbCriteria();
+    		$Criteria->condition = "id_donante = $this->id_donante"; 
+    		$alergias= TieneAlergia::model()->findAll($Criteria);
+            if(!$alergias){
+			$this->addError('id_donante', 'Enfermedad ya registrada.');
+        }
+    }
+    */
 }

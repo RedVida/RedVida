@@ -88,7 +88,9 @@ class DonantesController extends Controller
 
 		if (isset($_POST['Enfermedades'])) {
 			$model_tiene_enfermedad->id_donante = $id;
-			$model_tiene_enfermedad->id_enfermedad = $_POST['Enfermedades']['id'];
+			$length = intval($_POST['Enfermedades']['id']);
+			$modelo = Enfermedades::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='.$length));
+			$model_tiene_enfermedad->id_enfermedad = $modelo[0]->id;
 			if ($model_tiene_enfermedad->save()) {
 				$this->redirect(array('admin'));
 			}else
@@ -101,6 +103,13 @@ class DonantesController extends Controller
 		$this->render('asignaenfermedad',array('model'=>$model));
 	}
 
+	public function actionRegistraEnfermedad()
+	{
+		$model = new Donantes;
+		$this->render('registraenfermedad', array('model'=>$model));
+	}
+	
+
 	 	public function actionRegistrar_Alergia($id)
 	{
 		//asignamos de alguna manera la enfermedad al donante con id = $id (parametro)
@@ -109,7 +118,9 @@ class DonantesController extends Controller
 
 		if (isset($_POST['Alergias'])) {
 			$model_tiene_alergia->id_donante = $id;
-			$model_tiene_alergia->id_alergia = $_POST['Alergias']['id'];
+			$length = intval($_POST['Alergias']['id']);
+			$modelo = Alergias::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='.$length));
+			$model_tiene_alergia->id_alergia = $modelo[0]->id;
 			if ($model_tiene_alergia->save()) {
 				$this->redirect(array('admin'));
 			}else
@@ -120,12 +131,6 @@ class DonantesController extends Controller
 		}
 
 		$this->render('asigna_alergia',array('model'=>$model));
-	}
-
-	public function actionRegistraEnfermedad()
-	{
-		$model = new Donantes;
-		$this->render('registraenfermedad', array('model'=>$model));
 	}
 
 	public function actionRegistra_Alergia()

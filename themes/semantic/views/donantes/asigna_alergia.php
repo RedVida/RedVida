@@ -46,8 +46,7 @@
  	<div class="fields">
 	 	<div class="four wide field">
 			<?php echo $form->labelEx($model,'nombre:'); ?>
-			<?php echo $form->textField($model,'nombre',array('id'=>'busquedaAlergia','placeholder'=>'Ingrese la enfermedad a buscar...')); ?>
-			<?php echo $form->hiddenField($model,'id'); ?>
+			<?php echo $form->textField($model,'id',array('id'=>'busquedaAlergia','placeholder'=>'Ingrese la enfermedad a buscar...')); ?>
 			<div class="errors">
 			<?php echo $form->error($model,'nombre',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>
