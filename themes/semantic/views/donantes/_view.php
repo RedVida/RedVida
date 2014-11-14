@@ -39,7 +39,7 @@
 	echo $centro_medico->nombre; ?>
 	<br />
 
-    <!-- Enfermedades-->
+    <!-- Enfermedades--> <!-- Enfermedades-->
 
 	<b><?php 
     $Criteria = new CDbCriteria();
