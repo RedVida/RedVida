@@ -110,6 +110,10 @@ class Donantes extends CActiveRecord
 		return array(
 			'idCentroMedico' => array(self::BELONGS_TO, 'CentroMedico', 'id_centro_medico'),
 			'tieneEnfermedads' => array(self::HAS_MANY, 'TieneEnfermedad', 'id_donante'),
+
+
+
+
 		);
 	}
 

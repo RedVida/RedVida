@@ -21,36 +21,11 @@
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/carousel.js"></script>
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/semantic.min.js"></script>  
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/views/layouts/main.js"></script>
-  <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/menu.js"></script>
-
-
-</head>
+  
 <body id="home">
 <div class="ui center aligned segment">
 <img  src="<?php echo Yii::app()->request->baseUrl; ?>/images/clinica3.jpg"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/text.png">
 </div>
-
-
-
-<script type="text/javascript">
-// THIS SCRIPT DETECTS THE ACTIVE ELEMENT AND ADDS ACTIVE CLASS
-// VER CAMBIA PERO NO SE MANTIENE AL REDIRECCIONAR
-  $(document).ready(function(){
-    var pathname = window.location.pathname,
-      page = pathname.split(/[/ ]+/).pop(),
-      menuItems = $('#main_menu');
-    menuItems.each(function(){
-      var mi = $(this),
-        miHrefs = mi.attr("href"),
-        miParents = mi.parents('i');
-      if(page == miHrefs) {
-        miParents.addClass("active").siblings().removeClass('active');
-      }
-    });
-  });
-
-</script>
-
 
 <div id="main_menu" class="ui blue inverted menu ">
   <div class="menu">
@@ -181,6 +156,11 @@
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/urgenciasnacionales">
           <i class="doble angle right icon"></i> Urgencias Nacionales
         </a>
+    
+    
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/asignar">
+          <i class="doble angle right icon"></i>Asignar Trasplante
+        </a>
 
 
        </div>
@@ -194,6 +174,7 @@
           <i class="circle icon"></i>Gestión Centros
         </a>
 
+   
 
   </div>
 

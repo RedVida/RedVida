@@ -649,15 +649,25 @@ CREATE TABLE IF NOT EXISTS `tiene_enfermedad` (
 --
 
 CREATE TABLE IF NOT EXISTS `trasplante` (
-  `id_transplante` int(11) NOT NULL AUTO_INCREMENT,
-  `rut_paciente` varchar(12) COLLATE utf8_bin DEFAULT NULL,
-  `urgencia_medica` varchar(20) COLLATE utf8_bin DEFAULT NULL,
-  `enfermedad` varchar(20) COLLATE utf8_bin DEFAULT NULL,
-  `detalle` text COLLATE utf8_bin,
-  `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id_transplante`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+   `id`                   int NOT null AUTO_INCREMENT,
+   `id_donante`           varchar(12),
+   `id_paciente`          varchar(12),
+   `tipo_donacion`        varchar(255),
+   `id_donacion`          varchar(255),
+   `compatibilidad`       varchar(255) DEFAULT NULL,
+   `detalle`              text DEFAULT NULL,
+   `grado_urgencia`       varchar(255),
+   `centro_medico`        varchar(255),
+   `created`              datetime DEFAULT NULL,
+   `modified`             datetime DEFAULT NULL,
+   primary key (id),
+  KEY `fk_reference_1` (`id_donante`),
+  KEY `fk_reference_2` (`id_paciente`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
+
+
+
+
 
 --
 -- Restricciones para tablas volcadas
@@ -706,3 +716,10 @@ ALTER TABLE `tiene_enfermedad`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+
+
+
+
