@@ -151,6 +151,15 @@ class DonantesController extends Controller
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('Donantes');
+        if(isset($_GET['pdf'])){
+	        $this->layout="//layouts/pdf";
+			$mPDF1 = Yii::app()->ePdf->mpdf();
+			//$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/clinica3.jpg' ).''.CHtml::image(Yii::getPathOfAlias('webroot.css') . '/text.png'));
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/nn.png' ));
+			$mPDF1->WriteHTML($this->render('index',array('dataProvider'=>$dataProvider),true));
+			$mPDF1->Output('Mi archivo',"I"); // i = visualizar en el navegador
+       }
+
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
