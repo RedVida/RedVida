@@ -29082,3 +29082,189 @@ REQUEST_URI=/RedVida/index.php?r=donantes/index/pdf
 2014/11/14 03:03:51 [error] [exception.CrugeException.401] action_donantes_index<br/>401
 REQUEST_URI=/RedVida/index.php?r=/donantes/index/pdf
 ---
+2014/11/14 04:06:56 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/RedVida/index.php?r=/donantes/index/pdf
+---
+2014/11/14 04:19:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "index/pdf"' in C:\xampp\htdocs\xampp\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('index/pdf')
+#1 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/RedVida/index.php?r=index/pdf
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/index/
+---
+2014/11/14 04:26:46 [error] [php] file_get_contents(C:/xampp/htdocs/RedVida\css/semantic.min): failed to open stream: No such file or directory (C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php:158)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#2 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#3 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#4 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#7 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#8 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/index/pdf
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (158)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/14 04:27:01 [error] [php] file_get_contents(C:/xampp/htdocs/RedVida\css/semantic.css): failed to open stream: No such file or directory (C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php:158)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#2 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#3 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#4 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#7 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#8 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/index/pdf
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (158)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/14 04:27:31 [error] [php] file_get_contents(C:/xampp/htdocs/RedVida\css/semantic): failed to open stream: No such file or directory (C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php:158)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#2 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#3 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#4 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#7 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#8 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/index/pdf
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (158)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/14 04:32:56 [error] [php] Undefined variable: mPDF1 (C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php:156)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#1 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#2 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#3 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#4 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#6 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#7 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/index/pdf
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (156)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/14 04:32:58 [error] [php] Undefined variable: mPDF1 (C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php:156)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#1 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#2 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#3 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#4 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#6 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#7 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/index/pdf
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (156)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/14 04:37:12 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/index/pdf
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/index/
+---
+2014/11/14 04:50:40 [error] [system.db.CDbCommand] CDbCommand::fetch() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 1' at line 1. La sentencia SQL ejecutada fue: SELECT * FROM `centro_medico` `t` WHERE id= LIMIT 1.
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\listar_donantes.php (38)
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (168)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+2014/11/14 04:50:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 1' at line 1. The SQL statement executed was: SELECT * FROM `centro_medico` `t` WHERE id= LIMIT 1' in C:\xampp\htdocs\xampp\yii\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\xampp\yii\db\ar\CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\xampp\yii\db\ar\CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\listar_donantes.php(38): CActiveRecord->find('id=')
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('listar_donantes', Array, true)
+#8 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(168): CController->render('listar_donantes', Array, true)
+#9 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionIndex()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('index')
+#18 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/index/...')
+#19 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/index/pdf
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/index
+---
+2014/11/14 04:59:32 [error] [exception.CException] exception 'CException' with message 'Por favor especifique la propiedad "data".' in C:\xampp\htdocs\xampp\yii\zii\widgets\CDetailView.php:137
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(147): CDetailView->init()
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.CDe...', Array)
+#2 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\view.php(31): CBaseController->widget('zii.widgets.CDe...', Array)
+#3 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('view', Array, true)
+#7 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(160): CController->render('view', Array, true)
+#8 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionIndex()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#12 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('index')
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/index/...')
+#18 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/index/pdf
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/index
+---
+2014/11/14 04:59:36 [error] [exception.CException] exception 'CException' with message 'Por favor especifique la propiedad "data".' in C:\xampp\htdocs\xampp\yii\zii\widgets\CDetailView.php:137
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(147): CDetailView->init()
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.CDe...', Array)
+#2 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\view.php(31): CBaseController->widget('zii.widgets.CDe...', Array)
+#3 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('view', Array, true)
+#7 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(160): CController->render('view', Array, true)
+#8 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionIndex()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#12 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('index')
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/index/...')
+#18 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/index/pdf
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/index
+---
+2014/11/14 05:07:39 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/index/pdf
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/index/
+---

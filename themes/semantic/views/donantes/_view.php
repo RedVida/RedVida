@@ -12,7 +12,7 @@
       <b><?php echo CHtml::encode($data->getAttributeLabel('nombres')); ?>:</b>
 	<?php echo CHtml::encode($data->nombres); ?>
 	<br />
-
+  
 	<b><?php echo CHtml::encode($data->getAttributeLabel('apellidos')); ?>:</b>
 	<?php echo CHtml::encode($data->apellidos); ?>
 	<br />
@@ -54,6 +54,8 @@
 		    ?></br><?php
     	}     
     ?>
+    <?php if(isset($_GET['pdf'])){?>
+    <hr> <?php } ?>
     </div>
   	</div>
 	</div>

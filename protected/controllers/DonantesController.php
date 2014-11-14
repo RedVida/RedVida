@@ -149,12 +149,15 @@ class DonantesController extends Controller
 	 * Lists all models.
 	 */
 	public function actionIndex()
-	{
+	{  
 		$dataProvider=new CActiveDataProvider('Donantes');
         if(isset($_GET['pdf'])){
+          
 	        $this->layout="//layouts/pdf";
 			$mPDF1 = Yii::app()->ePdf->mpdf();
 			//$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/clinica3.jpg' ).''.CHtml::image(Yii::getPathOfAlias('webroot.css') . '/text.png'));
+			$stylesheet = file_get_contents(Yii::getPathOfAlias('webroot.css') . '/semantic.css');
+            $mPDF1->WriteHTML($stylesheet, true);
 			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/nn.png' ));
 			$mPDF1->WriteHTML($this->render('index',array('dataProvider'=>$dataProvider),true));
 			$mPDF1->Output('Mi archivo',"I"); // i = visualizar en el navegador
