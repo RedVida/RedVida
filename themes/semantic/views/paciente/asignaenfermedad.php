@@ -6,7 +6,8 @@
 
 <div class="form">
 
-<h2>Asignar enfermedad</h2>
+<h1 class="ui huge header add icon"> &nbsp; &nbsp; &nbsp; Asignar Enfermedad</h1>
+<hr class="style-two ">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'tiene-enfermedad-asignaenfermedad-form',

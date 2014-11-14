@@ -13,6 +13,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Registrar Paciente</h1>
+<h1 class="ui huge header add icon"> &nbsp; &nbsp; &nbsp; Registrar Pacientes</h1>
+<hr class="style-two ">
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

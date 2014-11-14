@@ -88,7 +88,9 @@ class DonantesController extends Controller
 
 		if (isset($_POST['Enfermedades'])) {
 			$model_tiene_enfermedad->id_donante = $id;
-			$model_tiene_enfermedad->id_enfermedad = $_POST['Enfermedades']['id'];
+			$length = intval($_POST['Enfermedades']['id']);
+			$modelo = Enfermedades::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='.$length));
+			$model_tiene_enfermedad->id_enfermedad = $modelo[0]->id;
 			if ($model_tiene_enfermedad->save()) {
 				$this->redirect(array('admin'));
 			}else
@@ -106,6 +108,38 @@ class DonantesController extends Controller
 		$model = new Donantes;
 		$this->render('registraenfermedad', array('model'=>$model));
 	}
+	
+
+	 	public function actionRegistrar_Alergia($id)
+	{
+		//asignamos de alguna manera la enfermedad al donante con id = $id (parametro)
+		$model_tiene_alergia = new TieneAlergia;
+		$model = new Alergias;
+
+		if (isset($_POST['Alergias'])) {
+			$model_tiene_alergia->id_donante = $id;
+			$length = intval($_POST['Alergias']['id']);
+			$modelo = Alergias::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='.$length));
+			$model_tiene_alergia->id_alergia = $modelo[0]->id;
+			if ($model_tiene_alergia->save()) {
+				$this->redirect(array('admin'));
+			}else
+			{
+				echo 'No se pudo insertar! id:'.$id.' y id_alergia:'.$model_tiene_alergia->id_alergia;
+				Yii::app()->end();
+			}
+		}
+
+		$this->render('asigna_alergia',array('model'=>$model));
+	}
+
+	public function actionRegistra_Alergia()
+	{
+		$model = new Donantes;
+		$this->render('registra_alergia', array('model'=>$model));
+	}
+
+
 	
 	/**
 	 * Updates a particular model.

@@ -542,6 +542,14 @@ CREATE TABLE IF NOT EXISTS `enfermedades` (
 -- Volcado de datos para la tabla `enfermedades`
 --
 
+CREATE TABLE IF NOT EXISTS `alergias` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(128) COLLATE utf8_bin DEFAULT NULL,
+  `descripcion` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=5 ;
+
+
 INSERT INTO `enfermedades` (`id`, `nombre`, `descripcion`) VALUES
 (2, 'Ebola', NULL),
 (3, 'Hepatitis', NULL),
@@ -642,6 +650,17 @@ CREATE TABLE IF NOT EXISTS `tiene_enfermedad` (
   KEY `fk_reference_2` (`id_enfermedad`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
 
+
+CREATE TABLE IF NOT EXISTS `tiene_alergia` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `fecha` datetime DEFAULT NULL,
+  `id_donante` int(11) DEFAULT NULL,
+  `id_alergia` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_reference_1` (`id_donante`),
+  KEY `fk_reference_2` (`id_alergia`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
+
 -- --------------------------------------------------------
 
 --
@@ -712,6 +731,10 @@ ALTER TABLE `paciente`
 ALTER TABLE `tiene_enfermedad`
   ADD CONSTRAINT `fk_reference_1` FOREIGN KEY (`id_donante`) REFERENCES `donantes` (`id`),
   ADD CONSTRAINT `fk_reference_2` FOREIGN KEY (`id_enfermedad`) REFERENCES `enfermedades` (`id`);
+
+  ALTER TABLE `tiene_alergia`
+  ADD CONSTRAINT `fk_reference_3` FOREIGN KEY (`id_donante`) REFERENCES `donantes` (`id`),
+  ADD CONSTRAINT `fk_reference_4` FOREIGN KEY (`id_alergia`) REFERENCES `alergias` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

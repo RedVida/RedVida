@@ -85,6 +85,7 @@ class PacienteController extends Controller
 		if (isset($_POST['Enfermedades'])) {
 			$model_tiene_enfermedad->id_paciente = $id;
 			$model_tiene_enfermedad->id_enfermedad = $_POST['Enfermedades']['id'];
+			//$length = intval($_POST['Enfermedades']['id']);
 			if ($model_tiene_enfermedad->save()) {
 				$this->redirect(array('admin'));
 			}else
@@ -148,6 +149,8 @@ class PacienteController extends Controller
 	 */
 	public function actionIndex()
 	{
+		
+		$organo = Organo::model()->findAll(array('select'=>'nombreOrgano'));
 		$dataProvider=new CActiveDataProvider('Paciente');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,

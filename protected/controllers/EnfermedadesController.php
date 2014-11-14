@@ -144,6 +144,7 @@ class EnfermedadesController extends Controller
         
         foreach($data as $item) {  
             $resultado[] = array (
+            	'id_enfermedad' => $item->id,
                 'nombre'    => $item->nombre,
 
             );
