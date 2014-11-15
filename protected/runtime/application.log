@@ -31394,3 +31394,305 @@ REQUEST_URI=/redvida/index?r=/donantes
 in C:\xampp\htdocs\RedVida\protected\controllers\EnfermedadesController.php (164)
 in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
 in C:\xampp\htdocs\RedVida\index.php (15)
+2014/11/15 19:51:44 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index?r=/donantes
+---
+2014/11/15 19:51:45 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index?r=/donantes
+---
+2014/11/15 19:52:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "/transplantes"' in C:\xampp\htdocs\xampp\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('/transplantes')
+#1 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RedVida\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/RedVida/index.php?r=/transplantes
+---
+2014/11/15 19:52:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "/transplante"' in C:\xampp\htdocs\xampp\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('/transplante')
+#1 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RedVida\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/RedVida/index.php?r=/transplante
+---
+2014/11/15 19:53:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "/transplante/view"' in C:\xampp\htdocs\xampp\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('/transplante/vi...')
+#1 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RedVida\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/RedVida/index.php?r=/transplante/view
+---
+2014/11/15 19:53:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "/transplantes/view"' in C:\xampp\htdocs\xampp\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('/transplantes/v...')
+#1 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RedVida\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/RedVida/index.php?r=/transplantes/view
+---
+2014/11/15 19:55:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "transpalnte/index"' in C:\xampp\htdocs\xampp\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('transpalnte/ind...')
+#1 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RedVida\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/RedVida/index.php?r=transpalnte/index
+---
+2014/11/15 19:56:04 [error] [exception.CException] exception 'CException' with message 'TrasplanteController no ha podido encontrar la vista "index" solicitada.' in C:\xampp\htdocs\xampp\yii\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('index', Array, true)
+#1 C:\xampp\htdocs\RedVida\protected\controllers\TrasplanteController.php(125): CController->render('index', Array)
+#2 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): TrasplanteController->actionIndex()
+#3 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#6 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#7 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('index')
+#11 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('trasplante/inde...')
+#12 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RedVida\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/RedVida/index.php?r=trasplante/index
+---
+2014/11/15 19:56:12 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\xampp\htdocs\xampp\yii\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#3 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#4 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('view')
+#8 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('trasplante/view')
+#9 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\RedVida\index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/RedVida/index.php?r=trasplante/view
+---
+2014/11/15 19:56:16 [error] [exception.CException] exception 'CException' with message 'La propiedad "Trasplante"."id" no se encuentra definida.' in C:\xampp\htdocs\xampp\yii\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(2529): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(Trasplante), 'id')
+#3 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(Trasplante), 'id', Array)
+#4 C:\xampp\htdocs\xampp\yii\web\widgets\CActiveForm.php(725): CHtml::activeTextField(Object(Trasplante), 'id', Array)
+#5 C:\xampp\htdocs\RedVida\themes\semantic\views\trasplante\_search.php(25): CActiveForm->textField(Object(Trasplante), 'id')
+#6 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\RedVida\themes\semantic\views\trasplante\admin.php(45): CController->renderPartial('_search', Array)
+#10 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#14 C:\xampp\htdocs\RedVida\protected\controllers\TrasplanteController.php(140): CController->render('admin', Array)
+#15 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): TrasplanteController->actionAdmin()
+#16 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#19 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#20 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('admin')
+#24 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('trasplante/admi...')
+#25 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\RedVida\index.php(15): CApplication->run()
+#27 {main}
+REQUEST_URI=/RedVida/index.php?r=trasplante/admin
+---
+2014/11/15 19:57:15 [error] [exception.CException] exception 'CException' with message 'La propiedad "Trasplante"."id" no se encuentra definida.' in C:\xampp\htdocs\xampp\yii\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(2529): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(Trasplante), 'id')
+#3 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(Trasplante), 'id', Array)
+#4 C:\xampp\htdocs\xampp\yii\web\widgets\CActiveForm.php(725): CHtml::activeTextField(Object(Trasplante), 'id', Array)
+#5 C:\xampp\htdocs\RedVida\themes\semantic\views\trasplante\_search.php(25): CActiveForm->textField(Object(Trasplante), 'id')
+#6 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\RedVida\themes\semantic\views\trasplante\admin.php(45): CController->renderPartial('_search', Array)
+#10 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#14 C:\xampp\htdocs\RedVida\protected\controllers\TrasplanteController.php(140): CController->render('admin', Array)
+#15 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): TrasplanteController->actionAdmin()
+#16 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#19 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#20 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('admin')
+#24 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('trasplante/admi...')
+#25 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\RedVida\index.php(15): CApplication->run()
+#27 {main}
+REQUEST_URI=/RedVida/index.php?r=trasplante/admin
+---
+2014/11/15 19:58:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "listy" solicitada.' in C:\xampp\htdocs\xampp\yii\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(270): CController->missingAction('listy')
+#1 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('listy')
+#2 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('trasplante/list...')
+#3 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\RedVida\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/RedVida/index.php?r=trasplante/listy
+---
+2014/11/15 19:58:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "list" solicitada.' in C:\xampp\htdocs\xampp\yii\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(270): CController->missingAction('list')
+#1 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('list')
+#2 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('trasplante/list')
+#3 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\RedVida\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/RedVida/index.php?r=trasplante/list
+---
+2014/11/15 19:58:12 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\xampp\htdocs\xampp\yii\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#3 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#4 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('view')
+#8 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('trasplante/view')
+#9 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\RedVida\index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/RedVida/index.php?r=trasplante/view
+---
+2014/11/15 19:58:55 [error] [exception.CException] exception 'CException' with message 'La propiedad "Trasplante"."id" no se encuentra definida.' in C:\xampp\htdocs\xampp\yii\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(2529): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(Trasplante), 'id')
+#3 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(Trasplante), 'id', Array)
+#4 C:\xampp\htdocs\xampp\yii\web\widgets\CActiveForm.php(725): CHtml::activeTextField(Object(Trasplante), 'id', Array)
+#5 C:\xampp\htdocs\RedVida\themes\semantic\views\trasplante\_search.php(25): CActiveForm->textField(Object(Trasplante), 'id')
+#6 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\RedVida\themes\semantic\views\trasplante\admin.php(45): CController->renderPartial('_search', Array)
+#10 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#14 C:\xampp\htdocs\RedVida\protected\controllers\TrasplanteController.php(140): CController->render('admin', Array)
+#15 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): TrasplanteController->actionAdmin()
+#16 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#19 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#20 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('admin')
+#24 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('trasplante/admi...')
+#25 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\RedVida\index.php(15): CApplication->run()
+#27 {main}
+REQUEST_URI=/RedVida/index.php?r=trasplante/admin
+---
+2014/11/15 20:00:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "form" solicitada.' in C:\xampp\htdocs\xampp\yii\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(270): CController->missingAction('form')
+#1 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('form')
+#2 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('trasplante/form')
+#3 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\RedVida\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/RedVida/index.php?r=trasplante/form
+---
+2014/11/15 20:00:22 [error] [exception.CException] exception 'CException' with message 'La propiedad "Trasplante"."id_donante" no se encuentra definida.' in C:\xampp\htdocs\xampp\yii\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\ar\CActiveRecord.php(145): CComponent->__get('id_donante')
+#1 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(2529): CActiveRecord->__get('id_donante')
+#2 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(Trasplante), 'id_donante')
+#3 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(Trasplante), 'id_donante', Array)
+#4 C:\xampp\htdocs\xampp\yii\web\widgets\CActiveForm.php(725): CHtml::activeTextField(Object(Trasplante), 'id_donante', Array)
+#5 C:\xampp\htdocs\RedVida\themes\semantic\views\trasplante\_form.php(74): CActiveForm->textField(Object(Trasplante), 'id_donante', Array)
+#6 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\RedVida\themes\semantic\views\trasplante\create.php(22): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\RedVida\protected\controllers\TrasplanteController.php(76): CController->render('create', Array)
+#15 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): TrasplanteController->actionCreate()
+#16 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#19 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#20 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('/trasplante/cre...')
+#25 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\RedVida\index.php(15): CApplication->run()
+#27 {main}
+REQUEST_URI=/RedVida/index.php?r=/trasplante/create
+---
+2014/11/15 20:02:36 [error] [exception.CException] exception 'CException' with message 'TrasplanteController no ha podido encontrar la vista "index" solicitada.' in C:\xampp\htdocs\xampp\yii\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('index', Array, true)
+#1 C:\xampp\htdocs\RedVida\protected\controllers\TrasplanteController.php(125): CController->render('index', Array)
+#2 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): TrasplanteController->actionIndex()
+#3 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#6 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#7 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('index')
+#11 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('trasplante/inde...')
+#12 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RedVida\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/RedVida/index.php?r=trasplante/index
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=trasplante/admin
+---
+2014/11/15 20:02:45 [error] [exception.CException] exception 'CException' with message 'TrasplanteController no ha podido encontrar la vista "index" solicitada.' in C:\xampp\htdocs\xampp\yii\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('index', Array, true)
+#1 C:\xampp\htdocs\RedVida\protected\controllers\TrasplanteController.php(125): CController->render('index', Array)
+#2 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): TrasplanteController->actionIndex()
+#3 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#6 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#7 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('index')
+#11 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('trasplante/inde...')
+#12 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RedVida\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/RedVida/index.php?r=trasplante/index
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=trasplante/admin
+---
+2014/11/15 22:05:26 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index?r=/donantes
+---
+2014/11/15 22:44:51 [error] [exception.CrugeException.401] action_donantes_create<br/>401
+REQUEST_URI=/RedVida/index.php?r=/donantes/create
+HTTP_REFERER=http://localhost:8080/RedVida/index.php
+---

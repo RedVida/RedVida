@@ -24,7 +24,9 @@
     		},
     });
     });
-
+$('.ui.modal')
+  .modal()
+;
 </script>
  <?php $donante=Donantes::model()->find('id='.$_GET["id"]);?>
 
@@ -33,10 +35,6 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'tiene-enfermedad-asignaenfermedad-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// See class documentation of CActiveForm for details on this,
-	// you need to use the performAjaxValidation()-method described there.
 	'enableAjaxValidation'=>false,
 )); ?>
 
@@ -54,7 +52,24 @@
 	</div>
 </div>
 
-
+<div class="ui modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Modal Title
+  </div>
+  <div class="content">
+    <div class="left">
+      Content can appear on left
+    </div>
+    <div class="right">
+      Content can appear on right
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui button">Cancel</div>
+    <div class="ui button">OK</div>
+  </div>
+</div>
 	<br>
 	<div class="row buttons">
 	    <?php echo CHtml::submitButton(CrugeTranslator::t('Registrar'),array("class"=>"ui blue submit button")); ?>
