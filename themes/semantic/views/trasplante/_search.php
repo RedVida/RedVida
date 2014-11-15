@@ -18,9 +18,6 @@
 )); ?>
 
 	
-
-
-
 <div class="ui form">
    <div class="fields">
 	 	<div class="four wide field">
@@ -32,7 +29,7 @@
 	
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search', array('class'=>'ui blue submit button')); ?>
+		<?php echo CHtml::submitButton('Buscar', array('class'=>'ui blue submit button')); ?>
 	</div>
 
 </div>

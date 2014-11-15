@@ -28,6 +28,13 @@ $('.search-form form').submit(function(){
 
 <h1>Menu Asignar Trasplante</h1>
 
+
+
+
+
+
+
+
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'paciente-grid',
 	'dataProvider'=>$model->search(),

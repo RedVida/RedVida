@@ -37,27 +37,24 @@
 
 	?>
 
-	<h2 class="ui header"> Paciente: <?php echo $model_donante['nombre'].' '.$model_donante['apellido']; ?></h2>
-	<hr class="style-two ">
+
+
+		<div class="ui orange ribbon label">
+		<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+		Paciente: <?php echo $model_donante['nombre'].' '.$model_donante['apellido']; ?></h1>
+		</div>
+		<hr class="style-two ">
 
 
 
-
-
-	<?php
-
-
-
-	}
+	<?php	}
 
 	?>
 
 
+
+
 <div class="ui form">
-
-
-
-
 
 
 <div class="fields">
@@ -107,15 +104,9 @@
 	</div>
 
 <script type="text/javascript">
-function validate()
-{
- var ddl = document.getElementById("tipo_donacion");
- var selectedValue = ddl.options[ddl.selectedIndex].value;
-    if (selectedValue == "selectcard")
-   {
-    alert("Please select a card type");
-   }
-}
+$('.ui.selection.dropdown')
+  .dropdown()
+;
 </script>
 
 <?php

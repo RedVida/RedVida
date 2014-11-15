@@ -219,7 +219,6 @@ class UiController extends Controller
 
     public function actionEditProfile()
     {
-
         $this->layout = CrugeUtil::config()->editProfileLayout;
 
         if (!Yii::app()->user->isGuest) {

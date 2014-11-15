@@ -14,13 +14,15 @@ $this->menu=array(
 ?>
 
 <div class="ui black ribbon label">
-<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; Ver Trasplante #<?php echo $model->id; ?></h1>
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Ver Trasplante #<?php echo $model->id; ?></h1>
 </div>
 <hr class="style-two ">
 
 <div class="ui grid">
 
 	<div class="one wide column">
+
 	</div>
 
 	<div class="twelve wide column">
@@ -42,8 +44,8 @@ $this->menu=array(
 			),
 			'htmlOptions'=>array('class'=>'ui celled table segment'),
 
-
 		)); ?>
 
+	</div>
 </div>
-</div>
+<hr class="style-two ">

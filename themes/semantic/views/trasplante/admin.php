@@ -26,8 +26,12 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1 class="ui huge header add icon"> &nbsp; &nbsp; &nbsp; Administrar Trasplantes</h1>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Administrar Trasplantes </h1>
+</div>
 <hr class="style-two ">
+
 <div class="ui grid"><!--start grid-->
 
 	<div class="one wide column">
@@ -43,6 +47,7 @@ $('.search-form form').submit(function(){
 	</div>
 </div>
 <hr class="style-two ">
+
 
 
 <style>
@@ -229,6 +234,7 @@ $('.search-form form').submit(function(){
   								'url'=>'Yii::app()->createUrl("trasplante/delete", array("id"=>$data->id))',
 
 
+
                 			),
 
 					 ),
@@ -238,21 +244,9 @@ $('.search-form form').submit(function(){
 
 
 
-
-
-				 'pager'=>array(
-		         
-		       	        'htmlOptions' => array('class',"ui pagination menu",
-
-		       	        ),
-		       	        
-				       
-
-			
-		    	 ),
-
 		
 		)); ?>
 </div>
 </div>
 
+<hr class="style-two ">
