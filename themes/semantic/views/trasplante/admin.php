@@ -1,7 +1,6 @@
 <?php
 /* @var $this TrasplanteController */
 /* @var $model Trasplante */
-
 $this->breadcrumbs=array(
 	'Trasplantes'=>array('index'),
 	'Manage',
@@ -34,45 +33,29 @@ Administrar Trasplantes </h1>
 
 
 
-<script type="text/javascript">
-	
-$('.test.modal')
-  .modal('show')
-;
-
-</script>
 
 <!--MODAL-->
-
 <div class="ui modal">
   <i class="close icon"></i>
   <div class="header">
-    Header
+    Modal Title
   </div>
   <div class="content">
     <div class="left">
-      Some content to the left, usually an image or icon
+      Content can appear on left
     </div>
     <div class="right">
-      Some content to the right
+      Content can appear on right
     </div>
   </div>
   <div class="actions">
-    <div class="ui button">
-      Cancel
-    </div>
-    <div class="ui button">
-      Okay
-    </div>
+    <div class="ui button">Cancel</div>
+    <div class="ui button">OK</div>
   </div>
 </div>
-
-
 <!--MODAL-->
 
 
-<a class="ui ignored pointing below black label">Run Code</a>
-<a class="ui primary test button" ></a>
 
 <div class="ui grid"><!--start grid-->
 
@@ -219,7 +202,11 @@ $('.test.modal')
 	border: 1px solid #ccc;
 }
 
-
+.grid-view-loading
+{
+    background-position: center top;
+   
+}
 
 </style>
 
@@ -231,6 +218,13 @@ $('.test.modal')
 	</div>
 	<div class="twelve wide column">
 	
+
+
+
+
+
+
+
 
 		<?php $this->widget('zii.widgets.grid.CGridView', array(
 			'id'=>'trasplante-grid',
@@ -280,9 +274,12 @@ $('.test.modal')
                 			),
 
 					 ),
+
 				),
 
+
 			), 
+
 
 
 
