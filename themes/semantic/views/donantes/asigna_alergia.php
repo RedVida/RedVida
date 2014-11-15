@@ -1,10 +1,16 @@
 
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/jquery.js" type="text/javascript"></script> 
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/jquery-ui.js" type="text/javascript"></script> 
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/ui-autocomplete.min.js" type="text/javascript"></script> 
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/typeahead.js" type="text/javascript"></script> 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+<?php $this->menu=array(
+	array('label'=>'Listar Donante', 'url'=>array('index')),
+	array('label'=>'Registrar Donante', 'url'=>array('create')),
+); ?>
+
 <script type="text/javascript">
+
 
 	$(function(){
         $('#busquedaAlergia').autocomplete({
