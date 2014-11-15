@@ -13,7 +13,9 @@ $this->menu=array(
 );
 ?>
 
-<h1 class="ui huge header add icon"> &nbsp; &nbsp; &nbsp; Ver Trasplante #<?php echo $model->id; ?></h1>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; Ver Trasplante #<?php echo $model->id; ?></h1>
+</div>
 <hr class="style-two ">
 
 <div class="ui grid">

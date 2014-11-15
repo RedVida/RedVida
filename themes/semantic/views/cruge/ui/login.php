@@ -1,9 +1,11 @@
-
 <?php if(Yii::app()->user->hasFlash('loginflash')): ?>
+
 <div class="flash-error">
 	<?php echo Yii::app()->user->getFlash('loginflash'); ?>
 </div>
+
 <?php else: ?>
+
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'logon-form',
@@ -13,37 +15,28 @@
 	),
 )); ?>
 
-<style>
-#posicionlogin {
-    margin: 41%;
-    display:inline;
-}
-#posicionlabel{
-    margin: 53.5%;
-    display:inline;
-}
-</style>
-
 <?php Yii::app()->clientScript->registerScript(
     'myHideEffect',
     '$(".errors").animate({opacity: 1.0}, 5000).fadeOut("slow");',
     CClientScript::POS_READY
 ); ?>
-<diV class="ui huge header"id="posicionlabel">
-	Iniciar Sesión
-</div>
+
+</br></br></br>
+
+<center><h1 class="ui header">Iniciar Sesión</h1></center>
 <p>
-<div class="ui grid ui center aligned segment" id="posicionlogin">
+<div class="ui grid center aligned segment">
   <div class="seven wide column">
     <div class="ui fluid form segment">
       <div class="ui left aligned segment">
-    <h4>Usuario</h4>
-    <div class="ui left labeled icon input">
-      <?php echo $form->textField($model,'username'); ?>
-      <i class="user icon"></i>
-      <div class="errors">	
-	  <?php echo $form->error($model,'username',array('class' => 'ui small red pointing above ui label')); ?> 
-      </div>
+    	  
+    	  <h4>Usuario</h4>
+    	  <div class="ui left labeled icon input" placeholder="Usuario">
+	      <?php echo $form->textField($model,'username'); ?>
+	      <i class="user icon"></i>
+	      <div class="errors">	
+		  <?php echo $form->error($model,'username',array('class' => 'ui small red pointing above ui label')); ?> 
+	      </div>
       <div class="ui corner label">
         <i class="icon asterisk"></i>
       </div>
@@ -77,9 +70,15 @@
 			if(Yii::app()->user->um->getDefaultSystem()->getn('registrationonlogin')===1)
 				echo Yii::app()->user->ui->registrationLink;
 		?>
-	</br>
+	
+	</br></br>
+
     </div>
-  </div>
+  	</div>
+	
+
+	</br></br></br>
+	
 	<?php
 		//	si el componente CrugeConnector existe lo usa:
 		//
@@ -99,9 +98,11 @@
 		?>
 		</ul>
 	</div>
+
 	<?php }} ?>
 	
 
 <?php $this->endWidget(); ?>
 </div>
+
 <?php endif; ?>

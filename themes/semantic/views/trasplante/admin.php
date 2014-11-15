@@ -45,6 +45,136 @@ $('.search-form form').submit(function(){
 <hr class="style-two ">
 
 
+<style>
+
+.grid-view
+{
+	border: 1px;
+	border-color: gray;
+	padding: 15px 0;
+}
+
+.grid-view table.items
+{
+	background: white;
+	border-collapse: collapse;
+	width: 100%;
+	border: 1px #D0E3EF solid;
+}
+
+.grid-view table.items th, .grid-view table.items td
+{
+	font-size: 0.9em;
+	margin: 1em 0;
+	padding: 1em;
+	border-radius: 7px;
+	padding: 0.4em;
+}
+
+
+.grid-view table.items th
+{
+	color: white;
+	background: #404040;
+	text-align: center;
+
+}
+
+.grid-view table.items th a
+{
+	color: #EEE;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.grid-view table.items th a:hover
+{
+	color: #FFF;
+}
+
+.grid-view table.items th a.asc
+{
+	padding-right: 10px;
+}
+
+.grid-view table.items th a.desc
+{
+	padding-right: 10px;
+}
+
+.grid-view table.items tr.even
+{
+	background: white;
+}
+
+.grid-view table.items tr.odd
+{
+	background: #E0E0E0;
+}
+
+.grid-view table.items tr.selected
+{
+	background: #6ECFF5!important;
+	color: white;
+}
+
+.grid-view table.items tbody tr:hover
+{
+
+	background: #404040;
+	color: white;
+	font-weight: bold;
+
+}
+
+.grid-view .link-column img
+{
+	border: 0;
+}
+
+.grid-view .button-column
+{
+	text-align: center;
+	width: 100px;
+}
+
+.grid-view .button-column img
+{
+	border: 0;
+}
+
+.grid-view .checkbox-column
+{
+	width: 15px;
+}
+
+.grid-view .summary
+{
+	margin: 0 0 5px 0;
+	text-align: right;
+}
+
+.grid-view .pager
+{
+	margin: 5px 0 0 0;
+	text-align: right;
+}
+
+.grid-view .empty
+{
+	font-style: italic;
+}
+
+.grid-view .filters input,
+.grid-view .filters select
+{
+	width: 100%;
+	border: 1px solid #ccc;
+}
+
+
+
+</style>
 
 
 <div class="ui grid">
@@ -52,7 +182,6 @@ $('.search-form form').submit(function(){
 	<div class="one wide column">
 
 	</div>
-
 	<div class="twelve wide column">
 	
 
@@ -74,11 +203,56 @@ $('.search-form form').submit(function(){
 				'created',
 				'modified',
 				*/
+				
 				array(
 					'class'=>'CButtonColumn',
+					'template'=>'{Ver}{Actualizar}{Eliminar}',
+
+					'buttons'=>array
+					 (
+					        'Ver' => array
+					        (
+					            'label'=>'Ver',
+					            'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/eye.png",
+					            'url'=>'Yii::app()->createUrl("trasplante/view", array("id"=>$data->id))',
+					        ),
+					        'Actualizar' => array
+					        (
+					            'label'=>'Actualizar',
+					    		'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/edit.png",
+					            'url'=>'Yii::app()->createUrl("trasplante/update", array("id"=>$data->id))', 
+					        ),
+					         'Eliminar' => array
+					        (
+					       		'label'=>'Eliminar',
+					    		'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/delete.png",
+  								'url'=>'Yii::app()->createUrl("trasplante/delete", array("id"=>$data->id))',
+
+
+                			),
+
+					 ),
 				),
-			),
-			'htmlOptions' => array('class' => 'ui table responsive'),
+
+			), 
+
+
+
+
+
+				 'pager'=>array(
+		         
+		       	        'htmlOptions' => array('class',"ui pagination menu",
+
+		       	        ),
+		       	        
+				       
+
+			
+		    	 ),
+
+		
 		)); ?>
 </div>
 </div>
+
