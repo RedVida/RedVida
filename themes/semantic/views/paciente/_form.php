@@ -40,7 +40,7 @@
 	<div class="fields">
 	 	<div class="four wide field">
 			<?php echo $form->labelEx($model,'nombre'); ?>
-			<?php echo $form->textField($model,'nombre',array('size'=>20,'maxlength'=>20)); ?>
+			<?php echo $form->textField($model,'nombre',array('size'=>20,'maxlength'=>20,'class'=>'ui field')); ?>
 			<div class="errors">
 			<?php echo $form->error($model,'nombre',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>

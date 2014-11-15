@@ -165,7 +165,7 @@
   </div>
 
 
-    <div class="ui inverted teal page grid segment">
+    <div class="ui inverted blue page grid segment">
     <div class="ten wide column">
       <div class="ui three column stackable grid">
         <div class="column">
