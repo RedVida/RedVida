@@ -33,7 +33,7 @@ class PacienteController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','asignar'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -171,6 +171,24 @@ class PacienteController extends Controller
 			'model'=>$model,
 		));
 	}
+
+	public function actionAsignar()
+	{	
+
+
+		$model=new Paciente('search');
+		$k=new Paciente();
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Paciente']))
+			$model->attributes=$_GET['Paciente'];
+
+		$this->render('asignar',array(
+			'model'=>$model,
+		));
+	}
+
+
+
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

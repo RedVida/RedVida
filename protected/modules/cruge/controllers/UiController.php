@@ -21,6 +21,7 @@ a la insercion de diferentes ORDBM.
  */
 class UiController extends Controller
 {
+   
     public $basePath; // usada por CrugeUi::getResource()
 
     public function init()
@@ -158,6 +159,9 @@ class UiController extends Controller
                 );
             }
         }
+
+        $this->layout='//layouts/column1'; //PERMITE SOLAMENTE RENDERIZAR MAIN Y COLUMN 1.
+        
         $this->render('login', array('model' => $model));
     }
 

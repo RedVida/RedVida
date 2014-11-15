@@ -49,7 +49,6 @@
 
 
 	<?php
-	$rut='';
 	$val=false;
 	if(isset($_GET['id']))
 	{
