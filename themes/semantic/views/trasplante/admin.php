@@ -32,6 +32,48 @@ Administrar Trasplantes </h1>
 </div>
 <hr class="style-two ">
 
+
+
+<script type="text/javascript">
+	
+$('.test.modal')
+  .modal('show')
+;
+
+</script>
+
+<!--MODAL-->
+
+<div class="ui modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Header
+  </div>
+  <div class="content">
+    <div class="left">
+      Some content to the left, usually an image or icon
+    </div>
+    <div class="right">
+      Some content to the right
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui button">
+      Cancel
+    </div>
+    <div class="ui button">
+      Okay
+    </div>
+  </div>
+</div>
+
+
+<!--MODAL-->
+
+
+<a class="ui ignored pointing below black label">Run Code</a>
+<a class="ui primary test button" ></a>
+
 <div class="ui grid"><!--start grid-->
 
 	<div class="one wide column">

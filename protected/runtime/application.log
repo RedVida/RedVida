@@ -32398,3 +32398,11 @@ HTTP_REFERER=http://localhost:8080/redvida/index.php?r=trasplante/admin
 REQUEST_URI=/redvida/index.php?r=/trasplante/create
 HTTP_REFERER=http://localhost:8080/redvida/index.php?r=paciente/asignar&Paciente_sort=rut
 ---
+2014/11/15 19:27:06 [error] [exception.CrugeException.401] action_trasplante_admin<br/>401
+REQUEST_URI=/redvida/index.php?r=/trasplante/admin
+HTTP_REFERER=http://localhost:8080/redvida/
+---
+2014/11/15 20:06:41 [error] [exception.CrugeException.401] action_donantes_create<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/create
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=/trasplante/admin
+---

@@ -22,7 +22,8 @@
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/semantic.min.js"></script>  
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/views/layouts/main.js"></script>
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/jquery.tablesort.min.js"></script>
-  
+  <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/modal.js"></script>
+
 </head>
 
 <body>
@@ -233,17 +234,17 @@
       <div class="menu">
          
          <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/create">
-          <i class="doble angle right icon"></i> Registrar C.M
+          <i class="doble angle right icon"></i> Registrar C. Medico
         </a>
 
 
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/admin">
-          <i class="doble angle right icon"></i> Administrar C.M
+          <i class="doble angle right icon"></i> Administrar C. Medicos
         </a>
 
 
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/">
-          <i class="doble angle right icon"></i> Listar C.M
+          <i class="doble angle right icon"></i> Listar C. Medicos
         </a>
 
        </div>       
