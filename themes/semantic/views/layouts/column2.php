@@ -11,7 +11,7 @@
 	<div class="four wide column">
 		<br>
 		<div class="ui vertical menu">
-		 <a class="active blue item" style="pointer-events:none">
+		 <a class="active blue item" style="pointer-events:none"> 
 	    <?php
 			$this->beginWidget('zii.widgets.CPortlet', array(
 				'title'=>'Operaciones',
@@ -21,7 +21,7 @@
 		<?php
 			$this->widget('zii.widgets.CMenu', array(
 				'items'=>$this->menu,
-				'htmlOptions'=>array('class'=>'blue item ui blue label','id'=>'column2clase'),
+				'htmlOptions'=>array('class'=>'blue item ui blue label','id'=>'column2clase'), //COLOR: 2773c3 (blue)
 			));
 		?>
 		<?php

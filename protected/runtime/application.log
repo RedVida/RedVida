@@ -31733,3 +31733,11 @@ Stack trace:
 REQUEST_URI=/RedVida/index.php?r=/paciente/create
 HTTP_REFERER=http://localhost:8080/RedVida/index.php
 ---
+2014/11/15 23:48:22 [error] [exception.CrugeException.401] action_donantes_registrar_alergia<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/registrar_alergia&id=2
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/registra_alergia
+---
+2014/11/15 23:48:23 [error] [exception.CrugeException.401] action_donantes_registrar_alergia<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/registrar_alergia&id=2
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/registra_alergia
+---
