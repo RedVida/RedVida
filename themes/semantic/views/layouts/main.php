@@ -27,12 +27,38 @@
 
 <script>
 $(document).ready(function() {
-$('.ui.small.modal').modal('attach events','#terms','show');
+$('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada a Modal UI
 });
 </script>
+
 </head>
 
 <body>
+
+<!-- Modal View -->
+
+  <div class="ui small modal">
+        <i class="close icon"></i>
+          <div class="header">
+            Verificar Operación
+          </div>
+        <div class="content">
+          <i class="large loading icon"></i>
+           Esta seguro que desea registrar estos datos?
+        </div>
+      <div class="actions">
+        <div class="ui negative button" name="Cancel">
+          No
+        </div>
+        <div class="ui positive right labeled icon button"  onclick="successModal();" name="Success">
+          Si
+          <i class="checkmark icon"></i>
+        </div>
+      </div>
+  </div>
+
+<!-- Meno As DropDown -->
+
 <div class="ui center aligned segment">
 <img  src="<?php echo Yii::app()->request->baseUrl; ?>/images/clinica3.jpg"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/text.png">
 </div>
@@ -51,9 +77,7 @@ $('.ui.small.modal').modal('attach events','#terms','show');
     <?php } ?>
 
     <div class="right menu">
-      <div class="item">
-        <div class="ui icon input">
-
+    
     <?php if(!Yii::app()->user->isGuest){ ?>
   
     <a class="item" style="pointer-events:none">
@@ -66,8 +90,7 @@ $('.ui.small.modal').modal('attach events','#terms','show');
     </a>
     <?php } ?>
 
-        </div>
-      </div>
+     
     </div>
   </div>
 

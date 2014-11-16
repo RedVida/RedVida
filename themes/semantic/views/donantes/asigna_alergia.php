@@ -57,8 +57,7 @@
 			</div>
 		</div>
 	</div>
-</div>
- <div class="ui small modal">
+	 <div class="ui small modal">
   <i class="close icon"></i>
   <div class="header">
     Header
@@ -71,17 +70,21 @@
       Cancel
     </div>
     <div class="ui positive right labeled icon button">
-      Okay
+    	<div class="form">
+    	<?php echo $form->labelEx($model,'nombre:'); ?>	
+      <?php echo CHtml::submitButton(CrugeTranslator::t('Registrar'),array("class"=>"ui positive right labeled icon button",'name' => 'button1')); ?>
+    </div>
       <i class="checkmark icon">
       </i>
     </div>
   </div>
 </div>
+</div>
+
 
 	<br>
-	<div class="row buttons">
-	    <?php echo CHtml::submitButton(CrugeTranslator::t('Registrar'),array("class"=>"ui blue submit button","id"=>"terms")); ?>
-	</div>
+	<div class="ui blue button" id="terms">
+</div>
 
 <?php $this->endWidget(); ?>
 
