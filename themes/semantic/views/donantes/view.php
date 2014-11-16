@@ -2,11 +2,6 @@
 /* @var $this DonantesController */
 /* @var $model Donantes */
 
-$this->breadcrumbs=array(
-	'Donantes'=>array('index'),
-	$model->id,
-);
-
 $this->menu=array(
 	array('label'=>'Listar Donantes', 'url'=>array('index')),
 	array('label'=>'Registrar Donante', 'url'=>array('create')),

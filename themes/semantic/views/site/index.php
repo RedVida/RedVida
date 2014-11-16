@@ -1,4 +1,5 @@
 <?php  $this->layout="//layouts/index";?>
+
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
   <!-- Wrapper for slides -->

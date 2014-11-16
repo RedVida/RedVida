@@ -1,4 +1,8 @@
-protected/runtime/application.log
-index.php
-/nbproject/private/
-index.php
+protected/config/main.php
+assets/
+*!assets/
+.gitignore
+protected/runtime/
+*!protected/runtime/
+nbproject/
+*.index.php

@@ -74,7 +74,7 @@
     	{
 		    $alergia=Alergias::model()->find('id='.$valor->id_alergia);
 		    ?><i class="angle right icon"></i><?php
-		    echo " ".CHtml::link($alergia->nombre,'index.php?r=alergias/view&id='.$alergia->id);
+		    echo " ".CHtml::link($alergia->nombres,'index.php?r=alergias/view&id='.$alergia->id);
 		    ?></br><?php
     	}     
     ?>

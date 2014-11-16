@@ -25,10 +25,10 @@ class Alergias extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombre', 'length', 'max'=>128),
+			array('nombres', 'length', 'max'=>128),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre', 'safe', 'on'=>'search'),
+			array('id, nombres', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -74,7 +74,7 @@ class Alergias extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('nombre',$this->nombres,true);
+		$criteria->compare('nombres',$this->nombres,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

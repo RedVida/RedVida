@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Listar Trasplantes', 'url'=>array('index')),
-	array('label'=>'Actualizar Trasplante', 'url'=>array('create')),
+	array('label'=>'Registrar Trasplante', 'url'=>array('create')),
 	array('label'=>'Ver Trasplante', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Administrar Trasplantes', 'url'=>array('admin')),
 );

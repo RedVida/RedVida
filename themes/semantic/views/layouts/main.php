@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="es">
 
 <head>
@@ -9,22 +10,19 @@
   <meta name="language" content="es" />
 
   <!-- Site Properities -->
-  
-
   <title><?php echo CHtml::encode($this->pageTitle); ?></title>
-  
+  <link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/favicon.ico">  
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/carousel.css">
-  <link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/favicon.ico">
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/semantic.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/views/layouts/main.css">   
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/modal.css">   
-  <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/jquery.min.js"></script>
-  <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/carousel.js"></script>
+  <script type="aplication/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/jquery.min.js"></script>
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/semantic.min.js"></script>  
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/views/layouts/main.js"></script>
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/jquery.tablesort.min.js"></script>
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/modal.js"></script>
 
+<<<<<<< HEAD
 <script>
 $(document).ready(function() {
 $('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada a Modal UI
@@ -59,23 +57,18 @@ $('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada 
 
 <!-- Meno As DropDown -->
 
+=======
+>>>>>>> origin/master
 <div class="ui center aligned segment">
 <img  src="<?php echo Yii::app()->request->baseUrl; ?>/images/clinica3.jpg"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/text.png">
 </div>
 
-<div class="ui blue inverted menu">
-  <div class="menu">
+</head>
 
-    <a class="item" href="<?php echo Yii::app()->request->baseUrl; ?>">
-      <i class="home icon"></i>Inicio
-    </a>
+<body>
 
-    <?php if(Yii::app()->user->isGuest){ ?>
-    <a class="item" href="<?php echo Yii::app()->user->ui->loginUrl; ?>">
-      <i class="user icon"></i> Iniciar Sesión
-    </a>
-    <?php } ?>
 
+<<<<<<< HEAD
     <div class="right menu">
     
     <?php if(!Yii::app()->user->isGuest){ ?>
@@ -84,20 +77,47 @@ $('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada 
       <i class="user icon"></i> 
       <?php echo Yii::app()->user->name; ?>
     </a>   
+=======
+<div class="ui blue inverted menu">
+    <div class="menu">
 
-    <a class="item"  href="<?php echo Yii::app()->user->ui->logoutUrl; ?>" >
-      <i class="off icon" ></i> Cerrar Sesión
-    </a>
-    <?php } ?>
+      <a class="item" href="<?php echo Yii::app()->request->baseUrl; ?>">
+        <i class="home icon"></i>Inicio
+      </a>
+>>>>>>> origin/master
 
+      <?php if(Yii::app()->user->isGuest){ ?>
+      <a class="item" href="<?php echo Yii::app()->user->ui->loginUrl; ?>">
+        <i class="user icon"></i> Iniciar Sesión
+      </a>
+      <?php } ?>
+
+      <div class="right menu">
+      
+      <?php if(!Yii::app()->user->isGuest){ ?>
+    
+      <a class="item" style="pointer-events:none">
+        <i class="user icon"></i> 
+        <?php echo Yii::app()->user->name; ?>
+      </a>   
+
+      <a class="item"  href="<?php echo Yii::app()->user->ui->logoutUrl; ?>" >
+        <i class="off icon" ></i> Cerrar Sesión
+      </a>
+      <?php } ?>
+
+<<<<<<< HEAD
      
+=======
+      </div>
+    
+>>>>>>> origin/master
     </div>
-  </div>
 
 
- <?php if(!Yii::app()->user->isGuest){ ?>
-<div class="ui blue inverted menu ">
-  <div class="menu">
+<?php if(!Yii::app()->user->isGuest){ ?>
+<div class="ui blue inverted menu "> <!--BEGIN MENU INVERTED-->
+  <div class="menu"><!--BEGIN MENU-->
     <a class="item" href="<?php echo Yii::app()->user->ui->userManagementAdminUrl; ?>">
       <i class="asterisk icon"></i> Adm. de Usuario
     </a>
@@ -132,8 +152,7 @@ $('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada 
           <i class="doble angle right icon"></i> Asignar Alergia 
         </a>
       
-       </div>
-       
+       </div>     
     </div>
 
 
@@ -141,8 +160,7 @@ $('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada 
 
       <i class="asterisk icon"></i> Pacientes <i class="dropdown icon"></i>
       <div class="menu">
-     
-
+  
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/create">
           <i class="doble angle right icon"></i> Registrar Paciente
         </a>
@@ -214,79 +232,74 @@ $('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada 
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/organo/">
           <i class="doble angle right icon"></i> Listar Organos
         </a>
-        
-   
-       </div>
-       
+      
+       </div>  
     </div>
         
 
-    <div class="ui pointing dropdown link item">
+      <div class="ui pointing dropdown link item">
 
-      <i class="asterisk icon"></i> Trasplantes <i class="dropdown icon"></i>
-      <div class="menu">
-         
-         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/trasplante/create">
-          <i class="doble angle right icon"></i> Registrar Trasplante
-        </a>
-
-
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/trasplante/admin">
-          <i class="doble angle right icon"></i> Administrar Trasplantes
-        </a>
+          <i class="asterisk icon"></i> Trasplantes <i class="dropdown icon"></i>
+          <div class="menu">
+           
+           <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/trasplante/create">
+            <i class="doble angle right icon"></i> Registrar Trasplante
+          </a>
 
 
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/trasplante/">
-          <i class="doble angle right icon"></i> Listar Trasplantes
-        </a>
+          <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/trasplante/admin">
+            <i class="doble angle right icon"></i> Administrar Trasplantes
+          </a>
 
 
-         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/asignar">
-          <i class="doble angle right icon"></i> Asignar Trasplantes
-         </a>
-
-       </div>       
-    </div>
+          <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/trasplante/">
+            <i class="doble angle right icon"></i> Listar Trasplantes
+          </a>
 
 
- <div class="ui pointing dropdown link item">
+           <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/asignar">
+            <i class="doble angle right icon"></i> Asignar Trasplantes
+           </a>
 
-      <i class="asterisk icon"></i> Centros Medicos <i class="dropdown icon"></i>
-      <div class="menu">
-         
-         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/create">
-          <i class="doble angle right icon"></i> Registrar C. Medico
-        </a>
+          </div>       
+      </div>
 
 
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/admin">
-          <i class="doble angle right icon"></i> Administrar C. Medicos
-        </a>
+      <div class="ui pointing dropdown link item">
+
+          <i class="asterisk icon"></i> Centros Medicos <i class="dropdown icon"></i>
+          <div class="menu">
+             
+             <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/create">
+              <i class="doble angle right icon"></i> Registrar C. Medico
+            </a>
 
 
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/">
-          <i class="doble angle right icon"></i> Listar C. Medicos
-        </a>
-
-       </div>       
-    </div>
+            <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/admin">
+              <i class="doble angle right icon"></i> Administrar C. Medicos
+            </a>
 
 
-  </div>
+            <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/">
+              <i class="doble angle right icon"></i> Listar C. Medicos
+            </a>
+
+          </div>       
+      </div>
 
 
+    </div><!--END MENU-->
+</div><!--END MENU  INVERTED-->
+
+  <?php }  ?>
+  
 </div>
 
- <?php }  ?>
-
-
-</div>
 <div class="contenido">
   
   <?php echo $content; ?>
 
 </div>
-
 
 </body>
 
