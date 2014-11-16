@@ -1,15 +1,14 @@
 <?php
 /* @var $this DonantesController */
 /* @var $model Donantes */
-
 $this->breadcrumbs=array(
 	'Donantes'=>array('index'),
 	'Menu',
 );
 
 $this->menu=array(
-	array('label'=>'Lista Donantes', 'url'=>array('index')),
-	array('label'=>'Crear Donantes', 'url'=>array('create')),
+	array('label'=>'Listar Trasplantes', 'url'=>array('/trasplante/index')),
+	array('label'=>'Administrar Trasplante', 'url'=>array('/trasplante/admin')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -18,7 +17,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$('#donantes-grid').yiiGridView('update', {
+	$('#paciente-grid').yiiGridView('update', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -26,78 +25,77 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Menu Asignar Trasplante</h1>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Asignar Trasplante </h1>
+</div>
+<hr class="style-two ">
+
+
+<div class="ui grid"><!--start grid-->
+
+	<div class="one wide column">
+	</div>
+
+	<div class="twelve wide column">
+		<?php echo CHtml::link('Busqueda Avanzada','#',array('class'=>'search-button')); ?>
+		<div class="search-form" style="display:none">
+		<?php $this->renderPartial('_search',array(
+			'model'=>$model,
+		)); ?>
+		</div><!-- search-form -->
+	</div>
+</div>
+<hr class="style-two ">
+
+<div class="ui grid">
+
+	<div class="one wide column">
+
+	</div>
+	<div class="twelve wide column">
+
+
+<?php echo CHtml::beginForm(); ?>
 
 
 
+<?php 
+    $this->widget('zii.widgets.grid.CGridView', array(
+    'id'=>'paciente-grid',
+    'dataProvider'=>$model->search(),
+    'filter'=>$model,
+    'selectableRows' => 1,
+    'columns'=>array(
 
-
-
-
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'paciente-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		//'id',,
-		'nombre',
-		'rut',
-		/*
-		'tipo_sangre',
-		'email',
-		'centro_medico',
-		'direccion',
-		'enfermedades',
-		'alergias',
-		'num_contacto',
-		*/
-		'link'=>array(
-            'header'=>'',
-            'type'=>'raw',
-            'value'=> 'CHtml::button("Asignar Trasplante",array("onclick"=>"document.location.href=\'".Yii::app()->controller->createUrl("trasplante/create",array("id"=>$data->id))."\'"))',
-        ),   
-	
-	
-	/*
-
-		array(
-			'class'=>'CButtonColumn',
-			'template'=>'{Sangre}', // botones a mostrar
-            'buttons'=>array(
-			'Sangre' => array( //botón para la acción nueva
-		    'label'=>'Sangre', // titulo del enlace del botón nuevo
-		    'url'=>'Yii::app()->createUrl("/donacionSangre/create&id=$data->id")', //url de la acción nueva
-		    //'visible'=>'($data->estado==="DISPONIBLE")?true:false;'
-		    ),
-			),
-		),
-
-		array(
-			'class'=>'CButtonColumn',
-			'template'=>'{Medula}', // botones a mostrar
-            'buttons'=>array(
-			'Medula' => array( //botón para la acción nueva
-		    'label'=>'Medula', // titulo del enlace del botón nuevo
-		    'url'=>'Yii::app()->createUrl("/donacionMedula/create&id=$data->id")', //url de la acción nueva
-		    //'visible'=>'($data->estado==="DISPONIBLE")?true:false;'
-		    ),
-			),
-		),
-
-		array(
-			'class'=>'CButtonColumn',
-			'template'=>'{Organo}', // botones a mostrar
-            'buttons'=>array(
-			'Organo' => array( //botón para la acción nueva
-		    'label'=>'Organo', // titulo del enlace del botón nuevo
-		    'url'=>'Yii::app()->createUrl("/donacionOrgano/create&id=$data->id")', //url de la acción nueva
-		    //'visible'=>'($data->estado==="DISPONIBLE")?true:false;'
-		    ),
-			),
-		),
-
-		*/
-	),
-
+        array( 
+        	  'id'=>'id',
+              'class'=>'CCheckBoxColumn',            
+        ),
+        'nombre',
+        'rut',
+        ),
+        'selectionChanged'=>'userClicks',
 )); ?>
+
+
+
+
+
+<div>
+<?php echo CHtml::submitButton('Asignar Trasplante', array('name' => 'ApproveButton', 'class' => 'ui red submit button')); ?>
+</div>
+
+<?php echo CHtml::endForm(); ?>
+
+<script>
+function userClicks(target_id) {
+
+//        alert($.fn.yiiGridView.getSelection(target_id));
+}
+</script>
+	</div>	
+</div>
+
+	
+<hr class="style-two ">

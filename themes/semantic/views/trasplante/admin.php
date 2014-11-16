@@ -3,7 +3,7 @@
 /* @var $model Trasplante */
 $this->breadcrumbs=array(
 	'Trasplantes'=>array('index'),
-	'Manage',
+	'Menu',
 );
 
 $this->menu=array(
@@ -136,7 +136,6 @@ Administrar Trasplantes </h1>
 					       		'label'=>'Eliminar',
 					    		'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/delete.png",
   								'url'=>'Yii::app()->createUrl("trasplante/delete", array("id"=>$data->id))',
-  							
 
 
                 			),

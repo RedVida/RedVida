@@ -176,6 +176,18 @@ class PacienteController extends Controller
 	{	
 
 
+  if (isset($_POST['ApproveButton']))
+    {
+        if (isset($_POST['id']))
+        {
+            foreach ($_POST['id'] as $id)
+            {
+                $comment = $this->loadModel($id);
+                $this->redirect(Yii::App()->request->baseUrl.'/index?r=trasplante/create&id='.$id);
+            }
+        }
+    }
+
 		$model=new Paciente('search');
 		$k=new Paciente();
 		$model->unsetAttributes();  // clear any default values
