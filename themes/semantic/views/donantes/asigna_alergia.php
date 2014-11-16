@@ -1,5 +1,4 @@
-
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/jquery.js" type="text/javascript"></script> 
+<?php  $this->layout="//layouts/index";?>
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/jquery-ui.js" type="text/javascript"></script> 
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/ui-autocomplete.min.js" type="text/javascript"></script> 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
@@ -59,11 +58,29 @@
 		</div>
 	</div>
 </div>
-
+ <div class="ui small modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Header
+  </div>
+  <div class="content">
+    <p>Esta Seguro y que pasa?</p>
+  </div>
+  <div class="actions">
+    <div class="ui negative button">
+      Cancel
+    </div>
+    <div class="ui positive right labeled icon button">
+      Okay
+      <i class="checkmark icon">
+      </i>
+    </div>
+  </div>
+</div>
 
 	<br>
 	<div class="row buttons">
-	    <?php echo CHtml::submitButton(CrugeTranslator::t('Registrar'),array("class"=>"ui blue submit button")); ?>
+	    <?php echo CHtml::submitButton(CrugeTranslator::t('Registrar'),array("class"=>"ui blue submit button","id"=>"terms")); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

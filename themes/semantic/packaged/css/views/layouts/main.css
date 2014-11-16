@@ -595,3 +595,29 @@ ul.yiiPager .last
 {
         display:none;
 }
+
+
+/**MENU CSS**/
+.ui.inverted.blue.segment {
+background-color: #2773c3!important;
+color: #FFF!important;
+}
+
+.ui.inverted.blue.header {
+background-color: #2773c3!important;
+color: #FFF!important;
+border-radius: 0px;
+
+}
+
+.ui.inverted.blue.menu {
+background-color: #2773c3!important;
+color: #FFF!important;
+}
+
+.ui.segment{
+border-radius: 0px;
+
+}
+
+/**END MENU CSS**/

@@ -7,7 +7,8 @@
                 alert('El valor ingresado no corresponde a un R.U.T válido.');
             }
         });
-    })
+
+    });
    
 </script>
 
@@ -106,10 +107,29 @@
 	
    </div>   
 
+   <div class="ui small modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Header
+  </div>
+  <div class="content">
+    <p>Esta Seguro y que pasa?</p>
+  </div>
+  <div class="actions">
+    <div class="ui negative button">
+      Cancel
+    </div>
+    <div class="ui positive right labeled icon button">
+      Okay
+      <i class="checkmark icon">
+      </i>
+    </div>
+  </div>
+</div>
 
 	<br><br>
 	<div class="row buttons">
-	    <?php echo CHtml::submitButton(CrugeTranslator::t('Registrar'),array("class"=>"ui blue submit button")); ?>
+	    <?php echo CHtml::submitButton(CrugeTranslator::t('Registrar'),array("class"=>"ui blue submit button", "id"=>"terms")); ?>
 	</div>
 
 

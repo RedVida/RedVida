@@ -25,6 +25,11 @@
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/jquery.tablesort.min.js"></script>
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/modal.js"></script>
 
+<script>
+$(document).ready(function() {
+$('.ui.small.modal').modal('attach events','#terms','show');
+});
+</script>
 </head>
 
 <body>
@@ -68,7 +73,7 @@
 
 
  <?php if(!Yii::app()->user->isGuest){ ?>
-<div class="ui blue inverted menu">
+<div class="ui blue inverted menu ">
   <div class="menu">
     <a class="item" href="<?php echo Yii::app()->user->ui->userManagementAdminUrl; ?>">
       <i class="asterisk icon"></i> Adm. de Usuario
@@ -107,11 +112,6 @@
        </div>
        
     </div>
-
-
-
-
-
 
 
     <div class="ui pointing dropdown link item">
@@ -224,9 +224,6 @@
 
        </div>       
     </div>
-
-
-
 
 
  <div class="ui pointing dropdown link item">
