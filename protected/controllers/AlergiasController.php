@@ -87,7 +87,8 @@ class AlergiasController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Alergias']))
+		
+			if(isset($_POST['Alergias']))
 		{
 			$model->attributes=$_POST['Alergias'];
 			if($model->save())
@@ -97,6 +98,10 @@ class AlergiasController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
 		));
+
+
+
+
 	}
 
 	/**

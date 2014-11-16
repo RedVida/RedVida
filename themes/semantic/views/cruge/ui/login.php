@@ -109,6 +109,8 @@ $this->redirect(Yii::app()->baseurl);
 		</div>
 		<?php }} ?>
 	<?php $this->endWidget(); ?>
- </div>
+<hr class="style-two ">
+</br>
+</div>
  
 <?php endif; ?>
