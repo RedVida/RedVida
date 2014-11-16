@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="es">
 
 <head>
@@ -16,20 +16,24 @@
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/semantic.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/views/layouts/main.css">   
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/modal.css">   
-  <script type="aplication/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/jquery.min.js"></script>
+  <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/jquery.min.js"></script>
+  <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/carousel.js"></script>
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/semantic.min.js"></script>  
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/views/layouts/main.js"></script>
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/jquery.tablesort.min.js"></script>
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/modal.js"></script>
 
-<<<<<<< HEAD
-<script>
-$(document).ready(function() {
-$('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada a Modal UI
-});
-</script>
+  <div class="ui center aligned segment">
+  <img  src="<?php echo Yii::app()->request->baseUrl; ?>/images/clinica3.jpg"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/text.png">
+  </div>
 
-</head>
+  <script>
+  $(document).ready(function() {
+  $('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada a Modal UI
+  });
+  </script>
+
+  </head>
 
 <body>
 
@@ -57,34 +61,12 @@ $('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada 
 
 <!-- Meno As DropDown -->
 
-=======
->>>>>>> origin/master
-<div class="ui center aligned segment">
-<img  src="<?php echo Yii::app()->request->baseUrl; ?>/images/clinica3.jpg"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/text.png">
-</div>
-
-</head>
-
-<body>
-
-
-<<<<<<< HEAD
-    <div class="right menu">
-    
-    <?php if(!Yii::app()->user->isGuest){ ?>
-  
-    <a class="item" style="pointer-events:none">
-      <i class="user icon"></i> 
-      <?php echo Yii::app()->user->name; ?>
-    </a>   
-=======
 <div class="ui blue inverted menu">
     <div class="menu">
 
       <a class="item" href="<?php echo Yii::app()->request->baseUrl; ?>">
         <i class="home icon"></i>Inicio
       </a>
->>>>>>> origin/master
 
       <?php if(Yii::app()->user->isGuest){ ?>
       <a class="item" href="<?php echo Yii::app()->user->ui->loginUrl; ?>">
@@ -106,12 +88,8 @@ $('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada 
       </a>
       <?php } ?>
 
-<<<<<<< HEAD
-     
-=======
       </div>
     
->>>>>>> origin/master
     </div>
 
 
