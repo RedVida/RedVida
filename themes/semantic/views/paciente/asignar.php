@@ -83,7 +83,7 @@ Asignar Trasplante </h1>
 
 
 <div>
-<?php echo CHtml::submitButton('Asignar Trasplante', array('name' => 'ApproveButton', 'class' => 'ui red submit button')); ?>
+<?php echo CHtml::submitButton('Asignar Trasplante', array('name' => 'ApproveButton', 'class' => 'ui red disabled submit button')); ?>
 </div>
 
 <?php echo CHtml::endForm(); ?>

@@ -764,3 +764,10 @@ background-color: #2773c3!important;
    
 }
 /**END GRIDVIEW**/
+
+
+/**BUTTON SEMANTIC DISABLED**/
+.ui.disabled.button, .ui.disabled.button.active, .ui.disabled.button:hover {
+background-color: #F5A9A9!important;
+}
+/**END DISABLE SEMANTIC B**/

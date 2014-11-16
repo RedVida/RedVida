@@ -5,4 +5,4 @@ assets/
 protected/runtime/
 *!protected/runtime/
 nbproject/
-*.index.php
+index.php
