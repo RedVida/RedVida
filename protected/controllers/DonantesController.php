@@ -119,7 +119,7 @@ class DonantesController extends Controller
 		if (isset($_POST['Alergias'])) {
 			$model_tiene_alergia->id_donante = $id;
 			$length = intval($_POST['Alergias']['id']);
-			$modelo = Alergias::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='.$length));
+			$modelo = Alergias::model()->findAll(array('select'=>'id,nombres','condition'=>'nombres='.$length));
 			$model_tiene_alergia->id_alergia = $modelo[0]->id;
 			if ($model_tiene_alergia->save()) {
 				$this->redirect(array('admin'));

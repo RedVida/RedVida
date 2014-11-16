@@ -7,7 +7,6 @@ html,
 body {
   font-size: 15px;
   height: 100%;
-
 }
 
 body {
@@ -22,8 +21,6 @@ body {
   color: #555555;
   text-rendering: optimizeLegibility;
   min-width: 320px;
-
-
 }
 
 
@@ -616,5 +613,7 @@ margin: 0px;
 
 .ui.segment {
   border-radius: 0px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.1);
 }
 /**END MENU CSS**/
+
