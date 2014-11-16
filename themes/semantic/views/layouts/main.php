@@ -32,7 +32,7 @@
 <img  src="<?php echo Yii::app()->request->baseUrl; ?>/images/clinica3.jpg"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/text.png">
 </div>
 
-<div class="ui blue inverted menu ui aligned left segment">
+<div class="ui blue inverted menu">
   <div class="menu">
 
     <a class="item" href="<?php echo Yii::app()->request->baseUrl; ?>">
