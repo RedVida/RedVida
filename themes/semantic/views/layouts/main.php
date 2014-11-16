@@ -51,9 +51,7 @@ $('.ui.small.modal').modal('attach events','#terms','show');
     <?php } ?>
 
     <div class="right menu">
-      <div class="item">
-        <div class="ui icon input">
-
+    
     <?php if(!Yii::app()->user->isGuest){ ?>
   
     <a class="item" style="pointer-events:none">
@@ -66,8 +64,7 @@ $('.ui.small.modal').modal('attach events','#terms','show');
     </a>
     <?php } ?>
 
-        </div>
-      </div>
+     
     </div>
   </div>
 
