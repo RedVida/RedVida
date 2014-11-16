@@ -8,11 +8,16 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List CentroMedico', 'url'=>array('index')),
-	array('label'=>'Manage CentroMedico', 'url'=>array('admin')),
+	array('label'=>'Listar C. Medicos', 'url'=>array('index')),
+	array('label'=>'Administrar C. Medicos', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create CentroMedico</h1>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Registrar Centro Medico </h1>
+</div>
+<hr class="style-two ">
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<hr class="style-two ">

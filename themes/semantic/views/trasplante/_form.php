@@ -30,33 +30,26 @@
 	if(isset($_GET['id']))
 	{
 	$id = $_GET['id'];
-	$model_donante = Paciente::model()->find("id=$id");
-	$rut= $model_donante['rut'];
+	$model_paciente = Paciente::model()->find("id=$id");
+	$rut= $model_paciente['rut'];
 	$val=true;
 
 
 	?>
-
-
-
 		<div class="ui orange ribbon label">
 		<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
-		Paciente: <?php echo $model_donante['nombre'].' '.$model_donante['apellido']; ?></h1>
+		Paciente: <?php echo $model_paciente['nombre'].' '.$model_paciente['apellido']; ?></h1>
 		</div>
 		<hr class="style-two ">
-
-
-
-	<?php	}
-
-	?>
+	<?php	}	?>
 
 
 
 
 <div class="ui form">
-
-
+<?php
+if(isset($_GET['id'])){
+?>
 <div class="fields">
 	 	<div class="four wide field">
 			<?php echo $form->labelEx($model,'Rut Paciente'); ?>
@@ -66,7 +59,7 @@
 			</div>
 		</div>
 	</div>
-
+<?php } ?>
 
  <div class="fields">
 	 	<div class="four wide field">

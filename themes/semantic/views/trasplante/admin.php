@@ -9,6 +9,8 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'Listar Trasplantes', 'url'=>array('index')),
 	array('label'=>'Registrar Trasplante', 'url'=>array('create')),
+	array('label'=>'Asignar Trasplante', 'url'=>array('paciente/asignar')),
+
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -35,6 +37,9 @@ Administrar Trasplantes </h1>
 
 
 <!--MODAL-->
+
+
+
 <div class="ui modal">
   <i class="close icon"></i>
   <div class="header">
@@ -53,6 +58,10 @@ Administrar Trasplantes </h1>
     <div class="ui button">OK</div>
   </div>
 </div>
+
+
+
+
 <!--MODAL-->
 
 
@@ -75,140 +84,6 @@ Administrar Trasplantes </h1>
 
 
 
-<style>
-
-.grid-view
-{
-	border: 1px;
-	border-color: gray;
-	padding: 15px 0;
-}
-
-.grid-view table.items
-{
-	background: white;
-	border-collapse: collapse;
-	width: 100%;
-	border: 1px #D0E3EF solid;
-}
-
-.grid-view table.items th, .grid-view table.items td
-{
-	font-size: 0.9em;
-	margin: 1em 0;
-	padding: 1em;
-	border-radius: 7px;
-	padding: 0.4em;
-}
-
-
-.grid-view table.items th
-{
-	color: white;
-	background: #404040;
-	text-align: center;
-
-}
-
-.grid-view table.items th a
-{
-	color: #EEE;
-	font-weight: bold;
-	text-decoration: none;
-}
-
-.grid-view table.items th a:hover
-{
-	color: #FFF;
-}
-
-.grid-view table.items th a.asc
-{
-	padding-right: 10px;
-}
-
-.grid-view table.items th a.desc
-{
-	padding-right: 10px;
-}
-
-.grid-view table.items tr.even
-{
-	background: white;
-}
-
-.grid-view table.items tr.odd
-{
-	background: #E0E0E0;
-}
-
-.grid-view table.items tr.selected
-{
-	background: #6ECFF5!important;
-	color: white;
-}
-
-.grid-view table.items tbody tr:hover
-{
-
-	background: #404040;
-	color: white;
-	font-weight: bold;
-
-}
-
-.grid-view .link-column img
-{
-	border: 0;
-}
-
-.grid-view .button-column
-{
-	text-align: center;
-	width: 100px;
-}
-
-.grid-view .button-column img
-{
-	border: 0;
-}
-
-.grid-view .checkbox-column
-{
-	width: 15px;
-}
-
-.grid-view .summary
-{
-	margin: 0 0 5px 0;
-	text-align: right;
-}
-
-.grid-view .pager
-{
-	margin: 5px 0 0 0;
-	text-align: right;
-}
-
-.grid-view .empty
-{
-	font-style: italic;
-}
-
-.grid-view .filters input,
-.grid-view .filters select
-{
-	width: 100%;
-	border: 1px solid #ccc;
-}
-
-.grid-view-loading
-{
-    background-position: center top;
-   
-}
-
-</style>
 
 
 <div class="ui grid">
@@ -217,19 +92,12 @@ Administrar Trasplantes </h1>
 
 	</div>
 	<div class="twelve wide column">
-	
-
-
-
-
-
-
 
 
 		<?php $this->widget('zii.widgets.grid.CGridView', array(
 			'id'=>'trasplante-grid',
 			'dataProvider'=>$model->search(),
-			'filter'=>$model,
+		    'filter'=>$model,
 			'columns'=>array(
 				'id',
 				'id_donante',
@@ -237,6 +105,7 @@ Administrar Trasplantes </h1>
 				'tipo_donacion',
 				'id_donacion',
 				'compatibilidad',
+			
 				/*
 				'detalle',
 				'grado_urgencia',
@@ -244,7 +113,6 @@ Administrar Trasplantes </h1>
 				'created',
 				'modified',
 				*/
-				
 				array(
 					'class'=>'CButtonColumn',
 					'template'=>'{Ver}{Actualizar}{Eliminar}',
@@ -268,7 +136,7 @@ Administrar Trasplantes </h1>
 					       		'label'=>'Eliminar',
 					    		'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/delete.png",
   								'url'=>'Yii::app()->createUrl("trasplante/delete", array("id"=>$data->id))',
-
+  							
 
 
                 			),
@@ -279,9 +147,6 @@ Administrar Trasplantes </h1>
 
 
 			), 
-
-
-
 
 		
 		)); ?>

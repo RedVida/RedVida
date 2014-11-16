@@ -38,6 +38,13 @@ class Trasplante extends CActiveRecord
 			array('id_donante, id_paciente', 'length', 'max'=>12),
 			array('tipo_donacion, id_donacion, compatibilidad, grado_urgencia, centro_medico', 'length', 'max'=>255),
 			array('detalle, created, modified', 'safe'),
+			array('modified','default',
+	          'value'=>new CDbExpression('NOW()'),
+              'setOnEmpty'=>false,'on'=>'update'),
+        	
+        	array('created,modified','default',
+              'value'=>new CDbExpression('NOW()'),
+              'setOnEmpty'=>false,'on'=>'insert'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, id_donante, id_paciente, tipo_donacion, id_donacion, compatibilidad, detalle, grado_urgencia, centro_medico, created, modified', 'safe', 'on'=>'search'),
@@ -64,14 +71,18 @@ class Trasplante extends CActiveRecord
 			'id' => 'ID',
 			'id_donante' => 'Id Donante',
 			'id_paciente' => 'Id Paciente',
-			'tipo_donacion' => 'Tipo Donacion',
+			'nombre_pac' => 'Nombre Paciente',
+			'rut_pac' => 'Rut Paciente',
+			'nombre_don' => 'Nombre Donante',
+			'rut_don' => 'Rut Donante',
+			'tipo_donacion' => 'Tipo de Donación',
 			'id_donacion' => 'Id Donacion',
 			'compatibilidad' => 'Compatibilidad',
-			'detalle' => 'Detalle',
+			'detalle' => 'Descripción',
 			'grado_urgencia' => 'Grado Urgencia',
 			'centro_medico' => 'Centro Medico',
-			'created' => 'Created',
-			'modified' => 'Modified',
+			'created' => 'Creado',
+			'modified' => 'Modificado',
 		);
 	}
 
