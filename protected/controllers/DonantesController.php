@@ -88,8 +88,8 @@ class DonantesController extends Controller
 
 		if (isset($_POST['Enfermedades'])) {
 			$model_tiene_enfermedad->id_donante = $id;
-			$length = intval($_POST['Enfermedades']['id']);
-			$modelo = Enfermedades::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='.$length));
+			$length = (string)($_POST['Enfermedades']['id']);
+		    $modelo = Enfermedades::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='."'$length'"));
 			$model_tiene_enfermedad->id_enfermedad = $modelo[0]->id;
 			if ($model_tiene_enfermedad->save()) {
 				$this->redirect(array('admin'));
@@ -118,8 +118,8 @@ class DonantesController extends Controller
 
 		if (isset($_POST['Alergias'])) {
 			$model_tiene_alergia->id_donante = $id;
-			$length = intval($_POST['Alergias']['id']);
-			$modelo = Alergias::model()->findAll(array('select'=>'id,nombres','condition'=>'nombres='.$length));
+			$length = (string)($_POST['Alergias']['id']);
+		    $modelo = Alergias::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='."'$length'"));
 			$model_tiene_alergia->id_alergia = $modelo[0]->id;
 			if ($model_tiene_alergia->save()) {
 				$this->redirect(array('admin'));

@@ -51,39 +51,16 @@
  	<div class="fields">
 	 	<div class="four wide field">
 			<?php echo $form->labelEx($model,'nombre:'); ?>
-			<?php echo $form->textField($model,'id',array('id'=>'busquedaAlergia','placeholder'=>'Ingrese la enfermedad a buscar...')); ?>
+			<?php echo $form->textField($model,'id',array('id'=>'busquedaAlergia','placeholder'=>'Ingrese la Alergia a buscar...')); ?>
 			<div class="errors">
 			<?php echo $form->error($model,'nombre',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>
 		</div>
 	</div>
-	 <div class="ui small modal">
-  <i class="close icon"></i>
-  <div class="header">
-    Header
+  <br>
+	<div class="row buttons">
+      <?php echo CHtml::submitButton(CrugeTranslator::t('Registrar'),array("class"=>"ui blue submit button")); ?>
   </div>
-  <div class="content">
-    <p>Esta Seguro y que pasa?</p>
-  </div>
-  <div class="actions">
-    <div class="ui negative button">
-      Cancel
-    </div>
-    <div class="ui positive right labeled icon button">
-    	<div class="form">
-    	<?php echo $form->labelEx($model,'nombre:'); ?>	
-      <?php echo CHtml::submitButton(CrugeTranslator::t('Registrar'),array("class"=>"ui positive right labeled icon button",'name' => 'button1')); ?>
-    </div>
-      <i class="checkmark icon">
-      </i>
-    </div>
-  </div>
-</div>
-</div>
-
-
-	<br>
-	<div class="ui blue button" id="terms">
 </div>
 
 <?php $this->endWidget(); ?>
