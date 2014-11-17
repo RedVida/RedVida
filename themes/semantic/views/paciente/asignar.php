@@ -74,6 +74,7 @@ Asignar Trasplante </h1>
         ),
         'nombre',
         'rut',
+        'grado_urgencia',
         ),
         'selectionChanged'=>'userClicks',
 )); ?>
@@ -83,7 +84,7 @@ Asignar Trasplante </h1>
 
 
 <div>
-<?php echo CHtml::submitButton('Asignar Trasplante', array('id'=>'btn_submit','name' => 'ApproveButton', 'class' => 'ui red submit button disabled')); ?>
+<?php echo ' '.CHtml::submitButton('Asignar', array('id'=>'btn_submit','name' => 'ApproveButton', 'class' => 'ui red submit button disabled')); ?>
 </div>
 
 <?php echo CHtml::endForm(); ?>
