@@ -38,30 +38,11 @@ Administrar Trasplantes </h1>
 
 <!--MODAL-->
 
-
-
-<div class="ui modal">
-  <i class="close icon"></i>
-  <div class="header">
-    Modal Title
-  </div>
-  <div class="content">
-    <div class="left">
-      Content can appear on left
-    </div>
-    <div class="right">
-      Content can appear on right
-    </div>
-  </div>
-  <div class="actions">
-    <div class="ui button">Cancel</div>
-    <div class="ui button">OK</div>
-  </div>
-</div>
-
-
-
-
+<script type="text/javascript" >
+    function successModal(){                     // Button - Modal Success 
+        $("#donantes-form").submit();
+    }
+</script>
 <!--MODAL-->
 
 
@@ -94,11 +75,19 @@ Administrar Trasplantes </h1>
 	<div class="twelve wide column">
 
 
+<?php echo CHtml::beginForm(); ?>
+
+
+
 		<?php $this->widget('zii.widgets.grid.CGridView', array(
 			'id'=>'trasplante-grid',
 			'dataProvider'=>$model->search(),
 		    'filter'=>$model,
 			'columns'=>array(
+				array( 
+        	  	'id'=>'id',
+              	'class'=>'CCheckBoxColumn',            
+        		),
 				'id',
 				'id_donante',
 				'id_paciente',
@@ -116,7 +105,6 @@ Administrar Trasplantes </h1>
 				array(
 					'class'=>'CButtonColumn',
 					'template'=>'{Ver}{Actualizar}{Eliminar}',
-
 					'buttons'=>array
 					 (
 					        'Ver' => array
@@ -146,9 +134,47 @@ Administrar Trasplantes </h1>
 
 
 			), 
-
+			'selectionChanged'=>'userClicks',
 		
 		)); ?>
+
+
+
+<div>
+<?php echo ' '.CHtml::submitButton('Ver', array('id'=>'btn_submit','name' => 'Ver', 'class' => 'ui red submit button disabled')); ?>
+<?php echo ' '.CHtml::submitButton('Actualizar', array('id'=>'btn_submit2','name' => 'Actualizar', 'class' => 'ui red submit button disabled')); ?>
+<?php echo ' '.CHtml::submitButton('Eliminar', array('id'=>'btn_submit3','name' => 'Eliminar', 'class' => 'ui red submit button disabled')); ?>
+</div>
+
+<?php echo CHtml::endForm(); ?>
+
+<script>
+
+function userClicks(target_id){
+
+var id_select = $('#trasplante-grid').yiiGridView.getSelection(target_id);
+//alert(id_select);
+
+if(id_select>0){
+            $('#btn_submit').removeClass('disabled');
+            $('#btn_submit2').removeClass('disabled');
+            $('#btn_submit3').removeClass('disabled');
+
+}else{
+            $('#btn_submit').addClass('disabled');
+            $('#btn_submit2').addClass('disabled');
+            $('#btn_submit3').addClass('disabled');
+}
+
+}
+
+
+
+</script>
+
+
+
+
 </div>
 </div>
 
