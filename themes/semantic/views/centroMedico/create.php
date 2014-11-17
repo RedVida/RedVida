@@ -13,6 +13,7 @@ $this->menu=array(
 );
 ?>
 
+<br>
 <div class="ui black ribbon label">
 <h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
 Registrar Centro Medico </h1>
