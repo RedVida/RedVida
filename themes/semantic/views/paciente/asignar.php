@@ -83,17 +83,31 @@ Asignar Trasplante </h1>
 
 
 <div>
-<?php echo CHtml::submitButton('Asignar Trasplante', array('name' => 'ApproveButton', 'class' => 'ui red disabled submit button')); ?>
+<?php echo CHtml::submitButton('Asignar Trasplante', array('id'=>'btn_submit','name' => 'ApproveButton', 'class' => 'ui red submit button disabled')); ?>
 </div>
 
 <?php echo CHtml::endForm(); ?>
 
 <script>
-function userClicks(target_id) {
 
-//        alert($.fn.yiiGridView.getSelection(target_id));
+function userClicks(target_id){
+
+var id_select = $('#paciente-grid').yiiGridView.getSelection(target_id);
+//alert(id_select);
+
+if(id_select>0){
+            $('#btn_submit').removeClass('disabled');
+}else{
+            $('#btn_submit').addClass('disabled');
 }
+
+}
+
+
+
 </script>
+
+
 	</div>	
 </div>
 
