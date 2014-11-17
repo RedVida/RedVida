@@ -661,7 +661,8 @@ background-color: #2773c3!important;
 .grid-view table.items th
 {
   color: white;
-  background: #404040;
+  background: #5fad98;
+  opacity: 0.8;
   text-align: center;
 
 }
@@ -700,7 +701,8 @@ background-color: #2773c3!important;
 
 .grid-view table.items tr.selected
 {
-  background: #6ECFF5!important;
+  background: #404040!important;
+  opacity: 0.6;
   color: white;
 }
 
@@ -708,6 +710,7 @@ background-color: #2773c3!important;
 {
 
   background: #404040;
+  opacity: 0.6;
   color: white;
   font-weight: bold;
 
