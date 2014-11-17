@@ -40,7 +40,7 @@ Administrar Trasplantes </h1>
 
 <script type="text/javascript" >
     function successModal(){                     // Button - Modal Success 
-        $("#donantes-form").submit();
+        $("#trasplante-form").submit();
     }
 </script>
 <!--MODAL-->
@@ -75,8 +75,11 @@ Administrar Trasplantes </h1>
 	<div class="twelve wide column">
 
 
-<?php echo CHtml::beginForm(); ?>
-
+<div class="form">
+	<?php $form=$this->beginWidget('CActiveForm', array(
+		'id'=>'trasplante-form',
+		'enableAjaxValidation'=>false,
+	)); ?>
 
 
 		<?php $this->widget('zii.widgets.grid.CGridView', array(
@@ -143,11 +146,22 @@ Administrar Trasplantes </h1>
 <div>
 <?php echo ' '.CHtml::submitButton('Ver', array('id'=>'btn_submit','name' => 'Ver', 'class' => 'ui red submit button disabled')); ?>
 <?php echo ' '.CHtml::submitButton('Actualizar', array('id'=>'btn_submit2','name' => 'Actualizar', 'class' => 'ui red submit button disabled')); ?>
-<?php echo ' '.CHtml::submitButton('Eliminar', array('id'=>'btn_submit3','name' => 'Eliminar', 'class' => 'ui red submit button disabled')); ?>
+<?php echo ' '.CHtml::submitButton('Eliminar', array('id'=>"btn",'name' => 'Eliminar', 'class' => 'ui red submit button disabled')); ?>
 </div>
 
-<?php echo CHtml::endForm(); ?>
+<?php
 
+
+?>
+
+
+<button name="Eliminar" class="ui blue submit button" type=readonly id="ModalFunction" >Eliminar
+</button>
+
+
+
+<?php $this->endWidget(); ?>
+</div>
 <script>
 
 function userClicks(target_id){
@@ -158,12 +172,12 @@ var id_select = $('#trasplante-grid').yiiGridView.getSelection(target_id);
 if(id_select>0){
             $('#btn_submit').removeClass('disabled');
             $('#btn_submit2').removeClass('disabled');
-            $('#btn_submit3').removeClass('disabled');
+            $('#ModalFunction').removeClass('disabled');
 
 }else{
             $('#btn_submit').addClass('disabled');
             $('#btn_submit2').addClass('disabled');
-            $('#btn_submit3').addClass('disabled');
+            $('#ModalFunction').addClass('disabled');
 }
 
 }
