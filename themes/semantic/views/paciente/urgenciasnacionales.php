@@ -1,5 +1,6 @@
 <?php
 $this->menu=array(
+  array('label'=>'Registrar Paciente', 'url'=>array('create')),
   array('label'=>'Lista Paciente', 'url'=>array('index')),
   array('label'=>'Administrar Paciente', 'url'=>array('admin')),
 );
@@ -9,7 +10,11 @@ $this->menu=array(
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/tabla.css">
 
 <body>
-<h1 class="ui huge header add icon"> &nbsp; &nbsp; &nbsp; Urgencias Nacionales</h1>
+<br/>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Urgencias Nacionales </h1>
+</div>
 <hr class="style-two ">
 
 <div>
@@ -39,6 +44,7 @@ foreach($dataProvider->getData() as $datos) {
 <?php }?>
 
 </table>
+<hr class="style-two ">
 
 </div>
 

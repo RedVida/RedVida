@@ -84,8 +84,10 @@ class PacienteController extends Controller
 
 		if (isset($_POST['Enfermedades'])) {
 			$model_tiene_enfermedad->id_paciente = $id;
-			$model_tiene_enfermedad->id_enfermedad = $_POST['Enfermedades']['id'];
-			//$length = intval($_POST['Enfermedades']['id']);
+			$length = (string)($_POST['Enfermedades']['id']);
+			$modelo = Enfermedades::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='."'$length'"));
+			$model_tiene_enfermedad->id_enfermedad = $modelo[0]->id;
+			
 			if ($model_tiene_enfermedad->save()) {
 				$this->redirect(array('admin'));
 			}else
