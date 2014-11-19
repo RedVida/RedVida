@@ -86,7 +86,7 @@ Asignar </h1>
 <hr class="style-two ">
 
 <div>
-<?php echo ' '.CHtml::submitButton('Asignar', array('id'=>'btn_submit','name' => 'ApproveButton', 'class' => 'ui red submit button disabled blockear')); ?>
+<?php echo ' '.CHtml::submitButton('Asignar', array('id'=>'btn_submit','name' => 'ApproveButton', 'class' => 'ui blue submit button disabled blockear')); ?>
 </div>
 
 <?php echo CHtml::endForm(); ?>

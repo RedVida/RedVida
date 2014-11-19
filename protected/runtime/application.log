@@ -40648,3 +40648,34 @@ HTTP_REFERER=http://localhost:8080/redvida/trasplante/index
 REQUEST_URI=/redvida/index.php?r=/paciente/asignar
 HTTP_REFERER=http://localhost:8080/redvida/index.php?r=/trasplante/update&id=369
 ---
+2014/11/20 00:16:18 [error] [exception.CrugeException.401] action_trasplante_update<br/>401
+REQUEST_URI=/redvida/index.php?r=/trasplante/update&id=375
+HTTP_REFERER=http://localhost:8080/redvida1/index.php?r=trasplante/admin
+---
+2014/11/20 00:16:24 [error] [exception.CrugeException.401] action_trasplante_view<br/>401
+REQUEST_URI=/redvida/index.php?r=/trasplante/view&id=372
+HTTP_REFERER=http://localhost:8080/redvida1/index.php?r=trasplante/admin
+---
+2014/11/20 00:22:42 [error] [exception.CrugeException.401] action_trasplante_admin<br/>401
+REQUEST_URI=/redvida/index.php?r=/trasplante/admin
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=cruge/ui/usermanagementadmin
+---
+2014/11/20 00:22:50 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** xtor
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/20 00:22:50 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** xtor
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/20 00:22:50 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>el usuario no fue hallado</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (159)
+in C:\xampp\htdocs\RedVida\index.php (14)

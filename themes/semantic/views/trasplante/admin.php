@@ -27,6 +27,19 @@ $('.search-form form').submit(function(){
 	return false;
 });
 ");
+
+
+     Yii::app()->clientScript->registerScript('helpers', '                                                           
+          yii = {                                                                                                     
+              urls: {                                                                                                 
+                  saveEdits: '.CJSON::encode(Yii::app()->createUrl('edit/save')).',                                   
+                  base: '.CJSON::encode(Yii::app()->baseUrl).'                                                        
+              }                                                                                                       
+          };                                                                                                          
+      ');          
+
+
+
 ?>
 
 <div class="ui black ribbon label">
@@ -34,9 +47,6 @@ $('.search-form form').submit(function(){
 Administrar Trasplantes </h1>
 </div>
 <hr class="style-two ">
-
-
-
 
 
 <div class="ui grid"><!--start grid-->
@@ -57,26 +67,12 @@ Administrar Trasplantes </h1>
 
 
 
-
-
 <div class="ui grid">
 
 	<div class="one wide column">
 
 	</div>
 	<div class="twelve wide column">
-
-
-<div class="form">
-
-	<?php $form=$this->beginWidget('CActiveForm', array(
-		'id'=>'trasplante-form',
-		'enableAjaxValidation'=>false,
-	)); ?>
-
-
-
-
 
 		<?php $this->widget('zii.widgets.grid.CGridView', array(
 			'id'=>'trasplante-grid',
@@ -126,35 +122,15 @@ Administrar Trasplantes </h1>
 				            'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/delete.png",
 				          	'url'=>'"#"',
 				            'click'=>"js: function(){   
-
-
-
-
-
-getId = $(this).parent().parent().children(':nth-child(2)').text();
-
-
-
-
-
-										$('.small.modal')
+							getId = $(this).parent().parent().children(':nth-child(2)').text();
+							 			$('.small.modal')
 										  .modal('setting', {
 										    closable  : false,
 										    onApprove : function() {
-
-
-
-
-
 										            $.fn.yiiGridView.update('trasplante-grid', {
 										                type:'POST',
-										                
 										                success:function(data) {
-
- 
-window.location.href = '".Yii::app()->request->baseUrl."' +'/index.php?r=/trasplante/delete&id=' + getId;									
-
-
+														window.location.href = '".Yii::app()->request->baseUrl."' +'/index.php?r=/trasplante/delete&id=' + getId;									
 									                    $.fn.yiiGridView.update('trasplante-grid');
 										                }
 											});
@@ -166,20 +142,14 @@ window.location.href = '".Yii::app()->request->baseUrl."' +'/index.php?r=/traspl
 		  					}",
 
 				        ),
-				      
-
-
 				    ),
-
      		   ),
-
 			), 
 			'selectionChanged'=>'userClicks',
 			'afterAjaxUpdate'=>'userClicks',
-			
 			)); ?>
 
-
+<!--COMIENZA SEMANTIC BUTTON-->
 <div class="ui blue submit button disabled blockear" id="btn_1">Ver
 <input type="hidden" name="Ver" value="Ver" method="POST" ></input>
 </div>
@@ -189,44 +159,37 @@ window.location.href = '".Yii::app()->request->baseUrl."' +'/index.php?r=/traspl
 <div class="ui blue submit button disabled blockear" id="btn_3">Eliminar
 <input type="hidden" name="Eliminar" value="Eliminar" method="POST" ></input>
 </div>
+<!--TERMINA SEMANTIC BUTTON-->
 
 
-
-<?php $this->endWidget(); ?>
-</div>
-
+<!--COMIENZA CSS BLOCKEAR-->
 <style type="text/css">
-	
-.blockear{
 
-      pointer-events: none;
+.blockear{
+      pointer-events: none;  /**No lickeable Button**/
 }
 
 </style>
+<!--TERMINA CSS BLOCKEAR-->
 
 
 
+<!--COMIENZA SCRIPT BOTONES-->
 <script>
 
-
-
 if (typeof target_id === 'undefined') {
-
 $('input:checkbox').removeAttr('checked');
-
 }
-
 
 function userClicks(target_id){
 
-
 var id_select = $('#trasplante-grid').yiiGridView.getSelection(target_id);
 
+
+
+
+
 if(id_select>0){
-
-
-
-
 
 			$('#btn_1').removeClass('blockear');
             $('#btn_1').removeClass('disabled');
@@ -236,87 +199,40 @@ if(id_select>0){
             $('#btn_3').removeClass('disabled');
 
 
+$('#btn_1').click(function() {
 
+window.location.href = yii.urls.base + '/index.php?r=/trasplante/view&id=' + id_select[0];									
 
+});
 
- $('#btn_1').click(function() {
+$('#btn_2').click(function() {
 
+window.location.href = yii.urls.base + '/index.php?r=/trasplante/update&id=' + id_select[0];									
 
+});
 
-
-window.location.href = '/redvida/index.php?r=/trasplante/view&id=' + id_select[0];									
-
-
-
-
- });
-
-
-
-
-
- $('#btn_2').click(function() {
-
-
-
-window.location.href = '/redvida/index.php?r=/trasplante/update&id=' + id_select[0];									
-
-
-
-
- });
-
-
-
- $('#btn_3').click(function() {
-
-
-
-
-
-
-										$('.small.modal')
-										  .modal('setting', {
-										    closable  : false,
-										    onApprove : function() {
-
-
-
-
-
-										            $.fn.yiiGridView.update('trasplante-grid', {
+$('#btn_3').click(function() {
+										
+		$('.small.modal')
+		  .modal('setting', {
+			    closable  : false,
+			    onApprove : function() {
+		            $.fn.yiiGridView.update('trasplante-grid', {
 										                type:'POST',
-										                
 										                success:function(data) {
-
+									                    
 									                    $.fn.yiiGridView.update('trasplante-grid');
- 
+
 window.location.href = '/redvida/index.php?r=/trasplante/delete&id=' + id_select[0];									
-
-
 										                }
-											});
-								  		  }
-									  })
-									  .modal('show')
-						  	          ;
-
-
-
-
- });
-
-
-
-
-
-
-
-
+									});
+							}
+		  })
+		 .modal('show')
+		 ;
+});
 
 }else{
-
-
 
 			$('#btn_1').addClass('blockear');
             $('#btn_1').addClass('disabled');
@@ -324,22 +240,12 @@ window.location.href = '/redvida/index.php?r=/trasplante/delete&id=' + id_select
             $('#btn_2').addClass('disabled');
     		$('#btn_3').addClass('blockear');
             $('#btn_3').addClass('disabled');
-
-
         
 }
 
 }
-
-
-
-
-
-
-
-
 </script>
-
+<!--TERMINA SCRIPT BOTONES-->
 
 </div>
 </div>
