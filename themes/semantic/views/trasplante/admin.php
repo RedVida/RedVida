@@ -21,6 +21,8 @@ $('.search-button').click(function(){
 $('.search-form form').submit(function(){
 	$('#trasplante-grid').yiiGridView('update', {
 		data: $(this).serialize()
+
+
 	});
 	return false;
 });
@@ -34,16 +36,6 @@ Administrar Trasplantes </h1>
 <hr class="style-two ">
 
 
-
-
-<!--MODAL-->
-
-<script type="text/javascript" >
-    function successModal(){                     // Button - Modal Success 
-        $("#trasplante-form").submit();
-    }
-</script>
-<!--MODAL-->
 
 
 
@@ -76,10 +68,14 @@ Administrar Trasplantes </h1>
 
 
 <div class="form">
+
 	<?php $form=$this->beginWidget('CActiveForm', array(
 		'id'=>'trasplante-form',
 		'enableAjaxValidation'=>false,
 	)); ?>
+
+
+
 
 
 		<?php $this->widget('zii.widgets.grid.CGridView', array(
@@ -97,7 +93,6 @@ Administrar Trasplantes </h1>
 				'tipo_donacion',
 				'id_donacion',
 				'compatibilidad',
-			
 				/*
 				'detalle',
 				'grado_urgencia',
@@ -105,88 +100,245 @@ Administrar Trasplantes </h1>
 				'created',
 				'modified',
 				*/
+
 				array(
 					'class'=>'CButtonColumn',
 					'template'=>'{Ver}{Actualizar}{Eliminar}',
-					'buttons'=>array
-					 (
-					        'Ver' => array
-					        (
-					            'label'=>'Ver',
-					            'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/eye.png",
-					            'url'=>'Yii::app()->createUrl("trasplante/view", array("id"=>$data->id))',
-					        ),
-					        'Actualizar' => array
-					        (
-					            'label'=>'Actualizar',
-					    		'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/edit.png",
-					            'url'=>'Yii::app()->createUrl("trasplante/update", array("id"=>$data->id))', 
-					        ),
-					         'Eliminar' => array
-					        (
-					       		'label'=>'Eliminar',
-					    		'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/delete.png",
-  								'url'=>'Yii::app()->createUrl("trasplante/delete", array("id"=>$data->id))',
+				    'buttons'=>array
+				    (
+
+ 						'Ver' => arraY
+ 						(
+					        'label'=>'Ver',
+					        'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/eye.png",
+					        'url'=>'Yii::app()->createUrl("trasplante/view", array("id"=>$data->id))',
+					    ),
+					  
+					   'Actualizar' => array
+					   (
+					        'label'=>'Actualizar',
+					  		'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/edit.png",
+					        'url'=>'Yii::app()->createUrl("trasplante/update", array("id"=>$data->id))', 
+					    ),
+				        'Eliminar' => array
+				        (   
+				        	'label'=>'Eliminar',
+				            'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/delete.png",
+				          	'url'=>'"#"',
+				            'click'=>"js: function(){   
 
 
-                			),
 
-					 ),
 
-				),
 
+getId = $(this).parent().parent().children(':nth-child(2)').text();
+
+
+
+
+
+										$('.small.modal')
+										  .modal('setting', {
+										    closable  : false,
+										    onApprove : function() {
+
+
+
+
+
+										            $.fn.yiiGridView.update('trasplante-grid', {
+										                type:'POST',
+										                
+										                success:function(data) {
+
+ 
+window.location.href = '".Yii::app()->request->baseUrl."' +'/index.php?r=/trasplante/delete&id=' + getId;									
+
+
+									                    $.fn.yiiGridView.update('trasplante-grid');
+										                }
+											});
+								  		  }
+									  })
+									  .modal('show')
+						  	          ;
+
+		  					}",
+
+				        ),
+				      
+
+
+				    ),
+
+     		   ),
 
 			), 
 			'selectionChanged'=>'userClicks',
-		
-		)); ?>
+			'afterAjaxUpdate'=>'userClicks',
+			
+			)); ?>
 
 
-
-<div>
-<?php echo ' '.CHtml::submitButton('Ver', array('id'=>'btn_submit','name' => 'Ver', 'class' => 'ui red submit button disabled')); ?>
-<?php echo ' '.CHtml::submitButton('Actualizar', array('id'=>'btn_submit2','name' => 'Actualizar', 'class' => 'ui red submit button disabled')); ?>
-<?php echo ' '.CHtml::submitButton('Eliminar', array('id'=>"btn",'name' => 'Eliminar', 'class' => 'ui red submit button disabled')); ?>
+<div class="ui blue submit button disabled blockear" id="btn_1">Ver
+<input type="hidden" name="Ver" value="Ver" method="POST" ></input>
 </div>
-
-<?php
-
-
-?>
-
-
-<button name="Eliminar" class="ui blue submit button" type=readonly id="ModalFunction" >Eliminar
-</button>
+<div class="ui blue submit button disabled blockear" id="btn_2">Actualizar
+<input type="hidden" name="Actualizar" value="Actualizar" method="POST" ></input>
+</div>
+<div class="ui blue submit button disabled blockear" id="btn_3">Eliminar
+<input type="hidden" name="Eliminar" value="Eliminar" method="POST" ></input>
+</div>
 
 
 
 <?php $this->endWidget(); ?>
 </div>
+
+<style type="text/css">
+	
+.blockear{
+
+      pointer-events: none;
+}
+
+</style>
+
+
+
 <script>
+
+
+
+if (typeof target_id === 'undefined') {
+
+$('input:checkbox').removeAttr('checked');
+
+}
+
 
 function userClicks(target_id){
 
+
 var id_select = $('#trasplante-grid').yiiGridView.getSelection(target_id);
-//alert(id_select);
 
 if(id_select>0){
-            $('#btn_submit').removeClass('disabled');
-            $('#btn_submit2').removeClass('disabled');
-            $('#ModalFunction').removeClass('disabled');
+
+
+
+
+
+			$('#btn_1').removeClass('blockear');
+            $('#btn_1').removeClass('disabled');
+            $('#btn_2').removeClass('blockear');
+            $('#btn_2').removeClass('disabled');
+    		$('#btn_3').removeClass('blockear');
+            $('#btn_3').removeClass('disabled');
+
+
+
+
+
+ $('#btn_1').click(function() {
+
+
+
+
+window.location.href = '/redvida/index.php?r=/trasplante/view&id=' + id_select[0];									
+
+
+
+
+ });
+
+
+
+
+
+ $('#btn_2').click(function() {
+
+
+
+window.location.href = '/redvida/index.php?r=/trasplante/update&id=' + id_select[0];									
+
+
+
+
+ });
+
+
+
+ $('#btn_3').click(function() {
+
+
+
+
+
+
+										$('.small.modal')
+										  .modal('setting', {
+										    closable  : false,
+										    onApprove : function() {
+
+
+
+
+
+										            $.fn.yiiGridView.update('trasplante-grid', {
+										                type:'POST',
+										                
+										                success:function(data) {
+
+									                    $.fn.yiiGridView.update('trasplante-grid');
+ 
+window.location.href = '/redvida/index.php?r=/trasplante/delete&id=' + id_select[0];									
+
+
+										                }
+											});
+								  		  }
+									  })
+									  .modal('show')
+						  	          ;
+
+
+
+
+ });
+
+
+
+
+
+
+
+
 
 }else{
-            $('#btn_submit').addClass('disabled');
-            $('#btn_submit2').addClass('disabled');
-            $('#ModalFunction').addClass('disabled');
+
+
+
+			$('#btn_1').addClass('blockear');
+            $('#btn_1').addClass('disabled');
+			$('#btn_2').addClass('blockear');
+            $('#btn_2').addClass('disabled');
+    		$('#btn_3').addClass('blockear');
+            $('#btn_3').addClass('disabled');
+
+
+        
 }
 
 }
+
+
+
+
+
 
 
 
 </script>
-
-
 
 
 </div>

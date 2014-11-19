@@ -131,52 +131,24 @@ class TrasplanteController extends Controller
 	public function actionAdmin()
 	{
 
- if (isset($_POST['Ver']))
-    {
-        if (isset($_POST['id']))
-        {
-            foreach ($_POST['id'] as $id)
-            {
-                $comment = $this->loadModel($id);
-                $this->redirect(Yii::App()->request->baseUrl.'/index?r=trasplante/view&id='.$id);
-            }
-        }
-    }
-
-
- if (isset($_POST['Actualizar']))
-    {
-        if (isset($_POST['id']))
-        {
-            foreach ($_POST['id'] as $id)
-            {
-                $comment = $this->loadModel($id);
-                $this->redirect(Yii::App()->request->baseUrl.'/index?r=trasplante/update&id='.$id);
-            }
-        }
-    }
-
- if (isset($_POST['Eliminar']))
-    {
-        if (isset($_POST['id']))
-        {
-            foreach ($_POST['id'] as $id)
-            {
-                $comment = $this->loadModel($id);
-                $this->redirect(Yii::App()->request->baseUrl.'/index?r=trasplante/delete&id='.$id);
-            }
-        }
-    }
+            
    
-
 		$model=new Trasplante('search');
 		$model->unsetAttributes();  // clear any default values
+
+
 		if(isset($_GET['Trasplante']))
 			$model->attributes=$_GET['Trasplante'];
 
 		$this->render('admin',array(
 			'model'=>$model,
 		));
+	
+
+
+
+
+
 	}
 
 	/**

@@ -12,6 +12,15 @@
    
 </script>
 
+ <script>
+  
+  $(document).ready(function() {
+  $('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada a Modal UI
+  });
+
+  </script>
+
+
 <script type="text/javascript" >
     function successModal(){                     // Button - Modal Success 
         $("#donantes-form").submit();
