@@ -156,8 +156,7 @@ class TrasplanteController extends Controller
         }
     }
 
-
-     if (isset($_POST['Eliminar']))
+ if (isset($_POST['Eliminar']))
     {
         if (isset($_POST['id']))
         {
@@ -168,8 +167,7 @@ class TrasplanteController extends Controller
             }
         }
     }
-
-
+   
 
 		$model=new Trasplante('search');
 		$model->unsetAttributes();  // clear any default values

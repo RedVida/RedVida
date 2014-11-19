@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-11-2014 a las 01:58:48
+-- Tiempo de generación: 19-11-2014 a las 18:54:28
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `alergias` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `nombres` varchar(128) COLLATE utf8_bin DEFAULT NULL,
+  `nombre` varchar(128) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
 
@@ -104,7 +104,10 @@ CREATE TABLE IF NOT EXISTS `cruge_authassignment` (
 --
 
 INSERT INTO `cruge_authassignment` (`userid`, `bizrule`, `data`, `itemname`) VALUES
-(4, NULL, 'N;', 'invitados');
+(4, NULL, 'N;', 'invitados'),
+(5, NULL, 'N;', 'invitados'),
+(7, NULL, 'N;', 'tester'),
+(8, NULL, 'N;', 'invitados');
 
 -- --------------------------------------------------------
 
@@ -127,6 +130,7 @@ CREATE TABLE IF NOT EXISTS `cruge_authitem` (
 
 INSERT INTO `cruge_authitem` (`name`, `type`, `description`, `bizrule`, `data`) VALUES
 ('action_alergias_admin', 0, '', NULL, 'N;'),
+('action_alergias_alergialist', 0, '', NULL, 'N;'),
 ('action_alergias_create', 0, '', NULL, 'N;'),
 ('action_alergias_delete', 0, '', NULL, 'N;'),
 ('action_alergias_index', 0, '', NULL, 'N;'),
@@ -171,6 +175,8 @@ INSERT INTO `cruge_authitem` (`name`, `type`, `description`, `bizrule`, `data`) 
 ('action_donantes_index', 0, '', NULL, 'N;'),
 ('action_donantes_registraenfermedad', 0, '', NULL, 'N;'),
 ('action_donantes_registrarenfermedad', 0, '', NULL, 'N;'),
+('action_donantes_registrar_alergia', 0, '', NULL, 'N;'),
+('action_donantes_registra_alergia', 0, '', NULL, 'N;'),
 ('action_donantes_update', 0, '', NULL, 'N;'),
 ('action_donantes_view', 0, '', NULL, 'N;'),
 ('action_donante_admin', 0, '', NULL, 'N;'),
@@ -193,6 +199,7 @@ INSERT INTO `cruge_authitem` (`name`, `type`, `description`, `bizrule`, `data`) 
 ('action_organo_update', 0, '', NULL, 'N;'),
 ('action_organo_view', 0, '', NULL, 'N;'),
 ('action_paciente_admin', 0, '', NULL, 'N;'),
+('action_paciente_asignar', 0, '', NULL, 'N;'),
 ('action_paciente_create', 0, '', NULL, 'N;'),
 ('action_paciente_delete', 0, '', NULL, 'N;'),
 ('action_paciente_index', 0, '', NULL, 'N;'),
@@ -211,11 +218,19 @@ INSERT INTO `cruge_authitem` (`name`, `type`, `description`, `bizrule`, `data`) 
 ('action_trasplantes_index', 0, '', NULL, 'N;'),
 ('action_trasplantes_update', 0, '', NULL, 'N;'),
 ('action_trasplantes_view', 0, '', NULL, 'N;'),
+('action_trasplante_admin', 0, '', NULL, 'N;'),
+('action_trasplante_create', 0, '', NULL, 'N;'),
+('action_trasplante_delete', 0, '', NULL, 'N;'),
+('action_trasplante_index', 0, '', NULL, 'N;'),
+('action_trasplante_update', 0, '', NULL, 'N;'),
+('action_trasplante_view', 0, '', NULL, 'N;'),
 ('action_ui_editprofile', 0, '', NULL, 'N;'),
 ('action_ui_fieldsadmincreate', 0, '', NULL, 'N;'),
 ('action_ui_fieldsadmindelete', 0, '', NULL, 'N;'),
 ('action_ui_fieldsadminlist', 0, '', NULL, 'N;'),
 ('action_ui_fieldsadminupdate', 0, '', NULL, 'N;'),
+('action_ui_rbacajaxassignment', 0, '', NULL, 'N;'),
+('action_ui_rbacajaxgetassignmentbizrule', 0, '', NULL, 'N;'),
 ('action_ui_rbacajaxsetchilditem', 0, '', NULL, 'N;'),
 ('action_ui_rbacauthitemchilditems', 0, '', NULL, 'N;'),
 ('action_ui_rbacauthitemcreate', 0, '', NULL, 'N;'),
@@ -243,9 +258,13 @@ INSERT INTO `cruge_authitem` (`name`, `type`, `description`, `bizrule`, `data`) 
 ('controller_organo', 0, '', NULL, 'N;'),
 ('controller_paciente', 0, '', NULL, 'N;'),
 ('controller_site', 0, '', NULL, 'N;'),
+('controller_trasplante', 0, '', NULL, 'N;'),
 ('controller_trasplantes', 0, '', NULL, 'N;'),
 ('edit-advanced-profile-features', 0, 'C:\\wamp\\www\\imagecloud\\protected\\modules\\cruge\\views\\ui\\usermanagementupdate.php linea 114', NULL, 'N;'),
-('invitados', 2, 'son los invitados', '', 'N;');
+('invitado', 0, '', NULL, 'N;'),
+('invitados', 2, 'son los invitados', '', 'N;'),
+('tester', 2, 'es un tester', '', 'N;'),
+('xxx', 0, '', NULL, 'N;');
 
 -- --------------------------------------------------------
 
@@ -265,10 +284,123 @@ CREATE TABLE IF NOT EXISTS `cruge_authitemchild` (
 --
 
 INSERT INTO `cruge_authitemchild` (`parent`, `child`) VALUES
-('invitados', 'action_donante_index'),
-('invitados', 'action_donante_view'),
+('tester', 'action_alergias_admin'),
+('tester', 'action_alergias_alergialist'),
+('tester', 'action_alergias_create'),
+('tester', 'action_alergias_delete'),
+('tester', 'action_alergias_index'),
+('tester', 'action_alergias_update'),
+('tester', 'action_alergias_view'),
+('tester', 'action_bancosangre_admin'),
+('tester', 'action_bancosangre_create'),
+('tester', 'action_bancosangre_delete'),
+('tester', 'action_bancosangre_index'),
+('tester', 'action_bancosangre_update'),
+('tester', 'action_bancosangre_view'),
+('tester', 'action_centromedico_admin'),
+('tester', 'action_centromedico_create'),
+('tester', 'action_centromedico_delete'),
+('invitados', 'action_centromedico_index'),
+('tester', 'action_centromedico_index'),
+('tester', 'action_centromedico_update'),
+('invitados', 'action_centromedico_view'),
+('tester', 'action_centromedico_view'),
+('tester', 'action_donaciones_index'),
+('tester', 'action_donacionmedula_admin'),
+('tester', 'action_donacionmedula_create'),
+('tester', 'action_donacionmedula_delete'),
+('tester', 'action_donacionmedula_index'),
+('tester', 'action_donacionmedula_update'),
+('tester', 'action_donacionmedula_view'),
+('tester', 'action_donacionorgano_admin'),
+('tester', 'action_donacionOrgano_create'),
+('tester', 'action_donacionorgano_delete'),
+('tester', 'action_donacionorgano_index'),
+('tester', 'action_donacionorgano_update'),
+('tester', 'action_donacionorgano_view'),
+('tester', 'action_donacionsangre_admin'),
+('tester', 'action_donacionsangre_create'),
+('tester', 'action_donacionsangre_delete'),
+('tester', 'action_donacionsangre_index'),
+('tester', 'action_donacionsangre_mostrar'),
+('tester', 'action_donacionsangre_update'),
+('tester', 'action_donacionsangre_view'),
+('tester', 'action_donantes_admin'),
+('tester', 'action_donantes_create'),
+('tester', 'action_donantes_delete'),
+('tester', 'action_donantes_donar'),
+('invitados', 'action_donantes_index'),
+('tester', 'action_donantes_index'),
+('tester', 'action_donantes_registraenfermedad'),
+('tester', 'action_donantes_registrarenfermedad'),
+('tester', 'action_donantes_registrar_alergia'),
+('tester', 'action_donantes_registra_alergia'),
+('tester', 'action_donantes_update'),
+('invitados', 'action_donantes_view'),
+('tester', 'action_donantes_view'),
+('tester', 'action_donante_admin'),
+('tester', 'action_donante_create'),
+('tester', 'action_donante_delete'),
+('tester', 'action_donante_index'),
+('tester', 'action_donante_update'),
+('tester', 'action_donante_view'),
+('tester', 'action_enfermedades_admin'),
+('tester', 'action_enfermedades_create'),
+('tester', 'action_enfermedades_delete'),
+('tester', 'action_enfermedades_EnfermedadList'),
+('tester', 'action_enfermedades_index'),
+('tester', 'action_enfermedades_update'),
+('tester', 'action_enfermedades_view'),
+('tester', 'action_organo_admin'),
+('tester', 'action_organo_create'),
+('tester', 'action_organo_delete'),
+('tester', 'action_organo_index'),
+('tester', 'action_organo_update'),
+('tester', 'action_organo_view'),
+('tester', 'action_paciente_admin'),
+('tester', 'action_paciente_asignar'),
+('tester', 'action_paciente_create'),
+('tester', 'action_paciente_delete'),
 ('invitados', 'action_paciente_index'),
-('invitados', 'action_paciente_view');
+('tester', 'action_paciente_index'),
+('tester', 'action_paciente_registrarenfermedad'),
+('tester', 'action_paciente_update'),
+('invitados', 'action_paciente_urgenciasnacionales'),
+('tester', 'action_paciente_urgenciasnacionales'),
+('invitados', 'action_paciente_view'),
+('tester', 'action_paciente_view'),
+('tester', 'action_site_contact'),
+('tester', 'action_site_error'),
+('tester', 'action_site_index'),
+('tester', 'action_site_login'),
+('tester', 'action_site_logout'),
+('tester', 'action_trasplantes_admin'),
+('tester', 'action_trasplantes_create'),
+('tester', 'action_trasplantes_delete'),
+('tester', 'action_trasplantes_index'),
+('tester', 'action_trasplantes_update'),
+('tester', 'action_trasplantes_view'),
+('tester', 'action_trasplante_admin'),
+('tester', 'action_trasplante_create'),
+('tester', 'action_trasplante_delete'),
+('tester', 'action_trasplante_index'),
+('tester', 'action_trasplante_update'),
+('tester', 'action_trasplante_view'),
+('tester', 'admin'),
+('tester', 'controller_alergias'),
+('tester', 'controller_bancosangre'),
+('tester', 'controller_centromedico'),
+('tester', 'controller_donacionmedula'),
+('tester', 'controller_donacionorgano'),
+('tester', 'controller_donacionsangre'),
+('tester', 'controller_donante'),
+('tester', 'controller_donantes'),
+('tester', 'controller_enfermedades'),
+('tester', 'controller_organo'),
+('tester', 'controller_paciente'),
+('tester', 'controller_site'),
+('tester', 'controller_trasplante'),
+('tester', 'controller_trasplantes');
 
 -- --------------------------------------------------------
 
@@ -327,7 +459,7 @@ CREATE TABLE IF NOT EXISTS `cruge_session` (
   `ipaddressout` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idsession`),
   KEY `crugesession_iduser` (`iduser`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=37 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=83 ;
 
 --
 -- Volcado de datos para la tabla `cruge_session`
@@ -369,7 +501,53 @@ INSERT INTO `cruge_session` (`idsession`, `iduser`, `created`, `expire`, `status
 (33, 1, 1415919698, 1415921498, 0, '127.0.0.1', 1, 1415919698, NULL, NULL),
 (34, 1, 1415921530, 1415923330, 0, '127.0.0.1', 1, 1415921530, NULL, NULL),
 (35, 1, 1415923585, 1415925385, 0, '127.0.0.1', 1, 1415923585, NULL, NULL),
-(36, 1, 1415926346, 1415928146, 1, '127.0.0.1', 1, 1415926346, NULL, NULL);
+(36, 1, 1415926346, 1415928146, 1, '127.0.0.1', 1, 1415926346, NULL, NULL),
+(37, 1, 1416330364, 1416332164, 0, '127.0.0.1', 1, 1416330364, NULL, NULL),
+(38, 1, 1416332207, 1416334007, 1, '127.0.0.1', 1, 1416332207, NULL, NULL),
+(39, 1, 1416411271, 1416413071, 0, '127.0.0.1', 1, 1416411271, 1416411297, '127.0.0.1'),
+(40, 5, 1416411918, 1416413718, 0, '127.0.0.1', 1, 1416411918, 1416411920, '127.0.0.1'),
+(41, 1, 1416411926, 1416413726, 0, '127.0.0.1', 1, 1416411926, 1416411997, '127.0.0.1'),
+(42, 6, 1416412038, 1416415638, 0, '127.0.0.1', 1, 1416412038, 1416412061, '127.0.0.1'),
+(43, 1, 1416412073, 1416415673, 0, '127.0.0.1', 1, 1416412073, 1416412136, '127.0.0.1'),
+(44, 5, 1416412532, 1416416132, 0, '127.0.0.1', 1, 1416412532, 1416412539, '127.0.0.1'),
+(45, 1, 1416412544, 1416416144, 0, '127.0.0.1', 1, 1416412544, 1416412549, '127.0.0.1'),
+(46, 5, 1416412718, 1416416318, 0, '127.0.0.1', 1, 1416412718, 1416412722, '127.0.0.1'),
+(47, 5, 1416412830, 1416416430, 0, '127.0.0.1', 1, 1416412830, 1416412846, '127.0.0.1'),
+(48, 1, 1416412860, 1416416460, 0, '127.0.0.1', 1, 1416412860, 1416412862, '127.0.0.1'),
+(49, 5, 1416412867, 1416416467, 0, '127.0.0.1', 1, 1416412867, 1416412869, '127.0.0.1'),
+(50, 5, 1416412946, 1416416546, 0, '127.0.0.1', 1, 1416412946, 1416412964, '127.0.0.1'),
+(51, 1, 1416412969, 1416416569, 0, '127.0.0.1', 1, 1416412969, 1416412979, '127.0.0.1'),
+(52, 5, 1416412984, 1416416584, 0, '127.0.0.1', 1, 1416412984, 1416413002, '127.0.0.1'),
+(53, 1, 1416413008, 1416416608, 0, '127.0.0.1', 1, 1416413008, 1416413013, '127.0.0.1'),
+(54, 5, 1416413018, 1416416618, 0, '127.0.0.1', 1, 1416413018, 1416413028, '127.0.0.1'),
+(55, 5, 1416413079, 1416416679, 0, '127.0.0.1', 1, 1416413079, 1416413122, '127.0.0.1'),
+(56, 1, 1416413133, 1416416733, 0, '127.0.0.1', 1, 1416413133, 1416413180, '127.0.0.1'),
+(57, 1, 1416413200, 1416416800, 0, '127.0.0.1', 1, 1416413200, 1416413215, '127.0.0.1'),
+(58, 1, 1416413309, 1416416909, 0, '127.0.0.1', 1, 1416413309, 1416413444, '127.0.0.1'),
+(59, 5, 1416413449, 1416417049, 0, '127.0.0.1', 1, 1416413449, 1416413673, '127.0.0.1'),
+(60, 1, 1416413678, 1416417278, 0, '127.0.0.1', 1, 1416413678, 1416413737, '127.0.0.1'),
+(61, 7, 1416413774, 1416417374, 0, '127.0.0.1', 1, 1416413774, 1416413781, '127.0.0.1'),
+(62, 5, 1416413787, 1416417387, 0, '127.0.0.1', 1, 1416413787, 1416413796, '127.0.0.1'),
+(63, 1, 1416413804, 1416417404, 0, '127.0.0.1', 1, 1416413804, 1416413829, '127.0.0.1'),
+(64, 1, 1416413906, 1416417506, 0, '127.0.0.1', 1, 1416413906, NULL, NULL),
+(65, 1, 1416417558, 1416421158, 0, '127.0.0.1', 1, 1416417558, 1416417613, '127.0.0.1'),
+(66, 1, 1416417687, 1416421287, 0, '127.0.0.1', 1, 1416417687, 1416417697, '127.0.0.1'),
+(67, 5, 1416417706, 1416421306, 0, '127.0.0.1', 1, 1416417706, 1416417713, '127.0.0.1'),
+(68, 5, 1416417722, 1416421322, 0, '127.0.0.1', 1, 1416417722, 1416417728, '127.0.0.1'),
+(69, 1, 1416417732, 1416421332, 0, '127.0.0.1', 1, 1416417732, 1416417958, '127.0.0.1'),
+(70, 5, 1416417963, 1416421563, 0, '127.0.0.1', 1, 1416417963, 1416418128, '127.0.0.1'),
+(71, 5, 1416418135, 1416421735, 0, '127.0.0.1', 1, 1416418135, 1416418220, '127.0.0.1'),
+(72, 1, 1416418225, 1416421825, 0, '127.0.0.1', 1, 1416418225, 1416418361, '127.0.0.1'),
+(73, 4, 1416418369, 1416421969, 0, '127.0.0.1', 1, 1416418369, 1416418378, '127.0.0.1'),
+(74, 5, 1416418383, 1416421983, 0, '127.0.0.1', 1, 1416418383, 1416418565, '127.0.0.1'),
+(75, 1, 1416418572, 1416422172, 0, '127.0.0.1', 1, 1416418572, 1416418610, '127.0.0.1'),
+(76, 5, 1416418616, 1416422216, 0, '127.0.0.1', 1, 1416418616, 1416418631, '127.0.0.1'),
+(77, 1, 1416418638, 1416422238, 0, '127.0.0.1', 1, 1416418638, 1416418662, '127.0.0.1'),
+(78, 5, 1416418669, 1416422269, 0, '127.0.0.1', 1, 1416418669, 1416418900, '127.0.0.1'),
+(79, 7, 1416418912, 1416422512, 0, '127.0.0.1', 1, 1416418912, 1416418930, '127.0.0.1'),
+(80, 5, 1416418938, 1416422538, 0, '127.0.0.1', 1, 1416418938, 1416419040, '127.0.0.1'),
+(81, 7, 1416419046, 1416422646, 0, '127.0.0.1', 1, 1416419046, 1416419050, '127.0.0.1'),
+(82, 8, 1416419095, 1416422695, 0, '127.0.0.1', 1, 1416419095, 1416419101, '127.0.0.1');
 
 -- --------------------------------------------------------
 
@@ -403,7 +581,7 @@ CREATE TABLE IF NOT EXISTS `cruge_system` (
 --
 
 INSERT INTO `cruge_system` (`idsystem`, `name`, `largename`, `sessionmaxdurationmins`, `sessionmaxsameipconnections`, `sessionreusesessions`, `sessionmaxsessionsperday`, `sessionmaxsessionsperuser`, `systemnonewsessions`, `systemdown`, `registerusingcaptcha`, `registerusingterms`, `terms`, `registerusingactivation`, `defaultroleforregistration`, `registerusingtermslabel`, `registrationonlogin`) VALUES
-(1, 'default', NULL, 30, 10, 1, -1, -1, 0, 0, 0, 0, '', 0, '', '', 1);
+(1, 'default', NULL, 60, 10, 1, -1, -1, 0, 0, 0, 0, '', 0, 'invitados', '', 1);
 
 -- --------------------------------------------------------
 
@@ -424,15 +602,18 @@ CREATE TABLE IF NOT EXISTS `cruge_user` (
   `totalsessioncounter` int(11) DEFAULT '0',
   `currentsessioncounter` int(11) DEFAULT '0',
   PRIMARY KEY (`iduser`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Volcado de datos para la tabla `cruge_user`
 --
 
 INSERT INTO `cruge_user` (`iduser`, `regdate`, `actdate`, `logondate`, `username`, `email`, `password`, `authkey`, `state`, `totalsessioncounter`, `currentsessioncounter`) VALUES
-(1, NULL, NULL, 1415926346, 'admin', 'admin@tucorreo.com', 'admin', NULL, 1, 0, 0),
-(4, 1411595192, NULL, 1411595306, 'invitado', 'invitado@invitado.cl', 'invitado', 'a2302625999b85435b84ef447e4a05b7', 1, 0, 0);
+(1, NULL, NULL, 1416418638, 'admin', 'admin@tucorreo.com', 'admin', NULL, 1, 0, 0),
+(4, 1411595192, NULL, 1416418369, 'invitado', 'invitado@invitado.cl', 'invitado', 'a2302625999b85435b84ef447e4a05b7', 1, 0, 0),
+(5, 1416411906, NULL, 1416418938, 'normal', 'normal@normal.cl', 'normal', 'ecf7f66852e0e990d958f27116de1ca9', 1, 0, 0),
+(7, 1416413154, NULL, 1416419046, 'anormal', 'anormal@anormal.cl', 'anormal', '4a672e32fa997b6fffab9968f524e69c', 1, 0, 0),
+(8, 1416419075, NULL, 1416419095, 'penesio', 'pene@penelandia.cl', 'penesio', '495288a1279552cecb1a210733bcbdca', 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -542,14 +723,6 @@ CREATE TABLE IF NOT EXISTS `enfermedades` (
 -- Volcado de datos para la tabla `enfermedades`
 --
 
-CREATE TABLE IF NOT EXISTS `alergias` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(128) COLLATE utf8_bin DEFAULT NULL,
-  `descripcion` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=5 ;
-
-
 INSERT INTO `enfermedades` (`id`, `nombre`, `descripcion`) VALUES
 (2, 'Ebola', NULL),
 (3, 'Hepatitis', NULL),
@@ -569,16 +742,14 @@ CREATE TABLE IF NOT EXISTS `enfermedad_paciente` (
   PRIMARY KEY (`id`),
   KEY `id_paciente` (`id_paciente`),
   KEY `id_enfermedad` (`id_enfermedad`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Volcado de datos para la tabla `enfermedad_paciente`
 --
 
 INSERT INTO `enfermedad_paciente` (`id`, `fecha`, `id_paciente`, `id_enfermedad`) VALUES
-(4, NULL, 1, 4),
-(5, NULL, 2, 2),
-(6, NULL, 2, 4);
+(8, NULL, 3, 3);
 
 -- --------------------------------------------------------
 
@@ -637,19 +808,8 @@ INSERT INTO `paciente` (`id`, `nombre`, `apellido`, `rut`, `afiliacion`, `grado_
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tiene_enfermedad`
+-- Estructura de tabla para la tabla `tiene_alergia`
 --
-
-CREATE TABLE IF NOT EXISTS `tiene_enfermedad` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `fecha` datetime DEFAULT NULL,
-  `id_donante` int(11) DEFAULT NULL,
-  `id_enfermedad` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_reference_1` (`id_donante`),
-  KEY `fk_reference_2` (`id_enfermedad`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
-
 
 CREATE TABLE IF NOT EXISTS `tiene_alergia` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
@@ -664,29 +824,41 @@ CREATE TABLE IF NOT EXISTS `tiene_alergia` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `tiene_enfermedad`
+--
+
+CREATE TABLE IF NOT EXISTS `tiene_enfermedad` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `fecha` datetime DEFAULT NULL,
+  `id_donante` int(11) DEFAULT NULL,
+  `id_enfermedad` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_reference_1` (`id_donante`),
+  KEY `fk_reference_2` (`id_enfermedad`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=4 ;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `trasplante`
 --
 
 CREATE TABLE IF NOT EXISTS `trasplante` (
-   `id`                   int NOT null AUTO_INCREMENT,
-   `id_donante`           varchar(12),
-   `id_paciente`          varchar(12),
-   `tipo_donacion`        varchar(255),
-   `id_donacion`          varchar(255),
-   `compatibilidad`       varchar(255) DEFAULT NULL,
-   `detalle`              text DEFAULT NULL,
-   `grado_urgencia`       varchar(255),
-   `centro_medico`        varchar(255),
-   `created`              datetime DEFAULT NULL,
-   `modified`             datetime DEFAULT NULL,
-   primary key (id),
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_donante` varchar(12) COLLATE utf8_bin DEFAULT NULL,
+  `id_paciente` varchar(12) COLLATE utf8_bin DEFAULT NULL,
+  `tipo_donacion` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `id_donacion` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `compatibilidad` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `detalle` text COLLATE utf8_bin,
+  `grado_urgencia` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `centro_medico` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
   KEY `fk_reference_1` (`id_donante`),
   KEY `fk_reference_2` (`id_paciente`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
-
-
-
-
 
 --
 -- Restricciones para tablas volcadas
@@ -726,99 +898,19 @@ ALTER TABLE `paciente`
   ADD CONSTRAINT `paciente_ibfk_1` FOREIGN KEY (`id_centro_medico`) REFERENCES `centro_medico` (`id`);
 
 --
+-- Filtros para la tabla `tiene_alergia`
+--
+ALTER TABLE `tiene_alergia`
+  ADD CONSTRAINT `fk_reference_3` FOREIGN KEY (`id_donante`) REFERENCES `donantes` (`id`),
+  ADD CONSTRAINT `fk_reference_4` FOREIGN KEY (`id_alergia`) REFERENCES `alergias` (`id`);
+
+--
 -- Filtros para la tabla `tiene_enfermedad`
 --
 ALTER TABLE `tiene_enfermedad`
   ADD CONSTRAINT `fk_reference_1` FOREIGN KEY (`id_donante`) REFERENCES `donantes` (`id`),
   ADD CONSTRAINT `fk_reference_2` FOREIGN KEY (`id_enfermedad`) REFERENCES `enfermedades` (`id`);
 
-  ALTER TABLE `tiene_alergia`
-  ADD CONSTRAINT `fk_reference_3` FOREIGN KEY (`id_donante`) REFERENCES `donantes` (`id`),
-  ADD CONSTRAINT `fk_reference_4` FOREIGN KEY (`id_alergia`) REFERENCES `alergias` (`id`);
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
-
-
-/*==============================================================*/
-/* DBMS name:      MySQL 5.0                                    */
-/* Created on:     16-10-2014 23:19:45                          */
-/*==============================================================*/
-
-
-drop table if exists banco_sangre;
-
-drop table if exists donacion_medula;
-
-drop table if exists donacion_organo;
-
-drop table if exists donacion_sangre;
-
-/*==============================================================*/
-/* Table: banco_sangre                                          */
-/*==============================================================*/
-create table banco_sangre
-(
-   id                   int not null auto_increment,
-   tipo                 varchar(3),
-   cantidad             int,
-   primary key (id)
-);
-
-/*==============================================================*/
-/* Table: donacion_medula                                       */
-/*==============================================================*/
-create table donacion_medula
-(
-   id                   int not null auto_increment,
-   rut_donante          varchar(12),
-   tipo_medula          varchar(128),
-   created              datetime,
-   modified             datetime,
-   primary key (id)
-);
-
-/*==============================================================*/
-/* Table: donacion_organo                                       */
-/*==============================================================*/
-create table donacion_organo
-(
-   id                   int not null auto_increment,
-   rut_donante          varchar(12),
-   nombre               varchar(128),
-   estado               bool,
-   created              datetime,
-   modified             datetime,
-   primary key (id)
-);
-
-/*==============================================================*/
-/* Table: donacion_sangre                                       */
-/*==============================================================*/
-create table donacion_sangre
-(
-   id                   int not null auto_increment,
-   rut_donante          varchar(12),
-   tipo_sangre          varchar(3),
-   cantidad             int,
-   created              datetime,
-   modified             datetime,
-   primary key (id)
-);
-
-
-
-INSERT INTO `banco_sangre` (`id`, `tipo`, `cantidad`) VALUES
-(1, 'O-', 0),
-(2, 'O+', 0),
-(3, 'A-', 0),
-(4, 'A+', 0),
-(5, 'B-', 0),
-(6, 'B+', 0),
-(7, 'AB-',0),
-(8, 'AB+', 0);
-
-

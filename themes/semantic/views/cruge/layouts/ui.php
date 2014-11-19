@@ -1,3 +1,5 @@
+
+
 <?php 	$this->beginContent('//layouts/'.Yii::app()->layout); ?>
 <?php	
 	if(Yii::app()->user->isSuperAdmin)

@@ -10,6 +10,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'Lista Paciente', 'url'=>array('index')),
 	array('label'=>'Registrar Paciente', 'url'=>array('create')),
+	array('label'=>'Urgencias Nacionales', 'url'=>array('urgenciasnacionales')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -25,8 +26,11 @@ $('.search-form form').submit(function(){
 });
 ");
 ?>
-
-<h1 class="ui huge header add icon"> &nbsp; &nbsp; &nbsp; Administrar Paciente</h1>
+<br/>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Administrar Pacientes </h1>
+</div>
 <hr class="style-two ">
 
 <?php echo CHtml::link('Busqueda avanzada','#',array('class'=>'search-button')); ?>
@@ -64,3 +68,5 @@ $('.search-form form').submit(function(){
 		))),
 	),
 )); ?>
+
+<hr class="style-two ">
