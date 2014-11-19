@@ -16,6 +16,7 @@
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/semantic.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/views/layouts/main.css">   
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/modal.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/estilos.css">
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/jquery.js"></script>
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/carousel.js"></script>
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/semantic.min.js"></script>  
@@ -96,40 +97,42 @@ $('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada 
 <?php if(!Yii::app()->user->isGuest){ ?>
 <div class="ui blue inverted menu "> <!--BEGIN MENU INVERTED-->
   <div class="menu"><!--BEGIN MENU-->
+  <?php if(Yii::app()->user->isSuperAdmin){ ?>
     <a class="item" href="<?php echo Yii::app()->user->ui->userManagementAdminUrl; ?>">
       <i class="asterisk icon"></i> Adm. de Usuario
     </a>
-        
+    <?php }?>
 
     <div class="ui pointing dropdown link item">
 
       <i class="asterisk icon"></i> Donantes <i class="dropdown icon"></i>
       <div class="menu">
 
-
+        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/create">
           <i class="doble angle right icon"></i> Registrar Donante
         </a>
-
-
+        <?php } ?>
+        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
          <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/admin">
           <i class="doble angle right icon"></i> Administrar Donantes
         </a>
+        <?php } ?>
 
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/">
           <i class="doble angle right icon"></i> Listar Donantes
         </a>
 
-    
+        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/registraenfermedad">
           <i class="doble angle right icon"></i> Asignar Enfermedad 
         </a>
-
-        
+        <?php } ?>
+        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/registra_alergia">
           <i class="doble angle right icon"></i> Asignar Alergia 
         </a>
-      
+        <?php } ?>
        </div>     
     </div>
 
@@ -138,16 +141,16 @@ $('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada 
 
       <i class="asterisk icon"></i> Pacientes <i class="dropdown icon"></i>
       <div class="menu">
-  
+        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/create">
           <i class="doble angle right icon"></i> Registrar Paciente
         </a>
-
-       
+        <?php } ?>
+       <?php if(Yii::app()->user->checkAccess('tester')){ ?>
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/admin">
           <i class="doble angle right icon"></i> Administrar Pacientes
         </a>
-
+        <?php } ?>
 
          <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/">
           <i class="doble angle right icon"></i> Listar Pacientes
@@ -161,6 +164,7 @@ $('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada 
     </div>
 
 
+    <?php if(Yii::app()->user->checkAccess('tester')){ ?>
     <div class="ui pointing dropdown link item">
 
       <i class="asterisk icon"></i>  Donaciones <i class="dropdown icon"></i>
@@ -213,7 +217,10 @@ $('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada 
       
        </div>  
     </div>
+        <?php } ?>
         
+
+      <?php if(Yii::app()->user->checkAccess('tester')){ ?>
 
       <div class="ui pointing dropdown link item">
 
@@ -241,22 +248,23 @@ $('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada 
 
           </div>       
       </div>
+      <?php } ?>
 
 
       <div class="ui pointing dropdown link item">
 
           <i class="asterisk icon"></i> Centros Medicos <i class="dropdown icon"></i>
           <div class="menu">
-             
+             <?php if(Yii::app()->user->checkAccess('tester')){ ?>
              <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/create">
               <i class="doble angle right icon"></i> Registrar C. Medico
             </a>
-
-
+            <?php } ?>
+            <?php if(Yii::app()->user->checkAccess('tester')){ ?>
             <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/admin">
               <i class="doble angle right icon"></i> Administrar C. Medicos
             </a>
-
+            <?php } ?>
 
             <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/">
               <i class="doble angle right icon"></i> Listar C. Medicos

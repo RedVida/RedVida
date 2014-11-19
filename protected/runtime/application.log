@@ -36318,3 +36318,818 @@ HTTP_REFERER=http://localhost/redvida/index.php?r=paciente/registrarenfermedad&i
 REQUEST_URI=/redvida/index.php?r=paciente/registrarenfermedad&id=3
 HTTP_REFERER=http://localhost/redvida/index.php?r=paciente/admin
 ---
+2014/11/19 16:32:03 [error] [exception.CException] exception 'CException' with message 'La propiedad "CrugeStoredUser"."nombre" no se encuentra definida.' in C:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('nombre')
+#1 C:\wamp\www\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('nombre')
+#2 C:\wamp\www\yii\framework\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(CrugeStoredUser), 'nombre')
+#3 C:\wamp\www\yii\framework\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(CrugeStoredUser), 'nombre', Array)
+#4 C:\wamp\www\yii\framework\web\widgets\CActiveForm.php(725): CHtml::activeTextField(Object(CrugeStoredUser), 'nombre', Array)
+#5 C:\wamp\www\RedVida\themes\semantic\views\cruge\ui\registration.php(23): CActiveForm->textField(Object(CrugeStoredUser), 'nombre', Array)
+#6 C:\wamp\www\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\Red...')
+#7 C:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\Red...', Array, true)
+#8 C:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\wamp\\www\\Red...', Array, true)
+#9 C:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('registration', Array, true)
+#10 C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php(377): CController->render('registration', Array)
+#11 [internal function]: UiController->actionRegistration('')
+#12 C:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(UiController), Array)
+#13 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UiController), Object(ReflectionMethod), Array)
+#14 C:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#18 C:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('registration')
+#25 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/regist...')
+#26 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#27 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#28 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/registration
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/login
+---
+2014/11/19 16:32:21 [error] [exception.CException] exception 'CException' with message 'La propiedad "CrugeStoredUser"."nombre" no se encuentra definida.' in C:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('nombre')
+#1 C:\wamp\www\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('nombre')
+#2 C:\wamp\www\yii\framework\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(CrugeStoredUser), 'nombre')
+#3 C:\wamp\www\yii\framework\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(CrugeStoredUser), 'nombre', Array)
+#4 C:\wamp\www\yii\framework\web\widgets\CActiveForm.php(725): CHtml::activeTextField(Object(CrugeStoredUser), 'nombre', Array)
+#5 C:\wamp\www\RedVida\themes\semantic\views\cruge\ui\registration.php(23): CActiveForm->textField(Object(CrugeStoredUser), 'nombre', Array)
+#6 C:\wamp\www\yii\framework\web\CBaseController.php(126): require('C:\\wamp\\www\\Red...')
+#7 C:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp\\www\\Red...', Array, true)
+#8 C:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\wamp\\www\\Red...', Array, true)
+#9 C:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('registration', Array, true)
+#10 C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php(377): CController->render('registration', Array)
+#11 [internal function]: UiController->actionRegistration('')
+#12 C:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(UiController), Array)
+#13 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UiController), Object(ReflectionMethod), Array)
+#14 C:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#18 C:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('registration')
+#25 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/regist...')
+#26 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#27 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#28 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/registration
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/login
+---
+2014/11/19 16:47:22 [error] [exception.CrugeException.401] action_donantes_create<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/create
+HTTP_REFERER=http://localhost/redvida/index.php
+---
+2014/11/19 16:47:24 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/
+HTTP_REFERER=http://localhost/redvida/index.php?r=/donantes/create
+---
+2014/11/19 16:47:27 [error] [exception.CrugeException.401] action_donantes_registra_alergia<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/registra_alergia
+HTTP_REFERER=http://localhost/redvida/index.php?r=/donantes/
+---
+2014/11/19 16:47:28 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/
+HTTP_REFERER=http://localhost/redvida/index.php?r=/donantes/registra_alergia
+---
+2014/11/19 16:47:31 [error] [exception.CrugeException.401] action_paciente_create<br/>401
+REQUEST_URI=/redvida/index.php?r=/paciente/create
+HTTP_REFERER=http://localhost/redvida/index.php?r=/donantes/
+---
+2014/11/19 16:47:36 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/
+HTTP_REFERER=http://localhost/redvida/index.php?r=/paciente/
+---
+2014/11/19 16:48:46 [warning] [application] Error al establecer unsafe al atributo "regdate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 16:48:46 [warning] [application] Error al establecer unsafe al atributo "actdate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 16:48:46 [warning] [application] Error al establecer unsafe al atributo "logondate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 16:54:26 [error] [exception.CrugeException.401] action_paciente_index<br/>401
+REQUEST_URI=/redvida/index.php?r=paciente
+---
+2014/11/19 16:55:23 [error] [exception.CrugeException.401] action_paciente_index<br/>401
+REQUEST_URI=/redvida/index.php?r=paciente
+---
+2014/11/19 16:55:35 [error] [exception.CrugeException.401] action_donantes_create<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/create
+HTTP_REFERER=http://localhost/redvida/index.php
+---
+2014/11/19 16:58:41 [error] [exception.CrugeException.401] action_ui_usermanagementadmin<br/>401
+REQUEST_URI=/redvida/index.php?r=cruge/ui/usermanagementadmin
+HTTP_REFERER=http://localhost/redvida/index.php
+---
+2014/11/19 17:00:32 [error] [exception.CrugeException.401] action_ui_usermanagementadmin<br/>401
+REQUEST_URI=/redvida/index.php?r=cruge/ui/usermanagementadmin
+HTTP_REFERER=http://localhost/redvida/index.php
+---
+2014/11/19 17:00:34 [error] [exception.CrugeException.401] action_paciente_create<br/>401
+REQUEST_URI=/redvida/index.php?r=/paciente/create
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/usermanagementadmin
+---
+2014/11/19 17:00:42 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/
+HTTP_REFERER=http://localhost/redvida/index.php?r=/paciente/
+---
+2014/11/19 17:02:38 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/
+HTTP_REFERER=http://localhost/redvida/index.php
+---
+2014/11/19 17:02:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "admin"' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('admin')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/redvida/index.php?r=admin
+---
+2014/11/19 17:03:41 [error] [exception.CrugeException.401] action_ui_usermanagementadmin<br/>401
+REQUEST_URI=/redvida/index.php?r=cruge/ui/usermanagementadmin
+---
+2014/11/19 17:06:17 [warning] [application] Error al establecer unsafe al atributo "regdate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 17:06:17 [warning] [application] Error al establecer unsafe al atributo "actdate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 17:06:17 [warning] [application] Error al establecer unsafe al atributo "logondate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 17:06:54 [warning] [application] Error al establecer unsafe al atributo "regdate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 17:06:54 [warning] [application] Error al establecer unsafe al atributo "actdate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 17:06:54 [warning] [application] Error al establecer unsafe al atributo "logondate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 17:07:17 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/
+HTTP_REFERER=http://localhost/redvida/
+---
+2014/11/19 17:09:23 [warning] [application] Error al establecer unsafe al atributo "regdate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 17:09:23 [warning] [application] Error al establecer unsafe al atributo "actdate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 17:09:23 [warning] [application] Error al establecer unsafe al atributo "logondate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 17:15:24 [warning] [application] Error al establecer unsafe al atributo "regdate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 17:15:24 [warning] [application] Error al establecer unsafe al atributo "actdate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 17:15:24 [warning] [application] Error al establecer unsafe al atributo "logondate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 17:15:36 [warning] [application] Error al establecer unsafe al atributo "regdate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 17:15:36 [warning] [application] Error al establecer unsafe al atributo "actdate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 17:15:36 [warning] [application] Error al establecer unsafe al atributo "logondate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 17:16:30 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/
+HTTP_REFERER=http://localhost/redvida/index.php
+---
+2014/11/19 18:18:59 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in C:\wamp\www\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CrugeWebUser), 'Usted no se enc...')
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:19:01 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in C:\wamp\www\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CrugeWebUser), 'Usted no se enc...')
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:19:04 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in C:\wamp\www\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CrugeWebUser), 'Usted no se enc...')
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:19:05 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in C:\wamp\www\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CrugeWebUser), 'Usted no se enc...')
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:19:06 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in C:\wamp\www\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CrugeWebUser), 'Usted no se enc...')
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:19:06 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in C:\wamp\www\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CrugeWebUser), 'Usted no se enc...')
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:19:06 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in C:\wamp\www\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CrugeWebUser), 'Usted no se enc...')
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:19:06 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in C:\wamp\www\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CrugeWebUser), 'Usted no se enc...')
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:19:06 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in C:\wamp\www\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CrugeWebUser), 'Usted no se enc...')
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:19:06 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in C:\wamp\www\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CrugeWebUser), 'Usted no se enc...')
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:19:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in C:\wamp\www\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CrugeWebUser), 'Usted no se enc...')
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:19:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in C:\wamp\www\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CrugeWebUser), 'Usted no se enc...')
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:19:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in C:\wamp\www\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CrugeWebUser), 'Usted no se enc...')
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:19:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in C:\wamp\www\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CrugeWebUser), 'Usted no se enc...')
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:19:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in C:\wamp\www\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CrugeWebUser), 'Usted no se enc...')
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:19:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in C:\wamp\www\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CrugeWebUser), 'Usted no se enc...')
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:19:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in C:\wamp\www\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CrugeWebUser), 'Usted no se enc...')
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:19:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in C:\wamp\www\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CrugeWebUser), 'Usted no se enc...')
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:19:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in C:\wamp\www\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CrugeWebUser), 'Usted no se enc...')
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:19:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in C:\wamp\www\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CrugeWebUser), 'Usted no se enc...')
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:19:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in C:\wamp\www\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CrugeWebUser), 'Usted no se enc...')
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:19:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in C:\wamp\www\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CrugeWebUser), 'Usted no se enc...')
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:19:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Inicio de sesión necesario' in C:\wamp\www\yii\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\wamp\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CrugeWebUser), 'Usted no se enc...')
+#2 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#9 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#10 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:21:51 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/
+HTTP_REFERER=http://localhost/redvida/index.php
+---
+2014/11/19 18:22:03 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/
+HTTP_REFERER=http://localhost/redvida/index.php
+---
+2014/11/19 18:22:45 [error] [exception.CException] exception 'CException' with message 'No se puede agregar "invitados" como hijo de sí mismo.' in C:\wamp\www\RedVida\protected\modules\cruge\components\CrugeAuthManager.php:327
+Stack trace:
+#0 C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php(785): CrugeAuthManager->addItemChild('invitados', 'invitados')
+#1 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): UiController->actionRbacAjaxSetChildItem()
+#2 C:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\wamp\www\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#5 C:\wamp\www\RedVida\protected\modules\cruge\components\CrugeUiAccessControlFilter.php(37): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#6 C:\wamp\www\yii\framework\web\filters\CFilter.php(38): CrugeUiAccessControlFilter->preFilter(Object(CFilterChain))
+#7 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('rbacajaxsetchil...')
+#15 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cruge/ui/rbacaj...')
+#16 C:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\wamp\www\RedVida\index.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/redvida/index.php?r=cruge/ui/rbacajaxsetchilditem
+HTTP_REFERER=http://localhost/redvida/index.php?r=cruge/ui/rbacauthitemchilditems&id=invitados
+---
+2014/11/19 18:25:35 [warning] [application] Error al establecer unsafe al atributo "regdate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 18:25:35 [warning] [application] Error al establecer unsafe al atributo "actdate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 18:25:35 [warning] [application] Error al establecer unsafe al atributo "logondate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 18:25:45 [warning] [application] Error al establecer unsafe al atributo "regdate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 18:25:45 [warning] [application] Error al establecer unsafe al atributo "actdate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 18:25:45 [warning] [application] Error al establecer unsafe al atributo "logondate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 18:25:54 [warning] [application] Error al establecer unsafe al atributo "regdate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 18:25:54 [warning] [application] Error al establecer unsafe al atributo "actdate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 18:25:54 [warning] [application] Error al establecer unsafe al atributo "logondate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 18:26:06 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/
+HTTP_REFERER=http://localhost/redvida/index.php
+---
+2014/11/19 18:26:48 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/
+HTTP_REFERER=http://localhost/redvida/index.php
+---
+2014/11/19 18:26:52 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/
+HTTP_REFERER=http://localhost/redvida/index.php
+---
+2014/11/19 18:26:56 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/
+HTTP_REFERER=http://localhost/redvida/index.php
+---
+2014/11/19 18:27:06 [error] [exception.CrugeException.401] action_paciente_create<br/>401
+REQUEST_URI=/redvida/index.php?r=/paciente/create
+HTTP_REFERER=http://localhost/redvida/index.php?r=/paciente/
+---
+2014/11/19 18:27:11 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/
+HTTP_REFERER=http://localhost/redvida/index.php?r=paciente/view&id=3
+---
+2014/11/19 18:28:44 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/
+HTTP_REFERER=http://localhost/redvida/index.php?r=paciente/view&id=3
+---
+2014/11/19 18:29:03 [error] [exception.CrugeException.401] action_paciente_urgenciasnacionales<br/>401
+REQUEST_URI=/redvida/index.php?r=/paciente/urgenciasnacionales
+HTTP_REFERER=http://localhost/redvida/index.php?r=/paciente/
+---
+2014/11/19 18:32:39 [warning] [application] Error al establecer unsafe al atributo "regdate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 18:32:39 [warning] [application] Error al establecer unsafe al atributo "actdate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 18:32:39 [warning] [application] Error al establecer unsafe al atributo "logondate" de "CrugeStoredUser".
+in C:\wamp\www\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\wamp\www\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/19 18:32:54 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/
+HTTP_REFERER=http://localhost/redvida/index.php?r=/paciente/
+---
+2014/11/19 18:32:57 [error] [exception.CrugeException.401] action_paciente_urgenciasnacionales<br/>401
+REQUEST_URI=/redvida/index.php?r=/paciente/urgenciasnacionales
+HTTP_REFERER=http://localhost/redvida/index.php?r=/donantes/
+---
+2014/11/19 18:33:10 [error] [exception.CrugeException.401] action_paciente_urgenciasnacionales<br/>401
+REQUEST_URI=/redvida/index.php?r=/paciente/urgenciasnacionales
+HTTP_REFERER=http://localhost/redvida/index.php?r=/paciente/
+---
+2014/11/19 18:33:14 [error] [exception.CrugeException.401] action_paciente_urgenciasnacionales<br/>401
+REQUEST_URI=/redvida/index.php?r=/paciente/urgenciasnacionales
+HTTP_REFERER=http://localhost/redvida/index.php
+---
+2014/11/19 18:33:20 [error] [exception.CrugeException.401] action_paciente_admin<br/>401
+REQUEST_URI=/redvida/index.php?r=/paciente/admin
+HTTP_REFERER=http://localhost/redvida/index.php?r=/paciente/
+---
+2014/11/19 18:33:22 [error] [exception.CrugeException.401] action_paciente_create<br/>401
+REQUEST_URI=/redvida/index.php?r=/paciente/create
+HTTP_REFERER=http://localhost/redvida/index.php?r=/paciente/admin
+---
+2014/11/19 18:33:51 [error] [exception.CrugeException.401] action_paciente_create<br/>401
+REQUEST_URI=/redvida/index.php?r=/paciente/create
+HTTP_REFERER=http://localhost/redvida/index.php?r=/paciente/admin
+---
+2014/11/19 18:33:54 [error] [exception.CrugeException.401] action_paciente_urgenciasnacionales<br/>401
+REQUEST_URI=/redvida/index.php?r=/paciente/urgenciasnacionales
+HTTP_REFERER=http://localhost/redvida/index.php?r=/paciente/
+---
+2014/11/19 18:34:01 [error] [exception.CrugeException.401] action_paciente_create<br/>401
+REQUEST_URI=/redvida/index.php?r=paciente/create
+HTTP_REFERER=http://localhost/redvida/index.php?r=/paciente/
+---
+2014/11/19 18:34:05 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/
+HTTP_REFERER=http://localhost/redvida/index.php?r=/paciente/
+---
+2014/11/19 18:34:08 [error] [exception.CrugeException.401] action_donantes_registra_alergia<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/registra_alergia
+HTTP_REFERER=http://localhost/redvida/index.php?r=/donantes/
+---
+2014/11/19 18:34:12 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/
+HTTP_REFERER=http://localhost/redvida/index.php?r=/donantes/registra_alergia
+---
+2014/11/19 18:34:56 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/
+HTTP_REFERER=http://localhost/redvida/index.php?r=/donantes/registra_alergia
+---
+2014/11/19 18:35:38 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/
+HTTP_REFERER=http://localhost/redvida/index.php?r=/donantes/registra_alergia
+---
+2014/11/19 18:35:44 [error] [exception.CrugeException.401] action_paciente_urgenciasnacionales<br/>401
+REQUEST_URI=/redvida/index.php?r=/paciente/urgenciasnacionales
+HTTP_REFERER=http://localhost/redvida/index.php?r=/paciente/
+---
+2014/11/19 18:37:02 [error] [exception.CrugeException.401] action_donantes_registra_alergia<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/registra_alergia
+HTTP_REFERER=http://localhost/redvida/index.php?r=/donantes/
+---
+2014/11/19 18:37:10 [error] [exception.CrugeException.401] action_paciente_urgenciasnacionales<br/>401
+REQUEST_URI=/redvida/index.php?r=/paciente/urgenciasnacionales
+HTTP_REFERER=http://localhost/redvida/index.php?r=/donantes/
+---
+2014/11/19 18:43:45 [error] [exception.CrugeException.401] action_centroMedico_create<br/>401
+REQUEST_URI=/redvida/index.php?r=centroMedico/create
+HTTP_REFERER=http://localhost/redvida/index.php?r=/centroMedico/
+---
+2014/11/19 18:43:57 [error] [exception.CrugeException.401] action_centroMedico_admin<br/>401
+REQUEST_URI=/redvida/index.php?r=centroMedico/admin
+HTTP_REFERER=http://localhost/redvida/index.php?r=/centroMedico/
+---
