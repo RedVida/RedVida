@@ -10,10 +10,15 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'Lista Paciente', 'url'=>array('index')),
 	array('label'=>'Administrar Paciente', 'url'=>array('admin')),
+	array('label'=>'Urgencias Nacionales', 'url'=>array('urgenciasnacionales')),
 );
 ?>
-
-<h1 class="ui huge header add icon"> &nbsp; &nbsp; &nbsp; Registrar Pacientes</h1>
+<br/>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Registrar PAciente </h1>
+</div>
 <hr class="style-two ">
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<hr class="style-two ">

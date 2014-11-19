@@ -25,9 +25,11 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
+<br>
 <div class="ui black ribbon label">
 <h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
-Asignar Trasplante </h1>
+Asignar </h1>
+</div>
 </div>
 <hr class="style-two ">
 
@@ -81,7 +83,7 @@ Asignar Trasplante </h1>
 
 
 
-
+<hr class="style-two ">
 
 <div>
 <?php echo ' '.CHtml::submitButton('Asignar', array('id'=>'btn_submit','name' => 'ApproveButton', 'class' => 'ui red submit button disabled blockear')); ?>
