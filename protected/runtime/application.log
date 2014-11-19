@@ -35886,3 +35886,92 @@ Stack trace:
 REQUEST_URI=/RedVida/index.php?r=trasplante/view&id=11
 HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/trasplante/admin
 ---
+2014/11/17 19:57:24 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index?r=/donantes
+---
+2014/11/17 20:40:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "/api"' in C:\xampp\htdocs\xampp\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('/api')
+#1 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/RedVida/index.php?r=/api
+---
+2014/11/17 20:40:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "/api/get.json"' in C:\xampp\htdocs\xampp\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('/api/get.json')
+#1 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/RedVida/index.php?r=/api/get.json
+---
+2014/11/17 20:40:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "/api/get"' in C:\xampp\htdocs\xampp\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('/api/get')
+#1 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/RedVida/index.php?r=/api/get
+---
+2014/11/17 20:52:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "get"' in C:\xampp\htdocs\xampp\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('get')
+#1 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/redvida/api/index.php?r=get
+---
+2014/11/17 20:53:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "get.json"' in C:\xampp\htdocs\xampp\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('get.json')
+#1 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/redvida/api/index.php?r=get.json
+---
+2014/11/17 20:59:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "/api"' in C:\xampp\htdocs\xampp\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('/api')
+#1 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/RedVida/index.php?r=/api
+---
+2014/11/17 20:59:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "/api/get"' in C:\xampp\htdocs\xampp\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('/api/get')
+#1 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/RedVida/index.php?r=/api/get
+---
+2014/11/17 21:00:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "/qpi"' in C:\xampp\htdocs\xampp\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('/qpi')
+#1 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/RedVida/index.php?r=/qpi
+---
+2014/11/17 21:01:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "/api"' in C:\xampp\htdocs\xampp\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('/api')
+#1 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/RedVida/index.php?r=/api
+---
+2014/11/17 21:01:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "/api/get.json"' in C:\xampp\htdocs\xampp\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('/api/get.json')
+#1 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/RedVida/index.php?r=/api/get.json
+---
+2014/11/18 03:23:24 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index?r=/donantes
+---
+2014/11/18 21:08:28 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index?r=/donantes
+---
