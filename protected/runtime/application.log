@@ -40679,3 +40679,23 @@ CrugeUser->validate es false
 </ul></div>
 in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (159)
 in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/20 00:44:12 [error] [exception.CrugeException.401] action_trasplante_admin<br/>401
+REQUEST_URI=/redvida/index.php?r=trasplante/admin
+HTTP_REFERER=http://localhost:8080/RedVida1/index.php?r=/trasplante/admin
+---
+2014/11/20 00:52:10 [warning] [application] Error al establecer unsafe al atributo "regdate" de "CrugeStoredUser".
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/20 00:52:10 [warning] [application] Error al establecer unsafe al atributo "actdate" de "CrugeStoredUser".
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/20 00:52:10 [warning] [application] Error al establecer unsafe al atributo "logondate" de "CrugeStoredUser".
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\data\CrugeStoredUser.php (134)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (243)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (233)
+2014/11/20 01:54:03 [error] [exception.CrugeException.401] action_trasplante_create<br/>401
+REQUEST_URI=/RedVida/index.php?r=trasplante/create
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/trasplante/admin
+---

@@ -155,9 +155,9 @@ $('.ui.selection.dropdown')
 	</div>
 
    <div class="fields">
-	 	<div class="four wide field">
+	 	<div class="field">
 			<?php echo $form->labelEx($model,'detalle'); ?>
-			<?php echo $form->textArea($model,'detalle',array('rows'=>60,'cols'=>70,'style'=>'resize:none')); ?>
+			<?php echo $form->textArea($model,'detalle',array('maxlength'=>150,'rows'=>50,'cols'=>100, 'style'=>'resize:none; width: 300px')); ?>
 			<div class="errors">
 			<?php echo $form->error($model,'detalle',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>
