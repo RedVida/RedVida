@@ -30,6 +30,7 @@
     });
     });
 
+
 </script>
  <?php $donante=Donantes::model()->find('id='.$_GET["id"]);?>
 

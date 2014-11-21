@@ -22,16 +22,24 @@
                     		    }
         					})
     		},
+    	});
     });
-    });
+    
 $('.ui.modal')
-  .modal()
-;
+  .modal();
+
+$('#tiene-enfermedad-asignaenfermedad-form').submit(function() { 
+    $.ajax({
+  		type: "POST",
+ 		 url: "http://localhost:8080/redvida/api/donantes/index.php",
+  		 data: { nombre: "hola" }
+    });
+});
 </script>
  <?php $donante=Donantes::model()->find('id='.$_GET["id"]);?>
 
 <h2 class="ui header">Registrar enfermedad - <?php echo $donante->nombres." ".$donante->apellidos?> </h2>
-<div class="form">
+<div class="fortiene-enfermedad-asignaenfermedad-formm">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'tiene-enfermedad-asignaenfermedad-form',
