@@ -116,7 +116,7 @@ class DonantesController extends Controller
 		$model_tiene_alergia = new TieneAlergia;
 		$model = new Alergias;
 
-		if (isset($_POST['Alergias'])) {
+		if (isset($_POST['Alergias']) && ($_POST['Alergias']['id']!=null)) {
 			$model_tiene_alergia->id_donante = $id;
 			$length = (string)($_POST['Alergias']['id']);
 		    $modelo = Alergias::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='."'$length'"));

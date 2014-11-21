@@ -9,8 +9,6 @@
 ); ?>
 
 <script type="text/javascript">
-
-
 	$(function(){
         $('#busquedaAlergia').autocomplete({
        		 source : function( request, response ) {
@@ -24,46 +22,50 @@
 					                    label: item.nombre,
 					                    }
 					                }))
-                    		    }
-        					})
+                    		}
+        			})
     		},
+        });
     });
-    });
-
-
+    $(document).ready(function() {
+			$('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada a Modal UI
+  		});
+    function successModal(){                     // Button - Modal Success 
+        $("#tiene-Alergia-asigna_alergia-form").submit();
+    }
 </script>
- <?php $donante=Donantes::model()->find('id='.$_GET["id"]);?>
 
-<h2 class="ui header">Registrar Alergias - <?php echo $donante->nombres." ".$donante->apellidos?> </h2>
-<div class="form">
+<?php $donante=Donantes::model()->find('id='.$_GET["id"]);?>
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'tiene-Alergia-asigna_alergia-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// See class documentation of CActiveForm for details on this,
-	// you need to use the performAjaxValidation()-method described there.
-	'enableAjaxValidation'=>false,
-)); ?>
-
-	<?php echo $form->errorSummary($model); ?>
-
-  <div class="ui form">
- 	<div class="fields">
-	 	<div class="four wide field">
-			<?php echo $form->labelEx($model,'nombre:'); ?>
-			<?php echo $form->textField($model,'id',array('id'=>'busquedaAlergia','placeholder'=>'Ingrese la Alergia a buscar...')); ?>
-			<div class="errors">
-			<?php echo $form->error($model,'nombre',array('class' => 'ui small red pointing above ui label')); ?>
-			</div>
-		</div>
-	</div>
-  <br>
-	<div class="row buttons">
-      <?php echo CHtml::submitButton(CrugeTranslator::t('Registrar'),array("class"=>"ui blue submit button")); ?>
-  </div>
+<br><br>
+<div class="ui black ribbon label">
+	<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Registrar Alergia - <?php echo $donante->nombres." ".$donante->apellidos?> </h1>
 </div>
 
-<?php $this->endWidget(); ?>
-
+<div class="form">
+	<?php $form=$this->beginWidget('CActiveForm', array(
+		'id'=>'tiene-Alergia-asigna_alergia-form',
+		'enableAjaxValidation'=>false,
+	)); ?>
+	<?php echo $form->errorSummary($model); ?>
+	<div class="ui grid">
+		<div class="one wide column"></div>
+			<div class="twelve wide column">
+				  <div class="ui form">
+					 	<div class="fields">
+						 	<div class="four wide field">
+								<?php echo $form->labelEx($model,'nombre:'); ?>
+								<?php echo $form->textField($model,'id',array('id'=>'busquedaAlergia','placeholder'=>'Ingrese la Alergia a buscar...')); ?>
+								<div class="errors">
+									<?php echo $form->error($model,'id_alergia',array('class' => 'ui small red pointing above ui label')); ?>
+								</div>
+							</div>
+						</div><br>
+				     	<div class="row buttons">
+					      	<div class="ui blue submit button" id="ModalFunction"> Registrar </div>
+					 	</div>
+					</div>
+			</div>
+	</div>
+	<?php $this->endWidget(); ?>
 </div><!-- form -->

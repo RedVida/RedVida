@@ -31,11 +31,8 @@ class TieneAlergia extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_donante, id_alergia', 'numerical', 'integerOnly'=>true),
-			array('fecha', 'safe'),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('id, fecha, id_donante, id_alergia', 'safe', 'on'=>'search'),
+			array('id_alergia','required','message' => 'El Nombre de la Alergia es requerido'),
+
 		);
 	}
 
