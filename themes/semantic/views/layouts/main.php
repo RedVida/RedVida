@@ -17,7 +17,7 @@
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/views/layouts/main.css">   
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/modal.css"> 
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/estilos.css">    
-  <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/jquery.js"></script>
+  <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/jquery.min.js"></script>
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/carousel.js"></script>
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/semantic.min.js"></script>  
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/views/layouts/main.js"></script>
@@ -28,11 +28,7 @@
   <img  src="<?php echo Yii::app()->request->baseUrl; ?>/images/clinica3.jpg"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/text.png">
   </div>
 
-  <script>
-  $(document).ready(function() {
-  $('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada a Modal UI
-  });
-  </script>
+ 
 
   </head>
 
@@ -50,10 +46,10 @@
            Esta seguro que desea registrar estos datos?
         </div>
       <div class="actions">
-        <div class="ui negative button" name="Cancel">
+        <div class="ui negative button" data-value="Cancel" name="Cancel">
           No
         </div>
-        <div class="ui positive right labeled icon button"  onclick="successModal();" name="Success">
+        <div class="ui positive right labeled icon button"  date-value="Success" onclick="successModal();" name="Success">
           Si
           <i class="checkmark icon"></i>
         </div>
