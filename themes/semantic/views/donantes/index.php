@@ -13,7 +13,12 @@ $this->menu=array(
 );
 ?>
 
-<?php if(!isset($_GET['pdf'])){ ?> <h1>Donantes</h1> <?php } 
+<?php if(!isset($_GET['pdf'])){ ?> 
+
+<br>
+<div class="ui black ribbon label">
+	<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Lista De Donantes </h1>
+</div> <?php } 
  else{ ?> <h1><u>Informe Donantes:</u> </h1>
  <?php } ?> 
 

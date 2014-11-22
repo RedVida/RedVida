@@ -27,15 +27,13 @@ $('.search-form form').submit(function(){
 });
 ");
 ?>
-
-<h1>Administrar Donante</h1>
-
-<p>
-Quizás quieras ingresar un operador (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) en el comienzo de cada busqueda.
-</p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
+<br>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Registrar Donante </h1>
+</div>
+<hr class="style-two ">
+<?php echo CHtml::link('&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Busqueda Avanzada','#',array('class'=>'search-button')); ?>
 <div class="search-form " style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model

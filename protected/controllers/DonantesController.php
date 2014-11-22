@@ -86,20 +86,35 @@ class DonantesController extends Controller
 		$model_tiene_enfermedad = new TieneEnfermedad;
 		$model = new Enfermedades;
 
-		if (isset($_POST['Enfermedades'])) {
-			$model_tiene_enfermedad->id_donante = $id;
-			$length = (string)($_POST['Enfermedades']['id']);
-		    $modelo = Enfermedades::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='."'$length'"));
-			$model_tiene_enfermedad->id_enfermedad = $modelo[0]->id;
-			if ($model_tiene_enfermedad->save()) {
-				$this->redirect(array('admin'));
-			}else
-			{
-				echo 'No se pudo insertar! id:'.$id.' y id_enfermedad:'.$model_tiene_enfermedad->id_enfermedad;
-				Yii::app()->end();
-			}
-		}
-
+		if (isset($_POST['Enfermedades']) && ($_POST['Enfermedades']['id']!=null)) {
+				$length = (string)($_POST['Enfermedades']['id']);
+				$modelo = Enfermedades::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='."'$length'"));
+				if(!$modelo){
+				   $model->addError('nombre','Nombre : El nombre de la Enfermedad ingresada no existe ');
+				}
+				else{
+				$modelo = Enfermedades::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='."'$length'"));
+				$list= Yii::app()->db->createCommand('select * from tiene_enfermedad where id_donante = '."'$id'".' AND id_enfermedad = '.$modelo[0]->id)->queryAll();   
+	            $cont = 0;
+	            foreach($list as $item){$cont++;}
+	            if($cont>0){
+                   $model->addError('nombre','El donantes ya posee registrada esta Enfermedad ('.$_POST['Enfermedades']['id'].'), porfavor ingrese otro nombre.');
+	            }
+	            else{
+		            $model_tiene_enfermedad->id_donante = $id;
+					$model_tiene_enfermedad->id_enfermedad = $modelo[0]->id;
+					$model_tiene_enfermedad->fecha = new CDbExpression('NOW()');
+		 
+					if ($model_tiene_enfermedad->save()) {
+						$this->redirect(array('view&id='.$id));
+					}
+			  	}
+			  }
+	   }
+	   else if(isset($_POST['Enfermedades'])){
+	    	   $model->addError('nombre','Nombre : Se requiere ingresar una Enfermedad ');
+	    }
+ 
 		$this->render('asignaenfermedad',array('model'=>$model));
 	}
 
@@ -117,18 +132,33 @@ class DonantesController extends Controller
 		$model = new Alergias;
 
 		if (isset($_POST['Alergias']) && ($_POST['Alergias']['id']!=null)) {
-			$model_tiene_alergia->id_donante = $id;
-			$length = (string)($_POST['Alergias']['id']);
-		    $modelo = Alergias::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='."'$length'"));
-			$model_tiene_alergia->id_alergia = $modelo[0]->id;
-			if ($model_tiene_alergia->save()) {
-				$this->redirect(array('admin'));
-			}else
-			{
-				echo 'No se pudo insertar! id:'.$id.' y id_alergia:'.$model_tiene_alergia->id_alergia;
-				Yii::app()->end();
-			}
-		}
+				$length = (string)($_POST['Alergias']['id']);
+				$modelo = Alergias::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='."'$length'"));
+				if(!$modelo){
+				   $model->addError('nombre','Nombre : El nombre de la Alergia ingresada no existe ');
+				}
+				else{
+				$modelo = Alergias::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='."'$length'"));
+				$list= Yii::app()->db->createCommand('select * from tiene_alergia where id_donante = '."'$id'".' AND id_alergia = '.$modelo[0]->id)->queryAll();   
+	            $cont = 0;
+	            foreach($list as $item){$cont++;}
+	            if($cont>0){
+                   $model->addError('nombre','El donantes ya posee registrada esta Alergia ('.$_POST['Alergias']['id'].'), porfavor ingrese otro nombre.');
+	            }
+	            else{
+		            $model_tiene_alergia->id_donante = $id;
+					$model_tiene_alergia->id_alergia = $modelo[0]->id;
+					$model_tiene_alergia->fecha = new CDbExpression('NOW()');
+		 
+					if ($model_tiene_alergia->save()) {
+						$this->redirect(array('view&id='.$id));
+					}
+			  	}
+			  }
+	   }
+	   else if(isset($_POST['Alergias'])){
+	    	   $model->addError('nombre','Nombre : Se requiere ingresar una Alergia ');
+	    }
 
 		$this->render('asigna_alergia',array('model'=>$model));
 	}

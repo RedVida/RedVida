@@ -26,7 +26,7 @@ class Alergias extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('nombres', 'length', 'max'=>128),
-			// The following rule is used by search().
+			array('nombre','required','message' => 'El Nombre de la Alergia es requerido'),
 			// @todo Please remove those attributes that should not be searched.
 			array('id, nombres', 'safe', 'on'=>'search'),
 		);

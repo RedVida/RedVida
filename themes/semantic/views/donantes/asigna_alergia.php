@@ -47,7 +47,13 @@
 		'id'=>'tiene-Alergia-asigna_alergia-form',
 		'enableAjaxValidation'=>false,
 	)); ?>
-	<?php echo $form->errorSummary($model); ?>
+	<?php Yii::app()->clientScript->registerScript(
+				    'myHideEffect',
+				    '$(".errors").animate({opacity: 1.0}, 5000).fadeOut("slow");',
+				    CClientScript::POS_READY
+				); ?>
+	<?php echo $form->errorSummary($model, NULL, NULL, array("class" => "ui warning message"));?>
+
 	<div class="ui grid">
 		<div class="one wide column"></div>
 			<div class="twelve wide column">
@@ -56,8 +62,6 @@
 						 	<div class="four wide field">
 								<?php echo $form->labelEx($model,'nombre:'); ?>
 								<?php echo $form->textField($model,'id',array('id'=>'busquedaAlergia','placeholder'=>'Ingrese la Alergia a buscar...')); ?>
-								<div class="errors">
-									<?php echo $form->error($model,'id_alergia',array('class' => 'ui small red pointing above ui label')); ?>
 								</div>
 							</div>
 						</div><br>

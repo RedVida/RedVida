@@ -1,0 +1,469 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<!-- saved from url=(0039)http://localhost:8080/RedVida/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <!-- Standard Meta -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  
+  <meta name="language" content="es">
+
+  <!-- Site Properities -->
+  <title>REDVIDA - Site</title>
+  <link rel="shortcut icon" href="http://localhost:8080/RedVida/images/favicon.ico">  
+  <link rel="stylesheet" type="text/css" href="./REDVIDA - Site_files/carousel.css">
+  <link rel="stylesheet" type="text/css" href="./REDVIDA - Site_files/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="./REDVIDA - Site_files/main.css">   
+  <link rel="stylesheet" type="text/css" href="./REDVIDA - Site_files/modal.css">
+  <link rel="stylesheet" type="text/css" href="./REDVIDA - Site_files/estilos.css">
+  <script src="./REDVIDA - Site_files/jquery.js"></script><style type="text/css"></style>
+  <script src="./REDVIDA - Site_files/carousel.js"></script>
+  <script src="./REDVIDA - Site_files/semantic.min.js"></script>  
+  <script src="./REDVIDA - Site_files/main.js"></script>
+  <script src="./REDVIDA - Site_files/jquery.tablesort.min.js"></script>
+  <script src="./REDVIDA - Site_files/modal.js"></script>
+
+</head><body class="ui dimmable"><div class="ui center aligned segment">
+<img src="./REDVIDA - Site_files/clinica3.jpg"><img src="./REDVIDA - Site_files/text.png">
+</div>
+
+<script>
+$(document).ready(function() {
+$('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada a Modal UI
+});
+</script>
+
+
+
+
+
+<!-- Modal View -->
+
+  
+
+<!-- Meno As DropDown -->
+
+<div class="ui blue inverted menu">
+    <div class="menu">
+
+      <a class="item" href="http://localhost:8080/RedVida">
+        <i class="home icon"></i>Inicio
+      </a>
+
+      
+      <div class="right menu">
+      
+          
+      <a class="item" style="pointer-events:none">
+        <i class="user icon"></i> 
+        admin      </a>   
+
+      <a class="item" href="http://localhost:8080/RedVida/index.php?r=cruge/ui/logout">
+        <i class="off icon"></i> Cerrar Sesión
+      </a>
+      
+      </div>
+    
+    </div>
+
+
+<div class="ui blue inverted menu "> <!--BEGIN MENU INVERTED-->
+  <div class="menu"><!--BEGIN MENU-->
+      <a class="item" href="http://localhost:8080/RedVida/index.php?r=cruge/ui/usermanagementadmin">
+      <i class="asterisk icon"></i> Adm. de Usuario
+    </a>
+    
+    <div class="ui pointing dropdown link item">
+
+      <i class="asterisk icon"></i> Donantes <i class="dropdown icon"></i>
+      <div class="menu">
+
+                <a class="item" href="http://localhost:8080/RedVida/index.php?r=/donantes/create">
+          <i class="doble angle right icon"></i> Registrar Donante
+        </a>
+                         <a class="item" href="http://localhost:8080/RedVida/index.php?r=/donantes/admin">
+          <i class="doble angle right icon"></i> Administrar Donantes
+        </a>
+        
+        <a class="item" href="http://localhost:8080/RedVida/index.php?r=/donantes/">
+          <i class="doble angle right icon"></i> Listar Donantes
+        </a>
+
+                <a class="item" href="http://localhost:8080/RedVida/index.php?r=/donantes/registraenfermedad">
+          <i class="doble angle right icon"></i> Asignar Enfermedad 
+        </a>
+                        <a class="item" href="http://localhost:8080/RedVida/index.php?r=/donantes/registra_alergia">
+          <i class="doble angle right icon"></i> Asignar Alergia 
+        </a>
+               </div>     
+    </div>
+
+
+    <div class="ui pointing dropdown link item">
+
+      <i class="asterisk icon"></i> Pacientes <i class="dropdown icon"></i>
+      <div class="menu">
+                <a class="item" href="http://localhost:8080/RedVida/index.php?r=/paciente/create">
+          <i class="doble angle right icon"></i> Registrar Paciente
+        </a>
+                       <a class="item" href="http://localhost:8080/RedVida/index.php?r=/paciente/admin">
+          <i class="doble angle right icon"></i> Administrar Pacientes
+        </a>
+        
+         <a class="item" href="http://localhost:8080/RedVida/index.php?r=/paciente/">
+          <i class="doble angle right icon"></i> Listar Pacientes
+        </a>
+
+        <a class="item" href="http://localhost:8080/RedVida/index.php?r=/paciente/urgenciasnacionales">
+          <i class="doble angle right icon"></i> Urgencias Nacionales
+        </a>
+       
+       </div>       
+    </div>
+
+
+        <div class="ui pointing dropdown link item">
+
+      <i class="asterisk icon"></i>  Donaciones <i class="dropdown icon"></i>
+      <div class="menu ui transition hidden">
+
+        <a class="item" href="http://localhost:8080/RedVida/index.php?r=/donantes/donar">
+          <i class="doble angle right icon"></i> Registrar Donación 
+        </a>
+
+        
+        <a class="item" href="http://localhost:8080/RedVida/index.php?r=/donacionsangre/admin">
+          <i class="doble angle right icon"></i> Adm. Donac. Sangre
+        </a>
+        
+        <a class="item" href="http://localhost:8080/RedVida/index.php?r=/donacionmedula/admin">
+          <i class="doble angle right icon"></i> Adm. Donac. Médula
+        </a>
+
+        <a class="item" href="http://localhost:8080/RedVida/index.php?r=/donacionorgano/admin">
+          <i class="doble angle right icon"></i> Adm. Donac. Organo
+        </a>    
+
+        <a class="item" href="http://localhost:8080/RedVida/index.php?r=/bancosangre/admin">
+          <i class="doble angle right icon"></i> Administrar Banco Sangre
+        </a>
+
+        <a class="item" href="http://localhost:8080/RedVida/index.php?r=/organo/admin">
+          <i class="doble angle right icon"></i> Administrar Organos
+        </a>
+        
+        <a class="item" href="http://localhost:8080/RedVida/index.php?r=/donacionSangre/">
+          <i class="doble angle right icon"></i> Listar Donac. Sangre
+        </a>
+        
+        <a class="item" href="http://localhost:8080/RedVida/index.php?r=/donacionMedula/">
+          <i class="doble angle right icon"></i> Listar Donac. Médula
+        </a>
+
+        <a class="item" href="http://localhost:8080/RedVida/index.php?r=/donacionOrgano/">
+          <i class="doble angle right icon"></i> Listar Donac. Organo
+        </a>    
+
+        <a class="item" href="http://localhost:8080/RedVida/index.php?r=/bancoSangre/">
+          <i class="doble angle right icon"></i> Listar Banco Sangre
+        </a>
+
+        <a class="item" href="http://localhost:8080/RedVida/index.php?r=/organo/">
+          <i class="doble angle right icon"></i> Listar Organos
+        </a>
+      
+       </div>  
+    </div>
+                
+
+      
+      <div class="ui pointing dropdown link item">
+
+          <i class="asterisk icon"></i> Trasplantes <i class="dropdown icon"></i>
+          <div class="menu">
+           
+           <a class="item" href="http://localhost:8080/RedVida/index.php?r=/trasplante/create">
+            <i class="doble angle right icon"></i> Registrar Trasplante
+          </a>
+
+
+          <a class="item" href="http://localhost:8080/RedVida/index.php?r=/trasplante/admin">
+            <i class="doble angle right icon"></i> Administrar Trasplantes
+          </a>
+
+
+          <a class="item" href="http://localhost:8080/RedVida/index.php?r=/trasplante/">
+            <i class="doble angle right icon"></i> Listar Trasplantes
+          </a>
+
+
+           <a class="item" href="http://localhost:8080/RedVida/index.php?r=/paciente/asignar">
+            <i class="doble angle right icon"></i> Asignar Trasplantes
+           </a>
+
+          </div>       
+      </div>
+      
+
+      <div class="ui pointing dropdown link item">
+
+          <i class="asterisk icon"></i> Centros Medicos <i class="dropdown icon"></i>
+          <div class="menu">
+                          <a class="item" href="http://localhost:8080/RedVida/index.php?r=/centroMedico/create">
+              <i class="doble angle right icon"></i> Registrar C. Medico
+            </a>
+                                    <a class="item" href="http://localhost:8080/RedVida/index.php?r=/centroMedico/admin">
+              <i class="doble angle right icon"></i> Administrar C. Medicos
+            </a>
+            
+            <a class="item" href="http://localhost:8080/RedVida/index.php?r=/centroMedico/">
+              <i class="doble angle right icon"></i> Listar C. Medicos
+            </a>
+
+          </div>       
+      </div>
+
+
+    </div><!--END MENU-->
+</div><!--END MENU  INVERTED-->
+
+    
+</div>
+
+<div class="contenido">
+  
+  
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item">
+      <center><img class="img-responsive" alt="Responsive image" src="./REDVIDA - Site_files/s10.jpg"></center>
+      <div class="carousel-caption">
+      </div>
+    </div>
+    <div class="item active">
+      <center><img class="img-responsive" alt="Responsive image" src="./REDVIDA - Site_files/s11.jpg"></center>
+      <div class="carousel-caption">
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="http://localhost:8080/RedVida/index.php#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="http://localhost:8080/RedVida/index.php#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+
+<div class="ui page grid overview segment">
+    <div class="ui two wide column"></div>
+    <div class="twelve wide column">
+      <div class="ui three column center aligned stackable divided grid">
+        <div class="column">
+          <div class="ui icon header">
+            <i class="circular doctor link icon"></i> 
+          </div>
+          <p>Registro de donaciones y trasplantes a nivel nacional</p>
+          
+        </div>
+        <div class="column">
+          <div class="ui icon header">
+            <i class="circular heart link icon"></i>
+            
+          </div>
+          <p>Control de urgencias medicas y donaciones hechas en tiempo real</p>
+          
+        </div>
+        <div class="column">
+          <div class="ui icon header">
+            <i class="circular user link icon"></i>
+            
+          </div>
+          <p>Gestion de pacientes y urgencias nacionales</p>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="ui inverted page grid stackable segment">
+    <div class="row">
+      <div class="column">
+        <h1 class="center aligned ui header">
+          Comparta en sus redes sociales
+        </h1>
+        <div class="ui horizontal divider"><i class="heart icon"></i></div>
+      </div>
+    </div>
+    <div class="center four column aligned row">
+      <div class="column">
+        <div class="ui text shape">
+          <div class="sides">
+            <div class="side">
+              <i class="huge circular github icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular facebook icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular maxcdn icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular pinterest icon"></i>
+            </div>
+            <div class="side active">
+              <i class="huge circular weibo icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular flickr icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="ui text shape">
+          <div class="sides">
+            <div class="side active">
+              <i class="huge circular github icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular facebook icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular maxcdn icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular pinterest icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular weibo icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular flickr icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="ui text shape">
+          <div class="sides">
+            <div class="side">
+              <i class="huge circular github icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular facebook icon"></i>
+            </div>
+            <div class="side active">
+              <i class="huge circular maxcdn icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular pinterest icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular weibo icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular flickr icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="ui text shape">
+          <div class="sides">
+            <div class="side">
+              <i class="huge circular github icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular facebook icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular maxcdn icon"></i>
+            </div>
+            <div class="side active">
+              <i class="huge circular pinterest icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular weibo icon"></i>
+            </div>
+            <div class="side">
+              <i class="huge circular flickr icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="ui inverted blue page grid segment">
+    <div class="ten wide column">
+      <div class="ui three column stackable grid">
+        <div class="column">
+          <div class="ui header">Hector Poblete</div>
+          <div class="ui inverted link list">
+          	<a href="https://github.com/hepoblet"><img class="circular small ui image" src="./REDVIDA - Site_files/poblete.jpg"></a>
+          	<p>Programador</p>
+          	<p>Analista</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui header">Francisco Barra</div>
+          <div class="ui inverted link list">
+            <a href="https://github.com/franciscobarra"><img class="circular small ui image" src="./REDVIDA - Site_files/pancho.png"></a>
+            <p>Jefe de proyecto</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui header">Julians Iturra</div>
+          <div class="ui inverted link list">
+            <a href="https://github.com/JuIturra"><img class="circular small ui image" src="./REDVIDA - Site_files/julian2.png"></a>
+            <p>Ing. Calidad</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="six wide right floated aligned column">
+      <h3 class="ui header">Contactenos</h3>
+      <addr>
+        Universidad del Bio Bio<br>
+        by MucaCompany<br>
+      </addr>
+    </div>
+  </div>
+
+<script>
+    $(document).ready(function(){
+        $('.carousel').carousel({
+            interval: 3000
+        });
+    });
+</script>
+
+</div>
+
+
+
+<div class="ui dimmer page"><div class="ui small modal">
+        <i class="close icon"></i>
+          <div class="header">
+            Verificar Operación
+          </div>
+        <div class="content">
+          <i class="large loading icon"></i>
+           Esta seguro que desea registrar estos datos?
+        </div>
+      <div class="actions">
+        <div class="ui negative button" name="Cancel">
+          No
+        </div>
+        <div class="ui positive right labeled icon button" onclick="successModal();" name="Success">
+          Si
+          <i class="checkmark icon"></i>
+        </div>
+      </div>
+  </div></div></body></html>

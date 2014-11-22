@@ -33,13 +33,6 @@
 	    function successModal(){                     									// Button - Modal Success 
 	        $("#tiene-enfermedad-asignaenfermedad-form").submit();
 	    }
-	$('#tiene-enfermedad-asignaenfermedad-form').submit(function() { 
-	    $.ajax({
-	  		type: "POST",
-	 		 url: "http://localhost:8080/redvida/api/donantes/index.php",
-	  		 data: { nombre: "hola" }
-	    });
-	});
 </script>
 
 <?php $donante=Donantes::model()->find('id='.$_GET["id"]);?>
@@ -54,24 +47,27 @@
 		'id'=>'tiene-enfermedad-asignaenfermedad-form',
 		'enableAjaxValidation'=>false,
 	)); ?>
-	<?php echo $form->errorSummary($model); ?>
+	<?php Yii::app()->clientScript->registerScript(
+				    'myHideEffect',
+				    '$(".errors").animate({opacity: 1.0}, 5000).fadeOut("slow");',
+				    CClientScript::POS_READY
+				); ?>
+	<?php echo $form->errorSummary($model, NULL, NULL, array("class" => "ui warning message"));?>
 	<div class="ui grid">
 		<div class="one wide column"></div>
 			<div class="twelve wide column">
-				<div class="ui form">
-				 	<div class="fields">
-					 	<div class="four wide field">
-							<?php echo $form->labelEx($model,'nombre:'); ?>
-							<?php echo $form->textField($model,'id',array('id'=>'busquedaEnfermedad','placeholder'=>'Ingrese la enfermedad a buscar...')); ?>
-							<div class="errors">
-								<?php echo $form->error($model,'id',array('class' => 'ui small red pointing above ui label')); ?>
+				  <div class="ui form">
+					 	<div class="fields">
+						 	<div class="four wide field">
+								<?php echo $form->labelEx($model,'nombre:'); ?>
+								<?php echo $form->textField($model,'id',array('id'=>'busquedaEnfermedad','placeholder'=>'Ingrese la Enfermedad a buscar...')); ?>
+								</div>
 							</div>
-						</div>
+						</div><br>
+				     	<div class="row buttons">
+					      	<div class="ui blue submit button" id="ModalFunction"> Registrar </div>
+					 	</div>
 					</div>
-				</div><br>
-				<div class="row buttons">
-					<div class="ui blue submit button" id="ModalFunction"> Registrar </div>
-			    </div>
 			</div>
 	</div>
 	<?php $this->endWidget(); ?>
