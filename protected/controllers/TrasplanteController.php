@@ -151,6 +151,37 @@ class TrasplanteController extends Controller
 
 	}
 
+public function actionPacienteList()
+    {
+        $criterio = new CDbCriteria;
+        $cdtns = array();
+        $resultado = array();
+        
+        if(empty($_GET['term'])) return $resultado;
+        
+        $cdtns[] = "LOWER(nombre) like LOWER(:busq)";
+
+        
+        $criterio->condition = implode(' OR ', $cdtns);
+        $criterio->params = array(':busq' => '%' . $_GET['term'] . '%');
+        $criterio->limit = 10;
+        
+        $data = Paciente::model()->findAll($criterio);
+        
+        foreach($data as $item) {  
+            $resultado[] = array (
+            	'id' => $item->id,
+                'nombre'    => $item->nombre,
+                'apellido' => $item->apellido,
+                'rut' => $item->rut,
+
+            );
+        }
+        
+        echo CJSON::encode($resultado);
+    }
+
+
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.

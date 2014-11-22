@@ -135,7 +135,6 @@ if(id_select>0){
 </script>
 
 
-	</div>	
 </div>
 
 	

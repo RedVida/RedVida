@@ -35,7 +35,7 @@ class Trasplante extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_donante, id_paciente, tipo_donacion, id_donacion,grado_urgencia', 'required'),
-			array('id_donante, id_paciente', 'length', 'max'=>12),
+			array('id_donante', 'length', 'max'=>12),
 			array('tipo_donacion, id_donacion, compatibilidad, grado_urgencia, centro_medico', 'length', 'max'=>255),
 			array('detalle, created, modified', 'safe'),
 			array('modified','default',
