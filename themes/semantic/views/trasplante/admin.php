@@ -105,7 +105,7 @@ Administrar Trasplantes </h1>
 
  						'Ver' => arraY
  						(
-					        'label'=>'Ver',
+					    	'label'=>'Ver',
 					        'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/eye.png",
 					        'url'=>'Yii::app()->createUrl("trasplante/view", array("id"=>$data->id))',
 					    ),
@@ -166,8 +166,9 @@ Administrar Trasplantes </h1>
 <style type="text/css">
 
 .blockear{
-      pointer-events: none;  /**No lickeable Button**/
+      pointer-events: none;  /**No Clickeable Button**/
 }
+
 
 </style>
 <!--TERMINA CSS BLOCKEAR-->
@@ -180,6 +181,9 @@ Administrar Trasplantes </h1>
 if (typeof target_id === 'undefined') {
 $('input:checkbox').removeAttr('checked');
 }
+
+
+
 
 function userClicks(target_id){
 

@@ -1,15 +1,18 @@
 <?php
 /* @var $this DonantesController */
 /* @var $model Donantes */
-
 $this->breadcrumbs=array(
 	'Donantes'=>array('index'),
 	'Menu',
 );
 
 $this->menu=array(
-	array('label'=>'Listar Donantes', 'url'=>array('index')),
-	array('label'=>'Registrar Donantes', 'url'=>array('create')),
+	array('label'=>'Listar Don. Sangre', 'url'=>array('/donacionSangre/index')),
+	array('label'=>'Listar Don. Medula', 'url'=>array('/donacionMedula/index')),
+	array('label'=>'Listar Don. Organo', 'url'=>array('/donacionOrgano/index')),
+	array('label'=>'Admin. Don. Sangre', 'url'=>array('/donacionSangre/admin')),
+	array('label'=>'Admin. Don. Medula', 'url'=>array('/donacionMedula/admin')),
+	array('label'=>'Admin. Don. Organo', 'url'=>array('/donacionOrgano/admin')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -24,86 +27,167 @@ $('.search-form form').submit(function(){
 	return false;
 });
 ");
+
+Yii::app()->clientScript->registerScript('helpers', '                                                           
+    yii = {                                                                                                     
+	   urls: {                                                                                                 
+       saveEdits: '.CJSON::encode(Yii::app()->createUrl('edit/save')).',                                   
+       base: '.CJSON::encode(Yii::app()->baseUrl).'                                                        
+    	     }                                                                                                       
+      	  };                                                                                                          
+');          
 ?>
 
-<h1>Menu Donar</h1>
+<br>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Registrar Donación </h1>
+</div>
+</div>
+<hr class="style-two ">
+
+
+
+<div class="ui grid"><!--start grid-->
+
+	<div class="one wide column">
+	</div>
+
+	<div class="twelve wide column">
+		<?php echo CHtml::link('Busqueda Avanzada','#',array('class'=>'search-button')); ?>
+		<div class="search-form" style="display:none">
+		<?php $this->renderPartial('_search',array(
+			'model'=>$model,
+		)); ?>
+		</div><!-- search-form -->
+	</div>
+</div>
+<hr class="style-two ">
+
+<div class="ui grid">
+
+	<div class="one wide column">
+
+	</div>
+	<div class="twelve wide column">
+
+
+
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'donantes-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
-	'columns'=>array(
-		//'id',,
-		'nombres',
-		'apellidos',
-		'rut',
-		/*
-		'tipo_sangre',
+	   'selectableRows' => 1,
+    'columns'=>array(
+
+        array( 
+        	  'id'=>'id',
+              'class'=>'CCheckBoxColumn',            
+        ),
+        'nombres',
+        'apellidos',
+        'rut',
+    	'tipo_sangre',
 		'email',
-		'centro_medico',
 		'direccion',
-		'enfermedades',
-		'alergias',
 		'num_contacto',
-		*/
-		'link'=>array(
-            'header'=>'',
-            'type'=>'raw',
-            'value'=> 'CHtml::button("Sangre",array("onclick"=>"document.location.href=\'".Yii::app()->controller->createUrl("donacionSangre/create",array("id"=>$data->id))."\'"))',
-        ),   
-	
-		'link-2'=>array(
-            'header'=>'',
-            'type'=>'raw',
-            'value'=> 'CHtml::button("Medula",array("onclick"=>"document.location.href=\'".Yii::app()->controller->createUrl("donacionMedula/create",array("id"=>$data->id))."\'"))',
-        ),   
-	
-		'link-3'=>array(
-            'header'=>'',
-            'type'=>'raw',
-            'value'=> 'CHtml::button("Organo",array("onclick"=>"document.location.href=\'".Yii::app()->controller->createUrl("donacionOrgano/create",array("id"=>$data->id))."\'"))',
-        ),   
-	
-	/*
-
-		array(
-			'class'=>'CButtonColumn',
-			'template'=>'{Sangre}', // botones a mostrar
-            'buttons'=>array(
-			'Sangre' => array( //botón para la acción nueva
-		    'label'=>'Sangre', // titulo del enlace del botón nuevo
-		    'url'=>'Yii::app()->createUrl("/donacionSangre/create&id=$data->id")', //url de la acción nueva
-		    //'visible'=>'($data->estado==="DISPONIBLE")?true:false;'
-		    ),
-			),
-		),
-
-		array(
-			'class'=>'CButtonColumn',
-			'template'=>'{Medula}', // botones a mostrar
-            'buttons'=>array(
-			'Medula' => array( //botón para la acción nueva
-		    'label'=>'Medula', // titulo del enlace del botón nuevo
-		    'url'=>'Yii::app()->createUrl("/donacionMedula/create&id=$data->id")', //url de la acción nueva
-		    //'visible'=>'($data->estado==="DISPONIBLE")?true:false;'
-		    ),
-			),
-		),
-
-		array(
-			'class'=>'CButtonColumn',
-			'template'=>'{Organo}', // botones a mostrar
-            'buttons'=>array(
-			'Organo' => array( //botón para la acción nueva
-		    'label'=>'Organo', // titulo del enlace del botón nuevo
-		    'url'=>'Yii::app()->createUrl("/donacionOrgano/create&id=$data->id")', //url de la acción nueva
-		    //'visible'=>'($data->estado==="DISPONIBLE")?true:false;'
-		    ),
-			),
-		),
-
-		*/
-	),
-//	'htmlOptions'=>array('class'=>'ui table segment'),
+        ),
+        'selectionChanged'=>'userClicks',
+		'afterAjaxUpdate'=>'userClicks',
 
 )); ?>
+
+
+
+
+<hr class="style-two ">
+
+<div class="ui blue submit button disabled blockear" id="btn_1">Don. Sangre
+<input type="hidden" name="Sangre" value="Sange" method="POST" ></input>
+</div>
+<div class="ui blue submit button disabled blockear" id="btn_2">Don. Medula
+<input type="hidden" name="Medula" value="Medula" method="POST" ></input>
+</div>
+<div class="ui blue submit button disabled blockear" id="btn_3">Don. Organo
+<input type="hidden" name="Organo" value="Organo" method="POST" ></input>
+</div>
+
+
+<style type="text/css">
+	
+.blockear{
+
+      pointer-events: none;
+}
+
+</style>
+
+
+
+
+
+<script>
+
+
+
+if (typeof target_id === 'undefined') {
+
+$('input:checkbox').removeAttr('checked');
+
+}
+
+
+function userClicks(target_id){
+
+
+
+var id_select = $('#donantes-grid').yiiGridView.getSelection(target_id);
+//alert(id_select);
+
+if(id_select>0){
+            
+            $('#btn_1').removeClass('disabled blockear');
+
+            $('#btn_2').removeClass('disabled blockear');
+            
+            $('#btn_3').removeClass('disabled blockear');
+
+
+$('#btn_1').click(function() {
+
+window.location.href = yii.urls.base + '/index.php?r=/donacionSangre/create&id=' + id_select[0];									
+
+});
+$('#btn_2').click(function() {
+
+window.location.href = yii.urls.base + '/index.php?r=/donacionMedula/create&id=' + id_select[0];									
+
+});
+$('#btn_3').click(function() {
+
+window.location.href = yii.urls.base + '/index.php?r=/donacionOrgano/create&id=' + id_select[0];									
+
+});
+
+
+}else{
+            
+
+            $('#btn_1').addClass('disabled blockear');
+
+            $('#btn_2').addClass('disabled blockear');
+
+            $('#btn_3').addClass('disabled blockear');
+}
+
+}
+
+
+
+</script>
+
+</div>
+
+	
+<hr class="style-two ">

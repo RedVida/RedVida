@@ -5,7 +5,6 @@
 	</div>
 
 	<div class="twelve wide column">
-	
 
 	<div class="form">
 
@@ -33,33 +32,77 @@
 	$model_paciente = Paciente::model()->find("id=$id");
 	$rut= $model_paciente['rut'];
 	$val=true;
-
-
 	?>
 		<div class="ui orange ribbon label">
 		<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
 		Paciente: <?php echo $model_paciente['nombre'].' '.$model_paciente['apellido']; ?></h1>
 		</div>
 		<hr class="style-two ">
-	<?php	}	?>
+	<?php }	?>
+
+	<div class="ui form">
+	<?php
+	if(isset($_GET['id'])){
+	?>
+	<div class="fields">
+		 	<div class="four wide field">
+				<?php echo $form->labelEx($model,'Rut Paciente'); ?>
+				<?php echo $form->textField($model,'id_paciente', array('value'=>$rut, 'disabled'=>true, 'id'=>'rut', 'maxLength'=>12)); ?>
+				<div class="errors">
+				<?php echo $form->error($model,'id_paciente',array('class' => 'ui small red pointing above ui label')); ?>
+				</div>
+			</div>
+		</div>
+	<?php } ?>
 
 
 
+<!--Prueba TYPEHEAD-->
 
-<div class="ui form">
-<?php
-if(isset($_GET['id'])){
-?>
-<div class="fields">
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/ui-autocomplete.min.js" type="text/javascript"></script> 
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/typeahead.js" type="text/javascript"></script> 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script type="text/javascript">
+
+	$(function(){
+        $('#busquedaPaciente').autocomplete({
+       		 source : function( request, response ) {
+       		 $.ajax({
+                    url: '<?php echo $this->createUrl('Trasplante/PacienteList'); ?>',
+                    dataType: "json",
+                    data: { term: request.term },
+                    success: function(data) {
+		                    response($.map(data, function(item) {
+				                    return {
+				                    	label: item.nombre+" "+item.apellido,
+					                    value: item.id,
+					                 	
+					                    }
+					                }))
+                    		    }
+        					})
+    		},
+    });
+    });
+
+</script>
+
+
+<!--Prueba TYPEHEAD-->
+
+
+   <div class="fields">
 	 	<div class="four wide field">
-			<?php echo $form->labelEx($model,'Rut Paciente'); ?>
-			<?php echo $form->textField($model,'id_paciente', array('value'=>$rut, 'disabled'=>true, 'id'=>'rut', 'maxLength'=>12)); ?>
+			<?php echo $form->labelEx($model,'id_paciente'); ?>
+			<?php echo $form->textField($model,'id_paciente',array('id'=>'busquedaPaciente','placeholder'=>'Ingrese Nombre Paciente')); ?>
 			<div class="errors">
 			<?php echo $form->error($model,'id_paciente',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>
 		</div>
 	</div>
-<?php } ?>
+
+
 
  <div class="fields">
 	 	<div class="four wide field">
@@ -72,15 +115,7 @@ if(isset($_GET['id'])){
 	</div>
 
 
-   <div class="fields">
-	 	<div class="four wide field">
-			<?php echo $form->labelEx($model,'id_paciente'); ?>
-			<?php echo $form->textField($model,'id_paciente', array('value'=>$id, 'readonly'=>$val, 'id'=>'rut', 'maxLength'=>12)); ?>
-			<div class="errors">
-			<?php echo $form->error($model,'id_paciente',array('class' => 'ui small red pointing above ui label')); ?>
-			</div>
-		</div>
-	</div>
+  
 
     
 
