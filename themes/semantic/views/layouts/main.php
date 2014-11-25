@@ -221,7 +221,7 @@
           <i class="asterisk icon"></i> Trasplantes <i class="dropdown icon"></i>
           <div class="menu">
            
-           <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/trasplante/create">
+           <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/asignar">
             <i class="doble angle right icon"></i> Registrar Trasplante
           </a>
 
@@ -234,11 +234,6 @@
           <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/trasplante/">
             <i class="doble angle right icon"></i> Listar Trasplantes
           </a>
-
-
-           <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/asignar">
-            <i class="doble angle right icon"></i> Asignar Trasplantes
-           </a>
 
           </div>       
       </div>

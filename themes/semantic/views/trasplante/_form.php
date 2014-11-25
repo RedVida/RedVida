@@ -131,15 +131,6 @@
 		</div>
 	</div>
 
-<script type="text/javascript">
-$('.ui.selection.dropdown')
-  .dropdown()
-;
-</script>
-
-<?php
-
-?>
 
 <!--DONACION 1-->
    <div class="fields">
@@ -192,7 +183,7 @@ $('.ui.selection.dropdown')
    <div class="fields">
 	 	<div class="field">
 			<?php echo $form->labelEx($model,'detalle'); ?>
-			<?php echo $form->textArea($model,'detalle',array('maxlength'=>150,'rows'=>50,'cols'=>100, 'style'=>'resize:none; width: 300px')); ?>
+			<?php echo $form->textArea($model,'detalle',array('maxlength'=>150,'rows'=>50,'cols'=>100, 'style'=>'resize:none; width: 300px; line-height: 10pt;' )); ?>
 			<div class="errors">
 			<?php echo $form->error($model,'detalle',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>

@@ -13,6 +13,7 @@
 
 
 <div class="ui grid">
+
 	<div class="one wide column">
 		
 	</div>
@@ -20,26 +21,21 @@
 	<div class="twelve wide column">
 
 
-<div class="form">
+	<div class="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'donacion-sangre-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
-)); ?>
+	<?php $form=$this->beginWidget('CActiveForm', array(
+		'id'=>'donacion-sangre-form',
+		'enableAjaxValidation'=>false,
+	)); ?>
 
 
-<?php Yii::app()->clientScript->registerScript(
-    'myHideEffect',
-    '$(".errors").animate({opacity: 1.0}, 5000).fadeOut("slow");',
-    CClientScript::POS_READY
-); ?>
+	<?php Yii::app()->clientScript->registerScript(
+	    'myHideEffect',
+	    '$(".errors").animate({opacity: 1.0}, 5000).fadeOut("slow");',
+	    CClientScript::POS_READY
+	); ?>
         
 	<?php echo $form->errorSummary($model, NULL, NULL, array("class" => "ui warning message"));?>
-
 
 	<?php
 	$rut='';
@@ -51,8 +47,6 @@
 	$rut= $model_donante['rut'];
 	$val=true;
 	}
-
-
 	?>
 
 
@@ -90,16 +84,14 @@
 	</div>
 </div>
 
+<br><br>
 
-
-		<br><br>
 	<div class="row buttons">
 	    <?php echo CHtml::submitButton(CrugeTranslator::t("Registrar"),array("class"=>"ui blue submit button")); ?>
 	</div>
 
 
+	</div>
 </div>
 <?php $this->endWidget(); ?>
-</div><!-- grid -->
-
-</div><!-- form -->
+</div>

@@ -16,7 +16,21 @@ $this->menu=array(
 );
 ?>
 
-<h1>View DonacionSangre #<?php echo $model->id; ?></h1>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Ver Donación de Sangre #<?php echo $model->id;; ?></h1>
+</div>
+<hr class="style-two ">
+
+
+<div class="ui grid">
+
+	<div class="one wide column">
+
+	</div>
+
+	<div class="twelve wide column">
+
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -28,4 +42,9 @@ $this->menu=array(
 		'tipo_sangre',
 		'cantidad',
 	),
+	'htmlOptions'=>array('class'=>'ui celled table segment autosize'),
 )); ?>
+	</div>
+	
+</div>
+<hr class="style-two ">

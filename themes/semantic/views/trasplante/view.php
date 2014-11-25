@@ -33,8 +33,8 @@ Ver Trasplante #<?php echo $model->id; ?></h1>
 	<div class="twelve wide column">
 
 	<?php 
-	$modelo_paciente = Paciente::model()->find('id='.$model->id_paciente);
-	$modelo_donante = Donantes::model()->find('id='.$model->id_donante);  
+	$modelo_paciente = Paciente::model()->find('id ='.$model->id_paciente);
+	$modelo_donante = Donantes::model()->find('id ='.$model->id_donante);  
 	 ?>
 
 	<?php $this->widget('zii.widgets.CDetailView', array(
@@ -52,11 +52,16 @@ Ver Trasplante #<?php echo $model->id; ?></h1>
 			'compatibilidad',
 			'grado_urgencia',
 			'centro_medico',
-			'detalle',
+			//'detalle',
+			array(
+			'name'=>'detalle',
+			'type'=>'ntext',
+			'htmlOptions'=>array('style' => 'width: 100; position: relative;'),
+			),
 			'created',
 			'modified',
 		),
-		'htmlOptions'=>array('class'=>'ui celled table segment'),
+		'htmlOptions'=>array('class'=>'ui celled table segment autosize'),
 	)); ?>
 
 	</div>
