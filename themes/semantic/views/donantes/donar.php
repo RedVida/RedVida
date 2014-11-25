@@ -1,18 +1,14 @@
 <?php
 /* @var $this DonantesController */
 /* @var $model Donantes */
-$this->breadcrumbs=array(
-	'Donantes'=>array('index'),
-	'Menu',
-);
 
 $this->menu=array(
-	array('label'=>'Listar Don. Sangre', 'url'=>array('/donacionSangre/index')),
-	array('label'=>'Listar Don. Medula', 'url'=>array('/donacionMedula/index')),
-	array('label'=>'Listar Don. Organo', 'url'=>array('/donacionOrgano/index')),
-	array('label'=>'Admin. Don. Sangre', 'url'=>array('/donacionSangre/admin')),
-	array('label'=>'Admin. Don. Medula', 'url'=>array('/donacionMedula/admin')),
-	array('label'=>'Admin. Don. Organo', 'url'=>array('/donacionOrgano/admin')),
+	array('label'=>'Listar Donaciones de Sangre', 'url'=>array('/donacionSangre/index')),
+	array('label'=>'Listar Donaciones de Médula', 'url'=>array('/donacionMedula/index')),
+	array('label'=>'Listar Donaciones de Organo', 'url'=>array('/donacionOrgano/index')),
+	array('label'=>'Administrar Donaciones de Sangre', 'url'=>array('/donacionSangre/admin')),
+	array('label'=>'Administrar Donaciones de Médula', 'url'=>array('/donacionMedula/admin')),
+	array('label'=>'Administrar Donaciones de Organo', 'url'=>array('/donacionOrgano/admin')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -78,7 +74,7 @@ Registrar Donación </h1>
 	  <div class="header">
 	  Registrar un Donación
 	  </div>
-	  <p>Para registrar una donación, debes seleccionar un donante de la siguiente tabla y presionar el boton correspondiente al tipo de donación: [DON. SANGRE], [DON. MEDULA], [DON. ORGANO]</p>
+	  <p>Para registrar una donación, debes seleccionar un donante de la siguiente tabla y presionar el boton correspondiente a la donación</p>
 	</div>
 
 	<?php $this->widget('zii.widgets.grid.CGridView', array(
@@ -98,7 +94,6 @@ Registrar Donación </h1>
 	    	'tipo_sangre',
 			'email',
 			'direccion',
-			'num_contacto',
 	        ),
 	        'selectionChanged'=>'userClicks',
 			'afterAjaxUpdate'=>'userClicks',
@@ -106,16 +101,15 @@ Registrar Donación </h1>
 	)); ?>
 
 
-<div class="ui blue submit button disabled blockear" id="btn_1">Don. Sangre
-<input type="hidden" name="Sangre" value="Sange" method="POST" ></input>
-</div>
-<div class="ui blue submit button disabled blockear" id="btn_2">Don. Medula
-<input type="hidden" name="Medula" value="Medula" method="POST" ></input>
-</div>
-<div class="ui blue submit button disabled blockear" id="btn_3">Don. Organo
-<input type="hidden" name="Organo" value="Organo" method="POST" ></input>
-</div>
-
+	<div class="ui blue submit button disabled blockear" id="btn_1">Donar Sangre
+	<input type="hidden" name="Sangre" value="Sange" method="POST" ></input>
+	</div>
+	<div class="ui blue submit button disabled blockear" id="btn_2">Donar Medula
+	<input type="hidden" name="Medula" value="Medula" method="POST" ></input>
+	</div>
+	<div class="ui blue submit button disabled blockear" id="btn_3">Donar Organo
+	<input type="hidden" name="Organo" value="Organo" method="POST" ></input>
+	</div>
 
 	</div>
 </div>

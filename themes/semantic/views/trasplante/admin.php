@@ -1,10 +1,6 @@
 <?php
 /* @var $this TrasplanteController */
 /* @var $model Trasplante */
-$this->breadcrumbs=array(
-	'Trasplantes'=>array('index'),
-	'Menu',
-);
 
 $this->menu=array(
 	array('label'=>'Listar Trasplantes', 'url'=>array('index')),

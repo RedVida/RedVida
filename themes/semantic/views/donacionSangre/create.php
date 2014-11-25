@@ -1,15 +1,9 @@
 <?php
 /* @var $this DonacionSangreController */
 /* @var $model DonacionSangre */
-
-$this->breadcrumbs=array(
-	'Donacion Sangres'=>array('index'),
-	'Create',
-);
-
 $this->menu=array(
-	array('label'=>'List DonacionSangre', 'url'=>array('index')),
-	array('label'=>'Manage DonacionSangre', 'url'=>array('admin')),
+	array('label'=>'Listar Donación de Sangre', 'url'=>array('index')),
+	array('label'=>'Administrar Donación de Sangre', 'url'=>array('admin')),
 );
 ?>
 

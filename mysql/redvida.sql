@@ -797,7 +797,7 @@ CREATE TABLE IF NOT EXISTS `paciente` (
   `tipo_sangre` varchar(10) DEFAULT NULL,
   `id_centro_medico` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `id_centro_medico` (`id_centro_medico`)
+  KEY `id_centro_medico` (`id_centro_medico`),
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
@@ -916,3 +916,19 @@ ALTER TABLE `tiene_enfermedad`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+--
+-- TRIGER UPDATE BANCO_SANGRE AL INSERTAR DONACION DE SANGRE
+--
+
+DELIMITER $$
+DROP TRIGGER IF EXISTS `sumar_sangre`$$
+CREATE TRIGGER `sumar_sangre` AFTER INSERT ON `donacion_sangre` 
+FOR EACH ROW BEGIN
+
+   UPDATE banco_sangre SET
+    cantidad = cantidad + NEW.cantidad
+    WHERE tipo = NEW.tipo_sangre;
+
+END$$
+DELIMITER ;

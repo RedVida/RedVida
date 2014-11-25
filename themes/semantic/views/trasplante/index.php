@@ -2,10 +2,6 @@
 /* @var $this TrasplanteController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Trasplantes',
-);
-
 $this->menu=array(
 	array('label'=>'Registrar Trasplante', 'url'=>array('create')),
 	array('label'=>'Administrar Trasplantes', 'url'=>array('admin')),

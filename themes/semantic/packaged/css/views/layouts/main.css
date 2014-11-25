@@ -223,7 +223,7 @@ hr.style-two {
     padding: 35px;
     font-size: 11px;
     font-weight: bold;
-    line-height: 200%;
+    line-height: 140%;
   }
 
 /* cyrillic-ext */
@@ -661,7 +661,7 @@ background-color: #2773c3!important;
 .grid-view table.items th
 {
   color: white;
-  background: #5fad98;
+  background: #008080;
   opacity: 0.8;
   text-align: center;
 
@@ -701,7 +701,7 @@ background-color: #2773c3!important;
 
 .grid-view table.items tr.selected
 {
-  background: #404040!important;
+  background: #696969!important;
   opacity: 0.6;
   color: white;
 }
@@ -709,7 +709,7 @@ background-color: #2773c3!important;
 .grid-view table.items tbody tr:hover
 {
 
-  background: #404040;
+  background: #A9A9A9;
   opacity: 0.6;
   color: white;
   font-weight: bold;

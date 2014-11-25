@@ -3,16 +3,15 @@
 /* @var $model DonacionSangre */
 
 $this->breadcrumbs=array(
-	'Donacion Sangres'=>array('index'),
+	'Donación de Sangre'=>array('index'),
 	$model->id,
 );
 
 $this->menu=array(
-	array('label'=>'List DonacionSangre', 'url'=>array('index')),
-	array('label'=>'Create DonacionSangre', 'url'=>array('create')),
-	array('label'=>'Update DonacionSangre', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete DonacionSangre', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage DonacionSangre', 'url'=>array('admin')),
+	array('label'=>'Listar Donación de Sangre', 'url'=>array('index')),
+	array('label'=>'Actualizar Donación de Sangre', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Eliminar Donación de Sangre', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar Donación de Sangre', 'url'=>array('admin')),
 );
 ?>
 

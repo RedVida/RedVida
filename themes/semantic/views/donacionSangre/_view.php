@@ -4,10 +4,10 @@
 ?>
 
 <div class="view">
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
+	<div class="ui celled list">
+	  <div class="item">
+	    <i class="add large icon"></i> 
+	    <div class="content">
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('rut_donante')); ?>:</b>
 	<?php echo CHtml::encode($data->rut_donante); ?>
@@ -27,7 +27,14 @@
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('cantidad')); ?>:</b>
 	<?php echo CHtml::encode($data->cantidad); ?>
-	<br />
+	<br/>
+  	
+	<?php echo CHtml::link(CHtml::encode("Más Información"), array('view', 'id'=>$data->id)); ?>
+	<br/>
 
 
+  		</div>
+	</div>
+</div>
+</br>
 </div>

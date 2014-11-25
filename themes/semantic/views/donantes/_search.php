@@ -51,12 +51,12 @@
 				<?php echo $form->textField($model,'direccion',array('size'=>60,'maxlength'=>128)); ?>
 			</div>
 				</div>
-			<div class="fields">     
+			<!--div class="fields">     
 		        <div class="four wide field">
 				<?php echo $form->label($model,'num_contacto'); ?>
 				<?php echo $form->textField($model,'num_contacto'); ?>
-			</div>
-		</div>
+				</div>
+			</div-->
 		       </div>
 			<div class="row buttons">
 			    <?php echo CHtml::submitButton(CrugeTranslator::t('login', "Buscar"),array("class"=>"ui blue submit button")); ?>

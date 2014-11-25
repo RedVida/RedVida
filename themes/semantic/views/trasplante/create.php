@@ -2,11 +2,6 @@
 /* @var $this TrasplanteController */
 /* @var $model Trasplante */
 
-$this->breadcrumbs=array(
-	'Trasplantes'=>array('index'),
-	'Create',
-);
-
 $this->menu=array(
 	array('label'=>'Listar Trasplantes', 'url'=>array('index')),
 	array('label'=>'Administrar Trasplantes', 'url'=>array('admin')),

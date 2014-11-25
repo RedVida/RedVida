@@ -44031,3 +44031,65 @@ HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/donar
 REQUEST_URI=/RedVida/index.php?r=/donacionSangre/create&id=3
 HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/donar
 ---
+2014/11/25 07:51:45 [error] [exception.CrugeException.401] action_paciente_asignar<br/>401
+REQUEST_URI=/RedVida/index.php?r=/paciente/asignar
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donacionSangre/admin
+---
+2014/11/25 19:37:41 [warning] [application] Error al establecer unsafe al atributo "fecha_ingreso" de "Donantes".
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (73)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/25 19:45:05 [error] [exception.CrugeException.401] action_donacionSangre_create<br/>401
+REQUEST_URI=/RedVida/index.php?r=/donacionSangre/create&id=3
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/donar
+---
+2014/11/25 19:50:33 [error] [php] Undefined variable: rut (C:\xampp\htdocs\RedVida\themes\semantic\views\donacionMedula\_form.php:68)
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): DonacionMedulaController->renderFile()
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\donacionMedula\create.php(18): DonacionMedulaController->renderPartial()
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): DonacionMedulaController->renderInternal()
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): DonacionMedulaController->renderFile()
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): DonacionMedulaController->renderPartial()
+#6 C:\xampp\htdocs\RedVida\protected\controllers\DonacionMedulaController.php(77): DonacionMedulaController->render()
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): DonacionMedulaController->actionCreate()
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): DonacionMedulaController->runAction()
+#10 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): DonacionMedulaController->runActionWithFilters()
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): DonacionMedulaController->run()
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#17 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donacionMedula/create
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donacionMedula\_form.php (68)
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donacionMedula\create.php (18)
+in C:\xampp\htdocs\RedVida\protected\controllers\DonacionMedulaController.php (77)
+2014/11/25 19:50:39 [error] [php] Undefined variable: rut (C:\xampp\htdocs\RedVida\themes\semantic\views\donacionMedula\_form.php:68)
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): DonacionMedulaController->renderFile()
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\donacionMedula\create.php(18): DonacionMedulaController->renderPartial()
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): DonacionMedulaController->renderInternal()
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): DonacionMedulaController->renderFile()
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): DonacionMedulaController->renderPartial()
+#6 C:\xampp\htdocs\RedVida\protected\controllers\DonacionMedulaController.php(77): DonacionMedulaController->render()
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): DonacionMedulaController->actionCreate()
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): DonacionMedulaController->runAction()
+#10 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): DonacionMedulaController->runActionWithFilters()
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): DonacionMedulaController->run()
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#17 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donacionMedula/create
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donacionMedula\_form.php (68)
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donacionMedula\create.php (18)
+in C:\xampp\htdocs\RedVida\protected\controllers\DonacionMedulaController.php (77)

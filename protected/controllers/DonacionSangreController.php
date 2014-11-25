@@ -68,9 +68,7 @@ class DonacionSangreController extends Controller
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['DonacionSangre']))
-		{
-
-			
+		{			
 			$model->attributes=$_POST['DonacionSangre'];
 		
 			if($model->save())
