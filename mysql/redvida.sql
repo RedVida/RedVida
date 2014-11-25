@@ -696,6 +696,7 @@ CREATE TABLE IF NOT EXISTS `donantes` (
   `direccion` varchar(128) COLLATE utf8_bin DEFAULT NULL,
   `num_contacto` int(11) DEFAULT NULL,
   `id_centro_medico` int(11) DEFAULT NULL,
+  `fecha_ingreso` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_centro_medico_1` (`id_centro_medico`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
