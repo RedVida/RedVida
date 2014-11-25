@@ -27,8 +27,10 @@
 					    	<td>  <?php echo $centro_medico['nombre']; ?></td>
 					    	<td>  <?php echo $res['fecha_ingreso']; ?></td>
 					    	<td><?php 
-						    $Criteria = new CDbCriteria();
-						    $Criteria->condition = "id_donante =".$res['id']; 
+						    $length = (string)($res['nombres']);
+						    $modelo = Donantes::model()->findAll(array('select'=>'id,nombres','condition'=>'nombres='."'$length'"));
+						    $Criteria = new CDbCriteria();	
+						    $Criteria->condition = "id_donante =".$modelo[0]->id; 
 						    $alergia= TieneAlergia::model()->findAll($Criteria);
 						    if($alergia){ 
 						    	foreach ($alergia as $valor){ 
@@ -40,7 +42,7 @@
 		                   </td>
 					    	<td><?php 
 						    $Criteria = new CDbCriteria();
-						    $Criteria->condition = "id_donante =".$res['id']; 
+						    $Criteria->condition = "id_donante =".$modelo[0]->id; 
 						    $enfermedad= TieneEnfermedad::model()->findAll($Criteria);
 						    if($enfermedad){ 
 						    	foreach ($enfermedad as $valor){ 
