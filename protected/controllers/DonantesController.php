@@ -71,6 +71,7 @@ class DonantesController extends Controller
 		if(isset($_POST['Donantes']))
 		{
 			$model->attributes=$_POST['Donantes'];
+			$model->fecha_ingreso = new CDbExpression('NOW()');
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -212,21 +213,78 @@ class DonantesController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex()
-	{  
-		$dataProvider=new CActiveDataProvider('Donantes');
-        if(isset($_GET['pdf'])){
-          
-	        $this->layout="//layouts/pdf";
-			$mPDF1 = Yii::app()->ePdf->mpdf();
-			//$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/clinica3.jpg' ).''.CHtml::image(Yii::getPathOfAlias('webroot.css') . '/text.png'));
-			$stylesheet = file_get_contents(Yii::getPathOfAlias('webroot.css') . '/semantic.css');
-            $mPDF1->WriteHTML($stylesheet, true);
-			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/nn.png' ));
-			$mPDF1->WriteHTML($this->render('index',array('dataProvider'=>$dataProvider),true));
-			$mPDF1->Output('Mi archivo',"I"); // i = visualizar en el navegador
-       }
 
+	public function actionInforme(){
+	// Odernar por: Edad, Tipo de sangre, Centro medico, Fecha de ingreso
+
+		$model = new Donantes;
+		if(isset($_POST['Donantes'])){
+       		$model = new Donantes;
+            $this->layout="//layouts/pdf";
+            $mPDF1 = Yii::app()->ePdf->mpdf();
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/nn.png' ));
+			$where_array = array();
+			$from_array = array();
+			$OK = true;
+			
+            if($_POST['Donantes']['id_centro_medico']!=''){ // centro medico
+            	$where_array[]=('d.id_centro_medico = '.$_POST['Donantes']['id_centro_medico']);
+		    }
+		    if($_POST['Donantes']['tipo_sangre']!=''){ // Tipo de sangre
+		    	$length = (string)($_POST['Donantes']['tipo_sangre']);
+            	$where_array[]=('d.tipo_sangre = '."'$length'");
+		    }
+		    if($_POST['Donantes']['fecha_ingreso']!=''){ // Tipo de sangre
+		    	$desde = (string)($_POST['Donantes']['fecha_ingreso']);
+            	$where_array[]=('d.fecha_ingreso >= '."'$desde'");
+		    }
+		     if($_POST['Donantes']['direccion']!=''){ // Tipo de sangre
+		    	$hasta = (string)($_POST['Donantes']['direccion']);
+            	$where_array[]=('d.fecha_ingreso <= '."'$hasta'");
+		    }
+		    if($_POST['Donantes']['id']!=''){ // Alergia
+		    	$length = (string)($_POST['Donantes']['id']);
+		    	$modelo = Alergias::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='."'$length'"));
+		    	if(!$modelo){
+				   $model->addError('nombre','Alergia : El nombre de la Alergia ingresada no existe ');
+				   $OK = false;
+				}else{
+            	$where_array[]=('ta.id_alergia= '.$modelo[0]->id.' AND ta.id_donante = d.id');
+            	$from_array[]=('tiene_alergia ta');
+                }
+		    }
+		    if($_POST['Donantes']['nombres']!=''){ // Enfermedades
+		    	$length = (string)($_POST['Donantes']['nombres']);
+		    	$modelo = Enfermedades::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='."'$length'"));
+		    	if(!$modelo){
+				   $model->addError('nombre','Enfermedad : El nombre de la Enfermedad ingresada no existe ');
+				   $OK = false;
+				}else{
+            	$where_array[]=('te.id_enfermedad= '.$modelo[0]->id.' AND te.id_donante = d.id');
+            	$from_array[]=('tiene_enfermedad te');
+                }
+		    }
+		    $form = implode(", ", $from_array);	 
+		    $where = implode(" AND ", $where_array);	
+            $results = Yii::app()->db->createCommand()->
+	            select('*')->
+	            from('donantes d, '.$form)->
+	            where($where)->
+	            queryAll();
+	        if(!$OK)$results =null;
+            if($results){
+				$mPDF1->WriteHTML($this->render('_informe',array('results'=>$results),true));
+				$mPDF1->Output('Informe Dontantes',"I"); // i = visualizar en el navegador
+		    }
+		    else{ $model->addError('nombre','No se han encontrado donantes con esos datos ');}
+        }
+        $this->render('informe',array(
+			'model'=>$model,
+		));
+	}
+
+	public function actionIndex()
+	{  $dataProvider=new CActiveDataProvider('Donantes');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

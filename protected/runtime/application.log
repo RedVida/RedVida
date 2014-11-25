@@ -42119,3 +42119,1684 @@ in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControl
 REQUEST_URI=/RedVida/index.php?r=donantes/registrar_alergia&id=2
 HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/view&id=2
 ---
+2014/11/23 20:11:45 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index?r=/donantes
+---
+2014/11/23 21:13:34 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index?r=/donantes
+---
+2014/11/24 01:09:24 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index?r=/donantes
+---
+2014/11/24 01:09:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "pdf" solicitada.' in C:\xampp\htdocs\xampp\yii\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(270): CController->missingAction('pdf')
+#1 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('pdf')
+#2 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('/donantes/pdf')
+#3 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/redvida/index?r=/donantes/pdf
+---
+2014/11/24 01:09:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "pdf" solicitada.' in C:\xampp\htdocs\xampp\yii\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(270): CController->missingAction('pdf')
+#1 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('pdf')
+#2 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('/donantes/pdf')
+#3 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/RedVida/index.php?r=/donantes/pdf
+---
+2014/11/24 01:36:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "informe" solicitada.' in C:\xampp\htdocs\xampp\yii\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(270): CController->missingAction('informe')
+#1 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#2 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#3 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/admin
+---
+2014/11/24 01:36:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "informe.php" solicitada.' in C:\xampp\htdocs\xampp\yii\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(270): CController->missingAction('informe.php')
+#1 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe.php')
+#2 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#3 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe.php
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/admin
+---
+2014/11/24 01:37:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "informe.php" solicitada.' in C:\xampp\htdocs\xampp\yii\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(270): CController->missingAction('informe.php')
+#1 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe.php')
+#2 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#3 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe.php
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/admin
+---
+2014/11/24 01:51:12 [error] [exception.CrugeException.401] action_donantes_registraenfermedad<br/>401
+REQUEST_URI=/RedVida/index.php?r=/donantes/registraenfermedad
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 02:52:31 [error] [exception.CrugeException.401] action_donantes_informe<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 03:22:54 [error] [exception.CrugeException.401] action_donantes_informe<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 03:55:01 [error] [exception.CrugeException.401] action_donantes_informe<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 04:21:54 [error] [php] Missing argument 1 for CDbCommand::bindValue(), called in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php on line 291 and defined (C:\xampp\htdocs\xampp\yii\db\CDbCommand.php:271)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#2 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#3 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#4 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#7 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#8 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (291)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 04:22:00 [error] [php] Missing argument 2 for CDbCommand::bindValue(), called in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php on line 291 and defined (C:\xampp\htdocs\xampp\yii\db\CDbCommand.php:271)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#2 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#3 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#4 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#7 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#8 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (291)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 04:27:57 [error] [exception.CrugeException.401] action_donantes_informe<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 04:49:39 [error] [php] Missing argument 2 for mPDF::WriteText(), called in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php on line 327 and defined (C:\xampp\htdocs\RedVida\protected\vendors\mpdf\mpdf.php:3522)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#2 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#3 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#4 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#7 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#8 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+in C:\xampp\htdocs\RedVida\protected\vendors\mpdf\mpdf.php (3522)
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (327)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+2014/11/24 04:49:52 [error] [php] Missing argument 3 for mPDF::WriteText(), called in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php on line 327 and defined (C:\xampp\htdocs\RedVida\protected\vendors\mpdf\mpdf.php:3522)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#2 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#3 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#4 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#7 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#8 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+in C:\xampp\htdocs\RedVida\protected\vendors\mpdf\mpdf.php (3522)
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (327)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+2014/11/24 04:58:12 [error] [exception.CrugeException.401] action_donantes_informe<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 06:37:03 [error] [exception.CrugeException.401] action_donantes_informe<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/admin
+---
+2014/11/24 06:44:38 [error] [php] Undefined variable: model (C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php:234)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#1 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#2 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#3 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#4 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#6 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#7 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (234)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 06:45:19 [error] [php] Undefined variable: model (C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php:234)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#1 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#2 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#3 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#4 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#6 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#7 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (234)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 06:45:30 [error] [php] Undefined variable: model (C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php:234)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#1 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#2 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#3 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#4 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#6 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#7 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (234)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 07:08:26 [error] [exception.CrugeException.401] action_donantes_informe<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 07:22:57 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3. La sentencia SQL ejecutada fue: SELECT *
+FROM `donantes`
+WHERE id_centro_medico =.
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (228)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 07:22:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3. The SQL statement executed was: SELECT *
+FROM `donantes`
+WHERE id_centro_medico =' in C:\xampp\htdocs\xampp\yii\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(228): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#3 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#6 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#7 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#11 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#12 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#14 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 07:23:21 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\_informe.php:19)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(869): DonantesController->renderFile()
+#1 C:\xampp\htdocs\xampp\yii\web\CController.php(782): DonantesController->renderPartial()
+#2 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(234): DonantesController->render()
+#3 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#4 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#6 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#7 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#8 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#11 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#12 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\_informe.php (19)
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (234)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+2014/11/24 07:26:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "donante"' in C:\xampp\htdocs\xampp\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donante')
+#1 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/RedVida/index.php?r=donante
+---
+2014/11/24 07:27:00 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3. La sentencia SQL ejecutada fue: SELECT *
+FROM `donantes`
+WHERE tipo_sangre =O+.
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (235)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 07:27:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3. The SQL statement executed was: SELECT *
+FROM `donantes`
+WHERE tipo_sangre =O+' in C:\xampp\htdocs\xampp\yii\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(235): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#3 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#6 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#7 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#11 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#12 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#14 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 07:44:09 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index?r=/donantes
+---
+2014/11/24 07:55:32 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3. La sentencia SQL ejecutada fue: SELECT *
+FROM `donantes`
+WHERE tipo_sangre = O+.
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (243)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 07:55:32 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3. The SQL statement executed was: SELECT *
+FROM `donantes`
+WHERE tipo_sangre = O+' in C:\xampp\htdocs\xampp\yii\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(243): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#3 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#6 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#7 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#11 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#12 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#14 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 07:55:51 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column '$length' in 'where clause'. La sentencia SQL ejecutada fue: SELECT *
+FROM `donantes`
+WHERE tipo_sangre = $length.
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (243)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 07:55:51 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42S22]: Column not found: 1054 Unknown column '$length' in 'where clause'. The SQL statement executed was: SELECT *
+FROM `donantes`
+WHERE tipo_sangre = $length' in C:\xampp\htdocs\xampp\yii\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(243): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#3 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#6 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#7 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#11 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#12 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#14 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 07:56:04 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3. La sentencia SQL ejecutada fue: SELECT *
+FROM `donantes`
+WHERE tipo_sangre = O+.
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (243)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 07:56:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3. The SQL statement executed was: SELECT *
+FROM `donantes`
+WHERE tipo_sangre = O+' in C:\xampp\htdocs\xampp\yii\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(243): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#3 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#6 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#7 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#11 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#12 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#14 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 08:11:13 [error] [exception.CException] exception 'CException' with message 'La propiedad "Donantes"."enfermedad" no se encuentra definida.' in C:\xampp\htdocs\xampp\yii\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\ar\CActiveRecord.php(145): CComponent->__get('enfermedad')
+#1 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(2529): CActiveRecord->__get('enfermedad')
+#2 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(Donantes), 'enfermedad')
+#3 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(Donantes), 'enfermedad', Array)
+#4 C:\xampp\htdocs\xampp\yii\web\widgets\CActiveForm.php(725): CHtml::activeTextField(Object(Donantes), 'enfermedad', Array)
+#5 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(55): CActiveForm->textField(Object(Donantes), 'enfermedad', Array)
+#6 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#10 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(250): CController->render('informe', Array)
+#11 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#12 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#15 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#16 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#20 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#21 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/24 08:19:02 [error] [exception.CrugeException.401] action_alergias_AlergiaList<br/>401
+REQUEST_URI=/RedVida/index.php?r=Alergias/AlergiaList&term=po
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 08:19:07 [error] [exception.CrugeException.401] action_alergias_AlergiaList<br/>401
+REQUEST_URI=/RedVida/index.php?r=Alergias/AlergiaList&term=p
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 08:19:09 [error] [exception.CrugeException.401] action_alergias_AlergiaList<br/>401
+REQUEST_URI=/RedVida/index.php?r=Alergias/AlergiaList&term=po
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 08:20:56 [error] [exception.CException] exception 'CException' with message 'La propiedad "Donantes"."nombre" no se encuentra definida.' in C:\xampp\htdocs\xampp\yii\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\ar\CActiveRecord.php(145): CComponent->__get('nombre')
+#1 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(2529): CActiveRecord->__get('nombre')
+#2 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(Donantes), 'nombre')
+#3 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(Donantes), 'nombre', Array)
+#4 C:\xampp\htdocs\xampp\yii\web\widgets\CActiveForm.php(725): CHtml::activeTextField(Object(Donantes), 'nombre', Array)
+#5 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(84): CActiveForm->textField(Object(Donantes), 'nombre', Array)
+#6 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#10 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(250): CController->render('informe', Array)
+#11 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#12 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#15 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#16 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#20 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#21 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/24 08:51:17 [error] [exception.CrugeException.401] action_donantes_informe<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/24 09:22:00 [error] [exception.CrugeException.401] action_donantes_informe<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 09:24:49 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'd.nombre' in 'field list'. La sentencia SQL ejecutada fue: SELECT `d`.`nombre`
+FROM `donantes` `d`, `tiene_alergia` `ta`, `tiene_enfermedad` `te`
+WHERE d.tipo_sangre = 'O+'.
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (253)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 09:24:49 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'd.nombre' in 'field list'. The SQL statement executed was: SELECT `d`.`nombre`
+FROM `donantes` `d`, `tiene_alergia` `ta`, `tiene_enfermedad` `te`
+WHERE d.tipo_sangre = 'O+'' in C:\xampp\htdocs\xampp\yii\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(253): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#3 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#6 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#7 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#11 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#12 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#14 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 09:25:17 [error] [system.db.CDbCommand] CDbCommand::fetch() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 1' at line 1. La sentencia SQL ejecutada fue: SELECT * FROM `centro_medico` `t` WHERE id= LIMIT 1.
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\_informe.php (20)
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (255)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+2014/11/24 09:25:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 1' at line 1. The SQL statement executed was: SELECT * FROM `centro_medico` `t` WHERE id= LIMIT 1' in C:\xampp\htdocs\xampp\yii\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\xampp\yii\db\ar\CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\xampp\yii\db\ar\CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\_informe.php(20): CActiveRecord->find('id=')
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('_informe', Array, true)
+#8 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(255): CController->render('_informe', Array, true)
+#9 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#18 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#19 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 09:38:30 [error] [exception.CDbException] exception 'CDbException' with message 'La consulta de BD debe contener la parte "from".' in C:\xampp\htdocs\xampp\yii\db\CDbCommand.php:566
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\CDbCommand.php(160): CDbCommand->buildQuery(Array)
+#1 C:\xampp\htdocs\xampp\yii\db\CDbCommand.php(484): CDbCommand->getText()
+#2 C:\xampp\htdocs\xampp\yii\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#3 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(256): CDbCommand->queryAll()
+#4 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#8 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#9 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#13 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#14 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 09:39:06 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'redvida.array' doesn't exist. La sentencia SQL ejecutada fue: SELECT *
+FROM `donantes` `d`, `Array`
+WHERE d.id_centro_medico = 2 AND d.tipo_sangre = 'O+'.
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (256)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 09:39:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'redvida.array' doesn't exist. The SQL statement executed was: SELECT *
+FROM `donantes` `d`, `Array`
+WHERE d.id_centro_medico = 2 AND d.tipo_sangre = 'O+'' in C:\xampp\htdocs\xampp\yii\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(256): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#3 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#6 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#7 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#11 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#12 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#14 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 09:40:00 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'd.id_centro_medico' in 'where clause'. La sentencia SQL ejecutada fue: SELECT *
+FROM `donantes` `dArray`
+WHERE d.id_centro_medico = 2 AND d.tipo_sangre = 'O+'.
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (256)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 09:40:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'd.id_centro_medico' in 'where clause'. The SQL statement executed was: SELECT *
+FROM `donantes` `dArray`
+WHERE d.id_centro_medico = 2 AND d.tipo_sangre = 'O+'' in C:\xampp\htdocs\xampp\yii\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(256): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#3 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#6 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#7 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#11 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#12 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#14 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 09:40:09 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'd.tipo_sangre' in 'where clause'. La sentencia SQL ejecutada fue: SELECT *
+FROM `donantes` `dArray`
+WHERE d.tipo_sangre = 'O+'.
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (256)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 09:40:09 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'd.tipo_sangre' in 'where clause'. The SQL statement executed was: SELECT *
+FROM `donantes` `dArray`
+WHERE d.tipo_sangre = 'O+'' in C:\xampp\htdocs\xampp\yii\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(256): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#3 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#6 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#7 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#11 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#12 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#14 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 09:52:33 [error] [exception.CrugeException.401] action_donantes_create<br/>401
+REQUEST_URI=/RedVida/index.php?r=/donantes/create
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 09:54:23 [warning] [application] Error al establecer unsafe al atributo "fecha_ingreso" de "Donantes".
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (73)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 09:54:32 [warning] [application] Error al establecer unsafe al atributo "fecha_ingreso" de "Donantes".
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (73)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 09:56:48 [warning] [application] Error al establecer unsafe al atributo "fecha_ingreso" de "Donantes".
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (73)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 09:57:28 [warning] [application] Error al establecer unsafe al atributo "fecha_ingreso" de "Donantes".
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (73)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 09:59:23 [warning] [application] Error al establecer unsafe al atributo "fecha_ingreso" de "Donantes".
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (73)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 09:59:32 [warning] [application] Error al establecer unsafe al atributo "fecha_ingreso" de "Donantes".
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (73)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 09:59:39 [warning] [application] Error al establecer unsafe al atributo "fecha_ingreso" de "Donantes".
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (73)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 10:00:07 [warning] [application] Error al establecer unsafe al atributo "fecha_ingreso" de "Donantes".
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (73)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 19:09:04 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index?r=/donantes
+---
+2014/11/24 19:09:24 [error] [exception.CException] exception 'CException' with message 'La propiedad "Donantes"."datecolumn_name" no se encuentra definida.' in C:\xampp\htdocs\xampp\yii\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\ar\CActiveRecord.php(145): CComponent->__get('datecolumn_name')
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(54): CActiveRecord->__get('datecolumn_name')
+#2 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#6 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(267): CController->render('informe', Array)
+#7 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#12 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#16 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#17 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/24 19:16:48 [error] [exception.CException] exception 'CException' with message 'CJuiDatePicker debe especificar valores para las propiedades "model" y "attribute" o para "name".' in C:\xampp\htdocs\xampp\yii\zii\widgets\jui\CJuiInputWidget.php:59
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\zii\widgets\jui\CJuiDatePicker.php(72): CJuiInputWidget->resolveNameID()
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(173): CJuiDatePicker->run()
+#2 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(60): CBaseController->widget('zii.widgets.jui...', Array)
+#3 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#7 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(267): CController->render('informe', Array)
+#8 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#12 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#18 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/24 19:33:27 [error] [php] Undefined variable: news (C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php:91)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(869): DonantesController->renderFile()
+#1 C:\xampp\htdocs\xampp\yii\web\CController.php(782): DonantesController->renderPartial()
+#2 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(267): DonantesController->render()
+#3 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#4 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#6 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#7 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#8 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#11 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#12 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php (91)
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (267)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+2014/11/24 19:33:37 [error] [exception.CException] exception 'CException' with message 'La propiedad "Donantes"."eventDate" no se encuentra definida.' in C:\xampp\htdocs\xampp\yii\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\ar\CActiveRecord.php(145): CComponent->__get('eventDate')
+#1 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(2529): CActiveRecord->__get('eventDate')
+#2 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(Donantes), 'eventDate')
+#3 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(Donantes), 'eventDate', Array)
+#4 C:\xampp\htdocs\RedVida\protected\extensions\CJuiDateTimePicker\CJuiDateTimePicker.php(38): CHtml::activeTextField(Object(Donantes), 'eventDate', Array)
+#5 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(173): CJuiDateTimePicker->run()
+#6 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(94): CBaseController->widget('CJuiDateTimePic...', Array)
+#7 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#11 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(267): CController->render('informe', Array)
+#12 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#13 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#16 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#17 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#21 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#22 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/24 19:41:26 [error] [exception.CrugeException.401] action_donantes_informe<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/24 20:14:42 [error] [exception.CrugeException.401] action_donantes_informe<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/24 20:24:30 [warning] [application] Error al establecer unsafe al atributo "fecha_ingreso" de "Donantes".
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (73)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 20:24:30 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\xampp\yii\db\schema\CDbCommandBuilder.php:223)
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(75): Donantes->save()
+#1 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionCreate()
+#2 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#4 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#5 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#6 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#7 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#9 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#10 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=/donantes/create
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (75)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 20:25:53 [warning] [application] Error al establecer unsafe al atributo "fecha_ingreso" de "Donantes".
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (73)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 20:44:51 [error] [exception.CrugeException.401] action_donantes_admin<br/>401
+REQUEST_URI=/RedVida/index.php?r=/donantes/admin
+HTTP_REFERER=http://localhost:8080/redvida/index?r=/donantes
+---
+2014/11/24 20:50:32 [error] [exception.CException] exception 'CException' with message 'La propiedad "CJuiDateTimePicker"."placeholder" no se encuentra definida.' in C:\xampp\htdocs\xampp\yii\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWidgetFactory.php(161): CComponent->__set('placeholder', 'Ingrese la Enfe...')
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(DonantesController), 'CJuiDateTimePic...', Array)
+#2 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(172): CBaseController->createWidget('CJuiDateTimePic...', Array)
+#3 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(96): CBaseController->widget('CJuiDateTimePic...', Array)
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#8 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(271): CController->render('informe', Array)
+#9 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#18 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#19 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/24 20:50:58 [error] [exception.CException] exception 'CException' with message 'La propiedad "CJuiDateTimePicker"."empty" no se encuentra definida.' in C:\xampp\htdocs\xampp\yii\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWidgetFactory.php(161): CComponent->__set('empty', 'Seleccione Cent...')
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(DonantesController), 'CJuiDateTimePic...', Array)
+#2 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(172): CBaseController->createWidget('CJuiDateTimePic...', Array)
+#3 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(96): CBaseController->widget('CJuiDateTimePic...', Array)
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#8 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(271): CController->render('informe', Array)
+#9 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#18 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#19 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/24 21:24:54 [error] [exception.CrugeException.401] action_donantes_informe<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/24 21:30:59 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ta.id_donante = d.id' at line 3. La sentencia SQL ejecutada fue: SELECT *
+FROM `donantes` `d`, `tiene_alergia` `ta`
+WHERE ta.id_alergia=  AND ta.id_donante = d.id.
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (272)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 21:30:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ta.id_donante = d.id' at line 3. The SQL statement executed was: SELECT *
+FROM `donantes` `d`, `tiene_alergia` `ta`
+WHERE ta.id_alergia=  AND ta.id_donante = d.id' in C:\xampp\htdocs\xampp\yii\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(272): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#3 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#6 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#7 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#11 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#12 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#14 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 21:31:57 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ta.id_donante = d.id' at line 3. La sentencia SQL ejecutada fue: SELECT *
+FROM `donantes` `d`, `tiene_alergia` `ta`
+WHERE ta.id_alergia=  AND ta.id_donante = d.id.
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (274)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 21:31:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND ta.id_donante = d.id' at line 3. The SQL statement executed was: SELECT *
+FROM `donantes` `d`, `tiene_alergia` `ta`
+WHERE ta.id_alergia=  AND ta.id_donante = d.id' in C:\xampp\htdocs\xampp\yii\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(274): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#3 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#6 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#7 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#11 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#12 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#14 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 21:32:43 [error] [php] Creating default object from empty value (C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php:251)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#1 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#2 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#3 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#4 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#6 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#7 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (251)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 21:32:57 [error] [php] Creating default object from empty value (C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php:251)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#1 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#2 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#3 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#4 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#6 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#7 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (251)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/24 21:38:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "donante"' in C:\xampp\htdocs\xampp\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donante')
+#1 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/RedVida/index.php?r=donante
+---
+2014/11/24 21:56:03 [error] [exception.CrugeException.401] action_donantes_informe<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 21:56:21 [error] [exception.CException] exception 'CException' with message 'La propiedad "TieneAlergia"."id_alergias" no se encuentra definida.' in C:\xampp\htdocs\xampp\yii\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\ar\CActiveRecord.php(145): CComponent->__get('id_alergias')
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\_informe.php(36): CActiveRecord->__get('id_alergias')
+#2 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('_informe', Array, true)
+#6 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(276): CController->render('_informe', Array, true)
+#7 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#12 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#16 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#17 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 22:09:59 [error] [php] Missing argument 1 for YiiBase::import(), called in C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php on line 106 and defined (C:\xampp\htdocs\xampp\yii\YiiBase.php:263)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): DonantesController->renderInternal()
+#1 C:\xampp\htdocs\xampp\yii\web\CController.php(869): DonantesController->renderFile()
+#2 C:\xampp\htdocs\xampp\yii\web\CController.php(782): DonantesController->renderPartial()
+#3 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): DonantesController->render()
+#4 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#7 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#8 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#9 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#12 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#13 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php (106)
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (283)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+2014/11/24 22:25:31 [error] [exception.CException] exception 'CException' with message 'La propiedad "CJuiDatePicker"."mode" no se encuentra definida.' in C:\xampp\htdocs\xampp\yii\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWidgetFactory.php(161): CComponent->__set('mode', 'datetime')
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(DonantesController), 'zii.widgets.jui...', Array)
+#2 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.jui...', Array)
+#3 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(82): CBaseController->widget('zii.widgets.jui...', Array)
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#8 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): CController->render('informe', Array)
+#9 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#18 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#19 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/24 22:27:28 [error] [exception.CrugeException.401] action_donantes_informe<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/24 22:27:42 [error] [php] include(C:\xampp\htdocs\RedVida\protected\extensions\CJuiDateTimePicker.php): failed to open stream: No such file or directory (C:\xampp\htdocs\xampp\yii\YiiBase.php:401)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWidgetFactory.php(146): import()
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(146): CWidgetFactory->createWidget()
+#2 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(172): DonantesController->createWidget()
+#3 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(82): DonantesController->widget()
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require()
+#5 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): DonantesController->renderInternal()
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(869): DonantesController->renderFile()
+#7 C:\xampp\htdocs\xampp\yii\web\CController.php(782): DonantesController->renderPartial()
+#8 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): DonantesController->render()
+#9 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams()
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#14 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#18 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#19 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php (82)
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (283)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+2014/11/24 22:34:10 [error] [exception.CException] exception 'CException' with message 'El alias "ext.jquery-ui-timepicker.BJuiDateTimePicker" es inválido. Asegúrese de que apunta a un archivo PHP existente y que el archivo tiene permisos de lectura.' in C:\xampp\htdocs\xampp\yii\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWidgetFactory.php(146): YiiBase::import('ext.jquery-ui-t...', true)
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(DonantesController), 'ext.jquery-ui-t...', Array)
+#2 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(172): CBaseController->createWidget('ext.jquery-ui-t...', Array)
+#3 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(92): CBaseController->widget('ext.jquery-ui-t...', Array)
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#8 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): CController->render('informe', Array)
+#9 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#18 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#19 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 22:34:47 [error] [exception.CException] exception 'CException' with message 'El alias "extensions.timepicker.BJuiDateTimePicker" es inválido. Asegúrese de que apunta a un directorio o archivo existente.' in C:\xampp\htdocs\xampp\yii\YiiBase.php:347
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWidgetFactory.php(146): YiiBase::import('extensions.time...', true)
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(DonantesController), 'extensions.time...', Array)
+#2 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(172): CBaseController->createWidget('extensions.time...', Array)
+#3 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(92): CBaseController->widget('extensions.time...', Array)
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#8 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): CController->render('informe', Array)
+#9 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#18 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#19 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 22:35:22 [error] [exception.CException] exception 'CException' with message 'El alias "extensions.timepicker.BJuiDateTimePicker.BJuiDateTimePicker" es inválido. Asegúrese de que apunta a un directorio o archivo existente.' in C:\xampp\htdocs\xampp\yii\YiiBase.php:347
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWidgetFactory.php(146): YiiBase::import('extensions.time...', true)
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(DonantesController), 'extensions.time...', Array)
+#2 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(172): CBaseController->createWidget('extensions.time...', Array)
+#3 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(92): CBaseController->widget('extensions.time...', Array)
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#8 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): CController->render('informe', Array)
+#9 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#18 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#19 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 22:42:01 [error] [exception.CException] exception 'CException' with message 'La propiedad "BJuiDateTimePicker"."mode" no se encuentra definida.' in C:\xampp\htdocs\xampp\yii\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWidgetFactory.php(161): CComponent->__set('mode', 'datetime')
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(DonantesController), 'application.ext...', Array)
+#2 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(172): CBaseController->createWidget('application.ext...', Array)
+#3 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(82): CBaseController->widget('application.ext...', Array)
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#8 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): CController->render('informe', Array)
+#9 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#18 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#19 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 22:42:15 [error] [exception.CException] exception 'CException' with message 'La propiedad "BJuiDateTimePicker"."mode" no se encuentra definida.' in C:\xampp\htdocs\xampp\yii\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWidgetFactory.php(161): CComponent->__set('mode', 'datetime')
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(DonantesController), 'application.ext...', Array)
+#2 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(172): CBaseController->createWidget('application.ext...', Array)
+#3 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(82): CBaseController->widget('application.ext...', Array)
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#8 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): CController->render('informe', Array)
+#9 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#18 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#19 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 22:43:44 [error] [exception.CException] exception 'CException' with message 'El alias "application.extensions.timepicker.CJuiDateTimePicker.CJuiDateTimePicker" es inválido. Asegúrese de que apunta a un archivo PHP existente y que el archivo tiene permisos de lectura.' in C:\xampp\htdocs\xampp\yii\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWidgetFactory.php(146): YiiBase::import('application.ext...', true)
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(DonantesController), 'application.ext...', Array)
+#2 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(172): CBaseController->createWidget('application.ext...', Array)
+#3 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(82): CBaseController->widget('application.ext...', Array)
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#8 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): CController->render('informe', Array)
+#9 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#18 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#19 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/24 22:48:45 [error] [exception.CException] exception 'CException' with message 'CJuiDateTimePicker y sus behaviors no tienen un método o closure llamado "labelEx".' in C:\xampp\htdocs\xampp\yii\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(86): CComponent->__call('labelEx', Array)
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(86): CJuiDateTimePicker->labelEx(Object(Donantes), 'hasta:')
+#2 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#6 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): CController->render('informe', Array)
+#7 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#12 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#16 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#17 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/25 00:43:57 [error] [exception.CrugeException.401] action_donantes_informe<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=donantes/informe
+---
+2014/11/25 00:45:49 [error] [php] Undefined variable: modelBooking (C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php:77)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(869): DonantesController->renderFile()
+#1 C:\xampp\htdocs\xampp\yii\web\CController.php(782): DonantesController->renderPartial()
+#2 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): DonantesController->render()
+#3 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#4 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#6 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#7 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#8 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#11 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#12 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php (77)
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (283)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+2014/11/25 00:45:58 [error] [php] Undefined variable: modelBooking (C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php:77)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CController.php(869): DonantesController->renderFile()
+#1 C:\xampp\htdocs\xampp\yii\web\CController.php(782): DonantesController->renderPartial()
+#2 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): DonantesController->render()
+#3 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#4 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#6 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#7 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#8 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#11 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#12 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php (77)
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (283)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+2014/11/25 00:57:12 [error] [exception.CException] exception 'CException' with message 'El asset "C:\xampp\htdocs\RedVida\protected\extensions\jqueryDateTime\assets a ser publicado no existe.' in C:\xampp\htdocs\xampp\yii\web\CAssetManager.php:257
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\extensions\YiiDateTimePicker\jqueryDateTime.php(49): CAssetManager->publish('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(173): jqueryDateTime->run()
+#2 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(82): CBaseController->widget('application.ext...', Array)
+#3 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#7 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): CController->render('informe', Array)
+#8 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#12 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#18 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/25 00:57:59 [error] [exception.CException] exception 'CException' with message 'El asset "C:\xampp\htdocs\RedVida\protected\extensions\jqueryDateTime\assets a ser publicado no existe.' in C:\xampp\htdocs\xampp\yii\web\CAssetManager.php:257
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\extensions\YiiDateTimePicker\jqueryDateTime.php(49): CAssetManager->publish('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(173): jqueryDateTime->run()
+#2 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(82): CBaseController->widget('ext.YiiDateTime...', Array)
+#3 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#7 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): CController->render('informe', Array)
+#8 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#12 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#18 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/25 00:58:09 [error] [exception.CException] exception 'CException' with message 'El asset "C:\xampp\htdocs\RedVida\protected\extensions\jqueryDateTime\assets a ser publicado no existe.' in C:\xampp\htdocs\xampp\yii\web\CAssetManager.php:257
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\extensions\YiiDateTimePicker\jqueryDateTime.php(49): CAssetManager->publish('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(173): jqueryDateTime->run()
+#2 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(82): CBaseController->widget('application.ext...', Array)
+#3 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#7 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): CController->render('informe', Array)
+#8 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#12 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#18 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/25 00:58:47 [error] [exception.CException] exception 'CException' with message 'El alias "application.extensionss.YiiDateTimePicker.jqueryDateTime" es inválido. Asegúrese de que apunta a un archivo PHP existente y que el archivo tiene permisos de lectura.' in C:\xampp\htdocs\xampp\yii\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWidgetFactory.php(146): YiiBase::import('application.ext...', true)
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(DonantesController), 'application.ext...', Array)
+#2 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(172): CBaseController->createWidget('application.ext...', Array)
+#3 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(82): CBaseController->widget('application.ext...', Array)
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#8 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): CController->render('informe', Array)
+#9 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#18 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#19 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/25 00:58:52 [error] [exception.CException] exception 'CException' with message 'El asset "C:\xampp\htdocs\RedVida\protected\extensions\jqueryDateTime\assets a ser publicado no existe.' in C:\xampp\htdocs\xampp\yii\web\CAssetManager.php:257
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\extensions\YiiDateTimePicker\jqueryDateTime.php(49): CAssetManager->publish('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(173): jqueryDateTime->run()
+#2 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(82): CBaseController->widget('application.ext...', Array)
+#3 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#7 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): CController->render('informe', Array)
+#8 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#12 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#18 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/25 00:59:25 [error] [exception.CException] exception 'CException' with message 'El asset "C:\xampp\htdocs\RedVida\protected\extensions\jqueryDateTime\assets a ser publicado no existe.' in C:\xampp\htdocs\xampp\yii\web\CAssetManager.php:257
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\extensions\YiiDateTimePicker\jqueryDateTime.php(49): CAssetManager->publish('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(173): jqueryDateTime->run()
+#2 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(82): CBaseController->widget('application.ext...', Array)
+#3 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#7 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): CController->render('informe', Array)
+#8 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#12 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#18 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/25 00:59:34 [error] [exception.CException] exception 'CException' with message 'El asset "C:\xampp\htdocs\RedVida\protected\extensions\jqueryDateTime\assets a ser publicado no existe.' in C:\xampp\htdocs\xampp\yii\web\CAssetManager.php:257
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\extensions\YiiDateTimePicker\jqueryDateTime.php(49): CAssetManager->publish('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(173): jqueryDateTime->run()
+#2 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(82): CBaseController->widget('application.ext...', Array)
+#3 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#7 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): CController->render('informe', Array)
+#8 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#12 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#18 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/25 01:00:35 [error] [exception.CException] exception 'CException' with message 'El asset "C:\xampp\htdocs\RedVida\protected\extensions\YiiDateTimePicker\jqueryDateTime\assets a ser publicado no existe.' in C:\xampp\htdocs\xampp\yii\web\CAssetManager.php:257
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\extensions\YiiDateTimePicker\jqueryDateTime.php(49): CAssetManager->publish('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(173): jqueryDateTime->run()
+#2 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(82): CBaseController->widget('application.ext...', Array)
+#3 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#7 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): CController->render('informe', Array)
+#8 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#12 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#18 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/25 01:03:57 [error] [exception.CException] exception 'CException' with message 'El alias "extensions.YiiDateTimePicker.jqueryDateTime" es inválido. Asegúrese de que apunta a un directorio o archivo existente.' in C:\xampp\htdocs\xampp\yii\YiiBase.php:347
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWidgetFactory.php(146): YiiBase::import('extensions.YiiD...', true)
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(DonantesController), 'extensions.YiiD...', Array)
+#2 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(172): CBaseController->createWidget('extensions.YiiD...', Array)
+#3 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(82): CBaseController->widget('extensions.YiiD...', Array)
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#8 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): CController->render('informe', Array)
+#9 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#18 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#19 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/25 01:04:15 [error] [exception.CException] exception 'CException' with message 'El alias "application.ext.YiiDateTimePicker.jqueryDateTime" es inválido. Asegúrese de que apunta a un archivo PHP existente y que el archivo tiene permisos de lectura.' in C:\xampp\htdocs\xampp\yii\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\CWidgetFactory.php(146): YiiBase::import('application.ext...', true)
+#1 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(DonantesController), 'application.ext...', Array)
+#2 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(172): CBaseController->createWidget('application.ext...', Array)
+#3 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(82): CBaseController->widget('application.ext...', Array)
+#4 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#8 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): CController->render('informe', Array)
+#9 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#10 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#18 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#19 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/25 01:17:58 [error] [exception.CrugeException.401] action_donantes_informe<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/25 01:48:06 [error] [exception.CrugeException.401] action_donantes_informe<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/create
+---
+2014/11/25 02:19:36 [error] [exception.CrugeException.401] action_donantes_informe<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/create
+---
+2014/11/25 02:47:42 [error] [exception.CException] exception 'CException' with message 'La propiedad "Donantes"."fecha_incio" no se encuentra definida.' in C:\xampp\htdocs\xampp\yii\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\ar\CActiveRecord.php(145): CComponent->__get('fecha_incio')
+#1 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(2529): CActiveRecord->__get('fecha_incio')
+#2 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(Donantes), 'fecha_incio')
+#3 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(Donantes), 'fecha_incio', Array)
+#4 C:\xampp\htdocs\xampp\yii\web\widgets\CActiveForm.php(725): CHtml::activeTextField(Object(Donantes), 'fecha_incio', Array)
+#5 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(85): CActiveForm->textField(Object(Donantes), 'fecha_incio', Array)
+#6 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#10 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): CController->render('informe', Array)
+#11 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#12 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#15 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#16 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#20 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#21 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/25 02:47:53 [error] [exception.CException] exception 'CException' with message 'La propiedad "Donantes"."fecha_registro" no se encuentra definida.' in C:\xampp\htdocs\xampp\yii\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\db\ar\CActiveRecord.php(145): CComponent->__get('fecha_registro')
+#1 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(2529): CActiveRecord->__get('fecha_registro')
+#2 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(Donantes), 'fecha_registro')
+#3 C:\xampp\htdocs\xampp\yii\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(Donantes), 'fecha_registro', Array)
+#4 C:\xampp\htdocs\xampp\yii\web\widgets\CActiveForm.php(725): CHtml::activeTextField(Object(Donantes), 'fecha_registro', Array)
+#5 C:\xampp\htdocs\RedVida\themes\semantic\views\donantes\informe.php(85): CActiveForm->textField(Object(Donantes), 'fecha_registro', Array)
+#6 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\xampp\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\xampp\yii\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\xampp\yii\web\CController.php(782): CController->renderPartial('informe', Array, true)
+#10 C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php(283): CController->render('informe', Array)
+#11 C:\xampp\htdocs\xampp\yii\web\actions\CInlineAction.php(49): DonantesController->actionInforme()
+#12 C:\xampp\htdocs\xampp\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#15 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#16 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\xampp\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): CController->run('informe')
+#20 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController('donantes/inform...')
+#21 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/25 02:49:58 [error] [exception.CrugeException.401] action_donantes_informe<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=/donantes/admin
+---
+2014/11/25 03:12:36 [error] [php] Undefined variable: dataProvider (C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php:289)
+Stack trace:
+#0 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(133): DonantesController->runAction()
+#1 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#2 C:\xampp\htdocs\xampp\yii\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#3 C:\xampp\htdocs\xampp\yii\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#4 C:\xampp\htdocs\xampp\yii\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\xampp\yii\web\CController.php(265): DonantesController->runActionWithFilters()
+#6 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(282): DonantesController->run()
+#7 C:\xampp\htdocs\xampp\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\xampp\yii\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/redvida/index?r=/donantes
+in C:\xampp\htdocs\RedVida\protected\controllers\DonantesController.php (289)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php (90)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/25 03:16:56 [error] [exception.CrugeException.401] action_donantes_informe<br/>401
+REQUEST_URI=/RedVida/index.php?r=donantes/informe
+---
+2014/11/25 03:17:04 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** 
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\ui\CrugeLogon.php (58)
+2014/11/25 03:17:04 [warning] [application] CrugeFactory::getICrugeStoredUser
+ **NO HALLADO** 
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeFactory.php (322)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeUserManager.php (252)
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\models\auth\CrugeAuthDefault.php (68)
+2014/11/25 03:17:04 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>Nombre de usuario o Email: no puede ser nulo.</li>
+<li>el usuario no fue hallado</li>
+<li>Clave de Acceso: no puede ser nulo.</li>
+<li>usuario o correo invalido</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (159)
+in C:\xampp\htdocs\RedVida\index.php (14)
+2014/11/25 03:20:41 [error] [exception.CrugeException.401] action_donantes_index<br/>401
+REQUEST_URI=/redvida/index?r=/donantes
+---

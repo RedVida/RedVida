@@ -12,6 +12,7 @@ $this->menu=array(
 	array('label'=>'Registrar Donantes', 'url'=>array('create')),
 	array('label'=>'Asignar Enfermedad', 'url'=>array('registraenfermedad')),
 	array('label'=>'Asignar Alergia', 'url'=>array('registra_alergia')),
+	array('label'=>'Generar Informe', 'url'=>array('informe')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -52,6 +53,7 @@ Registrar Donante </h1>
 		'email',
 		'direccion',
 		'num_contacto',
+		'fecha_ingreso',
 		array(
 			'class'=>'CButtonColumn',
 		),

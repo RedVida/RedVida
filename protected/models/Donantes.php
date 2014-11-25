@@ -132,6 +132,7 @@ class Donantes extends CActiveRecord
 			'direccion' => 'Direccion',
 			'num_contacto' => 'Num Contacto',
 			'id_centro_medico' => 'Id Centro Medico',
+			'fecha_ingreso' => 'fecha ingreso',
 		);
 	}
 

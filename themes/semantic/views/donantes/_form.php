@@ -103,7 +103,7 @@
 					</div>
 					
 				   </div>   
-				   
+				        <?php echo $form->hiddenField($model, 'fecha_ingreso', array('value'=> new CDbExpression('NOW()'))); ?>
 					<br>
 						<div class="ui blue submit button" id="ModalFunction"> <!-- Main.PHP -->
 							Registrar
