@@ -1,10 +1,7 @@
 <?php
-/* @var $this DonacionSangreController */
-/* @var $model DonacionSangre */
-
 $this->menu=array(
-	array('label'=>'Listar Donaciones de Sangre', 'url'=>array('index')),
-	array('label'=>'Create DonacionSangre', 'url'=>array('create')),
+	array('label'=>'Listar Donación de Sangre', 'url'=>array('index')),
+	array('label'=>'Registrar Donación', 'url'=>array('/donantes/donar')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -19,35 +16,147 @@ $('.search-form form').submit(function(){
 	return false;
 });
 ");
+
+    Yii::app()->clientScript->registerScript('helpers', '                                                           
+          yii = {                                                                                                     
+              urls: {                                                                                                 
+                  saveEdits: '.CJSON::encode(Yii::app()->createUrl('edit/save')).',                                   
+                  base: '.CJSON::encode(Yii::app()->baseUrl).'                                                        
+              }                                                                                                       
+          };                                                                                                          
+    ');         
+
+
 ?>
+ <div class="ui small modal">
+        <i class="close icon"></i>
+          <div class="header">
+            Verificar Operación
+          </div>
+        <div class="content">
+          <i class="large loading icon"></i>
+           Esta seguro que desea eiminar estos datos?
+        </div>
+      <div class="actions">
+        <div class="ui negative button" data-value="Cancel" name="Cancel">
+          No
+        </div>
+        <div class="ui positive right labeled icon button"  date-value="Success" onclick="successModal();" name="Success">
+          Si
+          <i class="checkmark icon"></i>
+        </div>
+      </div>
+  </div>
 
-<h1>Manage Donacion Sangres</h1>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Administrar Donación de Sangre </h1>
+</div>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
+<hr class="style-two ">
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
+<div class="ui grid">
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'donacion-sangre-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'id',
-		'rut_donante',
-		'created',
-		'modified',
-		'tipo_sangre',
-		'cantidad',
-		array(
-			'class'=>'CButtonColumn',
+	<div class="one wide column">
+
+	</div>
+
+	<div class="twelve wide column">
+		
+		<?php echo CHtml::link('Búsqueda Avanzada','#',array('class'=>'search-button')); ?>
+		<div class="search-form" style="display:none">
+		<?php $this->renderPartial('_search',array(
+			'model'=>$model,
+		)); ?>
+		</div><!-- search-form -->
+	
+	</div>
+
+</div>
+
+<hr class="style-two ">
+
+<div class="ui grid">
+
+	<div class="one wide column">
+
+	</div>
+
+	<div class="twelve wide column">
+
+
+	<?php $this->widget('zii.widgets.grid.CGridView', array(
+		'id'=>'donacion-sangre-grid',
+		'dataProvider'=>$model->search(),
+		'filter'=>$model,
+		'columns'=>array(
+			array( 
+        	'id'=>'id',
+            'class'=>'CCheckBoxColumn',            
+        	),
+			'id',
+			'rut_donante',
+			'tipo_sangre',
+			'cantidad',
+				array(
+					'class'=>'CButtonColumn',
+					'template'=>'{Ver}{Actualizar}{Eliminar}',
+				    'buttons'=>array
+				    (
+
+ 						'Ver' => array
+ 						(
+					    	'label'=>'Ver',
+					        'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/eye.png",
+					        'url'=>'Yii::app()->createUrl("donacionSangre/view", array("id"=>$data->id))',
+					    ),
+						
+						'Actualizar' => array
+					   (
+					        'label'=>'Actualizar',
+					  		'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/edit.png",
+					        'url'=>'Yii::app()->createUrl("donacionSangre/update", array("id"=>$data->id))', 
+					    ),
+				
+					    'Eliminar' => array
+				        (   
+				        	'label'=>'Eliminar',
+				            'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/delete.png",
+				          	'url'=>'"#"',
+				            'click'=>"js: function(){   
+							getId = $(this).parent().parent().children(':nth-child(2)').text();
+							 			$('.small.modal')
+										  .modal('setting', {
+										    closable  : false,
+										    onApprove : function() {
+										            $.fn.yiiGridView.update('donacion-sangre-grid', {
+										                type:'POST',
+										                success:function(data) {
+														window.location.href = '".Yii::app()->request->baseUrl."' +'/index.php?r=/donacionSangre/delete&id=' + getId;									
+									                    $.fn.yiiGridView.update('donacion-sangre-grid');
+										                }
+											});
+								  		  }
+									  })
+									  .modal('show')
+						  	          ;
+
+		  					}",
+		  					),
+
+
+
+
+
+					
+					),
+				),
+
 		),
-	),
-)); ?>
+	)); ?>
+
+
+	</div>
+</div>
+
+<hr class="style-two ">

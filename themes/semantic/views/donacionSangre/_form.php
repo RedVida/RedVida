@@ -11,15 +11,13 @@
     
 </script>
 
-
 <div class="ui grid">
 
 	<div class="one wide column">
-		
+
 	</div>
 
 	<div class="twelve wide column">
-
 
 	<div class="form">
 
@@ -49,9 +47,6 @@
 	}
 	?>
 
-
-
-
 <div class="ui form">
     <div class="fields">
 	 	<div class="four wide field">
@@ -76,7 +71,7 @@
 	 <div class="fields">
 	 	<div class="four wide field">
 		<?php echo $form->labelEx($model,'cantidad'); ?>
-		<?php echo $form->numberField($model,'cantidad', array('integerOnly'=>true,'min'=>1,'max'=>100, 'value'=>0, 'allowNegative'=>false, 'allowBlank'=>false)); ?>
+		<?php echo $form->numberField($model,'cantidad', array('integerOnly'=>true,'min'=>1,'max'=>100, 'allowNegative'=>false, 'allowBlank'=>false)); ?>
 		<div class="errors">
 			<?php echo $form->error($model,'cantidad',array('class' => 'ui small red pointing above ui label')); ?>
 		</div>

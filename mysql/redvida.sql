@@ -780,8 +780,6 @@ INSERT INTO `organo` (`idOrgano`, `nombreOrgano`) VALUES
 (8, 'Hueso'),
 (9, 'Piel');
 
--- --------------------------------------------------------
-
 --
 -- Estructura de tabla para la tabla `paciente`
 --
@@ -797,7 +795,7 @@ CREATE TABLE IF NOT EXISTS `paciente` (
   `tipo_sangre` varchar(10) DEFAULT NULL,
   `id_centro_medico` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `id_centro_medico` (`id_centro_medico`),
+  KEY `id_centro_medico` (`id_centro_medico`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --

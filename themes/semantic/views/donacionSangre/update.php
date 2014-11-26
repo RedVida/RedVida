@@ -1,21 +1,19 @@
 <?php
-/* @var $this DonacionSangreController */
-/* @var $model DonacionSangre */
-
-$this->breadcrumbs=array(
-	'Donacion Sangres'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
-
 $this->menu=array(
-	array('label'=>'List DonacionSangre', 'url'=>array('index')),
-	array('label'=>'Create DonacionSangre', 'url'=>array('create')),
-	array('label'=>'View DonacionSangre', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage DonacionSangre', 'url'=>array('admin')),
+	array('label'=>'Listar Donación de Sangre', 'url'=>array('index')),
+	array('label'=>'Registrar Donación', 'url'=>array('/donantes/donar')),
+	array('label'=>'Ver Donación de Sangre', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar Donación de Sangre', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update DonacionSangre <?php echo $model->id; ?></h1>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Actualizar Donación de Sangre #<?php echo $model->id; ?></h1>
+</div>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<hr class="style-two ">
+
+<?php $this->renderPartial('_form', array('model'=>$model)); ?>  
+
+<hr class="style-two ">

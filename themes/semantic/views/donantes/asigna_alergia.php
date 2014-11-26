@@ -73,3 +73,24 @@
 	</div>
 	<?php $this->endWidget(); ?>
 </div><!-- form -->
+
+
+	 <div class="ui small modal">
+        <i class="close icon"></i>
+          <div class="header">
+            Verificar Operación
+          </div>
+        <div class="content">
+          <i class="large loading icon"></i>
+           Esta seguro que desea registrar estos datos?
+        </div>
+      <div class="actions">
+        <div class="ui negative button" data-value="Cancel" name="Cancel">
+          No
+        </div>
+        <div class="ui positive right labeled icon button"  date-value="Success" onclick="successModal();" name="Success">
+          Si
+          <i class="checkmark icon"></i>
+        </div>
+      </div>
+  </div>

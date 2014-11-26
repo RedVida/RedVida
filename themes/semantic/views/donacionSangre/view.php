@@ -30,8 +30,8 @@ Ver Donación de Sangre #<?php echo $model->id;; ?></h1>
 			'rut_donante',
 			'tipo_sangre',
 			'cantidad',
-			'created',
-			'modified',
+			//'created',
+			//'modified',
 		),
 		'htmlOptions'=>array('class'=>'ui celled table segment autosize'),
 	)); ?>
