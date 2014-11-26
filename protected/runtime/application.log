@@ -44093,3 +44093,1769 @@ REQUEST_URI=/RedVida/index.php?r=donacionMedula/create
 in C:\xampp\htdocs\RedVida\themes\semantic\views\donacionMedula\_form.php (68)
 in C:\xampp\htdocs\RedVida\themes\semantic\views\donacionMedula\create.php (18)
 in C:\xampp\htdocs\RedVida\protected\controllers\DonacionMedulaController.php (77)
+2014/11/25 21:47:02 [error] [exception.CrugeException.401] action_donantes_donar<br/>401
+REQUEST_URI=/redvida/index.php?r=/donantes/donar
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=/bancoSangre/
+---
+2014/11/25 22:05:34 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612): eval()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(340): CComponent->evaluateExpression('Yii::app()->cre...', Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(319): CButtonColumn->renderButton('Ver', Array, 0, Object(Organo))
+#5 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridColumn.php(151): CButtonColumn->renderDataCellContent(0, Object(Organo))
+#6 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(616): CGridColumn->renderDataCell(0)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(572): CGridView->renderTableRow(0)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(482): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{item...')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(173): CBaseListView->run()
+#14 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\admin.php(123): CBaseController->widget('zii.widgets.gri...', Array)
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#19 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(139): CController->render('admin', Array)
+#20 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): OrganoController->actionAdmin()
+#21 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#22 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#24 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('admin')
+#29 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/admin')
+#30 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#32 {main}
+REQUEST_URI=/redvida/index.php?r=organo/admin
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/create
+---
+2014/11/25 22:05:36 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612): eval()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(340): CComponent->evaluateExpression('Yii::app()->cre...', Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(319): CButtonColumn->renderButton('Ver', Array, 0, Object(Organo))
+#5 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridColumn.php(151): CButtonColumn->renderDataCellContent(0, Object(Organo))
+#6 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(616): CGridColumn->renderDataCell(0)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(572): CGridView->renderTableRow(0)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(482): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{item...')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(173): CBaseListView->run()
+#14 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\admin.php(123): CBaseController->widget('zii.widgets.gri...', Array)
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#19 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(139): CController->render('admin', Array)
+#20 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): OrganoController->actionAdmin()
+#21 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#22 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#24 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('admin')
+#29 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/admin')
+#30 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#32 {main}
+REQUEST_URI=/redvida/index.php?r=organo/admin
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/create
+---
+2014/11/25 22:06:14 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612): eval()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(340): CComponent->evaluateExpression('Yii::app()->cre...', Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(319): CButtonColumn->renderButton('Ver', Array, 0, Object(Organo))
+#5 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridColumn.php(151): CButtonColumn->renderDataCellContent(0, Object(Organo))
+#6 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(616): CGridColumn->renderDataCell(0)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(572): CGridView->renderTableRow(0)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(482): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{item...')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(173): CBaseListView->run()
+#14 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\admin.php(123): CBaseController->widget('zii.widgets.gri...', Array)
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#19 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(139): CController->render('admin', Array)
+#20 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): OrganoController->actionAdmin()
+#21 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#22 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#24 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('admin')
+#29 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/admin')
+#30 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#32 {main}
+REQUEST_URI=/redvida/index.php?r=organo/admin
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/create
+---
+2014/11/25 22:06:15 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612): eval()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(340): CComponent->evaluateExpression('Yii::app()->cre...', Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(319): CButtonColumn->renderButton('Ver', Array, 0, Object(Organo))
+#5 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridColumn.php(151): CButtonColumn->renderDataCellContent(0, Object(Organo))
+#6 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(616): CGridColumn->renderDataCell(0)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(572): CGridView->renderTableRow(0)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(482): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{item...')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(173): CBaseListView->run()
+#14 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\admin.php(123): CBaseController->widget('zii.widgets.gri...', Array)
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#19 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(139): CController->render('admin', Array)
+#20 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): OrganoController->actionAdmin()
+#21 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#22 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#24 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('admin')
+#29 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/admin')
+#30 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#32 {main}
+REQUEST_URI=/redvida/index.php?r=organo/admin
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/create
+---
+2014/11/25 22:06:38 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612): eval()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(340): CComponent->evaluateExpression('Yii::app()->cre...', Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(319): CButtonColumn->renderButton('Ver', Array, 0, Object(Organo))
+#5 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridColumn.php(151): CButtonColumn->renderDataCellContent(0, Object(Organo))
+#6 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(616): CGridColumn->renderDataCell(0)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(572): CGridView->renderTableRow(0)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(482): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{item...')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(173): CBaseListView->run()
+#14 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\admin.php(105): CBaseController->widget('zii.widgets.gri...', Array)
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#19 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(139): CController->render('admin', Array)
+#20 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): OrganoController->actionAdmin()
+#21 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#22 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#24 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('admin')
+#29 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/admin')
+#30 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#32 {main}
+REQUEST_URI=/redvida/index.php?r=organo/admin
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/create
+---
+2014/11/25 22:06:39 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612): eval()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(340): CComponent->evaluateExpression('Yii::app()->cre...', Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(319): CButtonColumn->renderButton('Ver', Array, 0, Object(Organo))
+#5 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridColumn.php(151): CButtonColumn->renderDataCellContent(0, Object(Organo))
+#6 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(616): CGridColumn->renderDataCell(0)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(572): CGridView->renderTableRow(0)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(482): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{item...')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(173): CBaseListView->run()
+#14 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\admin.php(105): CBaseController->widget('zii.widgets.gri...', Array)
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#19 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(139): CController->render('admin', Array)
+#20 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): OrganoController->actionAdmin()
+#21 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#22 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#24 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('admin')
+#29 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/admin')
+#30 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#32 {main}
+REQUEST_URI=/redvida/index.php?r=organo/admin
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/create
+---
+2014/11/25 22:08:06 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612): eval()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(340): CComponent->evaluateExpression('Yii::app()->cre...', Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(319): CButtonColumn->renderButton('Ver', Array, 0, Object(Organo))
+#5 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridColumn.php(151): CButtonColumn->renderDataCellContent(0, Object(Organo))
+#6 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(616): CGridColumn->renderDataCell(0)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(572): CGridView->renderTableRow(0)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(482): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{item...')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(173): CBaseListView->run()
+#14 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\admin.php(98): CBaseController->widget('zii.widgets.gri...', Array)
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#19 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(139): CController->render('admin', Array)
+#20 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): OrganoController->actionAdmin()
+#21 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#22 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#24 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('admin')
+#29 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/admin')
+#30 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#32 {main}
+REQUEST_URI=/redvida/index.php?r=organo/admin
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/create
+---
+2014/11/25 22:08:46 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612): eval()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(340): CComponent->evaluateExpression('Yii::app()->cre...', Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(319): CButtonColumn->renderButton('Ver', Array, 0, Object(Organo))
+#5 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridColumn.php(151): CButtonColumn->renderDataCellContent(0, Object(Organo))
+#6 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(616): CGridColumn->renderDataCell(0)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(572): CGridView->renderTableRow(0)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(482): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{item...')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(173): CBaseListView->run()
+#14 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\admin.php(92): CBaseController->widget('zii.widgets.gri...', Array)
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#19 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(139): CController->render('admin', Array)
+#20 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): OrganoController->actionAdmin()
+#21 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#22 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#24 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('admin')
+#29 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/admin')
+#30 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#32 {main}
+REQUEST_URI=/redvida/index.php?r=organo/admin
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/create
+---
+2014/11/25 22:08:51 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612): eval()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(340): CComponent->evaluateExpression('Yii::app()->cre...', Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(319): CButtonColumn->renderButton('Ver', Array, 0, Object(Organo))
+#5 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridColumn.php(151): CButtonColumn->renderDataCellContent(0, Object(Organo))
+#6 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(616): CGridColumn->renderDataCell(0)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(572): CGridView->renderTableRow(0)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(482): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{item...')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(173): CBaseListView->run()
+#14 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\admin.php(92): CBaseController->widget('zii.widgets.gri...', Array)
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#19 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(139): CController->render('admin', Array)
+#20 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): OrganoController->actionAdmin()
+#21 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#22 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#24 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('admin')
+#29 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/admin')
+#30 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#32 {main}
+REQUEST_URI=/redvida/index.php?r=organo/admin
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/create
+---
+2014/11/25 22:09:07 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612): eval()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(340): CComponent->evaluateExpression('Yii::app()->cre...', Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(319): CButtonColumn->renderButton('Ver', Array, 0, Object(Organo))
+#5 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridColumn.php(151): CButtonColumn->renderDataCellContent(0, Object(Organo))
+#6 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(616): CGridColumn->renderDataCell(0)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(572): CGridView->renderTableRow(0)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(482): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{item...')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(173): CBaseListView->run()
+#14 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\admin.php(92): CBaseController->widget('zii.widgets.gri...', Array)
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#19 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(139): CController->render('admin', Array)
+#20 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): OrganoController->actionAdmin()
+#21 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#22 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#24 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('admin')
+#29 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/admin')
+#30 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#32 {main}
+REQUEST_URI=/redvida/index.php?r=organo/admin
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/create
+---
+2014/11/25 22:09:09 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612): eval()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(340): CComponent->evaluateExpression('Yii::app()->cre...', Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(319): CButtonColumn->renderButton('Ver', Array, 0, Object(Organo))
+#5 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridColumn.php(151): CButtonColumn->renderDataCellContent(0, Object(Organo))
+#6 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(616): CGridColumn->renderDataCell(0)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(572): CGridView->renderTableRow(0)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(482): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{item...')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(173): CBaseListView->run()
+#14 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\admin.php(92): CBaseController->widget('zii.widgets.gri...', Array)
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#19 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(139): CController->render('admin', Array)
+#20 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): OrganoController->actionAdmin()
+#21 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#22 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#24 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('admin')
+#29 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/admin')
+#30 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#32 {main}
+REQUEST_URI=/redvida/index.php?r=organo/admin
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/create
+---
+2014/11/25 22:09:10 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612): eval()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(340): CComponent->evaluateExpression('Yii::app()->cre...', Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(319): CButtonColumn->renderButton('Ver', Array, 0, Object(Organo))
+#5 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridColumn.php(151): CButtonColumn->renderDataCellContent(0, Object(Organo))
+#6 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(616): CGridColumn->renderDataCell(0)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(572): CGridView->renderTableRow(0)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(482): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{item...')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(173): CBaseListView->run()
+#14 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\admin.php(92): CBaseController->widget('zii.widgets.gri...', Array)
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#19 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(139): CController->render('admin', Array)
+#20 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): OrganoController->actionAdmin()
+#21 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#22 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#24 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('admin')
+#29 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/admin')
+#30 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#32 {main}
+REQUEST_URI=/redvida/index.php?r=organo/admin
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/create
+---
+2014/11/25 22:09:16 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612): eval()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(340): CComponent->evaluateExpression('Yii::app()->cre...', Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(319): CButtonColumn->renderButton('Ver', Array, 0, Object(Organo))
+#5 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridColumn.php(151): CButtonColumn->renderDataCellContent(0, Object(Organo))
+#6 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(616): CGridColumn->renderDataCell(0)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(572): CGridView->renderTableRow(0)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(482): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{item...')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(173): CBaseListView->run()
+#14 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\admin.php(92): CBaseController->widget('zii.widgets.gri...', Array)
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#19 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(139): CController->render('admin', Array)
+#20 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): OrganoController->actionAdmin()
+#21 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#22 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#24 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('admin')
+#29 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/admin')
+#30 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#32 {main}
+REQUEST_URI=/redvida/index.php?r=organo/admin
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo
+---
+2014/11/25 22:10:33 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612): eval()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(340): CComponent->evaluateExpression('Yii::app()->cre...', Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(319): CButtonColumn->renderButton('Ver', Array, 0, Object(Organo))
+#5 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridColumn.php(151): CButtonColumn->renderDataCellContent(0, Object(Organo))
+#6 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(616): CGridColumn->renderDataCell(0)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(572): CGridView->renderTableRow(0)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(482): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{item...')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(173): CBaseListView->run()
+#14 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\admin.php(92): CBaseController->widget('zii.widgets.gri...', Array)
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#19 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(139): CController->render('admin', Array)
+#20 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): OrganoController->actionAdmin()
+#21 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#22 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#24 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('admin')
+#29 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/admin')
+#30 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#32 {main}
+REQUEST_URI=/redvida/index.php?r=organo/admin
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo
+---
+2014/11/25 22:10:40 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id_organo" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id_organo')
+#1 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id_organo')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612): eval()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(340): CComponent->evaluateExpression('Yii::app()->cre...', Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(319): CButtonColumn->renderButton('Ver', Array, 0, Object(Organo))
+#5 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridColumn.php(151): CButtonColumn->renderDataCellContent(0, Object(Organo))
+#6 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(616): CGridColumn->renderDataCell(0)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(572): CGridView->renderTableRow(0)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(482): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{item...')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(173): CBaseListView->run()
+#14 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\admin.php(92): CBaseController->widget('zii.widgets.gri...', Array)
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#19 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(139): CController->render('admin', Array)
+#20 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): OrganoController->actionAdmin()
+#21 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#22 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#24 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('admin')
+#29 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/admin')
+#30 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#32 {main}
+REQUEST_URI=/redvida/index.php?r=organo/admin
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo
+---
+2014/11/25 22:10:42 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id_organo" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id_organo')
+#1 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id_organo')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612): eval()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(340): CComponent->evaluateExpression('Yii::app()->cre...', Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(319): CButtonColumn->renderButton('Ver', Array, 0, Object(Organo))
+#5 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridColumn.php(151): CButtonColumn->renderDataCellContent(0, Object(Organo))
+#6 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(616): CGridColumn->renderDataCell(0)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(572): CGridView->renderTableRow(0)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(482): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{item...')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(173): CBaseListView->run()
+#14 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\admin.php(92): CBaseController->widget('zii.widgets.gri...', Array)
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#19 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(139): CController->render('admin', Array)
+#20 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): OrganoController->actionAdmin()
+#21 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#22 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#24 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('admin')
+#29 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/admin')
+#30 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#32 {main}
+REQUEST_URI=/redvida/index.php?r=organo/admin
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo
+---
+2014/11/25 22:12:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\RedVida\protected\controllers\TrasplanteController.php:196
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\controllers\TrasplanteController.php(86): TrasplanteController->loadModel('1')
+#1 [internal function]: TrasplanteController->actionUpdate('1')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TrasplanteController), Array)
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TrasplanteController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('update')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('trasplante/upda...')
+#13 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/redvida/index.php?r=trasplante/update&id=1
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/25 22:14:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\RedVida\protected\controllers\TrasplanteController.php:196
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\controllers\TrasplanteController.php(110): TrasplanteController->loadModel('')
+#1 [internal function]: TrasplanteController->actionDelete('')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TrasplanteController), Array)
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TrasplanteController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('delete')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('/trasplante/del...')
+#13 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/redvida/index.php?r=/trasplante/delete&id=
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/25 22:15:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(109): OrganoController->loadModel('')
+#1 [internal function]: OrganoController->actionDelete('')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('delete')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('/organo/delete')
+#13 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/redvida/index.php?r=/organo/delete&id=
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/25 22:15:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(109): OrganoController->loadModel('')
+#1 [internal function]: OrganoController->actionDelete('')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('delete')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('/organo/delete')
+#13 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/redvida/index.php?r=/organo/delete&id=
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/25 22:15:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(109): OrganoController->loadModel('Piel')
+#1 [internal function]: OrganoController->actionDelete('Piel')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('delete')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('/organo/delete')
+#13 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/redvida/index.php?r=/organo/delete&id=Piel
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/25 22:15:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(109): OrganoController->loadModel('')
+#1 [internal function]: OrganoController->actionDelete('')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('delete')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('/organo/delete')
+#13 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/redvida/index.php?r=/organo/delete&id=
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/25 22:16:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(109): OrganoController->loadModel('')
+#1 [internal function]: OrganoController->actionDelete('')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('delete')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('/organo/delete')
+#13 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/redvida/index.php?r=/organo/delete&id=
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/25 22:16:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(109): OrganoController->loadModel('')
+#1 [internal function]: OrganoController->actionDelete('')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('delete')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('/organo/delete')
+#13 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/redvida/index.php?r=/organo/delete&id=
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/25 22:16:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(109): OrganoController->loadModel('Piel')
+#1 [internal function]: OrganoController->actionDelete('Piel')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('delete')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('/organo/delete')
+#13 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/redvida/index.php?r=/organo/delete&id=Piel
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/25 22:17:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(109): OrganoController->loadModel('')
+#1 [internal function]: OrganoController->actionDelete('')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('delete')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('/organo/delete')
+#13 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/redvida/index.php?r=/organo/delete&id=
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/25 22:18:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(109): OrganoController->loadModel('')
+#1 [internal function]: OrganoController->actionDelete('')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('delete')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('/organo/delete')
+#13 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/redvida/index.php?r=/organo/delete&id=
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/25 22:18:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(109): OrganoController->loadModel('Pancreas')
+#1 [internal function]: OrganoController->actionDelete('Pancreas')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('delete')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('/organo/delete')
+#13 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/redvida/index.php?r=/organo/delete&id=Pancreas
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/25 22:19:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(109): OrganoController->loadModel('')
+#1 [internal function]: OrganoController->actionDelete('')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('delete')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('/organo/delete')
+#13 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/redvida/index.php?r=/organo/delete&id=
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/25 22:35:02 [error] [exception.CException] exception 'CException' with message 'La propiedad "CStringValidator"."0" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\validators\CValidator.php(189): CComponent->__set('0', 'required')
+#1 C:\xampp\htdocs\yii-1.1.15\framework\base\CModel.php(287): CValidator::createValidator('length', Object(Organo), 'nombreOrgano', Array)
+#2 C:\xampp\htdocs\yii-1.1.15\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\base\CModel.php(304): CModel->getValidators('nombreOrgano')
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\helpers\CHtml.php(1414): CModel->isAttributeRequired('nombreOrgano')
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\widgets\CActiveForm.php(597): CHtml::activeLabelEx(Object(Organo), 'nombreOrgano', Array)
+#6 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\_form.php(29): CActiveForm->labelEx(Object(Organo), 'nombreOrgano')
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\create.php(17): CController->renderPartial('_form', Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#15 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(75): CController->render('create', Array)
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): OrganoController->actionCreate()
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#20 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/create')
+#26 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#28 {main}
+REQUEST_URI=/RedVida/index.php?r=organo/create
+HTTP_REFERER=http://localhost:8080/RedVida/index.php?r=organo/admin
+---
+2014/11/25 22:39:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(51): OrganoController->loadModel('')
+#1 [internal function]: OrganoController->actionView('')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#13 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/RedVida/index.php?r=organo/view&id=
+---
+2014/11/25 23:57:51 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\view.php(7): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(52): CController->render('view', Array)
+#7 [internal function]: OrganoController->actionView('17')
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&id=17
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/create
+---
+2014/11/25 23:57:57 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#9 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&4
+---
+2014/11/25 23:58:01 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#9 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&6
+---
+2014/11/25 23:58:11 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#9 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&6
+---
+2014/11/26 00:06:49 [error] [php] Undefined variable: rut (C:\xampp\htdocs\RedVida\themes\semantic\views\donacionMedula\_form.php:68)
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): DonacionMedulaController->renderFile()
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\donacionMedula\create.php(18): DonacionMedulaController->renderPartial()
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): DonacionMedulaController->renderInternal()
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): DonacionMedulaController->renderFile()
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): DonacionMedulaController->renderPartial()
+#6 C:\xampp\htdocs\RedVida\protected\controllers\DonacionMedulaController.php(77): DonacionMedulaController->render()
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): DonacionMedulaController->actionCreate()
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): DonacionMedulaController->runAction()
+#10 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter()
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CrugeAccessControlFilter->filter()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): DonacionMedulaController->runActionWithFilters()
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): DonacionMedulaController->run()
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#17 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\RedVida\index.php(14): CWebApplication->run()
+REQUEST_URI=/redvida/index.php?r=donacionmedula/create
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donacionMedula\_form.php (68)
+in C:\xampp\htdocs\RedVida\themes\semantic\views\donacionMedula\create.php (18)
+in C:\xampp\htdocs\RedVida\protected\controllers\DonacionMedulaController.php (77)
+2014/11/26 00:17:50 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\view.php(7): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(52): CController->render('view', Array)
+#7 [internal function]: OrganoController->actionView('1')
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&id=1
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/26 00:17:51 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\view.php(7): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(52): CController->render('view', Array)
+#7 [internal function]: OrganoController->actionView('1')
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&id=1
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/26 00:18:00 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\view.php(5): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(52): CController->render('view', Array)
+#7 [internal function]: OrganoController->actionView('1')
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&id=1
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/26 00:18:01 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\view.php(5): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(52): CController->render('view', Array)
+#7 [internal function]: OrganoController->actionView('1')
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&id=1
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/26 00:18:14 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\view.php(5): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(52): CController->render('view', Array)
+#7 [internal function]: OrganoController->actionView('1')
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&id=1
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/26 00:18:14 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\view.php(5): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(52): CController->render('view', Array)
+#7 [internal function]: OrganoController->actionView('1')
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&id=1
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/26 00:18:15 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\view.php(5): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(52): CController->render('view', Array)
+#7 [internal function]: OrganoController->actionView('1')
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&id=1
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/26 00:18:15 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\view.php(5): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(52): CController->render('view', Array)
+#7 [internal function]: OrganoController->actionView('1')
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&id=1
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/26 00:18:15 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\view.php(5): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(52): CController->render('view', Array)
+#7 [internal function]: OrganoController->actionView('1')
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&id=1
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/26 00:18:15 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\view.php(5): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(52): CController->render('view', Array)
+#7 [internal function]: OrganoController->actionView('1')
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&id=1
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/26 00:18:16 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\view.php(5): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(52): CController->render('view', Array)
+#7 [internal function]: OrganoController->actionView('1')
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&id=1
+---
+2014/11/26 00:25:15 [error] [exception.CrugeException.401] action_organo_view<br/>401
+REQUEST_URI=/redvida/index.php?r=organo/view&id=1
+---
+2014/11/26 00:29:03 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\view.php(7): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(52): CController->render('view', Array)
+#7 [internal function]: OrganoController->actionView('1')
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&id=1
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/26 00:29:16 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\view.php(13): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(52): CController->render('view', Array)
+#7 [internal function]: OrganoController->actionView('1')
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&id=1
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/26 00:29:19 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\view.php(13): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(52): CController->render('view', Array)
+#7 [internal function]: OrganoController->actionView('1')
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&id=1
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/26 00:29:20 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\view.php(13): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(52): CController->render('view', Array)
+#7 [internal function]: OrganoController->actionView('1')
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&id=1
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/26 00:29:28 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\view.php(14): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(52): CController->render('view', Array)
+#7 [internal function]: OrganoController->actionView('1')
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&id=1
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/26 00:50:41 [error] [exception.CrugeException.401] action_organo_view<br/>401
+REQUEST_URI=/redvida/index.php?r=organo/view&id=1
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/admin
+---
+2014/11/26 00:55:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(51): OrganoController->loadModel('5')
+#1 [internal function]: OrganoController->actionView('5')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#13 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&id=5
+---
+2014/11/26 00:55:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(51): OrganoController->loadModel('4')
+#1 [internal function]: OrganoController->actionView('4')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#13 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&id=4
+---
+2014/11/26 00:55:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(51): OrganoController->loadModel('')
+#1 [internal function]: OrganoController->actionView('')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#13 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&id=
+---
+2014/11/26 01:00:17 [error] [exception.CException] exception 'CException' with message 'La propiedad "Organo"."id" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\organo\update.php(21): CActiveRecord->__get('id')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#6 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(99): CController->render('update', Array)
+#7 [internal function]: OrganoController->actionUpdate('1')
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('update')
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/update')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/redvida/index.php?r=organo/update&id=1
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=organo/view&id=1
+---
+2014/11/26 01:35:54 [error] [exception.CException] exception 'CException' with message 'La propiedad "BancoSangre"."idOrgano" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('idOrgano')
+#1 C:\xampp\htdocs\RedVida\themes\semantic\views\bancoSangre\view.php(13): CActiveRecord->__get('idOrgano')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\RedVida\protected\controllers\BancoSangreController.php(53): CController->render('view', Array)
+#7 [internal function]: BancoSangreController->actionView('1')
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(BancoSangreController), Array)
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(BancoSangreController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('bancoSangre/vie...')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/redvida/index.php?r=bancoSangre/view&id=1
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=bancoSangre/admin
+---
+2014/11/26 01:46:31 [error] [exception.CException] exception 'CException' with message 'La propiedad "BancoSangre"."idOrgano" no se encuentra definida.' in C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.15\framework\db\ar\CActiveRecord.php(145): CComponent->__get('idOrgano')
+#1 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('idOrgano')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\base\CComponent.php(612): eval()
+#3 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(340): CComponent->evaluateExpression('Yii::app()->cre...', Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CButtonColumn.php(319): CButtonColumn->renderButton('Ver', Array, 0, Object(BancoSangre))
+#5 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridColumn.php(151): CButtonColumn->renderDataCellContent(0, Object(BancoSangre))
+#6 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(616): CGridColumn->renderDataCell(0)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(572): CGridView->renderTableRow(0)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\grid\CGridView.php(482): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{item...')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#13 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(173): CBaseListView->run()
+#14 C:\xampp\htdocs\RedVida\themes\semantic\views\bancoSangre\admin.php(154): CBaseController->widget('zii.widgets.gri...', Array)
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#19 C:\xampp\htdocs\RedVida\protected\controllers\BancoSangreController.php(140): CController->render('admin', Array)
+#20 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): BancoSangreController->actionAdmin()
+#21 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#22 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#24 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#26 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#27 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('admin')
+#29 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('bancoSangre/adm...')
+#30 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#31 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#32 {main}
+REQUEST_URI=/redvida/index.php?r=bancoSangre/admin
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=/bancoSangre/
+---
+2014/11/26 01:46:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php:153
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\protected\controllers\OrganoController.php(51): OrganoController->loadModel('2')
+#1 [internal function]: OrganoController->actionView('2')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrganoController), Array)
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrganoController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('view')
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('organo/view')
+#13 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/redvida/index.php?r=organo/view&id=2
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=bancoSangre/admin
+---
+2014/11/26 01:51:01 [error] [exception.CrugeException.401] action_bancosangre_admin<br/>401
+REQUEST_URI=/redvida/index.php?r=bancosangre/admin
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=bancosangre/admin
+---
+2014/11/26 02:02:28 [error] [exception.CException] exception 'CException' with message 'BancoSangreController tiene una llamada extra a endWidget() en su vista.' in C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php:210
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\themes\semantic\views\bancoSangre\_search.php(69): CBaseController->endWidget()
+#1 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\RedVida\themes\semantic\views\bancoSangre\admin.php(71): CController->renderPartial('_search', Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#9 C:\xampp\htdocs\RedVida\protected\controllers\BancoSangreController.php(140): CController->render('admin', Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): BancoSangreController->actionAdmin()
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('bancoSangre/adm...')
+#20 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/redvida/index.php?r=bancoSangre/admin
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=bancoSangre/index
+---
+2014/11/26 02:02:37 [error] [exception.CException] exception 'CException' with message 'BancoSangreController tiene una llamada extra a endWidget() en su vista.' in C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php:210
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\themes\semantic\views\bancoSangre\_search.php(69): CBaseController->endWidget()
+#1 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\RedVida\themes\semantic\views\bancoSangre\admin.php(71): CController->renderPartial('_search', Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#9 C:\xampp\htdocs\RedVida\protected\controllers\BancoSangreController.php(140): CController->render('admin', Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): BancoSangreController->actionAdmin()
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('bancoSangre/adm...')
+#20 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/redvida/index.php?r=bancoSangre/admin
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=bancoSangre/create
+---
+2014/11/26 02:03:15 [error] [exception.CException] exception 'CException' with message 'BancoSangreController tiene una llamada extra a endWidget() en su vista.' in C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php:210
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\themes\semantic\views\bancoSangre\_search.php(69): CBaseController->endWidget()
+#1 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\RedVida\themes\semantic\views\bancoSangre\admin.php(71): CController->renderPartial('_search', Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#9 C:\xampp\htdocs\RedVida\protected\controllers\BancoSangreController.php(140): CController->render('admin', Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): BancoSangreController->actionAdmin()
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('bancoSangre/adm...')
+#20 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/redvida/index.php?r=bancoSangre/admin
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=bancoSangre/create
+---
+2014/11/26 02:03:16 [error] [exception.CException] exception 'CException' with message 'BancoSangreController tiene una llamada extra a endWidget() en su vista.' in C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php:210
+Stack trace:
+#0 C:\xampp\htdocs\RedVida\themes\semantic\views\bancoSangre\_search.php(69): CBaseController->endWidget()
+#1 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\RedVida\themes\semantic\views\bancoSangre\admin.php(71): CController->renderPartial('_search', Array)
+#5 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii-1.1.15\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#9 C:\xampp\htdocs\RedVida\protected\controllers\BancoSangreController.php(140): CController->render('admin', Array)
+#10 C:\xampp\htdocs\yii-1.1.15\framework\web\actions\CInlineAction.php(49): BancoSangreController->actionAdmin()
+#11 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\RedVida\protected\modules\cruge\components\CrugeAccessControlFilter.php(90): CFilterChain->run()
+#14 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilter.php(38): CrugeAccessControlFilter->preFilter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii-1.1.15\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii-1.1.15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 C:\xampp\htdocs\yii-1.1.15\framework\web\CWebApplication.php(141): CWebApplication->runController('bancoSangre/adm...')
+#20 C:\xampp\htdocs\yii-1.1.15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\RedVida\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/redvida/index.php?r=bancoSangre/admin
+HTTP_REFERER=http://localhost:8080/redvida/index.php?r=bancoSangre/create
+---

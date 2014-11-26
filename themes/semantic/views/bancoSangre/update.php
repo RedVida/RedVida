@@ -1,21 +1,19 @@
 <?php
-/* @var $this BancoSangreController */
-/* @var $model BancoSangre */
-
-$this->breadcrumbs=array(
-	'Banco Sangres'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
-
 $this->menu=array(
-	array('label'=>'List BancoSangre', 'url'=>array('index')),
-	array('label'=>'Create BancoSangre', 'url'=>array('create')),
-	array('label'=>'View BancoSangre', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage BancoSangre', 'url'=>array('admin')),
+	array('label'=>'Listar Banco de Sangre', 'url'=>array('index')),
+	array('label'=>'Registrar Banco de Sangre', 'url'=>array('create')),
+	array('label'=>'Ver Banco de Sangre', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar Banco de Sangre', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update BancoSangre <?php echo $model->id; ?></h1>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Actualizar Banco de Sangre #<?php echo $model->id; ?></h1>
+</div>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<hr class="style-two ">
+
+<?php $this->renderPartial('_form', array('model'=>$model)); ?>  
+
+<hr class="style-two ">

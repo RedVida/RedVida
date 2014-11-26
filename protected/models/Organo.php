@@ -26,6 +26,7 @@ class Organo extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('nombreOrgano', 'length', 'max'=>20),
+			array('nombreOrgano', 'required'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('idOrgano, nombreOrgano', 'safe', 'on'=>'search'),
@@ -49,8 +50,8 @@ class Organo extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'idOrgano' => 'Id Organo',
-			'nombreOrgano' => 'Nombre Organo',
+			'idOrgano' => 'ID',
+			'nombreOrgano' => 'Nombre de Órgano',
 		);
 	}
 

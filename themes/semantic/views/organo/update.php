@@ -1,21 +1,19 @@
 <?php
-/* @var $this OrganoController */
-/* @var $model Organo */
-
-$this->breadcrumbs=array(
-	'Organos'=>array('index'),
-	$model->idOrgano=>array('view','id'=>$model->idOrgano),
-	'Update',
-);
-
 $this->menu=array(
-	array('label'=>'List Organo', 'url'=>array('index')),
-	array('label'=>'Create Organo', 'url'=>array('create')),
-	array('label'=>'View Organo', 'url'=>array('view', 'id'=>$model->idOrgano)),
-	array('label'=>'Manage Organo', 'url'=>array('admin')),
+	array('label'=>'Listar Órganos', 'url'=>array('index')),
+	array('label'=>'Registrar Órgano', 'url'=>array('create')),
+	array('label'=>'Ver Órgano', 'url'=>array('view', 'id'=>$model->idOrgano)),
+	array('label'=>'Administrar Órganos', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Organo <?php echo $model->idOrgano; ?></h1>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Actualizar Órgano #<?php echo $model->idOrgano; ?></h1>
+</div>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<hr class="style-two ">
+
+<?php $this->renderPartial('_form', array('model'=>$model)); ?>  
+
+<hr class="style-two ">

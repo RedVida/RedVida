@@ -8,7 +8,6 @@ $this->menu=array(
 );
 ?>
 
-
 <div class="ui black ribbon label">
 <h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
 Trasplantes </h1>

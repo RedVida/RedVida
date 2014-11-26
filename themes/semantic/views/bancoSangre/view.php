@@ -1,28 +1,38 @@
 <?php
-/* @var $this BancoSangreController */
-/* @var $model BancoSangre */
-
-$this->breadcrumbs=array(
-	'Banco Sangres'=>array('index'),
-	$model->id,
-);
-
 $this->menu=array(
-	array('label'=>'List BancoSangre', 'url'=>array('index')),
-	array('label'=>'Create BancoSangre', 'url'=>array('create')),
-	array('label'=>'Update BancoSangre', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete BancoSangre', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage BancoSangre', 'url'=>array('admin')),
+	array('label'=>'Listar Banco de Sangre', 'url'=>array('index')),
+	array('label'=>'Registrar Banco de Sangre', 'url'=>array('create')),
+	array('label'=>'Actualizar Banco de Sangre', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Eliminar Banco de Sangre', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Está seguro que desea borrar este elemento?')),
+	array('label'=>'Administrar Banco de Sangre', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Ver BancoSangre #<?php echo $model->id; ?></h1>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Ver Banco de Sangre #<?php echo $model->id; ?></h1>
+</div>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'tipo',
-		'cantidad',
-	),
-)); ?>
+<hr class="style-two ">
+
+<div class="ui grid">
+
+	<div class="one wide column">
+
+	</div>
+
+	<div class="twelve wide column">
+
+	<?php $this->widget('zii.widgets.CDetailView', array(
+		'data'=>$model,
+		'attributes'=>array(
+			'tipo',
+			'cantidad',
+		),
+	)); ?>
+	
+	</div>
+	
+</div>
+
+<hr class="style-two ">

@@ -1,18 +1,17 @@
 <?php
-/* @var $this OrganoController */
-/* @var $model Organo */
-
-$this->breadcrumbs=array(
-	'Organos'=>array('index'),
-	'Create',
-);
-
 $this->menu=array(
-	array('label'=>'List Organo', 'url'=>array('index')),
-	array('label'=>'Manage Organo', 'url'=>array('admin')),
+	array('label'=>'Listar Órganos', 'url'=>array('index')),
+	array('label'=>'Administrar Órganos', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Organo</h1>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Registrar Órgano </h1>
+</div>
+
+<hr class="style-two ">
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+
+<hr class="style-two ">

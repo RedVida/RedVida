@@ -1,18 +1,17 @@
 <?php
-/* @var $this BancoSangreController */
-/* @var $model BancoSangre */
-
-$this->breadcrumbs=array(
-	'Banco Sangres'=>array('index'),
-	'Create',
-);
-
 $this->menu=array(
-	array('label'=>'List BancoSangre', 'url'=>array('index')),
-	array('label'=>'Manage BancoSangre', 'url'=>array('admin')),
+	array('label'=>'Listar Banco de Sangre', 'url'=>array('index')),
+	array('label'=>'Administrar Banco de Sangre', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create BancoSangre</h1>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Registrar Banco de Sangre </h1>
+</div>
+
+<hr class="style-two ">
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+
+<hr class="style-two ">

@@ -17,7 +17,6 @@
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/views/layouts/main.css">   
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/modal.css"> 
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/estilos.css">    
-  <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/jquery.min.js"></script>
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/carousel.js"></script>
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/semantic.min.js"></script>  
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/views/layouts/main.js"></script>
@@ -34,8 +33,8 @@
 
 <body>
 
-<!-- Modal View -->
-
+<!-- Modal View
+NO PUEDE IR EN MAIN SOLO EN LAS VISTAS QUE LO USAN
   <div class="ui small modal">
         <i class="close icon"></i>
           <div class="header">
@@ -55,6 +54,8 @@
         </div>
       </div>
   </div>
+
+ -->
 
 <!-- Meno As DropDown -->
 

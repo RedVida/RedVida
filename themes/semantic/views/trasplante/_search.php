@@ -1,9 +1,4 @@
-<?php
-/* @var $this TrasplanteController */
-/* @var $model Trasplante */
-/* @var $form CActiveForm */
-?>
-<div class="ui grid"><!--start grid-->
+<div class="ui grid">
 
 	<div class="one wide column">
 	</div>

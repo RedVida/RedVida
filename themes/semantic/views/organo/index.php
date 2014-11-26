@@ -1,20 +1,31 @@
 <?php
-/* @var $this OrganoController */
-/* @var $dataProvider CActiveDataProvider */
-
-$this->breadcrumbs=array(
-	'Organos',
-);
-
 $this->menu=array(
-	array('label'=>'Create Organo', 'url'=>array('create')),
-	array('label'=>'Manage Organo', 'url'=>array('admin')),
+	array('label'=>'Registrar Órgano', 'url'=>array('create')),
+	array('label'=>'Administrar Órganos', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Organos</h1>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Órganos </h1>
+</div>
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+<hr class="style-two ">
+
+<div class="ui grid">
+
+	<div class="one wide column">
+	
+	</div>
+
+	<div class="twelve wide column">
+	<?php $this->widget('zii.widgets.CListView', array(
+		'dataProvider'=>$dataProvider,
+		'itemView'=>'_view',
+	)); ?>
+
+	</div>
+	
+</div>
+
+<hr class="style-two ">

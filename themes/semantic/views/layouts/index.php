@@ -22,43 +22,15 @@
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/semantic.min.js"></script>  
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/views/layouts/main.js"></script>
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/jquery.tablesort.min.js"></script>
-  <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/modal.js"></script>
 
 <div class="ui center aligned segment">
 <img  src="<?php echo Yii::app()->request->baseUrl; ?>/images/clinica3.jpg"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/text.png">
 </div>
 
-<script>
-$(document).ready(function() {
-$('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada a Modal UI
-});
-</script>
-
 </head>
 
 <body>
 
-<!-- Modal View -->
-
-  <div class="ui small modal">
-        <i class="close icon"></i>
-          <div class="header">
-            Verificar Operación
-          </div>
-        <div class="content">
-          <i class="large loading icon"></i>
-           Esta seguro que desea registrar estos datos?
-        </div>
-      <div class="actions">
-        <div class="ui negative button" name="Cancel">
-          No
-        </div>
-        <div class="ui positive right labeled icon button"  onclick="successModal();" name="Success">
-          Si
-          <i class="checkmark icon"></i>
-        </div>
-      </div>
-  </div>
 
 <!-- Meno As DropDown -->
 

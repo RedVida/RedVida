@@ -2,16 +2,10 @@
 /* @var $this TrasplanteController */
 /* @var $model Trasplante */
 
-$this->breadcrumbs=array(
-	'Trasplantes'=>array('index'),
-	$model->id,
-);
-
 $this->menu=array(
 	array('label'=>'Listar Trasplantes', 'url'=>array('index')),
 	array('label'=>'Registrar Trasplante', 'url'=>array('create')),
 	array('label'=>'Actualizar Trasplante', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Eliminar Trasplante', 'url'=>'#', 'linkOptions'=>array('submit'=>array('trasplante/delete','id'=>$model->id),'confirm'=>'Estas seguro de eliminar este Trasplante?')),
 	array('label'=>'Administrar Trasplantes', 'url'=>array('admin')),
 );
 ?>

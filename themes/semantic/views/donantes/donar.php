@@ -3,12 +3,9 @@
 /* @var $model Donantes */
 
 $this->menu=array(
-	array('label'=>'Listar Donaciones de Sangre', 'url'=>array('/donacionSangre/index')),
-	array('label'=>'Listar Donaciones de Médula', 'url'=>array('/donacionMedula/index')),
-	array('label'=>'Listar Donaciones de Organo', 'url'=>array('/donacionOrgano/index')),
 	array('label'=>'Administrar Donaciones de Sangre', 'url'=>array('/donacionSangre/admin')),
 	array('label'=>'Administrar Donaciones de Médula', 'url'=>array('/donacionMedula/admin')),
-	array('label'=>'Administrar Donaciones de Organo', 'url'=>array('/donacionOrgano/admin')),
+	array('label'=>'Administrar Donaciones de Órgano', 'url'=>array('/donacionOrgano/admin')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -48,7 +45,7 @@ Registrar Donación </h1>
 
 	<div class="twelve wide column">
 
-		<?php echo CHtml::link('Busqueda Avanzada','#',array('class'=>'search-button')); ?>
+		<?php echo CHtml::link('Búsqueda Avanzada','#',array('class'=>'search-button')); ?>
 		<div class="search-form" style="display:none">
 		<?php $this->renderPartial('_search',array(
 			'model'=>$model,
@@ -74,7 +71,7 @@ Registrar Donación </h1>
 	  <div class="header">
 	  Registrar un Donación
 	  </div>
-	  <p>Para registrar una donación, debes seleccionar un donante de la siguiente tabla y presionar el boton correspondiente a la donación</p>
+	  <p>Para registrar una donación, debes seleccionar un donante de la siguiente tabla y presionar el botón correspondiente a la donación</p>
 	</div>
 
 	<?php $this->widget('zii.widgets.grid.CGridView', array(
@@ -136,35 +133,25 @@ var id_select = $('#donantes-grid').yiiGridView.getSelection(target_id);
 if(id_select>0){
             
         $('#btn_1').removeClass('disabled blockear');
-
         $('#btn_2').removeClass('disabled blockear');
-            
         $('#btn_3').removeClass('disabled blockear');
 
 
 		$('#btn_1').click(function() {
-
 		window.location.href = yii.urls.base + '/index.php?r=/donacionSangre/create&id=' + id_select[0];									
-
 		});
 		$('#btn_2').click(function() {
-
 		window.location.href = yii.urls.base + '/index.php?r=/donacionMedula/create&id=' + id_select[0];									
-
 		});
 		$('#btn_3').click(function() {
-
 		window.location.href = yii.urls.base + '/index.php?r=/donacionOrgano/create&id=' + id_select[0];									
-
 		});
 
 
 }else{
             
         $('#btn_1').addClass('disabled blockear');
-
         $('#btn_2').addClass('disabled blockear');
-
         $('#btn_3').addClass('disabled blockear');
 }
 

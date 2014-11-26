@@ -1,14 +1,13 @@
-<?php
-/* @var $this OrganoController */
-/* @var $data Organo */
-?>
-
 <div class="view">
+	<div class="ui celled list">
+	  <div class="item">
+	    <i class="add large icon"></i> 
+	    <div class="content">
 
-	<?php echo CHtml::link(CHtml::encode($data->idOrgano), array('view', 'id'=>$data->idOrgano)); ?>
-
-	<?php echo CHtml::encode($data->nombreOrgano); ?>
-	<br />
-
-
+		<?php echo CHtml::encode($data->nombreOrgano); ?>
+		
+		 </div>
+	   </div>
+	</div>
+	</br>
 </div>

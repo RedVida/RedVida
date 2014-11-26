@@ -1,16 +1,9 @@
 <?php
-/* @var $this DonacionSangreController */
-/* @var $model DonacionSangre */
-
-$this->breadcrumbs=array(
-	'Donación de Sangre'=>array('index'),
-	$model->id,
-);
-
 $this->menu=array(
 	array('label'=>'Listar Donación de Sangre', 'url'=>array('index')),
+	array('label'=>'Registrar Donación', 'url'=>array('/donantes/donar')),
 	array('label'=>'Actualizar Donación de Sangre', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Eliminar Donación de Sangre', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Eliminar Donación de Sangre', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Está seguro que desea borrar este elemento?')),
 	array('label'=>'Administrar Donación de Sangre', 'url'=>array('admin')),
 );
 ?>
@@ -19,8 +12,8 @@ $this->menu=array(
 <h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
 Ver Donación de Sangre #<?php echo $model->id;; ?></h1>
 </div>
-<hr class="style-two ">
 
+<hr class="style-two ">
 
 <div class="ui grid">
 
@@ -31,19 +24,20 @@ Ver Donación de Sangre #<?php echo $model->id;; ?></h1>
 	<div class="twelve wide column">
 
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'rut_donante',
-		'created',
-		'modified',
-		'tipo_sangre',
-		'cantidad',
-	),
-	'htmlOptions'=>array('class'=>'ui celled table segment autosize'),
-)); ?>
+	<?php $this->widget('zii.widgets.CDetailView', array(
+		'data'=>$model,
+		'attributes'=>array(
+			'rut_donante',
+			'tipo_sangre',
+			'cantidad',
+			'created',
+			'modified',
+		),
+		'htmlOptions'=>array('class'=>'ui celled table segment autosize'),
+	)); ?>
+
 	</div>
-	
+
 </div>
+
 <hr class="style-two ">
