@@ -65,9 +65,9 @@ class DonacionMedula extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'rut_donante' => 'Rut Donante',
-			'created' => 'Created',
-			'modified' => 'Modified',
-			'tipo_medula' => 'Tipo Medula',
+			'created' => 'Fecha Ingreso',
+			'modified' => 'Fecha Modificación',
+			'tipo_medula' => 'Tipo de Médula',
 		);
 	}
 

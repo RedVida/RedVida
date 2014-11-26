@@ -156,7 +156,7 @@
         </a>
 
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionorgano/admin">
-          <i class="doble angle right icon"></i> Adm. Donac. Organo
+          <i class="doble angle right icon"></i> Adm. Donac. Órgano
         </a>    
 
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/bancosangre/admin">
@@ -164,7 +164,7 @@
         </a>
 
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/organo/admin">
-          <i class="doble angle right icon"></i> Administrar Organos
+          <i class="doble angle right icon"></i> Administrar Órganos
         </a>
         
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionSangre/">
@@ -176,7 +176,7 @@
         </a>
 
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionOrgano/">
-          <i class="doble angle right icon"></i> Listar Donac. Organo
+          <i class="doble angle right icon"></i> Listar Donac. Órgano
         </a>    
 
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/bancoSangre/">
@@ -184,7 +184,7 @@
         </a>
 
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/organo/">
-          <i class="doble angle right icon"></i> Listar Organos
+          <i class="doble angle right icon"></i> Listar Órganos
         </a>
       
        </div>  
@@ -220,21 +220,21 @@
 
       <div class="ui pointing dropdown link item">
 
-          <i class="asterisk icon"></i> Centros Medicos <i class="dropdown icon"></i>
+          <i class="asterisk icon"></i> Centros Médicos <i class="dropdown icon"></i>
           <div class="menu">
              <?php if(Yii::app()->user->checkAccess('tester')){ ?>
              <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/create">
-              <i class="doble angle right icon"></i> Registrar C. Medico
+              <i class="doble angle right icon"></i> Registrar C. Médico
             </a>
             <?php } ?>
             <?php if(Yii::app()->user->checkAccess('tester')){ ?>
             <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/admin">
-              <i class="doble angle right icon"></i> Administrar C. Medicos
+              <i class="doble angle right icon"></i> Administrar C. Médicos
             </a>
             <?php } ?>
 
             <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/">
-              <i class="doble angle right icon"></i> Listar C. Medicos
+              <i class="doble angle right icon"></i> Listar C. Médicos
             </a>
 
           </div>       

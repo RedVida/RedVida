@@ -181,7 +181,7 @@ NO PUEDE IR EN MAIN SOLO EN LAS VISTAS QUE LO USAN
         </a>
 
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionorgano/admin">
-          <i class="doble angle right icon"></i> Adm. Donac. Organo
+          <i class="doble angle right icon"></i> Adm. Donac. Órgano
         </a>    
 
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/bancosangre/admin">
@@ -189,7 +189,7 @@ NO PUEDE IR EN MAIN SOLO EN LAS VISTAS QUE LO USAN
         </a>
 
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/organo/admin">
-          <i class="doble angle right icon"></i> Administrar Organos
+          <i class="doble angle right icon"></i> Administrar Órganos
         </a>
         
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionSangre/">
@@ -201,7 +201,7 @@ NO PUEDE IR EN MAIN SOLO EN LAS VISTAS QUE LO USAN
         </a>
 
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionOrgano/">
-          <i class="doble angle right icon"></i> Listar Donac. Organo
+          <i class="doble angle right icon"></i> Listar Donac. Órgano
         </a>    
 
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/bancoSangre/">
@@ -209,7 +209,7 @@ NO PUEDE IR EN MAIN SOLO EN LAS VISTAS QUE LO USAN
         </a>
 
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/organo/">
-          <i class="doble angle right icon"></i> Listar Organos
+          <i class="doble angle right icon"></i> Listar Órganos
         </a>
       
        </div>  

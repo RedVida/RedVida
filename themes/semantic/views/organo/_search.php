@@ -18,7 +18,7 @@
 	<div class="fields">     
 		        <div class="four wide field">
 				<?php echo $form->label($model,'nombreOrgano'); ?>
-				<?php echo $form->textField($model,'nombreOrgano',array('size'=>60,'maxlength'=>128)); ?>
+				<?php echo $form->textField($model,'nombreOrgano'); ?>
 				</div>
 	</div>
 

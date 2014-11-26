@@ -68,8 +68,8 @@ class DonacionSangre extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'rut_donante' => 'Rut Donante',
-			'created' => 'Creado',
-			'modified' => 'Modificado',
+			'created' => 'Fecha de Ingreso',
+			'modified' => 'Fecha de Modificación',
 			'tipo_sangre' => 'Tipo de Sangre',
 			'cantidad' => 'Cantidad',
 		);

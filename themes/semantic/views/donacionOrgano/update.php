@@ -1,21 +1,20 @@
 <?php
-/* @var $this DonacionOrganoController */
-/* @var $model DonacionOrgano */
-
-$this->breadcrumbs=array(
-	'Donacion Organos'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
-
 $this->menu=array(
-	array('label'=>'List DonacionOrgano', 'url'=>array('index')),
-	array('label'=>'Create DonacionOrgano', 'url'=>array('create')),
-	array('label'=>'View DonacionOrgano', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage DonacionOrgano', 'url'=>array('admin')),
+	array('label'=>'Listar Donación de Órgano', 'url'=>array('index')),
+	array('label'=>'Registrar Donación', 'url'=>array('/donantes/donar')),
+	array('label'=>'Ver Donación de Órgano', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar Donación de Órgano', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update DonacionOrgano <?php echo $model->id; ?></h1>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Actualizar Donación Órgano #<?php echo $model->id; ?></h1>
+</div>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<hr class="style-two ">
+
+<?php $this->renderPartial('_form', array('model'=>$model)); ?>  
+
+<hr class="style-two ">
+
