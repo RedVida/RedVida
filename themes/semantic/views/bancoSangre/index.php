@@ -22,6 +22,7 @@ Banco de Sangre </h1>
 	<?php $this->widget('zii.widgets.CListView', array(
 		'dataProvider'=>$dataProvider,
 		'itemView'=>'_view',
+		'id'=>'itemList'
 	)); ?>
 
 	</div>
@@ -29,3 +30,19 @@ Banco de Sangre </h1>
 </div>
 
 <hr class="style-two ">
+
+
+
+<script> 
+
+     
+var auto_refresh = setInterval(
+function()
+{
+       $.fn.yiiListView.update('itemList');
+
+}, 3500);
+
+
+
+</script>

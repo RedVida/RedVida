@@ -930,3 +930,87 @@ FOR EACH ROW BEGIN
 
 END$$
 DELIMITER ;
+
+
+
+
+DELIMITER $$
+DROP TRIGGER IF EXISTS `restar_sangre`$$
+CREATE TRIGGER `restar_sangre` AFTER DELETE ON `donacion_sangre` 
+FOR EACH ROW BEGIN
+   
+   IF ((SELECT cantidad FROM banco_sangre WHERE tipo= OLD.tipo_sangre) - OLD.cantidad) >=0
+   THEN
+   UPDATE banco_sangre SET
+   cantidad = cantidad - OLD.cantidad
+   WHERE tipo = OLD.tipo_sangre;
+   ELSE
+   UPDATE banco_sangre SET
+   cantidad = 0
+   WHERE tipo = OLD.tipo_sangre;
+   END IF;
+
+END$$
+DELIMITER ;
+
+
+
+
+
+
+DELIMITER $$
+DROP TRIGGER IF EXISTS `actualiza_sangre`$$
+CREATE TRIGGER `actualiza_sangre` AFTER UPDATE ON `donacion_sangre` 
+FOR EACH ROW BEGIN
+  
+  IF NEW.tipo_sangre = OLD.tipo_sangre 
+  THEN
+
+      IF (NEW.cantidad - OLD.cantidad) >=0
+      THEN
+      
+      UPDATE banco_sangre SET
+      cantidad = cantidad + NEW.cantidad-OLD.cantidad
+      WHERE tipo = NEW.tipo_sangre;
+
+      ELSE
+
+      UPDATE banco_sangre SET
+      cantidad = 0
+      WHERE tipo = NEW.tipo_sangre;
+
+      END IF;
+
+
+  ELSE
+
+
+      UPDATE banco_sangre SET
+      cantidad = cantidad + NEW.cantidad
+      WHERE tipo = NEW.tipo_sangre;
+
+
+      IF ((SELECT cantidad FROM banco_sangre WHERE tipo= OLD.tipo_sangre) - OLD.cantidad) >=0
+      THEN
+
+      UPDATE banco_sangre SET
+      cantidad = cantidad - OLD.cantidad
+      WHERE tipo = OLD.tipo_sangre;
+      
+      ELSE
+
+      UPDATE banco_sangre SET
+      cantidad = 0
+      WHERE tipo = OLD.tipo_sangre;
+
+      END IF;
+
+
+  END IF;
+
+END$$
+DELIMITER ;
+
+
+
+
