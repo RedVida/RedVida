@@ -100,9 +100,9 @@ return array(
 
 	// application components
 	'components'=>array(
-		'ePdf' => array(
-        'class'         => 'ext.yii-pdf.EYiiPdf',
-        'params'        => array(
+		 'ePdf' => array(
+            'class'         => 'ext.yii-pdf.EYiiPdf',
+            'params'        => array(
             'mpdf'     => array(
                 'librarySourcePath' => 'application.vendors.mpdf.*','application.ext.mpdf.*',
                 'constants'         => array(
@@ -124,7 +124,7 @@ return array(
                 )*/
             ),
             'HTML2PDF' => array(
-                'librarySourcePath' => 'application.vendors.html2pdf.*',
+                'librarySourcePath' => 'application.vendors.mpdf.*','application.ext.mpdf.*',
                 'classFile'         => 'html2pdf.class.php', // For adding to Yii::$classMap
                 /*'defaultParams'     => array( // More info: http://wiki.spipu.net/doku.php?id=html2pdf:en:v4:accueil
                     'orientation' => 'P', // landscape or portrait orientation
@@ -135,8 +135,10 @@ return array(
                     'marges'      => array(5, 5, 5, 8), // margins by default, in order (left, top, right, bottom)
                 )*/
             )
-        ),
+        )
     ),
+		
+		
 		'bootstrap' => array(
 		'class' => 'ext.bootstrap.components.Bootstrap',
 		'responsiveCss'=>true,
