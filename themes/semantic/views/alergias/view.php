@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
+	array('label'=>'Actualizar Alergias', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Administrar Alergias', 'url'=>array('admin')),
+	array('label'=>'Eliminar Alergia', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Seguro que deseas eliminar este Item?')),
 	array('label'=>'Listar Alergias', 'url'=>array('index')),
 	array('label'=>'Registrar Alergias', 'url'=>array('create')),
-	array('label'=>'Actualizar Alergias', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Eliminar Alergias', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Seguro que deseas eliminar este Item?')),
-	array('label'=>'Administrar Alergias', 'url'=>array('admin')),
 );
 ?>
 <br>
@@ -31,6 +31,7 @@ Ver Alergia #<?php echo $model->id; ?> </h1>
 	'attributes'=>array(
 		'nombre',
 		'fecha_ingreso',
+		'descripcion',
 	),
 	'htmlOptions'=>array('class'=>'ui celled table segment'),
 )); ?>

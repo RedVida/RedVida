@@ -7,8 +7,9 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Registrar Alergias', 'url'=>array('create')),
 	array('label'=>'Administrar Alergias', 'url'=>array('admin')),
+	array('label'=>'Generar Informe', 'url'=>array('informe')),
+	array('label'=>'Registrar Alergias', 'url'=>array('create')),
 );
 ?>
 

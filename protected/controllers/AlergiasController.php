@@ -198,7 +198,6 @@ class AlergiasController extends Controller
 	}
 
 	public function actionInforme(){
-	// Odernar por: Edad, Tipo de sangre, Centro medico, Fecha de ingreso
 
 		$model = new Alergias;
 		if(isset($_POST['Alergias'])){
@@ -212,11 +211,11 @@ class AlergiasController extends Controller
 			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/titulo.png' ));
 			$where_array = array();
 			
-		    if($_POST['Alergias']['desde']!=''){ // Tipo de sangre
+		    if($_POST['Alergias']['desde']!=''){ 
 		    	$desde = (string)($_POST['Alergias']['desde']);
             	$where_array[]=('fecha_ingreso >= '."'$desde'");
 		    }
-		     if($_POST['Alergias']['hasta']!=''){ // Tipo de sangre
+		     if($_POST['Alergias']['hasta']!=''){ 
 		    	$hasta = (string)($_POST['Alergias']['hasta']);
             	$where_array[]=('fecha_ingreso <= '."'$hasta'");
 		    }

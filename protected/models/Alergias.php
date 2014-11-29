@@ -32,6 +32,7 @@ class Alergias extends CActiveRecord
                     'tooShort' => 'Minimo 5 caracteres',
                     'max' => 50,
                     'tooLong' => 'maximo 50 caracteres'),
+                    array('descripcion', 'length', 'max'=>128),
 		);
 	}
 
@@ -56,6 +57,7 @@ class Alergias extends CActiveRecord
 			'id' => 'ID',
 			'nombre' => 'Nombre',
 			'fecha_ingreso' => 'Fecha de ingreso',
+			'descripcion' => 'Descripcion',
 		);
 	}
 
@@ -80,6 +82,7 @@ class Alergias extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('nombre',$this->nombre,true);
 		$criteria->compare('fecha_ingreso',$this->fecha_ingreso,true);
+		$criteria->compare('descripcion',$this->descripcion,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

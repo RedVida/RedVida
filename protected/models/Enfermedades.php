@@ -28,10 +28,11 @@ class Enfermedades extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombre', 'length', 'max'=>128),
+			array('nombre','length', 'max'=>128),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, nombre', 'safe', 'on'=>'search'),
+			array('descripcion', 'length', 'max'=>128),
 		);
 	}
 
@@ -55,6 +56,8 @@ class Enfermedades extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'nombre' => 'Nombre',
+			'fecha_ingreso' => 'Fecha De Ingreso',
+			'descripcion' => 'Descripcion',
 		);
 	}
 
@@ -78,6 +81,8 @@ class Enfermedades extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('nombre',$this->nombre,true);
+		$criteria->compare('fecha_ingreso',$this->fecha_ingreso,true);
+		$criteria->compare('descripcion',$this->descripcion,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

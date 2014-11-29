@@ -6,18 +6,19 @@
 						th,td {padding: 5px;text-align: left;}
 						table#t01 tr:nth-child(even) {background-color: #eee;}
 						table#t01 tr:nth-child(odd) {background-color:#fff;}
-						table#t01 th{background-color: #65686b;color: white;}
+						table#t01 th{background-color: #2654b3;color: white;}
 					</style>
 				</head>
 				<body>
 					<br>
 					<table id="t01">
-					  <tr><th>Nombre</th><th>Fecha Ingreso</th>	
+					  <tr><th>Nombre</th><th>Fecha Ingreso</th><th>Descripcion</th>	
 					  </tr>
 					  <?php foreach ($results as $res){ ?>
 						  <tr>	  
 						  	<td>  <?php echo $res['nombre']; ?></td>
 					    	<td>  <?php echo $res['fecha_ingreso']; ?></td>
+					    	<td>  <?php echo $res['descripcion']; ?></td>
 					  	  </tr>
 					  <?php } ?>  
 					</table>

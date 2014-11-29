@@ -33,7 +33,17 @@
 							<?php echo $form->error($model,'nombre',array('class' => 'ui small red pointing above ui label')); ?>
 							</div>
 						</div>
-					</div><br>
+					</div>
+					<div class="fields">
+					 	<div class="four wide field">
+							<?php echo $form->labelEx($model,'descripcion'); ?>
+							<?php echo $form->textArea($model,'descripcion', array('maxlength' => 300)); ?>
+							<div class="errors">
+							<?php echo $form->error($model,'descripcion',array('class' => 'ui small red pointing above ui label')); ?>
+							</div>
+						</div>
+					</div>
+					<br>
 						<div class="ui blue submit button" id="ModalFunction"> <!-- Main.PHP -->
 							Registrar
 						</div>

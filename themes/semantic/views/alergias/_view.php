@@ -17,6 +17,9 @@
 							<b><?php echo CHtml::encode($data->getAttributeLabel('fecha_ingreso')); ?>:</b>
 							<?php echo CHtml::encode($data->fecha_ingreso); ?>
 							<br />
+							<b><?php echo CHtml::encode($data->getAttributeLabel('descripcion')); ?>:</b>
+							<?php echo CHtml::encode($data->descripcion); ?>
+							<br />
 						</div>
 					</div>
 				</div>

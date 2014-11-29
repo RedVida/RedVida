@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Alergias', 'url'=>array('index')),
 	array('label'=>'Administrar Alergias', 'url'=>array('admin')),
+	array('label'=>'Listar Alergias', 'url'=>array('index')),
 );
 ?>
 

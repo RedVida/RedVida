@@ -1,18 +1,23 @@
 <?php
-/* @var $this EnfermedadesController */
-/* @var $model Enfermedades */
+/* @var $this EnfemedadesController */
+/* @var $model Enfemedades */
 
 $this->breadcrumbs=array(
-	'Enfermedades'=>array('index'),
+	'Enfemedades'=>array('index'),
 	'Create',
 );
 
 $this->menu=array(
-	array('label'=>'List Enfermedades', 'url'=>array('index')),
-	array('label'=>'Manage Enfermedades', 'url'=>array('admin')),
+	array('label'=>'Administrar Enfemedades', 'url'=>array('admin')),
+	array('label'=>'Listar Enfemedades', 'url'=>array('index')),
 );
 ?>
 
-<h1>Create Enfermedades</h1>
+<br>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Registrar Enfermedades </h1>
+</div>
+<hr class="style-two ">
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

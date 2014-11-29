@@ -49,6 +49,7 @@ Administrar Alergias </h1>
 	'columns'=>array(
 		'nombre',
 		'fecha_ingreso',
+		'descripcion',
 		array(
 			'class'=>'CButtonColumn',
 		),

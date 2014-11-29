@@ -67,6 +67,7 @@ class EnfermedadesController extends Controller
 		if(isset($_POST['Enfermedades']))
 		{
 			$model->attributes=$_POST['Enfermedades'];
+			$model->fecha_ingreso = new CDbExpression('NOW()');
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -194,5 +195,46 @@ class EnfermedadesController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+
+	public function actionInforme(){
+
+		$model = new Enfermedades;
+		if(isset($_POST['Enfermedades'])){
+
+            $this->layout="//layouts/pdf";
+            $mPDF1 = Yii::app()->ePdf->mpdf();
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/nn.png' ));
+			$mPDF1->WriteHTML('<br>');
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/line2.png' ));
+			$mPDF1->WriteHTML('<br> ');
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/titulo.png' ));
+			$where_array = array();
+			
+		    if($_POST['Enfermedades']['desde']!=''){ 
+		    	$desde = (string)($_POST['Enfermedades']['desde']);
+            	$where_array[]=('fecha_ingreso >= '."'$desde'");
+		    }
+		     if($_POST['Enfermedades']['hasta']!=''){ 
+		    	$hasta = (string)($_POST['Enfermedades']['hasta']);
+            	$where_array[]=('fecha_ingreso <= '."'$hasta'");
+		    }
+
+		    $where = implode(" AND ", $where_array);	
+            $results = Yii::app()->db->createCommand()->
+	            select('*')->
+	            from('enfermedades')->
+	            where($where)->
+	            queryAll();
+
+            if($results){
+				$mPDF1->WriteHTML($this->render('_informe',array('results'=>$results),true));
+				$mPDF1->Output('Informe Enfermedades',"I"); // i = visualizar en el navegador
+		    }
+		    else{ $model->addError('nombre','No se han encontrado Enfermedad(es) con esos datos ');}
+        }
+        $this->render('informe',array(
+			'model'=>$model,
+		));
 	}
 }
