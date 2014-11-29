@@ -12,13 +12,16 @@
 				<body>
 					<br>
 					<table id="t01">
-					  <tr><th>Nombre</th><th>Fecha Ingreso</th><th>Descripcion</th>	
+					  <tr><th>Nombre</th><th>Direccion</th><th>Contacto</th><th>Director</th><th>Especialidad</th><th>Gubernamental</th>	
 					  </tr>
 					  <?php foreach ($results as $res){ ?>
 						  <tr>	  
 						  	<td>  <?php echo $res['nombre']; ?></td>
-					    	<td>  <?php echo $res['fecha_ingreso']; ?></td>
-					    	<td>  <?php echo $res['descripcion']; ?></td>
+					    	<td>  <?php echo $res['direccion']; ?></td>
+					    	<td>  <?php echo $res['contacto']; ?></td>
+					    	<td>  <?php echo $res['director']; ?></td>
+					    	<td>  <?php echo $res['especialidad']; ?></td>
+					    	<td>  <?php echo $res['gubernamental']; ?></td>
 					  	  </tr>
 					  <?php } ?>  
 					</table>

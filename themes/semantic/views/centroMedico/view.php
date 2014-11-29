@@ -8,16 +8,25 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List CentroMedico', 'url'=>array('index')),
-	array('label'=>'Create CentroMedico', 'url'=>array('create')),
-	array('label'=>'Update CentroMedico', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete CentroMedico', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage CentroMedico', 'url'=>array('admin')),
+	array('label'=>'Actualizar C.Medicos', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Administrar C.Medicos', 'url'=>array('admin')),
+	array('label'=>'Eliminar C.Medico', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Seguro que deseas eliminar este Item?')),
+	array('label'=>'Listar C.Medicos', 'url'=>array('index')),
+	array('label'=>'Registrar C.Medico', 'url'=>array('create')),
 );
 ?>
 
-<h1>View CentroMedico #<?php echo $model->id; ?></h1>
+<br>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Ver Centro Medico #<?php echo $model->id; ?> </h1>
+</div>
+<hr class="style-two ">
+<br>
 
+<div class="ui grid">
+	<div class="one wide column"></div>
+	<div class="twelve wide column">
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
@@ -29,4 +38,9 @@ $this->menu=array(
 		'especialidad',
 		'gubernamental',
 	),
+	'htmlOptions'=>array('class'=>'ui celled table segment'),
 )); ?>
+</div>
+</div>
+<br>
+<hr class="style-two ">

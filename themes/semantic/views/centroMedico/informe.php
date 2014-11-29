@@ -10,20 +10,6 @@
   	$(document).ready(function() {
 			$('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada a Modal UI
   		});
-
-   
-     $(document).ready(function(){
-              $("#dtBox").DateTimePicker({
-              	dateTimeFormat:"yyyy-MM-dd HH:mm:ss",
-              	shortDayNames: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
-              	fullDayNames: ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"],
-              	fullMonthNames: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
-              	titleContentDateTime: "Seleccionar Hora y Fecha",
-              	setButtonContent: "Agregar",
-              	clearButtonContent: "Borrar",
-              	
-              });
-          });
       function successModal(){                                                      // Button - Modal Success 
         $("#informe-form").submit();
     }
@@ -32,7 +18,7 @@
 <br><br>
 <div class="ui black ribbon label">
 <h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
-Generar Informe - Enfermedades </h1>
+Generar Informe - Centros Medicos </h1>
 </div>
 <hr class="style-two ">
 <div class="ui grid">
@@ -50,20 +36,20 @@ Generar Informe - Enfermedades </h1>
 				); ?>
 				<?php echo $form->errorSummary($model, NULL, NULL, array("class" => "ui warning message"));?>
 				<div class="ui form">
-					<div class="ui small headerr"><b>* Fecha de ingreso</b></div>
 					<div class="fields">
-					<div class="three wide field">
-						<?php echo $form->labelEx($model,'Desde:'); ?>
-						<?php echo CHtml::textField('Enfermedades[desde]','',array('data-field'=>'datetime','placeholder'=>'Fecha de inicio')); ?>
-					 </div>
-					 <div class="three wide field">
-						<?php echo $form->labelEx($model,'Hasta:'); ?>
-						<?php echo CHtml::textField('Enfermedades[hasta]','',array('data-field'=>'datetime','placeholder'=>'Fecha de termino')); ?>
-					 </div>
- 					<div id="dtBox"></div>
+						<div class="three wide field">
+							<?php echo $form->labelEx($model,'Especialidad:'); ?>
+							<?php echo $form->textField($model,'especialidad'); ?>
+						 </div>
                     </div>
-					</div>
-				</div>   
+                    <div class="fields">
+						 <div class="three wide field">
+							<?php echo $form->labelEx($model,'Gubernamental:'); ?>
+							<?php echo $form->textField($model,'gubernamental'); ?>
+						 </div>
+                    </div>
+				</div>
+			</div>   
 				   
 					<br>
 						<div class="ui blue submit button" id="ModalFunction"> <!-- Main.PHP -->

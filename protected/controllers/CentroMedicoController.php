@@ -167,4 +167,45 @@ class CentroMedicoController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	public function actionInforme(){
+
+		$model = new CentroMedico;
+		if(isset($_POST['CentroMedico'])){
+
+            $this->layout="//layouts/pdf";
+            $mPDF1 = Yii::app()->ePdf->mpdf();
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/nn.png' ));
+			$mPDF1->WriteHTML('<br>');
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/line2.png' ));
+			$mPDF1->WriteHTML('<br> ');
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/informe_centros_medicos.png' ));
+			$where_array = array();
+			
+		    if($_POST['CentroMedico']['especialidad']!=''){ 
+		    	$especialidad = (string)($_POST['CentroMedico']['especialidad']);
+            	$where_array[]=('especialidad = '."'$especialidad'");
+		    }
+		     if($_POST['CentroMedico']['gubernamental']!=''){ 
+		    	$gubernamental = (string)($_POST['CentroMedico']['gubernamental']);
+            	$where_array[]=('gubernamental = '."'$gubernamental'");
+		    }
+
+		    $where = implode(" AND ", $where_array);	
+            $results = Yii::app()->db->createCommand()->
+	            select('*')->
+	            from('centro_medico')->
+	            where($where)->
+	            queryAll();
+
+            if($results){
+				$mPDF1->WriteHTML($this->render('_informe',array('results'=>$results),true));
+				$mPDF1->Output('Informe Centro_ Medico',"I"); // i = visualizar en el navegador
+		    }
+		    else{ $model->addError('nombre','No se han encontrado Centros Medicos con esos datos ');}
+        }
+        $this->render('informe',array(
+			'model'=>$model,
+		));
+	}
 }

@@ -16,7 +16,12 @@ $this->menu=array(
 	
 );
 ?>
+<br>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Actualizar Alergia - <?php echo $model->nombre; ?></h1>
+</div>
+<hr class="style-two ">
 
-<h1>Update Alergias <?php echo $model->id; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

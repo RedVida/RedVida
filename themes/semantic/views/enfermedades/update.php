@@ -17,6 +17,11 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Enfermedades <?php echo $model->id; ?></h1>
+<br>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Actualizar Enfermedad - <?php echo $model->nombre; ?></h1>
+</div>
+<hr class="style-two ">
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar C. Medicos', 'url'=>array('index')),
-	array('label'=>'Administrar C. Medicos', 'url'=>array('admin')),
+	array('label'=>'Administrar C.Medico', 'url'=>array('admin')),
+	array('label'=>'Listar C.Medico', 'url'=>array('index')),
 );
 ?>
 

@@ -9,13 +9,18 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List CentroMedico', 'url'=>array('index')),
-	array('label'=>'Create CentroMedico', 'url'=>array('create')),
-	array('label'=>'View CentroMedico', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage CentroMedico', 'url'=>array('admin')),
+	array('label'=>'Administrar C.Medicos', 'url'=>array('admin')),
+	array('label'=>'Listar C.Medicos', 'url'=>array('index')),
+	array('label'=>'Registrar C.Medico', 'url'=>array('create')),
+	array('label'=>'Ver C.Medicos', 'url'=>array('view', 'id'=>$model->id)),
 );
 ?>
 
-<h1>Update CentroMedico <?php echo $model->id; ?></h1>
+<br>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Actualizar Centro Medico - <?php echo $model->nombre; ?></h1>
+</div>
+<hr class="style-two ">
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
