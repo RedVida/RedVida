@@ -1,18 +1,17 @@
 <?php
-/* @var $this DonacionOrganoController */
-/* @var $model DonacionOrgano */
-
-$this->breadcrumbs=array(
-	'Donacion Organos'=>array('index'),
-	'Create',
-);
-
 $this->menu=array(
-	array('label'=>'List DonacionOrgano', 'url'=>array('index')),
-	array('label'=>'Manage DonacionOrgano', 'url'=>array('admin')),
+	array('label'=>'Listar Donación de Órgano', 'url'=>array('index')),
+	array('label'=>'Administrar Donación de Órgano', 'url'=>array('admin')),
 );
 ?>
 
-<h1 class="ui huge header"> &nbsp; &nbsp; &nbsp; Registrar Donación de Organo</h1>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Registrar Donación de Órgano </h1>
+</div>
+
+<hr class="style-two ">
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+
+<hr class="style-two ">

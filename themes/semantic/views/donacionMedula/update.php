@@ -1,21 +1,19 @@
 <?php
-/* @var $this DonacionMedulaController */
-/* @var $model DonacionMedula */
-
-$this->breadcrumbs=array(
-	'Donacion Medulas'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
-
 $this->menu=array(
-	array('label'=>'List DonacionMedula', 'url'=>array('index')),
-	array('label'=>'Create DonacionMedula', 'url'=>array('create')),
-	array('label'=>'View DonacionMedula', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage DonacionMedula', 'url'=>array('admin')),
+	array('label'=>'Listar Donación de Médula', 'url'=>array('index')),
+	array('label'=>'Registrar Donación', 'url'=>array('/donantes/donar')),
+	array('label'=>'Ver Donación de Médula', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar Donación de Médula', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update DonacionMedula <?php echo $model->id; ?></h1>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Actualizar Donación Médula #<?php echo $model->id; ?></h1>
+</div>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<hr class="style-two ">
+
+<?php $this->renderPartial('_form', array('model'=>$model)); ?>  
+
+<hr class="style-two ">

@@ -19,14 +19,14 @@
 	<div class="fields">
 	 	<div class="four wide field">
 			<?php echo $form->labelEx($model,'rut_donante'); ?>
-			<?php echo $form->textField($model,'rut_donante',array('size'=>12,'maxlength'=>12)); ?>
+			<?php echo $form->textField($model,'rut_donante'); ?>
 		</div>
 	</div>
 
    <div class="fields">
 	 	<div class="four wide field">
 			<?php echo $form->labelEx($model,'tipo_sangre'); ?>
-			<?php echo $form->textField($model,'tipo_sangre',array('size'=>3,'maxlength'=>3)); ?>
+			<?php echo $form->textField($model,'tipo_sangre'); ?>
 		</div>
 	</div>
 

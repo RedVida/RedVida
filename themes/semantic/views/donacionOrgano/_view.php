@@ -1,9 +1,8 @@
-<?php
-/* @var $this DonacionOrganoController */
-/* @var $data DonacionOrgano */
-?>
-
 <div class="view">
+	<div class="ui celled list">
+	  <div class="item">
+	    <i class="add large icon"></i> 
+	    <div class="content">
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
@@ -29,5 +28,8 @@
 	<?php echo CHtml::encode($data->estado); ?>
 	<br />
 
-
+		 </div>
+	   </div>
+	</div>
+	</br>
 </div>
