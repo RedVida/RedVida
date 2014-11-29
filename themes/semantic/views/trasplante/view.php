@@ -1,7 +1,4 @@
 <?php
-/* @var $this TrasplanteController */
-/* @var $model Trasplante */
-
 $this->menu=array(
 	array('label'=>'Listar Trasplantes', 'url'=>array('index')),
 	array('label'=>'Registrar Trasplante', 'url'=>array('create')),
@@ -27,8 +24,8 @@ Ver Trasplante #<?php echo $model->id; ?></h1>
 	<div class="twelve wide column">
 
 	<?php 
-	$modelo_paciente = Paciente::model()->find('id ='.$model->id_paciente);
-	$modelo_donante = Donantes::model()->find('id ='.$model->id_donante);  
+	$modelo_paciente = Paciente::model()->find('rut ='."'$model->rut_paciente'");
+	$modelo_donante = Donantes::model()->find('rut ='."'$model->rut_donante'");  
 	 ?>
 
 	<?php $this->widget('zii.widgets.CDetailView', array(
@@ -37,12 +34,12 @@ Ver Trasplante #<?php echo $model->id; ?></h1>
 			//'id',
 			//'id_donante',
 			//'id_paciente',
-			array('name'=>'nombre_pac', 'value' => $modelo_paciente['nombre']),
+			array('name'=>'nombre_pac', 'value' => $modelo_paciente['nombre'].' '.$modelo_paciente['apellido']),
 			array('name'=>'rut_pac', 'value' => $modelo_paciente['rut']),
-			array('name'=>'nombre_don', 'value' => $modelo_donante['nombres']),
+			array('name'=>'nombre_don', 'value' => $modelo_donante['nombres'].' '.$modelo_donante['apellidos']),
 			array('name'=>'rut_don', 'value' => $modelo_donante['rut']),	
 			'tipo_donacion',
-			//'id_donacion',
+			'id_donacion',
 			'compatibilidad',
 			'grado_urgencia',
 			'centro_medico',

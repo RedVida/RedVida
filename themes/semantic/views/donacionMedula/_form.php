@@ -1,17 +1,3 @@
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/rut/jquery.Rut.js" type="text/javascript"></script> 
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#rut').Rut({
-            format_on: 'keyup',
-            on_error: function() {
-                alert('El valor ingresado no corresponde a un R.U.T válido.');
-            }
-        });
-    })
-    
-</script>
-
-
 <div class="ui grid">
 
 	<div class="one wide column">
@@ -66,7 +52,7 @@
  	<div class="fields">
 	 	<div class="four wide field">
 		<?php echo $form->labelEx($model,'tipo_medula'); ?>
-        <?php echo $form->dropDownList($model,'tipo_medula',array('Osea'=>'Osea','NULL'=>'NULL'),array('empty' => 'Selecciona Tipo Medula', 'class'=>'ui selection dropdown')); ?>
+        <?php echo $form->textfield($model,'tipo_medula', array('value'=>'Osea', 'readonly'=>true)); ?>
 		<div class="errors">
 			<?php echo $form->error($model,'tipo_medula',array('class' => 'ui small red pointing above ui label')); ?>
 		</div>

@@ -82,23 +82,7 @@
 		</div>
 	</div>
 
-	 <div class="fields">
-	 	<div class="four wide field">
-			<?php echo $form->labelEx($model,'estado'); ?>
-		<?php echo $form->radioButtonList($model,'estado',
-                array('1' => 'Bueno',
-                	'0' => 'Malo'),
-                array(
-                    'labelOptions'=> array('style' => 'display:inline'),
-                      'separator' => '',
-                      'template' => ' {label}:  {input} ',
-                    )
-         );	?>
-         <div class="errors">
-			<?php echo $form->error($model,'estado',array('class' => 'ui small red pointing above ui label')); ?>
-		</div>
-		</div>
-	</div>
+	
 </div>
 
 

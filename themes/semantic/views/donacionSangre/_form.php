@@ -1,15 +1,3 @@
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/rut/jquery.Rut.js" type="text/javascript"></script> 
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#rut').Rut({
-            format_on: 'keyup',
-            on_error: function() {
-                alert('El valor ingresado no corresponde a un R.U.T válido.');
-            }
-        });
-    })
-    
-</script>
 
 <div class="ui grid">
 
@@ -71,7 +59,7 @@
 	 <div class="fields">
 	 	<div class="four wide field">
 		<?php echo $form->labelEx($model,'cantidad'); ?>
-		<?php echo $form->numberField($model,'cantidad', array('integerOnly'=>true,'min'=>1,'max'=>100, 'allowNegative'=>false, 'allowBlank'=>false)); ?>
+		<?php echo $form->numberField($model,'cantidad', array('integerOnly'=>true, 'min'=>1,'max'=>100, 'allowNegative'=>false, 'allowBlank'=>false, 'placeholder'=>0)); ?>
 		<div class="errors">
 			<?php echo $form->error($model,'cantidad',array('class' => 'ui small red pointing above ui label')); ?>
 		</div>

@@ -80,8 +80,8 @@ Administrar Trasplantes </h1>
               	'class'=>'CCheckBoxColumn',            
         		),
 				'id',
-				'id_donante',
-				'id_paciente',
+				'rut_donante',
+				'rut_paciente',
 				'tipo_donacion',
 				'id_donacion',
 				'compatibilidad',
@@ -102,20 +102,20 @@ Administrar Trasplantes </h1>
  						'Ver' => arraY
  						(
 					    	'label'=>'Ver',
-					        'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/eye.png",
+					        'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/view.png",
 					        'url'=>'Yii::app()->createUrl("trasplante/view", array("id"=>$data->id))',
 					    ),
 					  
 					   'Actualizar' => array
 					   (
 					        'label'=>'Actualizar',
-					  		'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/edit.png",
+					  		'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/update.png",
 					        'url'=>'Yii::app()->createUrl("trasplante/update", array("id"=>$data->id))', 
 					    ),
 				        'Eliminar' => array
 				        (   
 				        	'label'=>'Eliminar',
-				            'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/delete.png",
+				            'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/delete.png",
 				          	'url'=>'"#"',
 				            'click'=>"js: function(){   
 							getId = $(this).parent().parent().children(':nth-child(2)').text();

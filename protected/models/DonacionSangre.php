@@ -31,7 +31,8 @@ class DonacionSangre extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('cantidad', 'numerical', 'integerOnly'=>true),
-			array('cantidad', 'length', 'max'=>100),
+			array('cantidad', 'length', 'min'=>1,'max'=>100, 'message' => 'Debe Ingresar Cantidad entre 1-100'),
+			array('cantidad', 'required', 'message'=>'Debes Ingresar Cantidad'),
             array('tipo_sangre', 'length', 'max'=>3),
 			array('created, modified', 'safe'),	
 			array('rut_donante', 'required', 'message'=>'Debe Ingresar Rut Valido.'),

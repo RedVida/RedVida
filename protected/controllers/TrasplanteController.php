@@ -1,5 +1,4 @@
 <?php
-
 class TrasplanteController extends Controller
 {
 	/**
@@ -7,7 +6,6 @@ class TrasplanteController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/column2';
-
 	/**
 	 * @return array action filters
 	 */
@@ -15,7 +13,6 @@ class TrasplanteController extends Controller
 	{
 		return array(array('CrugeAccessControlFilter'));
 	}
-
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
@@ -41,7 +38,6 @@ class TrasplanteController extends Controller
 			),
 		);
 	}
-
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -52,30 +48,25 @@ class TrasplanteController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
-
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCreate($id)
 	{
 		$model=new Trasplante;
-
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['Trasplante']))
 		{
 			$model->attributes=$_POST['Trasplante'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
-
 		$this->render('create',array(
 			'model'=>$model,
 		));
 	}
-
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
@@ -84,22 +75,18 @@ class TrasplanteController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['Trasplante']))
 		{
 			$model->attributes=$_POST['Trasplante'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
-
 		$this->render('update',array(
 			'model'=>$model,
 		));
 	}
-
 	/**
 	 * Deletes a particular model.
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
@@ -108,12 +95,10 @@ class TrasplanteController extends Controller
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
-
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
-
 	/**
 	 * Lists all models.
 	 */
@@ -124,33 +109,22 @@ class TrasplanteController extends Controller
 			'dataProvider'=>$dataProvider,
 		));
 	}
-
 	/**
 	 * Manages all models.
 	 */
 	public function actionAdmin()
 	{
-
             
    
 		$model=new Trasplante('search');
 		$model->unsetAttributes();  // clear any default values
-
-
 		if(isset($_GET['Trasplante']))
 			$model->attributes=$_GET['Trasplante'];
-
 		$this->render('admin',array(
 			'model'=>$model,
 		));
 	
-
-
-
-
-
 	}
-
 public function actionPacienteList()
     {
         $criterio = new CDbCriteria;
@@ -160,7 +134,6 @@ public function actionPacienteList()
         if(empty($_GET['term'])) return $resultado;
         
         $cdtns[] = "LOWER(nombre) like LOWER(:busq)";
-
         
         $criterio->condition = implode(' OR ', $cdtns);
         $criterio->params = array(':busq' => '%' . $_GET['term'] . '%');
@@ -174,14 +147,11 @@ public function actionPacienteList()
                 'nombre'    => $item->nombre,
                 'apellido' => $item->apellido,
                 'rut' => $item->rut,
-
             );
         }
         
         echo CJSON::encode($resultado);
     }
-
-
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
@@ -196,7 +166,6 @@ public function actionPacienteList()
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
-
 	/**
 	 * Performs the AJAX validation.
 	 * @param Trasplante $model the model to be validated
@@ -209,4 +178,5 @@ public function actionPacienteList()
 			Yii::app()->end();
 		}
 	}
+
 }

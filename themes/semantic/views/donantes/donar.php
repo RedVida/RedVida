@@ -1,7 +1,4 @@
 <?php
-/* @var $this DonantesController */
-/* @var $model Donantes */
-
 $this->menu=array(
 	array('label'=>'Administrar Donaciones de Sangre', 'url'=>array('/donacionSangre/admin')),
 	array('label'=>'Administrar Donaciones de Médula', 'url'=>array('/donacionMedula/admin')),
@@ -78,9 +75,8 @@ Registrar Donación </h1>
 		'id'=>'donantes-grid',
 		'dataProvider'=>$model->search(),
 		'filter'=>$model,
-		   'selectableRows' => 1,
+		'selectableRows' => 1,
 	    'columns'=>array(
-
 	        array( 
 	        	  'id'=>'id',
 	              'class'=>'CCheckBoxColumn',            
@@ -101,10 +97,10 @@ Registrar Donación </h1>
 	<div class="ui blue submit button disabled blockear" id="btn_1">Donar Sangre
 	<input type="hidden" name="Sangre" value="Sange" method="POST" ></input>
 	</div>
-	<div class="ui blue submit button disabled blockear" id="btn_2">Donar Medula
+	<div class="ui blue submit button disabled blockear" id="btn_2">Donar Médula
 	<input type="hidden" name="Medula" value="Medula" method="POST" ></input>
 	</div>
-	<div class="ui blue submit button disabled blockear" id="btn_3">Donar Organo
+	<div class="ui blue submit button disabled blockear" id="btn_3">Donar Órgano
 	<input type="hidden" name="Organo" value="Organo" method="POST" ></input>
 	</div>
 
@@ -156,7 +152,6 @@ if(id_select>0){
 }
 
 }
-
 
 	$('.message .close').on('click', function() {
 	   $(this).closest('.message').fadeOut();

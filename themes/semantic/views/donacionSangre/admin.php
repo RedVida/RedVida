@@ -25,9 +25,8 @@ $('.search-form form').submit(function(){
               }                                                                                                       
           };                                                                                                          
     ');         
-
-
 ?>
+
  <div class="ui small modal">
         <i class="close icon"></i>
           <div class="header">
@@ -68,7 +67,7 @@ Administrar Donación de Sangre </h1>
 		<?php $this->renderPartial('_search',array(
 			'model'=>$model,
 		)); ?>
-		</div><!-- search-form -->
+		</div>
 	
 	</div>
 
@@ -96,9 +95,16 @@ Administrar Donación de Sangre </h1>
         	),
 			'id',
 			'rut_donante',
-			'tipo_sangre',
-			'cantidad',
-				array(
+  			'tipo_sangre',
+  			'cantidad',
+			array(
+				'name'=>'created',
+				'value'=>'date("d/m/y",strtotime($data->created))',
+			),
+			array(	
+				'value'=>'date("h:i",strtotime($data->created))',
+			),
+			array(
 					'class'=>'CButtonColumn',
 					'template'=>'{Ver}{Actualizar}{Eliminar}',
 				    'buttons'=>array
@@ -107,21 +113,21 @@ Administrar Donación de Sangre </h1>
  						'Ver' => array
  						(
 					    	'label'=>'Ver',
-					        'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/eye.png",
+					        'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/view.png",
 					        'url'=>'Yii::app()->createUrl("donacionSangre/view", array("id"=>$data->id))',
 					    ),
 						
 						'Actualizar' => array
 					   (
 					        'label'=>'Actualizar',
-					  		'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/edit.png",
+					  		'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/update.png",
 					        'url'=>'Yii::app()->createUrl("donacionSangre/update", array("id"=>$data->id))', 
 					    ),
 				
 					    'Eliminar' => array
 				        (   
 				        	'label'=>'Eliminar',
-				            'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/delete.png",
+				            'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/delete.png",
 				          	'url'=>'"#"',
 				            'click'=>"js: function(){   
 							getId = $(this).parent().parent().children(':nth-child(2)').text();

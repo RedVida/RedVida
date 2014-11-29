@@ -771,7 +771,8 @@ background-color: #2773c3!important;
 
 /**BUTTON SEMANTIC DISABLED**/
 .ui.disabled.button, .ui.disabled.button.active, .ui.disabled.button:hover {
-/*background-color: #F33111!important;*/
+background-color: #FFFFFF!important;*/
+font-weight:  bold;
 }
 /**END DISABLE SEMANTIC B**/
 

@@ -1,3 +1,4 @@
+
 <div class="ui grid">
 
 	<div class="one wide column">
@@ -25,8 +26,9 @@
 
    <div class="fields">
 	 	<div class="four wide field">
-			<?php echo $form->labelEx($model,'tipo_sangre'); ?>
-			<?php echo $form->textField($model,'tipo_sangre'); ?>
+		  <?php echo $form->labelEx($model,'Tipo de Sangre'); ?>
+		  <?php echo $form->dropDownList($model,'tipo_sangre',CHtml::listData(BancoSangre::model()->findAll(),'tipo', 'tipo'), array('empty' => 'Selecciona Tipo Sangre', 'class'=>'ui selection dropdown')); ?>
+
 		</div>
 	</div>
 

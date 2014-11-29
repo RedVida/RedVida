@@ -845,8 +845,8 @@ CREATE TABLE IF NOT EXISTS `tiene_enfermedad` (
 
 CREATE TABLE IF NOT EXISTS `trasplante` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_donante` varchar(12) COLLATE utf8_bin DEFAULT NULL,
-  `id_paciente` varchar(12) COLLATE utf8_bin DEFAULT NULL,
+  `rut_donante` varchar(12) COLLATE utf8_bin DEFAULT NULL,
+  `rut_paciente` varchar(12) COLLATE utf8_bin DEFAULT NULL,
   `tipo_donacion` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `id_donacion` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `compatibilidad` varchar(255) COLLATE utf8_bin DEFAULT NULL,
@@ -856,8 +856,8 @@ CREATE TABLE IF NOT EXISTS `trasplante` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_reference_1` (`id_donante`),
-  KEY `fk_reference_2` (`id_paciente`)
+  KEY `fk_reference_1` (`rut_donante`),
+  KEY `fk_reference_2` (`rut_paciente`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
 
 --

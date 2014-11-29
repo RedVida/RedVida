@@ -35,7 +35,6 @@ class DonacionOrgano extends CActiveRecord
 			array('created, modified', 'safe'),
 			array('rut_donante', 'required', 'message'=>'Debe Ingresar Rut Valido.'),
 			array('nombre', 'required','message'=>'Debe Seleccionar un Organo.'),
-			array('estado', 'required','message'=>'Debe Marcar un Estado.'),
 			array('modified','default',
 	          'value'=>new CDbExpression('NOW()'),
               'setOnEmpty'=>false,'on'=>'update'),
@@ -45,7 +44,7 @@ class DonacionOrgano extends CActiveRecord
               'setOnEmpty'=>false,'on'=>'insert'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, rut_donante, created, modified, nombre, estado', 'safe', 'on'=>'search'),
+			array('id, rut_donante, created, modified, nombre', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -68,9 +67,9 @@ class DonacionOrgano extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'rut_donante' => 'Rut Donante',
-			'created' => 'Created',
-			'modified' => 'Modified',
-			'nombre' => 'Nombre',
+			'created' => 'Fecha Ingreso',
+			'modified' => 'Fecha Modificación',
+			'nombre' => 'Nombre Órgano',
 			'estado' => 'Estado',
 		);
 	}

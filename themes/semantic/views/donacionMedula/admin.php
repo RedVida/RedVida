@@ -1,7 +1,7 @@
 <?php
 $this->menu=array(
-	array('label'=>'List DonacionMedula', 'url'=>array('index')),
-	array('label'=>'Create DonacionMedula', 'url'=>array('create')),
+	array('label'=>'Listar Donación de Médula', 'url'=>array('index')),
+	array('label'=>'Registrar Donación', 'url'=>array('donantes/donar')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -68,7 +68,7 @@ Administrar Donación de Médula </h1>
 		<?php $this->renderPartial('_search',array(
 			'model'=>$model,
 		)); ?>
-		</div><!-- search-form -->
+		</div>
 	
 	</div>
 
@@ -95,9 +95,14 @@ Administrar Donación de Médula </h1>
         	),
 		'id',
 		'rut_donante',
-		'created',
-		'modified',
 		'tipo_medula',
+		array(
+			'name'=>'created',
+			'value'=>'date("d/m/y",strtotime($data->created))',
+		),
+		array(	
+			'value'=>'date("h:i",strtotime($data->created))',
+		),
 				array(
 					'class'=>'CButtonColumn',
 					'template'=>'{Ver}{Actualizar}{Eliminar}',
@@ -107,21 +112,21 @@ Administrar Donación de Médula </h1>
  						'Ver' => array
  						(
 					    	'label'=>'Ver',
-					        'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/eye.png",
+					        'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/view.png",
 					        'url'=>'Yii::app()->createUrl("donacionMedula/view", array("id"=>$data->id))',
 					    ),
 						
 						'Actualizar' => array
 					   (
 					        'label'=>'Actualizar',
-					  		'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/edit.png",
+					  		'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/update.png",
 					        'url'=>'Yii::app()->createUrl("donacionMedula/update", array("id"=>$data->id))', 
 					    ),
 				
 					    'Eliminar' => array
 				        (   
 				        	'label'=>'Eliminar',
-				            'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/delete.png",
+				            'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/delete.png",
 				          	'url'=>'"#"',
 				            'click'=>"js: function(){   
 							getId = $(this).parent().parent().children(':nth-child(2)').text();

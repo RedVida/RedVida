@@ -23,15 +23,34 @@ Ver Donación de Sangre #<?php echo $model->id;; ?></h1>
 
 	<div class="twelve wide column">
 
+<?php  $modelo_d = Donantes::model()->find('rut = '."'$model->rut_donante'"); ?>
 
 	<?php $this->widget('zii.widgets.CDetailView', array(
 		'data'=>$model,
 		'attributes'=>array(
-			'rut_donante',
+			array(
+				'name'=>'Nombre',
+				'value'=>$modelo_d['nombres'],
+
+			),
+			array(
+				'name'=>'Apellido',
+				'value'=>$modelo_d['apellidos'],
+			),
+			array(
+				'name'=>'Rut',
+				'value'=>$model->rut_donante,
+			),
 			'tipo_sangre',
 			'cantidad',
-			//'created',
-			//'modified',
+			array(
+				'name'=>'Fecha de Ingreso',
+				'value'=> CHtml::encode(Yii::app()->locale->dateFormatter->formatDateTime($model->created,'long',null)),
+			),
+			array(
+				'name'=>'Hora',
+				'value'=>Yii::app()->dateFormatter->format('HH:mm',$model->created),
+			),
 		),
 		'htmlOptions'=>array('class'=>'ui celled table segment autosize'),
 	)); ?>

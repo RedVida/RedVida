@@ -106,21 +106,21 @@ Administrar Banco de Sangre </h1>
  						'Ver' => array
  						(
 					    	'label'=>'Ver',
-					        'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/eye.png",
+					        'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/view.png",
 					        'url'=>'Yii::app()->createUrl("bancosangre/view", array("id"=>$data->id))',
 					    ),
 						
 						'Actualizar' => array
 					   (
 					        'label'=>'Actualizar',
-					  		'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/edit.png",
+					  		'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/update.png",
 					        'url'=>'Yii::app()->createUrl("bancosangre/update", array("id"=>$data->id))', 
 					    ),
 				
 					    'Eliminar' => array
 				        (   
 				        	'label'=>'Eliminar',
-				            'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/delete.png",
+				            'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/delete.png",
 				          	'url'=>'"#"',
 				            'click'=>"js: function(){   
 							getId = $(this).parent().parent().children(':nth-child(2)').text();

@@ -1,7 +1,4 @@
 <?php
-/* @var $this PacienteController */
-/* @var $model Paciente */
-
 $this->breadcrumbs=array(
 	'Pacientes'=>array('index'),
 	$model->id,

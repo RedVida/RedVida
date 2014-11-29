@@ -29,11 +29,9 @@
 
 </div>
 
-
-
 <?php $this->endWidget(); ?>
 
-</div><!-- search-form -->
+</div>
 
 </div>
 </div>

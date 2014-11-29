@@ -104,21 +104,21 @@ Administrar Órganos </h1>
  						'Ver' => array
  						(
 					    	'label'=>'Ver',
-					        'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/eye.png",
+					        'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/view.png",
 					        'url'=>'Yii::app()->createUrl("organo/view", array("id"=>$data->idOrgano))',
 					    ),
 						
 						'Actualizar' => array
 					   (
 					        'label'=>'Actualizar',
-					  		'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/edit.png",
+					  		'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/update.png",
 					        'url'=>'Yii::app()->createUrl("organo/update", array("id"=>$data->idOrgano))', 
 					    ),
 				
 					    'Eliminar' => array
 				        (   
 				        	'label'=>'Eliminar',
-				            'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/24px/delete.png",
+				            'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/delete.png",
 				          	'url'=>'"#"',
 				            'click'=>"js: function(){   
 							getId = $(this).parent().parent().children(':nth-child(2)').text();

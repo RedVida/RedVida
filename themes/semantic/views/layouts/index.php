@@ -147,15 +147,15 @@
         </a>
 
         
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionsangre/admin">
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionSangre/admin">
           <i class="doble angle right icon"></i> Adm. Donac. Sangre
         </a>
         
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionmedula/admin">
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionMedula/admin">
           <i class="doble angle right icon"></i> Adm. Donac. Médula
         </a>
 
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionorgano/admin">
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionOrgano/admin">
           <i class="doble angle right icon"></i> Adm. Donac. Órgano
         </a>    
 

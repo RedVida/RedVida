@@ -1,11 +1,4 @@
 <?php
-/* @var $this DonantesController */
-/* @var $model Donantes */
-$this->breadcrumbs=array(
-	'Donantes'=>array('index'),
-	'Menu',
-);
-
 $this->menu=array(
 	array('label'=>'Listar Trasplantes', 'url'=>array('/trasplante/index')),
 	array('label'=>'Administrar Trasplante', 'url'=>array('/trasplante/admin')),
@@ -23,6 +16,15 @@ $('.search-form form').submit(function(){
 	return false;
 });
 ");
+
+Yii::app()->clientScript->registerScript('helpers', '                                                           
+    yii = {                                                                                                     
+	   urls: {                                                                                                 
+       saveEdits: '.CJSON::encode(Yii::app()->createUrl('edit/save')).',                                   
+       base: '.CJSON::encode(Yii::app()->baseUrl).'                                                        
+    	     }                                                                                                       
+      	  };                                                                                                          
+');  
 ?>
 
 <div class="ui black ribbon label">
@@ -91,11 +93,16 @@ Registrar Trasplante </h1>
 		'afterAjaxUpdate'=>'userClicks',
 )); ?>
 
-	<div>
-	<?php echo ' '.CHtml::submitButton('Continuar', array('id'=>'btn_submit','name' => 'Asignar', 'class' => 'ui blue submit button disabled blockear')); ?>
-	</div>
 
-	<?php echo CHtml::endForm(); ?>
+	<div class="ui blue submit button disabled blockear" id="btn_1">Traspl. Sangre
+	<input type="hidden" name="Sangre" value="Sange" method="POST" ></input>
+	</div>
+	<div class="ui blue submit button disabled blockear" id="btn_2">Traspl. Médula
+	<input type="hidden" name="Medula" value="Medula" method="POST" ></input>
+	</div>
+	<div class="ui blue submit button disabled blockear" id="btn_3">Traspl. Órgano
+	<input type="hidden" name="Organo" value="Organo" method="POST" ></input>
+	</div>
 
 	</div>
 </div>
@@ -109,28 +116,48 @@ Registrar Trasplante </h1>
 <script>
 
 	if (typeof target_id === 'undefined') {
+
 	$('input:checkbox').removeAttr('checked');
-	}
-
-	function userClicks(target_id){
-
-		var id_select = $('#paciente-grid').yiiGridView.getSelection(target_id);
-
-		if(id_select>0)
-		{
-		    $('#btn_submit').removeClass('disabled blockear');
-		}
-		else
-		{
-	        $('#btn_submit').addClass('disabled blockear');
-		}
 
 	}
+
+
+function userClicks(target_id){
+
+var id_select = $('#donantes-grid').yiiGridView.getSelection(target_id);
+
+if(id_select>0){
+            
+        $('#btn_1').removeClass('disabled blockear');
+        $('#btn_2').removeClass('disabled blockear');
+        $('#btn_3').removeClass('disabled blockear');
+
+
+		$('#btn_1').click(function() {
+		window.location.href = yii.urls.base + '/index.php?r=/trasplante/create&id=' + id_select[0]+'&don=sangre';									
+		});
+		$('#btn_2').click(function() {
+		window.location.href = yii.urls.base + '/index.php?r=/trasplante/create&id=' + id_select[0]+'&don=medula';									
+		});
+		$('#btn_3').click(function() {
+		window.location.href = yii.urls.base + '/index.php?r=/trasplante/create&id=' + id_select[0]+'&don=organo';									
+		});
+
+
+}else{
+            
+        $('#btn_1').addClass('disabled blockear');
+        $('#btn_2').addClass('disabled blockear');
+        $('#btn_3').addClass('disabled blockear');
+}
+
+}
+
 
 	$('.message .close').on('click', function() {
-	  $(this).closest('.message').fadeOut();
+	   $(this).closest('.message').fadeOut();
 	});
 
 </script>
-
+	
 <hr class="style-two ">

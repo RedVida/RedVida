@@ -46,10 +46,10 @@
 	?>
 	<div class="fields">
 		 	<div class="four wide field">
-				<?php echo $form->labelEx($model,'Rut Paciente'); ?>
-				<?php echo $form->textField($model,'id_paciente', array('value'=>$rut, 'disabled'=>true, 'id'=>'rut', 'maxLength'=>12)); ?>
+				<?php echo $form->labelEx($model,'rut_paciente'); ?>
+				<?php echo $form->textField($model,'rut_paciente', array('value'=>$rut, 'readonly'=>$val, 'id'=>'rut', 'maxLength'=>12)); ?>
 				<div class="errors">
-				<?php echo $form->error($model,'id_paciente',array('class' => 'ui small red pointing above ui label')); ?>
+				<?php echo $form->error($model,'rut_paciente',array('class' => 'ui small red pointing above ui label')); ?>
 				</div>
 			</div>
 		</div>
@@ -57,86 +57,93 @@
 
 
 
-<!--Prueba TYPEHEAD-->
 
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/ui-autocomplete.min.js" type="text/javascript"></script> 
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/typeahead.js" type="text/javascript"></script> 
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-<script type="text/javascript">
-
-	$(function(){
-        $('#busquedaPaciente').autocomplete({
-       		 source : function( request, response ) {
-       		 $.ajax({
-                    url: '<?php echo $this->createUrl('Trasplante/PacienteList'); ?>',
-                    dataType: "json",
-                    data: { term: request.term },
-                    success: function(data) {
-		                    response($.map(data, function(item) {
-				                    return {
-				                    	label: item.nombre+" "+item.apellido,
-					                    value: item.id,
-					                 	
-					                    }
-					                }))
-                    		    }
-        					})
-    		},
-    });
-    });
-
-</script>
-
-
-<!--Prueba TYPEHEAD-->
-
-
-   <div class="fields">
+ 	<div class="fields">
 	 	<div class="four wide field">
-			<?php echo $form->labelEx($model,'id_paciente'); ?>
-			<?php echo $form->textField($model,'id_paciente',array('id'=>'busquedaPaciente','placeholder'=>'Ingrese Nombre Paciente')); ?>
+			<?php echo $form->labelEx($model,'rut_donante'); ?>
+			<?php echo $form->textField($model,'rut_donante',array('size'=>30,'maxlength'=>12)); ?>
 			<div class="errors">
-			<?php echo $form->error($model,'id_paciente',array('class' => 'ui small red pointing above ui label')); ?>
+			<?php echo $form->error($model,'rut_donante',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>
 		</div>
 	</div>
 
 
+	<?php
 
- <div class="fields">
-	 	<div class="four wide field">
-			<?php echo $form->labelEx($model,'id_donante'); ?>
-			<?php echo $form->textField($model,'id_donante',array('size'=>30,'maxlength'=>12)); ?>
-			<div class="errors">
-			<?php echo $form->error($model,'id_donante',array('class' => 'ui small red pointing above ui label')); ?>
+
+	
+
+	if(isset($_GET['don']))
+	{
+
+
+		if($_GET['don']=='sangre'){
+
+
+
+
+?>
+
+
+	<div class="fields">
+		 	<div class="four wide field">
+				<?php echo $form->labelEx($model,'tipo_donacion'); ?>
+				<?php echo $form->textField($model,'tipo_donacion', array('value'=>'Donación de Sangre', 'readonly'=>true)); ?>
+				<div class="errors">
+				<?php echo $form->error($model,'tipo_donacion',array('class' => 'ui small red pointing above ui label')); ?>
+				</div>
 			</div>
 		</div>
-	</div>
 
 
-  
 
-    
-
-  
-
-   <div class="fields">
-	 	<div class="four wide field">
-			<?php echo $form->labelEx($model,'tipo_donacion'); ?>
-			<?php echo $form->dropDownList($model,'tipo_donacion',array('Sangre'=>'Donación de Sangre','Medula'=>'Donación de Medula','Organo'=>'Donación de Organo'), array('empty'=>'Seleccione Tipo de Donación','class'=>'ui selection dropdown')); ?>
-			<div class="errors">
-			<?php echo $form->error($model,'tipo_donacion',array('class' => 'ui small red pointing above ui label')); ?>
-			</div>
-		</div>
-	</div>
-
-
-<!--DONACION 1-->
-   <div class="fields">
+		   <div class="fields">
 	 	<div class="four wide field">
 			<?php echo $form->labelEx($model,'id_donacion'); ?>
-        	<?php echo $form->dropDownList($model,'id_donacion',CHtml::listData(BancoSangre::model()->findAll(),'tipo', 'tipo'), array('empty' => 'Selecciona Tipo Sangre', 'class'=>'ui selection dropdown')); ?>
+			<?php echo $form->dropDownList($model,'id_donacion',CHtml::listData(BancoSangre::model()->findAll(),'tipo', 'tipo'),array('id'=>'dropDownId','empty'=>'Seleccione Tipo de Donación','class'=>'ui selection dropdown'   )); ?>
+			<div class="errors">
+			<?php echo $form->error($model,'id_donacion',array('class' => 'ui small red pointing above ui label')); ?>
+			</div>
+		</div>
+	</div>
+
+<?php
+
+
+
+		}
+	?>
+
+
+
+<?php
+
+
+
+		if($_GET['don']=='medula'){
+
+
+
+
+?>
+
+
+	<div class="fields">
+		 	<div class="four wide field">
+				<?php echo $form->labelEx($model,'tipo_donacion'); ?>
+				<?php echo $form->textField($model,'tipo_donacion', array('value'=>'Donación de Médula', 'readonly'=>true)); ?>
+				<div class="errors">
+				<?php echo $form->error($model,'tipo_donacion',array('class' => 'ui small red pointing above ui label')); ?>
+				</div>
+			</div>
+		</div>
+
+
+	   <div class="fields">
+	 	<div class="four wide field">
+			<?php echo $form->labelEx($model,'id_donacion'); ?>
+			<?php echo $form->dropDownList($model,'id_donacion',CHtml::listData(DonacionMedula::model()->findAll(),'id', 'tipo_medula'),array('empty'=>'Seleccione Tipo de Donación','class'=>'ui selection dropdown'   )); ?>
 			<div class="errors">
 			<?php echo $form->error($model,'id_donacion',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>
@@ -144,11 +151,45 @@
 	</div>
 
 
-<!--DONACION 2-->
-	 <div class="fields">
+
+<?php
+
+
+
+		}
+	?>
+
+
+
+
+
+<?php
+
+
+
+		if($_GET['don']=='organo'){
+
+
+
+
+?>
+
+
+	<div class="fields">
+		 	<div class="four wide field">
+				<?php echo $form->labelEx($model,'tipo_donacion'); ?>
+				<?php echo $form->textField($model,'tipo_donacion', array('value'=>'Donación de Órgano', 'readonly'=>true)); ?>
+				<div class="errors">
+				<?php echo $form->error($model,'tipo_donacion',array('class' => 'ui small red pointing above ui label')); ?>
+				</div>
+			</div>
+		</div>
+
+
+	   <div class="fields">
 	 	<div class="four wide field">
 			<?php echo $form->labelEx($model,'id_donacion'); ?>
-			<?php echo $form->dropDownList($model,'id_donacion',array('Osea'=>'Osea'),array('empty'=>'Seleccione Tipo de Medula','class'=>'ui selection dropdown')); ?>
+			<?php echo $form->dropDownList($model,'id_donacion',CHtml::listData(DonacionOrgano::model()->findAll(),'id', 'nombre'),array('empty'=>'Seleccione Tipo de Donación','class'=>'ui selection dropdown'   )); ?>
 			<div class="errors">
 			<?php echo $form->error($model,'id_donacion',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>
@@ -156,17 +197,28 @@
 	</div>
 
 
-<!--DONACION 3-->
 
-	 <div class="fields">
-	 	<div class="four wide field">
-			<?php echo $form->labelEx($model,'id_donacion'); ?>
-        	<?php echo $form->dropDownList($model,'id_donacion',CHtml::listData(Organo::model()->findAll(),'nombreOrgano', 'nombreOrgano'), array('empty' => 'Selecciona Tipo Organo', 'class'=>'ui selection dropdown')); ?>
-			<div class="errors">
-			<?php echo $form->error($model,'id_donacion',array('class' => 'ui small red pointing above ui label')); ?>
-			</div>
-		</div>
-	</div>
+<?php
+
+
+
+		}
+	?>
+
+
+
+
+
+
+
+
+	<?php
+
+	}	
+?>
+
+
+
 
 
 
@@ -229,3 +281,6 @@
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+
+
+
