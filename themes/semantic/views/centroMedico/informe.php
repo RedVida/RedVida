@@ -43,18 +43,20 @@ Generar Informe - Centros Medicos </h1>
 						 </div>
                     </div>
                     <div class="fields">
-						 <div class="three wide field">
-							<?php echo $form->labelEx($model,'Gubernamental:'); ?>
-							<?php echo $form->textField($model,'gubernamental'); ?>
-						 </div>
-                    </div>
+	 					<div class="four wide field">
+							<?php echo $form->labelEx($model,'gubernamental'); ?>
+							<?php echo $form->dropDownList($model,'gubernamental',array('Si'=>'Si','No'=>'No'), array('empty' => 'Seleccione Opcion', 'class'=>'ui selection dropdown')); ?>
+						</div>
+					</div>
 				</div>
-			</div>   
-				   
-					<br>
+		    </div>
+		    <br>
 						<div class="ui blue submit button" id="ModalFunction"> <!-- Main.PHP -->
 							Filtrar
 				</div>
+	   </div>   
+				   
+					
 			</div>
 		</div>
 <?php $this->endWidget(); ?>

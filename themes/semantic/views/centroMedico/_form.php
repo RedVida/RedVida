@@ -109,7 +109,7 @@
 	<div class="fields">
 	 	<div class="four wide field">
 			<?php echo $form->labelEx($model,'gubernamental'); ?>
-			<?php echo $form->dropDownList($model,'gubernamental',array('Si'=>'Si','No'=>'No'), array('empty' => 'Seleccione opcion', 'class'=>'ui selection dropdown')); ?>
+			<?php echo $form->dropDownList($model,'gubernamental',array('Si'=>'Si','No'=>'No'), array('empty' => 'Seleccione Opcion', 'class'=>'ui selection dropdown')); ?>
 			<div class="errors">
 			<?php echo $form->error($model,'gubernamental',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>
