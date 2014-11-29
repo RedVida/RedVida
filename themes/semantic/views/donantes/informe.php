@@ -90,11 +90,11 @@ Generar Informe - Donante </h1>
 					<div class="fields">
 					<div class="three wide field">
 						<?php echo $form->labelEx($model,'Desde:'); ?>
-						<?php echo $form->textField($model,'fecha_ingreso',array('data-field'=>'datetime','placeholder'=>'Fecha de inicio')); ?>
+						<?php echo CHtml::textField('Donantes[desde]','',array('data-field'=>'datetime','placeholder'=>'Fecha de inicio')); ?>
 					 </div>
 					 <div class="three wide field">
 						<?php echo $form->labelEx($model,'Hasta:'); ?>
-						<?php echo $form->textField($model,'direccion',array('data-field'=>'datetime','placeholder'=>'Fecha termino')); ?>
+						<?php echo CHtml::textField('Donantes[hasta]','',array('data-field'=>'datetime','placeholder'=>'Fecha de termino')); ?>
 					 </div>
  					<div id="dtBox"></div>
                     </div>
@@ -110,13 +110,13 @@ Generar Informe - Donante </h1>
 					<div class="fields">
 						<div class="four wide field">
 								<?php echo $form->labelEx($model,'Alergia:'); ?>
-								<?php echo $form->textField($model,'id',array('id'=>'busquedaAlergia','placeholder'=>'Ingrese la Alergia a buscar...')); ?>
+								<?php echo CHtml::textField('Donantes[alergia]','',array('id'=>'busquedaAlergia','placeholder'=>'Ingrese la Alergia a buscar...')); ?>
 						</div>
 					</div>
 					<div class="fields">
 						 	<div class="four wide field">
 								<?php echo $form->labelEx($model,'Enfermedad:'); ?>
-								<?php echo $form->textField($model,'nombres',array('id'=>'busquedaEnfermedad','placeholder'=>'Ingrese la Enfermedad a buscar...')); ?>
+								<?php echo CHtml::textField('Donantes[enfermedad]','',array('id'=>'busquedaEnfermedad','placeholder'=>'Ingrese la Enfermedad a buscar...')); ?>
 								</div>
 							</div>
 					</div>

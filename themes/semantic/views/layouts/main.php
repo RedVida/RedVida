@@ -33,8 +33,6 @@
 
 <body>
 
-<!-- Modal View
-NO PUEDE IR EN MAIN SOLO EN LAS VISTAS QUE LO USAN
   <div class="ui small modal">
         <i class="close icon"></i>
           <div class="header">
@@ -55,7 +53,7 @@ NO PUEDE IR EN MAIN SOLO EN LAS VISTAS QUE LO USAN
       </div>
   </div>
 
- -->
+ 
 
 <!-- Meno As DropDown -->
 
@@ -98,7 +96,30 @@ NO PUEDE IR EN MAIN SOLO EN LAS VISTAS QUE LO USAN
     <a class="item" href="<?php echo Yii::app()->user->ui->userManagementAdminUrl; ?>">
       <i class="asterisk icon"></i> Adm. de Usuario
     </a>
-     <?php }?>   
+     <?php }?> 
+
+     <div class="ui pointing dropdown link item">
+
+      <i class="asterisk icon"></i> Alergias <i class="dropdown icon"></i>
+      <div class="menu">
+
+        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/alergias/create">
+          <i class="doble angle right icon"></i> Registrar Alergias
+        </a>
+        <?php } ?>
+        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/alergias/admin">
+          <i class="doble angle right icon"></i> Administrar Alergias
+        </a>
+        <?php } ?>
+
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/alergias/">
+          <i class="doble angle right icon"></i> Listar Alergias
+        </a>
+
+       </div>     
+    </div>  
 
     <div class="ui pointing dropdown link item">
 

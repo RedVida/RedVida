@@ -10,7 +10,6 @@
 					</style>
 				</head>
 				<body>
-					<h1><u> Informe Donante: </u></h1>
 					<br>
 					<table id="t01">
 					  <tr><th>Nombre</th><th>Apellido</th><th>Rut</th><th>T.Sangre</th><th>N° de contacto</th		

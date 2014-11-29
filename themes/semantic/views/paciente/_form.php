@@ -60,7 +60,7 @@
 	<div class="fields">
 	 	<div class="four wide field">
 			<?php echo $form->labelEx($model,'rut'); ?>
-			<?php echo $form->textField($model,'rut',array('size'=>12,'maxlength'=>12)); ?>
+			<?php echo $form->textField($model,'rut',array('size'=>12,'maxlength'=>12, 'id'=>'rut')); ?>
 			<div class="errors">
 			<?php echo $form->error($model,'rut',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>

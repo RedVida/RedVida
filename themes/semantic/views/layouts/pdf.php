@@ -27,10 +27,6 @@
 </head>
 <body id="home">
   
-<hr class="style-seven">
-
-<div class="contenido">
-  
   <?php echo $content; ?>
 
 </div>

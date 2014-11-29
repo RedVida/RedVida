@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Alergias', 'url'=>array('index')),
-	array('label'=>'Create Alergias', 'url'=>array('create')),
-	array('label'=>'View Alergias', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Alergias', 'url'=>array('admin')),
+	array('label'=>'Listar Alergias', 'url'=>array('index')),
+	array('label'=>'Registrar Alergias', 'url'=>array('create')),
+	array('label'=>'Ver Alergias', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar Alergias', 'url'=>array('admin')),
 );
 ?>
 
