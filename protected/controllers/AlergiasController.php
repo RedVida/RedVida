@@ -208,7 +208,7 @@ class AlergiasController extends Controller
 			$mPDF1->WriteHTML('<br>');
 			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/line2.png' ));
 			$mPDF1->WriteHTML('<br> ');
-			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/titulo.png' ));
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/informe_alergias.png' ));
 			$where_array = array();
 			
 		    if($_POST['Alergias']['desde']!=''){ 
