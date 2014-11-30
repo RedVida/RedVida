@@ -699,6 +699,7 @@ CREATE TABLE IF NOT EXISTS `donantes` (
   `id_centro_medico` int(11) DEFAULT NULL,
   `fecha_ingreso` datetime DEFAULT NULL,
   `fecha_nacimiento` date DEFAULT NULL ,
+  `edad` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_centro_medico_1` (`id_centro_medico`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
