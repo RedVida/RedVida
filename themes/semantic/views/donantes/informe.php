@@ -98,6 +98,18 @@ Generar Informe - Donante </h1>
 					 </div>
  					<div id="dtBox"></div>
                     </div>
+                    <div class="ui small headerr"><b>*Rango de edad</b></div>
+					<div class="fields">
+					<div class="two wide field">
+						<?php echo $form->labelEx($model,'Edad Inicio:'); ?>
+						<?php echo CHtml::textField('Donantes[edad_inicial]',''); ?>
+					 </div>
+					 <div class="two wide field">
+						<?php echo $form->labelEx($model,'Edad Termino:'); ?>
+						<?php echo CHtml::textField('Donantes[edad_final]',''); ?>
+					 </div>
+
+                    </div>
 					<div class="four wide field">
 					       <?php echo $form->labelEx($model,'Tipo De Sangre:'); ?>
 					       <?php echo $form->dropDownList($model,'tipo_sangre',CHtml::listData(BancoSangre::model()->findAll(),'tipo', 'tipo'), array('empty' => 'Seleccione Tipo Sangre', 'class'=>'ui selection dropdown')); ?>

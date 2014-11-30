@@ -64,6 +64,9 @@ $this->menu=array(
 			'email',
 			'direccion',
 			'num_contacto',
+			'fecha_ingreso',
+			'fecha_nacimiento',
+			'edad',
 			'centro_medico'=>array('name'=>'Centro Medico','value' => $centro_medico->nombre),
 			'Enfermedades'=>array('name'=>'Enfermedad(es)','value'=> $enfermedad),
 			'Alergias'=>array('name'=>'Alergia(s)','value'=> $alergias)

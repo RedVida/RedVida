@@ -71,6 +71,12 @@ class DonantesController extends Controller
 		if(isset($_POST['Donantes']))
 		{
 			$model->attributes=$_POST['Donantes'];
+			
+			$date1 = new DateTime(date('Y-m-d'));
+			$date2 = new DateTime($model->fecha_nacimiento);
+			$interval = $date1->diff($date2);
+
+			$model->edad = $interval->y;
 			$model->fecha_ingreso = new CDbExpression('NOW()');
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
@@ -230,7 +236,23 @@ class DonantesController extends Controller
 			$where_array = array();
 			$from_array = array();
 			$OK = true;
-			
+			if($_POST['Donantes']['edad_inicial']!=''){ // edad inicial
+		        if(is_int($_POST['Donantes']['edad_inicial'])){
+            		$where_array[]=('d.edad >= '.$_POST['Donantes']['edad_inicial']);
+            	}
+            	else{
+            		$model->addError('nombre','Edad Inicio: No es valido, porfavor ingrese un numero ');
+					$OK = false;	
+            	}
+		    }
+		    if($_POST['Donantes']['edad_final']!=''){ // edad final
+		    	if(is_int($_POST['Donantes']['edad_inicial'])){
+            		$where_array[]=('d.edad <= '.$_POST['Donantes']['edad_final']);
+            	}else{
+            		$model->addError('nombre','Edad Termino: No es valido, porfavor ingrese un numero ');
+					$OK = false;	
+            	}
+		    }
             if($_POST['Donantes']['id_centro_medico']!=''){ // centro medico
             	$where_array[]=('d.id_centro_medico = '.$_POST['Donantes']['id_centro_medico']);
 		    }

@@ -13,7 +13,7 @@
 					<br>
 					<table id="t01">
 					  <tr><th>Nombre</th><th>Apellido</th><th>Rut</th><th>T.Sangre</th><th>N° de contacto</th		
-					    ><th>Centro Medico</th><th>Fecha Ingreso</th><th>Alergia(s)</th><th>Enfermedades</th>		
+					    ><th>Centro Medico</th><th>Fecha Ingreso</th><th>Edad</th><th>Alergia(s)</th><th>Enfermedades</th>		
 					  </tr>
 					  <?php foreach ($results as $res){ ?>
 						  <?php $centro_medico=CentroMedico::model()->find('id='.$res['id_centro_medico']);?> 
@@ -25,6 +25,7 @@
 						    <td>  <?php echo $res['num_contacto']; ?></td>
 					    	<td>  <?php echo $centro_medico['nombre']; ?></td>
 					    	<td>  <?php echo $res['fecha_ingreso']; ?></td>
+					    	<td>  <?php echo $res['edad']; ?></td>
 					    	<td><?php 
 						    $length = (string)($res['nombres']);
 						    $modelo = Donantes::model()->findAll(array('select'=>'id,nombres','condition'=>'nombres='."'$length'"));
