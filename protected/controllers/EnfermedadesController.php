@@ -210,29 +210,39 @@ class EnfermedadesController extends Controller
 			$mPDF1->WriteHTML('<br> ');
 			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/informe_enfermedades.png' ));
 			$where_array = array();
-			
-		    if($_POST['Enfermedades']['desde']!=''){ 
-		    	$desde = (string)($_POST['Enfermedades']['desde']);
-            	$where_array[]=('fecha_ingreso >= '."'$desde'");
+			$OK = true;
+		    if($_POST['Enfermedades']['desde']!=''){  	
+            	if(strtotime($_POST['Enfermedades']['desde']) && 1 === preg_match('~[0-9]~', $_POST['Enfermedades']['desde'])){
+			    	$desde = (string)($_POST['Enfermedades']['desde']);
+            		$where_array[]=('fecha_ingreso >= '."'$desde'");
+	            }else{
+            		$model->addError('nombre','Fecha de Inicio: La Fecha ingresada no es valida ');
+				   	$OK = false;
+            	}
 		    }
 		     if($_POST['Enfermedades']['hasta']!=''){ 
-		    	$hasta = (string)($_POST['Enfermedades']['hasta']);
-            	$where_array[]=('fecha_ingreso <= '."'$hasta'");
+            	if(strtotime($_POST['Enfermedades']['hasta']) && 1 === preg_match('~[0-9]~', $_POST['Enfermedades']['hasta'])){
+			    	$hasta = (string)($_POST['Enfermedades']['hasta']);
+            		$where_array[]=('fecha_ingreso <= '."'$hasta'");
+	            }else{
+            		$model->addError('nombre','Fecha de Inicio: La Fecha ingresada no es valida ');
+				   	$OK = false;
+            	}
 		    }
-
 		    $where = implode(" AND ", $where_array);	
             $results = Yii::app()->db->createCommand()->
 	            select('*')->
 	            from('enfermedades')->
 	            where($where)->
 	            queryAll();
-
+	        if(!$OK)$results=null;    
             if($results){
 				$mPDF1->WriteHTML($this->render('_informe',array('results'=>$results),true));
 				$mPDF1->Output('Informe Enfermedades',"I"); // i = visualizar en el navegador
 		    }
-		    else{ $model->addError('nombre','No se han encontrado Enfermedad(es) con esos datos ');}
-        }
+		    else{ 
+		    	$model->addError('nombre','No se han encontrado Enfermedad(es) con esos datos ');}
+        	}
         $this->render('informe',array(
 			'model'=>$model,
 		));

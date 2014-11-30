@@ -698,6 +698,8 @@ CREATE TABLE IF NOT EXISTS `donantes` (
   `num_contacto` int(11) DEFAULT NULL,
   `id_centro_medico` int(11) DEFAULT NULL,
   `fecha_ingreso` datetime DEFAULT NULL,
+  `fecha_nacimiento` date DEFAULT NULL ,
+  `edad` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_centro_medico_1` (`id_centro_medico`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
@@ -748,6 +750,16 @@ CREATE TABLE IF NOT EXISTS `enfermedad_paciente` (
   KEY `id_enfermedad` (`id_enfermedad`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
+CREATE TABLE IF NOT EXISTS `alergia_paciente` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fecha` date DEFAULT NULL,
+  `id_paciente` int(11) DEFAULT NULL,
+  `id_alergia` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_paciente` (`id_paciente`),
+  KEY `id_alergia` (`id_alergia`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
 --
 -- Volcado de datos para la tabla `enfermedad_paciente`
 --
@@ -796,6 +808,9 @@ CREATE TABLE IF NOT EXISTS `paciente` (
   `necesidad_transplante` varchar(20) DEFAULT NULL,
   `tipo_sangre` varchar(10) DEFAULT NULL,
   `id_centro_medico` int(11) DEFAULT NULL,
+  `fecha_ingreso` datetime DEFAULT NULL,
+  `fecha_nacimiento` date DEFAULT NULL ,
+  `edad` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_centro_medico` (`id_centro_medico`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
@@ -919,12 +934,18 @@ ALTER TABLE `tiene_alergia`
   ADD CONSTRAINT `fk_reference_3` FOREIGN KEY (`id_donante`) REFERENCES `donantes` (`id`),
   ADD CONSTRAINT `fk_reference_4` FOREIGN KEY (`id_alergia`) REFERENCES `alergias` (`id`);
 
---
--- Filtros para la tabla `tiene_enfermedad`
---
 ALTER TABLE `tiene_enfermedad`
   ADD CONSTRAINT `fk_reference_1` FOREIGN KEY (`id_donante`) REFERENCES `donantes` (`id`),
   ADD CONSTRAINT `fk_reference_2` FOREIGN KEY (`id_enfermedad`) REFERENCES `enfermedades` (`id`);
+
+    ALTER TABLE `alergia_paciente`
+  ADD CONSTRAINT `fk_reference_8` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`),
+  ADD CONSTRAINT `fk_reference_9` FOREIGN KEY (`id_alergia`) REFERENCES `alergias` (`id`);
+
+ALTER TABLE `enfermedad_paciente`
+  ADD CONSTRAINT `fk_reference_10` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`),
+  ADD CONSTRAINT `fk_reference_11` FOREIGN KEY (`id_enfermedad`) REFERENCES `enfermedades` (`id`);
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

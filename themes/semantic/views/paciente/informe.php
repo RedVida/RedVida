@@ -88,8 +88,27 @@ Generar Informe - Paciente </h1>
 				<div class="ui form">
 					<div class="ui small headerr"><b>* Fecha de ingreso</b></div>
 					<div class="fields">
- 					<div id="dtBox"></div>
-                    </div>
+            <div class="three wide field">
+                <?php echo $form->labelEx($model,'Desde:'); ?>
+                <?php echo CHtml::textField('Paciente[desde]','',array('data-field'=>'datetime','placeholder'=>'Fecha de inicio')); ?>
+               </div>
+               <div class="three wide field">
+                <?php echo $form->labelEx($model,'Hasta:'); ?>
+                <?php echo CHtml::textField('Paciente[hasta]','',array('data-field'=>'datetime','placeholder'=>'Fecha de termino')); ?>
+               </div>
+              <div id="dtBox"></div>
+           </div>
+            <div class="ui small headerr"><b>*Rango de edad</b></div>
+          <div class="fields">
+            <div class="two wide field">
+              <?php echo $form->labelEx($model,'Edad Inicio:'); ?>
+              <?php echo CHtml::textField('Paciente[edad_inicial]',''); ?>
+             </div>
+             <div class="two wide field">
+              <?php echo $form->labelEx($model,'Edad Termino:'); ?>
+              <?php echo CHtml::textField('Paciente[edad_final]',''); ?>
+             </div>
+         </div>
 					<div class="four wide field">
 					       <?php echo $form->labelEx($model,'Tipo De Sangre:'); ?>
 					       <?php echo $form->dropDownList($model,'tipo_sangre',CHtml::listData(BancoSangre::model()->findAll(),'tipo', 'tipo'), array('empty' => 'Seleccione Tipo Sangre', 'class'=>'ui selection dropdown')); ?>
@@ -97,8 +116,22 @@ Generar Informe - Paciente </h1>
 					</div>
 				   	<div class="four wirde field">
 				        <?php echo $form->labelEx($model,'Centro Medico:'); ?>
-						<?php echo $form->dropDownList($model,'id_centro_medico', CHtml::listData(CentroMedico::model()->findAll(),'id', 'nombre'), array('empty' => 'Seleccione Centro Medico', 'class'=>'ui selection dropdown')); ?>
+						<?php echo $form->dropDownList($model,'id_centro_medico', CHtml::listData(CentroMedico::model()->findAll(),'id', 'nombre'), array('empty' => 'Seleccione C.Medico', 'class'=>'ui selection dropdown')); ?>
 					</div>
+                  <div class="four wide field">
+                 <?php echo $form->labelEx($model,'Afiliacion Paciente'); ?>
+                 <?php echo $form->dropDownList($model,'afiliacion', array('Fonasa'=>'Fonasa','Isapre'=>'Isapre'),array('empty' => 'Seleccione Afiliacion', 'class'=>'ui selection dropdown')); ?>
+          </div>
+
+          <div class="four wide field">
+                 <?php echo $form->labelEx($model,'Grado de Urgencia'); ?>
+                 <?php echo $form->dropDownList($model,'grado_urgencia', array('Urgente'=>'Urgente'),array('empty' => 'Seleccione G.Urgencia', 'class'=>'ui selection dropdown')); ?>
+          </div>
+
+          <div class="four wide field">
+                 <?php echo $form->labelEx($model,'Necesidad Transplante'); ?>
+                 <?php echo $form->dropDownList($model,'necesidad_transplante',CHtml::listData(Organo::model()->findAll(),'idOrgano', 'nombreOrgano'), array('empty' => 'Seleccione Necesidad', 'class'=>'ui selection dropdown')); ?>
+          </div>
 					<div class="fields">
 						<div class="four wide field">
 								<?php echo $form->labelEx($model,'Alergia:'); ?>

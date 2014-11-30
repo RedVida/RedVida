@@ -51,6 +51,12 @@
 				<?php echo $form->textField($model,'direccion',array('size'=>60,'maxlength'=>128)); ?>
 			</div>
 				</div>
+			<div class="fields">     
+		        <div class="four wide field">
+				<?php echo $form->label($model,'edad'); ?>
+				<?php echo $form->textField($model,'edad',array('size'=>60,'maxlength'=>128)); ?>
+			</div>
+				</div>	
 			<!--div class="fields">     
 		        <div class="four wide field">
 				<?php echo $form->label($model,'num_contacto'); ?>

@@ -67,9 +67,16 @@ class PacienteController extends Controller
 		if(isset($_POST['Paciente']))
 		{
 			$model->attributes=$_POST['Paciente'];
-			$model->fecha_ingreso = new CDbExpression('NOW()');
-			if($model->save())
+			if($model->validate()){
+				$date1 = new DateTime(date('Y-m-d'));
+				$date2 = new DateTime($model->fecha_nacimiento);
+				$interval = $date1->diff($date2);
+				
+				$model->edad = $interval->y;
+				$model->fecha_ingreso = new CDbExpression('NOW()');
+				if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('create',array(
@@ -95,7 +102,7 @@ class PacienteController extends Controller
 	            $cont = 0;
 	            foreach($list as $item){$cont++;}
 	            if($cont>0){
-                   $model->addError('nombre','El donantes ya posee registrada esta Enfermedad ('.$_POST['Enfermedades']['id'].'), porfavor ingrese otro nombre.');
+                   $model->addError('nombre','El Paciente ya posee registrada esta Enfermedad ('.$_POST['Enfermedades']['id'].'), porfavor ingrese otro nombre.');
 	            }
 	            else{
 		            $model_tiene_enfermedad->id_donante = $id;
@@ -133,7 +140,7 @@ class PacienteController extends Controller
 	            $cont = 0;
 	            foreach($list as $item){$cont++;}
 	            if($cont>0){
-                   $model->addError('nombre','El donantes ya posee registrada esta Alergia ('.$_POST['Alergias']['id'].'), porfavor ingrese otro nombre.');
+                   $model->addError('nombre','El Paciente ya posee registrada esta Alergia ('.$_POST['Alergias']['id'].'), porfavor ingrese otro nombre.');
 	            }
 	            else{
 		            $model_tiene_alergia->id_paciente = $id;
@@ -164,7 +171,6 @@ class PacienteController extends Controller
 
 	public function actionInforme(){
 	// Odernar por: Edad, Tipo de sangre, Centro medico, Fecha de ingreso
-
 		$model = new Paciente;
 		if(isset($_POST['Paciente'])){
        		$model = new Paciente;
@@ -174,17 +180,63 @@ class PacienteController extends Controller
 			$mPDF1->WriteHTML('<br>');
 			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/line2.png' ));
 			$mPDF1->WriteHTML('<br> ');
-			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/informe_paciente.png' ));
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/informe_pacientes.png' ));
 			$where_array = array();
 			$from_array = array();
 			$OK = true;
-			
+			if($_POST['Paciente']['desde']!=''){ // Tipo de sangre
+		    	if(strtotime($_POST['Paciente']['desde']) && 1 === preg_match('~[0-9]~', $_POST['Paciente']['desde'])){
+			    	$desde = (string)($_POST['Paciente']['desde']);
+	            	$where_array[]=('p.fecha_ingreso >= '."'$desde'");
+            	}else{
+            		$model->addError('nombre','Fecha de Inicio: La Fecha ingresada no es valida ');
+				   	$OK = false;
+            	}
+		    }
+		    if($_POST['Paciente']['hasta']!=''){ // Fecha
+		     	if(strtotime($_POST['Paciente']['desde']) && 1 === preg_match('~[0-9]~', $_POST['Paciente']['desde'])){
+			    	$hasta = (string)($_POST['Paciente']['hasta']);
+	            	$where_array[]=('p.fecha_ingreso <= '."'$hasta'");
+	            }else{
+            		$model->addError('nombre','Fecha de Termino: La Fecha ingresada no es valida ');
+				   	$OK = false;
+            	}
+		    }
+			if($_POST['Paciente']['edad_inicial']!=''){ // edad inicial
+		        if(is_numeric($_POST['Paciente']['edad_inicial'])){
+            		$where_array[]=('p.edad >= '.$_POST['Paciente']['edad_inicial']);
+            	}
+            	else{
+            		$model->addError('nombre','Edad Inicio: No es valido, porfavor ingrese un numero ');
+					$OK = false;	
+            	}
+		    }
+		    if($_POST['Paciente']['edad_final']!=''){ // edad final
+		    	if(is_numeric($_POST['Paciente']['edad_final'])){
+            		$where_array[]=('p.edad <= '.$_POST['Paciente']['edad_final']);
+            	}else{
+            		$model->addError('nombre','Edad Termino: No es valido, porfavor ingrese un numero ');
+					$OK = false;	
+            	}
+		    }
             if($_POST['Paciente']['id_centro_medico']!=''){ // centro medico
-            	$where_array[]=('d.id_centro_medico = '.$_POST['Paciente']['id_centro_medico']);
+            	$where_array[]=('p.id_centro_medico = '.$_POST['Paciente']['id_centro_medico']);
 		    }
 		    if($_POST['Paciente']['tipo_sangre']!=''){ // Tipo de sangre
 		    	$length = (string)($_POST['Paciente']['tipo_sangre']);
-            	$where_array[]=('d.tipo_sangre = '."'$length'");
+            	$where_array[]=('p.tipo_sangre = '."'$length'");
+		    }
+		    if($_POST['Paciente']['afiliacion']!=''){ // Tipo de sangre
+		    	$length = (string)($_POST['Paciente']['afiliacion']);
+            	$where_array[]=('p.afiliacion = '."'$length'");
+		    }
+		    if($_POST['Paciente']['necesidad_transplante']!=''){ // Tipo de sangre
+		    	$length = (string)($_POST['Paciente']['necesidad_transplante']);
+            	$where_array[]=('p.necesidad_transplante = '."'$length'");
+		    }
+		    if($_POST['Paciente']['grado_urgencia']!=''){ // Tipo de sangre
+		    	$length = (string)($_POST['Paciente']['grado_urgencia']);
+            	$where_array[]=('p.grado_urgencia = '."'$length'");
 		    }
 		    if($_POST['Paciente']['alergia']!=''){ // Alergia
 		    	$length = (string)($_POST['Paciente']['alergia']);
@@ -193,8 +245,8 @@ class PacienteController extends Controller
 				   $model->addError('nombre','Alergia : El nombre de la Alergia ingresada no existe ');
 				   $OK = false;
 				}else{
-            	$where_array[]=('ta.id_alergia= '.$modelo[0]->id.' AND ta.id_donante = d.id');
-            	$from_array[]=('tiene_alergia ta');
+	            	$where_array[]=('ta.id_alergia= '.$modelo[0]->id.' AND ta.id_paciente= p.id');
+	            	$from_array[]=('alergia_paciente ta');
                 }
 		    }
 		    if($_POST['Paciente']['enfermedad']!=''){ // Enfermedades
@@ -204,21 +256,21 @@ class PacienteController extends Controller
 				   $model->addError('nombre','Enfermedad : El nombre de la Enfermedad ingresada no existe ');
 				   $OK = false;
 				}else{
-            	$where_array[]=('te.id_enfermedad= '.$modelo[0]->id.' AND te.id_donante = d.id');
-            	$from_array[]=('tiene_enfermedad te');
+	            	$where_array[]=('te.id_enfermedad= '.$modelo[0]->id.' AND te.id_paciente = p.id');
+	            	$from_array[]=('enfermedad_paciente te');
                 }
 		    }
 		    $form = implode(", ", $from_array);	 
 		    $where = implode(" AND ", $where_array);	
             $results = Yii::app()->db->createCommand()->
 	            select('*')->
-	            from('paciente d, '.$form)->
+	            from('paciente p, '.$form)->
 	            where($where)->
 	            queryAll();
 	        if(!$OK)$results =null;
             if($results){
 				$mPDF1->WriteHTML($this->render('_informe',array('results'=>$results),true));
-				$mPDF1->Output('Informe Dontantes',"I"); // i = visualizar en el navegador
+				$mPDF1->Output('Informe Paciente',"I"); // i = visualizar en el navegador
 		    }
 		    else{ $model->addError('nombre','No se han encontrado paciente con esos datos ');}
         }

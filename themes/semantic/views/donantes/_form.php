@@ -1,4 +1,6 @@
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/DateTimePicker.css">   
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/rut/jquery.Rut.js" type="text/javascript"></script> 
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/DateTimePicker.js" type="text/javascript"></script> 
 <script type="text/javascript">
 	$(document).ready(function() {
 	        $('#rut').Rut({
@@ -17,6 +19,21 @@
     function successModal(){                                                      // Button - Modal Success 
         $("#donantes-form").submit();
     }
+
+    $(document).ready(function(){
+              $("#dtBox").DateTimePicker({
+              	dateFormat:"yyyy-MM-dd",
+              	defaultDate:"01-02-1995",
+              	shortDayNames: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
+              	fullDayNames: ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"],
+              	fullMonthNames: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+              	shortMonthNames: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+              	titleContentDate: "Fecha De Nacimiento",
+              	titleContentDateTime: "Seleccionar Hora y Fecha",
+              	setButtonContent: "Agregar",
+              	clearButtonContent: "Borrar",
+              });
+          });
 </script>
 
 <div class="ui grid">
@@ -62,6 +79,16 @@
 							</div>
 						</div>
 				    </div>
+				    <div class="fields">
+						<div class="four wide field">
+							<?php echo $form->labelEx($model,'Fecha de nacimiento'); ?>
+							<?php echo $form->textField($model,'fecha_nacimiento',array('data-field'=>'date')); ?>
+							<div class="errors">
+								<?php echo $form->error($model,'fecha_nacimiento',array('class' => 'ui small red pointing above ui label')); ?>
+							</div>
+						 </div>
+ 						 <div id="dtBox"></div>
+                    </div>
 				    <div class="fields">    
 				        <div class="four wide field">
 							<?php echo $form->labelEx($model,'email'); ?>

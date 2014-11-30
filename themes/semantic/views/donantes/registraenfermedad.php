@@ -39,26 +39,29 @@ $('.search-form form').submit(function(){
 	'model'=>$model,
 )); ?>
 </div><!-- search-form -->
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'donante-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'nombres',
-		'rut',
-         array(
-            'class' => 'CButtonColumn',
-            'template'=>'{Registrar}', // botones a mostrar
-            'buttons'=>array(
-			'Registrar' => array( //botón para la acción nueva
-		    'label'=>'Registrar Enfermedad', // titulo del enlace del botón nuevo
-		    'url'=>'Yii::app()->createUrl("/donantes/registrarenfermedad&id=$data->id")', //url de la acción nueva
-		    //'visible'=>'($data->estado==="DISPONIBLE")?true:false;'
-		    ),
+<div class="ui grid">
+	<div class="one wide column"></div>
+	<div class="fourteen wide column">
+		<?php $this->widget('zii.widgets.grid.CGridView', array(
+			'id'=>'donante-grid',
+			'dataProvider'=>$model->search(),
+			'filter'=>$model,
+			'columns'=>array(
+				'nombres',
+				'apellidos',
+				'rut',
+		         array(
+		            'class' => 'CButtonColumn',
+		            'template'=>'{Registrar}', // botones a mostrar
+		            'buttons'=>array(
+					'Registrar' => array( //botón para la acción nueva
+				    'label'=>'Registrar Enfermedad', // titulo del enlace del botón nuevo
+				    'url'=>'Yii::app()->createUrl("/donantes/registrarenfermedad&id=$data->id")', //url de la acción nueva
+				    //'visible'=>'($data->estado==="DISPONIBLE")?true:false;'
+				    ),
+					),
+		          ),
 			),
-          ),
-	),
-)); ?>
-
-
+		)); ?>
+    </div>
+</div>

@@ -12,8 +12,9 @@
 				<body>
 					<br>
 					<table id="t01">
-					  <tr><th>Nombre</th><th>Apellido</th><th>Rut</th><th>T.Sangre</th><th>N° de contacto</th		
-					    ><th>Centro Medico</th><th>Fecha Ingreso</th><th>Alergia(s)</th><th>Enfermedades</th>		
+					  <tr><th>Nombre</th><th>Apellido</th><th>Rut</th><th>T.Sangre</th><th>Centro Medico</th>
+					  	<th>Fecha Ingreso</th><th>Edad</th><th>Afiliacion</th><th>Grado Urgencia</th>
+					    <th>Necesidad Trasplante</th><th>Alergia(s)</th><th>Enfermedades</th>		    		
 					  </tr>
 					  <?php foreach ($results as $res){ ?>
 						  <?php $centro_medico=CentroMedico::model()->find('id='.$res['id_centro_medico']);?> 
@@ -22,12 +23,15 @@
 						    <td>  <?php echo $res['apellido']; ?></td>
 						    <td>  <?php echo $res['rut']; ?></td>
 						    <td>  <?php echo $res['tipo_sangre']; ?></td>
-						    <td>  <?php echo $res['num_contacto']; ?></td>
 					    	<td>  <?php echo $centro_medico['nombre']; ?></td>
 					    	<td>  <?php echo $res['fecha_ingreso']; ?></td>
+					    	<td>  <?php echo $res['edad']; ?></td>
+					    	<td>  <?php echo $res['afiliacion']; ?></td>
+					    	<td>  <?php echo $res['necesidad_transplante']; ?></td>
+					    	<td>  <?php echo $res['grado_urgencia']; ?></td>
 					    	<td><?php 
-						    $length = (string)($res['nombres']);
-						    $modelo = Paciente::model()->findAll(array('select'=>'id,nombre','condition'=>'nombres='."'$length'"));
+						    $length = (string)($res['nombre']);
+						    $modelo = Paciente::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='."'$length'"));
 						    $Criteria = new CDbCriteria();	
 						    $Criteria->condition = "id_paciente =".$modelo[0]->id; 
 						    $alergia= AlergiaPaciente::model()->findAll($Criteria);

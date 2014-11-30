@@ -40,6 +40,18 @@
 							echo $centro_medico->nombre; ?>
 							<br />
 
+							<b><?php echo CHtml::encode($data->getAttributeLabel('fecha_nacimiento')); ?>:</b>
+							<?php echo CHtml::encode($data->fecha_nacimiento); ?>
+							<br />
+
+							<b><?php echo CHtml::encode($data->getAttributeLabel('edad')); ?>:</b>
+							<?php echo CHtml::encode($data->edad); ?>
+							<br />
+
+							<b><?php echo CHtml::encode($data->getAttributeLabel('fecha_ingreso')); ?>:</b>
+							<?php echo CHtml::encode($data->fecha_ingreso); ?>
+							<br />
+
 						    <!-- Enfermedades--> <!-- Enfermedades-->
 
 							<b><?php 
