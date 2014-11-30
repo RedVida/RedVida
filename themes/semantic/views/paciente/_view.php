@@ -1,7 +1,6 @@
 <?php
 /* @var $this PacienteController */
 /* @var $data Paciente */
-$organo = Organo::model()->findAll(array('select'=>'nombreOrgano'));
 ?>
 
 <div class="view">
@@ -25,7 +24,9 @@ $organo = Organo::model()->findAll(array('select'=>'nombreOrgano'));
 			<br />
 
 			<b><?php echo CHtml::encode($data->getAttributeLabel('necesidad_transplante')); ?>:</b>
-			<?php echo $organo[$data->necesidad_transplante-1]->nombreOrgano; ?>
+			<?php 
+			$organo=Organo::model()->find('idOrgano='.$data->necesidad_transplante);
+			echo $organo->nombreOrgano; ?>
 			<br />
 
 			<?php echo CHtml::link(CHtml::encode("Más detalle"), array('view', 'id'=>$data->id)); ?>
