@@ -237,7 +237,7 @@ class DonantesController extends Controller
 			$from_array = array();
 			$OK = true;
 			if($_POST['Donantes']['edad_inicial']!=''){ // edad inicial
-		        if(is_int($_POST['Donantes']['edad_inicial'])){
+		        if(is_numeric($_POST['Donantes']['edad_inicial'])){
             		$where_array[]=('d.edad >= '.$_POST['Donantes']['edad_inicial']);
             	}
             	else{
@@ -246,7 +246,7 @@ class DonantesController extends Controller
             	}
 		    }
 		    if($_POST['Donantes']['edad_final']!=''){ // edad final
-		    	if(is_int($_POST['Donantes']['edad_inicial'])){
+		    	if(is_numeric($_POST['Donantes']['edad_final'])){
             		$where_array[]=('d.edad <= '.$_POST['Donantes']['edad_final']);
             	}else{
             		$model->addError('nombre','Edad Termino: No es valido, porfavor ingrese un numero ');
