@@ -27,18 +27,6 @@ $organo = Organo::model()->findAll(array('select'=>'nombreOrgano'));
 			<b><?php echo CHtml::encode($data->getAttributeLabel('necesidad_transplante')); ?>:</b>
 			<?php echo $organo[$data->necesidad_transplante-1]->nombreOrgano; ?>
 			<br />
-			
-			<b><?php echo CHtml::encode($data->getAttributeLabel('fecha_nacimiento')); ?>:</b>
-			<?php echo CHtml::encode($data->fecha_nacimiento); ?>
-			<br />
-
-			<b><?php echo CHtml::encode($data->getAttributeLabel('fecha_ingreso')); ?>:</b>
-			<?php echo CHtml::encode($data->fecha_ingreso); ?>
-			<br />
-
-			<b><?php echo CHtml::encode($data->getAttributeLabel('edad')); ?>:</b>
-			<?php echo CHtml::encode($data->edad); ?>
-			<br />
 
 			<?php echo CHtml::link(CHtml::encode("Más detalle"), array('view', 'id'=>$data->id)); ?>
 			<br/>

@@ -98,7 +98,7 @@
 
 	<div class="four wide field">
 	       <?php echo $form->labelEx($model,'Grado de Urgencia'); ?>
-	       <?php echo $form->dropDownList($model,'grado_urgencia', array('Urgente'=>'Urgente'),array('empty' => 'Selecciona Grado Urgencia', 'class'=>'ui selection dropdown')); ?>
+	       <?php echo $form->dropDownList($model,'grado_urgencia', array('Alto'=>'Alto','Medio'=>'Medio','Bajo'=>'Bajo'),array('empty' => 'Selecciona Grado Urgencia', 'class'=>'ui selection dropdown')); ?>
 	</div>
 
 	<div class="four wide field">
