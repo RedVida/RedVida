@@ -5,3 +5,5 @@ assets/
 protected/runtime/
 *!protected/runtime/
 nbproject/
+index.php
+protected/runtime/application.log
