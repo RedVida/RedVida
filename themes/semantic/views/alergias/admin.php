@@ -41,17 +41,21 @@ Administrar Alergias </h1>
 	'model'=>$model,
 )); ?>
 </div><!-- search-form -->
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'alergias-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'nombre',
-		'fecha_ingreso',
-		'descripcion',
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
-)); ?>
+<div class="ui grid">
+	<div class="one wide column"></div>
+	<div class="fourteen wide column">
+		<?php $this->widget('zii.widgets.grid.CGridView', array(
+			'id'=>'alergias-grid',
+			'dataProvider'=>$model->search(),
+			'filter'=>$model,
+			'columns'=>array(
+				'nombre',
+				'fecha_ingreso',
+				'descripcion',
+				array(
+					'class'=>'CButtonColumn',
+				),
+			),
+		)); ?>
+	</div>
+</div>		

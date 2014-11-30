@@ -50,6 +50,9 @@ Administrar Pacientes </h1>
 		'rut',
 		'afiliacion',
 		'grado_urgencia',
+		'fecha_nacimiento',
+		'edad',
+		'fecha_ingreso',
 		/*
 		'necesidad_transplante',
 		'tipo_sangre',

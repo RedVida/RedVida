@@ -210,14 +210,24 @@ class AlergiasController extends Controller
 			$mPDF1->WriteHTML('<br> ');
 			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/informe_alergias.png' ));
 			$where_array = array();
-			
+			$OK = true;
 		    if($_POST['Alergias']['desde']!=''){ 
-		    	$desde = (string)($_POST['Alergias']['desde']);
-            	$where_array[]=('fecha_ingreso >= '."'$desde'");
+            	if(strtotime($_POST['Alergias']['desde']) && 1 === preg_match('~[0-9]~', $_POST['Alergias']['desde'])){
+			    	$desde = (string)($_POST['Alergias']['desde']);
+            		$where_array[]=('fecha_ingreso >= '."'$desde'");
+	            }else{
+            		$model->addError('nombre','Fecha de Inicio: La Fecha ingresada no es valida ');
+				   	$OK = false;
+            	}
 		    }
 		     if($_POST['Alergias']['hasta']!=''){ 
-		    	$hasta = (string)($_POST['Alergias']['hasta']);
-            	$where_array[]=('fecha_ingreso <= '."'$hasta'");
+            	if(strtotime($_POST['Alergias']['hasta']) && 1 === preg_match('~[0-9]~', $_POST['Alergias']['hasta'])){
+			    	$hasta = (string)($_POST['Alergias']['hasta']);
+            		$where_array[]=('fecha_ingreso <= '."'$hasta'");
+	            }else{
+            		$model->addError('nombre','Fecha de Termino: La Fecha ingresada no es valida ');
+				   	$OK = false;
+            	}
 		    }
 
 		    $where = implode(" AND ", $where_array);	
@@ -226,7 +236,7 @@ class AlergiasController extends Controller
 	            from('alergias')->
 	            where($where)->
 	            queryAll();
-
+	        if(!$OK)$results=null;
             if($results){
 				$mPDF1->WriteHTML($this->render('_informe',array('results'=>$results),true));
 				$mPDF1->Output('Informe Alergias',"I"); // i = visualizar en el navegador

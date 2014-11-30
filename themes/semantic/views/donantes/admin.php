@@ -41,24 +41,27 @@ Registrar Donante </h1>
 	'model'=>$model
 )); ?>
 </div><!-- search-form -->
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'donantes-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'nombres',
-		'apellidos',
-		'rut',
-		'tipo_sangre',
-		'email',
-		'direccion',
-		'num_contacto',
-		'fecha_ingreso',
-		'fecha_nacimiento',
-		'edad',
-		array(
-			'class'=>'CButtonColumn',
-		),
-	)
-)); ?>
+<div class="ui grid">
+	<div class="one wide column"></div>
+	<div class="fourteen wide column">
+		<?php $this->widget('zii.widgets.grid.CGridView', array(
+			'id'=>'donantes-grid',
+			'dataProvider'=>$model->search(),
+			'filter'=>$model,
+			'columns'=>array(
+				'nombres',
+				'apellidos',
+				'rut',
+				'tipo_sangre',
+				'direccion',
+				'num_contacto',
+				'fecha_ingreso',
+				'fecha_nacimiento',
+				'edad',
+				array(
+					'class'=>'CButtonColumn',
+				),
+			)
+		)); ?>
+	</div>
+</div>

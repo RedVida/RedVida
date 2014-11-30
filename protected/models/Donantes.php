@@ -247,13 +247,17 @@ class Donantes extends CActiveRecord
             $this->addError($attribute, 'El Rut ingresado no es valido');
     }
     public function validateFechaNacimiento($attribute, $params) {
-    	$date1 = new DateTime(date('Y-m-d'));
-		$date2 = new DateTime($this->$attribute);
-		$interval = $date1->diff($date2);
-		if($this->$attribute!=""){	
-	    	if(($interval->y) < 18){
-	    	$this->addError($attribute,'Fecha de Nacimiento: Solo se pueden ingresar Donantes Mayores de 18 Años');
-	        }
+    	if($this->$attribute!=""){	
+			if(strtotime($this->$attribute) && 1 === preg_match('~[0-9]~', $this->$attribute)){
+			    $date1 = new DateTime(date('Y-m-d'));
+				$date2 = new DateTime($this->$attribute);
+				$interval = $date1->diff($date2);
+				if(($interval->y) < 18){
+				    $this->addError($attribute,'Fecha de Nacimiento: Solo se pueden ingresar Donantes Mayores de 18 Años');
+				}
+			}else{
+				$this->addError($attribute,'Fecha de Nacimiento: Ingrese una fecha valida');
+			}
 	    }
     }
     public function validateContacto($attribute, $params) {

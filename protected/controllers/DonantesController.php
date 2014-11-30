@@ -71,15 +71,15 @@ class DonantesController extends Controller
 		if(isset($_POST['Donantes']))
 		{
 			$model->attributes=$_POST['Donantes'];
-			
-			$date1 = new DateTime(date('Y-m-d'));
-			$date2 = new DateTime($model->fecha_nacimiento);
-			$interval = $date1->diff($date2);
-
-			$model->edad = $interval->y;
-			$model->fecha_ingreso = new CDbExpression('NOW()');
-			if($model->save())
+			if($model->validate()){
+				$date1 = new DateTime(date('Y-m-d'));
+				$date2 = new DateTime($model->fecha_nacimiento);
+				$interval = $date1->diff($date2);
+				$model->edad = $interval->y;
+				$model->fecha_ingreso = new CDbExpression('NOW()');
+				if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('create',array(
@@ -261,12 +261,22 @@ class DonantesController extends Controller
             	$where_array[]=('d.tipo_sangre = '."'$length'");
 		    }
 		    if($_POST['Donantes']['desde']!=''){ // Tipo de sangre
-		    	$desde = (string)($_POST['Donantes']['desde']);
-            	$where_array[]=('d.fecha_ingreso >= '."'$desde'");
+		    	if(strtotime($_POST['Donantes']['desde']) && 1 === preg_match('~[0-9]~', $_POST['Donantes']['desde'])){
+			    	$desde = (string)($_POST['Donantes']['desde']);
+	            	$where_array[]=('d.fecha_ingreso >= '."'$desde'");
+            	}else{
+            		$model->addError('nombre','Fecha de Inicio: La Fecha ingresada no es valida ');
+				   	$OK = false;
+            	}
 		    }
-		     if($_POST['Donantes']['hasta']!=''){ // Tipo de sangre
-		    	$hasta = (string)($_POST['Donantes']['hasta']);
-            	$where_array[]=('d.fecha_ingreso <= '."'$hasta'");
+		     if($_POST['Donantes']['hasta']!=''){ // Fecha
+		     	if(strtotime($_POST['Donantes']['desde']) && 1 === preg_match('~[0-9]~', $_POST['Donantes']['desde'])){
+			    	$hasta = (string)($_POST['Donantes']['hasta']);
+	            	$where_array[]=('d.fecha_ingreso <= '."'$hasta'");
+	            }else{
+            		$model->addError('nombre','Fecha de Termino: La Fecha ingresada no es valida ');
+				   	$OK = false;
+            	}
 		    }
 		    if($_POST['Donantes']['alergia']!=''){ // Alergia
 		    	$length = (string)($_POST['Donantes']['alergia']);

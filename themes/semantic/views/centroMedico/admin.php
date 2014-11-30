@@ -41,20 +41,24 @@ Administrar Centros Medicos </h1>
 )); ?>
 </div><!-- search-form -->
 
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'centro-medico-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'nombre',
-		'direccion',
-		'contacto',
-		'director',
-		'especialidad',
-		'gubernamental',
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
-)); ?>
+<div class="ui grid">
+	<div class="one wide column"></div>
+	<div class="fourteen wide column">
+		<?php $this->widget('zii.widgets.grid.CGridView', array(
+			'id'=>'centro-medico-grid',
+			'dataProvider'=>$model->search(),
+			'filter'=>$model,
+			'columns'=>array(
+				'nombre',
+				'direccion',
+				'contacto',
+				'director',
+				'especialidad',
+				'gubernamental',
+				array(
+					'class'=>'CButtonColumn',
+				),
+			),
+		)); ?>
+	</diV>	
+</div>

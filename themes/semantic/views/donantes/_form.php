@@ -27,10 +27,11 @@
               	shortDayNames: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
               	fullDayNames: ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"],
               	fullMonthNames: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+              	shortMonthNames: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+              	titleContentDate: "Fecha De Nacimiento",
               	titleContentDateTime: "Seleccionar Hora y Fecha",
               	setButtonContent: "Agregar",
               	clearButtonContent: "Borrar",
-              	
               });
           });
 </script>

@@ -114,6 +114,8 @@ class Paciente extends CActiveRecord
 			'tipo_sangre' => 'Tipo Sangre',
 			'id_centro_medico' => 'Id Centro Medico',
 			'fecha_nacimiento' => 'Fecha Nacimiento',
+			'fecha_ingreso' => 'Fecha De Ingreso',
+			'edad' => 'Edad',
 		);
 	}
 
@@ -145,6 +147,8 @@ class Paciente extends CActiveRecord
 		$criteria->compare('tipo_sangre',$this->tipo_sangre,true);
 		$criteria->compare('id_centro_medico',$this->id_centro_medico);
 		$criteria->compare('fecha_nacimiento',$this->fecha_nacimiento);
+		$criteria->compare('fecha_ingreso',$this->fecha_ingreso);
+		$criteria->compare('edad',$this->edad);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
