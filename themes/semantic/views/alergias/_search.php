@@ -10,21 +10,23 @@
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
 )); ?>
-
-	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
+<br>
+<div class="ui grid">
+	<div class="one wide column"></div>
+		<div class="twelve wide column">
+		    <div class="ui form">
+	<div class="fields">     
+		        <div class="four wide field">
+		<?php echo $form->label($model,'nombre'); ?>
+		<?php echo $form->textField($model,'nombre',array('size'=>60,'maxlength'=>128)); ?>
 	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'nombres'); ?>
-		<?php echo $form->textField($model,'nombres',array('size'=>60,'maxlength'=>128)); ?>
-	</div>
-
+</div>
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
-	</div>
-
+			    <?php echo CHtml::submitButton(CrugeTranslator::t('login', "Buscar"),array("class"=>"ui blue submit button")); ?>
+			</div>
+</div>
+</div>
+</div>
 <?php $this->endWidget(); ?>
 
 </div><!-- search-form -->

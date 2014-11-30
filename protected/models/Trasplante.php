@@ -32,9 +32,8 @@ class Trasplante extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('rut_donante, rut_paciente, tipo_donacion, id_donacion,grado_urgencia', 'required'),
-			array('rut_donante', 'length', 'max'=>12),
-			array('tipo_donacion, id_donacion, compatibilidad, grado_urgencia, centro_medico', 'length', 'max'=>255),
+			array('rut_paciente, tipo_donacion, id_donacion,grado_urgencia', 'required'),
+			array('tipo_donacion, id_donacion, compatible, grado_urgencia, centro_medico', 'length', 'max'=>255),
 			array('detalle, created, modified', 'safe'),
 			array('modified','default',
 	          'value'=>new CDbExpression('NOW()'),
@@ -45,7 +44,7 @@ class Trasplante extends CActiveRecord
               'setOnEmpty'=>false,'on'=>'insert'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, rut_donante, rut_paciente, tipo_donacion, id_donacion, compatibilidad, detalle, grado_urgencia, centro_medico, created, modified', 'safe', 'on'=>'search'),
+			array('rut_paciente, tipo_donacion, id_donacion, compatible, detalle, grado_urgencia, centro_medico, created, modified', 'safe', 'on'=>'search'),
 		);
 	}
 	/**
@@ -65,15 +64,14 @@ class Trasplante extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'rut_donante' => 'Rut Donante',
 			'rut_paciente' => 'Rut Paciente',
 			'nombre_pac' => 'Paciente',
 			'rut_pac' => 'Rut Paciente',
 			'nombre_don' => 'Donante',
 			'rut_don' => 'Rut Donante',
-			'tipo_donacion' => 'Tipo',
+			'tipo_donacion' => 'Tipo Donación',
 			'id_donacion' => 'ID Donacion',
-			'compatibilidad' => 'Compatible',
+			'compatible' => 'Compatible',
 			'detalle' => 'Descripción',
 			'grado_urgencia' => 'Grado Urgencia',
 			'centro_medico' => 'Centro Médico',
@@ -98,11 +96,10 @@ class Trasplante extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 		$criteria=new CDbCriteria;
 		$criteria->compare('id',$this->id);
-		$criteria->compare('rut_donante',$this->rut_donante,true);
 		$criteria->compare('rut_paciente',$this->rut_paciente,true);
 		$criteria->compare('tipo_donacion',$this->tipo_donacion,true);
 		$criteria->compare('id_donacion',$this->id_donacion,true);
-		$criteria->compare('compatibilidad',$this->compatibilidad,true);
+		$criteria->compare('compatible',$this->compatible,true);
 		$criteria->compare('detalle',$this->detalle,true);
 		$criteria->compare('grado_urgencia',$this->grado_urgencia,true);
 		$criteria->compare('centro_medico',$this->centro_medico,true);

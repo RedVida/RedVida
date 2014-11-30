@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS `alergias` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(128) COLLATE utf8_bin DEFAULT NULL,
   `descripcion` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `fecha_ingreso` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
 
@@ -718,6 +719,7 @@ CREATE TABLE IF NOT EXISTS `enfermedades` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(128) COLLATE utf8_bin DEFAULT NULL,
   `descripcion` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `fecha_ingreso` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=5 ;
 
@@ -840,25 +842,38 @@ CREATE TABLE IF NOT EXISTS `tiene_enfermedad` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `trasplante`
+-- Estructura de tabla para la tabla `trasplante organo`
 --
 
 CREATE TABLE IF NOT EXISTS `trasplante` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `rut_donante` varchar(12) COLLATE utf8_bin DEFAULT NULL,
   `rut_paciente` varchar(12) COLLATE utf8_bin DEFAULT NULL,
   `tipo_donacion` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `id_donacion` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `compatibilidad` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `compatible` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `detalle` text COLLATE utf8_bin,
   `grado_urgencia` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `centro_medico` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_reference_1` (`rut_donante`),
   KEY `fk_reference_2` (`rut_paciente`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
+
+
+
+CREATE TABLE IF NOT EXISTS `transfusion` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `rut_paciente` varchar(12) COLLATE utf8_bin DEFAULT NULL,
+  `tipo_sangre` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `cantidad` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_reference_2` (`rut_paciente`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
+
+
 
 --
 -- Restricciones para tablas volcadas
@@ -916,17 +931,30 @@ ALTER TABLE `tiene_enfermedad`
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 --
--- TRIGER UPDATE BANCO_SANGRE AL INSERTAR DONACION DE SANGRE
+-- TRIGER  BANCO_SANGRE -> DONACION DE SANGRE
 --
 
 DELIMITER $$
 DROP TRIGGER IF EXISTS `sumar_sangre`$$
 CREATE TRIGGER `sumar_sangre` AFTER INSERT ON `donacion_sangre` 
 FOR EACH ROW BEGIN
+  IF (SELECT cantidad FROM banco_sangre WHERE tipo = NEW.tipo_sangre) >=0
+  THEN
+      IF ((SELECT cantidad FROM banco_sangre WHERE tipo = NEW.tipo_sangre) + NEW.cantidad) >=0
+      THEN
+      UPDATE banco_sangre SET
+      cantidad = cantidad + NEW.cantidad
+      WHERE tipo = NEW.tipo_sangre;
+      END IF;
+  ELSE
 
-   UPDATE banco_sangre SET
-    cantidad = cantidad + NEW.cantidad
-    WHERE tipo = NEW.tipo_sangre;
+
+  UPDATE banco_sangre SET
+  cantidad = NEW.cantidad
+  WHERE tipo = NEW.tipo_sangre;
+  
+
+  END IF;
 
 END$$
 DELIMITER ;
@@ -938,17 +966,27 @@ DELIMITER $$
 DROP TRIGGER IF EXISTS `restar_sangre`$$
 CREATE TRIGGER `restar_sangre` AFTER DELETE ON `donacion_sangre` 
 FOR EACH ROW BEGIN
-   
-   IF ((SELECT cantidad FROM banco_sangre WHERE tipo= OLD.tipo_sangre) - OLD.cantidad) >=0
+   IF (SELECT cantidad FROM banco_sangre WHERE tipo = OLD.tipo_sangre) >=0
    THEN
-   UPDATE banco_sangre SET
-   cantidad = cantidad - OLD.cantidad
-   WHERE tipo = OLD.tipo_sangre;
-   ELSE
-   UPDATE banco_sangre SET
-   cantidad = 0
-   WHERE tipo = OLD.tipo_sangre;
-   END IF;
+     IF ((SELECT cantidad FROM banco_sangre WHERE tipo = OLD.tipo_sangre) - OLD.cantidad) >=0
+     THEN
+
+     UPDATE banco_sangre SET
+     cantidad = cantidad - OLD.cantidad
+     WHERE tipo = OLD.tipo_sangre;
+     
+     ELSE
+     
+     UPDATE banco_sangre SET
+     cantidad = 0
+     WHERE tipo = OLD.tipo_sangre;
+     
+
+
+
+     END IF;
+
+    END IF;
 
 END$$
 DELIMITER ;
@@ -963,20 +1001,27 @@ DROP TRIGGER IF EXISTS `actualiza_sangre`$$
 CREATE TRIGGER `actualiza_sangre` AFTER UPDATE ON `donacion_sangre` 
 FOR EACH ROW BEGIN
   
-  IF NEW.tipo_sangre = OLD.tipo_sangre 
+
+
+  IF (NEW.tipo_sangre - OLD.tipo_sangre)=0 
   THEN
 
       IF (NEW.cantidad - OLD.cantidad) >=0
       THEN
       
+
+      IF ((SELECT cantidad FROM banco_sangre WHERE tipo = NEW.tipo_sangre) + OLD.cantidad) >=0
+
+
+
       UPDATE banco_sangre SET
-      cantidad = cantidad + NEW.cantidad-OLD.cantidad
+      cantidad = cantidad + (NEW.cantidad-OLD.cantidad)
       WHERE tipo = NEW.tipo_sangre;
 
       ELSE
 
       UPDATE banco_sangre SET
-      cantidad = 0
+      NEW.cantidad = NEW.cantidad - OLD.cantidad
       WHERE tipo = NEW.tipo_sangre;
 
       END IF;
@@ -1014,3 +1059,99 @@ DELIMITER ;
 
 
 
+
+--
+-- TRIGER  BANCO_SANGRE -> TRANSFUSION
+--
+
+
+DELIMITER $$
+DROP TRIGGER IF EXISTS `restar_tsangre`$$
+CREATE TRIGGER `restar_tsangre` AFTER INSERT ON `transfusion` 
+FOR EACH ROW BEGIN
+   
+    IF ((SELECT cantidad FROM banco_sangre WHERE tipo = NEW.tipo_sangre) - NEW.cantidad) >=0
+    THEN
+    UPDATE banco_sangre SET
+    cantidad = cantidad - NEW.cantidad
+    WHERE tipo = NEW.tipo_sangre;
+    ELSE
+    UPDATE banco_sangre SET
+    cantidad = 0
+    WHERE tipo = NEW.tipo_sangre;
+    END IF;
+
+END$$
+DELIMITER ;
+
+
+
+DELIMITER $$
+DROP TRIGGER IF EXISTS `sumar_tsangre`$$
+CREATE TRIGGER `sumar_tsangre` AFTER DELETE ON `transfusion` 
+FOR EACH ROW BEGIN
+   
+   UPDATE banco_sangre SET
+   cantidad = cantidad + OLD.cantidad
+   WHERE tipo = OLD.tipo_sangre;
+
+END$$
+DELIMITER ;
+
+
+
+10 - 20
+-10 si es menos la nueva cantidad
+sino
+
+DELIMITER $$
+DROP TRIGGER IF EXISTS `actualiza_tsangre`$$
+CREATE TRIGGER `actualiza_tsangre` AFTER UPDATE ON `transfusion` 
+FOR EACH ROW BEGIN
+  
+  IF NEW.tipo_sangre = OLD.tipo_sangre 
+  THEN
+
+      IF (NEW.cantidad - OLD.cantidad) >=0
+      THEN
+      
+      UPDATE banco_sangre SET
+      cantidad = cantidad - NEW.cantidad - OLD.cantidad
+      WHERE tipo = NEW.tipo_sangre;
+
+      ELSE
+
+      UPDATE banco_sangre SET
+      cantidad = cantidad + NEW.cantidad - OLD.cantidad
+      WHERE tipo = NEW.tipo_sangre;
+
+      END IF;
+
+
+  ELSE
+
+
+      UPDATE banco_sangre SET
+      cantidad = cantidad - NEW.cantidad
+      WHERE tipo = NEW.tipo_sangre;
+
+      IF ((SELECT cantidad FROM banco_sangre WHERE tipo= OLD.tipo_sangre) + OLD.cantidad) >=0
+      THEN
+
+      UPDATE banco_sangre SET
+      cantidad = cantidad + OLD.cantidad
+      WHERE tipo = OLD.tipo_sangre;
+      
+      ELSE
+
+      UPDATE banco_sangre SET
+      cantidad = 0
+      WHERE tipo = OLD.tipo_sangre;
+
+      END IF;
+
+
+  END IF;
+
+END$$
+DELIMITER ;

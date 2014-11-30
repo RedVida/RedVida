@@ -1,39 +1,56 @@
-<?php
-/* @var $this EnfermedadesController */
-/* @var $model Enfermedades */
-/* @var $form CActiveForm */
-?>
+<script type="text/javascript">
 
-<div class="form">
+	$(document).ready(function() {
+			$('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada a Modal UI
+  		});
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'enfermedades-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
-)); ?>
+    function successModal(){                                                      // Button - Modal Success 
+        $("#enfermedades-form").submit();
+    }
+</script>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+<div class="ui grid">
+	<div class="one wide column"></div>
+		<div class="twelve wide column">
+	 		<div class="form">
+				<?php $form=$this->beginWidget('CActiveForm', array(
+					'id'=>'enfermedades-form',
+					'enableAjaxValidation'=>false,
+				)); ?>
+				<?php Yii::app()->clientScript->registerScript(
+				    'myHideEffect',
+				    '$(".errors").animate({opacity: 1.0}, 5000).fadeOut("slow");',
+				    CClientScript::POS_READY
+				); ?>
+				<?php echo $form->errorSummary($model, NULL, NULL, array("class" => "ui warning message"));?>
 
-	<?php echo $form->errorSummary($model); ?>
+				<div class="ui form">
+				   <div class="fields">
+					 	<div class="four wide field">
+							<?php echo $form->labelEx($model,'nombre'); ?>
+							<?php echo $form->textField($model,'nombre',array('size'=>30,'maxlength'=>128)); ?>
+							<div class="errors">
+							<?php echo $form->error($model,'nombre',array('class' => 'ui small red pointing above ui label')); ?>
+							</div>
+						</div>
+					</div>
+					<div class="fields">
+					 	<div class="four wide field">
+							<?php echo $form->labelEx($model,'descripcion'); ?>
+							<?php echo $form->textArea($model,'descripcion', array('maxlength' => 300)); ?>
+							<div class="errors">
+							<?php echo $form->error($model,'descripcion',array('class' => 'ui small red pointing above ui label')); ?>
+							</div>
+						</div>
+					</div>
+					<br>
+						<div class="ui blue submit button" id="ModalFunction"> <!-- Main.PHP -->
+							Registrar
+						</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'nombre'); ?>
-		<?php echo $form->textField($model,'nombre',array('size'=>60,'maxlength'=>128)); ?>
-		<?php echo $form->error($model,'nombre'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'descripcion'); ?>
-		<?php echo $form->textField($model,'descripcion',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'descripcion'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
+				</div>
+			</div>
+		</div>
 
 <?php $this->endWidget(); ?>
 

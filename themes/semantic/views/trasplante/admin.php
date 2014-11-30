@@ -80,11 +80,17 @@ Administrar Trasplantes </h1>
               	'class'=>'CCheckBoxColumn',            
         		),
 				'id',
-				'rut_donante',
 				'rut_paciente',
 				'tipo_donacion',
 				'id_donacion',
-				'compatibilidad',
+				'compatible',
+				array(
+				'name'=>'created',
+				'value'=>'date("d/m/y",strtotime($data->created))',
+				),
+				array(	
+					'value'=>'date("h:i",strtotime($data->created))',
+				),
 				/*
 				'detalle',
 				'grado_urgencia',
@@ -146,7 +152,7 @@ Administrar Trasplantes </h1>
 			)); ?>
 
 <!--COMIENZA SEMANTIC BUTTON-->
-<div class="ui blue submit button disabled blockear" id="btn_1">Ver
+<!--div class="ui blue submit button disabled blockear" id="btn_1">Ver
 <input type="hidden" name="Ver" value="Ver" method="POST" ></input>
 </div>
 <div class="ui blue submit button disabled blockear" id="btn_2">Actualizar
@@ -154,7 +160,7 @@ Administrar Trasplantes </h1>
 </div>
 <div class="ui blue submit button disabled blockear" id="btn_3">Eliminar
 <input type="hidden" name="Eliminar" value="Eliminar" method="POST" ></input>
-</div>
+</div-->
 <!--TERMINA SEMANTIC BUTTON-->
 
 

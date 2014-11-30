@@ -25,10 +25,14 @@ class Alergias extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombres', 'length', 'max'=>128),
-			array('nombre','required','message' => 'El Nombre de la Alergia es requerido'),
-			// @todo Please remove those attributes that should not be searched.
-			array('id, nombres', 'safe', 'on'=>'search'),
+			array('nombre','required','message' => 'El Nombre es requerido'),
+                    array('nombre',
+                    'length',
+                    'min' => 3,
+                    'tooShort' => 'Minimo 5 caracteres',
+                    'max' => 50,
+                    'tooLong' => 'maximo 50 caracteres'),
+                    array('descripcion', 'length', 'max'=>128),
 		);
 	}
 
@@ -51,7 +55,9 @@ class Alergias extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'nombres' => 'Nombres',
+			'nombre' => 'Nombre',
+			'fecha_ingreso' => 'Fecha de ingreso',
+			'descripcion' => 'Descripcion',
 		);
 	}
 
@@ -74,7 +80,9 @@ class Alergias extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('nombres',$this->nombres,true);
+		$criteria->compare('nombre',$this->nombre,true);
+		$criteria->compare('fecha_ingreso',$this->fecha_ingreso,true);
+		$criteria->compare('descripcion',$this->descripcion,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

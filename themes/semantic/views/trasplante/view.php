@@ -24,8 +24,26 @@ Ver Trasplante #<?php echo $model->id; ?></h1>
 	<div class="twelve wide column">
 
 	<?php 
+
+
+if($model->tipo_donacion == "Órgano"){
+$model_getDon = DonacionOrgano::model()->find('id ='."'$model->id_donacion'");
+$var = $model_getDon['rut_donante'];
 	$modelo_paciente = Paciente::model()->find('rut ='."'$model->rut_paciente'");
-	$modelo_donante = Donantes::model()->find('rut ='."'$model->rut_donante'");  
+	$modelo_donante = Donantes::model()->find('rut ='."'$var'");  
+	 
+}
+
+
+if($model->tipo_donacion == "Médula"){
+$model_getDon = DonacionMedula::model()->find('id ='."'$model->id_donacion'");
+$var = $model_getDon['rut_donante'];
+	$modelo_paciente = Paciente::model()->find('rut ='."'$model->rut_paciente'");
+	$modelo_donante = Donantes::model()->find('rut ='."'$var'");  
+	 
+}
+
+
 	 ?>
 
 	<?php $this->widget('zii.widgets.CDetailView', array(
@@ -40,7 +58,7 @@ Ver Trasplante #<?php echo $model->id; ?></h1>
 			array('name'=>'rut_don', 'value' => $modelo_donante['rut']),	
 			'tipo_donacion',
 			'id_donacion',
-			'compatibilidad',
+			'compatible',
 			'grado_urgencia',
 			'centro_medico',
 			//'detalle',
@@ -49,8 +67,14 @@ Ver Trasplante #<?php echo $model->id; ?></h1>
 			'type'=>'ntext',
 			'htmlOptions'=>array('style' => 'width: 100; position: relative;'),
 			),
-			'created',
-			'modified',
+			array(
+				'name'=>'Fecha de Ingreso',
+				'value'=> CHtml::encode(Yii::app()->locale->dateFormatter->formatDateTime($model->created,'long',null)),
+			),
+			array(
+				'name'=>'Hora',
+				'value'=>Yii::app()->dateFormatter->format('HH:mm',$model->created),
+			),
 		),
 		'htmlOptions'=>array('class'=>'ui celled table segment autosize'),
 	)); ?>

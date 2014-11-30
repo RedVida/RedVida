@@ -9,22 +9,24 @@
 	    <i class="add large icon"></i> 
 	    <div class="content">
 
+
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('nombre_pac')); ?>:</b>
 	<?php $modelo_paciente = Paciente::model()->find('rut='."'$data->rut_paciente'");
 	echo $modelo_paciente['nombre'].' '.$modelo_paciente['apellido']; ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('nombre_don')); ?>:</b>
-	<?php $modelo_donante = Donantes::model()->find('rut='."'$data->rut_donante'");
-	echo $modelo_donante['nombres'].' '.$modelo_donante['apellidos']; ?>
+	<b><?php echo "Rut Paciente"; ?>:</b>
+	<?php $modelo_paciente = Paciente::model()->find('rut='."'$data->rut_paciente'");
+	echo $modelo_paciente['rut']; ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('tipo_donacion')); ?>:</b>
 	<?php echo CHtml::encode($data->tipo_donacion); ?>
 	<br />
 	
-	<b><?php echo CHtml::encode($data->getAttributeLabel('compatibilidad')); ?>:</b>
-	<?php echo CHtml::encode($data->compatibilidad); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('compatible')); ?>:</b>
+	<?php echo CHtml::encode($data->compatible); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('grado_urgencia')); ?>:</b>

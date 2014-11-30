@@ -3,7 +3,7 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->menu=array(
-	array('label'=>'Registrar Trasplante', 'url'=>array('create')),
+	array('label'=>'Registrar Trasplante', 'url'=>array('/paciente/asignar')),
 	array('label'=>'Administrar Trasplantes', 'url'=>array('admin')),
 );
 ?>

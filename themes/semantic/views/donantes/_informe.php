@@ -6,11 +6,10 @@
 						th,td {padding: 5px;text-align: left;}
 						table#t01 tr:nth-child(even) {background-color: #eee;}
 						table#t01 tr:nth-child(odd) {background-color:#fff;}
-						table#t01 th{background-color: #65686b;color: white;}
+						table#t01 th{background-color: #2654b3;color: white;}
 					</style>
 				</head>
 				<body>
-					<h1><u> Informe Donante: </u></h1>
 					<br>
 					<table id="t01">
 					  <tr><th>Nombre</th><th>Apellido</th><th>Rut</th><th>T.Sangre</th><th>N° de contacto</th		

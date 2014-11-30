@@ -32,9 +32,7 @@
   </head>
 
 <body>
-
-<!-- Modal View
-NO PUEDE IR EN MAIN SOLO EN LAS VISTAS QUE LO USAN
+<!--no habilitar
   <div class="ui small modal">
         <i class="close icon"></i>
           <div class="header">
@@ -54,8 +52,8 @@ NO PUEDE IR EN MAIN SOLO EN LAS VISTAS QUE LO USAN
         </div>
       </div>
   </div>
-
- -->
+-->
+ 
 
 <!-- Meno As DropDown -->
 
@@ -71,6 +69,12 @@ NO PUEDE IR EN MAIN SOLO EN LAS VISTAS QUE LO USAN
         <i class="user icon"></i> Iniciar Sesión
       </a>
       <?php } ?>
+
+          <?php if(Yii::app()->user->isSuperAdmin){ ?>
+    <a class="item" href="<?php echo Yii::app()->user->ui->userManagementAdminUrl; ?>">
+      <i class="users icon"></i> Adm. de Usuario
+    </a>
+     <?php }?> 
 
       <div class="right menu">
       
@@ -94,72 +98,62 @@ NO PUEDE IR EN MAIN SOLO EN LAS VISTAS QUE LO USAN
 <?php if(!Yii::app()->user->isGuest){ ?>
 <div class="ui blue inverted menu "> <!--BEGIN MENU INVERTED-->
   <div class="menu"><!--BEGIN MENU-->
-    <?php if(Yii::app()->user->isSuperAdmin){ ?>
-    <a class="item" href="<?php echo Yii::app()->user->ui->userManagementAdminUrl; ?>">
-      <i class="asterisk icon"></i> Adm. de Usuario
-    </a>
-     <?php }?>   
 
-    <div class="ui pointing dropdown link item">
+     <div class="ui pointing dropdown link item">
 
-      <i class="asterisk icon"></i> Donantes <i class="dropdown icon"></i>
+      <i class="asterisk icon"></i> Alergias <i class="dropdown icon"></i>
       <div class="menu">
+        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/alergias/create">
+          <i class="doble angle right icon"></i> Registrar Alergia
+        </a>
+        <?php } ?>
+         <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/alergias/admin">
+          <i class="doble angle right icon"></i> Administrar Alergias
+        </a>
+        <?php } ?>
+        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/alergias/informe">
+          <i class="doble angle right icon"></i> Generar Informe
+        </a>
+        <?php } ?>
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/alergias/">
+          <i class="doble angle right icon"></i> Listar Alergias
+        </a>
+        
+         
+        
 
-        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/create">
-          <i class="doble angle right icon"></i> Registrar Donante
-        </a>
-        <?php } ?>
-        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
-         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/admin">
-          <i class="doble angle right icon"></i> Administrar Donantes
-        </a>
-        <?php } ?>
-
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/">
-          <i class="doble angle right icon"></i> Listar Donantes
-        </a>
-
-        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/registraenfermedad">
-          <i class="doble angle right icon"></i> Asignar Enfermedad 
-        </a>
-        <?php } ?>
-        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/registra_alergia">
-          <i class="doble angle right icon"></i> Asignar Alergia 
-        </a>
-        <?php } ?>
-      
        </div>     
     </div>
 
-
     <div class="ui pointing dropdown link item">
 
-      <i class="asterisk icon"></i> Pacientes <i class="dropdown icon"></i>
-      <div class="menu">
-      <?php if(Yii::app()->user->checkAccess('tester')){ ?>
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/create">
-          <i class="doble angle right icon"></i> Registrar Paciente
-        </a>
-        <?php } ?>
-       <?php if(Yii::app()->user->checkAccess('tester')){ ?>
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/admin">
-          <i class="doble angle right icon"></i> Administrar Pacientes
-        </a>
-        <?php } ?>
-
-         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/">
-          <i class="doble angle right icon"></i> Listar Pacientes
-        </a>
-
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/urgenciasnacionales">
-          <i class="doble angle right icon"></i> Urgencias Nacionales
-        </a>
-       
-       </div>       
-    </div>
+          <i class="asterisk icon"></i> Centros Medicos <i class="dropdown icon"></i>
+          <div class="menu">
+            <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+             <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/create">
+              <i class="doble angle right icon"></i> Registrar C. Medico
+            </a>
+            <?php } ?>
+            <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+            <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/admin">
+              <i class="doble angle right icon"></i> Administrar C. Medicos
+            </a>
+            <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+             <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/informe">
+              <i class="doble angle right icon"></i> Generar Informe
+            </a>
+            <?php } ?>
+            <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/">
+              <i class="doble angle right icon"></i> Listar C. Medicos
+            </a>
+             <?php } ?>
+             
+             
+          </div>       
+      </div>  
 
     <?php if(Yii::app()->user->checkAccess('tester')){ ?>
     <div class="ui pointing dropdown link item">
@@ -171,7 +165,6 @@ NO PUEDE IR EN MAIN SOLO EN LAS VISTAS QUE LO USAN
           <i class="doble angle right icon"></i> Registrar Donación 
         </a>
 
-        
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionSangre/admin">
           <i class="doble angle right icon"></i> Adm. Donac. Sangre
         </a>
@@ -189,7 +182,11 @@ NO PUEDE IR EN MAIN SOLO EN LAS VISTAS QUE LO USAN
         </a>
 
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/organo/admin">
-          <i class="doble angle right icon"></i> Administrar Órganos
+          <i class="doble angle right icon"></i> Adm. Órganos
+        </a>
+
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/organo/informe">
+          <i class="doble angle right icon"></i> Generar Informe
         </a>
         
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionSangre/">
@@ -215,6 +212,103 @@ NO PUEDE IR EN MAIN SOLO EN LAS VISTAS QUE LO USAN
        </div>  
     </div>
         <?php } ?>
+
+    <div class="ui pointing dropdown link item">
+
+      <i class="asterisk icon"></i> Donantes <i class="dropdown icon"></i>
+      <div class="menu">
+
+        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/create">
+          <i class="doble angle right icon"></i> Registrar Donante
+        </a>
+        <?php } ?>
+        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/admin">
+          <i class="doble angle right icon"></i> Administrar Donantes
+        </a>
+        <?php } ?>
+        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/registra_alergia">
+          <i class="doble angle right icon"></i> Asignar Alergia 
+        </a>
+        <?php } ?>
+        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/registraenfermedad">
+          <i class="doble angle right icon"></i> Asignar Enfermedad 
+        </a>
+        <?php } ?> 
+        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/informe">
+          <i class="doble angle right icon"></i> Generar Informe
+        </a>
+        <?php } ?>
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/">
+          <i class="doble angle right icon"></i> Listar Donantes
+        </a>
+
+        
+        
+      
+       </div>     
+    </div>
+
+    <div class="ui pointing dropdown link item">
+
+      <i class="asterisk icon"></i> Enfermedades <i class="dropdown icon"></i>
+      <div class="menu">
+
+        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/enfermedades/create">
+          <i class="doble angle right icon"></i> Registrar Enfermedades
+        </a>
+        <?php } ?>
+        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/enfermedades/admin">
+          <i class="doble angle right icon"></i> Administrar Enfermedades
+        </a>
+        <?php } ?>
+        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/enfermedades/informe">
+          <i class="doble angle right icon"></i> Generar Informe
+        </a>
+        <?php } ?>
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/enfermedades/">
+          <i class="doble angle right icon"></i> Listar Enfermedades
+        </a>
+
+       </div>     
+    </div>
+
+    <div class="ui pointing dropdown link item">
+
+      <i class="asterisk icon"></i> Pacientes <i class="dropdown icon"></i>
+      <div class="menu">
+      <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/create">
+          <i class="doble angle right icon"></i> Registrar Paciente
+        </a>
+        <?php } ?>
+       <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/admin">
+          <i class="doble angle right icon"></i> Administrar Pacientes
+        </a>
+        <?php } ?>
+        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/informe">
+          <i class="doble angle right icon"></i> Generar Informe
+        </a>
+        <?php } ?>
+         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/">
+          <i class="doble angle right icon"></i> Listar Pacientes
+        </a>
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/urgenciasnacionales">
+          <i class="doble angle right icon"></i> Urgencias Nacionales
+        </a>
+       
+       </div>       
+    </div>
+
         <?php if(Yii::app()->user->checkAccess('tester')){ ?>
 
       <div class="ui pointing dropdown link item">
@@ -231,6 +325,9 @@ NO PUEDE IR EN MAIN SOLO EN LAS VISTAS QUE LO USAN
             <i class="doble angle right icon"></i> Administrar Trasplantes
           </a>
 
+          <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/trasplante/informe">
+            <i class="doble angle right icon"></i> Generar Informe
+
 
           <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/trasplante/">
             <i class="doble angle right icon"></i> Listar Trasplantes
@@ -240,27 +337,7 @@ NO PUEDE IR EN MAIN SOLO EN LAS VISTAS QUE LO USAN
       </div>
       <?php } ?>
 
-      <div class="ui pointing dropdown link item">
-
-          <i class="asterisk icon"></i> Centros Medicos <i class="dropdown icon"></i>
-          <div class="menu">
-             <?php if(Yii::app()->user->checkAccess('tester')){ ?>
-             <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/create">
-              <i class="doble angle right icon"></i> Registrar C. Medico
-            </a>
-            <?php } ?>
-            <?php if(Yii::app()->user->checkAccess('tester')){ ?>
-            <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/admin">
-              <i class="doble angle right icon"></i> Administrar C. Medicos
-            </a>
-            <?php } ?>
-
-            <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/">
-              <i class="doble angle right icon"></i> Listar C. Medicos
-            </a>
-
-          </div>       
-      </div>
+      
 
 
     </div><!--END MENU-->

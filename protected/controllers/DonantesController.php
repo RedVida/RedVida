@@ -223,6 +223,10 @@ class DonantesController extends Controller
             $this->layout="//layouts/pdf";
             $mPDF1 = Yii::app()->ePdf->mpdf();
 			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/nn.png' ));
+			$mPDF1->WriteHTML('<br>');
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/line2.png' ));
+			$mPDF1->WriteHTML('<br> ');
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/informe_donantes.png' ));
 			$where_array = array();
 			$from_array = array();
 			$OK = true;
@@ -234,16 +238,16 @@ class DonantesController extends Controller
 		    	$length = (string)($_POST['Donantes']['tipo_sangre']);
             	$where_array[]=('d.tipo_sangre = '."'$length'");
 		    }
-		    if($_POST['Donantes']['fecha_ingreso']!=''){ // Tipo de sangre
-		    	$desde = (string)($_POST['Donantes']['fecha_ingreso']);
+		    if($_POST['Donantes']['desde']!=''){ // Tipo de sangre
+		    	$desde = (string)($_POST['Donantes']['desde']);
             	$where_array[]=('d.fecha_ingreso >= '."'$desde'");
 		    }
-		     if($_POST['Donantes']['direccion']!=''){ // Tipo de sangre
-		    	$hasta = (string)($_POST['Donantes']['direccion']);
+		     if($_POST['Donantes']['hasta']!=''){ // Tipo de sangre
+		    	$hasta = (string)($_POST['Donantes']['hasta']);
             	$where_array[]=('d.fecha_ingreso <= '."'$hasta'");
 		    }
-		    if($_POST['Donantes']['id']!=''){ // Alergia
-		    	$length = (string)($_POST['Donantes']['id']);
+		    if($_POST['Donantes']['alergia']!=''){ // Alergia
+		    	$length = (string)($_POST['Donantes']['alergia']);
 		    	$modelo = Alergias::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='."'$length'"));
 		    	if(!$modelo){
 				   $model->addError('nombre','Alergia : El nombre de la Alergia ingresada no existe ');
@@ -253,8 +257,8 @@ class DonantesController extends Controller
             	$from_array[]=('tiene_alergia ta');
                 }
 		    }
-		    if($_POST['Donantes']['nombres']!=''){ // Enfermedades
-		    	$length = (string)($_POST['Donantes']['nombres']);
+		    if($_POST['Donantes']['enfermedad']!=''){ // Enfermedades
+		    	$length = (string)($_POST['Donantes']['enfermedad']);
 		    	$modelo = Enfermedades::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='."'$length'"));
 		    	if(!$modelo){
 				   $model->addError('nombre','Enfermedad : El nombre de la Enfermedad ingresada no existe ');

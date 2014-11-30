@@ -41,9 +41,7 @@
 	<?php }	?>
 
 	<div class="ui form">
-	<?php
-	if(isset($_GET['id'])){
-	?>
+
 	<div class="fields">
 		 	<div class="four wide field">
 				<?php echo $form->labelEx($model,'rut_paciente'); ?>
@@ -53,86 +51,21 @@
 				</div>
 			</div>
 		</div>
-	<?php } ?>
-
-
-
-
- 	<div class="fields">
-	 	<div class="four wide field">
-			<?php echo $form->labelEx($model,'rut_donante'); ?>
-			<?php echo $form->textField($model,'rut_donante',array('size'=>30,'maxlength'=>12)); ?>
-			<div class="errors">
-			<?php echo $form->error($model,'rut_donante',array('class' => 'ui small red pointing above ui label')); ?>
-			</div>
-		</div>
-	</div>
 
 
 	<?php
-
-
-	
-
-	if(isset($_GET['don']))
+	if(isset($_GET['name']))
 	{
+		if($_GET['name']=='medula'){
 
 
-		if($_GET['don']=='sangre'){
-
-
-
-
-?>
-
-
-	<div class="fields">
-		 	<div class="four wide field">
-				<?php echo $form->labelEx($model,'tipo_donacion'); ?>
-				<?php echo $form->textField($model,'tipo_donacion', array('value'=>'Donación de Sangre', 'readonly'=>true)); ?>
-				<div class="errors">
-				<?php echo $form->error($model,'tipo_donacion',array('class' => 'ui small red pointing above ui label')); ?>
-				</div>
-			</div>
-		</div>
-
-
-
-		   <div class="fields">
-	 	<div class="four wide field">
-			<?php echo $form->labelEx($model,'id_donacion'); ?>
-			<?php echo $form->dropDownList($model,'id_donacion',CHtml::listData(BancoSangre::model()->findAll(),'tipo', 'tipo'),array('id'=>'dropDownId','empty'=>'Seleccione Tipo de Donación','class'=>'ui selection dropdown'   )); ?>
-			<div class="errors">
-			<?php echo $form->error($model,'id_donacion',array('class' => 'ui small red pointing above ui label')); ?>
-			</div>
-		</div>
-	</div>
-
-<?php
-
-
-
-		}
 	?>
 
 
-
-<?php
-
-
-
-		if($_GET['don']=='medula'){
-
-
-
-
-?>
-
-
 	<div class="fields">
 		 	<div class="four wide field">
 				<?php echo $form->labelEx($model,'tipo_donacion'); ?>
-				<?php echo $form->textField($model,'tipo_donacion', array('value'=>'Donación de Médula', 'readonly'=>true)); ?>
+				<?php echo $form->textField($model,'tipo_donacion', array('value'=>'Médula', 'readonly'=>true)); ?>
 				<div class="errors">
 				<?php echo $form->error($model,'tipo_donacion',array('class' => 'ui small red pointing above ui label')); ?>
 				</div>
@@ -143,91 +76,52 @@
 	   <div class="fields">
 	 	<div class="four wide field">
 			<?php echo $form->labelEx($model,'id_donacion'); ?>
-			<?php echo $form->dropDownList($model,'id_donacion',CHtml::listData(DonacionMedula::model()->findAll(),'id', 'tipo_medula'),array('empty'=>'Seleccione Tipo de Donación','class'=>'ui selection dropdown'   )); ?>
+			<?php echo $form->dropDownList($model,'id_donacion',CHtml::listData(DonacionMedula::model()->findAll(),'id', 'id'),array('empty'=>'Seleccione Tipo de Donación','class'=>'ui selection dropdown'   )); ?>
 			<div class="errors">
 			<?php echo $form->error($model,'id_donacion',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>
 		</div>
 	</div>
-
-
-
-<?php
-
-
-
-		}
-	?>
-
-
-
-
-
-<?php
-
-
-
-		if($_GET['don']=='organo'){
-
-
-
-
-?>
-
-
-	<div class="fields">
-		 	<div class="four wide field">
-				<?php echo $form->labelEx($model,'tipo_donacion'); ?>
-				<?php echo $form->textField($model,'tipo_donacion', array('value'=>'Donación de Órgano', 'readonly'=>true)); ?>
-				<div class="errors">
-				<?php echo $form->error($model,'tipo_donacion',array('class' => 'ui small red pointing above ui label')); ?>
-				</div>
-			</div>
-		</div>
-
-
-	   <div class="fields">
-	 	<div class="four wide field">
-			<?php echo $form->labelEx($model,'id_donacion'); ?>
-			<?php echo $form->dropDownList($model,'id_donacion',CHtml::listData(DonacionOrgano::model()->findAll(),'id', 'nombre'),array('empty'=>'Seleccione Tipo de Donación','class'=>'ui selection dropdown'   )); ?>
-			<div class="errors">
-			<?php echo $form->error($model,'id_donacion',array('class' => 'ui small red pointing above ui label')); ?>
-			</div>
-		</div>
-	</div>
-
-
-
-<?php
-
-
-
-		}
-	?>
-
-
-
-
-
-
-
+	<?php }	?>
 
 	<?php
+		if($_GET['name']=='organo'){
+	?>
 
-	}	
-?>
+	<div class="fields">
+		 	<div class="four wide field">
+				<?php echo $form->labelEx($model,'tipo_donacion'); ?>
+				<?php echo $form->textField($model,'tipo_donacion', array('value'=>'Órgano', 'readonly'=>true)); ?>
+				<div class="errors">
+				<?php echo $form->error($model,'tipo_donacion',array('class' => 'ui small red pointing above ui label')); ?>
+				</div>
+			</div>
+		</div>
+
+
+	   <div class="fields">
+	 	<div class="four wide field">
+			<?php echo $form->labelEx($model,'id_donacion'); ?>
+			<?php echo $form->dropDownList($model,'id_donacion',CHtml::listData(DonacionOrgano::model()->findAll(),'id', 'id'),array('empty'=>'Seleccione Tipo de Donación','class'=>'ui selection dropdown'   )); ?>
+			
+			<div class="errors">
+			<?php echo $form->error($model,'id_donacion',array('class' => 'ui small red pointing above ui label')); ?>
+	
+			</div>
+		</div>
+	</div>
 
 
 
-
-
+	<?php 	}
+			} ?>
 
     <div class="fields">
 	 	<div class="four wide field">
-			<?php echo $form->labelEx($model,'compatibilidad'); ?>
-			<?php echo $form->dropDownList($model,'compatibilidad',array('Compatible'=>'Compatible','No Compatible'=>'No Compatible'), array('empty'=>'Seleccione Compatibilidad','class'=>'ui selection dropdown')); ?>
+			<?php echo $form->labelEx($model,'compatible'); ?>
+			<?php echo $form->dropDownList($model,'compatible',array('Si'=>'Si','No'=>'No'), array('empty'=>'Seleccione Compatibilidad','class'=>'ui selection dropdown')); ?>
 			<div class="errors">
-			<?php echo $form->error($model,'compatibilidad',array('class' => 'ui small red pointing above ui label')); ?>
+			<?php echo $form->error($model,'compatible',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>
 		</div>
 	</div>
@@ -267,7 +161,12 @@
   
 	<br><br>
 	<div class="row buttons">
-	    <?php echo CHtml::submitButton(CrugeTranslator::t('Registrar'),array("class"=>"ui blue submit button")); ?>
+	    <?php 
+
+
+
+
+	    echo CHtml::submitButton(CrugeTranslator::t('Registrar'),array("class"=>"ui blue submit button")); ?>
 	</div>
 
 
