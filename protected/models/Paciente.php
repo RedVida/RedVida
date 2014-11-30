@@ -35,13 +35,54 @@ class Paciente extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_centro_medico', 'numerical', 'integerOnly'=>true),
-			array('nombre, apellido, afiliacion, grado_urgencia, necesidad_transplante', 'length', 'max'=>20),
-			array('rut', 'length', 'max'=>12),
-			array('tipo_sangre', 'length', 'max'=>10),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre, apellido, rut, afiliacion, grado_urgencia, necesidad_transplante, tipo_sangre, id_centro_medico', 'safe', 'on'=>'search'),
+			array('nombre','required','message' => 'El Nombre es requerido'),
+            array('nombre',
+                'length',
+                'min' => 3,
+                'tooShort' => 'Minimo 3 caracteres',
+                'max' => 50,
+                'tooLong' => 'maximo 50 caracteres'),
+                  
+            array('apellido','required','message' => 'El Apellido es requerido'),
+            array('apellido',
+                'length',
+                'min' => 3,
+                'tooShort' => 'Minimo 3 caracteres',
+                'max' => 50,
+                'tooLong' => 'maximo 50 caracteres'),
+            array('nombre,apellido', 'match','pattern' => '/^[a-zA-Z\s]+$/','message'=>'El campo {attribute} sólo puede ser texto.'),
+            array('rut','required','message' => 'El Rut es requerido'),
+            array('rut','unique','message' => 'Este Rut ya esta registrado'),
+            array(
+                'afiliacion',
+                'required',
+                'message' => 'La afiliacion es requerida',
+            ),
+            array(
+                'grado_urgencia',
+                'required',
+                'message' => 'El grado de urgencia es requerido',
+            ),
+            array(
+                'necesidad_transplante',
+                'required',
+                'message' => 'La necesidad de transplante es requerida',
+            ),
+            array(
+                'tipo_sangre',
+                'required',
+                'message' => 'El tipo de sangre es requerido',
+            ),
+            array(
+                'id_centro_medico',
+                'required',
+                'message' => 'El centro medico es requerido',
+            ),
+            array(
+            	'fecha_nacimiento',
+            	'required',
+            	'message' => 'La fecha de nacimiento es requerida'
+           	),
 		);
 	}
 
@@ -72,6 +113,7 @@ class Paciente extends CActiveRecord
 			'necesidad_transplante' => 'Necesidad Transplante',
 			'tipo_sangre' => 'Tipo Sangre',
 			'id_centro_medico' => 'Id Centro Medico',
+			'fecha_nacimiento' => 'Fecha Nacimiento',
 		);
 	}
 
@@ -102,6 +144,7 @@ class Paciente extends CActiveRecord
 		$criteria->compare('necesidad_transplante',$this->necesidad_transplante,true);
 		$criteria->compare('tipo_sangre',$this->tipo_sangre,true);
 		$criteria->compare('id_centro_medico',$this->id_centro_medico);
+		$criteria->compare('fecha_nacimiento',$this->fecha_nacimiento);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -67,6 +67,7 @@ class PacienteController extends Controller
 		if(isset($_POST['Paciente']))
 		{
 			$model->attributes=$_POST['Paciente'];
+			$model->fecha_ingreso = new CDbExpression('NOW()');
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -82,23 +83,76 @@ class PacienteController extends Controller
 		$model_tiene_enfermedad = new EnfermedadPaciente;
 		$model = new Enfermedades;
 
-		if (isset($_POST['Enfermedades'])) {
-			$model_tiene_enfermedad->id_paciente = $id;
-			$length = (string)($_POST['Enfermedades']['id']);
-			$modelo = Enfermedades::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='."'$length'"));
-			$model_tiene_enfermedad->id_enfermedad = $modelo[0]->id;
-			
-			if ($model_tiene_enfermedad->save()) {
-				$this->redirect(array('admin'));
-			}else
-			{
-				echo 'No se pudo insertar! id:'.$id.' y id_enfermedad:'.$model_tiene_enfermedad->id_enfermedad;
-				Yii::app()->end();
-			}
-		}
-
+		if (isset($_POST['Enfermedades']) && ($_POST['Enfermedades']['id']!=null)) {
+				$length = (string)($_POST['Enfermedades']['id']);
+				$modelo = Enfermedades::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='."'$length'"));
+				if(!$modelo){
+				   $model->addError('nombre','Nombre : El nombre de la Enfermedad ingresada no existe ');
+				}
+				else{
+				$modelo = Enfermedades::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='."'$length'"));
+				$list= Yii::app()->db->createCommand('select * from enfermedad_paciente where id_paciente = '."'$id'".' AND id_enfermedad = '.$modelo[0]->id)->queryAll();   
+	            $cont = 0;
+	            foreach($list as $item){$cont++;}
+	            if($cont>0){
+                   $model->addError('nombre','El donantes ya posee registrada esta Enfermedad ('.$_POST['Enfermedades']['id'].'), porfavor ingrese otro nombre.');
+	            }
+	            else{
+		            $model_tiene_enfermedad->id_donante = $id;
+					$model_tiene_enfermedad->id_enfermedad = $modelo[0]->id;
+					$model_tiene_enfermedad->fecha = new CDbExpression('NOW()');
+		 
+					if ($model_tiene_enfermedad->save()) {
+						$this->redirect(array('view&id='.$id));
+					}
+			  	}
+			  }
+	   }
+	   else if(isset($_POST['Enfermedades'])){
+	    	   $model->addError('nombre','Nombre : Se requiere ingresar una Enfermedad ');
+	    }
+ 
 		$this->render('asignaenfermedad',array('model'=>$model));
 	}
+
+	public function actionRegistrarAlergia($id)
+	{
+		//asignamos de alguna manera la enfermedad al donante con id = $id (parametro)
+		$model_tiene_alergia = new AlergiaPaciente;
+		$model = new Alergias;
+
+		if (isset($_POST['Alergias']) && ($_POST['Alergias']['id']!=null)) {
+				$length = (string)($_POST['Alergias']['id']);
+				$modelo = Alergias::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='."'$length'"));
+				if(!$modelo){
+				   $model->addError('nombre','Nombre : El nombre de la Alergia ingresada no existe ');
+				}
+				else{
+				$modelo = Alergias::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='."'$length'"));
+				$list= Yii::app()->db->createCommand('select * from alergia_paciente where id_paciente = '."'$id'".' AND id_alergia = '.$modelo[0]->id)->queryAll();   
+	            $cont = 0;
+	            foreach($list as $item){$cont++;}
+	            if($cont>0){
+                   $model->addError('nombre','El donantes ya posee registrada esta Alergia ('.$_POST['Alergias']['id'].'), porfavor ingrese otro nombre.');
+	            }
+	            else{
+		            $model_tiene_alergia->id_paciente = $id;
+					$model_tiene_alergia->id_alergia = $modelo[0]->id;
+					$model_tiene_alergia->fecha = new CDbExpression('NOW()');
+		 
+					if ($model_tiene_alergia->save()) {
+						$this->redirect(array('view&id='.$id));
+					}
+			  	}
+			  }
+	   }
+	   else if(isset($_POST['Alergias'])){
+	    	   $model->addError('nombre','Nombre : Se requiere ingresar una Alergia ');
+	    }
+
+		$this->render('asignaalergia',array('model'=>$model));
+	}
+
 
 	public function actionUrgenciasnacionales(){
 		$organo = Organo::model()->findAll(array('select'=>'nombreOrgano'));
@@ -107,6 +161,72 @@ class PacienteController extends Controller
 			'dataProvider'=>$dataProvider,'organo'=>$organo)
 		);
 	}
+
+	public function actionInforme(){
+	// Odernar por: Edad, Tipo de sangre, Centro medico, Fecha de ingreso
+
+		$model = new Paciente;
+		if(isset($_POST['Paciente'])){
+       		$model = new Paciente;
+            $this->layout="//layouts/pdf";
+            $mPDF1 = Yii::app()->ePdf->mpdf();
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/nn.png' ));
+			$mPDF1->WriteHTML('<br>');
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/line2.png' ));
+			$mPDF1->WriteHTML('<br> ');
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/informe_paciente.png' ));
+			$where_array = array();
+			$from_array = array();
+			$OK = true;
+			
+            if($_POST['Paciente']['id_centro_medico']!=''){ // centro medico
+            	$where_array[]=('d.id_centro_medico = '.$_POST['Paciente']['id_centro_medico']);
+		    }
+		    if($_POST['Paciente']['tipo_sangre']!=''){ // Tipo de sangre
+		    	$length = (string)($_POST['Paciente']['tipo_sangre']);
+            	$where_array[]=('d.tipo_sangre = '."'$length'");
+		    }
+		    if($_POST['Paciente']['alergia']!=''){ // Alergia
+		    	$length = (string)($_POST['Paciente']['alergia']);
+		    	$modelo = Alergias::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='."'$length'"));
+		    	if(!$modelo){
+				   $model->addError('nombre','Alergia : El nombre de la Alergia ingresada no existe ');
+				   $OK = false;
+				}else{
+            	$where_array[]=('ta.id_alergia= '.$modelo[0]->id.' AND ta.id_donante = d.id');
+            	$from_array[]=('tiene_alergia ta');
+                }
+		    }
+		    if($_POST['Paciente']['enfermedad']!=''){ // Enfermedades
+		    	$length = (string)($_POST['Paciente']['enfermedad']);
+		    	$modelo = Enfermedades::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='."'$length'"));
+		    	if(!$modelo){
+				   $model->addError('nombre','Enfermedad : El nombre de la Enfermedad ingresada no existe ');
+				   $OK = false;
+				}else{
+            	$where_array[]=('te.id_enfermedad= '.$modelo[0]->id.' AND te.id_donante = d.id');
+            	$from_array[]=('tiene_enfermedad te');
+                }
+		    }
+		    $form = implode(", ", $from_array);	 
+		    $where = implode(" AND ", $where_array);	
+            $results = Yii::app()->db->createCommand()->
+	            select('*')->
+	            from('paciente d, '.$form)->
+	            where($where)->
+	            queryAll();
+	        if(!$OK)$results =null;
+            if($results){
+				$mPDF1->WriteHTML($this->render('_informe',array('results'=>$results),true));
+				$mPDF1->Output('Informe Dontantes',"I"); // i = visualizar en el navegador
+		    }
+		    else{ $model->addError('nombre','No se han encontrado paciente con esos datos ');}
+        }
+        $this->render('informe',array(
+			'model'=>$model,
+		));
+	}
+
 
 	/**
 	 * Updates a particular model.

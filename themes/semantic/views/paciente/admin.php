@@ -66,6 +66,14 @@ Administrar Pacientes </h1>
 		    'label'=>'Registrar Enfermedad', // titulo del enlace del botón nuevo
 		    'url'=>'Yii::app()->createUrl("/paciente/registrarenfermedad&id=$data->id")', //url de la acción nueva
 		))),
+		array(
+            'class' => 'CButtonColumn',
+            'template'=>'{Registrar}', // botones a mostrar
+            'buttons'=>array(
+			'Registrar' => array( //botón para la acción nueva
+		    'label'=>'Registrar Alergia', // titulo del enlace del botón nuevo
+		    'url'=>'Yii::app()->createUrl("/paciente/registraralergia&id=$data->id")', //url de la acción nueva
+		))),
 	),
 )); ?>
 

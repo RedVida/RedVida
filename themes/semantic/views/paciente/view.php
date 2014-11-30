@@ -53,3 +53,19 @@ $this->menu=array(
 		    ?></br><?php
     	}     
     ?>
+
+<b><?php echo 'Alergia(s)'; ?>:</b>
+    </br>
+ 
+	<?php 
+    $Criteria = new CDbCriteria();
+    $Criteria->condition = "id_paciente = $model->id"; 
+    $enfermedad= AlergiaPaciente::model()->findAll($Criteria);
+    foreach ($enfermedad as $valor) 
+    	{
+		    $enfer=Alergias::model()->find('id='.$valor->id);
+		    ?><i class="angle right icon"></i><?php
+		    echo " ".CHtml::link($enfer->nombre,'index.php?r=alergias/view&id='.$enfer->id);
+		    ?></br><?php
+    	}     
+    ?>

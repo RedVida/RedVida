@@ -33,11 +33,58 @@ class CentroMedico extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('contacto', 'numerical', 'integerOnly'=>true),
-			array('nombre, direccion, director, especialidad, gubernamental', 'length', 'max'=>128),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre, direccion, contacto, director, especialidad, gubernamental', 'safe', 'on'=>'search'),
+			array('nombre','required','message' => 'El Nombre es requerido'),
+                    array('nombre',
+                    'length',
+                    'min' => 3,
+                    'tooShort' => 'Mínimo 3 caracteres',
+                    'max' => 50,
+                    'tooLong' => 'máximo 50 caracteres'),
+                    array('nombre','validateText'),
+                    array('nombre','validateText3'),
+                    array('nombre','unique','message' => 'Este Centro Medico ya esta registrado'),
+            array('especialidad','required','message' => 'El Nombre es requerido'),
+                    array('especialidad',
+                    'length',
+                    'min' => 3,
+                    'tooShort' => 'Mínimo 3 caracteres',
+                    'max' => 50,
+                    'tooLong' => 'máximo 50 caracteres'),
+                    array('especialidad','validateText'),
+                    array('especialidad','validateText3'),
+            array('director','required','message' => 'El Nombre es requerido'),
+                    array('director',
+                    'length',
+                    'min' => 3,
+                    'tooShort' => 'Mínimo 3 caracteres',
+                    'max' => 50,
+                    'tooLong' => 'máximo 50 caracteres'),
+                    array('director','validateText'),
+                    array('director','validateText3'),        
+            array('direccion','required','message' => 'La Direccion debe ser requerida'),
+            		array('direccion','unique','message' => 'Esta Direccion ya esta registrada'),
+                    array('direccion',
+                            'length',
+                             'min' => 5,
+                             'tooShort' => 'Minimo 5 caracteres',
+                             'max' => 50,
+                             'tooLong' => 'maximo 50 caracteres'),
+                    array('direccion','validateText2'),
+                    array('direccion','validateText3'),
+                    array('direccion','unique','message' => 'La direccion ya esta ingresada'),
+            array('contacto',
+                        'required',
+                        'message' => 'El Numero de Contacto es requerido',
+                        ),
+            		array('contacto','unique','message' => 'Este Contato ya esta registrado'),
+                    array('contacto','validateContacto'),
+                    array('contacto',
+                            'length',
+                             'min' => 6,
+                             'tooShort' => 'El numero ingresado no es valido',
+                             'max' => 13,
+                             'tooLong' => 'El numero ingresado no es valido'),
+            array('gubernamental','required','message' => 'Se requiere saber si el centro medico es Gubernamental o no'),        
 		);
 	}
 
@@ -114,4 +161,33 @@ class CentroMedico extends CActiveRecord
 	public static function getCentroMedico(){
  		return CHtml::listData(CentroMedico::model()->findAll(),'id','nombre');
  	}
+ 	public function validateContacto($attribute, $params) {
+        $pattern = '/^([\+]*[0-9]+)$/';
+        if (!preg_match($pattern, $this->$attribute))
+            $this->addError($attribute, 'No es válido, la forma es Ej; +5698142785 o 98142785');
+    }
+ 	public function validateText($attribute, $params) {
+        $pattern = '/^([a-zA-ZñÑÁÉÍÓÚáéíóú]+([[:space:]]{0,2}[a-zA-ZñÑÉÍÓÚáéíóú]+)*)$/';
+        if (!preg_match($pattern, $this->$attribute))
+            $this->addError($attribute, 'Error sólo letras o verifique que no tenga espacios al final');
+    }
+
+	public function validateText2($attribute, $params) {
+        $pattern = '/^([a-zA-ZñÑÁÉÍÓÚáéíóú0-9º°\.\,\'\"\)\(\-\@\:\/\+]+([[:space:]]{0,2}[a-zA-ZñÑÁÉÍÓÚáéíóú0-9º°\.\,\'\"\)\(\-\@\:\/\+]+)*)$/';
+        $pattern2 = '/^([0-9º°\.\,\'\"\)\(\-\@\:\/\+]+)$/';
+        if (!preg_match($pattern, $this->$attribute))
+            $this->addError($attribute, 'Se deben ingresar letras o letras y números, verifique que no tenga espacios al final o muchos en medio.');
+        if (preg_match($pattern2, $this->$attribute))
+            $this->addError($attribute, 'Error No puede ser solo números o caracteres especiales');
+    }
+    public function validateText3($attribute, $params) {
+        $pattern2 = '/(a{3}|e{3}|i{4}|o{3}|u{3}|b{3}|c{3}|d{3}|f{3}|g{3}|h{3}|j{3}|k{3}|l{4}|m{3}|n{3}|ñ{3}|p{3}|q{3}|r{3}|s{3}|t{3}|v{3}|w{4}|x{3}|y{3}|z{3}|º{2}|°{2}|\.{2}|\'{2}|\"{2}|\){2}|\({2}|\,{2}|\-{2}|\@{2}|\:{2}|\/{3}|\+{2})/i';
+        $pattern3 = '/(A{3}|E{3}|I{4}|O{3}|U{3}|B{3}|C{3}|D{3}|F{3}|G{3}|H{3}|J{3}|K{3}|L{4}|M{3}|N{3}|Ñ{3}|P{3}|Q{3}|R{3}|S{3}|T{3}|V{3}|W{4}|X{3}|Y{3}|Z{3})/i';
+        $pattern4 = '/(á{3}|Á{3}|é{3}|É{3}|í{3}|Í{3}|ó{3}|Ó{3}|ú{3}|Ú{3})/i';
+        $pattern5 = '/([0-9]{13})/i';
+        if (preg_match($pattern2, $this->$attribute) OR preg_match($pattern3, $this->$attribute) OR preg_match($pattern4, $this->$attribute))
+            $this->addError($attribute, 'Error, verifique que no este repetidos continuamente los caracteres');
+        if (preg_match($pattern5, $this->$attribute))
+            $this->addError($attribute, 'Error, no puede haber un número superior a 9999999999999');
+    }
 }

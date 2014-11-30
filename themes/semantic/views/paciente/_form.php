@@ -1,4 +1,6 @@
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/rut/jquery.Rut.js" type="text/javascript"></script> 
+<link rel="stylesheet" type="text/css" href="DateTimePicker.css" />
+<script type="text/javascript" src="DateTimePicker.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         $('#rut').Rut({
@@ -7,7 +9,14 @@
                 alert('El valor ingresado no corresponde a un R.U.T válido.');
             }
         });
-    })
+    });
+
+     $(document).ready(function()
+ {
+   
+   $("#dtBox").DateTimePicker();
+   
+ });
     
 </script>
 
@@ -63,6 +72,16 @@
 			<?php echo $form->textField($model,'rut',array('size'=>12,'maxlength'=>12, 'id'=>'rut')); ?>
 			<div class="errors">
 			<?php echo $form->error($model,'rut',array('class' => 'ui small red pointing above ui label')); ?>
+			</div>
+		</div>
+	</div>
+
+	<div class="fields">
+	 	<div class="four wide field">
+			<?php echo $form->labelEx($model,'fecha_nacimiento'); ?>
+			<?php echo $form->dateField($model,'fecha_nacimiento',array('size'=>30,'maxlength'=>30),array('id'=>'dtBox')); ?>
+			<div class="errors">
+			<?php echo $form->error($model,'fecha_nacimiento',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>
 		</div>
 	</div>
