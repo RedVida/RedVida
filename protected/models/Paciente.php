@@ -78,6 +78,11 @@ class Paciente extends CActiveRecord
                 'required',
                 'message' => 'El centro medico es requerido',
             ),
+            array(
+            	'fecha_nacimiento',
+            	'required',
+            	'message' => 'La fecha de nacimiento es requerida'
+           	),
 		);
 	}
 
@@ -108,6 +113,7 @@ class Paciente extends CActiveRecord
 			'necesidad_transplante' => 'Necesidad Transplante',
 			'tipo_sangre' => 'Tipo Sangre',
 			'id_centro_medico' => 'Id Centro Medico',
+			'fecha_nacimiento' => 'Fecha Nacimiento',
 		);
 	}
 
@@ -138,6 +144,7 @@ class Paciente extends CActiveRecord
 		$criteria->compare('necesidad_transplante',$this->necesidad_transplante,true);
 		$criteria->compare('tipo_sangre',$this->tipo_sangre,true);
 		$criteria->compare('id_centro_medico',$this->id_centro_medico);
+		$criteria->compare('fecha_nacimiento',$this->fecha_nacimiento);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

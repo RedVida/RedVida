@@ -67,6 +67,7 @@ class PacienteController extends Controller
 		if(isset($_POST['Paciente']))
 		{
 			$model->attributes=$_POST['Paciente'];
+			$model->fecha_ingreso = new CDbExpression('NOW()');
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
