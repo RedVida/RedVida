@@ -26,6 +26,13 @@ class BancoSangre extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('modified','default',
+              'value'=>new CDbExpression('NOW()'),
+              'setOnEmpty'=>false,'on'=>'update'),
+        	
+        	array('created,modified','default',
+              'value'=>new CDbExpression('NOW()'),
+              'setOnEmpty'=>false,'on'=>'insert'),
 			array('cantidad', 'numerical', 'integerOnly'=>true),
 			array('tipo', 'length', 'max'=>3),
 			// The following rule is used by search().
@@ -42,6 +49,7 @@ class BancoSangre extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'bancoSangre' => array(self::HAS_MANY, 'DonacionSangre', 'id_banco'),
 		);
 	}
 

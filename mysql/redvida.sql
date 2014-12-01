@@ -44,6 +44,8 @@ CREATE TABLE IF NOT EXISTS `banco_sangre` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tipo` varchar(3) DEFAULT NULL,
   `cantidad` int(11) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
@@ -676,6 +678,7 @@ CREATE TABLE IF NOT EXISTS `donacion_organo` (
 CREATE TABLE IF NOT EXISTS `donacion_sangre` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_donante` int(11) DEFAULT NULL,
+  `id_banco` int(11) DEFAULT NULL,  
   `rut_donante` varchar(12) DEFAULT NULL,
   `tipo_sangre` varchar(3) DEFAULT NULL,
   `cantidad` int(11) DEFAULT NULL,
@@ -1187,10 +1190,16 @@ DELIMITER ;
 ALTER TABLE `donacion_sangre` 
     ADD CONSTRAINT `fk_id_donante_s` FOREIGN KEY (`id_donante`) REFERENCES `donantes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
-
-
 ALTER TABLE `donacion_medula` 
     ADD CONSTRAINT `fk_id_donante_m` FOREIGN KEY (`id_donante`) REFERENCES `donantes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE `donacion_organo` 
     ADD CONSTRAINT `fk_id_donante_o` FOREIGN KEY (`id_donante`) REFERENCES `donantes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+
+
+ALTER TABLE `donacion_sangre` 
+    ADD CONSTRAINT `fk_id_banco_sangre` FOREIGN KEY (`id_banco`) REFERENCES `banco_sangre` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+

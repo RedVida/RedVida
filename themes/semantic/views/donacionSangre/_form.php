@@ -50,9 +50,8 @@
 
 
     <div class="fields">
-		<?php echo $form->hiddenField($model,'id_donante', array('value'=>$id_donante, 'readonly'=>$val)); ?>
+		<?php echo $form->hiddenField($model,'id_donante', array('value'=>$id_donante)); ?>
 	</div>
-
 
  	<div class="fields">
 	 	<div class="four wide field">

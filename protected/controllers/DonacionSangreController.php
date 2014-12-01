@@ -70,8 +70,8 @@ class DonacionSangreController extends Controller
 		if(isset($_POST['DonacionSangre']))
 		{			
 			$model->attributes=$_POST['DonacionSangre'];
-		
-			if($model->save())
+			
+				if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 

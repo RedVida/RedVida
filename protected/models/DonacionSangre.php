@@ -66,6 +66,8 @@ class DonacionSangre extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'idDonante' => array(self::BELONGS_TO, 'Donantes', 'id_donante'),
+			'idBancoSangre' => array(self::BELONGS_TO, 'BancoSangre', 'id_banco'),
+
 		);
 	}
 
@@ -82,6 +84,7 @@ class DonacionSangre extends CActiveRecord
 			'tipo_sangre' => 'Tipo de Sangre',
 			'cantidad' => 'Cantidad',
 			'id_donante' => 'ID Donante',
+			'id_banco' => 'ID Banco',
 		);
 	}
 
@@ -104,6 +107,7 @@ class DonacionSangre extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
+		$criteria->compare('id_banco',$this->id_banco);
 		$criteria->compare('id_donante',$this->id_donante);
 		$criteria->compare('rut_donante',$this->rut_donante,true);
 		$criteria->compare('tipo_sangre',$this->tipo_sangre,true);
