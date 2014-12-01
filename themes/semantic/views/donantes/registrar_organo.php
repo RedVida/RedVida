@@ -24,11 +24,13 @@ $('.search-form form').submit(function(){
 	return false;
 });
 ");
+$paciente=Paciente::model()->find('id='.$_GET['id']);
 ?>
+
 <br>
 <div class="ui black ribbon label">
 <h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
- Asignano Transplante a Paciente</h1>
+ Asignar Transplante a Paciente - <?php echo $paciente->nombre.' '.$paciente->apellido; ?></h1>
 </div>
 <hr class="style-two ">
 
@@ -69,7 +71,7 @@ $dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
 		            'buttons'=>array(
 					'Registrar' => array( //botón para la acción nueva
 				    'label'=>'Registrar Trasplante', // titulo del enlace del botón nuevo
-				    'url'=>'Yii::app()->createUrl("/donantes/registrar_alergia&id_d=$data->id&id_p="'."'$id_p'".')', //url de la acción nueva
+				    'url'=>'Yii::app()->createUrl("/trasplante/trasplanteorgano&id_d=$data->id&id_p='.$id_p.'&or='.$length.'")', //url de la acción nueva
 				    //'visible'=>'($data->estado==="DISPONIBLE")?true:false;'
 				    ),
 					),

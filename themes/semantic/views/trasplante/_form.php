@@ -108,43 +108,12 @@
 	<?php 	}
 			} ?>
 
-    <div class="fields">
-	 	<div class="three wide field">
-			<?php echo $form->labelEx($model,'compatible (%)'); ?>
-			<?php echo $form->dropDownList($model,'compatible',range(1,100),array('empty'=>'% Compatibilidad','class'=>'ui selection dropdown')); ?>
-			<div class="errors">
-			<?php echo $form->error($model,'compatible',array('class' => 'ui small red pointing above ui label')); ?>
-			</div>
-		</div>
-	</div>
-
    <div class="fields">
 	 	<div class="field">
 			<?php echo $form->labelEx($model,'detalle'); ?>
 			<?php echo $form->textArea($model,'detalle',array('maxlength'=>150,'rows'=>50,'cols'=>100, 'style'=>'resize:none; width: 300px; line-height: 10pt;' )); ?>
 			<div class="errors">
 			<?php echo $form->error($model,'detalle',array('class' => 'ui small red pointing above ui label')); ?>
-			</div>
-		</div>
-	</div>
-
-
-    <div class="fields">
-	 	<div class="four wide field">
-			<?php echo $form->labelEx($model,'grado_urgencia'); ?>
-			<?php echo $form->dropDownList($model,'grado_urgencia',array('Bajo'=>'Bajo','Medio'=>'Medio','ALto'=>'Alto'), array('empty'=>'Seleccione Grado de Urgencia','class'=>'ui selection dropdown')); ?>
-			<div class="errors">
-			<?php echo $form->error($model,'grado_urgencia',array('class' => 'ui small red pointing above ui label')); ?>
-			</div>
-		</div>
-	</div>
-
-   <div class="fields">
-	 	<div class="four wide field">
-			<?php echo $form->labelEx($model,'centro_medico'); ?>
-			<?php echo $form->dropDownList($model,'centro_medico', CHtml::listData(CentroMedico::model()->findAll(),'nombre', 'nombre'), array('empty' => 'Selecciona Centro Medico', 'class'=>'ui selection dropdown')); ?>
-			<div class="errors">
-			<?php echo $form->error($model,'centro_medico',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>
 		</div>
 	</div>

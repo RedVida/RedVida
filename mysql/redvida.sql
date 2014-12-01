@@ -865,17 +865,16 @@ CREATE TABLE IF NOT EXISTS `tiene_enfermedad` (
 
 CREATE TABLE IF NOT EXISTS `trasplante` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `compatible` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `detalle` text COLLATE utf8_bin,
-  `grado_urgencia` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `centro_medico` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   `id_tipo_trasplante` int(11) DEFAULT NULL,
+  `id_centro_medico` int(11) DEFAULT NULL,
   `id_donacion` int(11) DEFAULT NULL,
   `id_paciente` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_reference_33` (`id_tipo_trasplante`),
+  KEY `fk_reference_32` (`id_tipo_trasplante`),
+  KEY `fk_reference_33` (`id_centro_medico`),
   KEY `fk_reference_34` (`id_donacion`),
   KEY `fk_reference_35` (`id_paciente`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
@@ -890,8 +889,9 @@ CREATE TABLE IF NOT EXISTS `tipo_trasplante` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=4 ;
 
 ALTER TABLE `trasplante`
-  ADD CONSTRAINT `fk_reference_33` FOREIGN KEY (`id_tipo_trasplante`) REFERENCES `tipo_trasplante` (`id`),
-  ADD CONSTRAINT `fk_reference_34` FOREIGN KEY (`id_donacion`) REFERENCES `donacion` (`id_donacion`),
+  ADD CONSTRAINT `fk_reference_32` FOREIGN KEY (`id_tipo_trasplante`) REFERENCES `tipo_trasplante` (`id`),
+  ADD CONSTRAINT `fk_reference_33` FOREIGN KEY (`id_centro_medico`) REFERENCES `centro_medico` (`id`),
+  ADD CONSTRAINT `fk_reference_34` FOREIGN KEY (`id_donacion`) REFERENCES `donacion_organo` (`id`),
   ADD CONSTRAINT `fk_reference_35` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`);
 
 

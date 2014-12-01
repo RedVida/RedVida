@@ -102,7 +102,7 @@ class TrasplanteController extends Controller
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 	/**
-	 * Lists all models.
+	 * Lists all mode<ls.
 	 */
 	public function actionIndex()
 	{
@@ -179,6 +179,31 @@ public function actionPacienteList()
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+
+	public function actionTrasplanteOrgano($id_d,$id_p,$or)
+	{
+
+		$model=new Trasplante;
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+		if(isset($_POST['Trasplante']))
+		{
+			$model->attributes=$_POST['Trasplante'];
+			if($model->validate()){
+		    $donante=Donantes::model()->find('id='.$_GET['id_d']);
+			$length = (string)($_GET['or']);
+			$connection=Yii::app()->db;
+			$sql = 'UPDATE donacion_organo SET estado = 0 WHERE nombre='."'$length'".' AND rut_donante='."'$donante->rut'";
+			$command = $connection->createCommand($sql);
+			$command->execute();
+			}
+			if($model->save())
+				$this->redirect(array('index'));
+		}
+		$this->render('trasplanteorgano',array(
+			'model'=>$model,
+		));
 	}
 
 }
