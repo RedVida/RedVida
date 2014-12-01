@@ -2,6 +2,13 @@
 /* @var $this PacienteController */
 /* @var $data Paciente */
 $organo = Organo::model()->findAll(array('select'=>'nombreOrgano'));
+
+$this->menu=array(
+	array('label'=>'Lista Paciente', 'url'=>array('index')),
+	array('label'=>'Registrar Paciente', 'url'=>array('create')),
+	array('label'=>'Administrar Paciente', 'url'=>array('admin')),
+);
+
 ?>
 
 <div class="view">
@@ -25,19 +32,9 @@ $organo = Organo::model()->findAll(array('select'=>'nombreOrgano'));
 			<br />
 
 			<b><?php echo CHtml::encode($data->getAttributeLabel('necesidad_transplante')); ?>:</b>
-			<?php echo $organo[$data->necesidad_transplante-1]->nombreOrgano; ?>
-			<br />
-			
-			<b><?php echo CHtml::encode($data->getAttributeLabel('fecha_nacimiento')); ?>:</b>
-			<?php echo CHtml::encode($data->fecha_nacimiento); ?>
-			<br />
-
-			<b><?php echo CHtml::encode($data->getAttributeLabel('fecha_ingreso')); ?>:</b>
-			<?php echo CHtml::encode($data->fecha_ingreso); ?>
-			<br />
-
-			<b><?php echo CHtml::encode($data->getAttributeLabel('edad')); ?>:</b>
-			<?php echo CHtml::encode($data->edad); ?>
+			<?php 
+			$organo=Organo::model()->find('idOrgano='.$data->necesidad_transplante);
+			echo $organo->nombreOrgano; ?>
 			<br />
 
 			<?php echo CHtml::link(CHtml::encode("Más detalle"), array('view', 'id'=>$data->id)); ?>

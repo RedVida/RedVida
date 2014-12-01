@@ -169,6 +169,13 @@ class PacienteController extends Controller
 		);
 	}
 
+	public function actionDisponibilidad($sangre)
+	{
+		$donadores= Yii::app()->db->createCommand('select * from donantes where tipo_sangre = '."'$sangre'")->queryAll();
+		$this->render('disponibilidad',array('donadores'=>$donadores));
+		
+	}
+
 	public function actionInforme(){
 	// Odernar por: Edad, Tipo de sangre, Centro medico, Fecha de ingreso
 		$model = new Paciente;

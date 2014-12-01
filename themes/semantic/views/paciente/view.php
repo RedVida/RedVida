@@ -14,7 +14,7 @@ $this->menu=array(
 <br>
 <div class="ui black ribbon label">
 	<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
-	Donante: <?php echo $model->nombre.' '.$model->apellido ;  ?></h1>
+	Paciente: <?php echo $model->nombre.' '.$model->apellido ;  ?></h1>
 </div>
 <hr class="style-two ">
 <div class="ui grid">
@@ -23,6 +23,7 @@ $this->menu=array(
 <?php 
     $centro_medico=CentroMedico::model()->find('id='.$model->id_centro_medico);
     $organo=Organo::model()->find('idOrgano='.$model->necesidad_transplante);
+    
 ?>
 
 	<?php 
@@ -65,11 +66,10 @@ $this->menu=array(
 		'grado_urgencia',
 		'fecha_nacimiento',
 		'edad',
-		'fecha_ingreso',
 		array(
 			'label'=>'Necesidad Transplante',
 			'type'=>'raw',
-			'value'=>$organo->nombreOrgano,
+			'value'=>CHtml::link(CHtml::encode($organo->nombreOrgano),array('paciente/disponibilidad','sangre'=>$model->tipo_sangre)),
 		),
 		'tipo_sangre',
 		array(
