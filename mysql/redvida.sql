@@ -770,8 +770,6 @@ CREATE TABLE IF NOT EXISTS `alergia_paciente` (
 -- Volcado de datos para la tabla `enfermedad_paciente`
 --
 
-INSERT INTO `enfermedad_paciente` (`id`, `fecha`, `id_paciente`, `id_enfermedad`) VALUES
-(8, NULL, 3, 3);
 
 -- --------------------------------------------------------
 
@@ -826,8 +824,6 @@ CREATE TABLE IF NOT EXISTS `paciente` (
 -- Volcado de datos para la tabla `paciente`
 --
 
-INSERT INTO `paciente` (`id`, `nombre`, `apellido`, `rut`, `afiliacion`, `grado_urgencia`, `necesidad_transplante`, `tipo_sangre`, `id_centro_medico`) VALUES
-(3, 'Evaristo', 'Moya', '11.111.111-2', 'Fsapre', 'Urgente', '8', 'AB-', 2);
 
 -- --------------------------------------------------------
 

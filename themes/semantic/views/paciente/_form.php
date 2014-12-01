@@ -100,12 +100,12 @@
 
 	<div class="four wide field">
 	       <?php echo $form->labelEx($model,'Grado de Urgencia'); ?>
-	       <?php echo $form->dropDownList($model,'grado_urgencia', array('Alto'=>'Alto','Medio'=>'Medio','Bajo'=>'Bajo'),array('empty' => 'Selecciona Grado Urgencia', 'class'=>'ui selection dropdown')); ?>
+	       <?php echo $form->dropDownList($model,'grado_urgencia', array('Bajo'=>'Bajo','Medio'=>'Medio','Alto'=>'Alto','Urgencia Nacional'=>'Urgencia Nacional'),array('empty' => 'Selecciona Grado Urgencia', 'class'=>'ui selection dropdown')); ?>
 	</div>
 
 	<div class="four wide field">
 	       <?php echo $form->labelEx($model,'Necesidad Trasplante'); ?>
-	       <?php echo $form->dropDownList($model,'necesidad_transplante',CHtml::listData($organos,'nombreOrgano', 'nombreOrgano'), array('empty' => 'Selecciona Necesidad', 'class'=>'ui selection dropdown')); ?>
+	       <?php echo $form->dropDownList($model,'necesidad_transplante',array('Organo'=>CHtml::listData($organos,'nombreOrgano', 'nombreOrgano'),'Medula'=>'Medula'), array('empty' => 'Selecciona Necesidad', 'class'=>'ui selection dropdown')); ?>
 	</div>
 
 	<div class="four wide field">

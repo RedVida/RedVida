@@ -163,7 +163,8 @@ class PacienteController extends Controller
 
 	public function actionUrgenciasnacionales(){
 		$organo = Organo::model()->findAll(array('select'=>'nombreOrgano'));
-		$dataProvider=new CActiveDataProvider('Paciente');
+		//$dataProvider=new CActiveDataProvider('Paciente');
+		$dataProvider= Yii::app()->db->createCommand('select * from paciente where grado_urgencia = '."'Urgencia Nacional'")->queryAll();
 		$this->render('urgenciasnacionales',array(
 			'dataProvider'=>$dataProvider,'organo'=>$organo)
 		);
