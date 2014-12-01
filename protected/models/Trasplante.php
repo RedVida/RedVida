@@ -5,18 +5,17 @@
  *
  * The followings are the available columns in table 'trasplante':
  * @property integer $id
- * @property string $compatible
  * @property string $detalle
- * @property string $grado_urgencia
- * @property string $centro_medico
  * @property string $created
  * @property string $modified
  * @property integer $id_tipo_trasplante
+ * @property integer $id_centro_medico
  * @property integer $id_donacion
  * @property integer $id_paciente
  *
  * The followings are the available model relations:
  * @property TipoTrasplante $idTipoTrasplante
+ * @property CentroMedico $idCentroMedico
  * @property Donacion $idDonacion
  * @property Paciente $idPaciente
  */
@@ -38,12 +37,11 @@ class Trasplante extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_tipo_trasplante, id_donacion, id_paciente', 'numerical', 'integerOnly'=>true),
-			array('compatible, grado_urgencia, centro_medico', 'length', 'max'=>255),
+			array('id_tipo_trasplante, id_centro_medico, id_donacion, id_paciente', 'numerical', 'integerOnly'=>true),
 			array('detalle, created, modified', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, compatible, detalle, grado_urgencia, centro_medico, created, modified, id_tipo_trasplante, id_donacion, id_paciente', 'safe', 'on'=>'search'),
+			array('id, detalle, created, modified, id_tipo_trasplante, id_centro_medico, id_donacion, id_paciente', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,6 +54,7 @@ class Trasplante extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'idTipoTrasplante' => array(self::BELONGS_TO, 'TipoTrasplante', 'id_tipo_trasplante'),
+			'idCentroMedico' => array(self::BELONGS_TO, 'CentroMedico', 'id_centro_medico'),
 			'idDonacion' => array(self::BELONGS_TO, 'Donacion', 'id_donacion'),
 			'idPaciente' => array(self::BELONGS_TO, 'Paciente', 'id_paciente'),
 		);
@@ -68,13 +67,11 @@ class Trasplante extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'compatible' => 'Compatible',
 			'detalle' => 'Detalle',
-			'grado_urgencia' => 'Grado Urgencia',
-			'centro_medico' => 'Centro Medico',
 			'created' => 'Created',
 			'modified' => 'Modified',
 			'id_tipo_trasplante' => 'Id Tipo Trasplante',
+			'id_centro_medico' => 'Id Centro Medico',
 			'id_donacion' => 'Id Donacion',
 			'id_paciente' => 'Id Paciente',
 		);
@@ -99,13 +96,11 @@ class Trasplante extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('compatible',$this->compatible,true);
 		$criteria->compare('detalle',$this->detalle,true);
-		$criteria->compare('grado_urgencia',$this->grado_urgencia,true);
-		$criteria->compare('centro_medico',$this->centro_medico,true);
 		$criteria->compare('created',$this->created,true);
 		$criteria->compare('modified',$this->modified,true);
 		$criteria->compare('id_tipo_trasplante',$this->id_tipo_trasplante);
+		$criteria->compare('id_centro_medico',$this->id_centro_medico);
 		$criteria->compare('id_donacion',$this->id_donacion);
 		$criteria->compare('id_paciente',$this->id_paciente);
 

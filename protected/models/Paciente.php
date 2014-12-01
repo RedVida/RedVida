@@ -122,7 +122,8 @@ class Paciente extends CActiveRecord
 			'rut' => 'Rut',
 			'afiliacion' => 'Afiliacion',
 			'grado_urgencia' => 'Grado Urgencia',
-			'necesidad_transplante' => 'Necesidad Transplante',
+			'necesidad_trasplante' => 'Necesidad Trasplante',
+			'necesidad_medula' => 'Necesidad Medula',
 			'tipo_sangre' => 'Tipo Sangre',
 			'id_centro_medico' => 'Id Centro Medico',
 			'fecha_nacimiento' => 'Fecha Nacimiento',
@@ -155,7 +156,8 @@ class Paciente extends CActiveRecord
 		$criteria->compare('rut',$this->rut,true);
 		$criteria->compare('afiliacion',$this->afiliacion,true);
 		$criteria->compare('grado_urgencia',$this->grado_urgencia,true);
-		$criteria->compare('necesidad_transplante',$this->necesidad_transplante,true);
+		$criteria->compare('necesidad_trasplante',$this->necesidad_trasplante,true);
+		$criteria->compare('necesidad_medula',$this->necesidad_medula,true);
 		$criteria->compare('tipo_sangre',$this->tipo_sangre,true);
 		$criteria->compare('id_centro_medico',$this->id_centro_medico);
 		$criteria->compare('fecha_nacimiento',$this->fecha_nacimiento);

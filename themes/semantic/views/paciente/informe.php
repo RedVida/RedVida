@@ -64,7 +64,7 @@
         $("#informe-form").submit();
     }
 </script>
-
+<?php $organos=Organo::model()->findAll(array('select'=>'nombreOrgano')); ?>
 <br><br>
 <div class="ui black ribbon label">
 <h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
@@ -130,7 +130,7 @@ Generar Informe - Paciente </h1>
 
           <div class="four wide field">
                  <?php echo $form->labelEx($model,'Necesidad Transplante'); ?>
-                 <?php echo $form->dropDownList($model,'necesidad_transplante',CHtml::listData(Organo::model()->findAll(),'idOrgano', 'nombreOrgano'), array('empty' => 'Seleccione Necesidad', 'class'=>'ui selection dropdown')); ?>
+                 <?php echo $form->dropDownList($model,'necesidad_transplante',CHtml::listData($organos,'nombreOrgano', 'nombreOrgano'), array('empty' => 'Seleccione Necesidad', 'class'=>'ui selection dropdown')); ?>
           </div>
 					<div class="fields">
 						<div class="four wide field">
