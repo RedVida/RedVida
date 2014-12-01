@@ -32,9 +32,7 @@ $this->menu=array(
 			<br />
 
 			<b><?php echo CHtml::encode($data->getAttributeLabel('necesidad_transplante')); ?>:</b>
-			<?php 
-			$organo=Organo::model()->find('idOrgano='.$data->necesidad_transplante);
-			echo $organo->nombreOrgano; ?>
+			<?php echo $data->necesidad_transplante; ?>
 			<br />
 
 			<?php echo CHtml::link(CHtml::encode("Más detalle"), array('view', 'id'=>$data->id)); ?>

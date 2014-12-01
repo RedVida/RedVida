@@ -22,7 +22,7 @@ $this->menu=array(
 	<div class="twelve wide column">
 <?php 
     $centro_medico=CentroMedico::model()->find('id='.$model->id_centro_medico);
-    $organo=Organo::model()->find('idOrgano='.$model->necesidad_transplante);
+    //$organo=Organo::model()->find('idOrgano='.$model->necesidad_transplante);
     
 ?>
 
@@ -69,7 +69,7 @@ $this->menu=array(
 		array(
 			'label'=>'Necesidad Transplante',
 			'type'=>'raw',
-			'value'=>CHtml::link(CHtml::encode($organo->nombreOrgano),array('paciente/disponibilidad','sangre'=>$model->tipo_sangre)),
+			'value'=>CHtml::link(CHtml::encode($model->necesidad_transplante),array('paciente/disponibilidad','sangre'=>$model->tipo_sangre)),
 		),
 		'tipo_sangre',
 		array(

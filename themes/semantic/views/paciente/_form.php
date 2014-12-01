@@ -48,6 +48,8 @@
     '$(".errors").animate({opacity: 1.0}, 5000).fadeOut("slow");',
     CClientScript::POS_READY
 ); ?>
+<?php $organos=Organo::model()->findAll(array('select'=>'nombreOrgano'));
+?>
 
 	<?php echo $form->errorSummary($model, NULL, NULL, array("class" => "ui warning message"));?>
 <div class="ui form">
@@ -103,7 +105,7 @@
 
 	<div class="four wide field">
 	       <?php echo $form->labelEx($model,'Necesidad Trasplante'); ?>
-	       <?php echo $form->dropDownList($model,'necesidad_transplante',CHtml::listData(Organo::model()->findAll(),'idOrgano', 'nombreOrgano'), array('empty' => 'Selecciona Necesidad', 'class'=>'ui selection dropdown')); ?>
+	       <?php echo $form->dropDownList($model,'necesidad_transplante',CHtml::listData($organos,'nombreOrgano', 'nombreOrgano'), array('empty' => 'Selecciona Necesidad', 'class'=>'ui selection dropdown')); ?>
 	</div>
 
 	<div class="four wide field">
