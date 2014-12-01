@@ -140,6 +140,51 @@ class BancoSangreController extends Controller
 		));
 	}
 
+
+public function actionInforme(){
+	// Odernar por: Edad, Tipo de sangre, Centro medico, Fecha de ingreso
+
+		$model = new BancoSangre;
+		if(isset($_POST['BancoSangre'])){
+       		$model = new BancoSangre;
+            $this->layout="//layouts/pdf";
+            $mPDF1 = Yii::app()->ePdf->mpdf();
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/nn.png' ));
+			$mPDF1->WriteHTML('<br>');
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/line2.png' ));
+			$mPDF1->WriteHTML('<br> ');
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/informe_banco_sangre.png' ));
+			$where_array = array();
+			$from_array = array();
+			$OK = true;
+			
+		    if($_POST['BancoSangre']['tipo']!=''){ // Tipo de sangre
+		    	$length = (string)($_POST['BancoSangre']['tipo']);
+            	$where_array[]=('d.tipo = '."'$length'");
+		    }
+		   
+		    $form = implode(", ", $from_array);	 
+		    $where = implode(" AND ", $where_array);	
+            $results = Yii::app()->db->createCommand()->
+	            select('*')->
+	            from('banco_sangre d, '.$form)->
+	            where($where)->
+	            queryAll();
+	        if(!$OK)$results =null;
+            if($results){
+				$mPDF1->WriteHTML($this->render('_informe',array('results'=>$results),true));
+				$mPDF1->Output('Informe de Banco de Sangre',"I"); // i = visualizar en el navegador
+		    }
+		    else{ $model->addError('tipo','No se han encontrado banco de sangre con esos datos ');}
+        }
+        $this->render('informe',array(
+			'model'=>$model,
+		));
+	}
+
+
+
+
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.

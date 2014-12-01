@@ -5,13 +5,16 @@
  *
  * The followings are the available columns in table 'donacion_sangre':
  * @property integer $id
+ * @property integer $id_donante
  * @property string $rut_donante
- * @property string $created
- * @property string $modified
  * @property string $tipo_sangre
  * @property integer $cantidad
+ * @property string $created
+ * @property string $modified
+ *
+ * The followings are the available model relations:
+ * @property Donantes $idDonante
  */
-
 class DonacionSangre extends CActiveRecord
 {
 	/**
@@ -29,12 +32,16 @@ class DonacionSangre extends CActiveRecord
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
+
 		return array(
+			array('id_donante, cantidad', 'numerical', 'integerOnly'=>true),
 			array('cantidad', 'numerical', 'integerOnly'=>true),
 			array('cantidad', 'length', 'min'=>1,'max'=>100, 'message' => 'Debe Ingresar Cantidad entre 1-100'),
 			array('cantidad', 'required', 'message'=>'Debes Ingresar Cantidad'),
             array('tipo_sangre', 'length', 'max'=>3),
 			array('created, modified', 'safe'),	
+			array('rut_donante', 'length', 'max'=>12),
+			array('tipo_sangre', 'length', 'max'=>3),
 			array('rut_donante', 'required', 'message'=>'Debe Ingresar Rut Valido.'),
 			array('tipo_sangre', 'required','message'=>'Debe Seleccionar un Tipo de Sangre.'),
 			array('modified','default',
@@ -46,7 +53,7 @@ class DonacionSangre extends CActiveRecord
               'setOnEmpty'=>false,'on'=>'insert'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, rut_donante, created, modified, tipo_sangre, cantidad', 'safe', 'on'=>'search'),
+			array('id, id_donante, rut_donante, created, modified, tipo_sangre, cantidad', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -58,6 +65,7 @@ class DonacionSangre extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'idDonante' => array(self::BELONGS_TO, 'Donantes', 'id_donante'),
 		);
 	}
 
@@ -73,6 +81,7 @@ class DonacionSangre extends CActiveRecord
 			'modified' => 'Fecha de Modificación',
 			'tipo_sangre' => 'Tipo de Sangre',
 			'cantidad' => 'Cantidad',
+			'id_donante' => 'ID Donante',
 		);
 	}
 
@@ -95,11 +104,12 @@ class DonacionSangre extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
+		$criteria->compare('id_donante',$this->id_donante);
 		$criteria->compare('rut_donante',$this->rut_donante,true);
-		$criteria->compare('created',$this->created,true);
-		$criteria->compare('modified',$this->modified,true);
 		$criteria->compare('tipo_sangre',$this->tipo_sangre,true);
 		$criteria->compare('cantidad',$this->cantidad);
+		$criteria->compare('created',$this->created,true);
+		$criteria->compare('modified',$this->modified,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -110,12 +120,10 @@ class DonacionSangre extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return DonacionSangre the static model class
+	 * @return DonacionSangre2 the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
-
-    
 }

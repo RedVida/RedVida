@@ -31,6 +31,8 @@
 	$id = $_GET['id'];
 	$model_donante = Donantes::model()->find("id=$id");
 	$rut= $model_donante['rut'];
+	$id_donante= $model_donante['id'];
+	$tipo_sangre= $model_donante['tipo_sangre'];
 	$val=true;
 	}
 	?>
@@ -38,7 +40,7 @@
 <div class="ui form">
     <div class="fields">
 	 	<div class="four wide field">
-		<?php echo $form->labelEx($model,'rut_donante'); ?>	
+	 	<?php echo $form->labelEx($model,'rut_donante'); ?>
 		<?php echo $form->textField($model,'rut_donante', array('value'=>$rut, 'readonly'=>$val, 'id'=>'rut', 'maxLength'=>12)); ?>
 		<div class="errors">
 			<?php echo $form->error($model,'rut_donante',array('class' => 'ui small red pointing above ui label')); ?>
@@ -46,10 +48,16 @@
 		</div>
 	</div>
 
+
+    <div class="fields">
+		<?php echo $form->hiddenField($model,'id_donante', array('value'=>$id_donante, 'readonly'=>$val)); ?>
+	</div>
+
+
  	<div class="fields">
 	 	<div class="four wide field">
 		<?php echo $form->labelEx($model,'tipo_sangre'); ?>
-        <?php echo $form->dropDownList($model,'tipo_sangre',CHtml::listData(BancoSangre::model()->findAll(),'tipo', 'tipo'), array('empty' => 'Selecciona Tipo Sangre', 'class'=>'ui selection dropdown')); ?>
+        <?php echo $form->textField($model,'tipo_sangre',array('value'=>$tipo_sangre, 'readonly'=>$val)); ?>
 		<div class="errors">
 			<?php echo $form->error($model,'tipo_sangre',array('class' => 'ui small red pointing above ui label')); ?>
 		</div>

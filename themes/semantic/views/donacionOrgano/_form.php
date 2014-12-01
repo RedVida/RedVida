@@ -52,6 +52,7 @@
 	$id = $_GET['id'];
 	$model_donante = Donantes::model()->find("id=$id");
 	$rut= $model_donante['rut'];
+	$id_donante= $model_donante['id'];
 	$val=true;
 	}
 
@@ -71,6 +72,11 @@
 		</div>
 		</div>
 	</div>
+	
+    <div class="fields">
+		<?php echo $form->hiddenField($model,'id_donante', array('value'=>$id_donante, 'readonly'=>$val)); ?>
+	</div>
+
 
  	<div class="fields">
 	 	<div class="four wide field">

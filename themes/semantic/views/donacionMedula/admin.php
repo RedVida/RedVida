@@ -2,6 +2,8 @@
 $this->menu=array(
 	array('label'=>'Listar Donación de Médula', 'url'=>array('index')),
 	array('label'=>'Registrar Donación', 'url'=>array('donantes/donar')),
+	array('label'=>'Generar Informe', 'url'=>array('informe')),
+
 );
 
 Yii::app()->clientScript->registerScript('search', "

@@ -29,6 +29,7 @@ class DonacionOrgano extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('id_donante', 'numerical', 'integerOnly'=>true),
 			array('estado', 'numerical', 'integerOnly'=>true),
 			array('rut_donante', 'length', 'max'=>12),
 			array('nombre', 'length', 'max'=>128),
@@ -56,6 +57,9 @@ class DonacionOrgano extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+
+				'idDonante' => array(self::BELONGS_TO, 'Donantes', 'id_donante'),
+		
 		);
 	}
 
@@ -71,6 +75,7 @@ class DonacionOrgano extends CActiveRecord
 			'modified' => 'Fecha Modificación',
 			'nombre' => 'Nombre Órgano',
 			'estado' => 'Estado',
+			'id_donante' => 'ID Donante',
 		);
 	}
 
@@ -98,7 +103,8 @@ class DonacionOrgano extends CActiveRecord
 		$criteria->compare('modified',$this->modified,true);
 		$criteria->compare('nombre',$this->nombre,true);
 		$criteria->compare('estado',$this->estado);
-
+		$criteria->compare('id_donante',$this->id_donante);
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

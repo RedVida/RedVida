@@ -65,9 +65,34 @@ class TransfusionController extends Controller
 
 		if(isset($_POST['Transfusion']))
 		{
+
+
 			$model->attributes=$_POST['Transfusion'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			{
+
+
+				$results= Yii::app()->db->createCommand('select * from banco_sangre where tipo=:tipo_sangre')->bindValue('tipo_sangre',$model->tipo_sangre)->queryAll();
+				$resul = $results[0]['cantidad'];
+				$val = $resul - $model->cantidad;
+
+				if($val>=0){
+			
+							$this->redirect(array('view','id'=>$model->id));
+
+
+
+
+										}else{
+
+
+
+					echo $form->errorSummary($model,'Your message goes here'); 
+				}
+
+			}
+
+
 		}
 
 		$this->render('create',array(

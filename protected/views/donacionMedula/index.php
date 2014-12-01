@@ -1,11 +1,4 @@
 <?php
-/* @var $this DonacionMedulaController */
-/* @var $dataProvider CActiveDataProvider */
-
-$this->breadcrumbs=array(
-	'Donacion Medulas',
-);
-
 $this->menu=array(
 	array('label'=>'Create DonacionMedula', 'url'=>array('create')),
 	array('label'=>'Manage DonacionMedula', 'url'=>array('admin')),

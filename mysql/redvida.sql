@@ -642,6 +642,7 @@ CREATE TABLE IF NOT EXISTS `donacion` (
 
 CREATE TABLE IF NOT EXISTS `donacion_medula` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_donante` int(11) DEFAULT NULL,
   `rut_donante` varchar(12) DEFAULT NULL,
   `tipo_medula` varchar(128) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
@@ -657,6 +658,7 @@ CREATE TABLE IF NOT EXISTS `donacion_medula` (
 
 CREATE TABLE IF NOT EXISTS `donacion_organo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_donante` int(11) DEFAULT NULL,
   `rut_donante` varchar(12) DEFAULT NULL,
   `nombre` varchar(128) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL,
@@ -673,6 +675,7 @@ CREATE TABLE IF NOT EXISTS `donacion_organo` (
 
 CREATE TABLE IF NOT EXISTS `donacion_sangre` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_donante` int(11) DEFAULT NULL,
   `rut_donante` varchar(12) DEFAULT NULL,
   `tipo_sangre` varchar(3) DEFAULT NULL,
   `cantidad` int(11) DEFAULT NULL,
@@ -1013,9 +1016,59 @@ END$$
 DELIMITER ;
 
 
+/*
+DELIMITER $$
+DROP TRIGGER IF EXISTS `actualiza_sangre`$$
+CREATE TRIGGER `actualiza_sangre` AFTER UPDATE ON `donacion_sangre` 
+FOR EACH ROW BEGIN
+  
+  IF NEW.tipo_sangre = OLD.tipo_sangre
+  THEN
+
+      IF (NEW.cantidad - OLD.cantidad) >=0
+      THEN
+      
+      UPDATE banco_sangre SET
+      cantidad = cantidad - NEW.cantidad - OLD.cantidad
+      WHERE tipo = NEW.tipo_sangre;
+
+      ELSE
+
+      UPDATE banco_sangre SET
+      cantidad = cantidad + NEW.cantidad - OLD.cantidad
+      WHERE tipo = NEW.tipo_sangre;
+
+      END IF;
 
 
+  ELSE
 
+
+      UPDATE banco_sangre SET
+      cantidad = cantidad - NEW.cantidad
+      WHERE tipo = NEW.tipo_sangre;
+
+      IF ((SELECT cantidad FROM banco_sangre WHERE tipo= OLD.tipo_sangre) + OLD.cantidad) >=0
+      THEN
+
+      UPDATE banco_sangre SET
+      cantidad = cantidad + OLD.cantidad
+      WHERE tipo = OLD.tipo_sangre;
+      
+      ELSE
+
+      UPDATE banco_sangre SET
+      cantidad = 0
+      WHERE tipo = OLD.tipo_sangre;
+
+      END IF;
+
+
+  END IF;
+
+END$$
+DELIMITER ;
+*/
 
 --
 -- TRIGER  BANCO_SANGRE -> TRANSFUSION
@@ -1057,7 +1110,7 @@ DELIMITER ;
 
 
 
-
+/*
 DELIMITER $$
 DROP TRIGGER IF EXISTS `actualiza_tsangre`$$
 CREATE TRIGGER `actualiza_tsangre` AFTER UPDATE ON `transfusion` 
@@ -1109,3 +1162,18 @@ FOR EACH ROW BEGIN
 
 END$$
 DELIMITER ;
+*/
+
+
+
+
+ALTER TABLE `donacion_sangre` 
+    ADD CONSTRAINT `fk_id_donante_s` FOREIGN KEY (`id_donante`) REFERENCES `donantes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+
+ALTER TABLE `donacion_medula` 
+    ADD CONSTRAINT `fk_id_donante_m` FOREIGN KEY (`id_donante`) REFERENCES `donantes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `donacion_organo` 
+    ADD CONSTRAINT `fk_id_donante_o` FOREIGN KEY (`id_donante`) REFERENCES `donantes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;

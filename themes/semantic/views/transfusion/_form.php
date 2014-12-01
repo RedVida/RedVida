@@ -31,6 +31,7 @@
 	$id = $_GET['id'];
 	$model_paciente = Paciente::model()->find("id=$id");
 	$rut= $model_paciente['rut'];
+	$tipo_sangre= $model_paciente['tipo_sangre'];
 	$val=true;
 	?>
 		<div class="ui orange ribbon label">
@@ -60,7 +61,7 @@
     <div class="fields">
 	 	<div class="four wide field">
 			<?php echo $form->labelEx($model,'tipo_sangre'); ?>
-			<?php echo $form->dropDownList($model,'tipo_sangre',CHtml::listData(BancoSangre::model()->findAll(),'tipo', 'tipo'), array('empty' => 'Selecciona Tipo Sangre', 'class'=>'ui selection dropdown')); ?>
+			<?php echo $form->textField($model,'tipo_sangre',  array('value'=>$tipo_sangre, 'readonly'=>$val)); ?>
 			<div class="errors">
 			<?php echo $form->error($model,'tipo_sangre',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>
@@ -68,7 +69,7 @@
 	</div>
 
    <div class="fields">
-	 	<div class="field">
+	 	<div class="four wide field">
 			<?php echo $form->labelEx($model,'cantidad'); ?>
 			<?php echo $form->numberField($model,'cantidad', array('integerOnly'=>true,'min'=>1,'max'=>100, 'allowNegative'=>false, 'allowBlank'=>false,'placeholder'=>'0')); ?>
 			<div class="errors">

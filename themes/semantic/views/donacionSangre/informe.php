@@ -7,42 +7,6 @@
 
 
 <script type="text/javascript">
-	$(function(){
-        $('#busquedaAlergia').autocomplete({
-       		 source : function( request, response ) {
-       		 $.ajax({
-                    url: '<?php echo $this->createUrl('Alergias/AlergiaList'); ?>',
-                    dataType: "json",
-                    data: { term: request.term },
-                    success: function(data) {
-		                    response($.map(data, function(item) {
-				                    return {
-					                    label: item.nombre,
-					                    }
-					                }))
-                    		}
-        			})
-    		},
-        });
-    });
-    $(function(){
-        $('#busquedaEnfermedad').autocomplete({
-       		 source : function( request, response ) {
-       		 $.ajax({
-                    url: '<?php echo $this->createUrl('Enfermedades/EnfermedadList'); ?>',
-                    dataType: "json",
-                    data: { term: request.term },
-                    success: function(data) {
-		                    response($.map(data, function(item) {
-				                    return {
-					                    label: item.nombre,
-					                    }
-					                }))
-                    		}
-        			})
-    		    },
-    	 });
-    });
   	$(document).ready(function() {
 			$('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada a Modal UI
   		});
@@ -68,7 +32,7 @@
 <br><br>
 <div class="ui black ribbon label">
 <h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
-Generar Informe - Donante </h1>
+Generar Informe - Donación Sangre </h1>
 </div>
 <hr class="style-two ">
 <div class="ui grid">
@@ -90,49 +54,19 @@ Generar Informe - Donante </h1>
 					<div class="fields">
 					<div class="three wide field">
 						<?php echo $form->labelEx($model,'Desde:'); ?>
-						<?php echo CHtml::textField('Donantes[desde]','',array('data-field'=>'datetime','placeholder'=>'Fecha de inicio')); ?>
+						<?php echo CHtml::textField('DonacionSangre[desde]','',array('data-field'=>'datetime','placeholder'=>'Fecha de inicio')); ?>
 					 </div>
 					 <div class="three wide field">
 						<?php echo $form->labelEx($model,'Hasta:'); ?>
-						<?php echo CHtml::textField('Donantes[hasta]','',array('data-field'=>'datetime','placeholder'=>'Fecha de termino')); ?>
+						<?php echo CHtml::textField('DonacionSangre[hasta]','',array('data-field'=>'datetime','placeholder'=>'Fecha de termino')); ?>
 					 </div>
  					<div id="dtBox"></div>
                     </div>
-                    <div class="ui small headerr"><b>*Rango de edad</b></div>
-					<div class="fields">
-					<div class="two wide field">
-						<?php echo $form->labelEx($model,'Edad Inicio:'); ?>
-						<?php echo CHtml::textField('Donantes[edad_inicial]',''); ?>
-					 </div>
-					 <div class="two wide field">
-						<?php echo $form->labelEx($model,'Edad Termino:'); ?>
-						<?php echo CHtml::textField('Donantes[edad_final]',''); ?>
-					 </div>
-
-                    </div>
+                   
 					<div class="four wide field">
 					       <?php echo $form->labelEx($model,'Tipo De Sangre:'); ?>
 					       <?php echo $form->dropDownList($model,'tipo_sangre',CHtml::listData(BancoSangre::model()->findAll(),'tipo', 'tipo'), array('empty' => 'Seleccione Tipo Sangre', 'class'=>'ui selection dropdown')); ?>
-					
 					</div>
-				   	<div class="four wirde field">
-				        <?php echo $form->labelEx($model,'Centro Medico:'); ?>
-						<?php echo $form->dropDownList($model,'id_centro_medico', CHtml::listData(CentroMedico::model()->findAll(),'id', 'nombre'), array('empty' => 'Seleccione Centro Medico', 'class'=>'ui selection dropdown')); ?>
-					</div>
-					<div class="fields">
-						<div class="four wide field">
-								<?php echo $form->labelEx($model,'Alergia:'); ?>
-								<?php echo CHtml::textField('Donantes[alergia]','',array('id'=>'busquedaAlergia','placeholder'=>'Ingrese la Alergia a buscar...')); ?>
-						</div>
-					</div>
-					<div class="fields">
-						 	<div class="four wide field">
-								<?php echo $form->labelEx($model,'Enfermedad:'); ?>
-								<?php echo CHtml::textField('Donantes[enfermedad]','',array('id'=>'busquedaEnfermedad','placeholder'=>'Ingrese la Enfermedad a buscar...')); ?>
-								</div>
-							</div>
-					</div>
-				</div>   
 				   
 					<br>
 						<div class="ui blue submit button" id="ModalFunction"> <!-- Main.PHP -->
@@ -142,7 +76,7 @@ Generar Informe - Donante </h1>
 		</div>
 <?php $this->endWidget(); ?>
 
-	</div><!-- form -->
+	</div>
 
 
 	 <div class="ui small modal">
@@ -163,4 +97,6 @@ Generar Informe - Donante </h1>
           <i class="checkmark icon"></i>
         </div>
       </div>
+
   </div>
+

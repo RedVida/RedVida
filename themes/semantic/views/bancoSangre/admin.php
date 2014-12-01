@@ -2,6 +2,8 @@
 $this->menu=array(
 	array('label'=>'Listar Banco de Sangre', 'url'=>array('index')),
 	array('label'=>'Registrar Banco de Sangre', 'url'=>array('create')),
+	array('label'=>'Generar Informe', 'url'=>array('informe')),
+
 );
 
 Yii::app()->clientScript->registerScript('search', "

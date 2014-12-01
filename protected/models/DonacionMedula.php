@@ -28,6 +28,7 @@ class DonacionMedula extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('id_donante', 'numerical', 'integerOnly'=>true),
 			array('rut_donante', 'length', 'max'=>12),
 			array('tipo_medula', 'length', 'max'=>128),
 			array('created, modified', 'safe'),
@@ -54,6 +55,9 @@ class DonacionMedula extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+
+					'idDonante' => array(self::BELONGS_TO, 'Donantes', 'id_donante'),
+
 		);
 	}
 
@@ -68,6 +72,7 @@ class DonacionMedula extends CActiveRecord
 			'created' => 'Fecha Ingreso',
 			'modified' => 'Fecha Modificación',
 			'tipo_medula' => 'Tipo de Médula',
+			'id_donante' => 'ID Donante',
 		);
 	}
 
@@ -90,6 +95,7 @@ class DonacionMedula extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
+		$criteria->compare('id_donante',$this->id_donante,true);
 		$criteria->compare('rut_donante',$this->rut_donante,true);
 		$criteria->compare('created',$this->created,true);
 		$criteria->compare('modified',$this->modified,true);
