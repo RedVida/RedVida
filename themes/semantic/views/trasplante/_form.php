@@ -71,17 +71,9 @@
 				</div>
 			</div>
 		</div>
+			<?php $donacion_medula=donacionMedula::model()->find('estado=true'); ?>
+			<?php echo $form->hiddenField($model,'id_donacion',array('type'=>"hidden",'value'=> $donacion_medula['id'])); ?>
 
-
-	   <div class="fields">
-	 	<div class="four wide field">
-			<?php echo $form->labelEx($model,'id_donacion'); ?>
-			<?php echo $form->dropDownList($model,'id_donacion',CHtml::listData(DonacionMedula::model()->findAll(),'id', 'id'),array('empty'=>'Seleccione Tipo de Donación','class'=>'ui selection dropdown'   )); ?>
-			<div class="errors">
-			<?php echo $form->error($model,'id_donacion',array('class' => 'ui small red pointing above ui label')); ?>
-			</div>
-		</div>
-	</div>
 	<?php }	?>
 
 	<?php
@@ -117,9 +109,9 @@
 			} ?>
 
     <div class="fields">
-	 	<div class="four wide field">
-			<?php echo $form->labelEx($model,'compatible'); ?>
-			<?php echo $form->dropDownList($model,'compatible',array('Si'=>'Si','No'=>'No'), array('empty'=>'Seleccione Compatibilidad','class'=>'ui selection dropdown')); ?>
+	 	<div class="three wide field">
+			<?php echo $form->labelEx($model,'compatible (%)'); ?>
+			<?php echo $form->dropDownList($model,'compatible',range(1,100),array('empty'=>'% Compatibilidad','class'=>'ui selection dropdown')); ?>
 			<div class="errors">
 			<?php echo $form->error($model,'compatible',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>

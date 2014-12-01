@@ -377,4 +377,15 @@ class DonantesController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	public function actionRegistrar_organo($id,$name)
+	{
+		$model=new Donantes('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Donantes']))
+			$model->attributes=$_GET['Donantes'];
+			$this->render('registrar_organo',array(
+			'model'=>$model,
+		));
+   }
 }

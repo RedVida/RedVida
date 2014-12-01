@@ -808,13 +808,14 @@ CREATE TABLE IF NOT EXISTS `paciente` (
   `rut` varchar(12) DEFAULT NULL,
   `afiliacion` varchar(20) DEFAULT NULL,
   `grado_urgencia` varchar(20) DEFAULT NULL,
-  `necesidad_transplante` varchar(20) DEFAULT NULL,
   `tipo_sangre` varchar(10) DEFAULT NULL,
   `id_centro_medico` int(11) DEFAULT NULL,
   `fecha_ingreso` datetime DEFAULT NULL,
   `fecha_nacimiento` date DEFAULT NULL ,
   `edad` int(10) DEFAULT NULL,
+  `id_tipo_trasplante` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
+  KEY `fk_reference_33` (`id_tipo_trasplante`),
   KEY `id_centro_medico` (`id_centro_medico`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
@@ -865,18 +866,34 @@ CREATE TABLE IF NOT EXISTS `tiene_enfermedad` (
 
 CREATE TABLE IF NOT EXISTS `trasplante` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `rut_paciente` varchar(12) COLLATE utf8_bin DEFAULT NULL,
-  `tipo_donacion` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `id_donacion` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `compatible` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `detalle` text COLLATE utf8_bin,
   `grado_urgencia` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `centro_medico` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
+  `id_tipo_trasplante` int(11) DEFAULT NULL,
+  `id_donacion` int(11) DEFAULT NULL,
+  `id_paciente` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_reference_2` (`rut_paciente`)
+  KEY `fk_reference_33` (`id_tipo_trasplante`),
+  KEY `fk_reference_34` (`id_donacion`),
+  KEY `fk_reference_35` (`id_paciente`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
+
+
+CREATE TABLE IF NOT EXISTS `tipo_trasplante` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `fecha` datetime DEFAULT NULL,
+  `descripcion` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=4 ;
+
+ALTER TABLE `trasplante`
+  ADD CONSTRAINT `fk_reference_33` FOREIGN KEY (`id_tipo_trasplante`) REFERENCES `tipo_trasplante` (`id`),
+  ADD CONSTRAINT `fk_reference_34` FOREIGN KEY (`id_donacion`) REFERENCES `donacion` (`id_donacion`),
+  ADD CONSTRAINT `fk_reference_35` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`);
 
 
 

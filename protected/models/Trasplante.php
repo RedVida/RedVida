@@ -1,19 +1,24 @@
 <?php
+
 /**
  * This is the model class for table "trasplante".
  *
  * The followings are the available columns in table 'trasplante':
  * @property integer $id
- * @property string $rut_donante
- * @property string $rut_paciente
- * @property string $tipo_donacion
- * @property string $id_donacion
- * @property string $compatibilidad
+ * @property string $compatible
  * @property string $detalle
  * @property string $grado_urgencia
  * @property string $centro_medico
  * @property string $created
  * @property string $modified
+ * @property integer $id_tipo_trasplante
+ * @property integer $id_donacion
+ * @property integer $id_paciente
+ *
+ * The followings are the available model relations:
+ * @property TipoTrasplante $idTipoTrasplante
+ * @property Donacion $idDonacion
+ * @property Paciente $idPaciente
  */
 class Trasplante extends CActiveRecord
 {
@@ -24,6 +29,7 @@ class Trasplante extends CActiveRecord
 	{
 		return 'trasplante';
 	}
+
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -32,21 +38,15 @@ class Trasplante extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('rut_paciente, tipo_donacion, id_donacion,grado_urgencia', 'required'),
-			array('tipo_donacion, id_donacion, compatible, grado_urgencia, centro_medico', 'length', 'max'=>255),
+			array('id_tipo_trasplante, id_donacion, id_paciente', 'numerical', 'integerOnly'=>true),
+			array('compatible, grado_urgencia, centro_medico', 'length', 'max'=>255),
 			array('detalle, created, modified', 'safe'),
-			array('modified','default',
-	          'value'=>new CDbExpression('NOW()'),
-              'setOnEmpty'=>false,'on'=>'update'),
-        	
-        	array('created,modified','default',
-              'value'=>new CDbExpression('NOW()'),
-              'setOnEmpty'=>false,'on'=>'insert'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('rut_paciente, tipo_donacion, id_donacion, compatible, detalle, grado_urgencia, centro_medico, created, modified', 'safe', 'on'=>'search'),
+			array('id, compatible, detalle, grado_urgencia, centro_medico, created, modified, id_tipo_trasplante, id_donacion, id_paciente', 'safe', 'on'=>'search'),
 		);
 	}
+
 	/**
 	 * @return array relational rules.
 	 */
@@ -55,8 +55,12 @@ class Trasplante extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'idTipoTrasplante' => array(self::BELONGS_TO, 'TipoTrasplante', 'id_tipo_trasplante'),
+			'idDonacion' => array(self::BELONGS_TO, 'Donacion', 'id_donacion'),
+			'idPaciente' => array(self::BELONGS_TO, 'Paciente', 'id_paciente'),
 		);
 	}
+
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
@@ -64,21 +68,18 @@ class Trasplante extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'rut_paciente' => 'Rut Paciente',
-			'nombre_pac' => 'Paciente',
-			'rut_pac' => 'Rut Paciente',
-			'nombre_don' => 'Donante',
-			'rut_don' => 'Rut Donante',
-			'tipo_donacion' => 'Tipo Donación',
-			'id_donacion' => 'ID Donacion',
 			'compatible' => 'Compatible',
-			'detalle' => 'Descripción',
+			'detalle' => 'Detalle',
 			'grado_urgencia' => 'Grado Urgencia',
-			'centro_medico' => 'Centro Médico',
-			'created' => 'Fecha Ingreso',
-			'modified' => 'Fecha Modificación',
+			'centro_medico' => 'Centro Medico',
+			'created' => 'Created',
+			'modified' => 'Modified',
+			'id_tipo_trasplante' => 'Id Tipo Trasplante',
+			'id_donacion' => 'Id Donacion',
+			'id_paciente' => 'Id Paciente',
 		);
 	}
+
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 *
@@ -94,21 +95,25 @@ class Trasplante extends CActiveRecord
 	public function search()
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
+
 		$criteria=new CDbCriteria;
+
 		$criteria->compare('id',$this->id);
-		$criteria->compare('rut_paciente',$this->rut_paciente,true);
-		$criteria->compare('tipo_donacion',$this->tipo_donacion,true);
-		$criteria->compare('id_donacion',$this->id_donacion,true);
 		$criteria->compare('compatible',$this->compatible,true);
 		$criteria->compare('detalle',$this->detalle,true);
 		$criteria->compare('grado_urgencia',$this->grado_urgencia,true);
 		$criteria->compare('centro_medico',$this->centro_medico,true);
 		$criteria->compare('created',$this->created,true);
 		$criteria->compare('modified',$this->modified,true);
+		$criteria->compare('id_tipo_trasplante',$this->id_tipo_trasplante);
+		$criteria->compare('id_donacion',$this->id_donacion);
+		$criteria->compare('id_paciente',$this->id_paciente);
+
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!

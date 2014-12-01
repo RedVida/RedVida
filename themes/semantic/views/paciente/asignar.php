@@ -65,6 +65,7 @@ Registrar Trasplante </h1>
         'nombre',
         'rut',
         'grado_urgencia',
+        'necesidad_transplante',
       		array(
 					'class'=>'CButtonColumn',
 					'template'=>'{Sangre}',
@@ -74,7 +75,7 @@ Registrar Trasplante </h1>
  						'Sangre' => array
  						(
 					    	'label'=>'Transfusión de Sangre',
-					        'url'=>'Yii::app()->createUrl("/transfusion/create", array("id"=>$data->id))',
+					        'url'=>'Yii::app()->createUrl("/transfusion/create", array("id"=>$data->necesidad_transplante))',
 					    ),
 
 					
@@ -106,7 +107,7 @@ Registrar Trasplante </h1>
 						'Organo' => array
 					   (
 					        'label'=>'Trasplante de Órgano',
-					        'url'=>'Yii::app()->createUrl("/trasplante/create", array("id"=>$data->id,"name"=>"organo"))', 
+					        'url'=>'Yii::app()->createUrl("/donantes/registrar_organo&id=$data->id&name=$data->necesidad_transplante")', 
 					    ),
 
 
