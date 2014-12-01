@@ -43,8 +43,6 @@ $(document).ready(function() {
 			<div class="ui form">
 			<?php echo $form->hiddenField($model,'id_tipo_trasplante',array('type'=>"hidden",'value'=>'1')); ?>
 			<?php echo $form->hiddenField($model,'id_paciente',array('type'=>"hidden",'value'=> $_GET['id_p'])); ?>
-			<?php echo $form->hiddenField($model,'created', array('type'=>"hidden",'value'=> date("Y-m-d H:i:s"))); ?>
-			<?php echo $form->hiddenField($model,'modified', array('type'=>"hidden",'value'=> date("Y-m-d H:i:s"))); ?>
 			<?php
 			$length = (string)($_GET['or']);
 			$donacion=DonacionOrgano::model()->findAll(array('select'=>'id','condition'=>'rut_donante='."'$donante->rut'".' AND nombre='."'$length'"));

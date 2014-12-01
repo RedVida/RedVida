@@ -193,10 +193,53 @@ public function actionPacienteList()
 			if($model->validate()){
 		    $donante=Donantes::model()->find('id='.$_GET['id_d']);
 			$length = (string)($_GET['or']);
+
 			$connection=Yii::app()->db;
 			$sql = 'UPDATE donacion_organo SET estado = 0 WHERE nombre='."'$length'".' AND rut_donante='."'$donante->rut'";
 			$command = $connection->createCommand($sql);
 			$command->execute();
+
+			$paciente=Paciente::model()->find('id='.$_GET['id_p']);
+
+			$connection=Yii::app()->db;
+			$sql = 'UPDATE paciente SET necesidad_trasplante = NULL WHERE id='.$paciente->id;
+			$command = $connection->createCommand($sql);
+			$command->execute();
+
+			}
+			if($model->save())
+				$this->redirect(array('index'));
+		}
+		$this->render('trasplanteorgano',array(
+			'model'=>$model,
+		));
+	}
+
+	public function actionTrasplanteOrgano($id_d,$id_p,$me)
+	{
+
+		$model=new Trasplante;
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+		if(isset($_POST['Trasplante']))
+		{
+			$model->attributes=$_POST['Trasplante'];
+			if($model->validate()){
+		    $donante=Donantes::model()->find('id='.$_GET['id_d']);
+			$length = (string)($_GET['me']);
+
+			$connection=Yii::app()->db;
+			$sql = 'UPDATE donacion_organo SET estado = 0 WHERE nombre='."'$length'".' AND rut_donante='."'$donante->rut'";
+			$command = $connection->createCommand($sql);
+			$command->execute();
+
+			$paciente=Paciente::model()->find('id='.$_GET['id_p']);
+
+			$connection=Yii::app()->db;
+			$sql = 'UPDATE paciente SET necesidad_trasplante = NULL WHERE id='.$paciente->id;
+			$command = $connection->createCommand($sql);
+			$command->execute();
+
 			}
 			if($model->save())
 				$this->redirect(array('index'));
