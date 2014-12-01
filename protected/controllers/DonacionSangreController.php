@@ -70,9 +70,44 @@ class DonacionSangreController extends Controller
 		if(isset($_POST['DonacionSangre']))
 		{			
 			$model->attributes=$_POST['DonacionSangre'];
-			
+			$model_banco = BancoSangre::model()->findAll(array('select'=>'id','condition'=>'tipo='."'$model->tipo_sangre'"));
+			$var= (int) $model_banco[0]["id"];
+
+
+			$model->id_banco=$var;
+
+			//if
+			$var_b = BancoSangre::model()->findAll(array('select'=>'cantidad','condition'=>'id='."'$var'"));
+			$var_a = $var_b[0]['cantidad'];
+
+
+			if(($var_a + $model->cantidad) >= 0){
+
+			$update = Yii::app()->db->createCommand()
+				    ->update('banco_sangre', 
+				        array(
+				            'cantidad'=>new CDbExpression('cantidad + :cantidad', array(':cantidad'=>$model->cantidad))
+				        ),
+				        'id=:id',
+				        array(':id'=>$var)
+				    );
+
 				if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
+
+
+
+			}else{
+				
+
+	    	   $model->addError('ERROR','Los parametros del Banco de Sangre no Permiten ingresar Donaciones');
+
+
+			}
+			//endif
+				
+
+			
 		}
 
 		$this->render('create',array(
@@ -93,12 +128,84 @@ class DonacionSangreController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
+		$model_update = DonacionSangre::model()->find("id=$id");;
+
 		if(isset($_POST['DonacionSangre']))
 		{
 			$model->attributes=$_POST['DonacionSangre'];
-			if($model->save())
-				$data->idDonacion = $model->id_donante;
-				$this->redirect(array('view','id'=>$model->id));
+
+			$var = $model_update->cantidad-$model->cantidad;
+
+			if( $var >= 0 ){
+
+
+
+
+					$var_b = BancoSangre::model()->findAll(array('select'=>'cantidad','condition'=>'id='."'$model->id_banco'"));
+					$var_b = $var_b[0]['cantidad'];
+					$k = $var_b - $var;
+					if( $k >= 0 ){
+
+					$update = Yii::app()->db->createCommand()
+						    ->update('banco_sangre', 
+						        array(
+						            'cantidad'=>new CDbExpression('cantidad - :cantidad', array(':cantidad'=>$var))
+						        ),
+						        'id=:id',
+						        array(':id'=>$model_update->id_banco)
+						    );
+
+					if($model->save())
+						$this->redirect(array('view','id'=>$model->id));
+
+
+					}else{
+
+
+							    	   $model->addError('ERROR','Los parametros del Banco de Sangre no Permiten Actualizar Donaciones');
+
+					}
+
+			}else{
+				
+
+					$var_b = BancoSangre::model()->findAll(array('select'=>'cantidad','condition'=>'id='."'$model->id_banco'"));
+					$var_b = $var_b[0]['cantidad'];
+					$k = $var_b - $var;
+
+
+					if( $k >= 0 ){
+
+
+					$update = Yii::app()->db->createCommand()
+						    ->update('banco_sangre', 
+						        array(
+						            'cantidad'=>new CDbExpression('cantidad - :cantidad', array(':cantidad'=>$var))
+						        ),
+						        'id=:id',
+						        array(':id'=>$model_update->id_banco)
+						    );
+
+
+
+
+					if($model->save())
+						$this->redirect(array('view','id'=>$model->id));
+
+
+					}else{
+
+
+							    	   $model->addError('ERROR','Los parametros del Banco de Sangre no Permiten Actualizar Donaciones');
+
+					}
+
+			}
+
+
+
+
+
 		}
 
 		$this->render('update',array(
@@ -111,9 +218,40 @@ class DonacionSangreController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
+
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+
+			$model_delete = DonacionSangre::model()->find("id=$id");
+
+			$var = BancoSangre::model()->findAll(array('select'=>'cantidad','condition'=>'id='."'$model_delete->id_banco'"));
+			$var_a=$var[0]['cantidad'];
+
+
+			if(($var_a - $model_delete->cantidad)>=0){
+
+								$update = Yii::app()->db->createCommand()
+							    ->update('banco_sangre', 
+							        array(
+							            'cantidad'=>new CDbExpression('cantidad - :cantidad', array(':cantidad'=>$model_delete->cantidad))
+							        ),
+							        'id=:id',
+							        array(':id'=>$model_delete->id_banco)
+							    );
+			}else{
+
+								$update = Yii::app()->db->createCommand()
+							    ->update('banco_sangre', 
+							        array(
+							            'cantidad'=>new CDbExpression('cantidad = :cantidad', array(':cantidad'=>0))
+							        ),
+							        'id=:id',
+							        array(':id'=>$model_delete->id_banco)
+							    );
+			}
+
+
+		$this->loadModel($id)->delete();	
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
@@ -129,18 +267,6 @@ class DonacionSangreController extends Controller
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
-	}
-
-
-	public function actionMostrar()
-	{
-
-
-		$model_donante = Donantes::model()->findByAttributes(array('nombres'=>'Wendy Sulca'));
-		$arreglo = Yii::app()->db->createCommand()->select('nombres, rut')->from('donantes')->where('nombres = "hector"')->queryAll();
-		$this->render('mostrar', array('model'=>$arreglo));
-
-
 	}
 
 

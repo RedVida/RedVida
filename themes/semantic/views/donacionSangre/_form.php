@@ -48,7 +48,6 @@
 		</div>
 	</div>
 
-
     <div class="fields">
 		<?php echo $form->hiddenField($model,'id_donante', array('value'=>$id_donante)); ?>
 	</div>

@@ -35,6 +35,7 @@ class DonacionSangre extends CActiveRecord
 
 		return array(
 			array('id_donante, cantidad', 'numerical', 'integerOnly'=>true),
+			array('id_banco, cantidad', 'numerical', 'integerOnly'=>true),
 			array('cantidad', 'numerical', 'integerOnly'=>true),
 			array('cantidad', 'length', 'min'=>1,'max'=>100, 'message' => 'Debe Ingresar Cantidad entre 1-100'),
 			array('cantidad', 'required', 'message'=>'Debes Ingresar Cantidad'),

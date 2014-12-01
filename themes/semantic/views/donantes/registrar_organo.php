@@ -69,7 +69,7 @@ $dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
 		            'buttons'=>array(
 					'Registrar' => array( //botón para la acción nueva
 				    'label'=>'Registrar Trasplante', // titulo del enlace del botón nuevo
-				    'url'=>'Yii::app()->createUrl("/donantes/registrar_alergia&id_d=$data->id&id_p="'."'$id_p'".')', //url de la acción nueva
+				    'url'=>'Yii::app()->createUrl("/donantes/registrar_alergia&id_d=$data->id&id_p='.$id_p.'")', //url de la acción nueva
 				    //'visible'=>'($data->estado==="DISPONIBLE")?true:false;'
 				    ),
 					),
