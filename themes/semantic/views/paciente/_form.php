@@ -102,7 +102,7 @@
 	</div>
 
 	<div class="four wide field">
-	       <?php echo $form->labelEx($model,'Necesidad Transplante'); ?>
+	       <?php echo $form->labelEx($model,'Necesidad Trasplante'); ?>
 	       <?php echo $form->dropDownList($model,'necesidad_transplante',CHtml::listData(Organo::model()->findAll(),'idOrgano', 'nombreOrgano'), array('empty' => 'Selecciona Necesidad', 'class'=>'ui selection dropdown')); ?>
 	</div>
 

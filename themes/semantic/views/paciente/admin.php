@@ -33,7 +33,7 @@ Administrar Pacientes </h1>
 </div>
 <hr class="style-two ">
 
-<?php echo CHtml::link('Busqueda avanzada','#',array('class'=>'search-button')); ?>
+<?php echo CHtml::link('&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Busqueda Avanzada','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
@@ -52,7 +52,6 @@ Administrar Pacientes </h1>
 		'grado_urgencia',
 		'fecha_nacimiento',
 		'edad',
-		'fecha_ingreso',
 		/*
 		'necesidad_transplante',
 		'tipo_sangre',

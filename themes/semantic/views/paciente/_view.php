@@ -2,6 +2,12 @@
 /* @var $this PacienteController */
 /* @var $data Paciente */
 $organo = Organo::model()->findAll(array('select'=>'nombreOrgano'));
+
+$this->menu=array(
+	array('label'=>'Lista Paciente', 'url'=>array('index')),
+	array('label'=>'Registrar Paciente', 'url'=>array('create')),
+	array('label'=>'Administrar Paciente', 'url'=>array('admin')),
+);
 ?>
 
 <div class="view">
