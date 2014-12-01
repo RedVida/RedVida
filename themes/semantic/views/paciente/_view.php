@@ -8,6 +8,7 @@ $this->menu=array(
 	array('label'=>'Registrar Paciente', 'url'=>array('create')),
 	array('label'=>'Administrar Paciente', 'url'=>array('admin')),
 );
+
 ?>
 
 <div class="view">
@@ -31,7 +32,9 @@ $this->menu=array(
 			<br />
 
 			<b><?php echo CHtml::encode($data->getAttributeLabel('necesidad_transplante')); ?>:</b>
-			<?php echo $organo[$data->necesidad_transplante-1]->nombreOrgano; ?>
+			<?php 
+			$organo=Organo::model()->find('idOrgano='.$data->necesidad_transplante);
+			echo $organo->nombreOrgano; ?>
 			<br />
 
 			<?php echo CHtml::link(CHtml::encode("Más detalle"), array('view', 'id'=>$data->id)); ?>
