@@ -104,8 +104,13 @@
 	</div>
 
 	<div class="four wide field">
-	       <?php echo $form->labelEx($model,'Necesidad Trasplante'); ?>
-	       <?php echo $form->dropDownList($model,'necesidad_transplante',array('Organo'=>CHtml::listData($organos,'nombreOrgano', 'nombreOrgano'),'Medula'=>'Medula'), array('empty' => 'Selecciona Necesidad', 'class'=>'ui selection dropdown')); ?>
+	       <?php echo $form->labelEx($model,'Necesidad Trasplante (opcional)'); ?>
+	       <?php echo $form->dropDownList($model,'necesidad_trasplante',array('Organo'=>CHtml::listData($organos,'nombreOrgano', 'nombreOrgano')), array('empty' => 'Selecciona Necesidad', 'class'=>'ui selection dropdown')); ?>
+	</div>
+
+	<div class="four wide field">
+	       <?php echo $form->labelEx($model,'Necesidad Medula Osea (opcional)'); ?>
+	       <?php echo $form->dropDownList($model,'necesidad_medula',array('Cantidad (ml)'=>range(1,100)), array('empty' => 'Selecciona Necesidad', 'class'=>'ui selection dropdown')); ?>
 	</div>
 
 	<div class="four wide field">

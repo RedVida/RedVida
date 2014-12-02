@@ -9,7 +9,11 @@
 	    <i class="add large icon"></i> 
 	    <div class="content">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('Tipo De Trasplante')); ?>:</b>
+	 <b><?php echo CHtml::encode($data->getAttributeLabel('Trasplante de')); ?>:</b>
+	<?php echo CHtml::encode($data->nombre); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('Tipo')); ?>:</b>
 	<?php $tipo_trasplante=TipoTrasplante::model()->find('id='.$data->id_tipo_trasplante);
 	 echo $tipo_trasplante->nombre;
 	 ?>

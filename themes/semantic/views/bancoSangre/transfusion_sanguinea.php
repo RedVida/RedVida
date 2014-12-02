@@ -83,6 +83,13 @@ $dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
+<?php if(!$results)
+			 $message="
+			<div class ='ui warning message'>
+			<i class='warning sign icon'></i>
+			<i class='close icon'></i>
+			<b>No se han encontrado donaciones con este tipo de sangre = $paciente->tipo_sangre.
+		    </div> ";?>
 </div><!-- search-form -->
 
 <div class="ui grid">
@@ -108,6 +115,7 @@ $dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
 				 ),
 		       ),
 			),
+			'emptyText' => $message,
 		)); ?>
 	</div>
 </div>		

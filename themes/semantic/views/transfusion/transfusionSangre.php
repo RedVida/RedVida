@@ -58,7 +58,7 @@ $(document).ready(function() {
 		    <div class="fields">
 			 	<div class="two wirde field">
 					<?php echo $form->labelEx($model,'Cantidad a transferir:'); ?>
-					<?php echo $form->dropDownList($model,'cantidad', range(1,$bancoSangre->cantidad),array('class'=>'ui selection dropdown'));?>
+					<?php echo $form->dropDownList($model,'cantidad',array('(Unidad)'=> range(1,$bancoSangre->cantidad)),array('class'=>'ui selection dropdown'));?>
 					&nbsp;Sangre / (Unidad)
 					<div class="errors">
 					<?php echo $form->error($model,'cantidad',array('class' => 'ui small red pointing above ui label')); ?>

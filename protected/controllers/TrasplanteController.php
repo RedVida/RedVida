@@ -192,6 +192,8 @@ public function actionPacienteList()
 			$model->attributes=$_POST['Trasplante'];
 			if($model->validate()){
 		    $donante=Donantes::model()->find('id='.$_GET['id_d']);
+		    $paciente=Paciente::model()->find('id='.$_GET['id_p']);
+		    $model->nombre = $paciente->necesidad_trasplante;
 			$length = (string)($_GET['or']);
 
 			$connection=Yii::app()->db;
@@ -226,7 +228,8 @@ public function actionPacienteList()
 			$model->attributes=$_POST['Trasplante'];
 			if($model->validate()){
 		    $donante=Donantes::model()->find('id='.$_GET['id_d']);
-
+		    $paciente=Paciente::model()->find('id='.$_GET['id_p']);
+		    $model->nombre = 'Medula';
 			$connection=Yii::app()->db;
 			$sql = 'UPDATE donacion_medula SET estado = 0 , cantidad= (cantidad -'.$_GET['me'].') WHERE rut_donante='."'$donante->rut'";
 			$command = $connection->createCommand($sql);
@@ -244,6 +247,65 @@ public function actionPacienteList()
 				$this->redirect(array('index'));
 		}
 		$this->render('trasplantemedula',array(
+			'model'=>$model,
+		));
+	}
+
+	public function actionInforme(){
+	// Odernar por: Edad, Tipo de sangre, Centro medico, Fecha de ingreso
+
+		$model = new Trasplante;
+		if(isset($_POST['Trasplante'])){
+       		$model = new Trasplante;
+            $this->layout="//layouts/pdf";
+            $mPDF1 = Yii::app()->ePdf->mpdf();
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/nn.png' ));
+			$mPDF1->WriteHTML('<br>');
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/line2.png' ));
+			$mPDF1->WriteHTML('<br> ');
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/informe_trasplante.png' ));
+			$where_array = array();
+			$from_array = array();
+
+			$OK = true;
+            if($_POST['Trasplante']['id_centro_medico']!=''){ // centro medico
+            	$where_array[]=('id_centro_medico = '.$_POST['Trasplante']['id_centro_medico']);
+		    }
+		    if($_POST['Trasplante']['id_tipo_trasplante']!=''){ // centro medico
+            	$where_array[]=('id_tipo_trasplante = '.$_POST['Trasplante']['id_tipo_trasplante']);
+		    }
+		    if($_POST['Trasplante']['desde']!=''){ // Tipo de sangre
+		    	if(strtotime($_POST['Trasplante']['desde']) && 1 === preg_match('~[0-9]~', $_POST['Trasplante']['desde'])){
+			    	$desde = (string)($_POST['Trasplante']['desde']);
+	            	$where_array[]=('created >= '."'$desde'");
+            	}else{
+            		$model->addError('nombre','Fecha de Inicio: La Fecha ingresada no es valida ');
+				   	$OK = false;
+            	}
+		    }
+		     if($_POST['Trasplante']['hasta']!=''){ // Fecha
+		     	if(strtotime($_POST['Trasplante']['hasta']) && 1 === preg_match('~[0-9]~', $_POST['Trasplante']['hasta'])){
+			    	$hasta = (string)($_POST['Trasplante']['hasta']);
+	            	$where_array[]=('created <= '."'$hasta'");
+	            }else{
+            		$model->addError('nombre','Fecha de Termino: La Fecha ingresada no es valida ');
+				   	$OK = false;
+            	}
+		    }
+		    $where = implode(" AND ", $where_array);	
+            $results = Yii::app()->db->createCommand()->
+	            select('*')->
+	            from('trasplante')->
+	            where($where)->
+	            queryAll();
+	        if(!$OK)$results = null;
+            if($results){
+				$mPDF1->WriteHTML($this->render('_informe',array('results'=>$results),true));
+				$mPDF1->Output('Informe Trasplantes',"I"); // i = visualizar en el navegador
+		    }
+		    else{ $model->addError('nombre','No se han encontrado donantes con esos datos ');}
+        }
+        $this->render('informe',array(
 			'model'=>$model,
 		));
 	}

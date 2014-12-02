@@ -42,7 +42,8 @@ Ver Trasplante #<?php echo $model->id; ?></h1>
 	<?php $this->widget('zii.widgets.CDetailView', array(
 		'data'=>$model,
 		'attributes'=>array(
-			'id_tipo_trasplante'=> array('name'=>'Tipo De Trasplante','value' => $tipo_trasplante->nombre),
+			'nombre'=> array('name'=>'Trasplante de','value' => $model->nombre),
+			'id_tipo_trasplante'=> array('name'=>'Tipo','value' => $tipo_trasplante->nombre),
 			'id_centro_medico'=> array('name'=>'Centro Medico','value' => $centro_medico->nombre),
 			'created',
 			'modified',

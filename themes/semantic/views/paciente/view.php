@@ -22,7 +22,7 @@ $this->menu=array(
 	<div class="twelve wide column">
 <?php 
     $centro_medico=CentroMedico::model()->find('id='.$model->id_centro_medico);
-    //$organo=Organo::model()->find('idOrgano='.$model->necesidad_transplante);
+    //$organo=Organo::model()->find('idOrgano='.$model->necesidad_trasplante);
     
 ?>
 
@@ -54,7 +54,13 @@ $this->menu=array(
 				$array_alergia[]=$alergia->nombre;
 	    	}     
 	    $alergias = implode(", ", $array_alergia); 
-	?>
+		?>
+
+		<?php if(!$model->necesidad_trasplante) $necesidad_trasplante = 'No presenta';
+			  else $necesidad_trasplante=$model->necesidad_trasplante;?>
+
+		<?php if(!$model->necesidad_medula) $necesidad_medula = 'No presenta';
+			  else $necesidad_medula=$model->necesidad_medula;?>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -66,11 +72,8 @@ $this->menu=array(
 		'grado_urgencia',
 		'fecha_nacimiento',
 		'edad',
-		array(
-			'label'=>'Necesidad Transplante',
-			'type'=>'raw',
-			'value'=>CHtml::link(CHtml::encode($model->necesidad_transplante),array('paciente/disponibilidad','sangre'=>$model->tipo_sangre)),
-		),
+		'necesidad_trasplante'=>array('name'=>'Necesidad Trasplante', 'value'=> $necesidad_trasplante),
+		'necesidad_medula'=>array('name'=>'Necesidad Medula', 'value'=> $necesidad_medula),
 		'tipo_sangre',
 		array(
 			'label'=>'Centro Medico',

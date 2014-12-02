@@ -56,8 +56,12 @@ $paciente=Paciente::model()->find('id='.$_GET['id']);
         <td><?php echo $paciente->tipo_sangre; ?></td>
       </tr>
       <tr>
-        <td>Medula:</td>
-        <td>Cantidad Necesaria <?php echo $paciente->necesidad_medula ?> (ml)</td>
+        <td>Medula:</td>     
+        <td>
+        	<?php if($_GET['name']==0)
+        	echo 'No necesita trasplante';
+     		else echo 'Se necesita <b>'.$paciente->necesidad_medula.'</b> (mls)'; ?>
+        </td>
       </tr>
 
     </tbody>
@@ -89,6 +93,25 @@ $dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
+}?>
+<?php if($length==0)
+		$message="<div class ='ui warning message'>
+					<i class='warning sign icon'></i>
+					<i class='close icon'></i>
+					<b>No se han encontrado resultados.<br/> 
+					Este error puede deberse a que el paciente no necesita (mls) de Medula 
+				   </div>"; 
+		else $message="
+			<div class ='ui warning message'>
+			<i class='warning sign icon'></i>
+			<i class='close icon'></i>
+			<b>No se han encontrado Donantes compatibles.
+			Para que un donantes sea compatible necesita tener:<br/>
+			<ul class='list'>
+			<li> Mismo grupo sanguineo </li>
+		    <li> Cantidad suficiente de Medula Osea</li>
+		    </ul>
+		    </div> ";?>
 </div><!-- search-form -->
 
 <div class="ui grid">
@@ -112,11 +135,12 @@ $dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
 					'Registrar' => array( //botón para la acción nueva
 				    'label'=>'Registrar Trasplante', // titulo del enlace del botón nuevo
 				    'url'=>'Yii::app()->createUrl("/trasplante/trasplantemedula&id_d=$data->id&id_p='.$id_p.'&me='.$length.'")', //url de la acción nueva
-				    //'visible'=>'($data->estado==="DISPONIBLE")?true:false;'
+				    
 				    ),
 					),
 		          ),
 			),
+			'emptyText' => $message,
 		)); ?>
 	</div>
 </div>		

@@ -53,7 +53,9 @@ $paciente=Paciente::model()->find('id='.$_GET['id']);
       </tr>
       <tr>
         <td>Organo:</td>
-        <td>Se necesita trasplantar <b><?php echo ucfirst($paciente->necesidad_trasplante); ?><b></td>
+        <td><?php if(!$_GET['name'])
+        	echo 'No necesita trasplante';
+     		else echo 'Se necesita trasplante de <b>'.$paciente->necesidad_trasplante.'</b>'; ?></td>
       </tr>
 
     </tbody>
@@ -80,6 +82,25 @@ $dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
+
+<?php if($length==0)
+		$message="<div class ='ui warning message'>
+					<i class='warning sign icon'></i>
+					<i class='close icon'></i>
+					<b>No se han encontrado resultados.<br/> 
+					Este error puede deberse a que el paciente no necesita de un Trasplante. 
+				   </div>"; 
+		else $message="
+			<div class ='ui warning message'>
+			<i class='warning sign icon'></i>
+			<i class='close icon'></i>
+			<b>No se han encontrado Donantes compatibles.
+			Para que un donantes sea compatible necesita tener:<br/>
+			<ul class='list'>
+			<li> Mismo tipo de Organo</li>
+		    </ul>
+		    </div> ";?>
+
 </div><!-- search-form -->
 <div class="ui grid">
 	<div class="one wide column"></div>
@@ -106,6 +127,7 @@ $dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
 					),
 		          ),
 			),
+			'emptyText' => $message,
 		)); ?>
 	</div>
 </div>		

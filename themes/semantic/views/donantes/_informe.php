@@ -12,12 +12,13 @@
 				<body>
 					<br>
 					<table id="t01">
-					  <tr><th>Nombre</th><th>Apellido</th><th>Rut</th><th>T.Sangre</th><th>N° de contacto</th		
+					  <tr><th>N°</th><th>Nombre</th><th>Apellido</th><th>Rut</th><th>T.Sangre</th><th>N° de contacto</th		
 					    ><th>Centro Medico</th><th>Fecha Ingreso</th><th>Edad</th><th>Alergia(s)</th><th>Enfermedades</th>		
 					  </tr>
-					  <?php foreach ($results as $res){ ?>
+					  <?php $i=0; foreach ($results as $res){ ?>
 						  <?php $centro_medico=CentroMedico::model()->find('id='.$res['id_centro_medico']);?> 
-						  <tr>	  
+						  <tr>
+						    <td>  <?php $i++ ; echo $i; ?></td>	 	  
 						  	<td>  <?php echo $res['nombres']; ?></td>
 						    <td>  <?php echo $res['apellidos']; ?></td>
 						    <td>  <?php echo $res['rut']; ?></td>

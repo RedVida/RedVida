@@ -12,10 +12,11 @@
 				<body>
 					<br>
 					<table id="t01">
-					  <tr><th>Nombre</th><th>Direccion</th><th>Contacto</th><th>Director</th><th>Especialidad</th><th>Gubernamental</th>	
+					  <tr><th>N°</th><th>Nombre</th><th>Direccion</th><th>Contacto</th><th>Director</th><th>Especialidad</th><th>Gubernamental</th>	
 					  </tr>
-					  <?php foreach ($results as $res){ ?>
-						  <tr>	  
+					  <?php $i=0; foreach ($results as $res){ ?>
+						  <tr>
+						    <td>  <?php $i++ ; echo $i; ?></td>	 	  
 						  	<td>  <?php echo $res['nombre']; ?></td>
 					    	<td>  <?php echo $res['direccion']; ?></td>
 					    	<td>  <?php echo $res['contacto']; ?></td>

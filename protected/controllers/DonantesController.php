@@ -270,7 +270,7 @@ class DonantesController extends Controller
             	}
 		    }
 		     if($_POST['Donantes']['hasta']!=''){ // Fecha
-		     	if(strtotime($_POST['Donantes']['desde']) && 1 === preg_match('~[0-9]~', $_POST['Donantes']['desde'])){
+		     	if(strtotime($_POST['Donantes']['hasta']) && 1 === preg_match('~[0-9]~', $_POST['Donantes']['hasta'])){
 			    	$hasta = (string)($_POST['Donantes']['hasta']);
 	            	$where_array[]=('d.fecha_ingreso <= '."'$hasta'");
 	            }else{

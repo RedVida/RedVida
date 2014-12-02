@@ -74,6 +74,7 @@ class Trasplante extends CActiveRecord
 			'id_centro_medico' => 'Id Centro Medico',
 			'id_donacion' => 'Id Donacion',
 			'id_paciente' => 'Id Paciente',
+			'nombre'=>'nombre',
 		);
 	}
 
@@ -103,6 +104,7 @@ class Trasplante extends CActiveRecord
 		$criteria->compare('id_centro_medico',$this->id_centro_medico);
 		$criteria->compare('id_donacion',$this->id_donacion);
 		$criteria->compare('id_paciente',$this->id_paciente);
+		$criteria->compare('nombre',$this->nombre);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

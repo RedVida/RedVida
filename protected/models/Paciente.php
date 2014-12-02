@@ -75,11 +75,6 @@ class Paciente extends CActiveRecord
                 'message' => 'El grado de urgencia es requerido',
             ),
             array(
-                'necesidad_transplante',
-                'required',
-                'message' => 'La necesidad de transplante es requerida',
-            ),
-            array(
                 'tipo_sangre',
                 'required',
                 'message' => 'El tipo de sangre es requerido',
@@ -123,6 +118,7 @@ class Paciente extends CActiveRecord
 			'afiliacion' => 'Afiliacion',
 			'grado_urgencia' => 'Grado Urgencia',
 			'necesidad_trasplante' => 'Necesidad Trasplante',
+			'necesidad_medula' => 'Necesidad Medula',
 			'necesidad_medula' => 'Necesidad Medula',
 			'tipo_sangre' => 'Tipo Sangre',
 			'id_centro_medico' => 'Id Centro Medico',

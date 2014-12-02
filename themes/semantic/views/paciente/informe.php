@@ -129,8 +129,8 @@ Generar Informe - Paciente </h1>
           </div>
 
           <div class="four wide field">
-                 <?php echo $form->labelEx($model,'Necesidad Transplante'); ?>
-                 <?php echo $form->dropDownList($model,'necesidad_transplante',CHtml::listData($organos,'nombreOrgano', 'nombreOrgano'), array('empty' => 'Seleccione Necesidad', 'class'=>'ui selection dropdown')); ?>
+                 <?php echo $form->labelEx($model,'Necesidad Trasplante'); ?>
+                 <?php echo $form->dropDownList($model,'necesidad_trasplante',CHtml::listData($organos,'nombreOrgano', 'nombreOrgano'), array('empty' => 'Seleccione Necesidad', 'class'=>'ui selection dropdown')); ?>
           </div>
 					<div class="fields">
 						<div class="four wide field">

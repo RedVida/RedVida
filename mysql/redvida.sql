@@ -622,23 +622,6 @@ INSERT INTO `cruge_user` (`iduser`, `regdate`, `actdate`, `logondate`, `username
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `donacion`
---
-
-CREATE TABLE IF NOT EXISTS `donacion` (
-  `id_donacion` int(11) NOT NULL AUTO_INCREMENT,
-  `rut_donante` varchar(12) COLLATE utf8_bin DEFAULT NULL,
-  `tipo` varchar(20) COLLATE utf8_bin DEFAULT NULL,
-  `centro_recepcion` varchar(20) COLLATE utf8_bin DEFAULT NULL,
-  `detalle` text COLLATE utf8_bin,
-  `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id_donacion`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `donacion_medula`
 --
 
@@ -648,6 +631,7 @@ CREATE TABLE IF NOT EXISTS `donacion_medula` (
   `rut_donante` varchar(12) DEFAULT NULL,
   `tipo_medula` varchar(128) DEFAULT NULL,
   `tipo_sangre` varchar(128) DEFAULT NULL,
+  `estado` tinyint(1) DEFAULT NULL,
   `cantidad` int(11) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
@@ -817,9 +801,7 @@ CREATE TABLE IF NOT EXISTS `paciente` (
   `necesidad_trasplante` varchar(20) DEFAULT NULL,
   `fecha_nacimiento` date DEFAULT NULL ,
   `edad` int(10) DEFAULT NULL,
-  `id_tipo_trasplante` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_reference_33` (`id_tipo_trasplante`),
   KEY `id_centro_medico` (`id_centro_medico`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
@@ -836,6 +818,7 @@ CREATE TABLE IF NOT EXISTS `paciente` (
 
 CREATE TABLE IF NOT EXISTS `tiene_alergia` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(20) DEFAULT NULL,
   `fecha` datetime DEFAULT NULL,
   `id_donante` int(11) DEFAULT NULL,
   `id_alergia` int(11) DEFAULT NULL,

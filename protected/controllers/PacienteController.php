@@ -241,9 +241,9 @@ class PacienteController extends Controller
 		    	$length = (string)($_POST['Paciente']['afiliacion']);
             	$where_array[]=('p.afiliacion = '."'$length'");
 		    }
-		    if($_POST['Paciente']['necesidad_transplante']!=''){ // Tipo de sangre
-		    	$length = (string)($_POST['Paciente']['necesidad_transplante']);
-            	$where_array[]=('p.necesidad_transplante = '."'$length'");
+		    if($_POST['Paciente']['necesidad_trasplante']!=''){ // Tipo de sangre
+		    	$length = (string)($_POST['Paciente']['necesidad_trasplante']);
+            	$where_array[]=('p.necesidad_trasplante = '."'$length'");
 		    }
 		    if($_POST['Paciente']['grado_urgencia']!=''){ // Tipo de sangre
 		    	$length = (string)($_POST['Paciente']['grado_urgencia']);
