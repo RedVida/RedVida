@@ -9,7 +9,7 @@ $(document).ready(function() {
 </script>
 <br>
 <div class="ui black ribbon label">
-				<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Registrar Trasplante</h1>
+				<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Registrar Trasplante De Medula</h1>
 				</div>
 				<hr class="style-two ">
 <div class="ui grid">
@@ -30,22 +30,22 @@ $(document).ready(function() {
 		         <div class="ui green message">
 				
 					 Paciente:<b> <?php $paciente=Paciente::model()->find('id='.$_GET['id_p']);
-					 echo $paciente->nombre.' '.$paciente->apellido; ?></b>
+					 echo ucfirst($paciente->nombre).' '.ucfirst($paciente->apellido); ?></b>
 			     </div>
 			     <div class="ui blue message">
 					 Donador:<b> <?php $donante=Donantes::model()->find('id='.$_GET['id_d']);
-					 echo $donante->nombres.' '.$donante->apellidos; ?></b>
+					 echo ucfirst($donante->nombres).' '.ucfirst($donante->apellidos); ?></b>
 			     </div>
 			     <div class="ui orange message">
-					 Organo donado: <b> <?php echo ucfirst($_GET['or']); ?> </b>
+					 Cantidad de Medula Donada: <b> <?php echo ucfirst($_GET['me']);?> (ml) </b>
 			     </div>
         
 			<div class="ui form">
-			<?php echo $form->hiddenField($model,'id_tipo_trasplante',array('type'=>"hidden",'value'=>'1')); ?>
+			<?php echo $form->hiddenField($model,'id_tipo_trasplante',array('type'=>"hidden",'value'=>'2')); ?>
 			<?php echo $form->hiddenField($model,'id_paciente',array('type'=>"hidden",'value'=> $_GET['id_p'])); ?>
 			<?php
-			$length = (string)($_GET['or']);
-			$donacion=DonacionOrgano::model()->findAll(array('select'=>'id','condition'=>'rut_donante='."'$donante->rut'".' AND nombre='."'$length'"));
+			$length = (string)($_GET['me']);
+			$donacion=DonacionMedula::model()->findAll(array('select'=>'id','condition'=>'rut_donante='."'$donante->rut'"));
 		    echo $form->hiddenField($model,'id_donacion',array('type'=>"hidden",'value'=>$donacion[0]->id)); ?>
        		<br>
 		    <div class="fields">

@@ -24,6 +24,7 @@ $('.search-form form').submit(function(){
 	return false;
 });
 ");
+$paciente=Paciente::model()->find('id='.$_GET['id']);
 ?>
 <br>
 <div class="ui black ribbon label">
@@ -33,6 +34,35 @@ $('.search-form form').submit(function(){
 <hr class="style-two ">
 
 <?php echo CHtml::link('&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Busqueda Avanzada','#',array('class'=>'search-button')); ?>
+<div class="ui grid">
+	<div class="one wide column"></div>
+	<div class="fourteen wide column">
+<table class="ui definition table  ui green message">
+    <tbody>
+      <tr>
+        <td class="one wide column ">Paciente:</td>
+        <td><?php echo ucfirst($paciente->nombre).' '.ucfirst($paciente->apellido); ?></td>
+      </tr>
+       <tr>
+        <td>Rut:</td>
+        <td><?php echo $paciente->rut ?></td>
+      </tr>
+      <tr>	
+        <td>T.Sangre:</td>
+        <td><?php echo $paciente->tipo_sangre; ?></td>
+      </tr>
+      <tr>
+        <td>Organo:</td>
+        <td>Se necesita trasplantar <b><?php echo ucfirst($paciente->necesidad_trasplante); ?><b></td>
+      </tr>
+
+    </tbody>
+  </table>
+			     <div class="ui divider"></div>
+
+
+</div>
+</div>
 <div class="search-form" style="display:none">
 <?php
 
@@ -54,6 +84,7 @@ $dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
 <div class="ui grid">
 	<div class="one wide column"></div>
 	<div class="fourteen wide column">
+		<div class="ui blue message"><h3><i class="doctor icon"></i><u>Donantes Aptos:</u> <i class="sort content descending icon"></i></h3></div>
 		<?php $this->widget('zii.widgets.grid.CGridView',array(
 			'id'=>'donante-grid',
 			'dataProvider'=>$dataProvider,
@@ -69,7 +100,7 @@ $dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
 		            'buttons'=>array(
 					'Registrar' => array( //botón para la acción nueva
 				    'label'=>'Registrar Trasplante', // titulo del enlace del botón nuevo
-				    'url'=>'Yii::app()->createUrl("/donantes/registrar_alergia&id_d=$data->id&id_p='.$id_p.'")', //url de la acción nueva
+				    'url'=>'Yii::app()->createUrl("/trasplante/trasplanteorgano&id_d=$data->id&id_p='.$id_p.'&or='.$length.'")', //url de la acción nueva
 				    //'visible'=>'($data->estado==="DISPONIBLE")?true:false;'
 				    ),
 					),

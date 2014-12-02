@@ -20,7 +20,7 @@ $('.search-form form').submit(function(){
 
 <div class="ui black ribbon label">
 <h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
-Registrar Trasplante </h1>
+Lista de pacientes - Registrar Trasplante </h1>
 </div>
 <hr class="style-two ">
 
@@ -52,7 +52,13 @@ Registrar Trasplante </h1>
 	</div>
 
 	<div class="twelve wide column">
+<?php function necesidad_medula($val){
+ return $val <= 0 ? 'No necesita' : $val;
+}?>
 
+<?php function necesidad_trasplante($val){
+ return $val == '' ? 'No necesita' : $val;
+}?>
 <?php echo CHtml::beginForm(); ?>
 
 <?php 
@@ -63,10 +69,12 @@ Registrar Trasplante </h1>
     'selectableRows' => 1,
     'columns'=>array(
         'nombre',
+        'apellido',
         'rut',
         'grado_urgencia',
-        'necesidad_trasplante',
-        'necesidad_medula',
+        'tipo_sangre',
+        'necesidad_trasplante' => array('header'=> 'Necesidad Trasplante','name' =>'necesidad_trasplante', 'value'=> 'necesidad_trasplante($data->necesidad_trasplante)'),
+        'necesidad_medula' => array('header'=> 'Necesidad Medula (ml)','name' =>'necesidad_medula', 'value'=> 'necesidad_medula($data->necesidad_medula)'),
       		array(
 					'class'=>'CButtonColumn',
 					'template'=>'{Sangre}',
@@ -76,7 +84,7 @@ Registrar Trasplante </h1>
  						'Sangre' => array
  						(
 					    	'label'=>'Transfusión de Sangre',
-					        'url'=>'Yii::app()->createUrl("/transfusion/create", array("id"=>$data->necesidad_trasplante))',
+					        'url'=>'Yii::app()->createUrl("/bancosangre/Transfusion_sanguinea&id=$data->id")',
 					    ),
 
 					
@@ -94,9 +102,6 @@ Registrar Trasplante </h1>
 					        'label'=>'Trasplante de Médula',
 					        'url'=>'Yii::app()->createUrl("/donantes/registrar_medula&id=$data->id&name=$data->necesidad_medula")', 
 					    ),
-
-
-					
 					),
 				),
       		    array(

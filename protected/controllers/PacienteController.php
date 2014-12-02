@@ -21,6 +21,9 @@ class PacienteController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
+	function yes_or_no($val){
+ return $val == 1 ? 'yes' : 'no';
+}
 	public function accessRules()
 	{
 		return array(

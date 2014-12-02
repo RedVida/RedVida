@@ -215,7 +215,7 @@ public function actionPacienteList()
 		));
 	}
 
-	public function actionTrasplanteOrgano($id_d,$id_p,$me)
+	public function actionTrasplanteMedula($id_d,$id_p,$me)
 	{
 
 		$model=new Trasplante;
@@ -226,17 +226,16 @@ public function actionPacienteList()
 			$model->attributes=$_POST['Trasplante'];
 			if($model->validate()){
 		    $donante=Donantes::model()->find('id='.$_GET['id_d']);
-			$length = (string)($_GET['me']);
 
 			$connection=Yii::app()->db;
-			$sql = 'UPDATE donacion_organo SET estado = 0 WHERE nombre='."'$length'".' AND rut_donante='."'$donante->rut'";
+			$sql = 'UPDATE donacion_medula SET estado = 0 , cantidad= (cantidad -'.$_GET['me'].') WHERE rut_donante='."'$donante->rut'";
 			$command = $connection->createCommand($sql);
 			$command->execute();
 
 			$paciente=Paciente::model()->find('id='.$_GET['id_p']);
 
 			$connection=Yii::app()->db;
-			$sql = 'UPDATE paciente SET necesidad_trasplante = NULL WHERE id='.$paciente->id;
+			$sql = 'UPDATE paciente SET necesidad_trasplante = NULL, necesidad_medula = (necesidad_medula -'.$_GET['me'].') WHERE id='.$paciente->id;
 			$command = $connection->createCommand($sql);
 			$command->execute();
 
@@ -244,7 +243,7 @@ public function actionPacienteList()
 			if($model->save())
 				$this->redirect(array('index'));
 		}
-		$this->render('trasplanteorgano',array(
+		$this->render('trasplantemedula',array(
 			'model'=>$model,
 		));
 	}

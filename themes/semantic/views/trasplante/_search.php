@@ -16,11 +16,17 @@
 <div class="ui form">
    <div class="fields">
 	 	<div class="four wide field">
-			<?php echo $form->labelEx($model,'id'); ?>
-			<?php echo $form->textField($model,'id'); ?>
+			<?php echo $form->labelEx($model,'Fecha De Ingreso:'); ?>
+			<?php echo $form->textField($model,'created'); ?>
+		</div>
+		
+	</div>
+	<div class="fields">
+	<div class="four wide field">
+			<?php echo $form->labelEx($model,'Fecha De Modificacion:'); ?>
+			<?php echo $form->textField($model,'modified'); ?>
 		</div>
 	</div>
-
 	
 
 	<div class="row buttons">

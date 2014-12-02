@@ -647,6 +647,8 @@ CREATE TABLE IF NOT EXISTS `donacion_medula` (
   `id_donante` int(11) DEFAULT NULL,
   `rut_donante` varchar(12) DEFAULT NULL,
   `tipo_medula` varchar(128) DEFAULT NULL,
+  `tipo_sangre` varchar(128) DEFAULT NULL,
+  `cantidad` int(11) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -812,7 +814,7 @@ CREATE TABLE IF NOT EXISTS `paciente` (
   `tipo_sangre` varchar(10) DEFAULT NULL,
   `id_centro_medico` int(11) DEFAULT NULL,
   `fecha_ingreso` datetime DEFAULT NULL,
-  `necesidad_transplante` varchar(20) DEFAULT NULL,
+  `necesidad_trasplante` varchar(20) DEFAULT NULL,
   `fecha_nacimiento` date DEFAULT NULL ,
   `edad` int(10) DEFAULT NULL,
   `id_tipo_trasplante` int(11) DEFAULT NULL,

@@ -212,4 +212,15 @@ public function actionInforme(){
 			Yii::app()->end();
 		}
 	}
+
+	public function actionTransfusion_sanguinea($id)
+	{
+		$model=new BancoSangre('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['BancoSangre']))
+			$model->attributes=$_GET['BancoSangre'];
+			$this->render('transfusion_sanguinea',array(
+			'model'=>$model,
+		));
+   }
 }

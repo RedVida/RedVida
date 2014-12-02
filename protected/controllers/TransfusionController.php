@@ -191,4 +191,28 @@ class TransfusionController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	public function actionTransfusionSangre($id,$id_p)
+	{
+
+		$model=new Transfusion;
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+		if(isset($_POST['Transfusion']))
+		{
+			$model->attributes=$_POST['Transfusion'];
+			if($model->validate()){
+			$connection=Yii::app()->db;
+			$model->cantidad+=1;
+			$sql = 'UPDATE banco_sangre SET cantidad = (cantidad -'.$model->cantidad.') WHERE id='.$_GET['id'];
+			$command = $connection->createCommand($sql);
+			$command->execute();
+			}
+			if($model->save())
+				$this->redirect(array('index'));
+		}
+		$this->render('TransfusionSangre',array(
+			'model'=>$model,
+		));
+	}
 }
