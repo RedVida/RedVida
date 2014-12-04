@@ -17,36 +17,79 @@ Urgencias Nacionales </h1>
 </div>
 <hr class="style-two ">
 
+<?php 
+                $paciente= Paciente::model()->findAll();
+                $array_pacientes = array();
+                foreach ($paciente as $pa) {
+                    $necesidad_organo=NecesidadOrgano::model()->findAll('id_paciente='.$pa->id);
+                    $necesidad_medula=NecesidadMedula::model()->findAll('id_paciente='.$pa->id);
+                    $bol=false;
+                    foreach ($necesidad_organo as $ne) {
+                      if($ne->grado_urgencia == 'Urgencia Nacional')
+                        $bol=true;
+                    }
+                    foreach ($necesidad_medula as $ne) {
+                      if($ne->grado_urgencia == 'Urgencia Nacional')
+                        $bol=true;
+                    }
+                    
+                     if($bol)$array_pacientes[]=$pa->id;
+                  }
+                
+ ?>
+
 <div>
-<table class="ui sortable table segment">
+  <div class="ui grid">
+  <div class="one wide column"></div>
+    <div class="twelve wide column">
+<table class="ui sortable table segment ">
   <thead>
     <tr>
-    <th></th>
+    <th>N°</th>
     <th>Nombre</th>
     <th>Apellido</th>
-    <th>Urgencia</th>
     <th>Necesidad</th>
+    <th>Detalle</th>
   </tr></thead>
-
-<?php
-
-foreach($dataProvider as $datos) {
+<?php $i=1; foreach($array_pacientes as $datos) { 
+ $paciente= Paciente::model()->find('id='.$datos);
+ $nece_paciente = Paciente::model()->findAll('id='.$datos);
+ foreach ( $nece_paciente as $pa) {
+                    $necesidad_organo=NecesidadOrgano::model()->findAll('id_paciente='.$pa->id);
+                    $necesidad_medula=NecesidadMedula::model()->findAll('id_paciente='.$pa->id);
+                    $bol=false;
+                    $array_necesidad= array();
+                    foreach ($necesidad_organo as $ne) {
+                      if($ne->grado_urgencia == 'Urgencia Nacional'){
+                        $bol=true;
+                        $organo=Organo::model()->find('idOrgano='.$ne->id_organo);
+                        $array_necesidad[]=$organo->nombreOrgano;
+                      }
+                    }
+                    foreach ($necesidad_medula as $ne) {
+                      if($ne->grado_urgencia == 'Urgencia Nacional'){
+                        $bol=true;
+                         $array_necesidad[]='Medula Osea';
+                      }
+                    }
+}                    
 
 ?>
-
   <tbody>
     <tr>
-      <td><?php echo CHtml::link(CHtml::encode("Ver"), array('view', 'id'=>$datos['id'])); ?></td>
-      <td><?php echo $datos['nombre']; ?></td>
-      <td><?php echo $datos['apellido']; ?></td>
-      <td><?php echo $datos['grado_urgencia']; ?></td>
-      <td><?php echo $datos['necesidad_transplante']; ?></td>
+      <td><?php echo $i++; ?></td> 
+      <td><?php echo $paciente->nombre; ?></td>
+      <td><?php echo $paciente->apellido; ?></td>
+      <td><?php echo implode(' - ',$array_necesidad); ?></td>
+      <td><?php echo CHtml::link(CHtml::encode("Ver"), array('view', 'id'=>$paciente->id)); ?></td>
     </tr>
   </tbody>
 
 <?php }?>
 
 </table>
+</div>
+</div>
 <hr class="style-two ">
 
 </div>

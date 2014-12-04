@@ -38,17 +38,13 @@ $paciente=Paciente::model()->find('id='.$_GET['id']);
 <?php   $values = array();
 		$donante=DonacionMedula::model()->find('id_paciente='.$_GET['id'].' AND estado=1');
 		$paciente=Paciente::model()->find('id='.$_GET['id']);
-	    $values[]=$donante->id_donante; 
+
+	    if($donante)$values[]=$donante->id_donante; 
 	     if(!$values){ $message="
 										<div class ='ui warning message'>
 											<i class='warning sign icon'></i>
 											<i class='close icon'></i>
-											<b>No se han encontrado Donantes compatibles.
-											Para que un donantes sea compatible necesita tener:<br/>
-											<ul class='list'>
-												<li> Mismo tipo de Organo</li>
-												<li> Mismo tipo de Sangre</li>
-										    </ul>
+											<b>No se han encontrado Donante.
 									    </div> ";
 			
 		}else{

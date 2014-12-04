@@ -62,18 +62,12 @@ function centro_medico($val){
 	$centro_medico=CentroMedico::model()->find('id='.$val);
 return $centro_medico->nombre;
 }
-function donador($val,$tipo){
-	if($tipo== 1){
-	$donador=DonacionOrgano::model()->find('id='.$val);
-	}
-	if($tipo== 2){
-	$donador=DonacionMedula::model()->find('id='.$val);
-	}
-	if($tipo== 3){
-	$donador=DonacionSangre::model()->find('id='.$val);
-	}
-	$donante=Donantes::model()->find('rut='."'$donador->rut_donante'");	
-	return $donante['nombres'].' '.$donante['apellidos'];
+function donante($val,$tipo){
+	if($tipo=='Organo')$donacion=DonacionOrgano::model()->find('id='.$val);
+	else $donacion=DonacionMedula::model()->find('id='.$val);
+	$donante=Donantes::model()->find('id='.$donacion->id_donante);
+
+	return $donante->nombres.' '.$donante->apellidos;
 }
 function paciente($val){
 	$paciente=Paciente::model()->find('id='.$val);
@@ -85,10 +79,11 @@ return $paciente->nombre.' '.$paciente->apellido;
 			'dataProvider'=>$model->search(),
 		    'filter'=>$model,
 			'columns'=>array(
-				'id_tipo_trasplante'=> array('header'=> 'Tipo de trasplante','name' =>'id_tipo_trasplante', 'value'=> 'tipo_trasplante($data->id_tipo_trasplante)'),
+				'nombre' => array('header'=> 'Trasplante','name' =>'nombre'),
+				'tipo',
 				'id_centro_medico' => array('header'=> 'Centro Medico','name' =>'id_centro_medico', 'value'=> 'centro_medico($data->id_centro_medico)'),
-				'id_donacion' => array('header'=> 'Donandor','name' =>'id_donacion', 'value'=> 'donador($data->id_donacion,$data->id_tipo_trasplante)'),
-				'id_paciente'=> array('header'=> 'Paciente','name' =>'id_donacion', 'value'=> 'paciente($data->id_paciente)'),
+				'id_donacion' => array('header'=> 'Donante','name' =>'id_donacion', 'value'=> 'donante($data->id_donacion,$data->tipo)'),
+				'id_paciente'=> array('header'=> 'Paciente','name' =>'id_paciente', 'value'=> 'paciente($data->id_paciente)'),
 				'created',
 				'modified',
 				array(

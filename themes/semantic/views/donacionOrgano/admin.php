@@ -103,6 +103,9 @@ Administrar Órganos </h1>
 			array(	
 				'value'=>'date("h:i",strtotime($data->created))',
 		    ),
+		    array(
+					'class'=>'CButtonColumn',
+				),
 
 
 			

@@ -105,7 +105,9 @@ class Donantes extends CActiveRecord
                     array('direccion','validateText3'),
                     array('direccion','unique','message' => 'La direccion ya esta ingresada'),
             array('tipo_sangre','required','message' => 'El Tipo de Sangre debe ser requerida'),
+            array('estado_vital','required','message' => 'Se Requiere Ingresar el estado vital del donante'),
             array('sexo','required','message' => 'Se Requiere Ingresar Sexo'),
+            array('voluntario','required','message' => 'Se Requiere Ingresar, si el donante es voluntario o no'),
             array('id_centro_medico','required','message' => 'Se requiere ingresar un Centro Medico'),
             array('fecha_nacimiento','required','message' => 'Se requiere ingresar una Fecha de nacimiento'),
             array('fecha_nacimiento','validateFechaNacimiento'),
@@ -147,6 +149,8 @@ class Donantes extends CActiveRecord
 			'fecha_nacimiento' => 'Fecha de nacimiento',
 			'edad'=> 'Edad',
 			'sexo' => 'Sexo',
+			'voluntario' => 'voluntario',
+			'estado_vital' => 'estado_vital',
 		);
 	}
 
@@ -180,6 +184,8 @@ class Donantes extends CActiveRecord
 		$criteria->compare('fecha_nacimiento',$this->fecha_nacimiento);
 		$criteria->compare('edad',$this->edad);
 		$criteria->compare('sexo',$this->sexo);
+		$criteria->compare('voluntario',$this->voluntario);
+		$criteria->compare('estado_vital',$this->estado_vital);
 
 
 		return new CActiveDataProvider($this, array(

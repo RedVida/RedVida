@@ -194,4 +194,5 @@ class MedulaController extends Controller
         
         echo CJSON::encode($resultado);
     }
+
 }

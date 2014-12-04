@@ -167,7 +167,7 @@ class OrganoController extends Controller
 		}
 	}
 
-	public function actionOrganoList()
+	public function actionOrganoList($id)
     {
         $criterio = new CDbCriteria;
         $cdtns = array();
@@ -183,13 +183,15 @@ class OrganoController extends Controller
         $criterio->limit = 10;
         
         $data = Organo::model()->findAll($criterio);
-        
-        foreach($data as $item) {  
-            $resultado[] = array (
-                'nombre'    => $item->nombreOrgano,
+        foreach($data as $item) {
 
-            );
-        }
+		        if(!$necesidad=NecesidadOrgano::model()->find('id_paciente='.$id.' AND id_organo='.$item->idOrgano)){
+		            $resultado[] = array (
+		                'nombre'    => $item->nombreOrgano,
+
+		            );
+		        }
+   		 }
         
         echo CJSON::encode($resultado);
     }

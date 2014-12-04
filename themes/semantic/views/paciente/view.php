@@ -1,3 +1,4 @@
+
 <?php
 $this->breadcrumbs=array(
 	'Pacientes'=>array('index'),
@@ -56,6 +57,32 @@ $this->menu=array(
 	    $alergias = implode(", ", $array_alergia); 
 		?>
 
+		<!-- ORgano-->
+
+	    <?php
+	    $array_necesidad = array(); 
+	    $Criteria = new CDbCriteria();
+	    $Criteria->condition = "id_paciente = $model->id"; 
+	    $necesidad_organo= NecesidadOrgano::model()->findAll($Criteria);
+	    if(!$necesidad_organo)$array_necesidad = array('No presenta');
+	    foreach ($necesidad_organo as $valor) 
+	    	{
+			    $val_organo=Organo::model()->find('idOrgano='.$valor->id_organo);
+				$array_necesidad[]=$val_organo->nombreOrgano;
+	    	}     
+	    $organo= implode(" - ", $array_necesidad); 
+		?>
+
+		<!-- ORgano-->
+
+	    <?php
+	    $necesidad_medula='No presenta';
+	    if($medula=NecesidadMedula::model()->find('id_paciente='.$model->id))
+	    	$necesidad_medula='Medula Osea';
+		?>
+
+
+
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
@@ -66,6 +93,7 @@ $this->menu=array(
 		'fecha_nacimiento',
 		'edad',
 		'tipo_sangre',
+		'sexo',
 		array(
 			'label'=>'Centro Medico',
 			'type'=>'raw',
@@ -73,7 +101,10 @@ $this->menu=array(
                                  array('centromedico/view','id'=>$centro_medico->id)),
 		),
 		'Enfermedades'=>array('name'=>'Enfermedad(es)','value'=> $enfermedad),
-		'Alergias'=>array('name'=>'Alergia(s)','value'=> $alergias)
+		'Alergias'=>array('name'=>'Alergia(s)','value'=> $alergias),
+		'Necesidad Trasplante (Organo) '=>array('name'=>'Necesidad Trasplante (Organo )','value'=> $organo),
+		'Necesidad Trasplante (Medula) '=>array('name'=>'Necesidad Trasplante (Medula )','value'=> $necesidad_medula),
+
 		),
 		'htmlOptions'=>array('class'=>'ui celled table segment'),
 		)); 

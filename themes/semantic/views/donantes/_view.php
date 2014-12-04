@@ -48,10 +48,6 @@
 							<?php echo CHtml::encode($data->edad); ?>
 							<br />
 
-							<b><?php echo CHtml::encode($data->getAttributeLabel('fecha_ingreso')); ?>:</b>
-							<?php echo CHtml::encode($data->fecha_ingreso); ?>
-							<br />
-
 						    <!-- Enfermedades--> <!-- Enfermedades-->
 
 							<b><?php 
@@ -92,8 +88,8 @@
 						    	}     
 						    ?>
 
-						    <?php if(isset($_GET['pdf'])){?>
-						    <hr> <?php } ?>
+						    <?php echo CHtml::link(CHtml::encode("Más Información"), array('view', 'id'=>$data->id)); ?>
+						     
 						    
     					</div>
   					</div>

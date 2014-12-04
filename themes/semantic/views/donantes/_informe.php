@@ -36,7 +36,7 @@
 						    if($alergia){ 
 						    	foreach ($alergia as $valor){ 
 						    	  $aler=Alergias::model()->find('id='.$valor->id_alergia);
-						    	  echo $aler->nombre;	
+						    	  echo '- '.$aler->nombre;	
 						        }
 						    }
 						    else{ echo 'No presenta';} ?>
@@ -48,7 +48,7 @@
 						    if($enfermedad){ 
 						    	foreach ($enfermedad as $valor){ 
 						    	  $enfer=Enfermedades::model()->find('id='.$valor->id_enfermedad);
-						    	  echo $enfer->nombre;	
+						    	  echo '- '.$enfer->nombre;	
 						        }
 						    }
 						    else{ echo 'No presenta';} ?>

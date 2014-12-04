@@ -72,8 +72,8 @@ $paciente=Paciente::model()->find('id='.$_GET['id']);
 											<b>No se han encontrado Donantes compatibles.
 											Para que un donantes sea compatible necesita tener:<br/>
 											<ul class='list'>
-												<li> Mismo tipo de Organo</li>
-												<li> Mismo tipo de Sangre</li>
+												<li> Mismo tipo de Organo que requiera el paciente</li>
+												<li> Mismo tipo de Sangre que requiera el paciente</li>
 										    </ul>
 									    </div> ";
 			

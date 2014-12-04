@@ -53,6 +53,12 @@ $this->menu=array(
 				$array_alergia[]=$alergia->nombre;
 	    	}     
 	    $alergias = implode(", ", $array_alergia); ?>
+        
+	    <?php if($model->voluntario)$voluntario='Si';
+	    		else $voluntario='No'; ?>
+
+	    <?php if($model->estado_vital)$estado_vital='Vivo';
+	    		else $estado_vital='Fallecido'; ?>
 
 		<?php $this->widget('zii.widgets.CDetailView', array(
 			'data'=>$model,
@@ -67,6 +73,9 @@ $this->menu=array(
 			'fecha_ingreso',
 			'fecha_nacimiento',
 			'edad',
+			'sexo',
+			'voluntario' => array('name'=>'Voluntario','value' => $voluntario),
+			'estado_vital'=> array('name'=>'Estado Vital','value' => $estado_vital),
 			'centro_medico'=>array('name'=>'Centro Medico','value' => $centro_medico->nombre),
 			'Enfermedades'=>array('name'=>'Enfermedad(es)','value'=> $enfermedad),
 			'Alergias'=>array('name'=>'Alergia(s)','value'=> $alergias)

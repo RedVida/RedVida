@@ -85,7 +85,7 @@ class TrasplanteController extends Controller
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
-		$this->render('update',array(
+		$this->render('admin',array(
 			'model'=>$model,
 		));
 	}
@@ -276,8 +276,9 @@ public function actionPacienteList()
             if($_POST['Trasplante']['id_centro_medico']!=''){ // centro medico
             	$where_array[]=('id_centro_medico = '.$_POST['Trasplante']['id_centro_medico']);
 		    }
-		    if($_POST['Trasplante']['id_tipo_trasplante']!=''){ // centro medico
-            	$where_array[]=('id_tipo_trasplante = '.$_POST['Trasplante']['id_tipo_trasplante']);
+		    if($_POST['Trasplante']['tipo']!=''){ // centro medico
+		    	$tipo = (string)($_POST['Trasplante']['tipo']);
+            	$where_array[]=('tipo = '."'$tipo'");
 		    }
 		    if($_POST['Trasplante']['desde']!=''){ // Tipo de sangre
 		    	if(strtotime($_POST['Trasplante']['desde']) && 1 === preg_match('~[0-9]~', $_POST['Trasplante']['desde'])){

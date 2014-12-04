@@ -17,17 +17,18 @@
 					  </tr> <?php $i=0;?>
 					  <?php foreach ($results as $res){ ?>
 						  <?php $centro_medico=CentroMedico::model()->find('id='.$res['id_centro_medico']);?> 
-						  <?php $tipo_trasplante=TipoTrasplante::model()->find('id='.$res['id_tipo_trasplante']);?>
 					      <?php 
-							$donador=DonacionOrgano::model()->find('id='.$res['id_tipo_trasplante']);
-							$donante=Donantes::model()->find('rut='."'$donador->rut_donante'");
+							if($res['tipo']=='Organo')$donador=DonacionOrgano::model()->find('id='.$res['id_donacion']);
+							else $donador=DonacionMedula::model()->find('id='.$res['id_donacion']);
+
+							$donante=Donantes::model()->find('id='.$donador->id_donante);
 							 ?>
 							<?php $paciente=Paciente::model()->find('id='.$res['id_paciente']); ?>
 						  <tr>
 
 						  	<td>  <?php $i++; echo $i; ?></td>
 						  	<td>  <?php echo $res['nombre']; ?></td>	  
-						  	<td>  <?php echo $tipo_trasplante->nombre; ?></td>
+						  	<td>  <?php echo $res['tipo']; ?></td>
 						    <td>  <?php echo $centro_medico->nombre ?></td>
 						    <td>  <?php echo $donante->nombres.' '.$donante->apellidos; ?></td>
 						    <td>  <?php echo $donante->rut; ?></td>

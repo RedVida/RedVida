@@ -13,12 +13,6 @@
 	<?php echo CHtml::encode($data->nombre); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('Tipo')); ?>:</b>
-	<?php $tipo_trasplante=TipoTrasplante::model()->find('id='.$data->id_tipo_trasplante);
-	 echo $tipo_trasplante->nombre;
-	 ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('Centro Medico')); ?>:</b>
 	<?php $centro_medico=CentroMedico::model()->find('id='.$data->id_centro_medico); 
 	echo $centro_medico->nombre; ?>
@@ -30,22 +24,6 @@
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('Fecha de modificacion')); ?>:</b>
 	<?php echo CHtml::encode($data->modified); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('Donante')); ?>:</b>
-		<?php 
-				if($data->id_tipo_trasplante== 1){
-				$donador=DonacionOrgano::model()->find('id='.$data->id_tipo_trasplante);
-				}
-				if($data->id_tipo_trasplante== 2){
-				$donador=DonacionMedula::model()->find('id='.$data->id_tipo_trasplante);
-				}
-				if($data->id_tipo_trasplante== 3){
-				$donador=DonacionSangre::model()->find('id='.$data->id_tipo_trasplante);
-				}
-				$donante=Donantes::model()->find('rut='."'$donador->rut_donante'");
-				echo $donante['nombres'].' '.$donante['apellidos'];	
- 		?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('Paciente')); ?>:</b>

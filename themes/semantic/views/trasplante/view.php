@@ -24,16 +24,23 @@ Ver Trasplante #<?php echo $model->id; ?></h1>
 
 	<?php $paciente=Paciente::model()->find('id='.$model->id_paciente); ?>
 
+	<?php if($model->tipo=='Organo')$donacion=DonacionOrgano::model()->find('id='.$model->id_donacion);
+	else $donacion=DonacionMedula::model()->find('id='.$model->id_donacion);
+	$donante=Donantes::model()->find('id='.$donacion->id_donante);
+
+	$nombre_donante=  $donante->nombres.' '.$donante->apellidos;
+?>
 
 
 	<?php $this->widget('zii.widgets.CDetailView', array(
 		'data'=>$model,
 		'attributes'=>array(
 			'nombre'=> array('name'=>'Trasplante de','value' => $model->nombre),
+			'tipo'=> array('name'=>'Tipo','value' => $model->tipo),
 			'id_centro_medico'=> array('name'=>'Centro Medico','value' => $centro_medico->nombre),
 			'created',
 			'modified',
-			'id_donacion'=> array('name'=>'Nombre Donante','value' => $donante['nombres'].' '.$donante['apellidos']),
+			'id_donacion'=> array('name'=>'Nombre Donante','value' => $nombre_donante),
 			'id_paciente'=> array('name'=>'Nombre Paciente','value' => $paciente->nombre.' '.$paciente->apellido ),
 			'detalle',
 		),

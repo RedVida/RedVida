@@ -10,7 +10,9 @@ $this->menu=array(
 );
 
 ?>
-
+<div class="ui grid">
+	<div class="one wide column"></div>
+	<div class="twelve wide column">
 <div class="view">
 <div class="ui celled list">
   <div class="item">
@@ -23,9 +25,22 @@ $this->menu=array(
 			<?php echo CHtml::encode($data->apellido); ?>
 			<br />
 
+			<b><?php echo CHtml::encode($data->getAttributeLabel('Rut')); ?>:</b>
+			<?php echo CHtml::encode($data->rut); ?>
+			<br />
+
+			<b><?php echo CHtml::encode($data->getAttributeLabel('fecha_nacimiento')); ?>:</b>
+			<?php echo CHtml::encode($data->fecha_nacimiento); ?>
+			<br />
+
 			<b><?php echo CHtml::encode($data->getAttributeLabel('afiliacion')); ?>:</b>
 			<?php echo CHtml::encode($data->afiliacion); ?>
 			<br />
+
+			<b><?php echo CHtml::encode($data->getAttributeLabel('edad')); ?>:</b>
+			<?php echo CHtml::encode($data->edad); ?>
+			<br />
+
 
 
 			<?php echo CHtml::link(CHtml::encode("Más detalle"), array('view', 'id'=>$data->id)); ?>
@@ -44,6 +59,8 @@ $this->menu=array(
 
 	*/ ?>
 
+</div>
+</div>
 </div>
 </div>
 </div>

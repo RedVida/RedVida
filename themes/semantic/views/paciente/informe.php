@@ -122,16 +122,6 @@ Generar Informe - Paciente </h1>
                  <?php echo $form->labelEx($model,'Afiliacion Paciente'); ?>
                  <?php echo $form->dropDownList($model,'afiliacion', array('Fonasa'=>'Fonasa','Isapre'=>'Isapre'),array('empty' => 'Seleccione Afiliacion', 'class'=>'ui selection dropdown')); ?>
           </div>
-
-          <div class="four wide field">
-                 <?php echo $form->labelEx($model,'Grado de Urgencia'); ?>
-                 <?php echo $form->dropDownList($model,'grado_urgencia', array('Urgente'=>'Urgente'),array('empty' => 'Seleccione G.Urgencia', 'class'=>'ui selection dropdown')); ?>
-          </div>
-
-          <div class="four wide field">
-                 <?php echo $form->labelEx($model,'Necesidad Trasplante'); ?>
-                 <?php echo $form->dropDownList($model,'necesidad_trasplante',CHtml::listData($organos,'nombreOrgano', 'nombreOrgano'), array('empty' => 'Seleccione Necesidad', 'class'=>'ui selection dropdown')); ?>
-          </div>
 					<div class="fields">
 						<div class="four wide field">
 								<?php echo $form->labelEx($model,'Alergia:'); ?>

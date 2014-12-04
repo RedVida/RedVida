@@ -13,7 +13,7 @@
         $('#busquedaOrgano').autocomplete({
        		 source : function( request, response ) {
        		 $.ajax({
-                    url: '<?php echo $this->createUrl('Organo/OrganoList'); ?>',
+                     url: "<?php echo Yii::app()->createUrl("Organo/OrganoList",array('id'=>$_GET['id'])); ?>",
                     dataType: "json",
                     data: { term: request.term },
                     success: function(data) {

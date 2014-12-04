@@ -101,56 +101,7 @@ Administrar Banco de Sangre </h1>
 			'cantidad',
 			array(
 					'class'=>'CButtonColumn',
-					'template'=>'{Ver}{Actualizar}{Eliminar}',
-				    'buttons'=>array
-				    (
-
- 						'Ver' => array
- 						(
-					    	'label'=>'Ver',
-					        'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/view.png",
-					        'url'=>'Yii::app()->createUrl("bancosangre/view", array("id"=>$data->id))',
-					    ),
-						
-						'Actualizar' => array
-					   (
-					        'label'=>'Actualizar',
-					  		'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/update.png",
-					        'url'=>'Yii::app()->createUrl("bancosangre/update", array("id"=>$data->id))', 
-					    ),
 				
-					    'Eliminar' => array
-				        (   
-				        	'label'=>'Eliminar',
-				            'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/delete.png",
-				          	'url'=>'"#"',
-				            'click'=>"js: function(){   
-							getId = $(this).parent().parent().children(':nth-child(2)').text();
-							 			$('.small.modal')
-										  .modal('setting', {
-										    closable  : false,
-										    onApprove : function() {
-										            $.fn.yiiGridView.update('banco-sangre-grid', {
-										                type:'POST',
-										                success:function(data) {
-														window.location.href = '".Yii::app()->request->baseUrl."' +'/index.php?r=/bancosangre/delete&id=' + getId;									
-									                    $.fn.yiiGridView.update('banco-sangre-grid');
-										                }
-											});
-								  		  }
-									  })
-									  .modal('show')
-						  	          ;
-
-		  					}",
-		  					),
-
-
-
-
-
-					
-					),
 				),
 		),
 	)); ?>

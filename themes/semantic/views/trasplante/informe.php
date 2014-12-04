@@ -61,14 +61,14 @@ Generar Informe - Trasplante </h1>
 						<?php echo CHtml::textField('Trasplantes[hasta]','',array('data-field'=>'datetime','placeholder'=>'Fecha de termino')); ?>
 					 </div>
  					<div id="dtBox"></div>
-                    </div>
-				   	<div class="four wirde field">
-				        <?php echo $form->labelEx($model,'Centro Medico:'); ?>
-						<?php echo $form->dropDownList($model,'id_centro_medico', CHtml::listData(CentroMedico::model()->findAll(),'id', 'nombre'), array('empty' => 'Seleccione Centro Medico', 'class'=>'ui selection dropdown')); ?>
+                    </div> 	
+					<div class="four wide field">
+					       <?php echo $form->labelEx($model,'Tipo:'); ?>
+					       <?php echo $form->dropDownList($model,'tipo',array('Medula'=>'Medula','Organo' =>'Organo'), array('empty' => 'Seleccion Tipo', 'class'=>'ui selection dropdown')); ?>
 					</div>
 					<div class="four wirde field">
-				        <?php echo $form->labelEx($model,'Tipo Trasplante:'); ?>
-						<?php echo $form->dropDownList($model,'id_tipo_trasplante',array('1'=>'Organo','2'=>'Medula'), array('empty' => 'Seleccione Tipo Transplante', 'class'=>'ui selection dropdown')); ?>
+				        <?php echo $form->labelEx($model,'Centro Medico:'); ?>
+						<?php echo $form->dropDownList($model,'id_centro_medico', CHtml::listData(CentroMedico::model()->findAll(),'id', 'nombre'), array('empty' => 'Seleccione Centro Medico', 'class'=>'ui selection dropdown')); ?>
 					</div>
 
 				</div>   

@@ -257,17 +257,20 @@ class PacienteController extends Controller
 	}
 
 	public function actionUrgenciasnacionales(){
-		$organo = Organo::model()->findAll(array('select'=>'nombreOrgano'));
-		//$dataProvider=new CActiveDataProvider('Paciente');
-		$dataProvider= Yii::app()->db->createCommand('select * from paciente where grado_urgencia = '."'Urgencia Nacional'")->queryAll();
+		$model=new Paciente('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Paciente']))
+			$model->attributes=$_GET['Paciente'];
+
 		$this->render('urgenciasnacionales',array(
-			'dataProvider'=>$dataProvider,'organo'=>$organo)
-		);
+			'model'=>$model,
+		));
 	}
 
 	public function actionDisponibilidad($sangre)
 	{
 		$donadores= Yii::app()->db->createCommand('select * from donantes where tipo_sangre = '."'$sangre'")->queryAll();
+
 		$this->render('disponibilidad',array('donadores'=>$donadores));
 		
 	}
@@ -333,14 +336,6 @@ class PacienteController extends Controller
 		    	$length = (string)($_POST['Paciente']['afiliacion']);
             	$where_array[]=('p.afiliacion = '."'$length'");
 		    }
-		    if($_POST['Paciente']['necesidad_trasplante']!=''){ // Tipo de sangre
-		    	$length = (string)($_POST['Paciente']['necesidad_trasplante']);
-            	$where_array[]=('p.necesidad_trasplante = '."'$length'");
-		    }
-		    if($_POST['Paciente']['grado_urgencia']!=''){ // Tipo de sangre
-		    	$length = (string)($_POST['Paciente']['grado_urgencia']);
-            	$where_array[]=('p.grado_urgencia = '."'$length'");
-		    }
 		    if($_POST['Paciente']['alergia']!=''){ // Alergia
 		    	$length = (string)($_POST['Paciente']['alergia']);
 		    	$modelo = Alergias::model()->findAll(array('select'=>'id,nombre','condition'=>'nombre='."'$length'"));
@@ -363,11 +358,11 @@ class PacienteController extends Controller
 	            	$from_array[]=('enfermedad_paciente te');
                 }
 		    }
-		    $form = implode(", ", $from_array);	 
+		    $from = implode(", ", $from_array);	 
 		    $where = implode(" AND ", $where_array);	
             $results = Yii::app()->db->createCommand()->
 	            select('*')->
-	            from('paciente p, '.$form)->
+	            from('paciente p, '.$from)->
 	            where($where)->
 	            queryAll();
 	        if(!$OK)$results =null;
