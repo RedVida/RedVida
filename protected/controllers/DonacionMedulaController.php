@@ -68,6 +68,15 @@ class DonacionMedulaController extends Controller
 		if(isset($_POST['DonacionMedula']))
 		{
 			$model->attributes=$_POST['DonacionMedula'];
+			if($model->validate()){
+				$rut_paciente=$_POST['DonacionMedula']['rut_paciente'];
+				$paciente=Paciente::model()->find('rut='."'$rut_paciente'");
+
+				$model->nombre='Medula';
+				$model->id_donante = $_GET['id'];
+				$model->id_paciente = $paciente->id;
+
+			}
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -83,14 +92,18 @@ class DonacionMedulaController extends Controller
 	 * @param integer $id the ID of the model to be updated
 	 */
 	public function actionUpdate($id)
-	{
-		$model=$this->loadModel($id);
 
+	{   
+		$model=$this->loadModel($id);
+		$paciente=Paciente::model()->find('id='.$model->id_paciente);
+		$model->nombre = $paciente->nombre.' '.$paciente->apellido;
+		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['DonacionMedula']))
-		{
+		{   
+
 			$model->attributes=$_POST['DonacionMedula'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
@@ -141,68 +154,6 @@ class DonacionMedulaController extends Controller
 		));
 	}
 
-	public function actionInforme(){
-	// Odernar por: Edad, Tipo de sangre, Centro medico, Fecha de ingreso
-
-		$model = new DonacionMedula;
-		if(isset($_POST['DonacionMedula'])){
-       		$model = new DonacionMedula;
-            $this->layout="//layouts/pdf";
-            $mPDF1 = Yii::app()->ePdf->mpdf();
-			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/nn.png' ));
-			$mPDF1->WriteHTML('<br>');
-			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/line2.png' ));
-			$mPDF1->WriteHTML('<br> ');
-			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/informe_donaciones.png' ));
-			$where_array = array();
-			$from_array = array();
-			$OK = true;
-			
-		    if($_POST['DonacionMedula']['desde']!=''){ // Tipo de sangre
-		    	if(strtotime($_POST['DonacionMedula']['desde']) && 1 === preg_match('~[0-9]~', $_POST['DonacionMedula']['desde'])){
-			    	$desde = (string)($_POST['DonacionMedula']['desde']);
-	            	$where_array[]=('d.created >= '."'$desde'");
-            	}else{
-            		$model->addError('nombre','Fecha de Inicio: La Fecha ingresada no es valida ');
-				   	$OK = false;
-            	}
-		    }
-		     if($_POST['DonacionMedula']['hasta']!=''){ // Fecha
-		     	if(strtotime($_POST['DonacionMedula']['desde']) && 1 === preg_match('~[0-9]~', $_POST['DonacionMedula']['desde'])){
-			    	$hasta = (string)($_POST['DonacionMedula']['hasta']);
-	            	$where_array[]=('d.created <= '."'$hasta'");
-	            }else{
-            		$model->addError('nombre','Fecha de Termino: La Fecha ingresada no es valida ');
-				   	$OK = false;
-            	}
-		    }
-		   
-		    $form = implode(", ", $from_array);	 
-		    $where = implode(" AND ", $where_array);	
-            $results = Yii::app()->db->createCommand()->
-	            select('*')->
-	            from('donacion_medula d, '.$form)->
-	            where($where)->
-	            queryAll();
-	        if(!$OK)$results =null;
-            if($results){
-				$mPDF1->WriteHTML($this->render('_informe',array('results'=>$results),true));
-				$mPDF1->Output('Informe de Donaciones de Médula',"I"); // i = visualizar en el navegador
-		    }
-		    else{ $model->addError('tipo_medula','No se han encontrado donaciones de médula con esos datos ');}
-        }
-        $this->render('informe',array(
-			'model'=>$model,
-		));
-	}
-
-
-
-
-
-
-	
-
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
@@ -229,5 +180,62 @@ class DonacionMedulaController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+
+	public function actionInforme(){
+
+		$model = new DonacionMedula;
+		if(isset($_POST['DonacionMedula'])){
+
+            $this->layout="//layouts/pdf";
+            $mPDF1 = Yii::app()->ePdf->mpdf();
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/nn.png' ));
+			$mPDF1->WriteHTML('<br>');
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/line2.png' ));
+			$mPDF1->WriteHTML('<br> ');
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/informe_donacion_sangre.png' ));
+			$where_array = array();
+			$OK = true;
+		    if($_POST['DonacionMedula']['desde']!=''){ 
+            	if(strtotime($_POST['DonacionMedula']['desde']) && 1 === preg_match('~[0-9]~', $_POST['DonacionMedula']['desde'])){
+			    	$desde = (string)($_POST['DonacionMedula']['desde']);
+            		$where_array[]=('fecha_ingreso >= '."'$desde'");
+	            }else{
+            		$model->addError('nombre','Fecha de Inicio: La Fecha ingresada no es valida ');
+				   	$OK = false;
+            	}
+		    }
+		     if($_POST['DonacionMedula']['hasta']!=''){ 
+            	if(strtotime($_POST['DonacionMedula']['hasta']) && 1 === preg_match('~[0-9]~', $_POST['DonacionMedula']['hasta'])){
+			    	$hasta = (string)($_POST['DonacionMedula']['hasta']);
+            		$where_array[]=('fecha_ingreso <= '."'$hasta'");
+	            }else{
+            		$model->addError('nombre','Fecha de Termino: La Fecha ingresada no es valida ');
+				   	$OK = false;
+            	}
+		    }
+
+		     if($_POST['DonacionMedula']['estado']!=''){ 
+
+			    	$estado = (string)($_POST['DonacionMedula']['estado']);
+            		$where_array[]=('estado = '."'$estado'");
+		    }
+
+		    $where = implode(" AND ", $where_array);	
+            $results = Yii::app()->db->createCommand()->
+	            select('*')->
+	            from('donacion_medula')->
+	            where($where)->
+	            queryAll();
+	        if(!$OK)$results=null;
+            if($results){
+				$mPDF1->WriteHTML($this->render('_informe',array('results'=>$results),true));
+				$mPDF1->Output('Informe DonacionMedula',"I"); // i = visualizar en el navegador
+		    }
+		    else{ $model->addError('nombre','No se han encontrado Donaciones de Medulas con esos datos ');}
+        }
+        $this->render('informe',array(
+			'model'=>$model,
+		));
 	}
 }

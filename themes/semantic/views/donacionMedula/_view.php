@@ -1,6 +1,6 @@
 <div class="view">
 	<div class="ui celled list">
-	<?php  $modelo_d = Donantes::model()->find('rut = '."'$data->rut_donante'"); ?>
+	<?php  $modelo_d = Donantes::model()->find('id= '."'$data->id_donante'"); ?>
 	  <div class="item">
 	    <i class="add large icon"></i> 
 	    <div class="content">
@@ -14,11 +14,19 @@
 			<br />
 
 			<b><?php echo 'Rut'; ?>:</b>
-			<?php echo CHtml::encode($data->rut_donante); ?>
+			<?php echo CHtml::encode($modelo_d->rut); ?>
 			<br />
 
-			<b><?php echo CHtml::encode($data->getAttributeLabel('tipo_medula')); ?>:</b>
-			<?php echo CHtml::encode($data->tipo_medula); ?>
+			<b><?php echo CHtml::encode('Estado Vital'); ?>:</b>
+			<?php echo CHtml::encode($modelo_d->estado_vital); ?>
+			<br />
+
+			<b><?php echo CHtml::encode('Medula'); ?>:</b>
+			<?php echo CHtml::encode('Osea'); ?>
+			<br />	
+
+			<b><?php echo CHtml::encode('Fecha Donacion'); ?>:</b>
+			<?php echo CHtml::encode($data->modified); ?>
 			<br />
 
 			<?php echo CHtml::link(CHtml::encode("Más Información"), array('view', 'id'=>$data->id)); ?>

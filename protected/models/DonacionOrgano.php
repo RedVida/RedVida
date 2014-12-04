@@ -5,11 +5,15 @@
  *
  * The followings are the available columns in table 'donacion_organo':
  * @property integer $id
- * @property string $rut_donante
- * @property string $created
- * @property string $modified
+ * @property integer $id_donante
  * @property string $nombre
  * @property integer $estado
+ * @property string $created
+ * @property string $modified
+ *
+ * The followings are the available model relations:
+ * @property Donantes $idDonante
+ * @property Trasplante[] $trasplantes
  */
 class DonacionOrgano extends CActiveRecord
 {
@@ -29,23 +33,23 @@ class DonacionOrgano extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_donante', 'numerical', 'integerOnly'=>true),
-			array('estado', 'numerical', 'integerOnly'=>true),
-			array('rut_donante', 'length', 'max'=>12),
+			array('nombre','required','message' => 'Se requiere ingresar un Organo a donar'),
+			array('id_donante, estado', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>128),
 			array('created, modified', 'safe'),
-			array('rut_donante', 'required', 'message'=>'Debe Ingresar Rut Valido.'),
-			array('nombre', 'required','message'=>'Debe Seleccionar un Organo.'),
 			array('modified','default',
 	          'value'=>new CDbExpression('NOW()'),
-              'setOnEmpty'=>false,'on'=>'update'),
+              'setOnEmpty'=>false,'on'=>'insert or update'),
         	
-        	array('created,modified','default',
-              'value'=>new CDbExpression('NOW()'),
+        	array('created','default',
+              'value'=> date('y-m-d'),
+              'setOnEmpty'=>false,'on'=>'insert'),
+        	array('estado','default',
+              'value'=> 1,
               'setOnEmpty'=>false,'on'=>'insert'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, rut_donante, created, modified, nombre', 'safe', 'on'=>'search'),
+			array('id, id_donante, nombre, estado, created, modified', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -57,9 +61,8 @@ class DonacionOrgano extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-
-				'idDonante' => array(self::BELONGS_TO, 'Donantes', 'id_donante'),
-		
+			'idDonante' => array(self::BELONGS_TO, 'Donantes', 'id_donante'),
+			'trasplantes' => array(self::HAS_MANY, 'Trasplante', 'id_donacion'),
 		);
 	}
 
@@ -70,12 +73,11 @@ class DonacionOrgano extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'rut_donante' => 'Rut Donante',
-			'created' => 'Fecha Ingreso',
-			'modified' => 'Fecha Modificación',
-			'nombre' => 'Nombre Órgano',
+			'id_donante' => 'Id Donante',
+			'nombre' => 'Nombre',
 			'estado' => 'Estado',
-			'id_donante' => 'ID Donante',
+			'created' => 'Created',
+			'modified' => 'Modified',
 		);
 	}
 
@@ -98,13 +100,12 @@ class DonacionOrgano extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('rut_donante',$this->rut_donante,true);
-		$criteria->compare('created',$this->created,true);
-		$criteria->compare('modified',$this->modified,true);
+		$criteria->compare('id_donante',$this->id_donante);
 		$criteria->compare('nombre',$this->nombre,true);
 		$criteria->compare('estado',$this->estado);
-		$criteria->compare('id_donante',$this->id_donante);
-		
+		$criteria->compare('created',$this->created,true);
+		$criteria->compare('modified',$this->modified,true);
+
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

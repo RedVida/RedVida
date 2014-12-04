@@ -64,7 +64,12 @@ Generar Informe - Donación Órgano </h1>
 					<div class="four wide field">
 					       <?php echo $form->labelEx($model,'Nombre Órgano:'); ?>
 					       <?php echo $form->dropDownList($model,'nombre',CHtml::listData(Organo::model()->findAll(),'nombreOrgano', 'nombreOrgano'), array('empty' => 'Seleccione Nombre Órgano', 'class'=>'ui selection dropdown')); ?>
-					</div>					<br>
+					</div>
+					<div class="four wide field">
+					       <?php echo $form->labelEx($model,'Estado de la Donacion'); ?>
+					       <?php echo $form->dropDownList($model,'estado',array(1=>'En Espera',2 =>'Trasplantada'), array('empty' => 'Seleccione Opcion', 'class'=>'ui selection dropdown')); ?>
+					</div>
+					    <br>					
 						<div class="ui blue submit button" id="ModalFunction"> <!-- Main.PHP -->
 							Filtrar
 				</div>

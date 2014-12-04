@@ -164,6 +164,98 @@ class PacienteController extends Controller
 	}
 
 
+	 	public function actionRegistrar_necesidad_organo($id)
+	{
+		//asignamos de alguna manera la enfermedad al donante con id = $id (parametro)
+		$model_necesita_organo = new NecesidadOrgano;
+		$model = new Organo;
+    
+		if (isset($_POST['Organo']) && ($_POST['Organo']['id']!=null) && ($_POST['Organo']['grado_urgencia']!=null)) {
+				$length = (string)($_POST['Organo']['id']);
+				$modelo = Organo::model()->findAll(array('select'=>'idOrgano,nombreOrgano','condition'=>'nombreOrgano='."'$length'"));
+				if(!$modelo){
+				   $model->addError('nombre','Nombre : El nombre del Organo ingresado no existe ');
+				}
+				else{
+				$modelo = Organo::model()->findAll(array('select'=>'idOrgano,nombreOrgano','condition'=>'nombreOrgano='."'$length'"));
+				$list= Yii::app()->db->createCommand('select * from necesidad_organo where id_paciente = '."'$id'".' AND id_organo = '.$modelo[0]->idOrgano)->queryAll();   
+	            $cont = 0;
+	            foreach($list as $item){$cont++;}
+	            if($cont>0){
+                   $model->addError('nombre','El Paciente ya posee registrada este Organo ('.$_POST['Organo']['id'].'), porfavor ingrese otro nombre.');
+	            }
+	            else{
+	            	$model_necesita_organo->grado_urgencia = $_POST['Organo']['grado_urgencia'];
+		            $model_necesita_organo->id_paciente = $id;
+					$model_necesita_organo->id_organo = $modelo[0]->idOrgano;
+					$model_necesita_organo->fecha = new CDbExpression('NOW()');
+		 
+					if ($model_necesita_organo->save()) {
+						$this->redirect(array('view&id='.$id));
+					}
+			  	}
+			  }
+	   }
+	   else if(isset($_POST['Organo'])){
+	    	   if($_POST['Organo']['id']==null)$model->addError('nombre','Nombre : Se requiere ingresar un Organo ');
+	    	   if($_POST['Organo']['grado_urgencia']==null)$model->addError('nombre','Grado Urgencia : Se requiere ingresar un Grado de Urgencia ');
+	    }
+
+		$this->render('asigna_necesidad_organo',array('model'=>$model));
+	}
+
+	public function actionRegistra_Organo()
+	{
+		$model = new Paciente;
+		$this->render('registra_necesidad_organo', array('model'=>$model));
+	}
+
+	 	public function actionRegistrar_necesidad_medula($id)
+	{
+		//asignamos de alguna manera la enfermedad al donante con id = $id (parametro)
+		$model_necesita_medula = new NecesidadMedula;
+		$model = new Medula;
+    
+		if (isset($_POST['Medula']) && ($_POST['Medula']['id']!=null) && ($_POST['Medula']['grado_urgencia']!=null)) {
+				$length = (string)($_POST['Medula']['id']);
+				$modelo = Medula::model()->findAll(array('select'=>'idMedula,nombreMedula','condition'=>'nombreMedula='."'$length'"));
+				if(!$modelo){
+				   $model->addError('nombre','Nombre : El nombre del Medula ingresado no existe ');
+				}
+				else{
+				$modelo = Medula::model()->findAll(array('select'=>'idMedula,nombreMedula','condition'=>'nombreMedula='."'$length'"));
+				$list= Yii::app()->db->createCommand('select * from necesidad_medula where id_paciente = '."'$id'".' AND id_medula = '.$modelo[0]->idMedula)->queryAll();   
+	            $cont = 0;
+	            foreach($list as $item){$cont++;}
+	            if($cont>0){
+                   $model->addError('nombre','El Paciente ya posee registrada este Medula ('.$_POST['Medula']['id'].'), porfavor ingrese otro nombre.');
+	            }
+	            else{
+	            	$model_necesita_medula->grado_urgencia = $_POST['Medula']['grado_urgencia'];
+		            $model_necesita_medula->id_paciente = $id;
+					$model_necesita_medula->id_medula = $modelo[0]->idMedula;
+					$model_necesita_medula->fecha = new CDbExpression('NOW()');
+		 
+					if ($model_necesita_medula->save()) {
+						$this->redirect(array('view&id='.$id));
+					}
+			  	}
+			  }
+	   }
+	   else if(isset($_POST['Medula'])){
+	    	   if($_POST['Medula']['id']==null)$model->addError('nombre','Nombre : Se requiere ingresar un Medula ');
+	    	   if($_POST['Medula']['grado_urgencia']==null)$model->addError('nombre','Grado Urgencia : Se requiere ingresar un Grado de Urgencia ');
+	    }
+
+		$this->render('asigna_necesidad_medula',array('model'=>$model));
+	}
+
+	public function actionRegistra_Medula()
+	{
+		$model = new Paciente;
+		$this->render('registra_necesidad_medula', array('model'=>$model));
+	}
+
 	public function actionUrgenciasnacionales(){
 		$organo = Organo::model()->findAll(array('select'=>'nombreOrgano'));
 		//$dataProvider=new CActiveDataProvider('Paciente');
@@ -414,4 +506,38 @@ class PacienteController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	public function actionPacienteList($id)
+    {
+        $criterio = new CDbCriteria;
+        $cdtns = array();
+        $resultado = array();
+        
+        if(empty($_GET['term'])) return $resultado;
+        
+        $cdtns[] = "LOWER(nombre) like :busq OR LOWER(apellido) like :busq OR LOWER(tipo_sangre) like :busq";
+
+        
+        $criterio->condition = implode(' OR ', $cdtns);
+        $criterio->params = array(':busq' => '%' . $_GET['term'] . '%');
+        $criterio->limit = 10;
+        
+        $data = Paciente::model()->findAll($criterio);
+        
+        foreach($data as $item) {  
+
+        	$donacion=NecesidadMedula::model()->find('id_paciente='.$item->id);
+        	$donante = Donantes::model()->find('id='.$id);
+	        	if($donacion && $donante->tipo_sangre == $item->tipo_sangre){
+		            $resultado[] = array (
+		                'nombre' => $item->nombre.' '.$item->apellido,
+		                'rut' => $item->rut,
+		                'sangre' => $item->tipo_sangre,
+		            );
+        	}
+
+        }
+        
+        echo CJSON::encode($resultado);
+    }
 }

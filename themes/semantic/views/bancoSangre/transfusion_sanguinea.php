@@ -83,7 +83,8 @@ $dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
-<?php if(!$results)
+
+<?php $message='';if(!$results)
 			 $message="
 			<div class ='ui warning message'>
 			<i class='warning sign icon'></i>

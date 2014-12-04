@@ -1,13 +1,11 @@
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/rut/jquery.Rut.js" type="text/javascript"></script> 
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('#rut').Rut({
-            format_on: 'keyup',
-            on_error: function() {
-                alert('El valor ingresado no corresponde a un R.U.T válido.');
-            }
-        });
-    })
+   $(document).ready(function() {
+			$('.ui.small.modal').modal('attach events','#ModalFunction','show');  //LLamada a Modal UI
+  		});
+
+    function successModal(){                                                      // Button - Modal Success 
+        $("#donacion-organo-form").submit();
+    }
     
 </script>
 
@@ -39,49 +37,44 @@
 ); ?>
         
 	<?php echo $form->errorSummary($model, NULL, NULL, array("class" => "ui warning message"));?>
-
-
-
-
-
-	<?php
-	$rut='';
-	$val=false;
-	if(isset($_GET['id']))
-	{
-	$id = $_GET['id'];
-	$model_donante = Donantes::model()->find("id=$id");
-	$rut= $model_donante['rut'];
-	$id_donante= $model_donante['id'];
-	$val=true;
-	}
-
-
-	?>
-
-	
-
+<?php if(isset($_GET['id_d']))$donante=Donantes::model()->find('id='.$_GET['id_d']); 
+	       else $donante=Donantes::model()->find('id='.$model->id_donante); ?>
 
 <div class="ui form">
+	<div class="fields">
+	 	<div class="four wide field">
+	 	<?php echo $form->labelEx($model,'Nombre Donante'); ?>
+		<?php echo Chtml::textField('DonacionORgano[nombre_donante]',$donante->nombres.' '.$donante->apellidos, array('readonly'=>true, 'maxLength'=>12)); ?>
+		</div>
+	</div>
     <div class="fields">
 	 	<div class="four wide field">
-		<?php echo $form->labelEx($model,'rut_donante'); ?>
-		<?php echo $form->textField($model,'rut_donante', array('value'=>$rut, 'readonly'=>$val, 'id'=>'rut', 'maxLength'=>12)); ?>
-		<div class="errors">
-			<?php echo $form->error($model,'rut_donante',array('class' => 'ui small red pointing above ui label')); ?>
-		</div>
+	 	<?php echo $form->labelEx($model,'Rut Donante'); ?>
+		<?php echo Chtml::textField('DonacionOrgano[rut_de_donante]',$donante->rut, array('readonly'=>true, 'maxLength'=>12)); ?>
+	
 		</div>
 	</div>
 	
     <div class="fields">
-		<?php echo $form->hiddenField($model,'id_donante', array('value'=>$id_donante, 'readonly'=>$val)); ?>
+		<?php echo $form->hiddenField($model,'id_donante', array('value'=>$donante->id,'readonly'=>true)); ?>
 	</div>
 
 
  	<div class="fields">
 	 	<div class="four wide field">
-		<?php echo $form->labelEx($model,'nombre'); ?>
-        <?php echo $form->dropDownList($model,'nombre',CHtml::listData(Organo::model()->findAll(),'nombreOrgano', 'nombreOrgano'), array('empty' => 'Selecciona Tipo Organo', 'class'=>'ui selection dropdown')); ?>
+		<?php echo $form->labelEx($model,'Organo En Donacion'); ?>
+
+		<?php 
+			  $donacion_relizada=DonacionOrgano::model()->findAll(array('select'=>'nombre','condition'=>'id_donante='.$donante->id));
+			  $where_array= array();
+			  foreach ($donacion_relizada as $dona) {
+			  	$where_array[]='nombreOrgano != '."'$dona->nombre'";
+			  }
+			  if($donante->estado_vital)$where='nombreOrgano='."'Riñon'";
+			  else $where = implode(" AND ",$where_array);
+
+		?>
+		<?php echo $form->dropDownList($model,'nombre', CHtml::listData(Organo::model()->findAll(array('condition'=> $where)),'nombreOrgano','nombreOrgano'), array('class'=>'ui selection dropdown','empty' => 'Seleccione Organo')); ?>
 		<div class="errors">
 			<?php echo $form->error($model,'nombre',array('class' => 'ui small red pointing above ui label')); ?>
 		</div>
@@ -93,9 +86,9 @@
 
 
 	<br><br>
-	<div class="row buttons">
-	    <?php echo CHtml::submitButton(CrugeTranslator::t("Registrar"),array("class"=>"ui blue submit button")); ?>
-	</div>
+	<div class="ui blue submit button" id="ModalFunction"> <!-- Main.PHP -->
+	Registrar
+</div>
 
 </div>
 <?php $this->endWidget(); ?>

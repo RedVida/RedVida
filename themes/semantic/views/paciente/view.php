@@ -56,12 +56,6 @@ $this->menu=array(
 	    $alergias = implode(", ", $array_alergia); 
 		?>
 
-		<?php if(!$model->necesidad_trasplante) $necesidad_trasplante = 'No presenta';
-			  else $necesidad_trasplante=$model->necesidad_trasplante;?>
-
-		<?php if(!$model->necesidad_medula) $necesidad_medula = 'No presenta';
-			  else $necesidad_medula=$model->necesidad_medula;?>
-
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
@@ -69,11 +63,8 @@ $this->menu=array(
 		'apellido',
 		'rut',
 		'afiliacion',
-		'grado_urgencia',
 		'fecha_nacimiento',
 		'edad',
-		'necesidad_trasplante'=>array('name'=>'Necesidad Trasplante', 'value'=> $necesidad_trasplante),
-		'necesidad_medula'=>array('name'=>'Necesidad Medula', 'value'=> $necesidad_medula),
 		'tipo_sangre',
 		array(
 			'label'=>'Centro Medico',

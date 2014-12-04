@@ -23,7 +23,7 @@ Ver Donación Médula #<?php echo $model->id; ?></h1>
 
 	<div class="twelve wide column">
 
-<?php  $modelo_d = Donantes::model()->find('rut = '."'$model->rut_donante'"); ?>
+<?php  $modelo_d = Donantes::model()->find('id = '."'$model->id_donante'"); ?>
 
 
 
@@ -41,7 +41,7 @@ Ver Donación Médula #<?php echo $model->id; ?></h1>
 			),
 			array(
 				'name'=>'Rut',
-				'value'=>$model->rut_donante,
+				'value'=>$modelo_d->rut,
 			),
 			'tipo_medula',
 			array(
@@ -50,7 +50,7 @@ Ver Donación Médula #<?php echo $model->id; ?></h1>
 			),
 			array(
 				'name'=>'Hora',
-				'value'=>Yii::app()->dateFormatter->format('HH:mm',$model->created),
+				'value'=>Yii::app()->dateFormatter->format('HH:mm',$model->modified),
 			),
 			
 		),

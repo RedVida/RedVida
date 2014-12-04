@@ -29,11 +29,67 @@ $paciente=Paciente::model()->find('id='.$_GET['id']);
 <br>
 <div class="ui black ribbon label">
 <h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
- Asignano Transplante a Paciente</h1>
+ Asignar Transplante a Paciente</h1>
 </div>
 <hr class="style-two ">
 
 <?php echo CHtml::link('&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Busqueda Avanzada','#',array('class'=>'search-button')); ?>
+
+<?php   $message='N';
+		$message_organo='No necesita Trasplante';
+		$values = array();
+		$paciente=Paciente::model()->find('id='.$_GET['id']);
+		$paciente_ = (string)$paciente->tipo_sangre;
+		$Criteria = new CDbCriteria();
+	    $Criteria->condition = "id_paciente =".$_GET['id']; 
+	    $organo = NecesidadOrgano::model()->findAll($Criteria);
+	    $array_organo = array();
+	    $array_nombre_organo = array();
+	    $array_grado_urgencia = array();
+		foreach ($organo as $valor) 
+	    	{	$temp = $valor;
+			    $valor=Organo::model()->find('idOrgano='.$valor->id_organo);
+			    $array_organo[]= 'nombre = '."'$valor->nombreOrgano'";
+			    $array_nombre_organo[] = $valor->nombreOrgano;
+			    $array_grado_urgencia[] = $temp->grado_urgencia;
+	    	}
+	    $where = implode(" OR ", $array_organo);
+
+		if($organo){
+				$message_organo = implode(" - ", $array_nombre_organo);
+				$results = DonacionOrgano::model()->findAll(array('select'=>'id_donante','condition'=>'estado=1 AND ('.$where.')'));
+			    foreach($results as $r){
+
+			    	$donantes=Donantes::model()->find('id='.$r->id_donante);
+			    	if($donantes->tipo_sangre == $paciente->tipo_sangre)
+			    	$values[] = $donantes->id;
+			    }
+
+			    if(!$values) $message="
+										<div class ='ui warning message'>
+											<i class='warning sign icon'></i>
+											<i class='close icon'></i>
+											<b>No se han encontrado Donantes compatibles.
+											Para que un donantes sea compatible necesita tener:<br/>
+											<ul class='list'>
+												<li> Mismo tipo de Organo</li>
+												<li> Mismo tipo de Sangre</li>
+										    </ul>
+									    </div> ";
+			
+		}else{
+							  $message="<div class ='ui warning message'>
+											<i class='warning sign icon'></i>
+											<i class='close icon'></i>
+											<b>No se han encontrado resultados.<br/> 
+											Este error puede deberse a que el paciente no necesita de un Trasplante. 
+										</div>";
+		}
+
+$criteria = new CDbCriteria();
+$criteria->addInCondition('id',$values,'OR');
+$dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
+?>
 <div class="ui grid">
 	<div class="one wide column"></div>
 	<div class="fourteen wide column">
@@ -51,56 +107,41 @@ $paciente=Paciente::model()->find('id='.$_GET['id']);
         <td>T.Sangre:</td>
         <td><?php echo $paciente->tipo_sangre; ?></td>
       </tr>
+      <?php $i=0; foreach ($array_nombre_organo as $key) {  ?>	    
       <tr>
         <td>Organo:</td>
-        <td><?php if(!$_GET['name'])
-        	echo 'No necesita trasplante';
-     		else echo 'Se necesita trasplante de <b>'.$paciente->necesidad_trasplante.'</b>'; ?></td>
+        <td><?php echo 'Se requiere trasplante de <b>'.$array_nombre_organo[$i].'</b>. Cuyo grado de urgencia es 
+        <b>'.$array_grado_urgencia[$i].'</b>'; $i++; ?> </td>
       </tr>
-
+      <?php } ?>
     </tbody>
   </table>
 			     <div class="ui divider"></div>
 
-
 </div>
 </div>
 <div class="search-form" style="display:none">
-<?php
-
-$id_p =(string) $_GET['id'];
-$length = (string)($_GET['name']);
-$results = DonacionOrgano::model()->findAll(array('select'=>'rut_donante','condition'=>'estado=1 AND nombre='."'$length'"));
-$values = array();
-foreach($results as $r) $values[] = $r->rut_donante;
-$criteria = new CDbCriteria();
-$criteria->addInCondition('rut',$values,'OR');
-$dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
-
 ?>
 
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
 
-<?php if($length==0)
-		$message="<div class ='ui warning message'>
-					<i class='warning sign icon'></i>
-					<i class='close icon'></i>
-					<b>No se han encontrado resultados.<br/> 
-					Este error puede deberse a que el paciente no necesita de un Trasplante. 
-				   </div>"; 
-		else $message="
-			<div class ='ui warning message'>
-			<i class='warning sign icon'></i>
-			<i class='close icon'></i>
-			<b>No se han encontrado Donantes compatibles.
-			Para que un donantes sea compatible necesita tener:<br/>
-			<ul class='list'>
-			<li> Mismo tipo de Organo</li>
-		    </ul>
-		    </div> ";?>
-
+<?php
+ function organo_donado($val){
+ 		$array_organo = array();
+	    $Criteria = new CDbCriteria();
+	    $Criteria->condition = "id_donante =".$val; 
+	    $organo= DonacionOrgano::model()->findAll($Criteria);
+	    foreach ($organo as $valor) 
+	    	{   if($valor->estado==1){
+			    	$array_valor[]=ucfirst($valor->nombre);
+				}
+	    	}     
+	    $array_organo = implode(" - ", $array_valor);
+  		return $array_organo;
+}
+?>
 </div><!-- search-form -->
 <div class="ui grid">
 	<div class="one wide column"></div>
@@ -114,14 +155,17 @@ $dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
 				'nombres',
 				'apellidos',
 				'rut',
-				array('header' => 'Organo en donacion ', 'value' => $var="'$length'"),
+				'tipo_sangre',
+				'edad',
+				'sexo',
+				array('header' => 'Organo en donacion ', 'value' => 'organo_donado($data->id)'),
 		         array(
 		            'class' => 'CButtonColumn',
 		            'template'=>'{Registrar}', // botones a mostrar
 		            'buttons'=>array(
 					'Registrar' => array( //botón para la acción nueva
 				    'label'=>'Registrar Trasplante', // titulo del enlace del botón nuevo
-				    'url'=>'Yii::app()->createUrl("/trasplante/trasplanteorgano&id_d=$data->id&id_p='.$id_p.'&or='.$length.'")', //url de la acción nueva
+				    'url'=>'Yii::app()->createUrl("/trasplante/trasplanteorgano&id_d=$data->id&id_p='.$_GET['id'].'")', //url de la acción nueva
 				    //'visible'=>'($data->estado==="DISPONIBLE")?true:false;'
 				    ),
 					),

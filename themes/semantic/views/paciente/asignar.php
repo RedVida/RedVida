@@ -51,15 +51,59 @@ Lista de pacientes - Registrar Trasplante </h1>
 
 	</div>
 
-	<div class="twelve wide column">
+	<div class="fourteen wide column">
 <?php function necesidad_medula($val){
  return $val <= 0 ? 'No necesita' : $val;
 }?>
 
-<?php function necesidad_trasplante($val){
- return $val == '' ? 'No necesita' : $val;
-}?>
-<?php echo CHtml::beginForm(); ?>
+
+
+<?php
+ function necesidad_trasplante_organo($val){
+
+		$array_organo = array();
+
+	    $Criteria = new CDbCriteria();
+	    $Criteria->condition = "id_paciente = $val"; 
+	    $organo = NecesidadOrgano::model()->findAll($Criteria);
+
+	    if(!$organo)return 'No Presenta';
+
+	    foreach ($organo as $valor) 
+	    	{
+			    $or=Organo::model()->find('idOrgano='.$valor->id_organo);
+			    $array_organo[]=$or->nombreOrgano;
+	    	}     
+	    $results = implode("- ", $array_organo); 
+
+  return $results;
+}
+
+ function necesidad_trasplante_medula($val){
+
+		$array_organo = array();
+
+	    $Criteria = new CDbCriteria();
+	    $Criteria->condition = "id_paciente = $val"; 
+	    $medula = NecesidadMedula::model()->findAll($Criteria);
+
+	    if(!$medula)return 'No Presenta';
+
+	    foreach ($medula as $valor) 
+	    	{
+			    $me=Medula::model()->find('idMedula='.$valor->id_medula);
+			    $array_medula[]='M.'.$me->nombreMedula;
+	    	}     
+	    $results = implode("- ", $array_medula); 
+
+  return $results;
+}
+?>
+
+
+<?php echo CHtml::beginForm();
+
+ ?>
 
 <?php 
     $this->widget('zii.widgets.grid.CGridView', array(
@@ -71,10 +115,9 @@ Lista de pacientes - Registrar Trasplante </h1>
         'nombre',
         'apellido',
         'rut',
-        'grado_urgencia',
         'tipo_sangre',
-        'necesidad_trasplante' => array('header'=> 'Necesidad Trasplante','name' =>'necesidad_trasplante', 'value'=> 'necesidad_trasplante($data->necesidad_trasplante)'),
-        'necesidad_medula' => array('header'=> 'Necesidad Medula (ml)','name' =>'necesidad_medula', 'value'=> 'necesidad_medula($data->necesidad_medula)'),
+        array('header'=> 'Necesidad Trasplante (Organo)','name' =>'sexo', 'value'=> 'necesidad_trasplante_organo($data->id)'),
+        array('header'=> 'Necesidad Trasplante (Medula)','name' =>'sexo', 'value'=> 'necesidad_trasplante_medula($data->id)'),
       		array(
 					'class'=>'CButtonColumn',
 					'template'=>'{Sangre}',
@@ -85,23 +128,7 @@ Lista de pacientes - Registrar Trasplante </h1>
  						(
 					    	'label'=>'Transfusión de Sangre',
 					        'url'=>'Yii::app()->createUrl("/bancosangre/Transfusion_sanguinea&id=$data->id")',
-					    ),
-
-					
-					),
-				),
-      			array(
-					'class'=>'CButtonColumn',
-					'template'=>'{Medula}',
-				    'buttons'=>array
-				    (
-
-						
-						'Medula' => array
-					   (
-					        'label'=>'Trasplante de Médula',
-					        'url'=>'Yii::app()->createUrl("/donantes/registrar_medula&id=$data->id&name=$data->necesidad_medula")', 
-					    ),
+					    ),	
 					),
 				),
       		    array(
@@ -113,7 +140,23 @@ Lista de pacientes - Registrar Trasplante </h1>
 						'Organo' => array
 					   (
 					        'label'=>'Trasplante de Órgano',
-					        'url'=>'Yii::app()->createUrl("/donantes/registrar_organo&id=$data->id&name=$data->necesidad_trasplante")', 
+					        'url'=>'Yii::app()->createUrl("/donantes/registrar_organo&id=$data->id")', 
+					    ),
+
+
+					
+					),
+				),
+				array(
+					'class'=>'CButtonColumn',
+					'template'=>'{Medula}',
+				    'buttons'=>array
+				    (
+				
+						'Medula' => array
+					   (
+					        'label'=>'Trasplante de Medula',
+					        'url'=>'Yii::app()->createUrl("/donantes/registrar_medula&id=$data->id")', 
 					    ),
 
 

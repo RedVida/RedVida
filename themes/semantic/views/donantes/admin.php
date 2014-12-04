@@ -57,6 +57,7 @@ Registrar Donante </h1>
 				'num_contacto',
 				'fecha_ingreso',
 				'fecha_nacimiento',
+				'sexo',
 				'edad',
 				array(
 					'class'=>'CButtonColumn',

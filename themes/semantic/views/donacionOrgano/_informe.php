@@ -12,12 +12,17 @@
 				<body>
 					<br>
 					<table id="t01">
-					  <tr><th>Rut Donante</th><th>Nombre Órgano</th><th>Fecha de Ingreso</th>
+					  <tr><th>N°</th><th>Nombre Donante</th><th>Rut</th><th>Órgano</th><th>Estado</th><th>Fecha de Ingreso</th>
 					  </tr>
-					  <?php foreach ($results as $res){ ?>
-						  <tr>	  
-						  	<td>  <?php echo $res['rut_donante'];  ?></td>
+					  <?php $i=1; foreach ($results as $res){ ?>
+						  <tr>
+						  	<td>  <?php echo $i++;  ?></td>
+						  	<?php $donante=Donantes::model()->find('id='.$res['id_donante']);?>
+						  	<td>  <?php echo $donante->nombres.' '.$donante->apellidos; ?></td>	  
+						  	<td>  <?php echo $donante->rut;  ?></td>
 						  	<td>  <?php echo $res['nombre']; ?></td>
+						  	<td>  <?php if($res['estado']) echo 'En Espera';
+						  				else echo 'Trasplantado'; ?></td>
 							<td>  <?php echo $res['created']; ?></td>
 
 					  	  </tr>

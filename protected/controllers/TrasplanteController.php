@@ -181,7 +181,7 @@ public function actionPacienteList()
 		}
 	}
 
-	public function actionTrasplanteOrgano($id_d,$id_p,$or)
+	public function actionTrasplanteOrgano($id_d,$id_p)
 	{
 
 		$model=new Trasplante;
@@ -193,18 +193,19 @@ public function actionPacienteList()
 			if($model->validate()){
 		    $donante=Donantes::model()->find('id='.$_GET['id_d']);
 		    $paciente=Paciente::model()->find('id='.$_GET['id_p']);
-		    $model->nombre = $paciente->necesidad_trasplante;
-			$length = (string)($_GET['or']);
+            $donacion_organo = DonacionOrgano::model()->find('id='.$model->id_donacion);
+            $model->nombre = $donacion_organo->nombre;
+	        $model->tipo = 'Organo';
 
 			$connection=Yii::app()->db;
-			$sql = 'UPDATE donacion_organo SET estado = 0 WHERE nombre='."'$length'".' AND rut_donante='."'$donante->rut'";
+			$sql = 'UPDATE donacion_organo SET estado = 0 WHERE id='.$model->id_donacion;
 			$command = $connection->createCommand($sql);
 			$command->execute();
 
-			$paciente=Paciente::model()->find('id='.$_GET['id_p']);
-
+			$organo=Organo::model()->find('nombreOrgano='."'$donacion_organo->nombre'");
+			
 			$connection=Yii::app()->db;
-			$sql = 'UPDATE paciente SET necesidad_trasplante = NULL WHERE id='.$paciente->id;
+			$sql = 'DELETE FROM necesidad_organo WHERE id_paciente='.$model->id_paciente.' AND id_organo='.$organo->idOrgano;
 			$command = $connection->createCommand($sql);
 			$command->execute();
 
@@ -217,7 +218,7 @@ public function actionPacienteList()
 		));
 	}
 
-	public function actionTrasplanteMedula($id_d,$id_p,$me)
+	public function actionTrasplanteMedula($id_d,$id_p)
 	{
 
 		$model=new Trasplante;
@@ -229,16 +230,20 @@ public function actionPacienteList()
 			if($model->validate()){
 		    $donante=Donantes::model()->find('id='.$_GET['id_d']);
 		    $paciente=Paciente::model()->find('id='.$_GET['id_p']);
+		    $donacion=DonacionMedula::model()->find('id_paciente='.$_GET['id_p'].' AND id_donante'.$_GET['id_d']);
 		    $model->nombre = 'Medula';
+		    $model->tipo = 'Osea';
+		    $model->id_donacion = $donacion->id;
+
 			$connection=Yii::app()->db;
-			$sql = 'UPDATE donacion_medula SET estado = 0 , cantidad= (cantidad -'.$_GET['me'].') WHERE rut_donante='."'$donante->rut'";
+			$sql = 'UPDATE donacion_medula SET estado = 0 WHERE id_donante='.$_GET['id_d'].' AND id_paciente='.$_GET['id_p'];
 			$command = $connection->createCommand($sql);
 			$command->execute();
 
 			$paciente=Paciente::model()->find('id='.$_GET['id_p']);
 
 			$connection=Yii::app()->db;
-			$sql = 'UPDATE paciente SET necesidad_trasplante = NULL, necesidad_medula = (necesidad_medula -'.$_GET['me'].') WHERE id='.$paciente->id;
+			$sql = 'DELETE FROM necesidad_medula WHERE id_paciente='.$_GET['id_p'];
 			$command = $connection->createCommand($sql);
 			$command->execute();
 

@@ -378,7 +378,7 @@ class DonantesController extends Controller
 		}
 	}
 
-	public function actionRegistrar_organo($id,$name)
+	public function actionRegistrar_organo($id)
 	{
 		$model=new Donantes('search');
 		$model->unsetAttributes();  // clear any default values
@@ -389,7 +389,7 @@ class DonantesController extends Controller
 		));
    }
 
-   public function actionRegistrar_medula($id,$name)
+   public function actionRegistrar_Medula($id)
 	{
 		$model=new Donantes('search');
 		$model->unsetAttributes();  // clear any default values
@@ -399,4 +399,38 @@ class DonantesController extends Controller
 			'model'=>$model,
 		));
    }
+
+   public function actionDonar_Sangre()
+	{
+		$model=new Donantes('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Donantes']))
+			$model->attributes=$_GET['Donantes'];
+			$this->render('donar_sangre',array(
+			'model'=>$model,
+		));
+	}
+
+	public function actionDonar_Organo()
+	{
+		$model=new Donantes('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Donantes']))
+			$model->attributes=$_GET['Donantes'];
+			$this->render('donar_organo',array(
+			'model'=>$model,
+		));
+	}
+
+	public function actionDonar_Medula()
+	{
+		$model=new Donantes('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Donantes']))
+			$model->attributes=$_GET['Donantes'];
+			$this->render('donar_medula',array(
+			'model'=>$model,
+		));
+	}
+
 }

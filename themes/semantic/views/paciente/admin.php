@@ -49,7 +49,6 @@ Administrar Pacientes </h1>
 		'apellido',
 		'rut',
 		'afiliacion',
-		'grado_urgencia',
 		'fecha_nacimiento',
 		'edad',
 		/*

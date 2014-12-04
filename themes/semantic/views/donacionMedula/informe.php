@@ -60,8 +60,15 @@ Generar Informe - Donación Médula </h1>
 						<?php echo $form->labelEx($model,'Hasta:'); ?>
 						<?php echo CHtml::textField('DonacionMedula[hasta]','',array('data-field'=>'datetime','placeholder'=>'Fecha de termino')); ?>
 					 </div>
+           
  					<div id="dtBox"></div>
                     </div>
+          <div class="flieds" >
+          <div class="four wide field">
+                 <?php echo $form->labelEx($model,'Estado de la Donacion'); ?>
+                 <?php echo $form->dropDownList($model,'estado',array(1=>'En Espera',2 =>'Trasplantada'), array('empty' => 'Seleccione Opcion', 'class'=>'ui selection dropdown')); ?>
+          </div>
+        </div>
 					<br>
 						<div class="ui blue submit button" id="ModalFunction"> <!-- Main.PHP -->
 							Filtrar

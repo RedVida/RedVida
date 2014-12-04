@@ -628,14 +628,16 @@ INSERT INTO `cruge_user` (`iduser`, `regdate`, `actdate`, `logondate`, `username
 CREATE TABLE IF NOT EXISTS `donacion_medula` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_donante` int(11) DEFAULT NULL,
-  `rut_donante` varchar(12) DEFAULT NULL,
-  `tipo_medula` varchar(128) DEFAULT NULL,
+  `id_paciente` int(11) DEFAULT NULL,
+  `nombre` varchar(128) DEFAULT NULL,
   `tipo_sangre` varchar(128) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL,
   `cantidad` int(11) DEFAULT NULL,
-  `created` datetime DEFAULT NULL,
+  `created` date DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `fk_id_donante_1` (`id_donante`),
+  KEY `fk_id_donante_2` (`id_paciente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -647,12 +649,12 @@ CREATE TABLE IF NOT EXISTS `donacion_medula` (
 CREATE TABLE IF NOT EXISTS `donacion_organo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_donante` int(11) DEFAULT NULL,
-  `rut_donante` varchar(12) DEFAULT NULL,
   `nombre` varchar(128) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL,
-  `created` datetime DEFAULT NULL,
+  `created` date DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `fk_id_donante_1` (`id_donante`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -664,13 +666,12 @@ CREATE TABLE IF NOT EXISTS `donacion_organo` (
 CREATE TABLE IF NOT EXISTS `donacion_sangre` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_donante` int(11) DEFAULT NULL,
-  `id_banco` int(11) DEFAULT NULL,  
-  `rut_donante` varchar(12) DEFAULT NULL,
   `tipo_sangre` varchar(3) DEFAULT NULL,
   `cantidad` int(11) DEFAULT NULL,
-  `created` datetime DEFAULT NULL,
+  `created` date DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `fk_id_donante_1` (`id_donante`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -684,6 +685,9 @@ CREATE TABLE IF NOT EXISTS `donantes` (
   `nombres` varchar(128) COLLATE utf8_bin DEFAULT NULL,
   `apellidos` varchar(128) COLLATE utf8_bin DEFAULT NULL,
   `rut` varchar(12) COLLATE utf8_bin DEFAULT NULL,
+  `estado_vital` tinyint(1) DEFAULT NULL,
+  `voluntario` tinyint(1) DEFAULT NULL,
+  `sexo` varchar(3) COLLATE utf8_bin DEFAULT NULL,
   `tipo_sangre` varchar(128) COLLATE utf8_bin DEFAULT NULL,
   `email` varchar(128) COLLATE utf8_bin DEFAULT NULL,
   `direccion` varchar(128) COLLATE utf8_bin DEFAULT NULL,
@@ -769,6 +773,13 @@ CREATE TABLE IF NOT EXISTS `organo` (
   PRIMARY KEY (`idOrgano`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
+CREATE TABLE IF NOT EXISTS `medula` (
+  `idMedula` int(11) NOT NULL AUTO_INCREMENT,
+  `nombreMedula` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`idMedula`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+
+
 --
 -- Volcado de datos para la tabla `organo`
 --
@@ -793,14 +804,13 @@ CREATE TABLE IF NOT EXISTS `paciente` (
   `nombre` varchar(20) DEFAULT NULL,
   `apellido` varchar(20) DEFAULT NULL,
   `rut` varchar(12) DEFAULT NULL,
+  `sexo` varchar(3) COLLATE utf8_bin DEFAULT NULL,
+  `edad` int(10) DEFAULT NULL,
   `afiliacion` varchar(20) DEFAULT NULL,
-  `grado_urgencia` varchar(20) DEFAULT NULL,
   `tipo_sangre` varchar(10) DEFAULT NULL,
   `id_centro_medico` int(11) DEFAULT NULL,
   `fecha_ingreso` datetime DEFAULT NULL,
-  `necesidad_trasplante` varchar(20) DEFAULT NULL,
   `fecha_nacimiento` date DEFAULT NULL ,
-  `edad` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_centro_medico` (`id_centro_medico`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
@@ -811,14 +821,41 @@ CREATE TABLE IF NOT EXISTS `paciente` (
 
 
 -- --------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `necesidad_medula` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `grado_urgencia` varchar(20) DEFAULT NULL,
+  `fecha` datetime DEFAULT NULL,
+  `id_paciente` int(11) DEFAULT NULL,
+  `id_medula` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_reference_1` (`id_paciente`),
+  KEY `fk_reference_2` (`id_medula`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
 
+ALTER TABLE `necesidad_medula`
+  ADD CONSTRAINT `fk_reference_78` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`),
+  ADD CONSTRAINT `fk_reference_79` FOREIGN KEY (`id_medula`) REFERENCES `medula` (`idMedula`);
 --
 -- Estructura de tabla para la tabla `tiene_alergia`
 --
+CREATE TABLE IF NOT EXISTS `necesidad_organo` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `grado_urgencia` varchar(20) DEFAULT NULL,
+  `fecha` datetime DEFAULT NULL,
+  `id_paciente` int(11) DEFAULT NULL,
+  `id_organo` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_reference_1` (`id_paciente`),
+  KEY `fk_reference_2` (`id_organo`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
+
+
+ALTER TABLE `necesidad_organo`
+  ADD CONSTRAINT `fk_reference_80` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`),
+  ADD CONSTRAINT `fk_reference_81` FOREIGN KEY (`id_organo`) REFERENCES `organo` (`idOrgano`);
 
 CREATE TABLE IF NOT EXISTS `tiene_alergia` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(20) DEFAULT NULL,
   `fecha` datetime DEFAULT NULL,
   `id_donante` int(11) DEFAULT NULL,
   `id_alergia` int(11) DEFAULT NULL,
@@ -851,31 +888,22 @@ CREATE TABLE IF NOT EXISTS `tiene_enfermedad` (
 
 CREATE TABLE IF NOT EXISTS `trasplante` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(50) DEFAULT NULL,
   `detalle` text COLLATE utf8_bin,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
-  `id_tipo_trasplante` int(11) DEFAULT NULL,
+  `tipo` varchar(128) DEFAULT NULL,
   `id_centro_medico` int(11) DEFAULT NULL,
   `id_donacion` int(11) DEFAULT NULL,
   `id_paciente` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_reference_32` (`id_tipo_trasplante`),
   KEY `fk_reference_33` (`id_centro_medico`),
   KEY `fk_reference_34` (`id_donacion`),
   KEY `fk_reference_35` (`id_paciente`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
 
 
-CREATE TABLE IF NOT EXISTS `tipo_trasplante` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `fecha` datetime DEFAULT NULL,
-  `descripcion` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=4 ;
-
 ALTER TABLE `trasplante`
-  ADD CONSTRAINT `fk_reference_32` FOREIGN KEY (`id_tipo_trasplante`) REFERENCES `tipo_trasplante` (`id`),
   ADD CONSTRAINT `fk_reference_33` FOREIGN KEY (`id_centro_medico`) REFERENCES `centro_medico` (`id`),
   ADD CONSTRAINT `fk_reference_34` FOREIGN KEY (`id_donacion`) REFERENCES `donacion_organo` (`id`),
   ADD CONSTRAINT `fk_reference_35` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`);
@@ -895,11 +923,6 @@ CREATE TABLE IF NOT EXISTS `transfusion` (
 
 
 
---
--- Restricciones para tablas volcadas
---
-
---
 -- Filtros para la tabla `cruge_authassignment`
 --
 ALTER TABLE `cruge_authassignment`
@@ -965,15 +988,12 @@ ALTER TABLE `donacion_sangre`
 
 
 ALTER TABLE `donacion_medula` 
-    ADD CONSTRAINT `fk_id_donante_m` FOREIGN KEY (`id_donante`) REFERENCES `donantes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+    ADD CONSTRAINT `fk_id_donante_m` FOREIGN KEY (`id_donante`) REFERENCES `donantes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    ADD CONSTRAINT `fk_id_donante_g` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE `donacion_organo` 
     ADD CONSTRAINT `fk_id_donante_o` FOREIGN KEY (`id_donante`) REFERENCES `donantes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 
-
-
-ALTER TABLE `donacion_sangre` 
-    ADD CONSTRAINT `fk_id_banco_sangre` FOREIGN KEY (`id_banco`) REFERENCES `banco_sangre` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 

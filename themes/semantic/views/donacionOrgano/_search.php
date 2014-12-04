@@ -15,12 +15,6 @@
 
 <div class="ui form">
 
-	<div class="fields">     
-		        <div class="four wide field">
-				<?php echo $form->label($model,'rut_donante'); ?>
-				<?php echo $form->textField($model,'rut_donante'); ?>
-				</div>
-	</div>
 
 
 	<div class="fields">     

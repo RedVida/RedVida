@@ -2,6 +2,7 @@
 $this->menu=array(
 	array('label'=>'Listar Donación de Sangre', 'url'=>array('index')),
 	array('label'=>'Administrar Donación de Sangre', 'url'=>array('admin')),
+	array('label'=>'Generar Informe', 'url'=>array('informe')),
 );
 ?>
 

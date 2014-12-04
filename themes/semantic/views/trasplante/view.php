@@ -20,21 +20,8 @@ Ver Trasplante #<?php echo $model->id; ?></h1>
 
 	</div>
    <div class="twelve wide column">
-
-	<?php $tipo_trasplante=TipoTrasplante::model()->find('id='.$model->id_tipo_trasplante);?>
 	<?php $centro_medico=CentroMedico::model()->find('id='.$model->id_centro_medico); ?>
-	<?php 
-				if($model->id_tipo_trasplante== 1){
-				$donador=DonacionOrgano::model()->find('id='.$model->id_tipo_trasplante);
-				}
-				if($model->id_tipo_trasplante== 2){
-				$donador=DonacionMedula::model()->find('id='.$model->id_tipo_trasplante);
-				}
-				if($model->id_tipo_trasplante== 3){
-				$donador=DonacionSangre::model()->find('id='.$model->id_tipo_trasplante);
-				}
-				$donante=Donantes::model()->find('rut='."'$donador->rut_donante'");
- 	?>
+
 	<?php $paciente=Paciente::model()->find('id='.$model->id_paciente); ?>
 
 
@@ -43,7 +30,6 @@ Ver Trasplante #<?php echo $model->id; ?></h1>
 		'data'=>$model,
 		'attributes'=>array(
 			'nombre'=> array('name'=>'Trasplante de','value' => $model->nombre),
-			'id_tipo_trasplante'=> array('name'=>'Tipo','value' => $tipo_trasplante->nombre),
 			'id_centro_medico'=> array('name'=>'Centro Medico','value' => $centro_medico->nombre),
 			'created',
 			'modified',

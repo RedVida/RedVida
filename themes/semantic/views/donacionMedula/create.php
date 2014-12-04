@@ -4,7 +4,7 @@ $this->menu=array(
 	array('label'=>'Administrar Donación de Médula', 'url'=>array('admin')),
 );
 ?>
-
+<br><br>
 <div class="ui black ribbon label">
 <h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
 Registrar Donación de Médula </h1>

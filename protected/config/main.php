@@ -147,6 +147,7 @@ return array(
 			'allowAutoLogin'=>true,
 			'class' => 'application.modules.cruge.components.CrugeWebUser',
 			'loginUrl' => array('/cruge/ui/login'),
+			'autoUpdateFlash'=>'false',
 		),
 		'authManager' => array(
 		'class' => 'application.modules.cruge.components.CrugeAuthManager',

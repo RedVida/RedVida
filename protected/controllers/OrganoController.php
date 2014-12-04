@@ -166,4 +166,31 @@ class OrganoController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	public function actionOrganoList()
+    {
+        $criterio = new CDbCriteria;
+        $cdtns = array();
+        $resultado = array();
+        
+        if(empty($_GET['term'])) return $resultado;
+        
+        $cdtns[] = "LOWER(nombreOrgano) like LOWER(:busq)";
+
+        
+        $criterio->condition = implode(' OR ', $cdtns);
+        $criterio->params = array(':busq' => '%' . $_GET['term'] . '%');
+        $criterio->limit = 10;
+        
+        $data = Organo::model()->findAll($criterio);
+        
+        foreach($data as $item) {  
+            $resultado[] = array (
+                'nombre'    => $item->nombreOrgano,
+
+            );
+        }
+        
+        echo CJSON::encode($resultado);
+    }
 }

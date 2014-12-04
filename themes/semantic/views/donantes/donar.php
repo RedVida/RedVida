@@ -57,6 +57,8 @@ Registrar Donación </h1>
 
 <div class="ui grid">
 
+
+
 	<div class="one wide column">
 
 	</div>
@@ -71,6 +73,20 @@ Registrar Donación </h1>
 	  <p>Para registrar una donación, debes seleccionar un donante de la siguiente tabla y presionar el botón correspondiente a la donación</p>
 	</div>
 
+<div class="form">
+				<?php $form=$this->beginWidget('CActiveForm', array(
+					'id'=>'donantes-form',
+					'enableAjaxValidation'=>false,
+				)); ?>
+				<?php Yii::app()->clientScript->registerScript(
+				    'myHideEffect',
+				    '$(".errors").animate({opacity: 1.0}, 5000).fadeOut("slow");',
+				    CClientScript::POS_READY
+				); ?>
+				<?php echo $form->errorSummary($model, NULL, NULL, array("class" => "ui negative message"));?>
+
+				
+	</div>
 	<?php $this->widget('zii.widgets.grid.CGridView', array(
 		'id'=>'donantes-grid',
 		'dataProvider'=>$model->search(),
@@ -92,7 +108,7 @@ Registrar Donación </h1>
 			'afterAjaxUpdate'=>'userClicks',
 
 	)); ?>
-
+<?php $this->endWidget(); ?>
 
 	<div class="ui blue submit button disabled blockear" id="btn_1">Donar Sangre
 	<input type="hidden" name="Sangre" value="Sange" method="POST" ></input>
@@ -126,15 +142,16 @@ function userClicks(target_id){
 
 var id_select = $('#donantes-grid').yiiGridView.getSelection(target_id);
 
+
 if(id_select>0){
-            
+
         $('#btn_1').removeClass('disabled blockear');
         $('#btn_2').removeClass('disabled blockear');
         $('#btn_3').removeClass('disabled blockear');
 
 
 		$('#btn_1').click(function() {
-		window.location.href = yii.urls.base + '/index.php?r=/donacionSangre/create&id=' + id_select[0];									
+		window.location.href = yii.urls.base + '/index.php?r=/donantes/donacionSangre&id=' + id_select[0];									
 		});
 		$('#btn_2').click(function() {
 		window.location.href = yii.urls.base + '/index.php?r=/donacionMedula/create&id=' + id_select[0];									
@@ -158,5 +175,6 @@ if(id_select>0){
 	});
 
 </script>
+
 	
 <hr class="style-two ">

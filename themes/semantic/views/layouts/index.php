@@ -27,10 +27,9 @@
 <img  src="<?php echo Yii::app()->request->baseUrl; ?>/images/clinica3.jpg"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/text.png">
 </div>
 
-</head>
+ 
 
-<body>
-
+  </head>
 
 <body>
 
@@ -162,54 +161,46 @@
       <i class="asterisk icon"></i>  Donaciones <i class="dropdown icon"></i>
       <div class="menu">
 
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/donar">
-          <i class="doble angle right icon"></i> Registrar Donación 
-        </a>
-        
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionSangre/admin">
-
-          <i class="doble angle right icon"></i> Adm. Donac. Sangre
-        </a>
-        
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionMedula/admin">
-          <i class="doble angle right icon"></i> Adm. Donac. Médula
-        </a>
-
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionOrgano/admin">
-          <i class="doble angle right icon"></i> Adm. Donac. Órgano
-        </a>    
-
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/bancosangre/admin">
-          <i class="doble angle right icon"></i> Adm. Banco Sangre
-        </a>
-
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/organo/admin">
-          <i class="doble angle right icon"></i> Adm. Órganos
-        </a>
-
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/organo/informe">
-          <i class="doble angle right icon"></i> Generar Informe
-        </a>
-        
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionSangre/">
-          <i class="doble angle right icon"></i> Listar Donac. Sangre
-        </a>
-        
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionMedula/">
-          <i class="doble angle right icon"></i> Listar Donac. Médula
-        </a>
-
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionOrgano/">
-          <i class="doble angle right icon"></i> Listar Donac. Órgano
-        </a>    
-
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/bancoSangre/">
           <i class="doble angle right icon"></i> Listar Banco Sangre
         </a>
 
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/organo/">
-          <i class="doble angle right icon"></i> Listar Órganos
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/donar_medula">
+          <i class="doble angle right icon"></i> Registrar Donación Medula
         </a>
+
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/donar_organo">
+          <i class="doble angle right icon"></i> Registrar Donación Organo
+        </a>
+
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/donar_sangre">
+          <i class="doble angle right icon"></i> Registrar Donación Sangre
+        </a>
+
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/medula/informe">
+          <i class="doble angle right icon"></i> Generar Informe D.Medula
+        </a>
+
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/organo/informe">
+          <i class="doble angle right icon"></i> Generar Informe D.Organo
+        </a>
+
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/sangre/informe">
+          <i class="doble angle right icon"></i> Generar Informe D.Sangre
+        </a>
+        
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionMedula/admin">
+          <i class="doble angle right icon"></i> Administrar Donac. Médula
+        </a>
+
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionOrgano/admin">
+          <i class="doble angle right icon"></i> Administrar Donac. Órgano
+        </a> 
+
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionSangre/admin">
+          <i class="doble angle right icon"></i> Administrar Donac. Sangre
+        </a>   
+
       
        </div>  
     </div>
@@ -297,6 +288,16 @@
         </a>
         <?php } ?>
         <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/registra_organo">
+          <i class="doble angle right icon"></i> Asignar Necesidad (Organo)
+        </a>
+        <?php } ?>
+        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/registra_medula">
+          <i class="doble angle right icon"></i> Asignar Necesidad (Medula)
+        </a>
+        <?php } ?>
+        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/informe">
           <i class="doble angle right icon"></i> Generar Informe
         </a>
@@ -338,6 +339,9 @@
           </div>       
       </div>
       <?php } ?>
+
+      
+
 
     </div><!--END MENU-->
 </div><!--END MENU  INVERTED-->

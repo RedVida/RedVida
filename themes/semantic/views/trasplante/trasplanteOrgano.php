@@ -27,29 +27,50 @@ $(document).ready(function() {
 			); ?>
 		        
 			<?php echo $form->errorSummary($model, NULL, NULL, array("class" => "ui warning message"));?>
-		         <div class="ui green message">
-				
-					 Paciente:<b> <?php $paciente=Paciente::model()->find('id='.$_GET['id_p']);
-					 echo $paciente->nombre.' '.$paciente->apellido; ?></b>
-			     </div>
-			     <div class="ui blue message">
-					 Donador:<b> <?php $donante=Donantes::model()->find('id='.$_GET['id_d']);
-					 echo $donante->nombres.' '.$donante->apellidos; ?></b>
-			     </div>
-			     <div class="ui orange message">
-					 Organo donado: <b> <?php echo ucfirst($_GET['or']); ?> </b>
-			     </div>
+			<?php $paciente=Paciente::model()->find('id='.$_GET['id_p']); ?>
+			<?php $donante=Donantes::model()->find('id='.$_GET['id_d']); ?>
+			<table class="ui definition table  ui green message">
+			    <tbody>
+			      <tr>
+			        <td class="one wide column ">Paciente:</td>
+			        <td><?php echo ucfirst($paciente->nombre).' '.ucfirst($paciente->apellido); ?></td>
+			      </tr>
+			       <tr>
+			        <td>Rut:</td>
+			        <td><?php echo $paciente->rut ?></td>
+			      </tr>
+			      <tr>	
+			        <td>T.Sangre:</td>
+			        <td><?php echo $paciente->tipo_sangre; ?></td>
+			      </tr>
+			    </tbody>
+			 </table>
+			  <div class="ui divider"></div>
+
+			  <table class="ui definition table  ui blue message">
+			    <tbody>
+			      <tr>
+			        <td class="one wide column ">Donante:</td>
+			        <td><?php echo ucfirst($donante->nombres).' '.ucfirst($donante->apellidos); ?></td>
+			      </tr>
+			       <tr>
+			        <td>Rut:</td>
+			        <td><?php echo $donante->rut ?></td>
+			      </tr>
+			      <tr>	
+			        <td>T.Sangre:</td>
+			        <td><?php echo $donante->tipo_sangre; ?></td>
+			      </tr>
+			    </tbody>
+			 </table>
+			  <div class="ui divider"></div>
         
 			<div class="ui form">
-			<?php echo $form->hiddenField($model,'id_tipo_trasplante',array('type'=>"hidden",'value'=>'1')); ?>
 			<?php echo $form->hiddenField($model,'id_paciente',array('type'=>"hidden",'value'=> $_GET['id_p'])); ?>
-			<?php echo $form->hiddenField($model,'created', array('type'=>"hidden",'value'=> date("Y-m-d H:i:s"))); ?>
-			<?php echo $form->hiddenField($model,'modified', array('type'=>"hidden",'value'=> date("Y-m-d H:i:s"))); ?>
-			<?php
-			$length = (string)($_GET['or']);
-			$donacion=DonacionOrgano::model()->findAll(array('select'=>'id','condition'=>'rut_donante='."'$donante->rut'".' AND nombre='."'$length'"));
-		    echo $form->hiddenField($model,'id_donacion',array('type'=>"hidden",'value'=>$donacion[0]->id)); ?>
-       		<br>
+       		<div class="four wirde field">
+				    <?php echo $form->labelEx($model,'Organo Trasplantado'); ?>
+					<?php echo $form->dropDownList($model,'id_donacion', CHtml::listData(DonacionOrgano::model()->findAll(array('condition'=>'estado=1 AND id_donante='.$_GET['id_d'])), 'id', 'nombre'), array('class'=>'ui selection dropdown','empty' => 'Seleccione Organo')) ?>
+			</div>
 		    <div class="fields">
 			 	<div class="field">
 					<?php echo $form->labelEx($model,'detalle del trasplante:'); ?>

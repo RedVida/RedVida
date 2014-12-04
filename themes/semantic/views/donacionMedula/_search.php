@@ -13,15 +13,7 @@
 )); ?>
 
 	
-<div class="ui form">
-   <div class="fields">
-	 	<div class="four wide field">
-			<?php echo $form->labelEx($model,'rut_donante'); ?>
-			<?php echo $form->textField($model,'rut_donante'); ?>
-		</div>
-	</div>
-
-	
+<div class="ui form">	
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Buscar', array('class'=>'ui blue submit button')); ?>

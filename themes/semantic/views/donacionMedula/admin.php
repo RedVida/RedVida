@@ -96,8 +96,7 @@ Administrar Donación de Médula </h1>
             'class'=>'CCheckBoxColumn',            
         	),
 		'id',
-		'rut_donante',
-		'tipo_medula',
+		'nombre',
 		array(
 			'name'=>'created',
 			'value'=>'date("d/m/y",strtotime($data->created))',
@@ -105,59 +104,6 @@ Administrar Donación de Médula </h1>
 		array(	
 			'value'=>'date("h:i",strtotime($data->created))',
 		),
-				array(
-					'class'=>'CButtonColumn',
-					'template'=>'{Ver}{Actualizar}{Eliminar}',
-				    'buttons'=>array
-				    (
-
- 						'Ver' => array
- 						(
-					    	'label'=>'Ver',
-					        'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/view.png",
-					        'url'=>'Yii::app()->createUrl("donacionMedula/view", array("id"=>$data->id))',
-					    ),
-						
-						'Actualizar' => array
-					   (
-					        'label'=>'Actualizar',
-					  		'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/update.png",
-					        'url'=>'Yii::app()->createUrl("donacionMedula/update", array("id"=>$data->id))', 
-					    ),
-				
-					    'Eliminar' => array
-				        (   
-				        	'label'=>'Eliminar',
-				            'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/delete.png",
-				          	'url'=>'"#"',
-				            'click'=>"js: function(){   
-							getId = $(this).parent().parent().children(':nth-child(2)').text();
-							 			$('.small.modal')
-										  .modal('setting', {
-										    closable  : false,
-										    onApprove : function() {
-										            $.fn.yiiGridView.update('donacion-medula-grid', {
-										                type:'POST',
-										                success:function(data) {
-														window.location.href = '".Yii::app()->request->baseUrl."' +'/index.php?r=/donacionMedula/delete&id=' + getId;									
-									                    $.fn.yiiGridView.update('donacion-medula-grid');
-										                }
-											});
-								  		  }
-									  })
-									  .modal('show')
-						  	          ;
-
-		  					}",
-		  					),
-
-
-
-
-
-					
-					),
-				),
 					),
 )); ?>
 

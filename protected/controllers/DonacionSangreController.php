@@ -13,9 +13,11 @@ class DonacionSangreController extends Controller
 	 */
 	public function filters()
 	{
-		return array(array('CrugeAccessControlFilter'));
+		return array(
+			'accessControl', // perform access control for CRUD operations
+			'postOnly + delete', // we only allow deletion via POST request
+		);
 	}
-
 
 	/**
 	 * Specifies the access control rules.
@@ -37,9 +39,6 @@ class DonacionSangreController extends Controller
 				'actions'=>array('admin','delete'),
 				'users'=>array('admin'),
 			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
 		);
 	}
 
@@ -60,60 +59,28 @@ class DonacionSangreController extends Controller
 	 */
 	public function actionCreate($id)
 	{
-
-
 		$model=new DonacionSangre;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['DonacionSangre']))
-		{			
+		{
 			$model->attributes=$_POST['DonacionSangre'];
-			$model_banco = BancoSangre::model()->findAll(array('select'=>'id','condition'=>'tipo='."'$model->tipo_sangre'"));
-			$var= (int) $model_banco[0]["id"];
+			if($model->validate()){
 
-
-			$model->id_banco=$var;
-
-			//if
-			$var_b = BancoSangre::model()->findAll(array('select'=>'cantidad','condition'=>'id='."'$var'"));
-			$var_a = $var_b[0]['cantidad'];
-
-
-			if(($var_a + $model->cantidad) >= 0){
-
-			$update = Yii::app()->db->createCommand()
-				    ->update('banco_sangre', 
-				        array(
-				            'cantidad'=>new CDbExpression('cantidad + :cantidad', array(':cantidad'=>$model->cantidad))
-				        ),
-				        'id=:id',
-				        array(':id'=>$var)
-				    );
-
-				if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-
-
-
-			}else{
-				
-
-	    	   $model->addError('ERROR','Los parametros del Banco de Sangre no Permiten ingresar Donaciones');
-
-
+			$connection=Yii::app()->db;
+			$sql = 'UPDATE banco_sangre SET cantidad = (cantidad +'.$model->cantidad.' ) WHERE tipo='."'$model->tipo_sangre'";
+			$command = $connection->createCommand($sql);
+			$command->execute();			
 			}
-			//endif
-				
-
-			
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
 		));
-		
 	}
 
 	/**
@@ -127,85 +94,23 @@ class DonacionSangreController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
-		$model_update = DonacionSangre::model()->find("id=$id");;
-
+        $cantidad = $model->cantidad;
 		if(isset($_POST['DonacionSangre']))
 		{
 			$model->attributes=$_POST['DonacionSangre'];
+			
+			if($model->save()){
+                if($model->cantidad!=$cantidad ){
+                	$connection=Yii::app()->db;
+					$sql = 'UPDATE banco_sangre SET cantidad = (cantidad +'.($model->cantidad - $cantidad).' ) WHERE tipo='."'$model->tipo_sangre'";
+					$command = $connection->createCommand($sql);
+					$command->execute();
+                }
 
-			$var = $model_update->cantidad-$model->cantidad;
-
-			if( $var >= 0 ){
-
-
-
-
-					$var_b = BancoSangre::model()->findAll(array('select'=>'cantidad','condition'=>'id='."'$model->id_banco'"));
-					$var_b = $var_b[0]['cantidad'];
-					$k = $var_b - $var;
-					if( $k >= 0 ){
-
-					$update = Yii::app()->db->createCommand()
-						    ->update('banco_sangre', 
-						        array(
-						            'cantidad'=>new CDbExpression('cantidad - :cantidad', array(':cantidad'=>$var))
-						        ),
-						        'id=:id',
-						        array(':id'=>$model_update->id_banco)
-						    );
-
-					if($model->save())
-						$this->redirect(array('view','id'=>$model->id));
-
-
-					}else{
-
-
-							    	   $model->addError('ERROR','Los parametros del Banco de Sangre no Permiten Actualizar Donaciones');
-
-					}
-
-			}else{
-				
-
-					$var_b = BancoSangre::model()->findAll(array('select'=>'cantidad','condition'=>'id='."'$model->id_banco'"));
-					$var_b = $var_b[0]['cantidad'];
-					$k = $var_b - $var;
-
-
-					if( $k >= 0 ){
-
-
-					$update = Yii::app()->db->createCommand()
-						    ->update('banco_sangre', 
-						        array(
-						            'cantidad'=>new CDbExpression('cantidad - :cantidad', array(':cantidad'=>$var))
-						        ),
-						        'id=:id',
-						        array(':id'=>$model_update->id_banco)
-						    );
-
-
-
-
-					if($model->save())
-						$this->redirect(array('view','id'=>$model->id));
-
-
-					}else{
-
-
-							    	   $model->addError('ERROR','Los parametros del Banco de Sangre no Permiten Actualizar Donaciones');
-
-					}
+				$this->redirect(array('view','id'=>$model->id));
 
 			}
-
-
-
-
-
+				
 		}
 
 		$this->render('update',array(
@@ -218,42 +123,18 @@ class DonacionSangreController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-
 	public function actionDelete($id)
-	{
+	{   
+		$donacion_sangre=DonacionSangre::model()->find('id='.$id);
+        $connection=Yii::app()->db;
+		$sql = 'UPDATE banco_sangre SET cantidad = (cantidad -'.($donacion_sangre->cantidad).' ) WHERE tipo='."'$donacion_sangre->tipo_sangre'";
+		$command = $connection->createCommand($sql);
+		$command->execute();
 
-			$model_delete = DonacionSangre::model()->find("id=$id");
+		$this->loadModel($id)->delete();
 
-			$var = BancoSangre::model()->findAll(array('select'=>'cantidad','condition'=>'id='."'$model_delete->id_banco'"));
-			$var_a=$var[0]['cantidad'];
-
-
-			if(($var_a - $model_delete->cantidad)>=0){
-
-								$update = Yii::app()->db->createCommand()
-							    ->update('banco_sangre', 
-							        array(
-							            'cantidad'=>new CDbExpression('cantidad - :cantidad', array(':cantidad'=>$model_delete->cantidad))
-							        ),
-							        'id=:id',
-							        array(':id'=>$model_delete->id_banco)
-							    );
-			}else{
-
-								$update = Yii::app()->db->createCommand()
-							    ->update('banco_sangre', 
-							        array(
-							            'cantidad'=>new CDbExpression('cantidad = :cantidad', array(':cantidad'=>0))
-							        ),
-							        'id=:id',
-							        array(':id'=>$model_delete->id_banco)
-							    );
-			}
-
-
-		$this->loadModel($id)->delete();	
-
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		
+        
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
@@ -269,8 +150,6 @@ class DonacionSangreController extends Controller
 		));
 	}
 
-
-
 	/**
 	 * Manages all models.
 	 */
@@ -285,68 +164,6 @@ class DonacionSangreController extends Controller
 			'model'=>$model,
 		));
 	}
-
-	public function actionInforme(){
-	// Odernar por: Edad, Tipo de sangre, Centro medico, Fecha de ingreso
-
-		$model = new DonacionSangre;
-		if(isset($_POST['DonacionSangre'])){
-       		$model = new DonacionSangre;
-            $this->layout="//layouts/pdf";
-            $mPDF1 = Yii::app()->ePdf->mpdf();
-			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/nn.png' ));
-			$mPDF1->WriteHTML('<br>');
-			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/line2.png' ));
-			$mPDF1->WriteHTML('<br> ');
-			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/informe_donaciones.png' ));
-			$where_array = array();
-			$from_array = array();
-			$OK = true;
-			
-		    if($_POST['DonacionSangre']['tipo_sangre']!=''){ // Tipo de sangre
-		    	$length = (string)($_POST['DonacionSangre']['tipo_sangre']);
-            	$where_array[]=('d.tipo_sangre = '."'$length'");
-		    }
-		    if($_POST['DonacionSangre']['desde']!=''){ // Tipo de sangre
-		    	if(strtotime($_POST['DonacionSangre']['desde']) && 1 === preg_match('~[0-9]~', $_POST['DonacionSangre']['desde'])){
-			    	$desde = (string)($_POST['DonacionSangre']['desde']);
-	            	$where_array[]=('d.created >= '."'$desde'");
-            	}else{
-            		$model->addError('nombre','Fecha de Inicio: La Fecha ingresada no es valida ');
-				   	$OK = false;
-            	}
-		    }
-		     if($_POST['DonacionSangre']['hasta']!=''){ // Fecha
-		     	if(strtotime($_POST['DonacionSangre']['desde']) && 1 === preg_match('~[0-9]~', $_POST['DonacionSangre']['desde'])){
-			    	$hasta = (string)($_POST['DonacionSangre']['hasta']);
-	            	$where_array[]=('d.created <= '."'$hasta'");
-	            }else{
-            		$model->addError('nombre','Fecha de Termino: La Fecha ingresada no es valida ');
-				   	$OK = false;
-            	}
-		    }
-		   
-		    $form = implode(", ", $from_array);	 
-		    $where = implode(" AND ", $where_array);	
-            $results = Yii::app()->db->createCommand()->
-	            select('*')->
-	            from('donacion_sangre d, '.$form)->
-	            where($where)->
-	            queryAll();
-	        if(!$OK)$results =null;
-            if($results){
-				$mPDF1->WriteHTML($this->render('_informe',array('results'=>$results),true));
-				$mPDF1->Output('Informe de Donaciones de Sangre',"I"); // i = visualizar en el navegador
-		    }
-		    else{ $model->addError('tipo_sangre','No se han encontrado donaciones de sangre con esos datos ');}
-        }
-        $this->render('informe',array(
-			'model'=>$model,
-		));
-	}
-
-
-
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
@@ -367,7 +184,6 @@ class DonacionSangreController extends Controller
 	 * Performs the AJAX validation.
 	 * @param DonacionSangre $model the model to be validated
 	 */
-
 	protected function performAjaxValidation($model)
 	{
 		if(isset($_POST['ajax']) && $_POST['ajax']==='donacion-sangre-form')
@@ -375,5 +191,61 @@ class DonacionSangreController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+
+	public function actionInforme(){
+
+		$model = new DonacionSangre;
+		if(isset($_POST['DonacionSangre'])){
+
+            $this->layout="//layouts/pdf";
+            $mPDF1 = Yii::app()->ePdf->mpdf();
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/nn.png' ));
+			$mPDF1->WriteHTML('<br>');
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/line2.png' ));
+			$mPDF1->WriteHTML('<br> ');
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/informe_donacion_sangre.png' ));
+			$where_array = array();
+			$OK = true;
+		    if($_POST['DonacionSangre']['desde']!=''){ 
+            	if(strtotime($_POST['DonacionSangre']['desde']) && 1 === preg_match('~[0-9]~', $_POST['DonacionSangre']['desde'])){
+			    	$desde = (string)($_POST['DonacionSangre']['desde']);
+            		$where_array[]=('fecha_ingreso >= '."'$desde'");
+	            }else{
+            		$model->addError('nombre','Fecha de Inicio: La Fecha ingresada no es valida ');
+				   	$OK = false;
+            	}
+		    }
+		     if($_POST['DonacionSangre']['hasta']!=''){ 
+            	if(strtotime($_POST['DonacionSangre']['hasta']) && 1 === preg_match('~[0-9]~', $_POST['DonacionSangre']['hasta'])){
+			    	$hasta = (string)($_POST['DonacionSangre']['hasta']);
+            		$where_array[]=('fecha_ingreso <= '."'$hasta'");
+	            }else{
+            		$model->addError('nombre','Fecha de Termino: La Fecha ingresada no es valida ');
+				   	$OK = false;
+            	}
+		    }
+		     if($_POST['DonacionSangre']['tipo_sangre']!=''){ 
+
+			    	$hasta = (string)($_POST['DonacionSangre']['tipo_sangre']);
+            		$where_array[]=('tipo_sangre = '."'$hasta'");
+		    }
+
+		    $where = implode(" AND ", $where_array);	
+            $results = Yii::app()->db->createCommand()->
+	            select('*')->
+	            from('donacion_sangre')->
+	            where($where)->
+	            queryAll();
+	        if(!$OK)$results=null;
+            if($results){
+				$mPDF1->WriteHTML($this->render('_informe',array('results'=>$results),true));
+				$mPDF1->Output('Informe DonacionSangre',"I"); // i = visualizar en el navegador
+		    }
+		    else{ $model->addError('nombre','No se han encontrado Donaciones de sangre con esos datos ');}
+        }
+        $this->render('informe',array(
+			'model'=>$model,
+		));
 	}
 }

@@ -3,7 +3,7 @@
 	<br>
 
 	<div class="ui celled list">
-	<?php  $modelo_d = Donantes::model()->find('rut = '."'$data->rut_donante'"); ?>
+	<?php  $modelo_d = Donantes::model()->find('id='.$data->id_donante); ?>
 	  <div class="item">
 	    <i class="add large icon"></i> 
 	    <div class="content">
@@ -17,7 +17,7 @@
 			<br />
 
 			<b><?php echo 'Rut'; ?>:</b>
-			<?php echo CHtml::encode($data->rut_donante); ?>
+			<?php echo CHtml::encode($modelo_d->rut); ?>
 			<br />
 
 			<b><?php echo CHtml::encode($data->getAttributeLabel('tipo_sangre')); ?>:</b>

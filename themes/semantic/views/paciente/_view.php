@@ -27,13 +27,6 @@ $this->menu=array(
 			<?php echo CHtml::encode($data->afiliacion); ?>
 			<br />
 
-			<b><?php echo CHtml::encode($data->getAttributeLabel('grado_urgencia')); ?>:</b>
-			<?php echo CHtml::encode($data->grado_urgencia); ?>
-			<br />
-
-			<b><?php echo CHtml::encode($data->getAttributeLabel('necesidad_transplante')); ?>:</b>
-			<?php echo $data->necesidad_transplante; ?>
-			<br />
 
 			<?php echo CHtml::link(CHtml::encode("Más detalle"), array('view', 'id'=>$data->id)); ?>
 			<br/>

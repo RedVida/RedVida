@@ -5,10 +5,18 @@
  *
  * The followings are the available columns in table 'donacion_medula':
  * @property integer $id
- * @property string $rut_donante
+ * @property integer $id_donante
+ * @property integer $id_paciente
+ * @property string $nombre
+ * @property string $tipo_sangre
+ * @property integer $estado
+ * @property integer $cantidad
  * @property string $created
  * @property string $modified
- * @property string $tipo_medula
+ *
+ * The followings are the available model relations:
+ * @property Donantes $idDonante
+ * @property Paciente $idPaciente
  */
 class DonacionMedula extends CActiveRecord
 {
@@ -28,22 +36,26 @@ class DonacionMedula extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_donante', 'numerical', 'integerOnly'=>true),
-			array('rut_donante', 'length', 'max'=>12),
-			array('tipo_medula', 'length', 'max'=>128),
+			array('cantidad','required','message' => 'Se requiere ingresar cantidad de Medula a donar'),
+			array('nombre','required','message' => 'Se requiere Ingresar Un paciente para asignar la donacion'),
+			array('id_donante, estado, cantidad', 'numerical', 'integerOnly'=>true),
+			array('nombre, tipo_sangre', 'length', 'max'=>128),
 			array('created, modified', 'safe'),
-			array('rut_donante', 'required', 'message'=>'Debe Ingresar Rut Valido.'),
-			array('tipo_medula', 'required','message'=>'Debe Seleccionar un Tipo de Medula.'),
+			array('nombre','default',
+	          'value'=> 'Medula',
+              'setOnEmpty'=>false,'on'=>'insert or update'),
 			array('modified','default',
-              'value'=>new CDbExpression('NOW()'),
-              'setOnEmpty'=>false,'on'=>'update'),
-        	
-        	array('created,modified','default',
-              'value'=>new CDbExpression('NOW()'),
+	          'value'=>new CDbExpression('NOW()'),
+              'setOnEmpty'=>false,'on'=>'insert or update'),
+			array('created','default',
+              'value'=> date('y-m-d'),
+              'setOnEmpty'=>false,'on'=>'insert'),
+        	array('estado','default',
+              'value'=> 1,
               'setOnEmpty'=>false,'on'=>'insert'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, rut_donante, created, modified, tipo_medula', 'safe', 'on'=>'search'),
+			array('id, id_donante, id_paciente, nombre, tipo_sangre, estado, cantidad, created, modified', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,9 +67,8 @@ class DonacionMedula extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-
-					'idDonante' => array(self::BELONGS_TO, 'Donantes', 'id_donante'),
-
+			'idDonante' => array(self::BELONGS_TO, 'Donantes', 'id_donante'),
+			'idPaciente' => array(self::BELONGS_TO, 'Paciente', 'id_paciente'),
 		);
 	}
 
@@ -68,11 +79,14 @@ class DonacionMedula extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'rut_donante' => 'Rut Donante',
-			'created' => 'Fecha Ingreso',
-			'modified' => 'Fecha Modificación',
-			'tipo_medula' => 'Tipo de Médula',
-			'id_donante' => 'ID Donante',
+			'id_donante' => 'Id Donante',
+			'id_paciente' => 'Id Paciente',
+			'nombre' => 'Nombre',
+			'tipo_sangre' => 'Tipo Sangre',
+			'estado' => 'Estado',
+			'cantidad' => 'Cantidad',
+			'created' => 'Created',
+			'modified' => 'Modified',
 		);
 	}
 
@@ -95,11 +109,14 @@ class DonacionMedula extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('id_donante',$this->id_donante,true);
-		$criteria->compare('rut_donante',$this->rut_donante,true);
+		$criteria->compare('id_donante',$this->id_donante);
+		$criteria->compare('id_paciente',$this->id_paciente);
+		$criteria->compare('nombre',$this->nombre,true);
+		$criteria->compare('tipo_sangre',$this->tipo_sangre,true);
+		$criteria->compare('estado',$this->estado);
+		$criteria->compare('cantidad',$this->cantidad);
 		$criteria->compare('created',$this->created,true);
 		$criteria->compare('modified',$this->modified,true);
-		$criteria->compare('tipo_medula',$this->tipo_medula,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

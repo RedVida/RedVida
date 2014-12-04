@@ -93,31 +93,22 @@
 		 </div>
  		 <div id="dtBox"></div>
     </div>
+	<div class="two wide field">
+	       <?php echo $form->labelEx($model,'Sexo'); ?>
+	       <?php echo $form->dropDownList($model,'sexo', array('M'=>'M','F'=>'F'),array('empty' => 'Seleccione sexo', 'class'=>'ui selection dropdown')); ?>
+	</div>
 	<div class="four wide field">
 	       <?php echo $form->labelEx($model,'Afiliacion Paciente'); ?>
 	       <?php echo $form->dropDownList($model,'afiliacion', array('Fonasa'=>'Fonasa','Isapre'=>'Isapre'),array('empty' => 'Selecciona Afiliacion', 'class'=>'ui selection dropdown')); ?>
 	</div>
 
-	<div class="four wide field">
-	       <?php echo $form->labelEx($model,'Grado de Urgencia'); ?>
-	       <?php echo $form->dropDownList($model,'grado_urgencia', array('Bajo'=>'Bajo','Medio'=>'Medio','Alto'=>'Alto','Urgencia Nacional'=>'Urgencia Nacional'),array('empty' => 'Selecciona Grado Urgencia', 'class'=>'ui selection dropdown')); ?>
-	</div>
-
-	<div class="four wide field">
-	       <?php echo $form->labelEx($model,'Necesidad Trasplante (opcional)'); ?>
-	       <?php echo $form->dropDownList($model,'necesidad_trasplante',array('Organo'=>CHtml::listData($organos,'nombreOrgano', 'nombreOrgano')), array('empty' => 'Selecciona Necesidad', 'class'=>'ui selection dropdown')); ?>
-	</div>
-
-	<div class="four wide field">
-	       <?php echo $form->labelEx($model,'Necesidad Medula Osea (opcional)'); ?>
-	       <?php echo $form->dropDownList($model,'necesidad_medula',array('Cantidad (ml)'=>range(1,100)), array('empty' => 'Selecciona Necesidad', 'class'=>'ui selection dropdown')); ?>
-	</div>
+	
 
 	<div class="four wide field">
 	       <?php echo $form->labelEx($model,'Tipo De Sangre'); ?>
 	       <?php echo $form->dropDownList($model,'tipo_sangre',CHtml::listData(BancoSangre::model()->findAll(),'tipo', 'tipo'), array('empty' => 'Selecciona Tipo Sangre', 'class'=>'ui selection dropdown')); ?>
 	</div>
-
+	
    	<div class="four wirde field">
         <?php echo $form->labelEx($model,'Centro Medico'); ?>
 		<?php echo $form->dropDownList($model,'id_centro_medico', CHtml::listData(CentroMedico::model()->findAll(),'id', 'nombre'), array('empty' => 'Selecciona Centro Medico', 'class'=>'ui selection dropdown')); ?>

@@ -116,17 +116,25 @@
 							</div>
 						</div>
 					</div>
-
+					<div class="four wide field">
+					       <?php echo $form->labelEx($model,'Sexo'); ?>
+					       <?php echo $form->dropDownList($model,'sexo',array(1=>'M',2 =>'F'), array('empty' => 'Seleccione Sexo', 'class'=>'ui selection dropdown')); ?>
+					</div>
+					<div class="four wide field">
+					       <?php echo $form->labelEx($model,'voluntario'); ?>
+					       <?php echo $form->dropDownList($model,'voluntario', array(1 => 'Si', 2 => 'No'),array('empty' => 'Seleccione Opcion', 'class'=>'ui selection dropdown')); ?>
+					</div>
+					<div class="four wide field">
+					       <?php echo $form->labelEx($model,'Estado Vital'); ?>
+					       <?php echo $form->dropDownList($model,'estado_vital',array(1=>'Vivo',2 =>'Fallecido'), array('empty' => 'Seleccione Estado vital', 'class'=>'ui selection dropdown')); ?>
+					</div>
 					<div class="four wide field">
 					       <?php echo $form->labelEx($model,'Tipo De Sangre'); ?>
-					       <?php echo $form->dropDownList($model,'tipo_sangre',CHtml::listData(BancoSangre::model()->findAll(),'tipo', 'tipo'), array('empty' => 'Selecciona Tipo Sangre', 'class'=>'ui selection dropdown')); ?>
+					       <?php echo $form->dropDownList($model,'tipo_sangre',CHtml::listData(BancoSangre::model()->findAll(),'tipo', 'tipo'), array('empty' => 'Seleccione Tipo Sangre', 'class'=>'ui selection dropdown')); ?>
 					</div>
-
-
-
 				   	<div class="four wirde field">
 				        <?php echo $form->labelEx($model,'Centro Medico'); ?>
-						<?php echo $form->dropDownList($model,'id_centro_medico', CHtml::listData(CentroMedico::model()->findAll(),'id', 'nombre'), array('empty' => 'Selecciona Centro Medico', 'class'=>'ui selection dropdown')); ?>
+						<?php echo $form->dropDownList($model,'id_centro_medico', CHtml::listData(CentroMedico::model()->findAll(),'id', 'nombre'), array('empty' => 'Seleccione Centro Medico', 'class'=>'ui selection dropdown')); ?>
 					</div>
 					
 				   </div>   
@@ -140,25 +148,3 @@
 <?php $this->endWidget(); ?>
 
 	</div><!-- form -->
-
-
-
-	  <div class="ui small modal">
-        <i class="close icon"></i>
-          <div class="header">
-            Verificar Operación
-          </div>
-        <div class="content">
-          <i class="large loading icon"></i>
-           Esta seguro que desea registrar estos datos?
-        </div>
-      <div class="actions">
-        <div class="ui negative button" data-value="Cancel" name="Cancel">
-          No
-        </div>
-        <div class="ui positive right labeled icon button"  date-value="Success" onclick="successModal();" name="Success">
-          Si
-          <i class="checkmark icon"></i>
-        </div>
-      </div>
-  </div>

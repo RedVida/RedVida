@@ -30,6 +30,7 @@
 	$id = $_GET['id'];
 	$model_donante = Donantes::model()->find("id=$id");
 	$rut= $model_donante['rut'];
+	$tipo_sangre = $model_donante['tipo_sangre'];
 	$val=true;
 	}
 
@@ -43,6 +44,12 @@
 		<?php echo $form->labelEx($model,'rut_donante'); ?>
 		<?php echo $form->textField($model,'rut_donante', array('value'=>$rut, 'readonly'=>$val, 'id'=>'rut', 'maxLength'=>12)); ?>
 		<?php echo $form->error($model,'rut_donante'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'tipo_sangre'); ?>
+		<?php echo $form->textField($model,'tipo_sangre', array('value'=>$tipo_sangre, 'readonly'=>$val, 'id'=>'rut', 'maxLength'=>12)); ?>
+		<?php echo $form->error($model,'tipo_sangre'); ?>
 	</div>
 
 	<div class="row">

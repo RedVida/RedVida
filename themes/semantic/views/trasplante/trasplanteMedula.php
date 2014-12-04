@@ -9,7 +9,7 @@ $(document).ready(function() {
 </script>
 <br>
 <div class="ui black ribbon label">
-				<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Registrar Trasplante De Medula</h1>
+				<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Registrar Trasplante De Organo</h1>
 				</div>
 				<hr class="style-two ">
 <div class="ui grid">
@@ -27,27 +27,52 @@ $(document).ready(function() {
 			); ?>
 		        
 			<?php echo $form->errorSummary($model, NULL, NULL, array("class" => "ui warning message"));?>
-		         <div class="ui green message">
-				
-					 Paciente:<b> <?php $paciente=Paciente::model()->find('id='.$_GET['id_p']);
-					 echo ucfirst($paciente->nombre).' '.ucfirst($paciente->apellido); ?></b>
-			     </div>
-			     <div class="ui blue message">
-					 Donador:<b> <?php $donante=Donantes::model()->find('id='.$_GET['id_d']);
-					 echo ucfirst($donante->nombres).' '.ucfirst($donante->apellidos); ?></b>
-			     </div>
-			     <div class="ui orange message">
-					 Cantidad de Medula Donada: <b> <?php echo ucfirst($_GET['me']);?> (ml) </b>
-			     </div>
+			<?php $paciente=Paciente::model()->find('id='.$_GET['id_p']); ?>
+			<?php $donante=Donantes::model()->find('id='.$_GET['id_d']); ?>
+			<table class="ui definition table  ui green message">
+			    <tbody>
+			      <tr>
+			        <td class="one wide column ">Paciente:</td>
+			        <td><?php echo ucfirst($paciente->nombre).' '.ucfirst($paciente->apellido); ?></td>
+			      </tr>
+			       <tr>
+			        <td>Rut:</td>
+			        <td><?php echo $paciente->rut ?></td>
+			      </tr>
+			      <tr>	
+			        <td>T.Sangre:</td>
+			        <td><?php echo $paciente->tipo_sangre; ?></td>
+			      </tr>
+			    </tbody>
+			 </table>
+			  <div class="ui divider"></div>
+
+			  <table class="ui definition table  ui blue message">
+			    <tbody>
+			      <tr>
+			        <td class="one wide column ">Donante:</td>
+			        <td><?php echo ucfirst($donante->nombres).' '.ucfirst($donante->apellidos); ?></td>
+			      </tr>
+			       <tr>
+			        <td>Rut:</td>
+			        <td><?php echo $donante->rut ?></td>
+			      </tr>
+			      <tr>	
+			        <td>T.Sangre:</td>
+			        <td><?php echo $donante->tipo_sangre; ?></td>
+			      </tr>
+			    </tbody>
+			 </table>
+			  <div class="ui divider"></div>
         
 			<div class="ui form">
-			<?php echo $form->hiddenField($model,'id_tipo_trasplante',array('type'=>"hidden",'value'=>'2')); ?>
 			<?php echo $form->hiddenField($model,'id_paciente',array('type'=>"hidden",'value'=> $_GET['id_p'])); ?>
-			<?php
-			$length = (string)($_GET['me']);
-			$donacion=DonacionMedula::model()->findAll(array('select'=>'id','condition'=>'rut_donante='."'$donante->rut'"));
-		    echo $form->hiddenField($model,'id_donacion',array('type'=>"hidden",'value'=>$donacion[0]->id)); ?>
-       		<br>
+			<div class="fields">
+       		<div class="four wirde field">
+				    <?php echo $form->labelEx($model,'Medula Trasplantada'); ?>
+					<?php echo Chtml::textField('Trasplante[Medula]','Medula Osea', array('readonly'=>true)); ?>
+			</div>
+		</div>
 		    <div class="fields">
 			 	<div class="field">
 					<?php echo $form->labelEx($model,'detalle del trasplante:'); ?>

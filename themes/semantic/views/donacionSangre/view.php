@@ -23,7 +23,7 @@ Ver Donación de Sangre #<?php echo $model->id;; ?></h1>
 
 	<div class="twelve wide column">
 
-<?php  $modelo_d = Donantes::model()->find('rut = '."'$model->rut_donante'"); ?>
+<?php  $modelo_d = Donantes::model()->find('id='.$model->id_donante); ?>
 
 	<?php $this->widget('zii.widgets.CDetailView', array(
 		'data'=>$model,
@@ -39,7 +39,7 @@ Ver Donación de Sangre #<?php echo $model->id;; ?></h1>
 			),
 			array(
 				'name'=>'Rut',
-				'value'=>$model->rut_donante,
+				'value'=>$modelo_d->rut,
 			),
 			'tipo_sangre',
 			'cantidad',
@@ -49,7 +49,7 @@ Ver Donación de Sangre #<?php echo $model->id;; ?></h1>
 			),
 			array(
 				'name'=>'Hora',
-				'value'=>Yii::app()->dateFormatter->format('HH:mm',$model->created),
+				'value'=>Yii::app()->dateFormatter->format('HH:mm',$model->modified),
 			),
 		),
 		'htmlOptions'=>array('class'=>'ui celled table segment autosize'),
