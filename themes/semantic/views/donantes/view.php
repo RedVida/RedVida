@@ -9,10 +9,15 @@ $this->menu=array(
 	array('label'=>'Listar Donantes', 'url'=>array('index')),
 	array('label'=>'Registrar Alergia', 'url'=> array('registrar_alergia', 'id'=> $model->id)),
 	array('label'=>'Registrar Enfermedad', 'url'=> array('registrarenfermedad', 'id'=> $model->id)),
+<<<<<<< HEAD
 
 );
 }
 ?>
+=======
+	}
+);?>
+>>>>>>> origin/master
 
 <div class="ui black ribbon label">
 	<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
