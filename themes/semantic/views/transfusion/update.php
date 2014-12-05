@@ -1,11 +1,11 @@
 <?php
-
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->breadcrumbs=array(
 	'Trasplantes'=>array('index'),
 	$model->id=>array('view','id'=>$model->id),
 	'Update',
 );
-
+}
 $this->menu=array(
 	array('label'=>'Listar Transfusiones', 'url'=>array('index')),
 	array('label'=>'Registrar Trasplante', 'url'=>array('/paciente/asignar')),

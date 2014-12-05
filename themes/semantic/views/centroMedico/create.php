@@ -6,11 +6,12 @@ $this->breadcrumbs=array(
 	'Centro Medicos'=>array('index'),
 	'Create',
 );
-
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Administrar C.Medico', 'url'=>array('admin')),
 	array('label'=>'Listar C.Medico', 'url'=>array('index')),
 );
+}
 ?>
 
 <br>

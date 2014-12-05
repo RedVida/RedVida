@@ -1,9 +1,11 @@
 <?php
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
   array('label'=>'Registrar Paciente', 'url'=>array('create')),
   array('label'=>'Lista Paciente', 'url'=>array('index')),
   array('label'=>'Administrar Paciente', 'url'=>array('admin')),
 );
+}
 ?>
 
 

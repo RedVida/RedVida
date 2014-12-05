@@ -1,8 +1,10 @@
 <?php
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Listar Banco de Sangre', 'url'=>array('index')),
 	array('label'=>'Administrar Banco de Sangre', 'url'=>array('admin')),
 );
+}
 ?>
 
 <div class="ui black ribbon label">

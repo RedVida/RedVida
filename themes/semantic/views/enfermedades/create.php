@@ -6,11 +6,12 @@ $this->breadcrumbs=array(
 	'Enfemedades'=>array('index'),
 	'Create',
 );
-
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Administrar Enfemedades', 'url'=>array('admin')),
 	array('label'=>'Listar Enfemedades', 'url'=>array('index')),
 );
+}
 ?>
 
 <br>

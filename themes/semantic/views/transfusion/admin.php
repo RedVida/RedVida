@@ -1,9 +1,10 @@
 <?php
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Listar Transfusiones', 'url'=>array('index')),
 	array('label'=>'Registrar Trasplante', 'url'=>array('/paciente/asignar')),
 );
-
+}
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
 	$('.search-form').toggle();

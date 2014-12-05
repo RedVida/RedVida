@@ -1,4 +1,5 @@
 <?php
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Listar Transfusiones', 'url'=>array('index')),
 	array('label'=>'Registrar Trasplante', 'url'=>array('/paciente/asignar')),
@@ -6,6 +7,7 @@ $this->menu=array(
 	array('label'=>'Eliminar Transfusión', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Está seguro que desea borrar este elemento?')),
 	array('label'=>'Administrar Transfusiones', 'url'=>array('admin')),
 );
+}
 ?>
 
 <div class="ui black ribbon label">

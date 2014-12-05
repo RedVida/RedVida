@@ -7,13 +7,14 @@ $this->breadcrumbs=array(
 	$model->id=>array('view','id'=>$model->id),
 	'Update',
 );
-
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Administrar Donantes', 'url'=>array('admin')),
 	array('label'=>'Listar Donantes', 'url'=>array('index')),
 	array('label'=>'Registrar Donantes', 'url'=>array('create')),
 	array('label'=>'Ver Donante', 'url'=>array('view', 'id'=>$model->id)),	
 );
+}
 ?>
 
 <br>

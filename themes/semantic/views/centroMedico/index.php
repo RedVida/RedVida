@@ -5,12 +5,13 @@
 $this->breadcrumbs=array(
 	'Centro Medicos',
 );
-
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Administrar C.Medico', 'url'=>array('admin')),
 	array('label'=>'Generar Informe', 'url'=>array('informe')),
 	array('label'=>'Registrar C.Medico', 'url'=>array('create')),
 );
+}
 ?>
 
 <br>

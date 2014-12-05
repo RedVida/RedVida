@@ -1,10 +1,11 @@
 <?php
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Administrar Donaciones de Sangre', 'url'=>array('/donacionSangre/admin')),
 	array('label'=>'Administrar Donaciones de Médula', 'url'=>array('/donacionMedula/admin')),
 	array('label'=>'Administrar Donaciones de Órgano', 'url'=>array('/donacionOrgano/admin')),
 );
-
+}
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
 	$('.search-form').toggle();

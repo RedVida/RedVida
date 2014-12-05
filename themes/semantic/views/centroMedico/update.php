@@ -7,13 +7,14 @@ $this->breadcrumbs=array(
 	$model->id=>array('view','id'=>$model->id),
 	'Update',
 );
-
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Administrar C.Medicos', 'url'=>array('admin')),
 	array('label'=>'Listar C.Medicos', 'url'=>array('index')),
 	array('label'=>'Registrar C.Medico', 'url'=>array('create')),
 	array('label'=>'Ver C.Medicos', 'url'=>array('view', 'id'=>$model->id)),
 );
+}
 ?>
 
 <br>

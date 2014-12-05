@@ -5,12 +5,13 @@
 $this->breadcrumbs=array(
 	'Donantes',
 );
-
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Administrar Donantes', 'url'=>array('admin')),
 	array('label'=>'Generar Informe', 'url'=>array('informe')),
 	array('label'=>'Registrar Donantes', 'url'=>array('create')),
 );
+}
 ?>
 
 <br>

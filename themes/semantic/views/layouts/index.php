@@ -141,6 +141,7 @@
             <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/admin">
               <i class="doble angle right icon"></i> Administrar C. Medicos
             </a>
+            <?php } ?>
             <?php if(Yii::app()->user->checkAccess('tester')){ ?>
              <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/informe">
               <i class="doble angle right icon"></i> Generar Informe
@@ -149,7 +150,6 @@
             <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/">
               <i class="doble angle right icon"></i> Listar C. Medicos
             </a>
-             <?php } ?>
              
              
           </div>       
@@ -315,22 +315,24 @@
         <?php if(Yii::app()->user->checkAccess('tester')){ ?>
 
       <div class="ui pointing dropdown link item">
-
+          <?php if(Yii::app()->user->checkAccess('tester')){ ?>
           <i class="asterisk icon"></i> Trasplantes <i class="dropdown icon"></i>
           <div class="menu">
-           
+           <?php } ?>
+           <?php if(Yii::app()->user->checkAccess('tester')){ ?>
            <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/asignar">
             <i class="doble angle right icon"></i> Registrar Trasplante
           </a>
-
-
+          <?php } ?>
+          <?php if(Yii::app()->user->checkAccess('tester')){ ?>
           <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/trasplante/admin">
             <i class="doble angle right icon"></i> Administrar Trasplantes
           </a>
-
+          <?php } ?>
+          <?php if(Yii::app()->user->checkAccess('tester')){ ?>
           <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/trasplante/informe">
             <i class="doble angle right icon"></i> Generar Informe
-
+            <?php } ?>
 
           <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/trasplante/">
             <i class="doble angle right icon"></i> Listar Trasplantes

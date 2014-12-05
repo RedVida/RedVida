@@ -6,11 +6,12 @@ $this->breadcrumbs=array(
 	'Donantes'=>array('index'),
 	'Registrar Alergia',
 );
-
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Listar Donante', 'url'=>array('index')),
 	array('label'=>'Registrar Donante', 'url'=>array('create')),
 );
+}
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){

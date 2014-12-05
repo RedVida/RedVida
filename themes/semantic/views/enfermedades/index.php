@@ -5,12 +5,13 @@
 $this->breadcrumbs=array(
 	'Enfermedadeses',
 );
-
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Administrar Enfermedades', 'url'=>array('admin')),
 	array('label'=>'Generar Informe', 'url'=>array('informe')),
 	array('label'=>'Registrar Enfermedades', 'url'=>array('create')),
 );
+}
 ?>
 
 <br>

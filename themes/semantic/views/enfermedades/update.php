@@ -7,7 +7,7 @@ $this->breadcrumbs=array(
 	$model->id=>array('view','id'=>$model->id),
 	'Update',
 );
-
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Administrar Enfermedades', 'url'=>array('admin')),
 	array('label'=>'Listar Enfermedades', 'url'=>array('index')),
@@ -15,6 +15,7 @@ $this->menu=array(
 	array('label'=>'Ver Enfermedades', 'url'=>array('view', 'id'=>$model->id)),
 	
 );
+}
 ?>
 
 <br>
