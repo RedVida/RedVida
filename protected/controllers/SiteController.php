@@ -5,14 +5,6 @@ class SiteController extends Controller
 	/**
 	 * Declares class-based actions.
 	 */
-<<<<<<< HEAD
-	
-=======
-	public function filters()
-	{
-		return array(array('CrugeAccessControlFilter'));
-	}
->>>>>>> origin/master
 
 	/**
 	 * This is the default 'index' action that is invoked
