@@ -6,7 +6,7 @@ $this->breadcrumbs=array(
 	'Donantes'=>array('index'),
 	'Manage',
 );
-
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Asignar Alergia', 'url'=>array('registra_alergia')),
 	array('label'=>'Asignar Enfermedad', 'url'=>array('registraenfermedad')),
@@ -15,7 +15,7 @@ $this->menu=array(
 	array('label'=>'Registrar Donantes', 'url'=>array('create')),
 
 );
-
+}
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
 	$('.search-form').toggle();

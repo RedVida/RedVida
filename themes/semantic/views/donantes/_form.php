@@ -128,10 +128,12 @@
 					       <?php echo $form->labelEx($model,'Estado Vital'); ?>
 					       <?php echo $form->dropDownList($model,'estado_vital',array(1=>'Vivo',2 =>'Fallecido'), array('empty' => 'Seleccione Estado vital', 'class'=>'ui selection dropdown')); ?>
 					</div>
-					<div class="four wide field">
-					       <?php echo $form->labelEx($model,'Tipo De Sangre'); ?>
-					       <?php echo $form->dropDownList($model,'tipo_sangre',CHtml::listData(BancoSangre::model()->findAll(),'tipo', 'tipo'), array('empty' => 'Seleccione Tipo Sangre', 'class'=>'ui selection dropdown')); ?>
-					</div>
+					<?php if(!isset($_GET['id'])){ ?>
+                    <div class="four wide field">
+                           <?php echo $form->labelEx($model,'Tipo De Sangre'); ?>
+                           <?php echo $form->dropDownList($model,'tipo_sangre',CHtml::listData(BancoSangre::model()->findAll(),'tipo', 'tipo'), array('empty' => 'Seleccione Tipo Sangre', 'class'=>'ui selection dropdown')); ?>
+                    </div>
+                    <?php } ?>
 				   	<div class="four wirde field">
 				        <?php echo $form->labelEx($model,'Centro Medico'); ?>
 						<?php echo $form->dropDownList($model,'id_centro_medico', CHtml::listData(CentroMedico::model()->findAll(),'id', 'nombre'), array('empty' => 'Seleccione Centro Medico', 'class'=>'ui selection dropdown')); ?>

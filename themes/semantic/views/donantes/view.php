@@ -1,7 +1,7 @@
 <?php
 /* @var $this DonantesController */
 /* @var $model Donantes */
-
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Administrar Donantes', 'url'=>array('admin')),
 	array('label'=>'Editar Donante', 'url'=>array('update', 'id'=>$model->id)),
@@ -9,8 +9,10 @@ $this->menu=array(
 	array('label'=>'Listar Donantes', 'url'=>array('index')),
 	array('label'=>'Registrar Alergia', 'url'=> array('registrar_alergia', 'id'=> $model->id)),
 	array('label'=>'Registrar Enfermedad', 'url'=> array('registrarenfermedad', 'id'=> $model->id)),
-	
-);?>
+
+);
+}
+?>
 
 <div class="ui black ribbon label">
 	<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;

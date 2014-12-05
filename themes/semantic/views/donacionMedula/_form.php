@@ -68,6 +68,11 @@
 	<?php echo $form->errorSummary($model, NULL, NULL, array("class" => "ui warning message"));?>
 	<?php $donante=Donantes::model()->find('id='.$_GET['id']); ?>
 
+<div class="ui definition table  ui green message">
+<div>Atención! el <b>"Tipo de Sangre"</b> del <b>Paciente</b> debe ser la misma del <b>Donante</b>.</div>
+</div>
+
+
 <div class="ui form">
 	 <div class="fields">
 	 	<div class="four wide field">

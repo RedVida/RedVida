@@ -11,12 +11,16 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'Lista Paciente', 'url'=>array('index')),
 	array('label'=>'Registrar Paciente', 'url'=>array('create')),
-	array('label'=>'View Paciente', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Ver Paciente', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Administrar Paciente', 'url'=>array('admin')),
 );
 ?>
 
-<h1 class="ui huge header add icon"> &nbsp; &nbsp; &nbsp; Actualizar Paciente: <?php echo $model->nombre; ?></h1>
+<br>
+<div class="ui black ribbon label">
+<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+Actualizar Paciente </h1>
+</div>
 <hr class="style-two ">
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

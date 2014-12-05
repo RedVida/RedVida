@@ -6,12 +6,12 @@ $this->breadcrumbs=array(
 	'Donantes'=>array('index'),
 	'Registrar Alergia',
 );
-
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Listar Donante', 'url'=>array('index')),
 	array('label'=>'Registrar Donante', 'url'=>array('create')),
 );
-
+}
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
 	$('.search-form').toggle();
@@ -40,7 +40,7 @@ $results =Donantes::model()->findAll(array('select'=>'id,estado_vital','conditio
 
 $values = array();
 foreach($results as $r){
-	$donacion_anterior =donacionOrgano::model()->findAll(array('select'=>'id_donante,nombre','condition'=>'id_donante='.$r->id));
+	$donacion_anterior =DonacionOrgano::model()->findAll(array('select'=>'id_donante,nombre','condition'=>'id_donante='.$r->id));
 
 	if($donacion_anterior){
 		

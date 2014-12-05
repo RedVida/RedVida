@@ -54,7 +54,7 @@ $(document).ready(function() {
 			<?php echo $form->hiddenField($model,'created', array('type'=>"hidden",'value'=> date("Y-m-d H:i:s"))); ?>
 			<?php echo $form->hiddenField($model,'modified', array('type'=>"hidden",'value'=> date("Y-m-d H:i:s"))); ?>
        		<br>
-       		<?php $bancoSangre=bancoSangre::model()->find('id='.$_GET['id']); ?>
+       		<?php $bancoSangre=BancoSangre::model()->find('id='.$_GET['id']); ?>
 		    <div class="fields">
 			 	<div class="two wirde field">
 					<?php echo $form->labelEx($model,'Cantidad a transferir:'); ?>

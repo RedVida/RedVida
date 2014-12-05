@@ -99,7 +99,7 @@
 	<div class="fields">
 	 	<div class="four wide field">
 			<?php echo $form->labelEx($model,'especialidad'); ?>
-			<?php echo $form->textField($model,'especialidad', array('size'=>60,'maxlength'=>128)); ?>
+			<?php echo $form->dropDownList($model,'especialidad',array('Cirugía'=>'Cirugía','Medicina General'=>'Medicina General','Salud Pública'=>'Salud Pública'), array('empty' => 'Seleccione Opcion', 'class'=>'ui selection dropdown')); ?>
 			<div class="errors">
 			<?php echo $form->error($model,'especialidad',array('class' => 'ui small red pointing above ui label')); ?>
 			</div>

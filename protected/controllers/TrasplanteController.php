@@ -213,7 +213,7 @@ public function actionPacienteList()
 			if($model->save())
 				$this->redirect(array('index'));
 		}
-		$this->render('trasplanteorgano',array(
+		$this->render('trasplanteOrgano',array(
 			'model'=>$model,
 		));
 	}
@@ -230,10 +230,9 @@ public function actionPacienteList()
 			if($model->validate()){
 		    $donante=Donantes::model()->find('id='.$_GET['id_d']);
 		    $paciente=Paciente::model()->find('id='.$_GET['id_p']);
-		    $donacion=DonacionMedula::model()->find('id_paciente='.$_GET['id_p'].' AND id_donante'.$_GET['id_d']);
+		    $donacion=DonacionMedula::model()->find('id_paciente='.$_GET['id_p'].' AND id_donante='.$_GET['id_d']);
 		    $model->nombre = 'Medula';
 		    $model->tipo = 'Osea';
-		    $model->id_donacion = $donacion->id;
 
 			$connection=Yii::app()->db;
 			$sql = 'UPDATE donacion_medula SET estado = 0 WHERE id_donante='.$_GET['id_d'].' AND id_paciente='.$_GET['id_p'];
@@ -248,10 +247,15 @@ public function actionPacienteList()
 			$command->execute();
 
 			}
-			if($model->save())
+			if($model->save()){
+			$connection=Yii::app()->db;
+			$sql = 'UPDATE trasplante SET id_donacion='.$donacion->id.' WHERE id='.$model->id;
+			$command = $connection->createCommand($sql);
+			$command->execute();
+			}
 				$this->redirect(array('index'));
 		}
-		$this->render('trasplantemedula',array(
+		$this->render('trasplanteMedula',array(
 			'model'=>$model,
 		));
 	}

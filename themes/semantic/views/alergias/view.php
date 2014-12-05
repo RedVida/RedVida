@@ -6,7 +6,7 @@ $this->breadcrumbs=array(
 	'Alergiases'=>array('index'),
 	$model->id,
 );
-
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Actualizar Alergias', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Administrar Alergias', 'url'=>array('admin')),
@@ -14,6 +14,7 @@ $this->menu=array(
 	array('label'=>'Listar Alergias', 'url'=>array('index')),
 	array('label'=>'Registrar Alergias', 'url'=>array('create')),
 );
+}
 ?>
 <br>
 <div class="ui black ribbon label">

@@ -1,11 +1,12 @@
 <?php
 /* @var $this TrasplanteController */
 /* @var $dataProvider CActiveDataProvider */
-
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Registrar Trasfusión', 'url'=>array('/paciente/asignar')),
 	array('label'=>'Administrar Transfusiones', 'url'=>array('admin')),
 );
+}
 ?>
 
 <div class="ui black ribbon label">

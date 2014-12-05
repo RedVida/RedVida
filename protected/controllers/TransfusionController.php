@@ -211,7 +211,7 @@ class TransfusionController extends Controller
 			if($model->save())
 				$this->redirect(array('index'));
 		}
-		$this->render('TransfusionSangre',array(
+		$this->render('transfusionSangre',array(
 			'model'=>$model,
 		));
 	}

@@ -6,13 +6,13 @@ html,
 
 body {
   font-size: 15px;
-  height: 100%;
 }
 
 body {
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   background-image: url(../../../images/bg.jpg);
-  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100%;
   margin-left: 80px;
   margin-right: 80px;
   margin-top: 80px;
@@ -20,7 +20,6 @@ body {
   padding: 0px;
   color: #555555;
   text-rendering: optimizeLegibility;
-  min-width: 320px;
 }
 
 

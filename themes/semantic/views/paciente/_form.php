@@ -104,10 +104,12 @@
 
 	
 
-	<div class="four wide field">
-	       <?php echo $form->labelEx($model,'Tipo De Sangre'); ?>
-	       <?php echo $form->dropDownList($model,'tipo_sangre',CHtml::listData(BancoSangre::model()->findAll(),'tipo', 'tipo'), array('empty' => 'Selecciona Tipo Sangre', 'class'=>'ui selection dropdown')); ?>
-	</div>
+	<?php if(!isset($_GET['id'])){ ?>
+                    <div class="four wide field">
+                           <?php echo $form->labelEx($model,'Tipo De Sangre'); ?>
+                           <?php echo $form->dropDownList($model,'tipo_sangre',CHtml::listData(BancoSangre::model()->findAll(),'tipo', 'tipo'), array('empty' => 'Seleccione Tipo Sangre', 'class'=>'ui selection dropdown')); ?>
+                    </div>
+                    <?php } ?>
 	
    	<div class="four wirde field">
         <?php echo $form->labelEx($model,'Centro Medico'); ?>

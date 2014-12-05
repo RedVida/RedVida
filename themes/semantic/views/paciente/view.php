@@ -4,13 +4,14 @@ $this->breadcrumbs=array(
 	'Pacientes'=>array('index'),
 	$model->id,
 );
-
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Lista Paciente', 'url'=>array('index')),
 	array('label'=>'Registrar Paciente', 'url'=>array('create')),
 	array('label'=>'Actualizar Paciente', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Administrar Paciente', 'url'=>array('admin')),
 );
+}
 ?>
 <br>
 <div class="ui black ribbon label">

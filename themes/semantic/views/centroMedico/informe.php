@@ -39,7 +39,7 @@ Generar Informe - Centros Medicos </h1>
 					<div class="fields">
 						<div class="three wide field">
 							<?php echo $form->labelEx($model,'Especialidad:'); ?>
-							<?php echo $form->textField($model,'especialidad'); ?>
+							<?php echo $form->dropDownList($model,'especialidad',array('Cirugía'=>'Cirugía','Medicina General'=>'Medicina General','Salud Pública'=>'Salud Pública'), array('empty' => 'Seleccione Opcion', 'class'=>'ui selection dropdown')); ?>
 						 </div>
                     </div>
                     <div class="fields">

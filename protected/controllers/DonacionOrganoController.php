@@ -13,10 +13,7 @@ class DonacionOrganoController extends Controller
 	 */
 	public function filters()
 	{
-		return array(
-			'accessControl', // perform access control for CRUD operations
-			'postOnly + delete', // we only allow deletion via POST request
-		);
+		return array(array('CrugeAccessControlFilter'));
 	}
 
 	/**
@@ -182,7 +179,7 @@ class DonacionOrganoController extends Controller
 			$mPDF1->WriteHTML('<br>');
 			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/line2.png' ));
 			$mPDF1->WriteHTML('<br> ');
-			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/informe_donacion_sangre.png' ));
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/informe_donaciones.png' ));
 			$where_array = array();
 			$OK = true;
 		    if($_POST['DonacionOrgano']['desde']!=''){ 

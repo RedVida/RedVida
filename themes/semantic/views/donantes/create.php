@@ -6,11 +6,12 @@ $this->breadcrumbs=array(
 	'Donantes'=>array('index'),
 	'Crear',
 );
-
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
   array('label'=>'Administrar Donantes', 'url'=>array('admin')),
 	array('label'=>'Listar Donantes', 'url'=>array('index')),
 );
+}
 ?>
 <br>
 <div class="ui black ribbon label">

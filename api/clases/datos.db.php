@@ -1,9 +1,9 @@
 <?php
 	if(!defined('host')and!defined('user')and!defined('password')and!defined('database')){
-	define('host', '127.0.0.1');
-	define('user', 'root'); //ii_user
-	define('password','');
-	define('database','redvida');		
+	define('host', 'localhost');
+	define('user', 'TISW_GRUPO2'); //ii_user
+	define('password','Paradise');
+	define('database','TISW_GRUPO2');		
 	}
 
 	

@@ -127,7 +127,7 @@ Lista de pacientes - Registrar Trasplante </h1>
  						'Sangre' => array
  						(
 					    	'label'=>'Transfusión de Sangre',
-					        'url'=>'Yii::app()->createUrl("/bancosangre/Transfusion_sanguinea&id=$data->id")',
+					        'url'=>'Yii::app()->createUrl("/bancoSangre/Transfusion_sanguinea&id=$data->id")',
 					    ),	
 					),
 				),

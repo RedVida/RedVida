@@ -6,11 +6,12 @@ $this->breadcrumbs=array(
 	'Donantes'=>array('index'),
 	'Registrar Alergia',
 );
-
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Listar Donante', 'url'=>array('index')),
 	array('label'=>'Registrar Donante', 'url'=>array('create')),
 );
+}
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -110,7 +111,7 @@ $dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
 		            'buttons'=>array(
 					'Registrar' => array( //botón para la acción nueva
 				    'label'=>'Registrar Transfusion', // titulo del enlace del botón nuevo
-				    'url'=>'Yii::app()->createUrl("/transfusion/transfusionsangre&id=$data->id&id_p='.$id_p.'")', //url de la acción nueva
+				    'url'=>'Yii::app()->createUrl("/transfusion/transfusionSangre&id=$data->id&id_p='.$id_p.'")', //url de la acción nueva
 				    //'visible'=>'($data->estado==="DISPONIBLE")?true:false;'
 				    ),
 				 ),

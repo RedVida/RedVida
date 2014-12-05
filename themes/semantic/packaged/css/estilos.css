@@ -302,3 +302,10 @@ div.user-assignments-detail #lista1 .boton {
 div.user-assignments-detail #lista2 .boton {
 	background-image: url("/../images/hand.png");
 }
+
+img{
+
+height: auto;
+max-width: 100%;
+
+}

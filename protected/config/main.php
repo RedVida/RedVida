@@ -187,10 +187,10 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=redvida',
+			'connectionString' => 'mysql:host=localhost;dbname=TISW_GRUPO2',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
+			'username' => 'TISW_GRUPO2',
+			'password' => 'Paradise',
 			'charset' => 'utf8',
 		),
 		

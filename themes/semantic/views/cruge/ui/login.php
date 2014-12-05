@@ -43,7 +43,7 @@ $this->redirect(Yii::app()->baseurl);
 	    	  
 	    	  <h4>Usuario</h4>
 	    	  <div class="ui left labeled icon input">
-			      <?php echo $form->textField($model,'username', array('placeholder'=>'Usuario')); ?>
+			      <?php echo $form->textField($model,'username', array('placeholder'=>'Usuario', "class"=>"texto")); ?>
 			      <i class="user icon"></i>
 			      <div class="errors">	
 				  <?php echo $form->error($model,'username',array('class' => 'ui small red pointing above ui label')); ?> 
@@ -59,7 +59,7 @@ $this->redirect(Yii::app()->baseurl);
 	     
 	     	  <h4>Contraseña</h4>
 	          <div class="ui left labeled icon input">
-	     	  	  <?php echo $form->passwordField($model,'password', array('placeholder'=>'Contraseña')); ?>
+	     	  	  <?php echo $form->passwordField($model,'password', array('placeholder'=>'Contraseña', "class"=>"texto")); ?>
 	              <i class="lock icon"></i>
 	              <div class="errors">	 	
 	              <?php echo $form->error($model,'password',array('class' => 'ui small red pointing above ui label')); ?> 
@@ -82,12 +82,11 @@ $this->redirect(Yii::app()->baseurl);
 			<div class="row buttons">
 				<?php echo CHtml::submitButton(CrugeTranslator::t('Ingresar', "Ingresar"),array("class"=>"ui blue submit button")); ?><p></p>
 				<?php echo Yii::app()->user->ui->passwordRecoveryLink; ?><br>
-				<?php if(Yii::app()->user->um->getDefaultSystem()->getn('registrationonlogin')===1) echo Yii::app()->user->ui->registrationLink; ?>
+				<?php //if(Yii::app()->user->um->getDefaultSystem()->getn('registrationonlogin')===1) echo Yii::app()->user->ui->registrationLink; ?>
 				</br></br>
 		    </div>
 	  	</div>
 			</br></br></br>
-			
 		<?php
 		if(Yii::app()->getComponent('crugeconnector') != null){
 		if(Yii::app()->crugeconnector->hasEnabledClients){ 
@@ -112,3 +111,18 @@ $this->redirect(Yii::app()->baseurl);
 	</div>
 	<hr class="style-two ">
 	<?php endif; ?>
+
+
+<script type="text/javascript">
+	
+$(document).ready(function() {
+    $('.texto').keydown(function(event) {
+        if (event.keyCode == 13) {
+            this.form.submit();
+            return false;
+         }
+    });
+});
+
+
+</script>

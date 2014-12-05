@@ -6,11 +6,12 @@ $this->breadcrumbs=array(
 	'Alergiases'=>array('index'),
 	'Create',
 );
-
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Administrar Alergias', 'url'=>array('admin')),
 	array('label'=>'Listar Alergias', 'url'=>array('index')),
 );
+}
 ?>
 
 <br>

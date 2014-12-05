@@ -179,7 +179,7 @@ class CentroMedicoController extends Controller
 			$mPDF1->WriteHTML('<br>');
 			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/line2.png' ));
 			$mPDF1->WriteHTML('<br> ');
-			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/informe_centros_medicos.png' ));
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/Informe_centros_medicos.png' ));
 			$where_array = array();
 			
 		    if($_POST['CentroMedico']['especialidad']!=''){ 

@@ -17,6 +17,7 @@
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/views/layouts/main.css">   
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/modal.css"> 
   <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/css/estilos.css">
+  <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/jquery.js"></script>
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/carousel.js"></script>
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/semantic.min.js"></script>  
   <script src="<?php echo Yii::app()->request->baseUrl; ?>/themes/semantic/packaged/javascript/views/layouts/main.js"></script>
@@ -141,6 +142,7 @@
             <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/admin">
               <i class="doble angle right icon"></i> Administrar C. Medicos
             </a>
+            <?php } ?>
             <?php if(Yii::app()->user->checkAccess('tester')){ ?>
              <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/informe">
               <i class="doble angle right icon"></i> Generar Informe
@@ -149,7 +151,6 @@
             <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/centroMedico/">
               <i class="doble angle right icon"></i> Listar C. Medicos
             </a>
-             <?php } ?>
              
              
           </div>       
@@ -177,15 +178,15 @@
           <i class="doble angle right icon"></i> Registrar Donación Sangre
         </a>
 
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/medula/informe">
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionMedula/informe">
           <i class="doble angle right icon"></i> Generar Informe D.Medula
         </a>
 
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/organo/informe">
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionOrgano/informe">
           <i class="doble angle right icon"></i> Generar Informe D.Organo
         </a>
 
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/sangre/informe">
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donacionSangre/informe">
           <i class="doble angle right icon"></i> Generar Informe D.Sangre
         </a>
         

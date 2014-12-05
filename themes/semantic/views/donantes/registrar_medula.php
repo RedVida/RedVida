@@ -6,11 +6,12 @@ $this->breadcrumbs=array(
 	'Donantes'=>array('index'),
 	'Registrar Alergia',
 );
-
+if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Listar Donante', 'url'=>array('index')),
 	array('label'=>'Registrar Donante', 'url'=>array('create')),
 );
+}
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -97,6 +98,7 @@ $dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
 <?php
  function organo_donado($val){
  		$array_organo = array();
+ 		$array_valor = array();
 	    $Criteria = new CDbCriteria();
 	    $Criteria->condition = "id_donante =".$val; 
 	    $organo= DonacionOrgano::model()->findAll($Criteria);

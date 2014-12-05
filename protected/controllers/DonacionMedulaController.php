@@ -193,7 +193,7 @@ class DonacionMedulaController extends Controller
 			$mPDF1->WriteHTML('<br>');
 			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/line2.png' ));
 			$mPDF1->WriteHTML('<br> ');
-			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/informe_donacion_sangre.png' ));
+			$mPDF1->WriteHTML(CHtml::image(Yii::getPathOfAlias('webroot.css') . '/informe_donaciones.png' ));
 			$where_array = array();
 			$OK = true;
 		    if($_POST['DonacionMedula']['desde']!=''){ 
