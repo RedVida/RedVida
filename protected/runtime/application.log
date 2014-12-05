@@ -4324,3 +4324,11 @@ HTTP_REFERER=http://localhost:8080/redvida/
 REQUEST_URI=/redvida/
 HTTP_REFERER=http://localhost:8080/redvida/
 ---
+2014/12/05 16:28:02 [error] [application] UiController
+CrugeUser->validate es false
+<div class="errorSummary"><p>Por favor corrija los siguientes errores de ingreso:</p>
+<ul>
+<li>clave invalida</li>
+</ul></div>
+in C:\xampp\htdocs\RedVida\protected\modules\cruge\controllers\UiController.php (159)
+in C:\xampp\htdocs\RedVida\index.php (14)

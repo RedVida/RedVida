@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 
 <?php 
-<<<<<<< HEAD
+
 if(Yii::app()->user->checkAccess('tester')){
 
 $this->menu=array(
@@ -12,14 +12,7 @@ $this->menu=array(
 	array('label'=>'Registrar Donante', 'url'=>array('create')),
 ); 
 } ?>
-=======
-if(Yii::app()->user->checkAccess('tester')){ 
-$this->menu=array(
-	array('label'=>'Listar Donante', 'url'=>array('index')),
-	array('label'=>'Registrar Donante', 'url'=>array('create')),
-); ?>
-}
->>>>>>> origin/master
+
 <script type="text/javascript">
 	$(function(){
         $('#busquedaAlergia').autocomplete({
