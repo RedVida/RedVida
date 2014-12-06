@@ -75,7 +75,17 @@ Administrar Órganos </h1>
 	</div>
 
 </div>
+<?php 
 
+function user_centro_medico($val){
+	$centro_medico_user =TieneCentroMedico::model()->find('id_user='.Yii::app()->user->id);
+
+	$donante=Donantes::model()->find('id='.$val.' AND  id_centro_medico='.$centro_medico_user->id_centro_medico);
+	if($donante)return true;
+	else return false;
+}
+
+?>
 <hr class="style-two ">
 
 <div class="ui grid">
@@ -105,7 +115,11 @@ Administrar Órganos </h1>
 		    ),
 		    array(
 					'class'=>'CButtonColumn',
-				),
+					 'buttons'=>array(
+        						'delete' => array('visible' => 'user_centro_medico($data->id_donante)'),
+        						'update' => array('visible' => 'user_centro_medico($data->id_donante)'),
+				      ),
+			    ),
 
 
 			

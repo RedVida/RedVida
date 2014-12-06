@@ -72,7 +72,12 @@ function donante($val,$tipo){
 function paciente($val){
 	$paciente=Paciente::model()->find('id='.$val);
 return $paciente->nombre.' '.$paciente->apellido;
-}  
+}
+function user_centro_medico($val){
+		$centro_medico_user =TieneCentroMedico::model()->find('id_user='.Yii::app()->user->id);	
+		if($centro_medico_user->id == $val)return true;
+		else return false;
+ }
 ?>
 		<?php $this->widget('zii.widgets.grid.CGridView', array(
 			'id'=>'trasplante-grid',
@@ -88,7 +93,11 @@ return $paciente->nombre.' '.$paciente->apellido;
 				'modified',
 				array(
 					'class'=>'CButtonColumn',
-				),
+					 'buttons'=>array(
+        						'delete' => array('visible' => 'user_centro_medico($data->id_centro_medico)'),
+        						'update' => array('visible' => 'user_centro_medico($data->id_centro_medico)'),
+				      ),
+			    ),
 			))); 
 			?>
 

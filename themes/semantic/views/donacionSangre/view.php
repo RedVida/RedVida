@@ -2,8 +2,8 @@
 $this->menu=array(
 	array('label'=>'Listar Donación de Sangre', 'url'=>array('index')),
 	array('label'=>'Registrar Donación', 'url'=>array('/donantes/donar')),
-	array('label'=>'Actualizar Donación de Sangre', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Eliminar Donación de Sangre', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Está seguro que desea borrar este elemento?')),
+	array('label'=>'Actualizar Donación de Sangre', 'url'=>array('update', 'id'=>$model->id),'visible'=>($this->getCM_donador($model->id_donante))),
+	array('label'=>'Eliminar Donación de Sangre', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Está seguro que desea borrar este elemento?'),'visible'=>($this->getCM_donador($model->id_donante))),
 	array('label'=>'Administrar Donación de Sangre', 'url'=>array('admin')),
 );
 ?>

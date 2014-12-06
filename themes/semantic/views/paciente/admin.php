@@ -40,9 +40,19 @@ Administrar Pacientes </h1>
 )); ?>
 </div><!-- search-form -->
 
+<?php 
+$pacientes=Paciente::model()->findAll('id_centro_medico='.$this->getCM_user());
+$values= array();
+foreach ($pacientes as $r) $values[]=$r->id;
+$criteria = new CDbCriteria();
+$criteria->addInCondition('id',$values,'OR');
+$dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
+
+?>
+
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'paciente-grid',
-	'dataProvider'=>$model->search(),
+	'dataProvider'=>$dataProvider,
 	'filter'=>$model,
 	'columns'=>array(
 		'nombre',
@@ -56,9 +66,6 @@ Administrar Pacientes </h1>
 		'tipo_sangre',
 		'id_centro_medico',
 		*/
-		array(
-			'class'=>'CButtonColumn',
-		),
 		array(
             'class' => 'CButtonColumn',
             'template'=>'{Registrar}', // botones a mostrar

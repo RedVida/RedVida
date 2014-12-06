@@ -145,6 +145,7 @@ return array(
 		),
 		'user'=>array(
 			'allowAutoLogin'=>true,
+			'class'=>'CWebUser',
 			'class' => 'application.modules.cruge.components.CrugeWebUser',
 			'loginUrl' => array('/cruge/ui/login'),
 			'autoUpdateFlash'=>'false',

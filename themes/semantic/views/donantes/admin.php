@@ -37,9 +37,23 @@ Registrar Donante </h1>
 <hr class="style-two ">
 <?php echo CHtml::link('&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Busqueda Avanzada','#',array('class'=>'search-button')); ?>
 <div class="search-form " style="display:none">
+
 <?php $this->renderPartial('_search',array(
 	'model'=>$model
 )); ?>
+
+<?php 
+ function user_centro_medico($val){
+		$centro_medico_user =TieneCentroMedico::model()->find('id_user='.Yii::app()->user->id);
+		if($centro_medico_user->id == $val)return true;
+		else return false;
+ }
+ function name_centro_medico($val){
+		$centro_medico=CentroMedico::model()->find('id='.$val);
+		return $centro_medico->nombre;
+ }
+
+?>
 </div><!-- search-form -->
 <div class="ui grid">
 	<div class="one wide column"></div>
@@ -53,16 +67,18 @@ Registrar Donante </h1>
 				'apellidos',
 				'rut',
 				'tipo_sangre',
-				'direccion',
 				'num_contacto',
 				'fecha_ingreso',
-				'fecha_nacimiento',
 				'sexo',
 				'edad',
+				'id_centro_medico'=>array('header'=>'Centro Medico','name'=>'id_centro_medico', 'value'=>'name_centro_medico($data->id_centro_medico)'),
 				array(
 					'class'=>'CButtonColumn',
-				),
-			)
-		)); ?>
+					 'buttons'=>array(
+        						'delete' => array('visible' => 'user_centro_medico($data->id_centro_medico)'),
+        						'update' => array('visible' => 'user_centro_medico($data->id_centro_medico)'),
+				      ),
+			    ),
+		    ))); ?>
 	</div>
 </div>

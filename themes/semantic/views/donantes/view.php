@@ -4,8 +4,8 @@
 if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Administrar Donantes', 'url'=>array('admin')),
-	array('label'=>'Editar Donante', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Eliminar Donante', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Esta seguro que desea elminar este Donante?')),
+	array('label'=>'Editar Donante', 'url'=>array('update', 'id'=>$model->id),'visible'=>($model->id_centro_medico == $this->getCM_user())),
+	array('label'=>'Eliminar Donante', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Esta seguro que desea elminar este Donante?'),'visible'=>($model->id_centro_medico == $this->getCM_user())),
 	array('label'=>'Listar Donantes', 'url'=>array('index')),
 	array('label'=>'Registrar Alergia', 'url'=> array('registrar_alergia', 'id'=> $model->id)),
 	array('label'=>'Registrar Enfermedad', 'url'=> array('registrarenfermedad', 'id'=> $model->id)),
@@ -13,11 +13,16 @@ $this->menu=array(
 );
 }
 ?>
+<script>
+$('#myflashwrapper').html(message).fadeIn().delay(3000).fadeOut();
+</script>
+<div id="myflashwrapper" style="display: none;"></div>
 
 <div class="ui black ribbon label">
 	<h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
 	Donante: <?php echo $model->nombres.' '.$model->apellidos ;  ?></h1>
 </div>
+<div id="myflashwrapper" style="display: none;"></div>
 <hr class="style-two ">
 <div class="ui grid">
 	<div class="one wide column"></div>

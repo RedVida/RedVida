@@ -102,13 +102,18 @@ Lista de pacientes - Registrar Trasplante </h1>
 
 
 <?php echo CHtml::beginForm();
-
+	$values = array();
+	$pacientes=Paciente::model()->findAll('id_centro_medico='.$this->getCM_user());
+	foreach($pacientes as $r)$values[]=$r->id;
+	$criteria = new CDbCriteria();
+	$criteria->addInCondition('id',$values,'OR');
+	$dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
  ?>
-
+   
 <?php 
     $this->widget('zii.widgets.grid.CGridView', array(
     'id'=>'paciente-grid',
-    'dataProvider'=>$model->search(),
+    'dataProvider'=>$dataProvider,
     'filter'=>$model,
     'selectableRows' => 1,
     'columns'=>array(

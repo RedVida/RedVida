@@ -1,11 +1,8 @@
 <?php
 
 class DonantesController extends Controller
-{
-	/**
-	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-	 * using two-column layout. See 'protected/views/layouts/column2.php'.
-	 */
+{   
+	                                           
 	public $layout='//layouts/column2';
 
 	/**
@@ -16,11 +13,15 @@ class DonantesController extends Controller
 		return array(array('CrugeAccessControlFilter'));
 	}
 
-	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
+	public function getCM_user(){
+
+		if(!Yii::app()->user->isGuest){
+			$centro_medico_user=TieneCentroMedico::model()->find('id_user='.Yii::app()->user->id);
+			$centro_medico=CentroMedico::model()->find('id='.$centro_medico_user->id_centro_medico); 
+			return $centro_medico->id;
+		}
+		else return 0;  
+	}
 	public function accessRules()
 	{
 		return array(
@@ -189,8 +190,8 @@ class DonantesController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Donantes']))
+     echo Yii::app()->user->getFlash('success');
+		if(isset($_POST['Donantes']) && $model->id_centro_medico == $this->getCM_user())
 		{
 			$model->attributes=$_POST['Donantes'];
 			if($model->save())
@@ -208,8 +209,8 @@ class DonantesController extends Controller
 	 * @param integer $id the ID of the model to be deleted
 	 */
 	public function actionDelete($id)
-	{
-		$this->loadModel($id)->delete();
+	{    
+		  $this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
@@ -360,8 +361,7 @@ class DonantesController extends Controller
 	public function loadModel($id)
 	{
 		$model=Donantes::model()->findByPk($id);
-		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
+		if($model===null)throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
 

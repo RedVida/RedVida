@@ -15,7 +15,18 @@ class DonacionSangreController extends Controller
 	{
 		return array(array('CrugeAccessControlFilter'));
 	}
+    
+    public function getCM_Donador($id_donante){
 
+		if(!Yii::app()->user->isGuest){
+			$centro_medico_user=TieneCentroMedico::model()->find('id_user='.Yii::app()->user->id);
+			$centro_medico=CentroMedico::model()->find('id='.$centro_medico_user->id_centro_medico);
+			$donante=Donantes::model()->find('id='.$id_donante);
+			if($donante->id_centro_medico==$centro_medico->id) return true;
+			else false;
+		}
+		else return 0;  
+	}
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.

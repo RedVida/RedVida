@@ -50,6 +50,7 @@
 				    CClientScript::POS_READY
 				); ?>
 				<?php echo $form->errorSummary($model, NULL, NULL, array("class" => "ui warning message"));?>
+				<?php $centro_medico=CentroMedico::model()->find('id='.$this->getCM_user()); ?>
 
 				<div class="ui form">
 				   <div class="fields">
@@ -116,6 +117,7 @@
 							</div>
 						</div>
 					</div>
+					
 					<div class="four wide field">
 					       <?php echo $form->labelEx($model,'Sexo'); ?>
 					       <?php echo $form->dropDownList($model,'sexo',array(1=>'M',2 =>'F'), array('empty' => 'Seleccione Sexo', 'class'=>'ui selection dropdown')); ?>
@@ -134,11 +136,16 @@
                            <?php echo $form->dropDownList($model,'tipo_sangre',CHtml::listData(BancoSangre::model()->findAll(),'tipo', 'tipo'), array('empty' => 'Seleccione Tipo Sangre', 'class'=>'ui selection dropdown')); ?>
                     </div>
                     <?php } ?>
-				   	<div class="four wirde field">
-				        <?php echo $form->labelEx($model,'Centro Medico'); ?>
-						<?php echo $form->dropDownList($model,'id_centro_medico', CHtml::listData(CentroMedico::model()->findAll(),'id', 'nombre'), array('empty' => 'Seleccione Centro Medico', 'class'=>'ui selection dropdown')); ?>
+					 <div class="fields">    
+				        <div class="five wide field">
+							<?php echo $form->labelEx($model,'Centro Medico'); ?>
+							<?php echo Chtml::textField('nombre_centro_medico[Donantes]',$centro_medico->nombre,array('readonly'=>'true')); ?>
+							<?php echo $form->hiddenField($model, 'id_centro_medico', array('value'=> $this->getCM_user())); ?>
+							<div class="errors">
+							<?php echo $form->error($model,'id_centro_medico',array('class' => 'ui small red pointing above ui label')); ?>
+							</div>
+						</div>
 					</div>
-					
 				   </div>   
 				        <?php echo $form->hiddenField($model, 'fecha_ingreso', array('value'=> new CDbExpression('NOW()'))); ?>
 					<br>

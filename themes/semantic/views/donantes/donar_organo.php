@@ -36,7 +36,7 @@ $('.search-form form').submit(function(){
 
 <?php  
 
-$results =Donantes::model()->findAll(array('select'=>'id,estado_vital','condition'=>'voluntario = 1'));
+$results =Donantes::model()->findAll(array('select'=>'id,estado_vital','condition'=>'voluntario = 1 AND id_centro_medico='.$this->getCM_user().''));
 
 $values = array();
 foreach($results as $r){

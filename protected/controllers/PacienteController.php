@@ -15,7 +15,15 @@ class PacienteController extends Controller
 	{
 		return array(array('CrugeAccessControlFilter'));
 	}
+	public function getCM_user(){
 
+		if(!Yii::app()->user->isGuest){
+			$centro_medico_user=TieneCentroMedico::model()->find('id_user='.Yii::app()->user->id);
+			$centro_medico=CentroMedico::model()->find('id='.$centro_medico_user->id_centro_medico); 
+			return $centro_medico->id;
+		}
+		else return 0;  
+	}
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.

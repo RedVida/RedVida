@@ -61,7 +61,7 @@ $paciente=Paciente::model()->find('id='.$_GET['id']);
 				$results = DonacionOrgano::model()->findAll(array('select'=>'id_donante','condition'=>'estado=1 AND ('.$where.')'));
 			    foreach($results as $r){
 
-			    	$donantes=Donantes::model()->find('id='.$r->id_donante);
+			    	$donantes=Donantes::model()->find('id='.$r->id_donante.' AND id_centro_medico='.$this->getCM_user());
 			    	if($donantes->tipo_sangre == $paciente->tipo_sangre)
 			    	$values[] = $donantes->id;
 			    }

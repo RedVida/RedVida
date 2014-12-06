@@ -52,6 +52,7 @@
 ?>
 
 	<?php echo $form->errorSummary($model, NULL, NULL, array("class" => "ui warning message"));?>
+	<?php $centro_medico=CentroMedico::model()->find('id='.$this->getCM_user()); ?>
 <div class="ui form">
 
 	<div class="fields">
@@ -111,9 +112,15 @@
                     </div>
                     <?php } ?>
 	
-   	<div class="four wirde field">
-        <?php echo $form->labelEx($model,'Centro Medico'); ?>
-		<?php echo $form->dropDownList($model,'id_centro_medico', CHtml::listData(CentroMedico::model()->findAll(),'id', 'nombre'), array('empty' => 'Selecciona Centro Medico', 'class'=>'ui selection dropdown')); ?>
+   	<div class="fields">    
+			<div class="five wide field">
+				<?php echo $form->labelEx($model,'Centro Medico'); ?>
+				<?php echo Chtml::textField('nombre_centro_medico[Donantes]',$centro_medico->nombre,array('readonly'=>'true')); ?>
+				<?php echo $form->hiddenField($model, 'id_centro_medico', array('value'=> $this->getCM_user())); ?>
+				<div class="errors">
+				<?php echo $form->error($model,'id_centro_medico',array('class' => 'ui small red pointing above ui label')); ?>
+				</div>
+			</div>
 	</div>
 
 <br><br>

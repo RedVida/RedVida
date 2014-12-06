@@ -28,7 +28,20 @@
   <img  src="<?php echo Yii::app()->request->baseUrl; ?>/images/clinica3.jpg"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/text.png">
   </div>
 
- 
+   <?php //'success'  'error'  'notice'            
+        $flashMessages = Yii::app()->user->getFlashes();
+        if ($flashMessages) {   
+                foreach($flashMessages as $key => $message) {
+                        echo '<div class="flash-' . $key . '">' . $message . "</div>\n";
+                }
+        }
+        ?>
+ <?php if(!Yii::app()->user->isGuest){ ?>
+    
+ <?php $cen =TieneCentroMedico::model()->find('id_user='.Yii::app()->user->id);
+       $cen_main=CentroMedico::model()->find('id='.$cen->id_centro_medico);
+
+  } ?>
 
   </head>
 
@@ -80,11 +93,17 @@
       <div class="right menu">
       
       <?php if(!Yii::app()->user->isGuest){ ?>
+
+        <a class="item" style="pointer-events:none">
+        <i class="building outline icon"></i>
+       <?php echo $cen_main->nombre;?>
+      </a>      
+
     
       <a class="item" style="pointer-events:none">
         <i class="user icon"></i> 
-        <?php echo Yii::app()->user->name; ?>
-      </a>   
+       <?php echo Yii::app()->user->name;?>
+      </a>
 
       <a class="item"  href="<?php echo Yii::app()->user->ui->logoutUrl; ?>" >
         <i class="off icon" ></i> Cerrar Sesión
