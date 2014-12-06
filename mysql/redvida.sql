@@ -989,9 +989,20 @@ CREATE TABLE IF NOT EXISTS `tiene_alergia` (
 
 -- --------------------------------------------------------
 
---
+CREATE TABLE IF NOT EXISTS `tiene_centro_medico` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `fecha` datetime DEFAULT NULL,
+  `id_user` int(11) DEFAULT NULL,
+  `id_centro_medico` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_reference_1` (`id_user`),
+  KEY `fk_reference_2` (`id_centro_medico`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
 -- Estructura de tabla para la tabla `tiene_enfermedad`
 --
+ALTER TABLE `tiene_centro_medico`
+  ADD CONSTRAINT `fk_reference_166` FOREIGN KEY (`id_user`) REFERENCES `cruge_user` (`iduser`),
+  ADD CONSTRAINT `fk_reference_255` FOREIGN KEY (`id_centro_medico`) REFERENCES `centro_medico` (`id`);
 
 CREATE TABLE IF NOT EXISTS `tiene_enfermedad` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
