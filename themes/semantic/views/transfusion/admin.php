@@ -1,4 +1,4 @@
-<?php
+	<?php
 if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
 	array('label'=>'Listar Transfusiones', 'url'=>array('index')),
@@ -62,13 +62,35 @@ Administrar Transfusiones </h1>
 
 	</div>
 	<div class="twelve wide column">
+<?php   
+		$values = array();
+		$centro_medico=CentroMedico::model()->find('id='.$this->getCM_user());
+		$transfusion=Transfusion::model()->findAll();
+        foreach($transfusion as $r){
+        	if($donante=Donantes::model()->find('rut='."'$r->rut_paciente'")){
+        		if($donante->id_centro_medico==$this->getCM_user())$values[]=$r->id;
+        	}
+
+        }
+
+	     if(!$values)$message="
+							<div class ='ui warning message'>
+							<i class='warning sign icon'></i>
+							<i class='close icon'></i>
+							<b>No se han encontrado Transfusiones de Sangre en este Centro Medico (".$centro_medico->nombre.")<b/>
+							</div> ";
+			
+
+$criteria = new CDbCriteria();
+$criteria->addInCondition('id',$values,'OR');
+$dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
+?>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'transfusion-grid',
-	'dataProvider'=>$model->search(),
+	'dataProvider'=>$dataProvider,
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
 		'rut_paciente',
 		'tipo_sangre',
 		'cantidad',
@@ -79,54 +101,11 @@ Administrar Transfusiones </h1>
 		array(	
 				'value'=>'date("H:m",strtotime($data->created))',
 		),
-				array(
+        array(
 					'class'=>'CButtonColumn',
-					'template'=>'{Ver}{Actualizar}{Eliminar}',
-				    'buttons'=>array
-				    (
-
- 						'Ver' => arraY
- 						(
-					    	'label'=>'Ver',
-					        'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/view.png",
-					        'url'=>'Yii::app()->createUrl("transfusion/view", array("id"=>$data->id))',
-					    ),
-					  
-					   'Actualizar' => array
-					   (
-					        'label'=>'Actualizar',
-					  		'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/update.png",
-					        'url'=>'Yii::app()->createUrl("transfusion/update", array("id"=>$data->id))', 
-					    ),
-				        'Eliminar' => array
-				        (   
-				        	'label'=>'Eliminar',
-				            'imageUrl'=>Yii::app()->request->baseUrl."/images/icons/yii/delete.png",
-				          	'url'=>'"#"',
-				            'click'=>"js: function(){   
-							getId = $(this).parent().parent().children(':nth-child(1)').text();
-							 			$('.small.modal')
-										  .modal('setting', {
-										    closable  : false,
-										    onApprove : function() {
-										            $.fn.yiiGridView.update('transfusion-grid', {
-										                type:'POST',
-										                success:function(data) {
-														window.location.href = '".Yii::app()->request->baseUrl."' +'/index.php?r=/transfusion/delete&id=' + getId;									
-									                    $.fn.yiiGridView.update('transfusion-grid');
-										                }
-											});
-								  		  }
-									  })
-									  .modal('show')
-						  	          ;
-
-		  					}",
-
-				        ),
-				    ),
-     		   ),
-	),
+			    ),
+	   ),
+	'emptyText'=>$message,
 )); ?>
 
 

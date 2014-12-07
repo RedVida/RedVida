@@ -174,6 +174,7 @@ class DonantesController extends Controller
 	public function actionRegistra_Alergia()
 	{
 		$model = new Donantes;
+	 $hola= $this->getCM_user();
 		$this->render('registra_alergia', array('model'=>$model));
 	}
 
@@ -321,7 +322,16 @@ class DonantesController extends Controller
 	}
 
 	public function actionIndex()
-	{  $dataProvider=new CActiveDataProvider('Donantes');
+	{   
+	    $model=new Donantes();
+		$values= array();
+		$donantes=Donantes::model()->findAll('id_centro_medico='.$this->getCM_user());
+		foreach($donantes as $r)$values[]=$r->id;
+
+		$criteria = new CDbCriteria();
+		$criteria->addInCondition('id',$values,'OR');
+		$dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
+
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -354,6 +364,18 @@ class DonantesController extends Controller
 			$model->attributes=$_GET['Donantes'];
 
 		$this->render('admin',array(
+			'model'=>$model,
+		));
+	}
+
+	public function actionlistar_donantes()
+	{
+		$model=new Donantes('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Donantes']))
+			$model->attributes=$_GET['Donantes'];
+
+		$this->render('listar_donantes',array(
 			'model'=>$model,
 		));
 	}

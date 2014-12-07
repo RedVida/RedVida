@@ -1,17 +1,5 @@
+<?php  $this->layout="//layouts/index";?>
 <?php
-/* @var $this PacienteController */
-/* @var $model Paciente */
-
-$this->breadcrumbs=array(
-	'Pacientes'=>array('index'),
-	'Manage',
-);
-
-$this->menu=array(
-	array('label'=>'Lista Paciente', 'url'=>array('index')),
-	array('label'=>'Registrar Paciente', 'url'=>array('create')),
-	array('label'=>'Urgencias Nacionales', 'url'=>array('urgenciasnacionales')),
-);
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -41,8 +29,12 @@ Administrar Pacientes </h1>
 </div><!-- search-form -->
 
 <?php 
+ function name_centro_medico($val){
+		$centro_medico=CentroMedico::model()->find('id='.$val);
+		return $centro_medico->nombre;
+ }
 $centro_medico=CentroMedico::model()->find('id='.$this->getCM_user());
-$pacientes=Paciente::model()->findAll('id_centro_medico='.$this->getCM_user());
+$pacientes=Paciente::model()->findAll('id_centro_medico!='.$this->getCM_user());
 $values= array();
 foreach ($pacientes as $r) $values[]=$r->id;
 $criteria = new CDbCriteria();
@@ -53,10 +45,13 @@ $message='';
 						<div class ='ui warning message'>
 							<i class='warning sign icon'></i>
 							<i class='close icon'></i>
-							<b>No se han encontrado Pacientes en este Centro Medico (".$centro_medico->nombre.").
+							<b>No se han encontrado Pacientes en otros Centros Medicos.
 						</div> ";
 ?>
 
+<div class="ui grid">
+	<div class="one wide column"></div>
+	<div class="fourteen wide column">
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'paciente-grid',
 	'dataProvider'=>$dataProvider,
@@ -68,29 +63,17 @@ $message='';
 		'afiliacion',
 		'fecha_nacimiento',
 		'edad',
-		/*
-		'necesidad_transplante',
-		'tipo_sangre',
-		'id_centro_medico',
-		*/
-		array(
-            'class' => 'CButtonColumn',
-            'template'=>'{Registrar}', // botones a mostrar
-            'buttons'=>array(
-			'Registrar' => array( //botón para la acción nueva
-		    'label'=>'Registrar Enfermedad', // titulo del enlace del botón nuevo
-		    'url'=>'Yii::app()->createUrl("/paciente/registrarenfermedad&id=$data->id")', //url de la acción nueva
-		))),
-		array(
-            'class' => 'CButtonColumn',
-            'template'=>'{Registrar}', // botones a mostrar
-            'buttons'=>array(
-			'Registrar' => array( //botón para la acción nueva
-		    'label'=>'Registrar Alergia', // titulo del enlace del botón nuevo
-		    'url'=>'Yii::app()->createUrl("/paciente/registraralergia&id=$data->id")', //url de la acción nueva
-		))),
+		'id_centro_medico'=>array('header'=>'Centro Medico','name'=>'id_centro_medico', 'value'=>'name_centro_medico($data->id_centro_medico)'),
+				array(
+					'class'=>'CButtonColumn',
+					'buttons'=>array(
+        						'delete' => array('visible' => 'false'),
+        						'update' => array('visible' => 'false'),
+				      ),
+			    ),
 	),
 	'emptyText' => $message,
 )); ?>
-
+</div>
+</div>
 <hr class="style-two ">

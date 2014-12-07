@@ -3,15 +3,15 @@
 /* @var $model Donante */
 
 $this->breadcrumbs=array(
-	'Donantes'=>array('index'),
-	'Registrar Enfermedad',
+	'Paciente'=>array('index'),
+	'Registrar Alergia',
 );
-if(Yii::app()->user->checkAccess('tester')){ 
+
 $this->menu=array(
-	array('label'=>'Listar Donante', 'url'=>array('index')),
-	array('label'=>'Registrar Donante', 'url'=>array('create')),
+	array('label'=>'Listar Paciente', 'url'=>array('index')),
+	array('label'=>'Registrar Paciente', 'url'=>array('create')),
 );
-}
+
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
 	$('.search-form').toggle();
@@ -28,32 +28,28 @@ $('.search-form form').submit(function(){
 <br>
 <div class="ui black ribbon label">
 <h1 class="ui huge header add icon"> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
- Registrando Enfermedad a Donante</h1>
+ Registrar Necesidad De Transfusion Sanguinea</h1>
 </div>
 <hr class="style-two ">
-
 
 <?php echo CHtml::link('&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Busqueda Avanzada','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
-
 <?php 
-$values= array();
-$donantes=Donantes::model()->findAll('id_centro_medico='.$this->getCM_user());
-foreach($donantes as $r)$values[]=$r->id;
+$array_sangre = array();
+$results = Paciente::model()->findAll(array('select'=>'id'));
+foreach ($results as $valor) 
+	    {
 
+			$sangre=NecesidadSangre::model()->find('id_paciente='.$valor->id);
+			if(!$sangre)$array_sangre[]=$valor->id;
+			
+	    }     
 $criteria = new CDbCriteria();
-$criteria->addInCondition('id',$values,'OR');
+$criteria->addInCondition('id',$array_sangre,'OR');	
 $dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
-$centro_medico=CentroMedico::model()->find('id='.$this->getCM_user());
- if(!$values)$message="
-						<div class ='ui warning message'>
-							<i class='warning sign icon'></i>
-							<i class='close icon'></i>
-							<b>No se han encontrado Donantes en este Centro Medico (".$centro_medico->nombre.").
-						</div> ";
 ?>
 </div><!-- search-form -->
 <div class="ui grid">
@@ -64,22 +60,21 @@ $centro_medico=CentroMedico::model()->find('id='.$this->getCM_user());
 			'dataProvider'=>$dataProvider,
 			'filter'=>$model,
 			'columns'=>array(
-				'nombres',
-				'apellidos',
+				'nombre',
+				'apellido',
 				'rut',
 		         array(
 		            'class' => 'CButtonColumn',
 		            'template'=>'{Registrar}', // botones a mostrar
 		            'buttons'=>array(
 					'Registrar' => array( //botón para la acción nueva
-				    'label'=>'Registrar Enfermedad', // titulo del enlace del botón nuevo
-				    'url'=>'Yii::app()->createUrl("/donantes/registrarenfermedad&id=$data->id")', //url de la acción nueva
+				    'label'=>'Registrar Necesidad ', // titulo del enlace del botón nuevo
+				    'url'=>'Yii::app()->createUrl("/paciente/registrar_necesidad_sangre&id=$data->id")', //url de la acción nueva
 				    //'visible'=>'($data->estado==="DISPONIBLE")?true:false;'
 				    ),
 					),
 		          ),
 			),
-			'emptyText'=>$message,
 		)); ?>
-    </div>
-</div>
+	</div>
+</div>		

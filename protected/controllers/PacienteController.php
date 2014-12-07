@@ -212,10 +212,36 @@ class PacienteController extends Controller
 		$this->render('asigna_necesidad_organo',array('model'=>$model));
 	}
 
-	public function actionRegistra_Organo()
+	 	public function actionRegistrar_necesidad_sangre($id)
 	{
-		$model = new Paciente;
-		$this->render('registra_necesidad_organo', array('model'=>$model));
+		//asignamos de alguna manera la enfermedad al donante con id = $id (parametro)
+		$model_necesita_sangre = new NecesidadSangre;
+	    $model = new BancoSangre();
+    
+		if (isset($_POST['Sangre']) && ($_POST['Sangre']['cantidad']!='') && ($_POST['Sangre']['grado_urgencia']!='')) {
+				$length = (string)($_POST['Sangre']['tipo_sangre']);
+				$modelo = BancoSangre::model()->findAll(array('select'=>'id,tipo','condition'=>'tipo='."'$length'"));
+				if(!is_numeric($_POST['Sangre']['cantidad'])){
+				   $model->addError('nombre','Cantidad : Cantidad de sangre ingresada, no es valida ');
+				}
+	            else{
+	            	$model_necesita_sangre ->grado_urgencia = $_POST['Sangre']['grado_urgencia'];
+		            $model_necesita_sangre ->id_paciente = $id;
+					$model_necesita_sangre ->id_banco_sangre = $modelo[0]->id;
+					$model_necesita_sangre ->fecha = new CDbExpression('NOW()');
+					$model_necesita_sangre ->cantidad = $_POST['Sangre']['cantidad'];
+		 
+					if ($model_necesita_sangre->save()) {
+						$this->redirect(array('paciente/admin'));
+					}
+			   }
+	   }
+	   else if (isset($_POST['Sangre'])){
+	    	   if($_POST['Sangre']['cantidad']=='')$model->addError('nombre','Cantidad : Se requiere ingresar Cantidad de sangre');
+	    	   if($_POST['Sangre']['grado_urgencia']==null)$model->addError('nombre','Grado Urgencia : Se requiere ingresar un Grado de Urgencia ');
+	    }
+
+		$this->render('asigna_necesidad_sangre',array('model'=>$model));
 	}
 
 	 	public function actionRegistrar_necesidad_medula($id)
@@ -245,7 +271,7 @@ class PacienteController extends Controller
 					$model_necesita_medula->fecha = new CDbExpression('NOW()');
 		 
 					if ($model_necesita_medula->save()) {
-						$this->redirect(array('view&id='.$id));
+						$this->redirect('admin');
 					}
 			  	}
 			  }
@@ -258,19 +284,53 @@ class PacienteController extends Controller
 		$this->render('asigna_necesidad_medula',array('model'=>$model));
 	}
 
+		public function actionRegistra_Organo()
+	{
+		$model = new Paciente;
+		$this->render('registra_necesidad_organo', array('model'=>$model));
+	}
+
 	public function actionRegistra_Medula()
 	{
 		$model = new Paciente;
 		$this->render('registra_necesidad_medula', array('model'=>$model));
 	}
 
-	public function actionUrgenciasnacionales(){
+	public function actionRegistra_Sangre()
+	{
+		$model = new Paciente;
+		$this->render('registra_necesidad_sangre', array('model'=>$model));
+	}
+
+	public function actionUrgencia_organo(){
 		$model=new Paciente('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Paciente']))
 			$model->attributes=$_GET['Paciente'];
 
-		$this->render('urgenciasnacionales',array(
+		$this->render('urgencia_organo',array(
+			'model'=>$model,
+		));
+	}
+
+	public function actionUrgencia_medula(){
+		$model=new Paciente('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Paciente']))
+			$model->attributes=$_GET['Paciente'];
+
+		$this->render('urgencia_medula',array(
+			'model'=>$model,
+		));
+	}
+
+	public function actionUrgencia_sangre(){
+		$model=new Paciente('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Paciente']))
+			$model->attributes=$_GET['Paciente'];
+
+		$this->render('urgencia_sangre',array(
 			'model'=>$model,
 		));
 	}
@@ -308,7 +368,7 @@ class PacienteController extends Controller
             	}
 		    }
 		    if($_POST['Paciente']['hasta']!=''){ // Fecha
-		     	if(strtotime($_POST['Paciente']['desde']) && 1 === preg_match('~[0-9]~', $_POST['Paciente']['desde'])){
+		     	if(strtotime($_POST['Paciente']['hasta']) && 1 === preg_match('~[0-9]~', $_POST['Paciente']['hasta'])){
 			    	$hasta = (string)($_POST['Paciente']['hasta']);
 	            	$where_array[]=('p.fecha_ingreso <= '."'$hasta'");
 	            }else{
@@ -430,8 +490,15 @@ class PacienteController extends Controller
 	public function actionIndex()
 	{
 		
-		$organo = Organo::model()->findAll(array('select'=>'nombreOrgano'));
-		$dataProvider=new CActiveDataProvider('Paciente');
+		$model = new Organo();
+		$values= array();
+		$pacientes=Paciente::model()->findAll('id_centro_medico='.$this->getCM_user());
+		foreach($pacientes as $r)$values[]=$r->id;
+
+		$criteria = new CDbCriteria();
+		$criteria->addInCondition('id',$values,'OR');
+		$dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
+
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -448,6 +515,18 @@ class PacienteController extends Controller
 			$model->attributes=$_GET['Paciente'];
 
 		$this->render('admin',array(
+			'model'=>$model,
+		));
+	}
+
+	public function actionlistar_pacientes()
+	{
+		$model=new Paciente('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Paciente']))
+			$model->attributes=$_GET['Paciente'];
+
+		$this->render('listar_pacientes',array(
 			'model'=>$model,
 		));
 	}
@@ -531,7 +610,7 @@ class PacienteController extends Controller
 
         	$donacion=NecesidadMedula::model()->find('id_paciente='.$item->id);
         	$donante = Donantes::model()->find('id='.$id);
-	        	if($donacion && $donante->tipo_sangre == $item->tipo_sangre){
+	        	if($donacion && $donante->tipo_sangre == $item->tipo_sangre && $item->id_centro_medico==$this->getCM_user()){
 		            $resultado[] = array (
 		                'nombre' => $item->nombre.' '.$item->apellido,
 		                'rut' => $item->rut,

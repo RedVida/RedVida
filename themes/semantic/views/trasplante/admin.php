@@ -75,7 +75,7 @@ return $paciente->nombre.' '.$paciente->apellido;
 }
 function user_centro_medico($val){
 		$centro_medico_user =TieneCentroMedico::model()->find('id_user='.Yii::app()->user->id);	
-		if($centro_medico_user->id == $val)return true;
+		if($centro_medico_user->id_centro_medico == $val)return true;
 		else return false;
  }
 ?>

@@ -11,18 +11,29 @@ Donación de Médula </h1>
 </div>
 
 <hr class="style-two ">
-
 <div class="ui grid">
+<div class="one wide column">
+</div>
+<div class="twelve wide column">
+<?php 
 
-	<div class="one wide column">
-	
-	</div>
-
-	<div class="twelve wide column">
-
+$centro_medico=CentroMedico::model()->find('id='.$this->getCM_user());
+if($dataProvider) $message="
+						<div class='ui grid'>
+							<div class='one wide column'></div>
+							<div class='fourteen wide column'>
+							<div class ='ui warning message'>
+								<i class='warning sign icon'></i>
+								<i class='close icon'></i>
+								<b>No se han encontrado Donaciones De Médula en este Centro Medico (".$centro_medico->nombre.").</b>
+							</div>
+							</div>
+						</div>";
+?>
 	<?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
+	'emptyText'=>$message,
 	)); ?>
 
 	</div>

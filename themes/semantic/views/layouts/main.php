@@ -181,7 +181,7 @@
       <i class="asterisk icon"></i>  Donaciones <i class="dropdown icon"></i>
       <div class="menu">
 
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/bancoSangre/">
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/bancoSangre/admin">
           <i class="doble angle right icon"></i> Listar Banco Sangre
         </a>
 
@@ -292,46 +292,50 @@
 
        </div>     
     </div>
-
+<?php if(Yii::app()->user->checkAccess('tester')){ ?>
     <div class="ui pointing dropdown link item">
 
       <i class="asterisk icon"></i> Pacientes <i class="dropdown icon"></i>
       <div class="menu">
-      <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+      
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/create">
           <i class="doble angle right icon"></i> Registrar Paciente
         </a>
-        <?php } ?>
-       <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+  
+        
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/registra_organo">
+          <i class="doble angle right icon"></i> Registrar Necesidad (Organo)
+        </a>
+       
+
+      
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/registra_medula">
+          <i class="doble angle right icon"></i> Registrar Necesidad (Medula)
+        </a>
+
+      
+        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/registra_sangre">
+          <i class="doble angle right icon"></i> Registrar Necesidad (Sangre)
+        </a>
+      
+      
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/admin">
           <i class="doble angle right icon"></i> Administrar Pacientes
         </a>
-        <?php } ?>
-        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/registra_organo">
-          <i class="doble angle right icon"></i> Asignar Necesidad (Organo)
-        </a>
-        <?php } ?>
-        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/registra_medula">
-          <i class="doble angle right icon"></i> Asignar Necesidad (Medula)
-        </a>
-        <?php } ?>
-        <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+    
+        
+       
         <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/informe">
           <i class="doble angle right icon"></i> Generar Informe
         </a>
-        <?php } ?>
+        
          <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/">
           <i class="doble angle right icon"></i> Listar Pacientes
-        </a>
-        <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/urgenciasnacionales">
-          <i class="doble angle right icon"></i> Urgencias Nacionales
         </a>
        
        </div>       
     </div>
-
+   <?php } ?>
         <?php if(Yii::app()->user->checkAccess('tester')){ ?>
 
       <div class="ui pointing dropdown link item">
@@ -343,9 +347,12 @@
             <i class="doble angle right icon"></i> Registrar Trasplante
           </a>
 
-
           <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/trasplante/admin">
             <i class="doble angle right icon"></i> Administrar Trasplantes
+          </a>
+
+          <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/transfusion/admin">
+            <i class="doble angle right icon"></i> Administrar Transfusiones
           </a>
 
           <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/trasplante/informe">
@@ -354,6 +361,38 @@
 
           <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/trasplante/">
             <i class="doble angle right icon"></i> Listar Trasplantes
+          </a>
+
+          </div>       
+      </div>
+      <?php } ?>
+
+       <?php if(Yii::app()->user->checkAccess('tester')){ ?>
+
+      <div class="ui pointing dropdown link item">
+
+          <i class="asterisk icon"></i> Ver <i class="dropdown icon"></i>
+          <div class="menu">
+           
+           <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/donantes/listar_donantes">
+            <i class="doble angle right icon"></i> Listar Otros Donantes
+          </a>
+
+
+          <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/listar_pacientes">
+            <i class="doble angle right icon"></i> Listar Otros Pacientes
+          </a>
+
+          <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/urgencia_organo">
+          <i class="doble angle right icon"></i> Urgencias Nacionales (Organo)
+          </a>
+
+          <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/urgencia_medula">
+          <i class="doble angle right icon"></i> Urgencias Nacionales (Medula)
+          </a>
+
+          <a class="item"  href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=/paciente/urgencia_sangre">
+          <i class="doble angle right icon"></i> Urgencias Nacionales (Sangre)
           </a>
 
           </div>       

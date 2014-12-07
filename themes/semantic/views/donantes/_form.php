@@ -120,7 +120,7 @@
 					
 					<div class="four wide field">
 					       <?php echo $form->labelEx($model,'Sexo'); ?>
-					       <?php echo $form->dropDownList($model,'sexo',array(1=>'M',2 =>'F'), array('empty' => 'Seleccione Sexo', 'class'=>'ui selection dropdown')); ?>
+					       <?php echo $form->dropDownList($model,'sexo',array('M'=>'M','F' =>'F'), array('empty' => 'Seleccione Sexo', 'class'=>'ui selection dropdown')); ?>
 					</div>
 					<div class="four wide field">
 					       <?php echo $form->labelEx($model,'voluntario'); ?>

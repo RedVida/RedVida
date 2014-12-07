@@ -28,7 +28,7 @@ $(document).ready(function() {
 		        
 			<?php echo $form->errorSummary($model, NULL, NULL, array("class" => "ui warning message"));?>
 			<?php $paciente=Paciente::model()->find('id='.$_GET['id_p']); ?>
-
+			<?php $necesidad_s=NecesidadSangre::model()->find('id_paciente='.$paciente->id);?>
 			<table class="ui definition table  ui green message">
     <tbody>
       <tr>
@@ -43,6 +43,11 @@ $(document).ready(function() {
         <td>T.Sangre:</td>
         <td><?php echo $paciente->tipo_sangre; ?></td>
       </tr>
+      <tr>	
+        <td>Cantidad:</td>
+        <td><?php echo 'Se necesita <b>'.$necesidad_s->cantidad.'</b> unidades de transfusion sanguinea'; ?></td>
+      </tr>
+
 
     </tbody>
   </table>
@@ -58,7 +63,11 @@ $(document).ready(function() {
 		    <div class="fields">
 			 	<div class="two wirde field">
 					<?php echo $form->labelEx($model,'Cantidad a transferir:'); ?>
-					<?php echo $form->dropDownList($model,'cantidad',array('(Unidad)'=> range(1,$bancoSangre->cantidad)),array('class'=>'ui selection dropdown'));?>
+					<?php if($bancoSangre->cantidad < $necesidad_s->cantidad){?>
+						<?php echo $form->dropDownList($model,'cantidad',array('(Unidad)'=> range(1,$bancoSangre->cantidad)),array('class'=>'ui selection dropdown'));?>
+					<?php }else{ ?>
+						<?php echo $form->dropDownList($model,'cantidad',array('(Unidad)'=> range(1,$necesidad_s->cantidad)),array('class'=>'ui selection dropdown'));?>
+					<?php } ?>
 					&nbsp;Sangre / (Unidad)
 					<div class="errors">
 					<?php echo $form->error($model,'cantidad',array('class' => 'ui small red pointing above ui label')); ?>

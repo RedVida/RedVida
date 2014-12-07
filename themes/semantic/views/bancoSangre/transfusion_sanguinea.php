@@ -26,6 +26,7 @@ $('.search-form form').submit(function(){
 });
 ");
 $paciente=Paciente::model()->find('id='.$_GET['id']);
+$necesidad_s=NecesidadSangre::model()->find('id_paciente='.$paciente->id);
 
 ?>
 
@@ -56,6 +57,10 @@ $paciente=Paciente::model()->find('id='.$_GET['id']);
         <td>T.Sangre:</td>
         <td><?php echo $paciente->tipo_sangre; ?></td>
       </tr>
+      <tr>	
+        <td>Cantidad:</td>
+        <td><?php echo 'Se necesita <b>'.$necesidad_s->cantidad.'</b> unidades de transfusion aanguinea'; ?></td>
+      </tr>
 
     </tbody>
   </table>
@@ -72,8 +77,11 @@ $paciente=Paciente::model()->find('id='.$_GET['id']);
 $id_p =(string) $_GET['id'];
 $results =BancoSangre::model()->findAll(array('select'=>'id','condition'=>'cantidad >= 1 AND tipo='."'$paciente->tipo_sangre'"));
 $values = array();
-foreach($results as $r) $values[] = $r->id;
-
+if($donante=NecesidadSangre::model()->find('id_paciente='.$paciente->id)){
+	foreach($results as $r){
+		$values[] = $r->id;
+	} 
+}
 $criteria = new CDbCriteria();
 $criteria->addInCondition('id',$values,'OR');
 

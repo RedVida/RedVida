@@ -905,6 +905,18 @@ CREATE TABLE IF NOT EXISTS `necesidad_medula` (
   KEY `fk_reference_2` (`id_medula`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
 
+CREATE TABLE IF NOT EXISTS `necesidad_sangre` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `grado_urgencia` varchar(20) COLLATE utf8_bin DEFAULT NULL,
+  `fecha` datetime DEFAULT NULL,
+  `cantidad` int(11) DEFAULT NULL,
+  `id_paciente` int(11) DEFAULT NULL,
+  `id_banco_sangre` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_reference_1` (`id_paciente`),
+  KEY `fk_reference_2` (`id_banco_sangre`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
+
 -- --------------------------------------------------------
 
 --
@@ -1123,6 +1135,10 @@ ALTER TABLE `enfermedad_paciente`
 ALTER TABLE `necesidad_medula`
   ADD CONSTRAINT `fk_reference_78` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`),
   ADD CONSTRAINT `fk_reference_79` FOREIGN KEY (`id_medula`) REFERENCES `medula` (`idMedula`);
+
+  ALTER TABLE `necesidad_sangre`
+  ADD CONSTRAINT `fk_reference_45` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`),
+  ADD CONSTRAINT `fk_reference_65` FOREIGN KEY (`id_banco_sangre`) REFERENCES `banco_sangre` (`id`);
 
 --
 -- Filtros para la tabla `necesidad_organo`

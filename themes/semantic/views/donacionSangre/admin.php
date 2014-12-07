@@ -74,16 +74,6 @@ Administrar Donación de Sangre </h1>
 	</div>
 
 </div>
-<?php 
-
-function user_centro_medico($val){
-	$centro_medico_user =TieneCentroMedico::model()->find('id_user='.Yii::app()->user->id);
-
-	$donante=Donantes::model()->find('id='.$val.' AND  id_centro_medico='.$centro_medico_user->id_centro_medico);
-	if($donante)return true;
-	else return false;
-}
-?>
 <hr class="style-two ">
 
 <div class="ui grid">
@@ -94,10 +84,29 @@ function user_centro_medico($val){
 
 	<div class="twelve wide column">
 
+<?php 
 
+$centro_medico=CentroMedico::model()->find('id='.$this->getCM_user());
+$donacion_sangre=DonacionSangre::model()->findAll();
+$values= array();
+foreach ($donacion_sangre as $r){
+	if($this->getCM_Donador($r->id_donante))$values[]=$r->id;
+} 
+$criteria = new CDbCriteria();
+$criteria->addInCondition('id',$values,'OR');
+$dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
+
+ if(!$values)$message="
+						<div class ='ui warning message'>
+							<i class='warning sign icon'></i>
+							<i class='close icon'></i>
+							<b>No se han encontrado Donaciones De Organos en este Centro Medico (".$centro_medico->nombre.").
+						</div> ";
+
+?>
 	<?php $this->widget('zii.widgets.grid.CGridView', array(
 		'id'=>'donacion-sangre-grid',
-		'dataProvider'=>$model->search(),
+		'dataProvider'=>$dataProvider,
 		'filter'=>$model,
 		'columns'=>array(
 			array( 
@@ -115,13 +124,12 @@ function user_centro_medico($val){
 				'value'=>'date("h:i",strtotime($data->created))',
 		),
 			array(
-					'class'=>'CButtonColumn',
-					 'buttons'=>array(
-        						'delete' => array('visible' => 'user_centro_medico($data->id_donante)'),
-        						'update' => array('visible' => 'user_centro_medico($data->id_donante)'),
-				      ),
+				'class'=>'CButtonColumn',
 			    ),
-	))); ?>
+	),
+	'emptyText'=>$message,
+	)); 
+	?>
 
 
 	</div>

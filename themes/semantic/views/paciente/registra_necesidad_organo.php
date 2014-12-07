@@ -37,13 +37,22 @@ $('.search-form form').submit(function(){
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
+<?php 
+	$values = array();
+	$pacientes=Paciente::model()->findAll('id_centro_medico='.$this->getCM_user());
+	foreach($pacientes as $r)$values[]=$r->id;
+	$criteria = new CDbCriteria();
+	$criteria->addInCondition('id',$values,'OR');
+	$dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
+
+?>
 </div><!-- search-form -->
 <div class="ui grid">
 	<div class="one wide column"></div>
 	<div class="fourteen wide column">
 		<?php $this->widget('zii.widgets.grid.CGridView', array(
 			'id'=>'donante-grid',
-			'dataProvider'=>$model->search(),
+			'dataProvider'=>$dataProvider,
 			'filter'=>$model,
 			'columns'=>array(
 				'nombre',
