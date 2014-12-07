@@ -2,8 +2,8 @@
 $this->menu=array(
 	array('label'=>'Listar Donación de Órgano', 'url'=>array('index')),
 	array('label'=>'Registrar Donación', 'url'=>array('/donantes/donar')),
-	array('label'=>'Actualizar Donación de Órgano', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Eliminar Donación de Órgano', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Está seguro que desea borrar este elemento?')),
+	array('label'=>'Actualizar Donación de Órgano', 'url'=>array('update', 'id'=>$model->id),'visible'=>($this->getCM_donador($model->id_donante))),
+	array('label'=>'Eliminar Donación de Órgano', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Está seguro que desea borrar este elemento?'),'visible'=>($this->getCM_donador($model->id_donante))),
 	array('label'=>'Administrar Donación de Órgano', 'url'=>array('admin')),
 );
 ?>

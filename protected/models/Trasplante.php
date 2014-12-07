@@ -65,7 +65,7 @@ class Trasplante extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'idCentroMedico' => array(self::BELONGS_TO, 'CentroMedico', 'id_centro_medico'),
-			'idDonacion' => array(self::BELONGS_TO, 'Donacion', 'id_donacion'),
+			'idDonacion' => array(self::BELONGS_TO, 'DonacionOrgano', 'id_donacion'),
 			'idPaciente' => array(self::BELONGS_TO, 'Paciente', 'id_paciente'),
 		);
 	}

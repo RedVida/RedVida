@@ -130,6 +130,15 @@ class Donantes extends CActiveRecord
 		);
 	}
 
+	public function beforeDelete(){
+
+    foreach($this->tieneEnfermedads as $c)$c->delete();
+    foreach($this->donacionMedulas as $c)$c->delete();
+    foreach($this->donacionOrganos as $c)$c->delete();
+    foreach($this->donacionSangres as $c)$c->delete();   
+    return parent::beforeDelete();
+}
+
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */

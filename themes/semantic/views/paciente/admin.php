@@ -42,9 +42,26 @@ Administrar Pacientes </h1>
 )); ?>
 </div><!-- search-form -->
 
+<?php 
+$centro_medico=CentroMedico::model()->find('id='.$this->getCM_user());
+$pacientes=Paciente::model()->findAll('id_centro_medico='.$this->getCM_user());
+$values= array();
+foreach ($pacientes as $r) $values[]=$r->id;
+$criteria = new CDbCriteria();
+$criteria->addInCondition('id',$values,'OR');
+$dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
+$message='';
+ if(!$values)$message="
+						<div class ='ui warning message'>
+							<i class='warning sign icon'></i>
+							<i class='close icon'></i>
+							<b>No se han encontrado Pacientes en este Centro Medico (".$centro_medico->nombre.").
+						</div> ";
+?>
+
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'paciente-grid',
-	'dataProvider'=>$model->search(),
+	'dataProvider'=>$dataProvider,
 	'filter'=>$model,
 	'columns'=>array(
 		array(
@@ -65,9 +82,6 @@ Administrar Pacientes </h1>
 		'id_centro_medico',
 		*/
 		array(
-			'class'=>'CButtonColumn',
-		),
-		array(
             'class' => 'CButtonColumn',
             'template'=>'{Registrar}', // botones a mostrar
             'buttons'=>array(
@@ -84,6 +98,7 @@ Administrar Pacientes </h1>
 		    'url'=>'Yii::app()->createUrl("/paciente/registraralergia&id=$data->id")', //url de la acción nueva
 		))),
 	),
+	'emptyText' => $message,
 )); ?>
 
 <hr class="style-two ">

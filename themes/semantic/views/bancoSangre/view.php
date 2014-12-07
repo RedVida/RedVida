@@ -1,10 +1,6 @@
 <?php
 if(Yii::app()->user->checkAccess('tester')){ 
 $this->menu=array(
-	array('label'=>'Listar Banco de Sangre', 'url'=>array('index')),
-	array('label'=>'Registrar Banco de Sangre', 'url'=>array('create')),
-	array('label'=>'Actualizar Banco de Sangre', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Eliminar Banco de Sangre', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Está seguro que desea borrar este elemento?')),
 	array('label'=>'Administrar Banco de Sangre', 'url'=>array('admin')),
 );
 }

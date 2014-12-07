@@ -15,6 +15,15 @@ class TransfusionController extends Controller
 	{
 		return array(array('CrugeAccessControlFilter'));
 	}
+	public function getCM_user(){
+
+		if(!Yii::app()->user->isGuest){
+			$centro_medico_user=TieneCentroMedico::model()->find('id_user='.Yii::app()->user->id);
+			$centro_medico=CentroMedico::model()->find('id='.$centro_medico_user->id_centro_medico); 
+			return $centro_medico->id;
+		}
+		else return 0;  
+	}
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
@@ -143,7 +152,19 @@ class TransfusionController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Transfusion');
+		$model = new Transfusion();
+		$values= array();
+		$transfusion=Transfusion::model()->findAll();
+		foreach($transfusion as $r){
+        	if($donante=Donantes::model()->find('rut='."'$r->rut_paciente'")){
+        		if($donante->id_centro_medico==$this->getCM_user())$values[]=$r->id;
+        	}
+
+        }
+		$criteria = new CDbCriteria();
+		$criteria->addInCondition('id',$values,'OR');
+		$dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
+
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -207,6 +228,23 @@ class TransfusionController extends Controller
 			$sql = 'UPDATE banco_sangre SET cantidad = (cantidad -'.$model->cantidad.') WHERE id='.$_GET['id'];
 			$command = $connection->createCommand($sql);
 			$command->execute();
+
+			$paciente=Paciente::model()->find('rut='."'$model->rut_paciente'");
+			$necesidad=NecesidadSangre::model()->find('id_paciente='.$paciente->id);
+
+			if($model->cantidad==$necesidad->cantidad){
+				$connection=Yii::app()->db;
+				$sql = 'DELETE FROM necesidad_sangre WHERE id='.$necesidad->id.' AND cantidad='.$model->cantidad;
+				$command = $connection->createCommand($sql);
+				$command->execute();
+			}
+			else if($model->cantidad < $necesidad->cantidad){
+				$connection=Yii::app()->db;
+				$sql = 'UPDATE necesidad_sangre SET cantidad = (cantidad -'.$model->cantidad.') WHERE id='.$necesidad->id;
+				$command = $connection->createCommand($sql);
+				$command->execute();
+			}
+
 			}
 			if($model->save())
 				$this->redirect(array('index'));

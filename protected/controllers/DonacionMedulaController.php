@@ -15,7 +15,26 @@ class DonacionMedulaController extends Controller
 	{
 		return array(array('CrugeAccessControlFilter'));
 	}
+     public function getCM_Donador($id_donante){
 
+		if(!Yii::app()->user->isGuest){
+			$centro_medico_user=TieneCentroMedico::model()->find('id_user='.Yii::app()->user->id);
+			$centro_medico=CentroMedico::model()->find('id='.$centro_medico_user->id_centro_medico);
+			$donante=Donantes::model()->find('id='.$id_donante);
+			if($donante->id_centro_medico==$centro_medico->id) return true;
+			else false;
+		}
+		else return 0;  
+	}
+	public function getCM_user(){
+
+		if(!Yii::app()->user->isGuest){
+			$centro_medico_user=TieneCentroMedico::model()->find('id_user='.Yii::app()->user->id);
+			$centro_medico=CentroMedico::model()->find('id='.$centro_medico_user->id_centro_medico); 
+			return $centro_medico->id;
+		}
+		else return 0;  
+	}
 
 	/**
 	 * Specifies the access control rules.
@@ -132,8 +151,18 @@ class DonacionMedulaController extends Controller
 	 * Lists all models.
 	 */
 	public function actionIndex()
-	{
-		$dataProvider=new CActiveDataProvider('DonacionMedula');
+
+	{   $model = new DonacionMedula();
+		$values= array();
+		$donacion_medula=DonacionMedula::model()->findAll();
+		foreach($donacion_medula as $r){
+
+			if($this->getCM_Donador($r->id_donante))$values[]=$r->id;
+		}
+		$criteria = new CDbCriteria();
+		$criteria->addInCondition('id',$values,'OR');
+		$dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
+
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

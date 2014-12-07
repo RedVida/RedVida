@@ -75,6 +75,26 @@ Administrar Órganos </h1>
 	</div>
 
 </div>
+<?php 
+
+$centro_medico=CentroMedico::model()->find('id='.$this->getCM_user());
+$donacion_organo=DonacionOrgano::model()->findAll();
+$values= array();
+foreach ($donacion_organo as $r){
+	if($this->getCM_Donador($r->id_donante))$values[]=$r->id;
+} 
+$criteria = new CDbCriteria();
+$criteria->addInCondition('id',$values,'OR');
+$dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
+
+ if(!$values)$message="
+						<div class ='ui warning message'>
+							<i class='warning sign icon'></i>
+							<i class='close icon'></i>
+							<b>No se han encontrado Donaciones De Organos en este Centro Medico (".$centro_medico->nombre.").
+						</div> ";
+
+?>
 
 <hr class="style-two ">
 
@@ -88,7 +108,7 @@ Administrar Órganos </h1>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'donacion-organo-grid',
-	'dataProvider'=>$model->search(),
+	'dataProvider'=>$dataProvider,
 	'filter'=>$model,
 	'columns'=>array(
 			array( 
@@ -105,11 +125,10 @@ Administrar Órganos </h1>
 		    ),
 		    array(
 					'class'=>'CButtonColumn',
-				),
 
-
-			
-	),
+			    ),
+		),
+		'emptyText'=>$message,
 )); ?>
 
 	</div>

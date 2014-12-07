@@ -76,6 +76,27 @@ Administrar Donación de Médula </h1>
 
 </div>
 
+<?php 
+
+$centro_medico=CentroMedico::model()->find('id='.$this->getCM_user());
+$donacion_medula=DonacionMedula::model()->findAll();
+$values= array();
+foreach ($donacion_medula as $r){
+	if($this->getCM_Donador($r->id_donante))$values[]=$r->id;
+} 
+$criteria = new CDbCriteria();
+$criteria->addInCondition('id',$values,'OR');
+$dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
+
+ if(!$values)$message="
+						<div class ='ui warning message'>
+							<i class='warning sign icon'></i>
+							<i class='close icon'></i>
+							<b>No se han encontrado Donaciones De Medula en este Centro Medico (".$centro_medico->nombre.").
+						</div> ";
+
+?>
+
 <hr class="style-two ">
 
 <div class="ui grid">
@@ -88,7 +109,7 @@ Administrar Donación de Médula </h1>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'donacion-medula-grid',
-	'dataProvider'=>$model->search(),
+	'dataProvider'=>$dataProvider,
 	'filter'=>$model,
 	'columns'=>array(
 		array( 
@@ -105,9 +126,10 @@ Administrar Donación de Médula </h1>
 			'value'=>'date("h:i",strtotime($data->created))',
 		),
 		array(
-					'class'=>'CButtonColumn',
-				),
-					),
+			'class'=>'CButtonColumn',
+		),
+		),
+		'emptyText'=>$message,
 )); ?>
 
 

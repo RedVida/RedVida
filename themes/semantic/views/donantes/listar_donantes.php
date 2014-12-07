@@ -1,3 +1,4 @@
+<?php  $this->layout="//layouts/index";?>
 <?php
 /* @var $this DonantesController */
 /* @var $model Donantes */
@@ -6,16 +7,7 @@ $this->breadcrumbs=array(
 	'Donantes'=>array('index'),
 	'Manage',
 );
-if(Yii::app()->user->checkAccess('tester')){ 
-$this->menu=array(
-	array('label'=>'Asignar Alergia', 'url'=>array('registra_alergia')),
-	array('label'=>'Asignar Enfermedad', 'url'=>array('registraenfermedad')),
-	array('label'=>'Generar Informe', 'url'=>array('informe')),
-	array('label'=>'Listar Donantes', 'url'=>array('index')),
-	array('label'=>'Registrar Donantes', 'url'=>array('create')),
 
-);
-}
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
 	$('.search-form').toggle();
@@ -43,41 +35,35 @@ Registrar Donante </h1>
 )); ?>
 
 <?php 
- function user_centro_medico($val){
-		$centro_medico_user =TieneCentroMedico::model()->find('id_user='.Yii::app()->user->id);
-		if($centro_medico_user->id_centro_medico == $val) return true;
-		else return false;
- }
  function name_centro_medico($val){
 		$centro_medico=CentroMedico::model()->find('id='.$val);
 		return $centro_medico->nombre;
  }
-
 $values= array();
-$donantes=Donantes::model()->findAll('id_centro_medico='.$this->getCM_user());
+$donantes=Donantes::model()->findAll('id_centro_medico!='.$this->getCM_user());
 foreach($donantes as $r)$values[]=$r->id;
 
 $criteria = new CDbCriteria();
 $criteria->addInCondition('id',$values,'OR');
 $dataProvider=new CActiveDataProvider($model, array('criteria'=>$criteria));
-$centro_medico=CentroMedico::model()->find('id='.$this->getCM_user());
+ $message='';
  if(!$values)$message="
 						<div class ='ui warning message'>
 							<i class='warning sign icon'></i>
 							<i class='close icon'></i>
-							<b>No se han encontrado Donantes en este Centro Medico (".$centro_medico->nombre.").
+							<b>No se han encontrado Donantes en Otros Centros Medicos.
 						</div> ";
 
 
-?>
 
+?>
 </div><!-- search-form -->
 <div class="ui grid">
 	<div class="one wide column"></div>
 	<div class="fourteen wide column">
 		<?php $this->widget('zii.widgets.grid.CGridView', array(
 			'id'=>'donantes-grid',
-			'dataProvider'=>$dataProvider,
+			'dataProvider'=>$model->search(),
 			'filter'=>$model,
 			'columns'=>array(
 				'nombres',
@@ -91,9 +77,11 @@ $centro_medico=CentroMedico::model()->find('id='.$this->getCM_user());
 				'id_centro_medico'=>array('header'=>'Centro Medico','name'=>'id_centro_medico', 'value'=>'name_centro_medico($data->id_centro_medico)'),
 				array(
 					'class'=>'CButtonColumn',
+					 'buttons'=>array(
+        						'delete' => array('visible' => 'false'),
+        						'update' => array('visible' => 'false'),
+				      ),
 			    ),
-		    ),
-		    'emptyText'=>$message,
-		    )); ?>
+		    ))); ?>
 	</div>
 </div>

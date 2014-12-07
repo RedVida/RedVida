@@ -33,15 +33,14 @@ $this->menu=array(
 			<?php echo CHtml::encode($data->fecha_nacimiento); ?>
 			<br />
 
-			<b><?php echo CHtml::encode($data->getAttributeLabel('afiliacion')); ?>:</b>
-			<?php echo CHtml::encode($data->afiliacion); ?>
+			<b><?php echo 'Centro Medico'; ?>:</b>
+			<?php $centro_medico=CentroMedico::model()->find('id='.$data->id_centro_medico);
+				  echo $centro_medico->nombre; ?>
 			<br />
 
 			<b><?php echo CHtml::encode($data->getAttributeLabel('edad')); ?>:</b>
 			<?php echo CHtml::encode($data->edad); ?>
 			<br />
-
-
 
 			<?php echo CHtml::link(CHtml::encode("Más detalle"), array('view', 'id'=>$data->id)); ?>
 			<br/>

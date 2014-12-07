@@ -8,7 +8,7 @@ if(Yii::app()->user->checkAccess('tester')){
 $this->menu=array(
 	array('label'=>'Lista Paciente', 'url'=>array('index')),
 	array('label'=>'Registrar Paciente', 'url'=>array('create')),
-	array('label'=>'Actualizar Paciente', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Actualizar Paciente', 'url'=>array('update', 'id'=>$model->id),'visible'=>($model->id_centro_medico == $this->getCM_user())),
 	array('label'=>'Administrar Paciente', 'url'=>array('admin')),
 );
 }
