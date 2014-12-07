@@ -33,6 +33,8 @@ Administrar Pacientes </h1>
 </div>
 <hr class="style-two ">
 
+
+
 <?php echo CHtml::link('&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Busqueda Avanzada','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
@@ -45,6 +47,12 @@ Administrar Pacientes </h1>
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
+		array(
+     		'name'=>'estado',
+            'type'=>'image',
+            'value'=>'$data->estado=="0"? Yii::app()->baseUrl."/images/on.ico":Yii::app()->baseUrl."/images/off.ico"',
+
+		),
 		'nombre',
 		'apellido',
 		'rut',

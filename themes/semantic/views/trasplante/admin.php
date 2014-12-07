@@ -79,6 +79,12 @@ return $paciente->nombre.' '.$paciente->apellido;
 			'dataProvider'=>$model->search(),
 		    'filter'=>$model,
 			'columns'=>array(
+				array(
+     			'name'=>'estado',
+    	        'type'=>'image',
+	            'value'=>'$data->estado=="0"? Yii::app()->baseUrl."/images/off.ico":Yii::app()->baseUrl."/images/on.ico"',
+
+				),
 				'nombre' => array('header'=> 'Trasplante','name' =>'nombre'),
 				'tipo',
 				'id_centro_medico' => array('header'=> 'Centro Medico','name' =>'id_centro_medico', 'value'=> 'centro_medico($data->id_centro_medico)'),

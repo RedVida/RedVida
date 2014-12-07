@@ -36,7 +36,7 @@ class PacienteController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','asignar'),
+				'actions'=>array('admin','delete','asignar','alta_paciente'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -191,6 +191,14 @@ class PacienteController extends Controller
 					$model_necesita_organo->fecha = new CDbExpression('NOW()');
 		 
 					if ($model_necesita_organo->save()) {
+
+						//alta paciente
+						$connection=Yii::app()->db;
+						$sql = 'UPDATE paciente SET estado = 1 WHERE id='."'$id'";
+						$command = $connection->createCommand($sql);
+						$command->execute();	
+						//alta paciente end
+
 						$this->redirect(array('view&id='.$id));
 					}
 			  	}
@@ -215,7 +223,9 @@ class PacienteController extends Controller
 		//asignamos de alguna manera la enfermedad al donante con id = $id (parametro)
 		$model_necesita_medula = new NecesidadMedula;
 		$model = new Medula;
+
     
+
 		if (isset($_POST['Medula']) && ($_POST['Medula']['id']!=null) && ($_POST['Medula']['grado_urgencia']!=null)) {
 				$length = (string)($_POST['Medula']['id']);
 				$modelo = Medula::model()->findAll(array('select'=>'idMedula,nombreMedula','condition'=>'nombreMedula='."'$length'"));
@@ -235,8 +245,15 @@ class PacienteController extends Controller
 		            $model_necesita_medula->id_paciente = $id;
 					$model_necesita_medula->id_medula = $modelo[0]->idMedula;
 					$model_necesita_medula->fecha = new CDbExpression('NOW()');
-		 
 					if ($model_necesita_medula->save()) {
+
+						//alta paciente
+						$connection=Yii::app()->db;
+						$sql = 'UPDATE paciente SET estado = 1 WHERE id='."'$id'";
+						$command = $connection->createCommand($sql);
+						$command->execute();	
+						//alta paciente end
+
 						$this->redirect(array('view&id='.$id));
 					}
 			  	}
@@ -402,6 +419,117 @@ class PacienteController extends Controller
 		));
 	}
 
+
+	public function actionAlta_Paciente(){
+
+		$model = new Paciente;
+
+		if (isset($_POST['Paciente']))  {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				if($_POST['Paciente']['id']!=''){
+
+
+
+
+
+
+				$modelo = Trasplante::model()->find(array('select'=>'*','condition'=>'estado='."'0'".' AND id_paciente='.$_POST["Paciente"]["id"]));
+
+
+				$modelo_org = NecesidadOrgano::model()->find(array('select'=>'*','condition'=>'id_paciente='.$_POST['Paciente']['id']));
+				$modelo_med = NecesidadMedula::model()->find(array('select'=>'*','condition'=>'id_paciente='.$_POST['Paciente']['id']));
+
+
+					if(!$modelo){
+
+
+
+					$model->addError('Error','El Paciente no puede ser dado de Alta si esta esperando Trasplante.');
+
+
+
+					}else{
+
+
+						if (  (isset($modelo_med)) or (isset($modelo_org))  ){
+
+								if(isset($modelo_med)){
+
+									
+									$model->addError('Error','El Paciente aun requiere ser atendido por una Necesidad Médica de Médula.');									
+
+
+								}
+
+								if(isset($modelo_org)){
+
+									$model->addError('Error','El Paciente aun requiere ser atendido por una Necesidad Médica de Órgano.');									
+								}
+
+								 
+						}else{
+
+
+						$var=$_POST['Paciente']['id'];
+
+
+						//alta paciente
+						$connection=Yii::app()->db;
+						$sql = 'UPDATE trasplante SET estado = 1 WHERE id_paciente='."'$var'";
+						$command = $connection->createCommand($sql);
+						$command->execute();	
+						//alta paciente end
+
+						//alta paciente
+						$connection=Yii::app()->db;
+						$sql = 'UPDATE paciente SET estado = 0 WHERE id='."'$var'";
+						$command = $connection->createCommand($sql);
+						$command->execute();	
+						//alta paciente end
+						
+						$this->redirect(array('admin'));
+
+
+						}
+
+
+					}
+
+
+
+				
+				}else{
+
+					$model->addError('Error','Ups!, no ha seleccionado ningun Paciente, intente nuevamente.');
+
+
+						
+				}
+
+				
+	    }
+
+		$this->render('alta_paciente',array('model'=>$model));
+	}
+
+
 	/**
 	 * Deletes a particular model.
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
@@ -535,4 +663,58 @@ class PacienteController extends Controller
         
         echo CJSON::encode($resultado);
     }
+
+	public function actionPacienteLista()
+    {
+        $criterio = new CDbCriteria;
+        $cdtns = array();
+        $resultado = array();
+        
+        if(empty($_GET['term'])) return $resultado;
+        
+        $cdtns[] = "LOWER(nombre) like :busq OR LOWER(apellido) like :busq OR LOWER(tipo_sangre) like :busq";
+
+        
+        $criterio->condition = implode(' OR ', $cdtns);
+        $criterio->params = array(':busq' => '%' . $_GET['term'] . '%');
+        $criterio->limit = 10;
+
+
+
+
+        
+        $data = Paciente::model()->findAll($criterio);
+        
+        foreach($data as $item) {  
+
+
+		$altas = Trasplante::model()->find(array('select'=>'*','condition'=>'id_paciente='.$item->id.' and estado='."0"));
+
+
+
+
+        	if(    isset($altas['id_paciente'])    ){
+            $resultado[] = array (
+                'nombre'    => $item->nombre,
+                'apellido'    => $item->apellido,
+                'rut'    => $item->rut,
+                'sangre'    => $item->rut,
+                'estado'   => $item->estado,
+                'id'    => $item->id,
+
+
+            );
+            
+        }
+        }
+
+        echo CJSON::encode($resultado);
+    }
+
+
+
+
+
+
+
 }
