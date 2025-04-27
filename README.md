@@ -25,8 +25,10 @@ services:
 importar la base de datos de la carpeta mysql
 
 #### Permisos de escritura
+```
 sudo chmod -R 777 protected
 sudo chmod -R 777 assets
+```
 
 #### Cambiar configuracion de base de datos
 ```
