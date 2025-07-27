@@ -5,8 +5,7 @@
 
 #### Instalar imagen app
 ```
-docker build -t redvida_app .
-docker run -v /home/user/redvida:/var/www/html -p 80:80 redvida_app:latest
+docker compose up
 ```
 
 #### Instalar mysql
@@ -36,7 +35,9 @@ protected/config/main.php
 ```
 
 #### Login
+```
 admin:admin
+```
 
 ## Changelog
 
