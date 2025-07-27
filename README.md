@@ -35,6 +35,9 @@ sudo chmod -R 777 assets
 protected/config/main.php
 ```
 
+#### Login
+admin:admin
+
 ## Changelog
 
 RedVida - v1.1

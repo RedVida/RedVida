@@ -1,0 +1,9 @@
+services:
+  app:
+    image: redvida-app
+    container_name: redvida_app
+    build: ./
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html
