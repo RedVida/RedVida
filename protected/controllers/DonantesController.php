@@ -17,10 +17,12 @@ class DonantesController extends Controller
 
 		if(!Yii::app()->user->isGuest){
 			$centro_medico_user=TieneCentroMedico::model()->find('id_user='.Yii::app()->user->id);
-			$centro_medico=CentroMedico::model()->find('id='.$centro_medico_user->id_centro_medico); 
+			if($centro_medico_user===null) return 0;
+			$centro_medico=CentroMedico::model()->find('id='.$centro_medico_user->id_centro_medico);
+			if($centro_medico===null) return 0;
 			return $centro_medico->id;
 		}
-		else return 0;  
+		else return 0;
 	}
 	public function accessRules()
 	{

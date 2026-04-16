@@ -1,42 +1,46 @@
 ## Instalacion
+
 #### Pre Requisitos
 - Docker
-- mysql
 
-#### Instalar imagen app
-```
-docker compose up
+#### Levantar el proyecto
+
+La primera vez, el volumen debe estar limpio para que MySQL importe el dump automáticamente:
+
+```bash
+docker compose down -v
+docker compose up --build
 ```
 
-#### Instalar mysql
-```dockerfile
-services:
-  mysql:
-    image: mysql:5.7
-    restart: always
-    container_name: mysql57
-    environment:
-      MYSQL_ROOT_PASSWORD: secret
-    network_mode: "host"
-    volumes:
-      - ./mysql_data:/var/lib/mysql
-```
-importar la base de datos de la carpeta mysql
+Esto levanta dos servicios:
+- **app** — PHP 5.6 + Apache en `http://localhost:80`
+- **db** — MySQL 5.7, importa `./mysql/redvida.sql` al iniciar
 
-#### Permisos de escritura
-```
+#### Permisos de escritura (solo primera vez en el host)
+```bash
 sudo chmod -R 777 protected
 sudo chmod -R 777 assets
-```
-
-#### Cambiar configuracion de base de datos
-```
-protected/config/main.php
 ```
 
 #### Login
 ```
 admin:admin
+```
+
+#### Variables de entorno (opcionales)
+
+El servicio `app` acepta estas variables para sobrescribir la conexión a la base de datos:
+
+| Variable      | Default    |
+|---------------|------------|
+| `DB_HOST`     | `db`       |
+| `DB_NAME`     | `redvida`  |
+| `DB_USER`     | `root`     |
+| `DB_PASSWORD` | `secret`   |
+
+#### Importar la base de datos manualmente (si es necesario)
+```bash
+docker exec -i redvida_db mysql -uroot -psecret redvida < mysql/redvida.sql
 ```
 
 ## Changelog

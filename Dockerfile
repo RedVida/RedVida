@@ -16,5 +16,9 @@ RUN chown -R www-data:www-data /var/www && chmod -R 755 /var/www
 # Habilitar módulos de Apache si aplica
 RUN a2enmod rewrite
 
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
 # Exponer el puerto 80
 EXPOSE 80
+ENTRYPOINT ["docker-entrypoint.sh"]
