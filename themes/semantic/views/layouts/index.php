@@ -35,7 +35,7 @@
                 }
         }
         ?>
- <?php if(!Yii::app()->user->isGuest){ ?>
+ <?php if(false){ ?>
     
  <?php $cen =TieneCentroMedico::model()->find('id_user='.Yii::app()->user->id);
        $cen_main=CentroMedico::model()->find('id='.$cen->id_centro_medico);

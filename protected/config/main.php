@@ -188,10 +188,10 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=redvida',
+			'connectionString' => 'mysql:host=' . (getenv('DB_HOST') ?: '192.168.18.68') . ';dbname=' . (getenv('DB_NAME') ?: 'redvida'),
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
+			'username' => getenv('DB_USER') ?: 'root',
+			'password' => getenv('DB_PASSWORD') ?: 'secret',
 			'charset' => 'utf8',
 		),
 		
